@@ -2,4 +2,4 @@ ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 
 COPY docs/.vitepress/dist/ /usr/share/nginx/html/
-COPY nginx-site.conf /etc/nginx/nginx.conf
+COPY nginx-docs.conf /etc/nginx/nginx.conf
