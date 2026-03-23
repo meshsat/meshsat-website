@@ -156,7 +156,7 @@ deploy:
       RESPONSE=$(curl -s -X POST \
         -H "Authorization: Bearer ${AWX_TOKEN}" \
         -H "Content-Type: application/json" \
-        -d '{"extra_vars": {"service_name": "meshsat-website", "compose_dir": "/srv/meshsat-website"}}' \
+        -d '{}' \
         "${AWX_HOST}/api/v2/job_templates/${AWX_JOB_TEMPLATE_ID}/launch/")
       echo "AWX response: $RESPONSE"
       JOB_ID=$(echo "$RESPONSE" | jq -r '.id // empty')
