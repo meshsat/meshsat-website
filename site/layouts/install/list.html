@@ -1,0 +1,73 @@
+{{ define "title" }}Install — {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section class="section install-page">
+    <div class="container">
+        <h1 class="page-title">Install MeshSat Bridge</h1>
+        <p class="section-subtitle">Docker Compose on any Linux machine. Raspberry Pi, ARM64 SBC, or x86_64 server.</p>
+
+        <div class="install-hero">
+            <div class="code-block">
+                <div class="code-block-header">
+                    <span class="code-block-label">Quick Install</span>
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        <span class="copy-text">Copy</span>
+                    </button>
+                </div>
+                <pre class="code-block-body"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
+            </div>
+        </div>
+
+        <h2>Requirements</h2>
+        <ul class="requirements-list">
+            <li>Linux (Ubuntu 22.04+, Debian 12+, Raspberry Pi OS)</li>
+            <li>ARM64 (aarch64) or x86_64 architecture</li>
+            <li>2 GB+ RAM, 4 GB+ disk</li>
+            <li>Docker (installed automatically if missing)</li>
+            <li>Root or sudo access</li>
+        </ul>
+
+        <h2>What the installer does</h2>
+        <ol class="install-steps">
+            <li>Detects architecture (aarch64 or x86_64)</li>
+            <li>Installs Docker if not present</li>
+            <li>Creates <code>/opt/meshsat/</code> directory</li>
+            <li>Downloads <code>docker-compose.yml</code></li>
+            <li>Pulls the MeshSat image from GHCR</li>
+            <li>Starts MeshSat in standalone mode on port 6050</li>
+        </ol>
+
+        <h2>After install</h2>
+        <p>Open <code>http://&lt;your-ip&gt;:6050</code> in a browser. MeshSat auto-detects USB devices (Meshtastic radios, Iridium modems, ZigBee coordinators).</p>
+
+        <h2>Supported platforms</h2>
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr><th>Platform</th><th>Architecture</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Raspberry Pi 5 / 4</td><td>aarch64</td><td><span class="badge badge-stable">Tested</span></td></tr>
+                    <tr><td>BananaPi BPI-M4 Zero</td><td>aarch64</td><td><span class="badge badge-stable">Tested</span></td></tr>
+                    <tr><td>Other ARM64 SBCs</td><td>aarch64</td><td><span class="badge badge-stable">Supported</span></td></tr>
+                    <tr><td>x86_64 / amd64</td><td>x86_64</td><td><span class="badge badge-stable">Supported</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+function copyCode(btn) {
+    var code = btn.closest('.code-block').querySelector('code').textContent;
+    navigator.clipboard.writeText(code).then(function() {
+        var text = btn.querySelector('.copy-text');
+        text.textContent = 'Copied';
+        setTimeout(function() { text.textContent = 'Copy'; }, 2000);
+    });
+}
+</script>
+{{ end }}

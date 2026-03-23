@@ -1,0 +1,26 @@
+# Hugo output
+site/public/
+site/resources/
+
+# VitePress output
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# Node
+node_modules/
+package-lock.json
+
+# Claude Code
+CLAUDE.md
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.idea/
+.vscode/

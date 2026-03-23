@@ -1,0 +1,51 @@
+{{ define "title" }}Changelog — {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section class="section changelog-page">
+    <div class="container">
+        <h1 class="page-title">Changelog</h1>
+        <p class="section-subtitle">Release history across all MeshSat products.</p>
+
+        <div class="tabs" role="tablist">
+            <button class="tab active" role="tab" aria-selected="true" aria-controls="tab-bridge" onclick="switchTab(event, 'tab-bridge')">Bridge</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="tab-hub" onclick="switchTab(event, 'tab-hub')">Hub</button>
+            <button class="tab" role="tab" aria-selected="false" aria-controls="tab-android" onclick="switchTab(event, 'tab-android')">Android</button>
+        </div>
+
+        <div id="tab-bridge" class="tab-panel active" role="tabpanel">
+            <div class="changelog-content">
+                {{ with .GetPage "bridge" }}{{ .Content }}{{ end }}
+            </div>
+        </div>
+
+        <div id="tab-hub" class="tab-panel" role="tabpanel">
+            <div class="changelog-content">
+                {{ with .GetPage "hub" }}{{ .Content }}{{ end }}
+            </div>
+        </div>
+
+        <div id="tab-android" class="tab-panel" role="tabpanel">
+            <div class="changelog-content">
+                {{ with .GetPage "android" }}{{ .Content }}{{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+function switchTab(e, tabId) {
+    document.querySelectorAll('.tab').forEach(function(t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+    });
+    document.querySelectorAll('.tab-panel').forEach(function(p) {
+        p.classList.remove('active');
+    });
+    e.currentTarget.classList.add('active');
+    e.currentTarget.setAttribute('aria-selected', 'true');
+    document.getElementById(tabId).classList.add('active');
+}
+</script>
+{{ end }}

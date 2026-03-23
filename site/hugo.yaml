@@ -1,0 +1,53 @@
+baseURL: "https://meshsat.net/"
+languageCode: "en-us"
+title: "MeshSat — One gateway. Any transport."
+params:
+  description: "Unified routing across mesh, satellite, and IP networks. Policy-driven gateway for Meshtastic, Iridium, Astrocast, cellular, ZigBee, APRS, TAK, and more."
+  author: "Nuclear Lighters Inc."
+  contact_email: "hello@meshsat.net"
+  github: "https://github.com/cubeos-app/meshsat"
+  hub_url: "https://hub.meshsat.net"
+  docs_url: "https://docs.meshsat.net"
+  install_url: "https://get.meshsat.net"
+menu:
+  main:
+    - name: "Features"
+      url: "/#features"
+      weight: 1
+    - name: "Transports"
+      url: "/#transports"
+      weight: 2
+    - name: "Hardware"
+      url: "/#hardware"
+      weight: 3
+    - name: "Install"
+      url: "/install/"
+      weight: 4
+    - name: "Changelog"
+      url: "/changelog/"
+      weight: 5
+    - name: "Docs"
+      url: "https://docs.meshsat.net"
+      weight: 6
+      params:
+        external: true
+    - name: "Hub"
+      url: "https://hub.meshsat.net"
+      weight: 7
+      params:
+        external: true
+        highlight: true
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: dracula
+enableRobotsTXT: true
+minify:
+  disableHTML: false
+  minifyOutput: true
+  tdewolff:
+    html:
+      keepComments: true
+      keepWhitespace: false

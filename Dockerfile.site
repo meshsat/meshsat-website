@@ -1,0 +1,5 @@
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+
+COPY site/public/ /usr/share/nginx/html/
+COPY nginx-site.conf /etc/nginx/nginx.conf

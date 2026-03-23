@@ -1,0 +1,6 @@
+{{ if not hugo.IsServer }}
+{{ with .Site.Params.umami_website_id }}
+<script defer src="{{ $.Site.Params.umami_url }}/script.js"
+  data-website-id="{{ . }}"></script>
+{{ end }}
+{{ end }}

@@ -1,0 +1,5 @@
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+
+COPY install/ /usr/share/nginx/html/
+COPY nginx-install.conf /etc/nginx/nginx.conf
