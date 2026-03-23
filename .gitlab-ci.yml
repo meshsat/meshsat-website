@@ -12,9 +12,9 @@ variables:
   HUGO_IMAGE: "registry-gitlab.nuclearlighters.net/infrastructure/nllei01/production/hugo-runner:1.4"
   NODE_IMAGE: "node:20-alpine"
   BASE_IMAGE: "registry-gitlab.nuclearlighters.net/infrastructure/nllei01/production/cubeos-nginx-base:latest"
-  GHCR_SITE: "ghcr.io/cubeos-app/meshsat-website"
-  GHCR_DOCS: "ghcr.io/cubeos-app/meshsat-docs"
-  GHCR_INSTALL: "ghcr.io/cubeos-app/meshsat-install"
+  GHCR_SITE: "ghcr.io/papadopouloskyriakos/meshsat-website"
+  GHCR_DOCS: "ghcr.io/papadopouloskyriakos/meshsat-docs"
+  GHCR_INSTALL: "ghcr.io/papadopouloskyriakos/meshsat-releases"
   AWX_HOST: "https://awx.nuclearlighters.net"
 
 # -----------------------------------------------------------------------------
