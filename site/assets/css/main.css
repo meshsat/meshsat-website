@@ -99,10 +99,6 @@ img {
     padding: var(--space-4xl) 0 var(--space-4xl);
 }
 
-.section + .section {
-    padding-top: var(--space-4xl);
-}
-
 .section-title {
     font-family: var(--font-display);
     font-size: 2rem;
@@ -1525,6 +1521,239 @@ img {
     display: block;
 }
 
+/* ---------- Hero label ---------- */
+.hero-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+}
+
+/* ---------- Architecture Diagram ---------- */
+.diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: var(--space-2xl) 0;
+    overflow-x: auto;
+}
+
+.diagram-inputs,
+.diagram-outputs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.diagram-arrows-in,
+.diagram-arrows-out {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+.diagram-arrows-in .diagram-arrow,
+.diagram-arrows-out .diagram-arrow {
+    padding: 0.4rem 0;
+    opacity: 0.5;
+}
+
+.diagram-node {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--color-bg-card);
+    white-space: nowrap;
+    text-align: center;
+}
+
+.diagram-center {
+    flex-shrink: 0;
+}
+
+.diagram-gateway {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    background: var(--color-primary-glow);
+    text-align: center;
+}
+
+.diagram-gateway-label {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.diagram-gateway-sub {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    max-width: 140px;
+    line-height: 1.4;
+}
+
+/* ---------- Flow Example ---------- */
+.flow-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+}
+
+.flow-scenario h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.flow-desc {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+}
+
+.flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.flow-step {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+}
+
+.flow-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.flow-step-content strong {
+    display: block;
+    margin-bottom: 0.15rem;
+}
+
+.flow-step-content p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.flow-note {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* ---------- Cost Comparison ---------- */
+.cost-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    max-width: 800px;
+    margin: 0 auto var(--space-xl);
+}
+
+.cost-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+}
+
+.cost-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-xs);
+}
+
+.cost-desc {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-lg);
+}
+
+.cost-card ul {
+    list-style: none;
+}
+
+.cost-card li {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.cost-card li:last-child {
+    border-bottom: none;
+}
+
+.cost-meshsat {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 20px var(--color-primary-glow);
+}
+
+.cost-footnote {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ---------- Not For ---------- */
+.not-for-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.not-for-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+}
+
+.not-for-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-warning);
+}
+
+.not-for-card p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
 /* Hero photo */
 .hero-photo {
     margin-top: var(--space-2xl);
@@ -1881,10 +2110,31 @@ img {
         grid-template-columns: 1fr;
     }
 
-    .screenshots-grid {
-        grid-template-columns: 1fr;
+    .diagram {
+        flex-direction: column;
     }
 
+    .diagram-arrows-in,
+    .diagram-arrows-out {
+        flex-direction: row;
+    }
+
+    .diagram-inputs,
+    .diagram-outputs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .diagram-gateway {
+        width: 150px;
+        height: 150px;
+    }
+
+    .cost-grid,
+    .not-for-grid,
+    .use-cases-grid,
+    .screenshots-grid,
     .hardware-grid {
         grid-template-columns: 1fr;
     }
