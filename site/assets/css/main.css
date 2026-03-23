@@ -816,7 +816,7 @@ img {
     border-radius: var(--radius-xl);
     max-height: 660px;
     object-fit: cover;
-    object-position: center 70%;
+    object-position: center 90%;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -2209,7 +2209,7 @@ img {
     border-radius: var(--radius-xl);
     max-height: 660px;
     object-fit: cover;
-    object-position: center 70%;
+    object-position: center 90%;
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
     border: 1px solid var(--color-border);
     transition: all 0.3s;
