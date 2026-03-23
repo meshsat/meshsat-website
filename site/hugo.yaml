@@ -3,7 +3,7 @@ languageCode: "en-us"
 title: "MeshSat — One gateway. Any transport."
 params:
   description: "Unified routing across mesh, satellite, and IP networks. Policy-driven gateway for Meshtastic, Iridium, Astrocast, cellular, ZigBee, APRS, TAK, and more."
-  author: "Nuclear Lighters Inc."
+  author: "MeshSat"
   contact_email: "hello@meshsat.net"
   github: "https://github.com/cubeos-app/meshsat"
   hub_url: "https://hub.meshsat.net"

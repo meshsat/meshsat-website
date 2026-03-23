@@ -13,7 +13,7 @@ MeshSat Bridge is open-source software distributed under the GNU General Public 
 
 ### MeshSat Hub
 
-MeshSat Hub is a hosted service operated by Nuclear Lighters Inc. By using the Hub, you agree to:
+MeshSat Hub is a hosted service operated by MeshSat. By using the Hub, you agree to:
 
 - Use the service for lawful purposes only
 - Not interfere with other users or the service infrastructure
