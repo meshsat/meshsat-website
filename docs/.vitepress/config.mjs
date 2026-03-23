@@ -114,7 +114,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Apache 2.0 Licensed',
+      message: 'GPLv3 Licensed',
       copyright: 'Copyright © 2026 Nuclear Lighters Inc.'
     },
 
