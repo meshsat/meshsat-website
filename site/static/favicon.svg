@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Satellite dish base -->
+  <path d="M12 26 L16 12 L20 26" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Dish -->
+  <path d="M6 14 Q16 2 26 14" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round"/>
+  <!-- Signal waves -->
+  <path d="M21 10 Q24.5 6.5 28 10" fill="none" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M23 6 Q27.5 2 32 6" fill="none" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <!-- Feed point -->
+  <circle cx="16" cy="12" r="2" fill="#2dd4bf"/>
+</svg>

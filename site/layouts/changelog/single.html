@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="section changelog-page">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        <p class="section-subtitle">{{ .Description }}</p>
+
+        <div class="changelog-nav">
+            <a href="/changelog/">All</a>
+            {{ range .Parent.Pages }}
+            <a href="{{ .RelPermalink }}" class="{{ if eq $.RelPermalink .RelPermalink }}active{{ end }}">{{ .Title }}</a>
+            {{ end }}
+        </div>
+
+        <div class="changelog-content">
+            {{ .Content }}
+        </div>
+    </div>
+</section>
+{{ end }}

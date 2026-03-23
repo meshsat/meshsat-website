@@ -1,0 +1,29 @@
+{{ define "title" }}Page Not Found — {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section class="error-page">
+    <div class="container error-content">
+        <div class="error-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="120" height="120">
+                <!-- Satellite dish base -->
+                <ellipse cx="40" cy="64" rx="16" ry="5" fill="var(--color-primary)" opacity="0.2"/>
+                <path d="M32 60 L40 28 L48 60" fill="none" stroke="var(--color-primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+                <!-- Dish -->
+                <path d="M16 36 Q40 4 64 36" fill="none" stroke="var(--color-primary)" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+                <!-- Broken signal waves -->
+                <path d="M52 24 Q58 18 64 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" opacity="0.3" stroke-dasharray="4 4"/>
+                <path d="M56 16 Q64 8 72 16" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" opacity="0.15" stroke-dasharray="4 4"/>
+                <!-- Feed point -->
+                <circle cx="40" cy="28" r="4" fill="var(--color-primary)" opacity="0.5"/>
+                <!-- X mark over dish -->
+                <line x1="30" y1="20" x2="50" y2="46" stroke="var(--color-primary)" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+                <line x1="50" y1="20" x2="30" y2="46" stroke="var(--color-primary)" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+            </svg>
+        </div>
+        <h1 class="error-code">404</h1>
+        <p class="error-message">Signal lost</p>
+        <p class="error-detail">The page you're looking for doesn't exist or has been moved.</p>
+        <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+</section>
+{{ end }}
