@@ -814,7 +814,7 @@ img {
 
 .hardware-photo img {
     border-radius: var(--radius-xl);
-    max-height: 500px;
+    max-height: 600px;
     object-fit: cover;
     object-position: center 70%;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -2207,7 +2207,7 @@ img {
 
 .hardware-photo img {
     border-radius: var(--radius-xl);
-    max-height: 500px;
+    max-height: 600px;
     object-fit: cover;
     object-position: center 70%;
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
