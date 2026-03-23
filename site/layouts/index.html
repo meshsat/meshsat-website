@@ -548,21 +548,26 @@
 <section id="comparison" class="section section-alt">
     <div class="container">
         <h2 class="section-title">How MeshSat compares</h2>
-        <p class="section-subtitle">MeshSat is a software routing layer, not a mil-spec radio. The products below serve different markets — this table compares capability, not certification level.</p>
+        <p class="section-subtitle">Most off-grid communicators do one thing. MeshSat routes across all of them.</p>
 
         <div class="table-wrap">
             <table class="data-table comparison-table">
                 <thead>
-                    <tr><th>Feature</th><th class="highlight-col">MeshSat</th><th>goTenna Pro</th><th>Silvus StreamCaster</th><th>L3Harris Falcon</th></tr>
+                    <tr><th>Feature</th><th class="highlight-col">MeshSat</th><th>Garmin inReach</th><th>ACR Bivy</th><th>goTenna Pro X2</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Multi-transport</td><td class="highlight-col"><span class="check">&#10003;</span> 11 transports</td><td><span class="cross">&#10007;</span> Mesh only</td><td><span class="cross">&#10007;</span> MANET only</td><td><span class="partial">~</span> 2-3</td></tr>
-                    <tr><td>Satellite integration</td><td class="highlight-col"><span class="check">&#10003;</span> Iridium, Astrocast</td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td><td><span class="partial">~</span> Proprietary</td></tr>
+                    <tr><td>Transport count</td><td class="highlight-col"><span class="check">&#10003;</span> 11</td><td>1 (Iridium)</td><td>1 (Iridium)</td><td>1 (mesh)</td></tr>
+                    <tr><td>Multi-transport routing</td><td class="highlight-col"><span class="check">&#10003;</span></td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td></tr>
+                    <tr><td>Mesh networking</td><td class="highlight-col"><span class="check">&#10003;</span> LoRa + ZigBee</td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td><td><span class="check">&#10003;</span></td></tr>
+                    <tr><td>Satellite messaging</td><td class="highlight-col"><span class="check">&#10003;</span> Iridium + Astrocast</td><td><span class="check">&#10003;</span> Iridium</td><td><span class="check">&#10003;</span> Iridium</td><td><span class="cross">&#10007;</span></td></tr>
+                    <tr><td>Max satellite message</td><td class="highlight-col">100 KB (9704)</td><td>160 chars</td><td>160 chars</td><td>N/A</td></tr>
+                    <tr><td>Custom routing rules</td><td class="highlight-col"><span class="check">&#10003;</span> Policy engine</td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td></tr>
                     <tr><td>Open source</td><td class="highlight-col"><span class="check">&#10003;</span> GPLv3</td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td></tr>
-                    <tr><td>Self-hosted</td><td class="highlight-col"><span class="check">&#10003;</span></td><td><span class="cross">&#10007;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
-                    <tr><td>Policy routing</td><td class="highlight-col"><span class="check">&#10003;</span> Rules engine</td><td><span class="cross">&#10007;</span></td><td><span class="partial">~</span> Basic</td><td><span class="partial">~</span> Military</td></tr>
-                    <tr><td>Web dashboard</td><td class="highlight-col"><span class="check">&#10003;</span> 13 views</td><td><span class="partial">~</span> Mobile app</td><td><span class="check">&#10003;</span></td><td><span class="cross">&#10007;</span></td></tr>
-                    <tr><td>Price point</td><td class="highlight-col">Free / $19+</td><td>$5,000+</td><td>$10,000+</td><td>$25,000+</td></tr>
+                    <tr><td>Self-hosted / no cloud</td><td class="highlight-col"><span class="check">&#10003;</span></td><td><span class="cross">&#10007;</span> Garmin cloud</td><td><span class="cross">&#10007;</span> ACR cloud</td><td><span class="partial">~</span> Relay only</td></tr>
+                    <tr><td>API / integrations</td><td class="highlight-col"><span class="check">&#10003;</span> 280+ endpoints</td><td><span class="partial">~</span> MapShare</td><td><span class="cross">&#10007;</span></td><td><span class="partial">~</span> SDK</td></tr>
+                    <tr><td>Web dashboard</td><td class="highlight-col"><span class="check">&#10003;</span> 13 views</td><td><span class="cross">&#10007;</span> App only</td><td><span class="cross">&#10007;</span> App only</td><td><span class="cross">&#10007;</span> App only</td></tr>
+                    <tr><td>Subscription required</td><td class="highlight-col"><span class="check">No</span></td><td><span class="cross">Yes</span> $15-65/mo</td><td><span class="cross">Yes</span> $20-50/mo</td><td><span class="cross">Yes</span></td></tr>
+                    <tr><td>Hardware cost</td><td class="highlight-col">~$150-400 (DIY)</td><td>$350-600</td><td>$300</td><td>$2,000+</td></tr>
                 </tbody>
             </table>
         </div>
