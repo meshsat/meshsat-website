@@ -1449,6 +1449,66 @@ img {
     display: block;
 }
 
+/* Hero photo */
+.hero-photo {
+    margin-top: var(--space-2xl);
+    text-align: center;
+}
+
+.hero-photo img {
+    border-radius: var(--radius-xl);
+    max-height: 400px;
+    object-fit: cover;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .hero-photo img {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* Screenshots */
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+}
+
+.screenshot-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.screenshot-card:hover {
+    border-color: var(--color-border-light);
+}
+
+.screenshot-card img {
+    width: 100%;
+    display: block;
+}
+
+.screenshot-card p {
+    padding: var(--space-md) var(--space-lg);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+/* Hardware photo */
+.hardware-photo {
+    text-align: center;
+    margin-top: var(--space-2xl);
+}
+
+.hardware-photo img {
+    border-radius: var(--radius-xl);
+    max-height: 500px;
+    object-fit: cover;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
 /* Page title */
 .page-title {
     text-align: center;
@@ -1620,6 +1680,10 @@ img {
     }
 
     .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .screenshots-grid {
         grid-template-columns: 1fr;
     }
 
