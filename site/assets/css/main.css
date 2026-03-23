@@ -297,33 +297,49 @@ img {
     font-size: 1rem;
 }
 
-/* ---------- Hero (split layout) ---------- */
+/* ---------- Hero (slideshow background) ---------- */
 .hero {
     position: relative;
     min-height: 90vh;
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding: var(--space-4xl) 0;
 }
 
-.hero-bg {
+.hero-slideshow {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(45, 212, 191, 0.08) 0%, transparent 60%);
 }
 
-[data-theme="light"] .hero-bg {
-    background: radial-gradient(ellipse at 70% 50%, rgba(20, 184, 166, 0.06) 0%, transparent 60%);
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
 
-.hero-split {
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10, 10, 11, 0.92) 0%, rgba(10, 10, 11, 0.85) 40%, rgba(10, 10, 11, 0.7) 100%);
+    z-index: 1;
+}
+
+[data-theme="light"] .hero-overlay {
+    background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(248, 249, 250, 0.9) 40%, rgba(248, 249, 250, 0.8) 100%);
+}
+
+.hero-content {
     position: relative;
     z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-3xl);
-    align-items: center;
+    max-width: 720px;
+    padding: var(--space-4xl) 0;
 }
 
 .hero-title {
@@ -358,27 +374,16 @@ img {
     gap: var(--space-sm);
     padding: var(--space-sm) var(--space-md);
     margin-bottom: 0;
+    background: rgba(10, 10, 11, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+[data-theme="light"] .hero-install .code-block-inline {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .hero-install .code-block-inline .code-block-body {
     padding: 0;
-}
-
-.hero-image {
-    display: flex;
-    justify-content: center;
-}
-
-.hero-image img {
-    border-radius: var(--radius-xl);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    max-height: 480px;
-    width: 100%;
-    object-fit: cover;
-}
-
-[data-theme="light"] .hero-image img {
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
 /* ---------- How It Works ---------- */
@@ -2237,33 +2242,8 @@ img {
         grid-template-columns: 1fr;
     }
 
-    .hero-split {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
     .hero-title {
         font-size: 2.5rem;
-    }
-
-    .hero-actions {
-        justify-content: center;
-    }
-
-    .hero-install {
-        justify-content: center;
-    }
-
-    .hero-install .code-block-inline {
-        margin: 0 auto;
-    }
-
-    .hero-image {
-        order: -1;
-    }
-
-    .hero-image img {
-        max-height: 300px;
     }
 
     .steps-grid {

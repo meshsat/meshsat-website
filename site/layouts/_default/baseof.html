@@ -49,6 +49,11 @@
     <!-- Favicon -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
+    <!-- Preload first hero image -->
+    {{ if .IsHome }}
+    <link rel="preload" href="/images/hero/field-comms.webp" as="image" fetchpriority="high">
+    {{ end }}
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
