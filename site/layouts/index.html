@@ -116,7 +116,7 @@
                     </div>
                 </div>
             </div>
-            <p class="flow-note">All of this happens in under a second. Rules, failover priority, and transform chains are configured per interface.</p>
+            <p class="flow-note">MeshSat dispatches across all routes in under a second. Satellite delivery depends on constellation visibility and queue depth. Rules, failover priority, and transform chains are configured per interface.</p>
         </div>
     </div>
 </section>
@@ -262,7 +262,7 @@
                     <tr><td rowspan="3"><span class="category-label">Satellite</span></td><td>Iridium SBD 9603N</td><td><span class="badge badge-stable">Stable</span></td></tr>
                     <tr><td>Iridium IMT 9704</td><td><span class="badge badge-stable">Stable</span></td></tr>
                     <tr><td>Astrocast LEO</td><td><span class="badge badge-beta">Beta</span></td></tr>
-                    <tr><td><span class="category-label">Cellular</span></td><td>SMS / Data (A7670E, SIM7600G)</td><td><span class="badge badge-stable">Stable</span></td></tr>
+                    <tr><td><span class="category-label">Cellular</span></td><td>SMS / Data (A7670E)</td><td><span class="badge badge-stable">Stable</span></td></tr>
                     <tr><td><span class="category-label">Wireless</span></td><td>ZigBee 3.0 (CC2652P)</td><td><span class="badge badge-beta">Beta</span></td></tr>
                     <tr><td rowspan="4"><span class="category-label">IP / Network</span></td><td>MQTT</td><td><span class="badge badge-stable">Stable</span></td></tr>
                     <tr><td>Webhooks</td><td><span class="badge badge-stable">Stable</span></td></tr>
@@ -279,7 +279,7 @@
 <section id="screenshots" class="section">
     <div class="container">
         <h2 class="section-title">See it in action</h2>
-        <p class="section-subtitle">Embedded Vue.js dashboard with 13 views. Runs on the device, no cloud required.</p>
+        <p class="section-subtitle">Embedded Vue.js dashboard with multiple views. Runs on the device, no cloud required.</p>
         <div class="screenshots-grid">
             <div class="screenshot-card">
                 <img src="/images/screenshots/bridge-dashboard.png" alt="MeshSat Dashboard — Iridium signal, MQTT traffic, cellular status" loading="lazy">
@@ -431,7 +431,7 @@
                 <p class="hardware-desc">Waterproof Pelican case with all transports.</p>
                 <ul class="bom-list">
                     <li><span class="bom-name">Raspberry Pi 5 (8 GB)</span><span class="bom-note">Gateway host</span></li>
-                    <li><span class="bom-name">Heltec LoRa V4</span><span class="bom-note">Meshtastic (915 MHz)</span></li>
+                    <li><span class="bom-name">Heltec LoRa V4</span><span class="bom-note">Meshtastic (868/915 MHz by region)</span></li>
                     <li><span class="bom-name">RockBLOCK 9603</span><span class="bom-note">Iridium SBD satellite</span></li>
                     <li><span class="bom-name">LILYGO T-Call A7670</span><span class="bom-note">4G LTE cellular</span></li>
                     <li><span class="bom-name">INIU 25000mAh</span><span class="bom-note">USB-C PD power</span></li>
@@ -444,7 +444,7 @@
                     <li><span class="bom-name">BananaPi BPI-M4 Zero</span><span class="bom-note">ARM64 (4 GB + eMMC)</span></li>
                     <li><span class="bom-name">XIAO ESP32-S3 + SX1262</span><span class="bom-note">Meshtastic radio</span></li>
                     <li><span class="bom-name">RockBLOCK 9704</span><span class="bom-note">Iridium IMT (100 KB)</span></li>
-                    <li><span class="bom-name">Anker Prime 20000mAh</span><span class="bom-note">200W USB-C power</span></li>
+                    <li><span class="bom-name">PiSugar 3 + 5000mAh LiPo</span><span class="bom-note">UPS HAT with battery</span></li>
                 </ul>
             </div>
         </div>
@@ -532,13 +532,13 @@
             </div>
             <div class="pricing-card">
                 <h3 class="pricing-name">Field</h3>
-                <div class="pricing-price">$19<span class="pricing-period">/mo</span></div>
+                <div class="pricing-price">&euro;19<span class="pricing-period">/mo</span></div>
                 <ul class="pricing-features"><li>25 devices</li><li>3 tenants</li><li>30-day retention</li><li>Prioritized issues</li></ul>
                 <a href="{{ .Site.Params.hub_url }}" class="btn btn-outline" target="_blank" rel="noopener">Subscribe</a>
             </div>
             <div class="pricing-card pricing-card-featured">
                 <h3 class="pricing-name">Expedition</h3>
-                <div class="pricing-price">$49<span class="pricing-period">/mo</span></div>
+                <div class="pricing-price">&euro;49<span class="pricing-period">/mo</span></div>
                 <ul class="pricing-features"><li>100 devices</li><li>Unlimited tenants</li><li>90-day retention</li><li>Email support (48h)</li></ul>
                 <a href="{{ .Site.Params.hub_url }}" class="btn btn-primary" target="_blank" rel="noopener">Subscribe</a>
             </div>
@@ -556,7 +556,7 @@
 <section id="comparison" class="section section-alt">
     <div class="container">
         <h2 class="section-title">How MeshSat compares</h2>
-        <p class="section-subtitle">Most off-grid communicators do one thing. MeshSat routes across all of them.</p>
+        <p class="section-subtitle">Most off-grid communicators do one thing. MeshSat routes across all of them. MeshSat competes on flexibility and openness, not certification — it is pre-release open-source software, not a certified commercial product.</p>
 
         <div class="table-wrap">
             <table class="data-table comparison-table">
@@ -573,7 +573,7 @@
                     <tr><td>Open source</td><td class="highlight-col"><span class="check">&#10003;</span> GPLv3</td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td></tr>
                     <tr><td>Self-hosted / no cloud</td><td class="highlight-col"><span class="check">&#10003;</span></td><td><span class="cross">&#10007;</span> Garmin cloud</td><td><span class="cross">&#10007;</span> ACR cloud</td><td><span class="partial">~</span> Relay only</td></tr>
                     <tr><td>API / integrations</td><td class="highlight-col"><span class="check">&#10003;</span> 280+ endpoints</td><td><span class="partial">~</span> MapShare</td><td><span class="cross">&#10007;</span></td><td><span class="partial">~</span> SDK</td></tr>
-                    <tr><td>Web dashboard</td><td class="highlight-col"><span class="check">&#10003;</span> 13 views</td><td><span class="cross">&#10007;</span> App only</td><td><span class="cross">&#10007;</span> App only</td><td><span class="cross">&#10007;</span> App only</td></tr>
+                    <tr><td>Web dashboard</td><td class="highlight-col"><span class="check">&#10003;</span></td><td><span class="cross">&#10007;</span> App only</td><td><span class="cross">&#10007;</span> App only</td><td><span class="cross">&#10007;</span> App only</td></tr>
                     <tr><td>Subscription required</td><td class="highlight-col"><span class="check">No</span></td><td><span class="cross">Yes</span> $15-65/mo</td><td><span class="cross">Yes</span> $20-50/mo</td><td><span class="cross">Yes</span></td></tr>
                     <tr><td>Hardware cost</td><td class="highlight-col">~$150-400 (DIY)</td><td>$350-600</td><td>$300</td><td>$2,000+</td></tr>
                 </tbody>

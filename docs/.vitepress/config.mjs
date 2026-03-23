@@ -115,7 +115,7 @@ export default defineConfig({
 
     footer: {
       message: 'GPLv3 Licensed',
-      copyright: 'Copyright © 2026 Nuclear Lighters Inc.'
+      copyright: 'Copyright © 2026 MeshSat'
     },
 
     search: {

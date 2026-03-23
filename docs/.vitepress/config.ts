@@ -76,7 +76,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Made by Nuclear Lighters Inc.',
+      message: 'Made by MeshSat',
     },
 
     editLink: {
