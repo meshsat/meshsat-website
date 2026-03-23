@@ -1,42 +1,68 @@
 {{ define "main" }}
 
-<!-- Hero -->
+<!-- Hero — split layout: text left, field kit photo right -->
 <section class="hero">
-    <div class="container hero-inner">
-        <h1 class="hero-title">One gateway.<br>Any transport.</h1>
-        <p class="hero-subtitle">Unified routing across mesh, satellite, and IP networks.</p>
-
-        <div class="hero-install">
-            <div class="code-block">
-                <div class="code-block-header">
-                    <span class="code-block-label">Install MeshSat Bridge</span>
+    <div class="hero-bg"></div>
+    <div class="container hero-split">
+        <div class="hero-text">
+            <h1 class="hero-title">Any network.<br><span class="highlight">One gateway.</span></h1>
+            <p class="hero-subtitle">Unified routing across mesh, satellite, and IP networks. Connect Meshtastic radios to Iridium satellites, cellular modems, and tactical data channels — from a single device.</p>
+            <div class="hero-actions">
+                <a href="/install/" class="btn btn-primary">Install MeshSat</a>
+                <a href="{{ .Site.Params.hub_url }}" class="btn btn-outline" target="_blank" rel="noopener">Try Hub Free</a>
+            </div>
+            <div class="hero-install">
+                <div class="code-block code-block-inline">
+                    <pre class="code-block-body"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
                     <button class="copy-btn" onclick="copyCode(this)">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                         <span class="copy-text">Copy</span>
                     </button>
                 </div>
-                <pre class="code-block-body"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
             </div>
         </div>
-
-        <div class="hero-actions">
-            <a href="{{ .Site.Params.github }}" class="btn btn-secondary" target="_blank" rel="noopener">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                View on GitHub
-            </a>
+        <div class="hero-image">
+            <img src="/images/meshsat_field_kit.jpg" alt="MeshSat field kit in waterproof Pelican case" loading="eager">
         </div>
+    </div>
+</section>
 
-        <div class="hero-photo">
-            <img src="/images/meshsat_compact_kit.jpg" alt="MeshSat compact field kit — BananaPi, RockBLOCK 9704, XIAO ESP32-S3" loading="eager">
+<!-- How It Works — 3 steps -->
+<section class="section how-it-works">
+    <div class="container">
+        <h2 class="section-title">How it works</h2>
+        <p class="section-subtitle">Three steps to a multi-transport gateway.</p>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Plug in devices</h3>
+                <p>Connect your Meshtastic radio, satellite modem, or cellular module via USB. MeshSat auto-detects hardware via VID:PID and protocol probing.</p>
+            </div>
+            <div class="step-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Define routing rules</h3>
+                <p>Set access policies, failover groups, and transform pipelines from the web dashboard. Control which messages go where, at what cost.</p>
+            </div>
+            <div class="step-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Messages flow</h3>
+                <p>The dispatcher routes messages across transports with failover, compression, encryption, and delivery tracking. No cloud needed.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Transports -->
-<section id="transports" class="section">
+<section id="transports" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">Transports</h2>
-        <p class="section-subtitle">11 transport backends, one unified routing layer.</p>
+        <h2 class="section-title">11+ transports</h2>
+        <p class="section-subtitle">Every transport is a first-class interface with its own MTU, cost model, and transform pipeline.</p>
 
         <div class="table-wrap">
             <table class="data-table">
@@ -68,12 +94,12 @@
                     </tr>
                     <tr>
                         <td><span class="category-label">Cellular</span></td>
-                        <td>SMS/Data</td>
+                        <td>SMS / Data (A7670E, SIM7600G)</td>
                         <td><span class="badge badge-stable">Stable</span></td>
                     </tr>
                     <tr>
                         <td><span class="category-label">Wireless</span></td>
-                        <td>ZigBee 3.0</td>
+                        <td>ZigBee 3.0 (CC2652P)</td>
                         <td><span class="badge badge-beta">Beta</span></td>
                     </tr>
                     <tr>
@@ -86,16 +112,16 @@
                         <td><span class="badge badge-stable">Stable</span></td>
                     </tr>
                     <tr>
-                        <td>APRS</td>
+                        <td>APRS (Direwolf KISS)</td>
                         <td><span class="badge badge-beta">Beta</span></td>
                     </tr>
                     <tr>
-                        <td>TAK/CoT</td>
+                        <td>TAK / Cursor-on-Target</td>
                         <td><span class="badge badge-beta">Beta</span></td>
                     </tr>
                     <tr>
-                        <td><span class="category-label">Serial</span></td>
-                        <td>Direct Serial</td>
+                        <td><span class="category-label">Routing</span></td>
+                        <td>Reticulum TCP (HDLC framed)</td>
                         <td><span class="badge badge-stable">Stable</span></td>
                     </tr>
                 </tbody>
@@ -105,10 +131,10 @@
 </section>
 
 <!-- Features -->
-<section id="features" class="section section-alt">
+<section id="features" class="section">
     <div class="container">
-        <h2 class="section-title">Features</h2>
-        <p class="section-subtitle">Everything you need to route messages across any network.</p>
+        <h2 class="section-title">Built for the field</h2>
+        <p class="section-subtitle">Everything you need to maintain communications when infrastructure fails.</p>
 
         <div class="features-grid">
             <div class="feature-card">
@@ -118,7 +144,7 @@
                     </svg>
                 </div>
                 <h3>Policy-Driven Routing</h3>
-                <p>AccessEvaluator rules engine with source/dest filtering, rate limiting, and failover groups.</p>
+                <p>Access rules engine with object groups, rate limiting, failover resolution, and implicit deny.</p>
             </div>
 
             <div class="feature-card">
@@ -129,7 +155,7 @@
                     </svg>
                 </div>
                 <h3>Transform Pipeline</h3>
-                <p>Per-message transforms: zstd compression, SMAZ2 lossless, MSVQ-SC lossy semantic, AES-256-GCM encryption.</p>
+                <p>Per-interface egress/ingress transforms: zstd, SMAZ2, MSVQ-SC compression + AES-256-GCM encryption.</p>
             </div>
 
             <div class="feature-card">
@@ -142,7 +168,7 @@
                     </svg>
                 </div>
                 <h3>USB Hot-Swap</h3>
-                <p>DeviceSupervisor with VID:PID identification, automatic protocol probing, claim-based port management.</p>
+                <p>DeviceSupervisor with VID:PID identification cascade, automatic protocol probing, and claim-based port management.</p>
             </div>
 
             <div class="feature-card">
@@ -152,8 +178,8 @@
                         <polyline points="12 6 12 12 16 14"/>
                     </svg>
                 </div>
-                <h3>Pass Scheduling</h3>
-                <p>SGP4 TLE-driven satellite pass prediction with 4-mode state machine for power-efficient operation.</p>
+                <h3>Satellite Pass Prediction</h3>
+                <p>SGP4/TLE propagation with 4-mode state machine (Idle, PreWake, Active, PostPass) for power-efficient operation.</p>
             </div>
 
             <div class="feature-card">
@@ -164,21 +190,37 @@
                         <line x1="12" y1="3" x2="12" y2="15"/>
                     </svg>
                 </div>
-                <h3>Dead Letter Queue</h3>
-                <p>ISU-aware backoff, automatic retry with exponential backoff, no message loss.</p>
+                <h3>3-Tier Compression</h3>
+                <p>SMAZ2 (lossless, &lt;1ms), llama-zip (LLM-based, ~200ms), MSVQ-SC (lossy semantic, rate-adaptive).</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                        <circle cx="9" cy="7" r="4"/>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
                     </svg>
                 </div>
-                <h3>Multi-Tenant Hub</h3>
-                <p>Hub SaaS platform with OAuth2/OIDC, RBAC, API keys, tenant isolation, NATS/MQTT bus.</p>
+                <h3>Field Intelligence</h3>
+                <p>Dead man's switch, polygon geofences, channel health scoring, satellite burst queue, and mesh topology visualization.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Screenshots -->
+<section id="screenshots" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">See it in action</h2>
+        <p class="section-subtitle">Embedded Vue.js dashboard with 13 views. Runs on the device, no cloud required.</p>
+        <div class="screenshots-grid">
+            <div class="screenshot-card">
+                <img src="/images/screenshots/dashboard.png" alt="MeshSat Dashboard" loading="lazy">
+                <p>Dashboard — live transport status and message flow</p>
+            </div>
+            <div class="screenshot-card">
+                <img src="/images/screenshots/passes.png" alt="MeshSat Pass Predictor" loading="lazy">
+                <p>Pass Predictor — satellite visibility windows</p>
             </div>
         </div>
     </div>
@@ -187,67 +229,85 @@
 <!-- Hardware -->
 <section id="hardware" class="section">
     <div class="container">
-        <h2 class="section-title">Hardware</h2>
-        <p class="section-subtitle">Field kit bill of materials.</p>
+        <h2 class="section-title">Field-proven hardware</h2>
+        <p class="section-subtitle">Two reference kits, or build your own from any supported components.</p>
 
-        <div class="hardware-list">
+        <div class="hardware-grid">
             <div class="hardware-card">
+                <h3>Full Field Kit</h3>
+                <p class="hardware-desc">Waterproof Pelican case with all transports.</p>
                 <ul class="bom-list">
-                    <li>
-                        <span class="bom-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                        </span>
-                        <span class="bom-name">Raspberry Pi 4 (2GB+)</span>
-                    </li>
-                    <li>
-                        <span class="bom-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-                        </span>
-                        <span class="bom-name">Heltec LoRa V4 or T-Echo</span>
-                        <span class="bom-note">Meshtastic radio</span>
-                    </li>
-                    <li>
-                        <span class="bom-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                        </span>
-                        <span class="bom-name">RockBLOCK 9603N or 9704</span>
-                        <span class="bom-note">Iridium satellite modem</span>
-                    </li>
-                    <li>
-                        <span class="bom-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-                        </span>
-                        <span class="bom-name">SONOFF ZigBee CC2652P</span>
-                        <span class="bom-note">Optional</span>
-                    </li>
-                    <li>
-                        <span class="bom-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="15" x2="22" y2="15"/><line x1="2" y1="9" x2="4" y2="9"/><line x1="2" y1="15" x2="4" y2="15"/></svg>
-                        </span>
-                        <span class="bom-name">USB hub, power supply, weatherproof case</span>
-                    </li>
+                    <li><span class="bom-name">Raspberry Pi 5 (8 GB)</span><span class="bom-note">Gateway host</span></li>
+                    <li><span class="bom-name">Heltec LoRa V4</span><span class="bom-note">Meshtastic (915 MHz)</span></li>
+                    <li><span class="bom-name">RockBLOCK 9603</span><span class="bom-note">Iridium SBD satellite</span></li>
+                    <li><span class="bom-name">LILYGO T-Call A7670</span><span class="bom-note">4G LTE cellular</span></li>
+                    <li><span class="bom-name">INIU 25000mAh</span><span class="bom-note">USB-C PD power</span></li>
+                </ul>
+            </div>
+            <div class="hardware-card">
+                <h3>Compact Kit</h3>
+                <p class="hardware-desc">Pocket-sized, high-bandwidth satellite.</p>
+                <ul class="bom-list">
+                    <li><span class="bom-name">BananaPi BPI-M4 Zero</span><span class="bom-note">ARM64 (4 GB + eMMC)</span></li>
+                    <li><span class="bom-name">XIAO ESP32-S3 + SX1262</span><span class="bom-note">Meshtastic radio</span></li>
+                    <li><span class="bom-name">RockBLOCK 9704</span><span class="bom-note">Iridium IMT (100 KB)</span></li>
+                    <li><span class="bom-name">Anker Prime 20000mAh</span><span class="bom-note">200W USB-C power</span></li>
                 </ul>
             </div>
         </div>
         <div class="hardware-photo">
-            <img src="/images/meshsat_field_kit.jpg" alt="MeshSat field kit in waterproof case" loading="lazy">
+            <img src="/images/meshsat_compact_kit.jpg" alt="MeshSat compact kit — BananaPi, RockBLOCK 9704, XIAO ESP32-S3" loading="lazy">
         </div>
     </div>
 </section>
 
-<!-- Screenshots -->
-<section id="screenshots" class="section section-alt">
+<!-- Use Cases -->
+<section id="use-cases" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">Dashboard</h2>
-        <p class="section-subtitle">Embedded Vue.js dashboard with 13 views. Runs on the device, no cloud required.</p>
-        <div class="screenshots-grid">
-            <div class="screenshot-card">
-                <img src="/images/screenshots/dashboard.png" alt="MeshSat Dashboard — live status of all transports and message flow" loading="lazy">
-                <p>Dashboard — live transport status and message flow</p>
+        <h2 class="section-title">Who uses MeshSat</h2>
+        <p class="section-subtitle">From mountaintops to open ocean.</p>
+        <div class="use-cases-grid">
+            <div class="use-case-card">
+                <div class="use-case-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <h3>Search & Rescue</h3>
+                <p>SOS escalation chains, dead man's switch, real-time position tracking, TAK/CoT integration for ATAK-equipped teams.</p>
             </div>
-            <div class="screenshot-card">
-                <img src="/images/screenshots/passes.png" alt="MeshSat Pass Predictor — SGP4/TLE satellite visibility windows" loading="lazy">
-                <p>Pass Predictor — satellite visibility windows</p>
+            <div class="use-case-card">
+                <div class="use-case-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Humanitarian / NGO</h3>
+                <p>Low-cost, self-hosted communication for remote field operations. No vendor lock-in, no subscription fees for the Bridge.</p>
+            </div>
+            <div class="use-case-card">
+                <div class="use-case-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h3>Expedition & Research</h3>
+                <p>Satellite-backed data relay for remote sensor networks, wildlife tracking, weather stations, and glacier monitoring.</p>
+            </div>
+            <div class="use-case-card">
+                <div class="use-case-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                </div>
+                <h3>Maritime</h3>
+                <p>Ship-to-shore messaging via Iridium with LoRa mesh for inter-vessel coordination. Geofence alerts for exclusion zones.</p>
+            </div>
+            <div class="use-case-card">
+                <div class="use-case-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <h3>Emergency Preparedness</h3>
+                <p>Community mesh networks that stay connected when cell towers fail. Automatic failover from cellular to satellite.</p>
+            </div>
+            <div class="use-case-card">
+                <div class="use-case-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/></svg>
+                </div>
+                <h3>IoT / Remote Monitoring</h3>
+                <p>ZigBee sensor networks bridged to satellite for pipeline monitoring, agricultural sensing, or infrastructure telemetry.</p>
             </div>
         </div>
     </div>
@@ -257,7 +317,7 @@
 <section id="pricing" class="section">
     <div class="container">
         <h2 class="section-title">Pricing</h2>
-        <p class="section-subtitle">MeshSat Hub SaaS plans. Bridge is free and open source.</p>
+        <p class="section-subtitle">The Bridge is free and open source. The Hub manages fleets.</p>
 
         <div class="pricing-grid">
             <div class="pricing-card">
@@ -312,10 +372,10 @@
 </section>
 
 <!-- Comparison -->
-<section id="comparison" class="section">
+<section id="comparison" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">Comparison</h2>
-        <p class="section-subtitle">How MeshSat compares to enterprise alternatives.</p>
+        <h2 class="section-title">How MeshSat compares</h2>
+        <p class="section-subtitle">MeshSat is a gateway that routes across transports. Most alternatives are single-transport devices.</p>
 
         <div class="table-wrap">
             <table class="data-table comparison-table">
@@ -366,7 +426,7 @@
                     </tr>
                     <tr>
                         <td>Web dashboard</td>
-                        <td class="highlight-col"><span class="check">&#10003;</span></td>
+                        <td class="highlight-col"><span class="check">&#10003;</span> 13 views</td>
                         <td><span class="partial">~</span> Mobile app</td>
                         <td><span class="check">&#10003;</span></td>
                         <td><span class="cross">&#10007;</span></td>
@@ -387,20 +447,11 @@
 <!-- CTA -->
 <section class="section cta-section">
     <div class="container cta-inner">
-        <h2 class="section-title">Deploy your gateway</h2>
+        <h2 class="section-title">Ready to deploy?</h2>
         <p class="section-subtitle">Install MeshSat Bridge on any Linux machine in under two minutes.</p>
-
-        <div class="cta-install">
-            <div class="code-block">
-                <div class="code-block-header">
-                    <span class="code-block-label">Install</span>
-                    <button class="copy-btn" onclick="copyCode(this)">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                        <span class="copy-text">Copy</span>
-                    </button>
-                </div>
-                <pre class="code-block-body"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
-            </div>
+        <div class="cta-actions">
+            <a href="/install/" class="btn btn-primary btn-lg">Install Guide</a>
+            <a href="{{ .Site.Params.docs_url }}" class="btn btn-outline btn-lg" target="_blank" rel="noopener">Read the Docs</a>
         </div>
     </div>
 </section>
