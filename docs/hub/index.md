@@ -1,96 +1,77 @@
 # MeshSat Hub
 
-MeshSat Hub is the multi-tenant SaaS platform for managing fleets of MeshSat Bridge instances. It provides centralized authentication, tenant isolation, API key management, and aggregated monitoring across all gateways in an organization.
+MeshSat Hub is a multi-tenant fleet management platform for satellite-connected field devices. It ingests messages from Iridium, Astrocast, and Globalstar, provides a web dashboard with live mapping, and bridges to TAK, APRS-IS, webhooks, and push notifications.
 
-## Overview
+**Live at:** [hub.meshsat.net](https://hub.meshsat.net)
 
-While MeshSat Bridge is a standalone gateway that runs independently on a single device, Hub connects multiple Bridge instances into a managed fleet. Organizations can monitor all their gateways from a single dashboard, define routing policies centrally, and manage user access with fine-grained permissions.
+## How Hub differs from Bridge
 
-## Key Features
+| | Bridge | Hub |
+|---|--------|-----|
+| **Runs on** | Raspberry Pi / SBC | Server / cloud / Kubernetes |
+| **Devices** | Directly connected via USB | Managed remotely via API |
+| **Authentication** | None (local device) | OAuth2/OIDC, API keys, local accounts |
+| **Multi-tenancy** | No | Yes, with data isolation |
+| **Satellite access** | Direct serial (9603N, 9704) | Via Cloudloop/Astrocast/Globalstar APIs |
+| **Deployment** | Docker Compose (standalone) | Standalone, Cluster (Galera+NATS), Kubernetes |
+| **Database** | SQLite | SQLite (standalone) or MariaDB Galera (cluster) |
 
-### Multi-Tenant Architecture
+## Three deployment modes
 
-Hub isolates each organization (tenant) completely. Tenants share the platform infrastructure but cannot access each other's data, gateways, or configuration. Each tenant gets:
+### Standalone
+Single server. SQLite + Mosquitto MQTT. Best for development, edge deployments, or small teams.
 
-- Isolated message storage (per-tenant SQLite databases)
-- Separate API keys and user accounts
-- Independent routing policies and transport configuration
-- Dedicated NATS subjects for real-time messaging
+### Cluster
+Active-active high availability. MariaDB Galera for replicated storage, Redis for cluster-wide dedup and rate limiting, NATS JetStream for leader election and message bus. HAProxy in front.
 
-### Authentication
+### Kubernetes
+Helm charts with pod anti-affinity, StatefulSets for MariaDB and NATS, Kubernetes lease-based leader election, liveness/readiness probes.
 
-Hub supports multiple authentication methods:
+## Multi-constellation satellite routing
 
-- **OAuth2/OIDC** — Single sign-on with identity providers (Keycloak, Auth0, Google, etc.)
-- **API Keys** — Service-to-service authentication for Bridge-to-Hub communication
-- **Session tokens** — Browser-based dashboard access
+Hub routes messages through **Iridium**, **Astrocast**, and **Globalstar** — and picks the optimal backend per device.
 
-See [Authentication](/hub/authentication) for setup and configuration.
+**Routing strategies:**
+- **Available** — first constellation with connectivity
+- **Cheapest** — lowest cost per message
+- **Fastest** — Iridium preferred (lowest latency)
+- **Preferred** — per-device constellation preference
 
-### Gateway Management
+## Authentication & authorization
 
-Hub maintains a registry of all connected Bridge instances. Each gateway reports:
+**Four auth modes:**
+- `none` — development only
+- `token` — simple bearer token
+- `local` — built-in accounts with Argon2id password hashing, JWT sessions
+- `oidc` — external OAuth2/OIDC provider with JWKS verification and TLS cert pinning
 
-- Connection status and uptime
-- Transport health (which radios/modems are connected)
-- Message throughput and error rates
-- System metrics (CPU, memory, disk)
+**API keys** with RBAC roles (viewer/admin/owner), optional expiry, and usage tracking.
 
-### Centralized Policies
+**Tenant isolation** via JWT claims or headers. Enforcement is optional.
 
-Routing policies can be defined at the Hub level and pushed to all gateways in a tenant. This allows organizations to enforce consistent routing rules across their entire fleet without configuring each gateway individually.
+## Key features
 
-### API Keys
+- **60+ REST API endpoints** with Swagger documentation
+- **WebSocket event hub** for real-time dashboard updates
+- **SOS escalation chains** — multi-step notification (push → SMS → email → call)
+- **Dead man's switch** — alerts on missed device check-ins
+- **Geofencing** — polygon-based alerts with auto-escalation
+- **TAK/CoT gateway** — forward positions to OpenTAKServer
+- **APRS-IS IGate** — inject positions into amateur radio network
+- **Outbound webhooks** — fire on MO, SOS, position, MT status events
+- **Per-device rate limiting** — token bucket with burst, daily, and monthly caps
+- **Device config versioning** — YAML configs with full version history
+- **E2E encryption** — AES-256-GCM per-device keystores
+- **PGP email gateway** — encrypted email relay
+- **Tamper-evident audit log** — Ed25519 hash chain, verifiable integrity
+- **Backup/restore** — full state export/import with diff preview
+- **90+ notification backends** via Apprise + ntfy push
+- **Reticulum routing** across all satellite backends
+- **WireGuard VPN** peer management
+- **Tor hidden service** support
+- **MPTCP concentrator** for satellite + cellular link aggregation
+- **MSVQ-SC decoder** for Android semantic compression
 
-Hub issues scoped API keys for programmatic access. Keys can be restricted by:
+## Configuration
 
-- Tenant (which organization's data they can access)
-- Permissions (read, write, admin)
-- Expiration (time-limited or permanent)
-- IP allowlist (restrict to specific source IPs)
-
-See [API Keys](/hub/api-keys) for management and best practices.
-
-## Architecture
-
-```
-  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-  │  Bridge #1   │    │  Bridge #2   │    │  Bridge #3   │
-  │  (Field)     │    │  (Field)     │    │  (Field)     │
-  └──────┬───────┘    └──────┬───────┘    └──────┬───────┘
-         │                   │                   │
-         └───────────────────┼───────────────────┘
-                             │
-                    ┌────────▼────────┐
-                    │   MeshSat Hub   │
-                    │                 │
-                    │  ┌───────────┐  │
-                    │  │  NATS Bus │  │
-                    │  └───────────┘  │
-                    │  ┌───────────┐  │
-                    │  │  MariaDB  │  │
-                    │  │  Galera   │  │
-                    │  └───────────┘  │
-                    │  ┌───────────┐  │
-                    │  │  OAuth2   │  │
-                    │  │  /OIDC    │  │
-                    │  └───────────┘  │
-                    └─────────────────┘
-```
-
-## Deployment
-
-Hub is designed for server or cloud deployment. It requires:
-
-- MariaDB Galera cluster (or single MariaDB instance for small deployments)
-- NATS server for real-time messaging
-- OAuth2/OIDC identity provider
-- Reverse proxy (Nginx, Caddy, etc.) for TLS termination
-
-See [Tenants](/hub/tenants) for multi-tenant setup and configuration.
-
-## Next Steps
-
-- [Authentication](/hub/authentication) — Configure SSO and API authentication
-- [Tenants](/hub/tenants) — Set up and manage tenants
-- [API Keys](/hub/api-keys) — Create and manage API keys
+All settings use `HUB_*` environment variable prefix. See [Configuration reference](/reference/hub-configuration).
