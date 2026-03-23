@@ -1,6 +1,7 @@
 # Hugo output
 site/public/
 site/resources/
+site/.hugo_build.lock
 
 # VitePress output
 docs/.vitepress/dist/
