@@ -9,7 +9,7 @@ description: "MeshSat terms of service."
 
 ### MeshSat Bridge
 
-MeshSat Bridge is open-source software distributed under the Apache 2.0 License. It is provided "as is" without warranty of any kind. You are responsible for your use of the software and compliance with applicable laws, including radio licensing requirements for the transports you configure.
+MeshSat Bridge is open-source software distributed under the GNU General Public License v3.0 (GPLv3). It is provided "as is" without warranty of any kind. You are responsible for your use of the software and compliance with applicable laws, including radio licensing requirements for the transports you configure.
 
 ### MeshSat Hub
 

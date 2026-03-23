@@ -1,15 +1,21 @@
 <footer class="site-footer">
-    <!-- Technology Partners -->
+    <!-- Pre-release banner -->
+    <div class="prerelease-banner">
+        <div class="container">
+            <p>MeshSat is <strong>pre-release software</strong>. APIs, configuration, and pricing may change. Production deployments should expect breaking changes between versions.</p>
+        </div>
+    </div>
+
+    <!-- Built With -->
     <div class="partners-bar">
         <div class="container">
-            <p class="partners-label">Technology Partners</p>
+            <p class="partners-label">Built With</p>
             <div class="partners-logos">
                 <a href="https://meshtastic.org/" target="_blank" rel="noopener" title="Meshtastic">Meshtastic</a>
                 <a href="https://www.iridium.com/" target="_blank" rel="noopener" title="Iridium">Iridium</a>
                 <a href="https://www.astrocast.com/" target="_blank" rel="noopener" title="Astrocast">Astrocast</a>
                 <a href="https://www.raspberrypi.com/" target="_blank" rel="noopener" title="Raspberry Pi">Raspberry Pi</a>
                 <a href="https://www.docker.com/" target="_blank" rel="noopener" title="Docker">Docker</a>
-                <a href="https://gohugo.io/" target="_blank" rel="noopener" title="Hugo">Hugo</a>
             </div>
         </div>
     </div>
@@ -55,14 +61,13 @@
                 <ul>
                     <li><a href="/privacy/">Privacy Policy</a></li>
                     <li><a href="/terms/">Terms of Service</a></li>
-                    <li><a href="{{ .Site.Params.github }}/blob/main/LICENSE" target="_blank" rel="noopener">Apache 2.0 License</a></li>
+                    <li><a href="{{ .Site.Params.github }}/blob/main/LICENSE" target="_blank" rel="noopener">GPLv3 License</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; {{ now.Year }} <a href="https://github.com/cubeos-app" target="_blank" rel="noopener">Nuclear Lighters Inc.</a> All rights reserved.</p>
-            <p class="footer-status">MeshSat is pre-release software.</p>
         </div>
     </div>
 </footer>
