@@ -292,6 +292,124 @@
     </div>
 </section>
 
+<!-- Hub Deep Dive -->
+<section id="hub" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">MeshSat Hub — Fleet management platform</h2>
+        <p class="section-subtitle">The Bridge is one device. The Hub manages hundreds — with authentication, multi-tenancy, and three satellite constellations.</p>
+
+        <div class="hub-grid">
+            <div class="hub-card">
+                <h3>Multi-constellation satellite routing</h3>
+                <p>Send messages through <strong>Iridium</strong>, <strong>Astrocast</strong>, or <strong>Globalstar</strong> — and let the Hub pick the cheapest, fastest, or preferred route per device. Automatic failover between constellations.</p>
+            </div>
+            <div class="hub-card">
+                <h3>Enterprise authentication</h3>
+                <p>Four auth modes: local accounts (Argon2id), bearer tokens, or full <strong>OAuth2/OIDC</strong> with TLS certificate pinning. API keys with RBAC (viewer/admin/owner) and per-key expiry.</p>
+            </div>
+            <div class="hub-card">
+                <h3>Multi-tenant isolation</h3>
+                <p>Multiple organizations share one Hub instance with strict data isolation. Tenant context from JWT claims or headers. Each tenant sees only their devices, messages, and rules.</p>
+            </div>
+            <div class="hub-card">
+                <h3>SOS escalation chains</h3>
+                <p>Configurable multi-step notification chains: push notification &rarr; SMS &rarr; email &rarr; phone call. Dead man's switch triggers alerts on missed check-ins. <strong>90+ notification backends</strong> via Apprise.</p>
+            </div>
+            <div class="hub-card">
+                <h3>Three deployment modes</h3>
+                <p><strong>Standalone</strong> (SQLite + MQTT, single server), <strong>Cluster</strong> (MariaDB Galera + Redis + NATS, active-active HA), or <strong>Kubernetes</strong> (Helm charts, lease-based leader election).</p>
+            </div>
+            <div class="hub-card">
+                <h3>Tactical integrations</h3>
+                <p>TAK/CoT gateway for ATAK teams, APRS-IS IGate for amateur radio, WireGuard VPN mesh, Tor hidden service, MPTCP concentrator, and <strong>Reticulum routing</strong> across all satellite backends.</p>
+            </div>
+        </div>
+
+        <div class="hub-extras">
+            <div class="hub-extra-grid">
+                <div class="hub-extra">
+                    <strong>20+ dashboard views</strong>
+                    <p>Devices, messages, map, escalations, dead man's switch, geofences, OTA updates, audit log, cluster health, backup/restore</p>
+                </div>
+                <div class="hub-extra">
+                    <strong>60+ REST API endpoints</strong>
+                    <p>Full Swagger docs. Device CRUD, message send/receive, webhook management, rate limiting, config versioning, backup/export</p>
+                </div>
+                <div class="hub-extra">
+                    <strong>E2E encryption</strong>
+                    <p>AES-256-GCM per-device keystores. PGP-encrypted email gateway. Tamper-evident Ed25519 hash-chain audit log</p>
+                </div>
+                <div class="hub-extra">
+                    <strong>Per-device rate limiting</strong>
+                    <p>Token bucket with burst, daily, and monthly caps. Cluster-wide via Redis. Override limits per device</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hub-cta">
+            <a href="{{ .Site.Params.hub_url }}" class="btn btn-primary" target="_blank" rel="noopener">Try Hub Free</a>
+            <a href="{{ .Site.Params.docs_url }}/hub/" class="btn btn-outline" target="_blank" rel="noopener">Hub Documentation</a>
+        </div>
+    </div>
+</section>
+
+<!-- Android App -->
+<section id="android" class="section">
+    <div class="container">
+        <h2 class="section-title">MeshSat Android — Your phone is a gateway</h2>
+        <p class="section-subtitle">No Pi, no cables. Three transports from your pocket.</p>
+
+        <div class="android-split">
+            <div class="android-content">
+                <p class="android-intro">MeshSat Android turns any Android phone into a standalone mesh-satellite-cellular gateway. It connects to a Meshtastic radio over BLE, an Iridium modem over Bluetooth SPP, and uses the phone's native SMS — all at once.</p>
+
+                <div class="android-features">
+                    <div class="android-feature">
+                        <strong>BLE mesh + Bluetooth satellite + native SMS</strong>
+                        <p>Three independent radio paths. Forward messages between any combination with configurable rules.</p>
+                    </div>
+                    <div class="android-feature">
+                        <strong>Encrypted SMS bridge</strong>
+                        <p>Bridge two isolated LoRa mesh networks over cellular. AES-256-GCM encrypted — the carrier sees only ciphertext.</p>
+                    </div>
+                    <div class="android-feature">
+                        <strong>MSVQ-SC semantic compression</strong>
+                        <p>On-device ONNX Runtime encoder. 92% compression on field messages — critical for 340-byte Iridium SBD payloads.</p>
+                    </div>
+                    <div class="android-feature">
+                        <strong>SOS emergency broadcast</strong>
+                        <p>One button sends your distress message on all three transports simultaneously, 3x with 30-second intervals.</p>
+                    </div>
+                    <div class="android-feature">
+                        <strong>Signal monitoring</strong>
+                        <p>6-hour graphs for mesh RSSI, Iridium signal bars, and cellular dBm. Know your link quality at a glance.</p>
+                    </div>
+                </div>
+
+                <p class="android-note">Material 3 dark theme. Kotlin + Jetpack Compose. Minimum Android 8.0.</p>
+
+                <div class="android-cta">
+                    <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="android-diagram">
+                <div class="android-phone">
+                    <div class="android-phone-screen">
+                        <div class="android-transport"><span class="android-dot dot-blue"></span> BLE &rarr; Meshtastic radio</div>
+                        <div class="android-transport"><span class="android-dot dot-teal"></span> SPP &rarr; Iridium 9603N</div>
+                        <div class="android-transport"><span class="android-dot dot-green"></span> Native SMS &rarr; Cellular</div>
+                        <div class="android-rules">Rules engine + MSVQ-SC + AES-256-GCM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Hardware -->
 <section id="hardware" class="section section-alt">
     <div class="container">

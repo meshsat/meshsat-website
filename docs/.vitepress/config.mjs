@@ -12,15 +12,17 @@ export default defineConfig({
     siteTitle: 'MeshSat Docs',
 
     nav: [
-      { text: 'Guide', link: '/guide/getting-started' },
-      { text: 'API Reference', link: '/api/' },
-      { text: 'Reference', link: '/reference/environment-variables' },
+      { text: 'Bridge', link: '/guide/getting-started' },
+      { text: 'Hub', link: '/hub/' },
+      { text: 'Android', link: '/android/' },
+      { text: 'API', link: '/api/' },
       {
-        text: 'Products',
+        text: 'Links',
         items: [
           { text: 'meshsat.net', link: 'https://meshsat.net' },
           { text: 'MeshSat Hub', link: 'https://hub.meshsat.net' },
-          { text: 'GitHub', link: 'https://github.com/cubeos-app/meshsat' },
+          { text: 'GitHub (Bridge)', link: 'https://github.com/cubeos-app/meshsat' },
+          { text: 'GitHub (Android)', link: 'https://github.com/cubeos-app/meshsat-android' },
         ]
       }
     ],
@@ -73,6 +75,25 @@ export default defineConfig({
             { text: 'Rules', link: '/api/rules' },
             { text: 'Config', link: '/api/config' },
             { text: 'Deliveries', link: '/api/deliveries' },
+          ]
+        }
+      ],
+      '/hub/': [
+        {
+          text: 'MeshSat Hub',
+          items: [
+            { text: 'Overview', link: '/hub/' },
+            { text: 'Authentication', link: '/hub/authentication' },
+            { text: 'API Keys', link: '/hub/api-keys' },
+            { text: 'Multi-Tenancy', link: '/hub/tenants' },
+          ]
+        }
+      ],
+      '/android/': [
+        {
+          text: 'MeshSat Android',
+          items: [
+            { text: 'Overview', link: '/android/' },
           ]
         }
       ],
