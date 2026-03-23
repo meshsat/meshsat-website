@@ -1,29 +1,29 @@
 {{ define "main" }}
 
-<!-- Hero — split layout: text left, field kit photo right -->
+<!-- Hero — slideshow background with text overlay -->
 <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-split">
-        <div class="hero-text">
-            <p class="hero-label">Multi-transport routing engine</p>
-            <h1 class="hero-title">Any network.<br><span class="highlight">One gateway.</span></h1>
-            <p class="hero-subtitle">MeshSat is not a network. It is a <strong>routing layer between networks</strong> — mesh, satellite, cellular, and IP. One device, one set of rules, every transport.</p>
-            <div class="hero-actions">
-                <a href="/install/" class="btn btn-primary">Install MeshSat</a>
-                <a href="{{ .Site.Params.hub_url }}" class="btn btn-outline" target="_blank" rel="noopener">Try Hub Free</a>
-            </div>
-            <div class="hero-install">
-                <div class="code-block code-block-inline">
-                    <pre class="code-block-body"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
-                    <button class="copy-btn" onclick="copyCode(this)">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                        <span class="copy-text">Copy</span>
-                    </button>
-                </div>
-            </div>
+    <div class="hero-slideshow">
+        <div class="hero-slide active" style="background-image: url('/images/hero/field-comms.webp')"></div>
+        <div class="hero-slide" style="background-image: url('/images/hero/satcom.webp')"></div>
+        <div class="hero-slide" style="background-image: url('/images/hero/maritime.webp')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <p class="hero-label">Multi-transport routing engine</p>
+        <h1 class="hero-title">Any network.<br><span class="highlight">One gateway.</span></h1>
+        <p class="hero-subtitle">MeshSat is not a network. It is a <strong>routing layer between networks</strong> — mesh, satellite, cellular, and IP. One device, one set of rules, every transport.</p>
+        <div class="hero-actions">
+            <a href="/install/" class="btn btn-primary">Install MeshSat</a>
+            <a href="{{ .Site.Params.hub_url }}" class="btn btn-outline" target="_blank" rel="noopener">Try Hub Free</a>
         </div>
-        <div class="hero-image">
-            <img src="/images/meshsat_field_kit.jpg" alt="MeshSat field kit in waterproof Pelican case" loading="eager">
+        <div class="hero-install">
+            <div class="code-block code-block-inline">
+                <pre class="code-block-body"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    <span class="copy-text">Copy</span>
+                </button>
+            </div>
         </div>
     </div>
 </section>
