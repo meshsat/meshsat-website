@@ -1,8 +1,5 @@
 ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 
-# Copy VitePress output
 COPY docs/.vitepress/dist/ /usr/share/nginx/html/
-
-# Override nginx config
-COPY nginx-docs.conf /etc/nginx/nginx.conf
+COPY nginx-site.conf /etc/nginx/nginx.conf
