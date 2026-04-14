@@ -16,8 +16,8 @@ hero:
       link: https://github.com/cubeos-app/meshsat
 
 features:
-  - title: 11+ Transports
-    details: Meshtastic, Iridium (SBD + IMT), Astrocast, Cellular, ZigBee, MQTT, Webhooks, APRS, TAK, Reticulum TCP, and Direct Serial.
+  - title: 10+ Transports
+    details: Meshtastic, Iridium (SBD + IMT), Cellular, ZigBee, MQTT, Webhooks, APRS, TAK, Reticulum TCP, and Direct Serial.
   - title: Policy-Driven Routing
     details: Access rules engine with object groups, rate limiting, failover groups, and per-interface transform pipelines.
   - title: Field Intelligence

@@ -45,8 +45,6 @@ MeshSat Hub is configured via environment variables with the `HUB_*` prefix, or 
 | `HUB_CLOUDLOOP_API_KEY` | — | Cloudloop API key (Iridium MT) |
 | `HUB_CLOUDLOOP_API_URL` | `https://api.cloudloop.com` | Cloudloop endpoint |
 | `HUB_ROCKBLOCK_SECRET` | — | RockBLOCK webhook HMAC secret |
-| `HUB_ASTROCAST_API_KEY` | — | Astrocast API key |
-| `HUB_ASTROCAST_API_URL` | `https://api.astrocast.com/v1` | Astrocast endpoint |
 | `HUB_GLOBALSTAR_API_KEY` | — | Globalstar API key |
 | `HUB_GLOBALSTAR_API_URL` | `https://api.globalstar.com/v1` | Globalstar endpoint |
 

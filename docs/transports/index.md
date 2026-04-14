@@ -1,6 +1,6 @@
 # Transports
 
-MeshSat supports 11 transport types across four categories. Each transport handles the protocol-specific details of sending and receiving messages, while the policy engine handles routing between them.
+MeshSat supports 10 transport types across four categories. Each transport handles the protocol-specific details of sending and receiving messages, while the policy engine handles routing between them.
 
 ## Mesh Networks
 
@@ -15,7 +15,6 @@ MeshSat supports 11 transport types across four categories. Each transport handl
 |-----------|-----------|--------|-------------|
 | [Iridium SBD](/transports/iridium-sbd) | Serial | Stable | Short Burst Data via RockBLOCK 9603N |
 | [Iridium IMT](/transports/iridium-imt) | Serial | Beta | Internet Modem Transceiver via RockBLOCK 9704 |
-| [Astrocast](/transports/astrocast) | Serial | Planned | LEO nanosatellite IoT network |
 
 ## Cellular
 

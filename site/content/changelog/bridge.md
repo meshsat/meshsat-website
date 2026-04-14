@@ -6,7 +6,7 @@ description: "MeshSat Bridge changelog — standalone gateway releases."
 ## v0.2.0 (2026-03-23)
 
 ### Features
-- 11 transport interfaces (Meshtastic, Iridium 9603/9704, Astrocast, Cellular, ZigBee, MQTT, Webhooks, APRS, TAK, Reticulum TCP)
+- 10 transport interfaces (Meshtastic, Iridium 9603/9704, Cellular, ZigBee, MQTT, Webhooks, APRS, TAK, Reticulum TCP)
 - Channel registry with self-describing adapters
 - Delivery ledger with per-channel workers
 - Unified access rules engine with object groups

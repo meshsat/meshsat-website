@@ -23,7 +23,7 @@ We reserve the right to suspend accounts that violate these terms.
 
 ### Satellite and Cellular Costs
 
-MeshSat routes messages across transports. Satellite and cellular transports incur per-message costs from the respective carriers (Iridium, Astrocast, cellular providers). These costs are your responsibility. MeshSat provides rate limiting and access rules to help manage costs, but you are responsible for configuring appropriate limits.
+MeshSat routes messages across transports. Satellite and cellular transports incur per-message costs from the respective carriers (Iridium, cellular providers). These costs are your responsibility. MeshSat provides rate limiting and access rules to help manage costs, but you are responsible for configuring appropriate limits.
 
 ### Contact
 

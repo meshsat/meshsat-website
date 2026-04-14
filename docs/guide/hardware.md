@@ -30,7 +30,6 @@ MeshSat runs on any ARM64 or x86_64 Linux machine with USB ports.
 |--------|----------|-------------|------------|
 | RockBLOCK 9603N | AT commands (SBD) | 340 bytes | UART/GPIO |
 | RockBLOCK 9704 | JSPR (JSON Serial) | 100 KB | USB (FTDI) |
-| Astronode S | ASCII hex | 160 bytes | UART |
 
 ### Cellular Modems
 
@@ -74,5 +73,4 @@ The identification cascade:
 2. JSPR probe (RockBLOCK 9704)
 3. AT command probe (Iridium 9603N, cellular)
 4. Cellular modem probe
-5. Astronode probe
-6. ZNP probe (ZigBee)
+5. ZNP probe (ZigBee)

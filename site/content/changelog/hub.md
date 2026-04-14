@@ -8,7 +8,7 @@ description: "MeshSat Hub changelog — fleet management platform releases."
 ### Features
 - Multi-tenant device management with OAuth2/OIDC
 - RBAC with API keys
-- Iridium SBD (RockBLOCK/Cloudloop) and Astrocast ingestion
+- Iridium SBD (RockBLOCK/Cloudloop) ingestion
 - SOS escalation chains and dead man's switch
 - Polygon geofencing with auto-escalation
 - GPS position storage with Leaflet map
