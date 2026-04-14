@@ -15,7 +15,6 @@ See [Configuration guide](/guide/configuration) for descriptions and usage.
 | `MESHSAT_IRIDIUM_PORT` | `auto` | Serial |
 | `MESHSAT_IMT_PORT` | `auto` | Serial |
 | `MESHSAT_CELLULAR_PORT` | `auto` | Serial |
-| `MESHSAT_ASTROCAST_PORT` | `auto` | Serial |
 | `MESHSAT_ZIGBEE_PORT` | `auto` | Serial |
 | `MESHSAT_IRIDIUM_SLEEP_PIN` | `0` | Iridium |
 | `IRIDIUM_SBDIX_TIMEOUT` | `90` | Iridium |

@@ -2,7 +2,7 @@ baseURL: "https://meshsat.net/"
 languageCode: "en-us"
 title: "MeshSat — One gateway. Any transport."
 params:
-  description: "Unified routing across mesh, satellite, and IP networks. Policy-driven gateway for Meshtastic, Iridium, Astrocast, cellular, ZigBee, APRS, TAK, and more."
+  description: "Unified routing across mesh, satellite, and IP networks. Policy-driven gateway for Meshtastic, Iridium, cellular, ZigBee, APRS, TAK, and more."
   author: "MeshSat"
   contact_email: "hello@meshsat.net"
   github: "https://github.com/cubeos-app/meshsat"

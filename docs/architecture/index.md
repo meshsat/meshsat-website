@@ -46,7 +46,7 @@ See [Transform Pipeline](/architecture/transform-pipeline) for available transfo
 
 ### Pass Scheduler
 
-The Pass Scheduler manages satellite communication windows. For Iridium and Astrocast transports, messages are queued and transmitted during predicted satellite passes to optimize power consumption and airtime costs. The scheduler uses TLE (Two-Line Element) data to predict pass windows.
+The Pass Scheduler manages satellite communication windows. For Iridium transports, messages are queued and transmitted during predicted satellite passes to optimize power consumption and airtime costs. The scheduler uses TLE (Two-Line Element) data to predict pass windows.
 
 See [Pass Scheduler](/architecture/pass-scheduler) for configuration and scheduling algorithms.
 

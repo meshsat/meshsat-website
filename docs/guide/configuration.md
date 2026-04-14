@@ -21,5 +21,4 @@ All default to `auto` — USB VID:PID tables and protocol probing detect devices
 | `MESHSAT_IRIDIUM_PORT` | Iridium 9603N (SBD) |
 | `MESHSAT_IMT_PORT` | RockBLOCK 9704 (IMT/JSPR) |
 | `MESHSAT_CELLULAR_PORT` | Cellular modem |
-| `MESHSAT_ASTROCAST_PORT` | Astrocast Astronode |
 | `MESHSAT_ZIGBEE_PORT` | ZigBee coordinator |

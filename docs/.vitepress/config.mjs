@@ -44,7 +44,6 @@ export default defineConfig({
             { text: 'Meshtastic', link: '/guide/transports/meshtastic' },
             { text: 'Iridium SBD (9603N)', link: '/guide/transports/iridium-sbd' },
             { text: 'Iridium IMT (9704)', link: '/guide/transports/iridium-imt' },
-            { text: 'Astrocast', link: '/guide/transports/astrocast' },
             { text: 'Cellular SMS', link: '/guide/transports/cellular' },
             { text: 'ZigBee', link: '/guide/transports/zigbee' },
             { text: 'MQTT', link: '/guide/transports/mqtt' },

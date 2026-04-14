@@ -1,6 +1,6 @@
 # MeshSat Hub
 
-MeshSat Hub is a multi-tenant fleet management platform for satellite-connected field devices. It ingests messages from Iridium, Astrocast, and Globalstar, provides a web dashboard with live mapping, and bridges to TAK, APRS-IS, webhooks, and push notifications.
+MeshSat Hub is a multi-tenant fleet management platform for satellite-connected field devices. It ingests messages from Iridium and Globalstar, provides a web dashboard with live mapping, and bridges to TAK, APRS-IS, webhooks, and push notifications.
 
 **Live at:** [hub.meshsat.net](https://hub.meshsat.net)
 
@@ -12,7 +12,7 @@ MeshSat Hub is a multi-tenant fleet management platform for satellite-connected 
 | **Devices** | Directly connected via USB | Managed remotely via API |
 | **Authentication** | None (local device) | OAuth2/OIDC, API keys, local accounts |
 | **Multi-tenancy** | No | Yes, with data isolation |
-| **Satellite access** | Direct serial (9603N, 9704) | Via Cloudloop/Astrocast/Globalstar APIs |
+| **Satellite access** | Direct serial (9603N, 9704) | Via Cloudloop/Globalstar APIs |
 | **Deployment** | Docker Compose (standalone) | Standalone, Cluster (Galera+NATS), Kubernetes |
 | **Database** | SQLite | SQLite (standalone) or MariaDB Galera (cluster) |
 
@@ -29,7 +29,7 @@ Helm charts with pod anti-affinity, StatefulSets for MariaDB and NATS, Kubernete
 
 ## Multi-constellation satellite routing
 
-Hub routes messages through **Iridium**, **Astrocast**, and **Globalstar** — and picks the optimal backend per device.
+Hub routes messages through **Iridium** and **Globalstar** — and picks the optimal backend per device.
 
 **Routing strategies:**
 - **Available** — first constellation with connectivity
