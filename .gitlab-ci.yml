@@ -91,8 +91,6 @@ docker:site:
   stage: docker
   image: $HUGO_IMAGE
   tags: [docker]
-  variables:
-    DOCKER_API_VERSION: "1.41"
   before_script:
     - echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
     - docker login registry-gitlab.nuclearlighters.net -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
@@ -112,8 +110,6 @@ docker:docs:
   stage: docker
   image: $HUGO_IMAGE
   tags: [docker]
-  variables:
-    DOCKER_API_VERSION: "1.41"
   before_script:
     - echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
     - docker login registry-gitlab.nuclearlighters.net -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
@@ -131,8 +127,6 @@ docker:install:
   stage: docker
   image: $HUGO_IMAGE
   tags: [docker]
-  variables:
-    DOCKER_API_VERSION: "1.41"
   before_script:
     - echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
     - docker login registry-gitlab.nuclearlighters.net -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
