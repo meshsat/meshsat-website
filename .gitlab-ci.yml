@@ -9,7 +9,7 @@ stages:
   - deploy
 
 variables:
-  HUGO_IMAGE: "registry-gitlab.nuclearlighters.net/infrastructure/nllei01/production/hugo-runner:1.4"
+  HUGO_IMAGE: "registry-gitlab.nuclearlighters.net/infrastructure/nllei01/production/hugo-runner:1.5"
   NODE_IMAGE: "node:20-alpine"
   BASE_IMAGE: "registry-gitlab.nuclearlighters.net/infrastructure/nllei01/production/cubeos-nginx-base:latest"
   GHCR_SITE: "ghcr.io/papadopouloskyriakos/meshsat-website"
@@ -98,7 +98,7 @@ docker:site:
     - docker login registry-gitlab.nuclearlighters.net -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
   script:
     - cp -r site/public/ public/
-    - docker build --no-cache --build-arg BASE_IMAGE=${BASE_IMAGE} -f Dockerfile.site -t ${GHCR_SITE}:${CI_COMMIT_SHORT_SHA} -t ${GHCR_SITE}:latest .
+    - docker build --pull --no-cache --build-arg BASE_IMAGE=${BASE_IMAGE} -f Dockerfile.site -t ${GHCR_SITE}:${CI_COMMIT_SHORT_SHA} -t ${GHCR_SITE}:latest .
     - docker push ${GHCR_SITE}:${CI_COMMIT_SHORT_SHA}
     - docker push ${GHCR_SITE}:latest
     - rm -rf public/
@@ -118,7 +118,7 @@ docker:docs:
     - echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
     - docker login registry-gitlab.nuclearlighters.net -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
   script:
-    - docker build --no-cache --build-arg BASE_IMAGE=${BASE_IMAGE} -f Dockerfile.docs -t ${GHCR_DOCS}:${CI_COMMIT_SHORT_SHA} -t ${GHCR_DOCS}:latest .
+    - docker build --pull --no-cache --build-arg BASE_IMAGE=${BASE_IMAGE} -f Dockerfile.docs -t ${GHCR_DOCS}:${CI_COMMIT_SHORT_SHA} -t ${GHCR_DOCS}:latest .
     - docker push ${GHCR_DOCS}:${CI_COMMIT_SHORT_SHA}
     - docker push ${GHCR_DOCS}:latest
   needs:
@@ -137,7 +137,7 @@ docker:install:
     - echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
     - docker login registry-gitlab.nuclearlighters.net -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
   script:
-    - docker build --no-cache --build-arg BASE_IMAGE=${BASE_IMAGE} -f Dockerfile.install -t ${GHCR_INSTALL}:${CI_COMMIT_SHORT_SHA} -t ${GHCR_INSTALL}:latest .
+    - docker build --pull --no-cache --build-arg BASE_IMAGE=${BASE_IMAGE} -f Dockerfile.install -t ${GHCR_INSTALL}:${CI_COMMIT_SHORT_SHA} -t ${GHCR_INSTALL}:latest .
     - docker push ${GHCR_INSTALL}:${CI_COMMIT_SHORT_SHA}
     - docker push ${GHCR_INSTALL}:latest
   rules:
