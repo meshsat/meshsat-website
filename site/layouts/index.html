@@ -172,7 +172,7 @@
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
                 </div>
                 <h3>Shrink messages before they fly</h3>
-                <p>Three compression tiers adapt to each link. A 200-byte mesh message becomes 40 bytes over satellite — saving credits and airtime.</p>
+                <p>Three compression tiers adapt to each link, so messages leaving the mesh are shrunk before they cost you satellite credits or airtime.</p>
             </div>
 
             <div class="feature-card">
@@ -245,8 +245,8 @@
 <!-- Transports -->
 <section id="transports" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">11 transports</h2>
-        <p class="section-subtitle">Every transport is a first-class interface with its own MTU, cost model, and transform pipeline.</p>
+        <h2 class="section-title">8 transport bearers</h2>
+        <p class="section-subtitle">Eight bearers across nine wired Reticulum interfaces — Iridium runs on two modems, the 9603N (SBD) and the 9704 (IMT). Every bearer is a first-class interface with its own MTU, cost model, and transform pipeline. TAK/CoT and webhooks are supported as integrations rather than bearers.</p>
 
         <div class="table-wrap">
             <table class="data-table">
@@ -382,7 +382,7 @@
                     </div>
                     <div class="android-feature">
                         <strong>MSVQ-SC semantic compression</strong>
-                        <p>On-device ONNX Runtime encoder. 92% compression on field messages — critical for 340-byte Iridium SBD payloads.</p>
+                        <p>On-device ONNX Runtime encoder. A lossy semantic codec: it transmits vector-quantiser indices and the receiver reconstructs the closest match from a shared codebook, so a message of any length fits a fixed few-byte payload. Currently a canned-message accelerator over a small trained corpus — corpus expansion is planned work.</p>
                     </div>
                     <div class="android-feature">
                         <strong>SOS emergency broadcast</strong>
