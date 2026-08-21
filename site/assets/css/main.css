@@ -2320,6 +2320,25 @@ img {
     color: var(--color-primary);
 }
 
+.partners-logos .sidn-logo {
+    height: 28px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.partners-logos .sidn-logo-light {
+    display: none;
+}
+
+[data-theme="light"] .partners-logos .sidn-logo-dark {
+    display: none;
+}
+
+[data-theme="light"] .partners-logos .sidn-logo-light {
+    display: inline-block;
+}
+
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
