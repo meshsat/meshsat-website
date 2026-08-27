@@ -11,7 +11,7 @@ MeshSat connects heterogeneous communication systems through a unified routing l
 | Product | Description | Deployment |
 |---------|-------------|------------|
 | **Bridge** | Standalone gateway on a Pi/SBC | Docker Compose, self-hosted |
-| **Hub** | Multi-tenant fleet management | SaaS at [hub.meshsat.net](https://hub.meshsat.net) |
+| **Hub** | Multi-tenant fleet management | Private beta, [access on request](mailto:beta-access-hub@meshsat.net) |
 | **Android** | Mobile gateway app | Google Play (coming soon) |
 
 This documentation covers the **Bridge** — the open-source standalone gateway.

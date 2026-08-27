@@ -15,7 +15,7 @@
         <p class="hero-subtitle">MeshSat is not a network. It is a <strong>routing layer between networks</strong> — mesh, satellite, cellular, and IP. One device, one set of rules, every transport.</p>
         <div class="hero-actions">
             <a href="/install/" class="btn btn-primary">Install MeshSat</a>
-            <a href="{{ .Site.Params.hub_url }}" class="btn btn-outline" target="_blank" rel="noopener">Try Hub Free</a>
+            <a href="/#hub" class="btn btn-outline">About the Hub</a>
         </div>
         <div class="hero-install">
             <div class="code-block code-block-inline">
@@ -306,6 +306,11 @@
         <h2 class="section-title">MeshSat Hub — Fleet management platform</h2>
         <p class="section-subtitle">The Bridge is one device. The Hub manages hundreds — with authentication, multi-tenancy, and three satellite constellations.</p>
 
+        <p class="section-status">
+            <span class="badge badge-beta">Private beta</span>
+            <span class="section-status-text">MeshSat Hub is not launched yet. It runs as a private beta on our own infrastructure. Access for demos and beta testing is arranged on request.</span>
+        </p>
+
         <div class="hub-grid">
             <div class="hub-card">
                 <h3>Multi-constellation satellite routing</h3>
@@ -355,8 +360,8 @@
         </div>
 
         <div class="hub-cta">
-            <a href="{{ .Site.Params.hub_url }}" class="btn btn-primary" target="_blank" rel="noopener">Try Hub Free</a>
-            <a href="{{ .Site.Params.docs_url }}/hub/" class="btn btn-outline" target="_blank" rel="noopener">Hub Documentation</a>
+            <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20demo%20%2F%20beta%20access" class="btn btn-primary">Request beta access</a>
+            <a href="{{ .Site.Params.docs_url }}/hub/" class="btn btn-outline" target="_blank" rel="noopener">Hub documentation</a>
         </div>
     </div>
 </section>
@@ -521,25 +526,29 @@
     <div class="container">
         <h2 class="section-title">Pricing</h2>
         <p class="section-subtitle">The Bridge is free and open source. The Hub manages fleets.</p>
+        <p class="section-status">
+            <span class="badge badge-beta">Private beta</span>
+            <span class="section-status-text">Hub plans below are planned for launch. During the private beta, access is by request and free of charge.</span>
+        </p>
 
         <div class="pricing-grid">
             <div class="pricing-card">
                 <h3 class="pricing-name">Explorer</h3>
                 <div class="pricing-price">Free</div>
                 <ul class="pricing-features"><li>3 devices</li><li>1 tenant</li><li>7-day retention</li><li>Community support</li></ul>
-                <a href="{{ .Site.Params.hub_url }}" class="btn btn-outline" target="_blank" rel="noopener">Get Started</a>
+                <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20demo%20%2F%20beta%20access" class="btn btn-outline">Request beta access</a>
             </div>
             <div class="pricing-card">
                 <h3 class="pricing-name">Field</h3>
                 <div class="pricing-price">&euro;19<span class="pricing-period">/mo</span></div>
                 <ul class="pricing-features"><li>25 devices</li><li>3 tenants</li><li>30-day retention</li><li>Prioritized issues</li></ul>
-                <a href="{{ .Site.Params.hub_url }}" class="btn btn-outline" target="_blank" rel="noopener">Subscribe</a>
+                <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20notify%20me%20at%20launch%20(Field)" class="btn btn-outline">Notify me at launch</a>
             </div>
             <div class="pricing-card pricing-card-featured">
                 <h3 class="pricing-name">Expedition</h3>
                 <div class="pricing-price">&euro;49<span class="pricing-period">/mo</span></div>
                 <ul class="pricing-features"><li>100 devices</li><li>Unlimited tenants</li><li>90-day retention</li><li>Email support (48h)</li></ul>
-                <a href="{{ .Site.Params.hub_url }}" class="btn btn-primary" target="_blank" rel="noopener">Subscribe</a>
+                <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20notify%20me%20at%20launch%20(Expedition)" class="btn btn-primary">Notify me at launch</a>
             </div>
             <div class="pricing-card">
                 <h3 class="pricing-name">Mission</h3>
