@@ -2,7 +2,7 @@
 
 MeshSat Hub is a multi-tenant fleet management platform for satellite-connected field devices. It ingests messages from Iridium and Globalstar, provides a web dashboard with live mapping, and bridges to TAK, APRS-IS, webhooks, and push notifications.
 
-**Live at:** [hub.meshsat.net](https://hub.meshsat.net)
+**Status:** private beta, not yet launched. The Hub runs on our own infrastructure and is not open for self-service signup. Access for demos and beta tests is arranged on request: [beta-access-hub@meshsat.net](mailto:beta-access-hub@meshsat.net).
 
 ## How Hub differs from Bridge
 

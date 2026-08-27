@@ -361,6 +361,7 @@ img {
     position: relative;
     z-index: 2;
     max-width: 720px;
+    min-width: 0; /* flex item: stop the no-wrap install command from widening the hero past the viewport on mobile */
     padding: var(--space-4xl) 0;
 }
 
@@ -1467,6 +1468,30 @@ img {
     color: var(--color-warning);
 }
 
+/* Section status line (private-beta notice under a section subtitle) */
+.section-status {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--space-sm);
+    max-width: 700px;
+    margin: calc(var(--space-3xl) * -1 + var(--space-lg)) auto var(--space-3xl);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    text-align: left;
+}
+
+.section-status .badge {
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    white-space: nowrap;
+}
+
+.section-status-text {
+    flex: 1 1 auto;
+}
+
 /* Category labels */
 .category-label {
     color: var(--color-primary);
@@ -1578,6 +1603,12 @@ img {
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+/* Full-width outline buttons belong to card layouts only; inline button rows keep natural width */
+.hero-actions .btn-outline,
+.hub-cta .btn-outline {
+    width: auto;
 }
 
 .btn-outline:hover {

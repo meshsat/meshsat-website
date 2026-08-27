@@ -5,6 +5,7 @@ params:
   description: "Unified routing across mesh, satellite, and IP networks. Policy-driven gateway for Meshtastic, Iridium, cellular, ZigBee, APRS, TAK, and more."
   author: "MeshSat"
   contact_email: "hello@meshsat.net"
+  beta_access_email: "beta-access-hub@meshsat.net"
   github: "https://github.com/cubeos-app/meshsat"
   hub_url: "https://hub.meshsat.net"
   docs_url: "https://docs.meshsat.net"
@@ -32,10 +33,9 @@ menu:
       params:
         external: true
     - name: "Hub"
-      url: "https://hub.meshsat.net"
+      url: "/#hub"
       weight: 7
       params:
-        external: true
         highlight: true
 markup:
   goldmark:
