@@ -10,6 +10,7 @@
  *   dark   #F25C05 on #1B1B1F 5.16:1   on #161618 5.43:1
  *   dark   #14120F on #F25C05 5.62:1   hover #FF7A33 7.20:1   active #E85A04 5.25:1
  *   code   light #A83C08 on chip #EFF0F3 5.56:1   dark #FF7A33 on chip #272930 5.60:1
+ *   lang   light #6B6B75 on block #F6F6F7 4.88:1  dark #96969E on block #161618 6.16:1
  *
  * Dark buttons carry near-black text: white on #F25C05 is only ~3.1:1.
  * Inline code gets its own color: brand-1 sits on the gray code-chip
@@ -23,6 +24,7 @@
   --vp-c-brand-3: #C4470A;
   --vp-c-brand-soft: rgba(196, 71, 10, 0.14);
   --vp-code-color: #A83C08;
+  --vp-code-lang-color: #6B6B75;
 
   --vp-button-brand-border: transparent;
   --vp-button-brand-text: #FFFFFF;
@@ -43,6 +45,7 @@
   --vp-c-brand-3: #F25C05;
   --vp-c-brand-soft: rgba(242, 92, 5, 0.16);
   --vp-code-color: #FF7A33;
+  --vp-code-lang-color: #96969E;
 
   --vp-button-brand-text: #14120F;
   --vp-button-brand-bg: var(--vp-c-brand-3);
