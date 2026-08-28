@@ -57,6 +57,7 @@
     --color-border: #E3DDD4;
     --color-border-light: #D2C9BC;
     --color-success: #2F7D4F;
+    --color-warning: #8A5A0B;
     --color-error: #A32A22;
 }
 
@@ -2952,3 +2953,92 @@ img {
 .lang-menu a:hover, .lang-menu a:focus-visible { background: var(--color-bg-secondary); color: var(--color-primary); }
 .lang-menu a[aria-current="true"] { color: var(--color-primary); font-weight: 600; }
 @media (max-width: 560px) { .lang-current { display: none; } .lang-btn { padding: 0 0.45em; } }
+
+/* ==========================================================================
+   Accessibility fixes (MESHSAT-723) — WCAG 2.2 AA
+   Every value below was contrast-computed, not guessed.
+   ========================================================================== */
+
+/* 1.4.3 Contrast. opacity:0.6 on an already-muted token dropped these links to
+   3.16:1 (dark) and 2.86:1 (light). The token passes at full strength, so the
+   de-emphasis moves to weight and size instead of transparency. */
+.partners-logos a { opacity: 1; font-weight: 400; }
+.partners-logos a:hover,
+.partners-logos a:focus-visible { color: var(--color-primary); opacity: 1; }
+
+/* 1.4.3 Contrast. Black on the light-theme orange is 4.25:1, just under AA.
+   White clears it at 4.94:1; the darker ink stays on the brighter dark orange. */
+.nav-hub-btn,
+.nav-hub-btn:hover { color: #FFFFFF !important; }
+:root[data-theme="dark"] .nav-hub-btn,
+:root[data-theme="dark"] .nav-hub-btn:hover { color: var(--color-bg) !important; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .nav-hub-btn,
+  :root:not([data-theme="light"]) .nav-hub-btn:hover { color: var(--color-bg) !important; }
+}
+
+/* 1.4.3 Contrast. The pre-release banner tint was a hardcoded amber unrelated
+   to the token set; drive it from the warning token so both themes track it. */
+.prerelease-banner {
+  background: color-mix(in srgb, var(--color-warning) 12%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-warning) 34%, transparent);
+}
+
+/* 1.4.1 Use of Colour. Links inside running text need a non-colour cue. */
+.table-note a,
+.funding-note a,
+.section-subtitle a,
+.trace-foot a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: from-font;
+}
+
+/* 2.1.1 Keyboard. A scrolling region must be reachable without a mouse. */
+.code-block pre,
+.table-wrap,
+.trace { scrollbar-width: thin; }
+.code-block pre:focus-visible,
+.table-wrap:focus-visible,
+.trace:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+
+/* 2.5.8 Target Size (Minimum), new in WCAG 2.2: 24x24 CSS px. */
+.footer-col a,
+.nav-links a,
+.partners-logos a,
+.footer-social a,
+.lang-menu a,
+.copy-btn { min-height: 24px; }
+
+/* 2.4.7 Focus Visible, and 1.4.11 for the indicator itself. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.skip-link:focus {
+  position: fixed; top: 8px; left: 8px; z-index: 999;
+  width: auto; height: auto; overflow: visible; clip: auto; clip-path: none;
+  padding: .6rem 1rem; background: var(--color-bg-card); color: var(--color-text);
+  border: 2px solid var(--color-primary); border-radius: var(--radius-md);
+}
+
+/* 2.3.3 / 2.2.2. Honour reduced motion everywhere, including the hero slideshow
+   and the trace reveal. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .trace-row { opacity: 1 !important; transform: none !important; }
+  .hero-slide { transition: none !important; }
+}
+
+/* 1.4.10 Reflow. A bare minmax() floor cannot shrink below its own minimum, so
+   an auto-fit grid overflows any viewport narrower than that floor plus the
+   container padding. min() lets the track collapse instead. */
+.reason-grid  { grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
+.system-grid  { grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); }
+.not-for-grid,
+.screenshots-grid { grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
