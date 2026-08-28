@@ -1,8 +1,8 @@
 baseURL: "https://meshsat.net/"
 languageCode: "en-us"
-title: "MeshSat — One gateway. Any transport."
+title: "MeshSat: keeping people connected when the network is not"
 params:
-  description: "Unified routing across mesh, satellite, and IP networks. Policy-driven gateway for Meshtastic, Iridium, cellular, ZigBee, APRS, TAK, and more."
+  description: "Open source gateway bridging Meshtastic LoRa, Iridium satellite, cellular SMS, APRS and TAK over a Reticulum routing layer. Runs on a Raspberry Pi."
   author: "MeshSat"
   contact_email: "hello@meshsat.net"
   beta_access_email: "beta-access-hub@meshsat.net"
