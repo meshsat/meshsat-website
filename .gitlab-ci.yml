@@ -85,6 +85,24 @@ build:docs:
     - if: '$CI_COMMIT_BRANCH == "main"'
 
 # -----------------------------------------------------------------------------
+# VERIFY:SITE — content + i18n gates. BLOCKS the deploy on purpose.
+# Added after get.meshsat.net was found serving an unrelated site for months
+# because nothing tested whether the site's own instructions work [MESHSAT-724].
+# Logic lives in scripts/verify-site.sh so it can be run locally, unchanged.
+# -----------------------------------------------------------------------------
+verify:site:
+  stage: build
+  image: $HUGO_IMAGE
+  tags: [docker]
+  script:
+    - ./scripts/verify-site.sh site/public
+  needs:
+    - job: build:site
+      artifacts: true
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+# -----------------------------------------------------------------------------
 # DOCKER — Build and push container images to GHCR
 # -----------------------------------------------------------------------------
 docker:site:
@@ -103,6 +121,7 @@ docker:site:
   needs:
     - job: build:site
       artifacts: true
+    - job: verify:site
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
 
@@ -134,6 +153,8 @@ docker:install:
     - docker build --pull --no-cache --build-arg BASE_IMAGE=${BASE_IMAGE} -f Dockerfile.install -t ${GHCR_INSTALL}:${CI_COMMIT_SHORT_SHA} -t ${GHCR_INSTALL}:latest .
     - docker push ${GHCR_INSTALL}:${CI_COMMIT_SHORT_SHA}
     - docker push ${GHCR_INSTALL}:latest
+  needs:
+    - job: verify:site
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
 
