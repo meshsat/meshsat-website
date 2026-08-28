@@ -24,10 +24,13 @@
     <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="MeshSat">
     <meta property="og:image" content="{{ "/images/og-image.png" | absURL }}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
+    {{ with .Site.Params.x_handle }}<meta name="twitter:site" content="{{ . }}">
+    <meta name="twitter:creator" content="{{ . }}">{{ end }}
     <meta name="twitter:title" content="{{ .Title | default .Site.Title }}">
     <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta name="twitter:image" content="{{ "/images/og-image.png" | absURL }}">
@@ -84,7 +87,12 @@
         "author": {
             "@type": "Organization",
             "name": "MeshSat",
-            "url": "https://github.com/cubeos-app"
+            "url": "https://meshsat.net",
+            "sameAs": [
+                "https://x.com/meshsat",
+                "https://www.linkedin.com/company/meshsat/",
+                "https://github.com/cubeos-app/meshsat"
+            ]
         }
     }
     </script>
