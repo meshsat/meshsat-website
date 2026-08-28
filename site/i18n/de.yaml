@@ -220,3 +220,9 @@ f_license:
   other: "GPLv3-Lizenz"
 f_copy:
   other: "ist freie Software, veröffentlicht unter der GPLv3."
+install_cmd_label:
+  other: "Installationsbefehl, scrollbar"
+table_transports_label:
+  other: "Tabelle der Übertragungsträger, scrollbar"
+table_hardware_label:
+  other: "Hardware-Tabelle, scrollbar"

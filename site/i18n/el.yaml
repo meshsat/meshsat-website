@@ -220,3 +220,9 @@ f_license:
   other: "Άδεια GPLv3"
 f_copy:
   other: "είναι ελεύθερο λογισμικό, με άδεια GPLv3."
+install_cmd_label:
+  other: "Εντολή εγκατάστασης, με κύλιση"
+table_transports_label:
+  other: "Πίνακας φορέων μεταφοράς, με κύλιση"
+table_hardware_label:
+  other: "Πίνακας εξοπλισμού, με κύλιση"

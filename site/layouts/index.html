@@ -16,7 +16,7 @@
 
         <p class="hero-status"><span class="dot"></span> {{ i18n "hero_status" }}</p>
 
-        <div class="trace" role="img" aria-label="{{ i18n "trace_alt" }}">
+        <div class="trace" tabindex="0" role="img" aria-label="{{ i18n "trace_alt" }}">
             <div class="trace-head"><span>{{ i18n "trace_title" }}</span><span>{{ i18n "trace_bridge" }}</span></div>
             <div class="trace-row"><span class="trace-t">09:14:02.118</span><span class="trace-if">mesh_0</span><span class="trace-dir">RX</span><span class="trace-msg">{{ i18n "t1" }}</span><span class="trace-state"></span></div>
             <div class="trace-row"><span class="trace-t">09:14:02.140</span><span class="trace-if">router</span><span class="trace-dir">&middot;&middot;</span><span class="trace-msg">{{ i18n "t2" }}</span><span class="trace-state"></span></div>
@@ -29,7 +29,7 @@
 
         <div class="hero-install">
             <div class="code-block code-block-inline">
-                <pre class="code-block-body"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
+                <pre class="code-block-body" tabindex="0" role="group" aria-label="{{ i18n "install_cmd_label" }}"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
                 <button class="copy-btn" onclick="copyCode(this)">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                     <span class="copy-text">Copy</span>
@@ -45,7 +45,7 @@
         <h2 class="section-title">{{ i18n "tr_title" }}</h2>
         <p class="section-subtitle">{{ i18n "tr_sub" }}</p>
 
-        <div class="table-wrap">
+        <div class="table-wrap" tabindex="0" role="region" aria-label="{{ i18n "table_transports_label" }}">
             <table class="data-table">
                 <thead>
                     <tr><th>{{ i18n "th_category" }}</th><th>{{ i18n "th_transport" }}</th><th>{{ i18n "th_status" }}</th></tr>
@@ -103,7 +103,7 @@
         <h2 class="section-title">{{ i18n "hw_title" }}</h2>
         <p class="section-subtitle">{{ i18n "hw_sub" }}</p>
 
-        <div class="table-wrap">
+        <div class="table-wrap" tabindex="0" role="region" aria-label="{{ i18n "table_hardware_label" }}">
             <table class="data-table">
                 <thead><tr><th>{{ i18n "th_part" }}</th><th>{{ i18n "th_role" }}</th></tr></thead>
                 <tbody>
@@ -197,7 +197,7 @@
         <h2 class="section-title">{{ i18n "cta_title" }}</h2>
         <p class="section-subtitle">{{ i18n "cta_sub" }}</p>
         <div class="code-block code-block-inline cta-install">
-            <pre class="code-block-body"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
+            <pre class="code-block-body" tabindex="0" role="group" aria-label="{{ i18n "install_cmd_label" }}"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
             <button class="copy-btn" onclick="copyCode(this)">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                 <span class="copy-text">Copy</span>
