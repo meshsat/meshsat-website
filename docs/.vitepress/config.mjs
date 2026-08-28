@@ -4,11 +4,13 @@ export default defineConfig({
   title: 'MeshSat Docs',
   description: 'Documentation for MeshSat Bridge, Hub, and Android',
   head: [
+    ['meta', { name: 'theme-color', content: '#040406' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
   ],
 
   themeConfig: {
-    logo: '/logo.svg',
+    logo: { light: '/logo-light.png', dark: '/logo-dark.png', alt: '' },
     siteTitle: 'MeshSat Docs',
 
     nav: [

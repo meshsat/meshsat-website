@@ -187,11 +187,6 @@ img {
     font-weight: 700;
 }
 
-.logo-img {
-    height: 40px;
-    width: auto;
-}
-
 .logo-text {
     font-family: var(--font-display);
     font-size: 1.2rem;
@@ -2449,9 +2444,27 @@ img {
     font-size: 0.8rem !important;
 }
 
-/* Logo (inline SVG) */
-.logo-icon {
+/* Logo mark (approved brand artwork; dark/light raster variants, see MESHSAT-727) */
+.logo-mark {
     flex-shrink: 0;
+    height: 32px;
+    width: auto;
+}
+
+.footer-brand .logo-mark {
+    height: 28px;
+}
+
+.logo-mark-light {
+    display: none;
+}
+
+[data-theme="light"] .logo-mark-dark {
+    display: none;
+}
+
+[data-theme="light"] .logo-mark-light {
+    display: block;
 }
 
 .logo-mesh {

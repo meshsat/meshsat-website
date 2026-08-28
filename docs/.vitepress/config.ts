@@ -7,10 +7,13 @@ export default defineConfig({
   appearance: 'dark',
 
   head: [
-    ['meta', { name: 'theme-color', content: '#0d9488' }],
+    ['meta', { name: 'theme-color', content: '#040406' }],
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
   ],
 
   themeConfig: {
+    logo: { light: '/logo-light.png', dark: '/logo-dark.png', alt: '' },
     nav: [
       { text: 'Guide', link: '/guide/' },
       { text: 'API Reference', link: '/api/' },
