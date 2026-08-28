@@ -6,8 +6,8 @@ MeshSat Hub is a multi-tenant fleet management platform for satellite-connected 
 
 ## How Hub differs from Bridge
 
-| | Bridge | Hub |
-|---|--------|-----|
+| Aspect | Bridge | Hub |
+|--------|--------|-----|
 | **Runs on** | Raspberry Pi / SBC | Server / cloud / Kubernetes |
 | **Devices** | Directly connected via USB | Managed remotely via API |
 | **Authentication** | None (local device) | OAuth2/OIDC, API keys, local accounts |
