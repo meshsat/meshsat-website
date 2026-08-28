@@ -1,0 +1,47 @@
+/**
+ * MeshSat brand palette for the docs (MESHSAT-728).
+ *
+ * Replaces VitePress's stock indigo, whose light-mode brand button measured
+ * 4.48:1 (white on #5672CD) and failed WCAG 2.2 AA by 0.02. Every pair below
+ * is computed >= 4.5:1 against the surface it renders on:
+ *
+ *   light  #C4470A on #FFFFFF 4.94:1   on #F6F6F7 (sidebar) 4.57:1
+ *   light  #FFFFFF on #C4470A 4.94:1   hover #A83C08 6.34:1   active #8A3106 8.32:1
+ *   dark   #F25C05 on #1B1B1F 5.16:1   on #161618 5.43:1
+ *   dark   #14120F on #F25C05 5.62:1   hover #FF7A33 7.20:1   active #E85A04 5.25:1
+ *
+ * Dark buttons carry near-black text: white on #F25C05 is only ~3.1:1.
+ */
+
+:root {
+  --vp-c-brand-1: #C4470A;
+  --vp-c-brand-2: #A83C08;
+  --vp-c-brand-3: #C4470A;
+  --vp-c-brand-soft: rgba(196, 71, 10, 0.14);
+
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #FFFFFF;
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: #FFFFFF;
+  --vp-button-brand-hover-bg: #A83C08;
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: #FFFFFF;
+  --vp-button-brand-active-bg: #8A3106;
+
+  --vp-home-hero-name-color: var(--vp-c-brand-1);
+}
+
+.dark {
+  --vp-c-brand-1: #F25C05;
+  --vp-c-brand-2: #FF7A33;
+  --vp-c-brand-3: #F25C05;
+  --vp-c-brand-soft: rgba(242, 92, 5, 0.16);
+
+  --vp-button-brand-text: #14120F;
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-text: #14120F;
+  --vp-button-brand-hover-bg: #FF7A33;
+  --vp-button-brand-active-text: #14120F;
+  --vp-button-brand-active-bg: #E85A04;
+}
