@@ -13,7 +13,7 @@ hero:
       link: /api/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/cubeos-app/meshsat
+      link: https://github.com/meshsat/meshsat
 
 features:
   - title: 10+ Transports
