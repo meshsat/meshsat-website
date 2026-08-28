@@ -2,7 +2,7 @@
 
 MeshSat Android is a standalone mobile gateway app that turns any Android phone into a mesh-satellite-cellular routing device.
 
-**GitHub:** [cubeos-app/meshsat-android](https://github.com/cubeos-app/meshsat-android)
+**GitHub:** [meshsat/meshsat-android](https://github.com/meshsat/meshsat-android)
 
 ## Three transport paths
 

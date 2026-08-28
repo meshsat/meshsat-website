@@ -25,7 +25,7 @@ Create `docker-compose.yml`:
 ```yaml
 services:
   meshsat:
-    image: ghcr.io/cubeos-app/meshsat:latest
+    image: ghcr.io/meshsat/meshsat:latest
     container_name: meshsat
     restart: unless-stopped
     privileged: true
@@ -52,8 +52,8 @@ docker compose up -d
 On a machine with internet:
 
 ```bash
-docker pull ghcr.io/cubeos-app/meshsat:latest
-docker save ghcr.io/cubeos-app/meshsat:latest | gzip > meshsat-latest.tar.gz
+docker pull ghcr.io/meshsat/meshsat:latest
+docker save ghcr.io/meshsat/meshsat:latest | gzip > meshsat-latest.tar.gz
 ```
 
 Transfer to target, then:

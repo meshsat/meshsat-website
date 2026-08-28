@@ -9,7 +9,7 @@
 set -euo pipefail
 
 MESHSAT_INSTALLER_VERSION="1.1.0"
-MESHSAT_IMAGE="ghcr.io/cubeos-app/meshsat:latest"
+MESHSAT_IMAGE="ghcr.io/meshsat/meshsat:latest"
 MESHSAT_PORT="${MESHSAT_PORT:-6050}"
 MESHSAT_DIR="/meshsat"
 COMPOSE_CMD=""
