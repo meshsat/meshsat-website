@@ -31,39 +31,38 @@ else
   fail "$PUB/index.html not found; did the build run?"
 fi
 
-echo "=== 3. house style: no em or en dashes in rendered text ==="
-for f in "$PUB/index.html" "$PUB"/{nl,de,fr,el}/index.html; do
+echo "=== 3. house style: no em or en dashes anywhere in the built HTML ==="
+# Scans the RAW html, meta tags included. Tag-stripping would have hidden a stale
+# og:title carrying both the old slogan and an em dash, which is exactly the class
+# of bug this is meant to catch. No python here: the Hugo runner has none.
+for f in "$PUB/index.html" "$PUB"/nl/index.html "$PUB"/de/index.html "$PUB"/fr/index.html "$PUB"/el/index.html; do
   [ -f "$f" ] || continue
-  N=$(python3 - "$f" <<'PY'
-import re,sys,html
-s=open(sys.argv[1],encoding='utf-8').read()
-s=re.sub(r'<(script|style)[^>]*>.*?</\1>','',s,flags=re.S)
-t=html.unescape(re.sub(r'<[^>]+>',' ',s))
-print(t.count('—')+t.count('–'))
-PY
-)
-  [ "$N" -eq 0 ] && pass "no em/en dashes in ${f#$PUB/}" \
-    || fail "$N em/en dash(es) in ${f#$PUB/}"
+  N=$( { grep -o -e '—' -e '–' "$f" || true; } | wc -l | tr -d ' ' )
+  if [ "$N" -eq 0 ]; then pass "no em/en dashes in ${f#$PUB/}"
+  else
+    fail "$N em/en dash(es) in ${f#$PUB/}"
+    { grep -o -e '.\{0,60\}—.\{0,40\}' -e '.\{0,60\}–.\{0,40\}' "$f" || true; } | head -3 | sed 's/^/         /'
+  fi
 done
 
 echo "=== 4. i18n key parity ==="
-# A key missing from one catalogue falls back to English SILENTLY, which is the
-# worst failure mode on the site: it looks fine and is simply wrong.
-if python3 - <<'PY'
-import io,os,sys
-d='site/i18n'
-keys={f.split('.')[0]:{l.split(':')[0] for l in io.open(os.path.join(d,f),encoding='utf-8')
-      if l and not l.startswith(' ') and ':' in l} for f in sorted(os.listdir(d))}
-base=keys.get('en',set()); bad=False
-for c,k in sorted(keys.items()):
-    miss,extra=base-k,k-base
-    if miss or extra:
-        bad=True; print(f"  [FAIL] {c}: missing={sorted(miss)[:5]} extra={sorted(extra)[:5]}")
-    else:
-        print(f"  [ok]   {c}: {len(k)} keys match en")
-sys.exit(1 if bad else 0)
-PY
-then :; else FAIL=1; fi
+# A key missing from one catalogue falls back to English SILENTLY: the page looks
+# fine and is simply wrong. Pure shell, no python (the Hugo runner has none).
+keys_of() { grep -v '^[[:space:]]' "$1" | grep ':' | cut -d: -f1 | sort -u; }
+BASE=$(mktemp); keys_of site/i18n/en.yaml > "$BASE"
+for f in site/i18n/*.yaml; do
+  c=$(basename "$f" .yaml)
+  CUR=$(mktemp); keys_of "$f" > "$CUR"
+  MISS=$(comm -23 "$BASE" "$CUR" | tr '\n' ' ')
+  EXTRA=$(comm -13 "$BASE" "$CUR" | tr '\n' ' ')
+  if [ -z "$MISS" ] && [ -z "$EXTRA" ]; then
+    pass "$c: $(wc -l < "$CUR" | tr -d ' ') keys match en"
+  else
+    fail "$c: missing=[$MISS] extra=[$EXTRA]"
+  fi
+  rm -f "$CUR"
+done
+rm -f "$BASE"
 
 echo
 if [ "$FAIL" -eq 0 ]; then echo "verify-site: PASSED"; else echo "verify-site: FAILED"; fi
