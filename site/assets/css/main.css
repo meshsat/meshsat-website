@@ -3042,3 +3042,15 @@ img {
 .system-grid  { grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); }
 .not-for-grid,
 .screenshots-grid { grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
+
+/* 1.4.3 Contrast, badges. The success token is tuned for body text on the page
+   ground; on the badge's own tinted pill it lands at 4.12:1, just under AA, and
+   composites differently on white table rows than on tinted sections. Badges get
+   their own darker ink so they pass on every surface they can sit on. */
+[data-theme="light"] .badge-stable,
+[data-theme="light"] .badge-beta { color: #26663F; }
+[data-theme="light"] .badge-beta { color: #8A5A0B; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .badge-stable { color: #26663F; }
+  :root:not([data-theme="dark"]) .badge-beta   { color: #8A5A0B; }
+}
