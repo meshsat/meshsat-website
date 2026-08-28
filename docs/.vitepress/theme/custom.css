@@ -9,8 +9,12 @@
  *   light  #FFFFFF on #C4470A 4.94:1   hover #A83C08 6.34:1   active #8A3106 8.32:1
  *   dark   #F25C05 on #1B1B1F 5.16:1   on #161618 5.43:1
  *   dark   #14120F on #F25C05 5.62:1   hover #FF7A33 7.20:1   active #E85A04 5.25:1
+ *   code   light #A83C08 on chip #EFF0F3 5.56:1   dark #FF7A33 on chip #272930 5.60:1
  *
  * Dark buttons carry near-black text: white on #F25C05 is only ~3.1:1.
+ * Inline code gets its own color: brand-1 sits on the gray code-chip
+ * background (--vp-c-default-soft composited over the page), where both
+ * brand-1 values drop to ~4.3:1 and fail.
  */
 
 :root {
@@ -18,6 +22,7 @@
   --vp-c-brand-2: #A83C08;
   --vp-c-brand-3: #C4470A;
   --vp-c-brand-soft: rgba(196, 71, 10, 0.14);
+  --vp-code-color: #A83C08;
 
   --vp-button-brand-border: transparent;
   --vp-button-brand-text: #FFFFFF;
@@ -37,6 +42,7 @@
   --vp-c-brand-2: #FF7A33;
   --vp-c-brand-3: #F25C05;
   --vp-c-brand-soft: rgba(242, 92, 5, 0.16);
+  --vp-code-color: #FF7A33;
 
   --vp-button-brand-text: #14120F;
   --vp-button-brand-bg: var(--vp-c-brand-3);
