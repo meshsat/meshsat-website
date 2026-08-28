@@ -3054,3 +3054,37 @@ img {
   :root:not([data-theme="dark"]) .badge-stable { color: #26663F; }
   :root:not([data-theme="dark"]) .badge-beta   { color: #8A5A0B; }
 }
+
+/* ---------- Windows High Contrast / forced-colors (MESHSAT-723) ----------
+   forced-colors strips background-color and gradients but KEEPS background-image,
+   so the decorative hero photo survives while the scrim that made it readable does
+   not. The result is text on a bright photo, which is the opposite of what a user
+   who turned this mode on asked for. The photo is decorative, so remove it and let
+   the system colours do their job. Content images (screenshots) are left alone. */
+@media (forced-colors: active) {
+    .hero-slideshow,
+    .hero-slide,
+    .hero-overlay { display: none !important; }
+
+    .hero { background: Canvas; }
+
+    /* Keep the panels legible as panels: forced-colors drops our borders' colour,
+       so make sure the ones that carry structure actually have a border to keep. */
+    .trace,
+    .hero-status,
+    .reason-card,
+    .system-card,
+    .not-for-card,
+    .table-wrap { border: 1px solid CanvasText; }
+
+    /* The trace's left rule and the reason cards' reading edge carry meaning. */
+    .trace { border-left-width: 3px; }
+    .reason-card { border-left-width: 3px; }
+
+    /* State stays legible without relying on colour: the words already say
+       DELIVERED and FAILED, so just ensure they are not dimmed away. */
+    .trace-state.ok,
+    .trace-state.fail { forced-color-adjust: none; }
+    .trace-state.ok { color: CanvasText; }
+    .trace-state.fail { color: CanvasText; text-decoration: underline; }
+}
