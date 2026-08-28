@@ -1,5 +1,5 @@
 <header class="site-header">
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">{{ i18n "skip_link" }}</a>
     <nav class="container" role="navigation" aria-label="Main navigation">
         <a href="/" class="logo" aria-label="MeshSat Home">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="32" height="32" class="logo-icon">
@@ -29,14 +29,26 @@
             {{ range .Site.Menus.main }}
             <li>
                 <a href="{{ .URL }}"{{ if .Params.external }} target="_blank" rel="noopener"{{ end }}{{ if .Params.highlight }} class="nav-hub-btn"{{ end }}>
-                    {{ .Name }}{{ if and .Params.external (not .Params.highlight) }} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>{{ end }}
+                    {{ i18n (printf "nav_%s" .Identifier) }}{{ if and .Params.external (not .Params.highlight) }} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>{{ end }}
                 </a>
             </li>
             {{ end }}
         </ul>
 
         <div class="nav-actions">
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+            <div class="lang-switch">
+                <button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="{{ i18n "choose_language" }}" title="{{ i18n "choose_language" }}">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span class="lang-current">{{ .Site.Language.Lang | upper }}</span>
+                </button>
+                <ul class="lang-menu">
+                    {{ range .Site.Home.AllTranslations }}
+                    <li><a href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}"{{ if eq .Language.Lang $.Site.Language.Lang }} aria-current="true"{{ end }}>{{ .Language.LanguageName }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <button class="theme-toggle" id="theme-toggle" aria-label="{{ i18n "toggle_theme" }}" title="{{ i18n "toggle_theme" }}">
                 <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
@@ -53,7 +65,7 @@
                 </svg>
             </button>
 
-            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+            <button class="menu-toggle" aria-label="{{ i18n "toggle_menu" }}" aria-expanded="false" aria-controls="nav-links">
                 <span></span>
                 <span></span>
                 <span></span>

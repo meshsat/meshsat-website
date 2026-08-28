@@ -1,0 +1,222 @@
+nav_transports:
+  other: "Transports"
+nav_why:
+  other: "Why"
+nav_hardware:
+  other: "Hardware"
+nav_install:
+  other: "Install"
+nav_changelog:
+  other: "Changelog"
+nav_docs:
+  other: "Docs"
+nav_hub:
+  other: "Hub"
+skip_link:
+  other: "Skip to main content"
+toggle_theme:
+  other: "Toggle theme"
+toggle_menu:
+  other: "Toggle menu"
+choose_language:
+  other: "Choose language"
+hero_eyebrow:
+  other: "Open source routing across radios that cannot reach each other"
+hero_title_a:
+  other: "One message."
+hero_title_b:
+  other: "Every way out."
+hero_sub:
+  other: "A mesh keeps a village talking to itself but has no route out of the valley. A satellite modem reaches anywhere and costs real money per message. MeshSat is the layer in between: it takes a message off the mesh and sends it by whatever bearer is still alive, spending satellite bytes only when nothing free is left."
+hero_status:
+  other: "Pre-release prototype. Never deployed to a real user, never used in an emergency."
+trace_title:
+  other: "Routing trace, one distress message"
+trace_bridge:
+  other: "bridge tesseract"
+trace_alt:
+  other: "Example routing trace: an SOS arrives over LoRa mesh, the Iridium leg fails because the satellite is below the horizon, and the message is delivered by cellular SMS, TAK and MQTT instead."
+t1:
+  other: "SOS from node !a4f2c1, 17 bytes"
+t2:
+  other: "3 rules matched, 4 routes selected"
+t3:
+  other: "below horizon, next pass in 11m 38s"
+t4:
+  other: "smaz2 17 to 11 bytes, SMS to contact group"
+t5:
+  other: "position as Cursor-on-Target, in parallel"
+t6:
+  other: "logged for dashboard and webhooks"
+trace_foot:
+  other: "The satellite leg failed and the message still arrived. That is the whole product. Routes, failover order and transform chains are configured per interface."
+tr_title:
+  other: "Eight bearers, nine wired interfaces"
+tr_sub:
+  other: "Iridium runs on two modems, the 9603N for SBD and the 9704 for IMT. Every bearer is a first-class interface with its own MTU, cost model and transform pipeline. TAK and webhooks are integrations rather than bearers. Status says what we have actually run, not what we hope."
+th_category:
+  other: "Category"
+th_transport:
+  other: "Transport"
+th_status:
+  other: "Status"
+cat_mesh:
+  other: "Mesh"
+cat_sat:
+  other: "Satellite"
+cat_cell:
+  other: "Cellular"
+cat_wireless:
+  other: "Wireless"
+cat_ip:
+  other: "IP / Network"
+cat_routing:
+  other: "Routing"
+st_field:
+  other: "Field tested"
+st_sat:
+  other: "Verified over satellite"
+st_little:
+  other: "Little field exposure"
+st_rns:
+  other: "Interoperates with Python RNS"
+tx_cell:
+  other: "SMS and data (A7670E)"
+tx_aprs:
+  other: "APRS (bundled Direwolf, KISS)"
+tx_rns:
+  other: "Reticulum TCP (HDLC framed)"
+tr_note_a:
+  other: "Multi-bearer bonding over a paid satellite link is not validated yet, and the jamming detector has only ever seen ambient noise."
+tr_note_link:
+  other: "The repository sets out the full list"
+tr_note_b:
+  other: "of what has and has not been proven."
+cost_title:
+  other: "Satellite bytes are expensive. That is the whole design."
+cost_sub:
+  other: "An Iridium line costs tens of euros a month plus credits per message, billed in 340 byte blocks. Give one to every person in a team and the bill scales with headcount. That price is the reason the routing layer exists at all."
+c1_h:
+  other: "One paid link, shared"
+c1_p:
+  other: "A team carries cheap mesh radios. One gateway holds the expensive satellite line. Everyone reaches the outside through it, so cost stops scaling with the number of people."
+c2_h:
+  other: "Free bearers first"
+c2_p:
+  other: "Every interface declares a cost. The router prefers the free ones, mesh, packet radio, Bluetooth and WiFi, and only reaches for satellite or SMS when nothing free is up."
+c3_h:
+  other: "Fewer bytes when it does"
+c3_p:
+  other: "Anything leaving on a metered bearer is compressed first. SMAZ2 runs in under a millisecond on short text, which matters when you are billed per block rather than per byte."
+c4_h:
+  other: "Sent when the sky is right"
+c4_p:
+  other: "Pass prediction from SGP4 orbital elements holds traffic for visibility windows instead of burning battery retrying against a satellite that is below the horizon."
+funding_a:
+  other: "MeshSat is free software under the GPLv3. Development is supported by"
+funding_b:
+  other: ", and a six month field programme starts in November 2026."
+hw_title:
+  other: "What it runs on"
+hw_sub:
+  other: "A Raspberry Pi in a waterproof case with radios on USB and GPIO. Devices are identified at startup by USB ID and protocol probe, so plugging one in is the whole configuration step."
+th_part:
+  other: "Part"
+th_role:
+  other: "Role"
+hw1:
+  other: "Host. ARM64, or any x86_64 Linux with Docker and USB serial."
+hw2:
+  other: "Meshtastic mesh radio at 868 or 915 MHz."
+hw3:
+  other: "Iridium satellite. SBD at 340 bytes, or IMT at 100 KB."
+hw4:
+  other: "4G and 2G cellular, for SMS and data."
+hw5:
+  other: "ZigBee coordinator."
+hw6:
+  other: "UPS and battery"
+hw6r:
+  other: "Because the interesting cases are the ones where mains power has gone too."
+cap1:
+  other: "Signal, traffic and channel health, served by the device itself"
+cap2:
+  other: "Pass prediction, so the queue waits for a satellite that is actually up"
+cap3:
+  other: "Live mesh topology"
+cap4:
+  other: "Forwarding rules and per-gateway status"
+hw_note:
+  other: "The dashboard is embedded in the binary and served from the device. No cloud dependency, no account."
+nf_title:
+  other: "What it is not"
+nf_sub:
+  other: "The fastest way to waste an afternoon is to expect the wrong thing from it."
+nf1_h:
+  other: "Not a Starlink replacement"
+nf1_p:
+  other: "MeshSat moves text, positions and telemetry. If you need video calls or the web, use Starlink. This is for the cases a dish cannot serve: battery powered, pocket sized, no mains."
+nf2_h:
+  other: "Not voice or video"
+nf2_p:
+  other: "Satellite and mesh links are high latency and low throughput. This is store and forward messaging. Think SMS, not a phone call."
+nf3_h:
+  other: "Not a LoRaWAN network server"
+nf3_p:
+  other: "The mesh side speaks Meshtastic, which is its own protocol over LoRa. For LoRaWAN, run ChirpStack and bridge it in over MQTT."
+nf4_h:
+  other: "Not an emergency service"
+nf4_p:
+  other: "A research prototype, not a replacement for 112, 911 or any national emergency number. Nothing here is certified and nothing here has been used in a real emergency."
+sys_title:
+  other: "The rest of the system"
+sys_sub:
+  other: "The Bridge is one device and works entirely on its own. Two other pieces exist for when one device is not the whole picture."
+hub_badge:
+  other: "Private beta"
+hub_status:
+  other: "MeshSat Hub is not launched yet. It runs as a private beta on our own infrastructure. Access for demos and beta testing is arranged on request."
+hub_p:
+  other: "Fleet management across many bridges: OAuth2 and OIDC accounts, API keys with roles, multi-tenant isolation, SOS escalation chains, per-device rate limits and an Ed25519 hash-chain audit log. Deployable standalone, clustered, or on Kubernetes."
+hub_cta:
+  other: "Request beta access"
+and_p:
+  other: "A phone as a standalone gateway, with no Pi and no cables. It talks to a Meshtastic radio over Bluetooth LE, an Iridium modem over Bluetooth SPP, and uses the phone's own SMS, all at the same time. Same encryption and message formats as the Bridge."
+and_cta:
+  other: "Android source"
+cta_title:
+  other: "Try it"
+cta_sub:
+  other: "One command on a Linux machine with a radio plugged into it. A single device is enough to start, and anything missing is logged as a warning rather than an error."
+cta_source:
+  other: "Read the source"
+cta_docs:
+  other: "Documentation"
+cta_matrix:
+  other: "Ask on Matrix"
+cta_note:
+  other: "Bug reports from people running hardware we have not tried are the most useful thing you can send. The supported-device list is short because it only names what we have physically run."
+f_builtwith:
+  other: "Built With"
+f_supported:
+  other: "Supported By"
+f_products:
+  other: "Products"
+f_resources:
+  other: "Resources"
+f_legal:
+  other: "Legal"
+f_strapline:
+  other: "Keeping people connected when the network is not."
+f_madein:
+  other: "Built in the Netherlands"
+f_prerelease:
+  other: "MeshSat is pre-release software. APIs and configuration may change. Expect breaking changes between versions."
+f_privacy:
+  other: "Privacy Policy"
+f_terms:
+  other: "Terms of Service"
+f_license:
+  other: "GPLv3 License"
+f_copy:
+  other: "is free software, released under the GPLv3."

@@ -1,0 +1,222 @@
+nav_transports:
+  other: "Transporten"
+nav_why:
+  other: "Waarom"
+nav_hardware:
+  other: "Hardware"
+nav_install:
+  other: "Installeren"
+nav_changelog:
+  other: "Wijzigingen"
+nav_docs:
+  other: "Documentatie"
+nav_hub:
+  other: "Hub"
+skip_link:
+  other: "Naar de hoofdinhoud"
+toggle_theme:
+  other: "Thema wisselen"
+toggle_menu:
+  other: "Menu openen"
+choose_language:
+  other: "Taal kiezen"
+hero_eyebrow:
+  other: "Open source routering tussen radio's die elkaar niet kunnen bereiken"
+hero_title_a:
+  other: "Eén bericht."
+hero_title_b:
+  other: "Elke weg naar buiten."
+hero_sub:
+  other: "Een mesh houdt een dorp met zichzelf in gesprek, maar heeft geen route het dal uit. Een satellietmodem bereikt de hele wereld en kost echt geld per bericht. MeshSat is de laag daartussen: het haalt een bericht van de mesh en verstuurt het via welke drager dan ook die nog werkt, en geeft pas satellietbytes uit als er niets gratis meer over is."
+hero_status:
+  other: "Prototype, nog niet uitgebracht. Nooit bij een echte gebruiker ingezet, nooit gebruikt bij een noodgeval."
+trace_title:
+  other: "Routeringslog, één noodbericht"
+trace_bridge:
+  other: "bridge tesseract"
+trace_alt:
+  other: "Voorbeeld van een routeringslog: een SOS komt binnen via LoRa mesh, de Iridium-poging mislukt omdat de satelliet onder de horizon staat, en het bericht wordt in plaats daarvan bezorgd via sms, TAK en MQTT."
+t1:
+  other: "SOS van node !a4f2c1, 17 bytes"
+t2:
+  other: "3 regels overeen, 4 routes gekozen"
+t3:
+  other: "onder de horizon, volgende passage over 11m 38s"
+t4:
+  other: "smaz2 17 naar 11 bytes, sms naar contactgroep"
+t5:
+  other: "positie als Cursor-on-Target, parallel"
+t6:
+  other: "vastgelegd voor dashboard en webhooks"
+trace_foot:
+  other: "De satellietverbinding mislukte en het bericht kwam toch aan. Dat is het hele product. Routes, failover-volgorde en transformatieketens worden per interface ingesteld."
+tr_title:
+  other: "Acht dragers, negen bedrade interfaces"
+tr_sub:
+  other: "Iridium draait op twee modems, de 9603N voor SBD en de 9704 voor IMT. Elke drager is een volwaardige interface met een eigen MTU, kostenmodel en transformatieketen. TAK en webhooks zijn integraties, geen dragers. De status zegt wat we werkelijk hebben gedraaid, niet wat we hopen."
+th_category:
+  other: "Categorie"
+th_transport:
+  other: "Transport"
+th_status:
+  other: "Status"
+cat_mesh:
+  other: "Mesh"
+cat_sat:
+  other: "Satelliet"
+cat_cell:
+  other: "Mobiel"
+cat_wireless:
+  other: "Draadloos"
+cat_ip:
+  other: "IP / Netwerk"
+cat_routing:
+  other: "Routering"
+st_field:
+  other: "In het veld getest"
+st_sat:
+  other: "Via satelliet bevestigd"
+st_little:
+  other: "Weinig veldervaring"
+st_rns:
+  other: "Werkt samen met Python RNS"
+tx_cell:
+  other: "Sms en data (A7670E)"
+tx_aprs:
+  other: "APRS (meegeleverde Direwolf, KISS)"
+tx_rns:
+  other: "Reticulum TCP (HDLC-frames)"
+tr_note_a:
+  other: "Bundeling over meerdere dragers via een betaalde satellietverbinding is nog niet gevalideerd, en de stoordetectie heeft alleen nog omgevingsruis gezien."
+tr_note_link:
+  other: "De repository geeft de volledige lijst"
+tr_note_b:
+  other: "van wat wel en niet bewezen is."
+cost_title:
+  other: "Satellietbytes zijn duur. Dat is het hele ontwerp."
+cost_sub:
+  other: "Een Iridium-abonnement kost tientallen euro's per maand plus credits per bericht, afgerekend in blokken van 340 bytes. Geef er iedereen in een team één en de rekening groeit mee met het aantal mensen. Die prijs is precies waarom de routeringslaag bestaat."
+c1_h:
+  other: "Eén betaalde verbinding, gedeeld"
+c1_p:
+  other: "Een team draagt goedkope mesh-radio's. Eén gateway houdt de dure satellietverbinding. Iedereen bereikt de buitenwereld daardoorheen, zodat de kosten niet meer meegroeien met het aantal mensen."
+c2_h:
+  other: "Eerst de gratis dragers"
+c2_p:
+  other: "Elke interface geeft een kostprijs op. De router kiest bij voorkeur de gratis dragers, mesh, packet radio, Bluetooth en wifi, en grijpt pas naar satelliet of sms als er niets gratis beschikbaar is."
+c3_h:
+  other: "En dan zo min mogelijk bytes"
+c3_p:
+  other: "Alles wat via een betaalde drager vertrekt, wordt eerst gecomprimeerd. SMAZ2 doet dat in minder dan een milliseconde bij korte tekst, wat telt als je per blok betaalt en niet per byte."
+c4_h:
+  other: "Verstuurd als de hemel goed staat"
+c4_p:
+  other: "Passagevoorspelling op basis van SGP4-baangegevens houdt verkeer vast tot een zichtbaarheidsvenster, in plaats van batterij te verspillen aan pogingen richting een satelliet die onder de horizon staat."
+funding_a:
+  other: "MeshSat is vrije software onder de GPLv3. De ontwikkeling wordt ondersteund door"
+funding_b:
+  other: ", en een veldprogramma van zes maanden begint in november 2026."
+hw_title:
+  other: "Waar het op draait"
+hw_sub:
+  other: "Een Raspberry Pi in een waterdichte koffer met radio's op USB en GPIO. Apparaten worden bij het opstarten herkend aan hun USB-id en een protocoltest, dus aansluiten is de hele configuratie."
+th_part:
+  other: "Onderdeel"
+th_role:
+  other: "Rol"
+hw1:
+  other: "Host. ARM64, of elke x86_64 Linux met Docker en USB-serieel."
+hw2:
+  other: "Meshtastic mesh-radio op 868 of 915 MHz."
+hw3:
+  other: "Iridium-satelliet. SBD met 340 bytes, of IMT met 100 KB."
+hw4:
+  other: "4G en 2G mobiel, voor sms en data."
+hw5:
+  other: "ZigBee-coördinator."
+hw6:
+  other: "UPS en accu"
+hw6r:
+  other: "Omdat de interessante gevallen juist die zijn waarin ook de netstroom is weggevallen."
+cap1:
+  other: "Signaal, verkeer en kanaalgezondheid, geserveerd door het apparaat zelf"
+cap2:
+  other: "Passagevoorspelling, zodat de wachtrij wacht op een satelliet die er echt is"
+cap3:
+  other: "Live mesh-topologie"
+cap4:
+  other: "Doorstuurregels en status per gateway"
+hw_note:
+  other: "Het dashboard zit in de binary en wordt vanaf het apparaat geserveerd. Geen cloud, geen account."
+nf_title:
+  other: "Wat het niet is"
+nf_sub:
+  other: "De snelste manier om een middag te verspillen is het verkeerde ervan verwachten."
+nf1_h:
+  other: "Geen vervanging van Starlink"
+nf1_p:
+  other: "MeshSat verplaatst tekst, posities en telemetrie. Wil je videobellen of het web, gebruik dan Starlink. Dit is voor de gevallen die een schotel niet aankan: op accu, zakformaat, zonder netstroom."
+nf2_h:
+  other: "Geen spraak of video"
+nf2_p:
+  other: "Satelliet- en meshverbindingen hebben hoge vertraging en lage doorvoer. Dit is store and forward berichtenverkeer. Denk aan sms, niet aan bellen."
+nf3_h:
+  other: "Geen LoRaWAN-netwerkserver"
+nf3_p:
+  other: "De meshkant spreekt Meshtastic, een eigen protocol over LoRa. Gebruik voor LoRaWAN ChirpStack en koppel dat via MQTT."
+nf4_h:
+  other: "Geen hulpdienst"
+nf4_p:
+  other: "Een onderzoeksprototype, geen vervanging van 112 of enig ander nationaal alarmnummer. Niets hiervan is gecertificeerd en niets hiervan is bij een echt noodgeval gebruikt."
+sys_title:
+  other: "De rest van het systeem"
+sys_sub:
+  other: "De Bridge is één apparaat en werkt volledig zelfstandig. Er zijn twee andere onderdelen voor als één apparaat niet het hele verhaal is."
+hub_badge:
+  other: "Besloten bèta"
+hub_status:
+  other: "MeshSat Hub is nog niet gelanceerd. Het draait als besloten bèta op onze eigen infrastructuur. Toegang voor demo's en bètatests regelen we op aanvraag."
+hub_p:
+  other: "Vlootbeheer over veel bridges: OAuth2- en OIDC-accounts, API-sleutels met rollen, scheiding tussen tenants, SOS-escalatieketens, snelheidslimieten per apparaat en een Ed25519 hash-chain auditlog. Uit te rollen zelfstandig, als cluster of op Kubernetes."
+hub_cta:
+  other: "Bètatoegang aanvragen"
+and_p:
+  other: "Een telefoon als zelfstandige gateway, zonder Pi en zonder kabels. Hij praat met een Meshtastic-radio over Bluetooth LE, met een Iridium-modem over Bluetooth SPP, en gebruikt de eigen sms van de telefoon, alles tegelijk. Dezelfde versleuteling en berichtformaten als de Bridge."
+and_cta:
+  other: "Android-broncode"
+cta_title:
+  other: "Probeer het"
+cta_sub:
+  other: "Eén commando op een Linux-machine met een radio eraan. Eén apparaat is genoeg om te beginnen, en wat ontbreekt wordt als waarschuwing gelogd, niet als fout."
+cta_source:
+  other: "Bekijk de broncode"
+cta_docs:
+  other: "Documentatie"
+cta_matrix:
+  other: "Vraag het op Matrix"
+cta_note:
+  other: "Foutmeldingen van mensen met hardware die wij niet hebben geprobeerd zijn het nuttigste wat je kunt sturen. De lijst met ondersteunde apparaten is kort omdat er alleen op staat wat we fysiek hebben gedraaid."
+f_builtwith:
+  other: "Gebouwd met"
+f_supported:
+  other: "Mede mogelijk gemaakt door"
+f_products:
+  other: "Producten"
+f_resources:
+  other: "Bronnen"
+f_legal:
+  other: "Juridisch"
+f_strapline:
+  other: "Mensen bereikbaar houden als het netwerk dat niet is."
+f_madein:
+  other: "Gemaakt in Nederland"
+f_prerelease:
+  other: "MeshSat is software die nog niet is uitgebracht. API's en configuratie kunnen veranderen. Reken op brekende wijzigingen tussen versies."
+f_privacy:
+  other: "Privacybeleid"
+f_terms:
+  other: "Gebruiksvoorwaarden"
+f_license:
+  other: "GPLv3-licentie"
+f_copy:
+  other: "is vrije software, uitgebracht onder de GPLv3."
