@@ -17,11 +17,11 @@ params:
   install_url: "https://get.meshsat.net"
 menu:
   main:
-    - name: "Features"
-      url: "/#features"
-      weight: 1
     - name: "Transports"
       url: "/#transports"
+      weight: 1
+    - name: "Why"
+      url: "/#cost"
       weight: 2
     - name: "Hardware"
       url: "/#hardware"

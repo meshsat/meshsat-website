@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<!-- Hero — slideshow background with text overlay -->
+{{/* 1. HERO — the thesis is the trace, not the slogan. */}}
 <section class="hero">
     <div class="hero-slideshow">
         <div class="hero-slide active" style="background-image: url('/images/hero/field-comms.webp'); background-position: center 85%"></div>
@@ -10,18 +10,28 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-        <p class="hero-label">Multi-transport routing engine</p>
-        <h1 class="hero-title">Any network.<br><span class="highlight">One gateway.</span></h1>
-        <p class="hero-subtitle">MeshSat is not a network. It is a <strong>routing layer between networks</strong> — mesh, satellite, cellular, and IP. One device, one set of rules, every transport.</p>
-        <div class="hero-actions">
-            <a href="/install/" class="btn btn-primary">Install MeshSat</a>
-            <a href="/#hub" class="btn btn-outline">About the Hub</a>
+        <p class="hero-label">Open source routing across radios that cannot reach each other</p>
+        <h1 class="hero-title">One message.<br><span class="highlight">Every way out.</span></h1>
+        <p class="hero-subtitle">A mesh keeps a village talking to itself but has no route out of the valley. A satellite modem reaches anywhere and costs real money per message. MeshSat is the layer in between: it takes a message off the mesh and sends it by whatever bearer is still alive, spending satellite bytes only when nothing free is left.</p>
+
+        <p class="hero-status"><span class="dot"></span> Pre-release prototype. Never deployed to a real user, never used in an emergency.</p>
+
+        <div class="trace" role="img" aria-label="Example routing trace: an SOS arrives over LoRa mesh, the Iridium leg fails because the satellite is below the horizon, and the message is delivered by cellular SMS, TAK and MQTT instead.">
+            <div class="trace-head"><span>Routing trace &middot; one distress message</span><span>bridge tesseract</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.118</span><span class="trace-if">mesh_0</span><span class="trace-dir">RX</span><span class="trace-msg">SOS from node !a4f2c1, 17 bytes</span><span class="trace-state"></span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.140</span><span class="trace-if">router</span><span class="trace-dir">&middot;&middot;</span><span class="trace-msg">3 rules matched, 4 routes selected</span><span class="trace-state"></span></div>
+            <div class="trace-row is-fail"><span class="trace-t">09:14:02.191</span><span class="trace-if">iridium_0</span><span class="trace-dir">TX</span><span class="trace-msg">below horizon, next pass in 11m 38s</span><span class="trace-state fail">FAILED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.204</span><span class="trace-if">cellular_0</span><span class="trace-dir">TX</span><span class="trace-msg">smaz2 17&rarr;11 bytes, SMS to contact group</span><span class="trace-state ok">DELIVERED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.209</span><span class="trace-if">tak_0</span><span class="trace-dir">TX</span><span class="trace-msg">position as Cursor-on-Target, in parallel</span><span class="trace-state ok">DELIVERED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.318</span><span class="trace-if">mqtt_0</span><span class="trace-dir">TX</span><span class="trace-msg">logged for dashboard and webhooks</span><span class="trace-state ok">DELIVERED</span></div>
+            <p class="trace-foot">The satellite leg failed and the message still arrived. That is the whole product. Routes, failover order and transform chains are configured per interface.</p>
         </div>
+
         <div class="hero-install">
             <div class="code-block code-block-inline">
                 <pre class="code-block-body"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
                 <button class="copy-btn" onclick="copyCode(this)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                     <span class="copy-text">Copy</span>
                 </button>
             </div>
@@ -29,590 +39,177 @@
     </div>
 </section>
 
-<!-- Architecture Diagram — the "aha moment" -->
-<section class="section routing-diagram">
-    <div class="container">
-        <h2 class="section-title">A routing fabric for disconnected networks</h2>
-        <p class="section-subtitle">Messages enter from any transport and exit through any other — with policy, compression, encryption, and failover applied automatically.</p>
-
-        <div class="diagram">
-            <div class="diagram-inputs">
-                <div class="diagram-node node-mesh">LoRa Mesh</div>
-                <div class="diagram-node node-zigbee">ZigBee</div>
-                <div class="diagram-node node-serial">Serial</div>
-            </div>
-            <div class="diagram-arrows-in">
-                <div class="diagram-arrow">&rarr;</div>
-                <div class="diagram-arrow">&rarr;</div>
-                <div class="diagram-arrow">&rarr;</div>
-            </div>
-            <div class="diagram-center">
-                <div class="diagram-gateway">
-                    <span class="diagram-gateway-label">MeshSat</span>
-                    <span class="diagram-gateway-sub">Rules &middot; Compress &middot; Encrypt &middot; Route</span>
-                </div>
-            </div>
-            <div class="diagram-arrows-out">
-                <div class="diagram-arrow">&rarr;</div>
-                <div class="diagram-arrow">&rarr;</div>
-                <div class="diagram-arrow">&rarr;</div>
-                <div class="diagram-arrow">&rarr;</div>
-            </div>
-            <div class="diagram-outputs">
-                <div class="diagram-node node-sat">Iridium</div>
-                <div class="diagram-node node-cell">Cellular SMS</div>
-                <div class="diagram-node node-mqtt">MQTT</div>
-                <div class="diagram-node node-tak">TAK / APRS</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Concrete Flow Example -->
-<section class="section section-alt flow-example">
-    <div class="container">
-        <h2 class="section-title">See routing in action</h2>
-        <p class="section-subtitle">A single message can traverse multiple transports with automatic failover.</p>
-
-        <div class="flow-card">
-            <div class="flow-scenario">
-                <h3>Example: Distress message from a Meshtastic node</h3>
-                <p class="flow-desc">A field team member sends an SOS. MeshSat evaluates routing rules and dispatches across available transports:</p>
-            </div>
-            <div class="flow-steps">
-                <div class="flow-step">
-                    <div class="flow-step-num">1</div>
-                    <div class="flow-step-content">
-                        <strong>LoRa Mesh &rarr; MeshSat</strong>
-                        <p>Message arrives from Meshtastic radio over serial</p>
-                    </div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-num">2</div>
-                    <div class="flow-step-content">
-                        <strong>MeshSat &rarr; Iridium satellite</strong>
-                        <p>Primary route: compressed with SMAZ2, sent via Iridium SBD to operations center</p>
-                    </div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-num">3</div>
-                    <div class="flow-step-content">
-                        <strong>MeshSat &rarr; Cellular SMS</strong>
-                        <p>Failover: if satellite is below horizon, SMS the same message to emergency contacts</p>
-                    </div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-num">4</div>
-                    <div class="flow-step-content">
-                        <strong>MeshSat &rarr; TAK server</strong>
-                        <p>Parallel: position forwarded as Cursor-on-Target XML to ATAK-equipped rescue teams</p>
-                    </div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-num">5</div>
-                    <div class="flow-step-content">
-                        <strong>MeshSat &rarr; MQTT dashboard</strong>
-                        <p>Parallel: message logged to MQTT for web dashboard and webhook integrations</p>
-                    </div>
-                </div>
-            </div>
-            <p class="flow-note">MeshSat dispatches across all routes in under a second. Satellite delivery depends on constellation visibility and queue depth. Rules, failover priority, and transform chains are configured per interface.</p>
-        </div>
-    </div>
-</section>
-
-<!-- How It Works — 3 steps -->
-<section class="section how-it-works">
-    <div class="container">
-        <h2 class="section-title">How it works</h2>
-        <p class="section-subtitle">Three steps to a multi-transport gateway.</p>
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h3>Plug in devices</h3>
-                <p>Connect radios and modems via USB. MeshSat auto-detects hardware and configures serial protocols.</p>
-            </div>
-            <div class="step-arrow">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <h3>Define routing rules</h3>
-                <p>Set access policies, failover groups, and transform pipelines from the web dashboard.</p>
-            </div>
-            <div class="step-arrow">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <h3>Messages flow</h3>
-                <p>The dispatcher routes across transports with failover, compression, encryption, and delivery tracking.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Features — reframed as outcomes -->
-<section id="features" class="section section-alt">
-    <div class="container">
-        <h2 class="section-title">Built for the field</h2>
-        <p class="section-subtitle">Every feature exists to solve a real problem in disconnected environments.</p>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <h3>Control where messages go</h3>
-                <p>Route by sender, portnum, channel, or content. Block, rate-limit, or redirect traffic with fine-grained access rules.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-                </div>
-                <h3>Shrink messages before they fly</h3>
-                <p>Three compression tiers adapt to each link, so messages leaving the mesh are shrunk before they cost you satellite credits or airtime.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                </div>
-                <h3>Swap hardware without reconfig</h3>
-                <p>Plug in a new modem, unplug the old one. MeshSat detects the change and rebinds interfaces automatically. No downtime.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <h3>Send only when satellites are overhead</h3>
-                <p>Pass prediction queues messages for optimal visibility windows, saving power and avoiding wasted transmissions.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
-                </div>
-                <h3>Never lose a message</h3>
-                <p>Dead letter queue with intelligent backoff retries failed transmissions. Delivery ledger tracks every message across every hop.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                </div>
-                <h3>Know when something is wrong</h3>
-                <p>Dead man's switch, polygon geofences, and channel health scoring alert you before problems become emergencies.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Cost Narrative -->
-<section class="section cost-section">
-    <div class="container">
-        <h2 class="section-title">The cost math</h2>
-        <p class="section-subtitle">One gateway serves your entire team. No per-device satellite subscriptions.</p>
-
-        <div class="cost-grid">
-            <div class="cost-card cost-traditional">
-                <h3>Traditional approach</h3>
-                <p class="cost-desc">One satellite device per person</p>
-                <ul>
-                    <li>10 team members &times; Iridium device = <strong>$3,500-6,000</strong></li>
-                    <li>10 subscriptions &times; $50/mo = <strong>$500/mo</strong></li>
-                    <li>No message routing between devices</li>
-                    <li>No custom policies or failover</li>
-                </ul>
-            </div>
-            <div class="cost-card cost-meshsat">
-                <h3>MeshSat approach</h3>
-                <p class="cost-desc">One gateway, many mesh nodes</p>
-                <ul>
-                    <li>1 MeshSat gateway = <strong>$150-400</strong></li>
-                    <li>10 Meshtastic radios &times; $30 = <strong>$300</strong></li>
-                    <li>1 satellite subscription = <strong>$50/mo</strong></li>
-                    <li>Full routing, failover, compression, encryption</li>
-                </ul>
-            </div>
-        </div>
-        <p class="cost-footnote">Meshtastic nodes communicate over LoRa for free. Only messages that need to leave the mesh hit the satellite link — and MeshSat compresses them first.</p>
-    </div>
-</section>
-
-<!-- Transports -->
+{{/* 2. WHAT IT BRIDGES */}}
 <section id="transports" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">8 transport bearers</h2>
-        <p class="section-subtitle">Eight bearers across nine wired Reticulum interfaces — Iridium runs on two modems, the 9603N (SBD) and the 9704 (IMT). Every bearer is a first-class interface with its own MTU, cost model, and transform pipeline. TAK/CoT and webhooks are supported as integrations rather than bearers.</p>
+        <h2 class="section-title">Eight bearers, nine wired interfaces</h2>
+        <p class="section-subtitle">Iridium runs on two modems, the 9603N for SBD and the 9704 for IMT. Every bearer is a first-class interface with its own MTU, cost model and transform pipeline. TAK and webhooks are integrations rather than bearers. Status says what we have actually run, not what we hope.</p>
 
         <div class="table-wrap">
             <table class="data-table">
                 <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Transport</th>
-                        <th>Status</th>
-                    </tr>
+                    <tr><th>Category</th><th>Transport</th><th>Status</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><span class="category-label">Mesh</span></td><td>Meshtastic LoRa</td><td><span class="badge badge-stable">Stable</span></td></tr>
-                    <tr><td rowspan="2"><span class="category-label">Satellite</span></td><td>Iridium SBD 9603N</td><td><span class="badge badge-stable">Stable</span></td></tr>
-                    <tr><td>Iridium IMT 9704</td><td><span class="badge badge-stable">Stable</span></td></tr>
-                    <tr><td><span class="category-label">Cellular</span></td><td>SMS / Data (A7670E)</td><td><span class="badge badge-stable">Stable</span></td></tr>
-                    <tr><td><span class="category-label">Wireless</span></td><td>ZigBee 3.0 (CC2652P)</td><td><span class="badge badge-beta">Beta</span></td></tr>
-                    <tr><td rowspan="4"><span class="category-label">IP / Network</span></td><td>MQTT</td><td><span class="badge badge-stable">Stable</span></td></tr>
-                    <tr><td>Webhooks</td><td><span class="badge badge-stable">Stable</span></td></tr>
-                    <tr><td>APRS (Direwolf KISS)</td><td><span class="badge badge-beta">Beta</span></td></tr>
-                    <tr><td>TAK / Cursor-on-Target</td><td><span class="badge badge-beta">Beta</span></td></tr>
-                    <tr><td><span class="category-label">Routing</span></td><td>Reticulum TCP (HDLC framed)</td><td><span class="badge badge-stable">Stable</span></td></tr>
+                    <tr><td><span class="category-label">Mesh</span></td><td>Meshtastic LoRa</td><td><span class="badge badge-stable">Field tested</span></td></tr>
+                    <tr><td rowspan="2"><span class="category-label">Satellite</span></td><td>Iridium SBD 9603N</td><td><span class="badge badge-stable">Field tested</span></td></tr>
+                    <tr><td>Iridium IMT 9704</td><td><span class="badge badge-stable">Verified over satellite</span></td></tr>
+                    <tr><td><span class="category-label">Cellular</span></td><td>SMS and data (A7670E)</td><td><span class="badge badge-stable">Field tested</span></td></tr>
+                    <tr><td><span class="category-label">Wireless</span></td><td>ZigBee 3.0 (CC2652P)</td><td><span class="badge badge-beta">Little field exposure</span></td></tr>
+                    <tr><td rowspan="4"><span class="category-label">IP / Network</span></td><td>MQTT</td><td><span class="badge badge-stable">Field tested</span></td></tr>
+                    <tr><td>Webhooks</td><td><span class="badge badge-stable">Field tested</span></td></tr>
+                    <tr><td>APRS (bundled Direwolf, KISS)</td><td><span class="badge badge-stable">Field tested</span></td></tr>
+                    <tr><td>TAK / Cursor-on-Target</td><td><span class="badge badge-stable">Field tested</span></td></tr>
+                    <tr><td><span class="category-label">Routing</span></td><td>Reticulum TCP (HDLC framed)</td><td><span class="badge badge-stable">Interoperates with Python RNS</span></td></tr>
                 </tbody>
             </table>
         </div>
+        <p class="table-note">Multi-bearer bonding over a paid satellite link is not validated yet, and the jamming detector has only ever seen ambient noise. <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">The repository sets out the full list</a> of what has and has not been proven.</p>
     </div>
 </section>
 
-<!-- Screenshots -->
-<section id="screenshots" class="section">
+{{/* 3. WHY IT EXISTS — the cost argument is the design argument */}}
+<section id="cost" class="section cost-section">
     <div class="container">
-        <h2 class="section-title">See it in action</h2>
-        <p class="section-subtitle">Embedded Vue.js dashboard with multiple views. Runs on the device, no cloud required.</p>
-        <div class="screenshots-grid">
-            <div class="screenshot-card">
-                <img src="/images/screenshots/bridge-dashboard.webp" alt="MeshSat Dashboard — Iridium signal, MQTT traffic, cellular status" loading="lazy" width="1280" height="720">
-                <p>Dashboard — Iridium signal, MQTT traffic graph, cellular status</p>
+        <h2 class="section-title">Satellite bytes are expensive. That is the whole design.</h2>
+        <p class="section-subtitle">An Iridium line costs tens of euros a month plus credits per message, billed in 340 byte blocks. Give one to every person in a team and the bill scales with headcount. That price is the reason the routing layer exists at all.</p>
+
+        <div class="reason-grid">
+            <div class="reason-card">
+                <h3>One paid link, shared</h3>
+                <p>A team carries cheap mesh radios. One gateway holds the expensive satellite line. Everyone reaches the outside through it, so cost stops scaling with the number of people.</p>
             </div>
-            <div class="screenshot-card">
-                <img src="/images/screenshots/bridge-passes.webp" alt="MeshSat Pass Predictor — satellite visibility timeline" loading="lazy" width="1280" height="720">
-                <p>Pass Predictor — satellite visibility timeline with signal correlation</p>
+            <div class="reason-card">
+                <h3>Free bearers first</h3>
+                <p>Every interface declares a cost. The router prefers the free ones, mesh, packet radio, Bluetooth and WiFi, and only reaches for satellite or SMS when nothing free is up.</p>
             </div>
-            <div class="screenshot-card">
-                <img src="/images/screenshots/bridge-topology.webp" alt="MeshSat Topology — mesh network force graph" loading="lazy" width="1280" height="720">
-                <p>Topology — live mesh network visualization</p>
+            <div class="reason-card">
+                <h3>Fewer bytes when it does</h3>
+                <p>Anything leaving on a metered bearer is compressed first. SMAZ2 runs in under a millisecond on short text, which matters when you are billed per block rather than per byte.</p>
             </div>
-            <div class="screenshot-card">
-                <img src="/images/screenshots/bridge-rules.webp" alt="MeshSat Bridge — forwarding rules and gateway status" loading="lazy" width="1280" height="720">
-                <p>Bridge — forwarding rules with gateway connection status</p>
+            <div class="reason-card">
+                <h3>Sent when the sky is right</h3>
+                <p>Pass prediction from SGP4 orbital elements holds traffic for visibility windows instead of burning battery retrying against a satellite that is below the horizon.</p>
             </div>
         </div>
+
+        <p class="funding-note">MeshSat is free software under the GPLv3. Development is supported by <a href="https://www.sidnfonds.nl/projecten/meshsat-keeping-people-connected-when-the-network-is-not" target="_blank" rel="noopener">SIDN fonds</a>, and a six month field programme starts in November 2026.</p>
     </div>
 </section>
 
-<!-- Hub Deep Dive -->
-<section id="hub" class="section section-alt">
-    <div class="container">
-        <h2 class="section-title">MeshSat Hub — Fleet management platform</h2>
-        <p class="section-subtitle">The Bridge is one device. The Hub manages hundreds — with authentication, multi-tenancy, and three satellite constellations.</p>
-
-        <p class="section-status">
-            <span class="badge badge-beta">Private beta</span>
-            <span class="section-status-text">MeshSat Hub is not launched yet. It runs as a private beta on our own infrastructure. Access for demos and beta testing is arranged on request.</span>
-        </p>
-
-        <div class="hub-grid">
-            <div class="hub-card">
-                <h3>Multi-constellation satellite routing</h3>
-                <p>Send messages through <strong>Iridium</strong> or <strong>Globalstar</strong> — and let the Hub pick the cheapest, fastest, or preferred route per device. Automatic failover between constellations.</p>
-            </div>
-            <div class="hub-card">
-                <h3>Enterprise authentication</h3>
-                <p>Four auth modes: local accounts (Argon2id), bearer tokens, or full <strong>OAuth2/OIDC</strong> with TLS certificate pinning. API keys with RBAC (viewer/admin/owner) and per-key expiry.</p>
-            </div>
-            <div class="hub-card">
-                <h3>Multi-tenant isolation</h3>
-                <p>Multiple organizations share one Hub instance with strict data isolation. Tenant context from JWT claims or headers. Each tenant sees only their devices, messages, and rules.</p>
-            </div>
-            <div class="hub-card">
-                <h3>SOS escalation chains</h3>
-                <p>Configurable multi-step notification chains: push notification &rarr; SMS &rarr; email &rarr; phone call. Dead man's switch triggers alerts on missed check-ins. <strong>90+ notification backends</strong> via Apprise.</p>
-            </div>
-            <div class="hub-card">
-                <h3>Three deployment modes</h3>
-                <p><strong>Standalone</strong> (SQLite + MQTT, single server), <strong>Cluster</strong> (MariaDB Galera + Redis + NATS, active-active HA), or <strong>Kubernetes</strong> (Helm charts, lease-based leader election).</p>
-            </div>
-            <div class="hub-card">
-                <h3>Tactical integrations</h3>
-                <p>TAK/CoT gateway for ATAK teams, APRS-IS IGate for amateur radio, WireGuard VPN mesh, Tor hidden service, MPTCP concentrator, and <strong>Reticulum routing</strong> across all satellite backends.</p>
-            </div>
-        </div>
-
-        <div class="hub-extras">
-            <div class="hub-extra-grid">
-                <div class="hub-extra">
-                    <strong>20+ dashboard views</strong>
-                    <p>Devices, messages, map, escalations, dead man's switch, geofences, OTA updates, audit log, cluster health, backup/restore</p>
-                </div>
-                <div class="hub-extra">
-                    <strong>60+ REST API endpoints</strong>
-                    <p>Full Swagger docs. Device CRUD, message send/receive, webhook management, rate limiting, config versioning, backup/export</p>
-                </div>
-                <div class="hub-extra">
-                    <strong>E2E encryption</strong>
-                    <p>AES-256-GCM per-device keystores. PGP-encrypted email gateway. Tamper-evident Ed25519 hash-chain audit log</p>
-                </div>
-                <div class="hub-extra">
-                    <strong>Per-device rate limiting</strong>
-                    <p>Token bucket with burst, daily, and monthly caps. Cluster-wide via Redis. Override limits per device</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="hub-cta">
-            <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20demo%20%2F%20beta%20access" class="btn btn-primary">Request beta access</a>
-            <a href="{{ .Site.Params.docs_url }}/hub/" class="btn btn-outline" target="_blank" rel="noopener">Hub documentation</a>
-        </div>
-    </div>
-</section>
-
-<!-- Android App -->
-<section id="android" class="section">
-    <div class="container">
-        <h2 class="section-title">MeshSat Android — Your phone is a gateway</h2>
-        <p class="section-subtitle">No Pi, no cables. Three transports from your pocket.</p>
-
-        <div class="android-split">
-            <div class="android-content">
-                <p class="android-intro">MeshSat Android turns any Android phone into a standalone mesh-satellite-cellular gateway. It connects to a Meshtastic radio over BLE, an Iridium modem over Bluetooth SPP, and uses the phone's native SMS — all at once.</p>
-
-                <div class="android-features">
-                    <div class="android-feature">
-                        <strong>BLE mesh + Bluetooth satellite + native SMS</strong>
-                        <p>Three independent radio paths. Forward messages between any combination with configurable rules.</p>
-                    </div>
-                    <div class="android-feature">
-                        <strong>Encrypted SMS bridge</strong>
-                        <p>Bridge two isolated LoRa mesh networks over cellular. AES-256-GCM encrypted — the carrier sees only ciphertext.</p>
-                    </div>
-                    <div class="android-feature">
-                        <strong>MSVQ-SC semantic compression</strong>
-                        <p>On-device ONNX Runtime encoder. A lossy semantic codec: it transmits vector-quantiser indices and the receiver reconstructs the closest match from a shared codebook, so a message of any length fits a fixed few-byte payload. Currently a canned-message accelerator over a small trained corpus — corpus expansion is planned work.</p>
-                    </div>
-                    <div class="android-feature">
-                        <strong>SOS emergency broadcast</strong>
-                        <p>One button sends your distress message on all three transports simultaneously, 3x with 30-second intervals.</p>
-                    </div>
-                    <div class="android-feature">
-                        <strong>Signal monitoring</strong>
-                        <p>6-hour graphs for mesh RSSI, Iridium signal bars, and cellular dBm. Know your link quality at a glance.</p>
-                    </div>
-                </div>
-
-                <p class="android-note">Material 3 dark theme. Kotlin + Jetpack Compose. Minimum Android 8.0.</p>
-
-                <div class="android-cta">
-                    <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        View on GitHub
-                    </a>
-                </div>
-            </div>
-
-            <div class="android-diagram">
-                <div class="android-phone">
-                    <div class="android-phone-screen">
-                        <div class="android-transport"><span class="android-dot dot-blue"></span> BLE &rarr; Meshtastic radio</div>
-                        <div class="android-transport"><span class="android-dot dot-teal"></span> SPP &rarr; Iridium 9603N</div>
-                        <div class="android-transport"><span class="android-dot dot-green"></span> Native SMS &rarr; Cellular</div>
-                        <div class="android-rules">Rules engine + MSVQ-SC + AES-256-GCM</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Hardware -->
+{{/* 4. THE DEVICE */}}
 <section id="hardware" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">Reference hardware</h2>
-        <p class="section-subtitle">Two tested configurations. Build your own from any supported components — these are starting points, not requirements.</p>
+        <h2 class="section-title">What it runs on</h2>
+        <p class="section-subtitle">A Raspberry Pi in a waterproof case with radios on USB and GPIO. Devices are identified at startup by USB ID and protocol probe, so plugging one in is the whole configuration step.</p>
 
-        <div class="hardware-grid">
-            <div class="hardware-card">
-                <h3>Full Field Kit</h3>
-                <p class="hardware-desc">Waterproof Pelican case with all transports.</p>
-                <ul class="bom-list">
-                    <li><span class="bom-name">Raspberry Pi 5 (8 GB)</span><span class="bom-note">Gateway host</span></li>
-                    <li><span class="bom-name">Heltec LoRa V4</span><span class="bom-note">Meshtastic (868/915 MHz by region)</span></li>
-                    <li><span class="bom-name">RockBLOCK 9603</span><span class="bom-note">Iridium SBD satellite</span></li>
-                    <li><span class="bom-name">LILYGO T-Call A7670</span><span class="bom-note">4G LTE cellular</span></li>
-                    <li><span class="bom-name">INIU 25000mAh</span><span class="bom-note">USB-C PD power</span></li>
-                </ul>
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead><tr><th>Part</th><th>Role</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Raspberry Pi 5</strong> (8 GB)</td><td>Host. ARM64, or any x86_64 Linux with Docker and USB serial.</td></tr>
+                    <tr><td><strong>Heltec LoRa V4</strong> or <strong>XIAO ESP32-S3</strong></td><td>Meshtastic mesh radio at 868 or 915 MHz.</td></tr>
+                    <tr><td><strong>RockBLOCK 9603</strong> or <strong>9704</strong></td><td>Iridium satellite. SBD at 340 bytes, or IMT at 100 KB.</td></tr>
+                    <tr><td><strong>LILYGO T-Call A7670E</strong></td><td>4G and 2G cellular, for SMS and data.</td></tr>
+                    <tr><td><strong>CC2652P dongle</strong></td><td>ZigBee coordinator.</td></tr>
+                    <tr><td><strong>UPS and battery</strong></td><td>Because the interesting cases are the ones where mains power has gone too.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="screenshots-grid">
+            <div class="screenshot-card">
+                <img src="/images/screenshots/bridge-dashboard.webp" alt="MeshSat dashboard showing Iridium signal, MQTT traffic and cellular status" loading="lazy" width="1280" height="720">
+                <p>Signal, traffic and channel health, served by the device itself</p>
             </div>
-            <div class="hardware-card">
-                <h3>Compact Kit</h3>
-                <p class="hardware-desc">Pocket-sized, high-bandwidth satellite.</p>
-                <ul class="bom-list">
-                    <li><span class="bom-name">BananaPi BPI-M4 Zero</span><span class="bom-note">ARM64 (4 GB + eMMC)</span></li>
-                    <li><span class="bom-name">XIAO ESP32-S3 + SX1262</span><span class="bom-note">Meshtastic radio</span></li>
-                    <li><span class="bom-name">RockBLOCK 9704</span><span class="bom-note">Iridium IMT (100 KB)</span></li>
-                    <li><span class="bom-name">PiSugar 3 + 5000mAh LiPo</span><span class="bom-note">UPS HAT with battery</span></li>
-                </ul>
+            <div class="screenshot-card">
+                <img src="/images/screenshots/bridge-passes.webp" alt="Satellite pass predictor showing a visibility timeline" loading="lazy" width="1280" height="720">
+                <p>Pass prediction, so the queue waits for a satellite that is actually up</p>
+            </div>
+            <div class="screenshot-card">
+                <img src="/images/screenshots/bridge-topology.webp" alt="Live mesh network topology graph" loading="lazy" width="1280" height="720">
+                <p>Live mesh topology</p>
+            </div>
+            <div class="screenshot-card">
+                <img src="/images/screenshots/bridge-rules.webp" alt="Forwarding rules and gateway connection status" loading="lazy" width="1280" height="720">
+                <p>Forwarding rules and per-gateway status</p>
             </div>
         </div>
-        <div class="hardware-photo">
-            <img src="/images/meshsat_field_kit.webp" alt="MeshSat compact kit" loading="lazy" width="1200" height="675">
-        </div>
+        <p class="table-note">The dashboard is embedded in the binary and served from the device. No cloud dependency, no account.</p>
     </div>
 </section>
 
-<!-- What MeshSat is NOT -->
+{{/* 5. WHAT IT IS NOT */}}
 <section class="section not-for">
     <div class="container">
-        <h2 class="section-title">What MeshSat is not</h2>
-        <p class="section-subtitle">Honesty builds trust. MeshSat is very good at what it does — but it doesn't do everything.</p>
+        <h2 class="section-title">What it is not</h2>
+        <p class="section-subtitle">The fastest way to waste an afternoon is to expect the wrong thing from it.</p>
 
         <div class="not-for-grid">
             <div class="not-for-card">
-                <h3>Not a replacement for Starlink</h3>
-                <p>MeshSat routes low-bandwidth messages (text, positions, telemetry). If you need video calls or web browsing, use Starlink. MeshSat works where Starlink doesn't — battery-powered, pocket-sized, no dish.</p>
+                <h3>Not a Starlink replacement</h3>
+                <p>MeshSat moves text, positions and telemetry. If you need video calls or the web, use Starlink. This is for the cases a dish cannot serve: battery powered, pocket sized, no mains.</p>
             </div>
             <div class="not-for-card">
-                <h3>Not real-time voice or video</h3>
-                <p>Satellite and mesh links have high latency and low throughput. MeshSat is optimized for store-and-forward messaging, not streaming. Think SMS, not FaceTime.</p>
+                <h3>Not voice or video</h3>
+                <p>Satellite and mesh links are high latency and low throughput. This is store and forward messaging. Think SMS, not a phone call.</p>
             </div>
             <div class="not-for-card">
-                <h3>Not a standalone LoRaWAN gateway</h3>
-                <p>MeshSat uses Meshtastic for mesh (which runs its own protocol over LoRa). It's not a LoRaWAN network server. For LoRaWAN, use ChirpStack — then bridge it to MeshSat via MQTT.</p>
+                <h3>Not a LoRaWAN network server</h3>
+                <p>The mesh side speaks Meshtastic, which is its own protocol over LoRa. For LoRaWAN, run ChirpStack and bridge it in over MQTT.</p>
+            </div>
+            <div class="not-for-card">
+                <h3>Not an emergency service</h3>
+                <p>A research prototype, not a replacement for 112, 911 or any national emergency number. Nothing here is certified and nothing here has been used in a real emergency.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Use Cases -->
-<section id="use-cases" class="section section-alt">
+{{/* 6. THE REST OF THE SYSTEM */}}
+<section id="hub" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">Who uses MeshSat</h2>
-        <p class="section-subtitle">From mountaintops to open ocean.</p>
-        <div class="use-cases-grid">
-            <div class="use-case-card">
-                <div class="use-case-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
-                <h3>Search & Rescue</h3>
-                <p>SOS escalation chains, dead man's switch, real-time position tracking, TAK/CoT integration for ATAK-equipped teams.</p>
-            </div>
-            <div class="use-case-card">
-                <div class="use-case-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                <h3>Humanitarian / NGO</h3>
-                <p>Low-cost, self-hosted communication for remote field operations. No vendor lock-in, no subscription fees for the Bridge.</p>
-            </div>
-            <div class="use-case-card">
-                <div class="use-case-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-                <h3>Expedition & Research</h3>
-                <p>Satellite-backed data relay for remote sensor networks, wildlife tracking, weather stations, and glacier monitoring.</p>
-            </div>
-            <div class="use-case-card">
-                <div class="use-case-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
-                <h3>Maritime</h3>
-                <p>Ship-to-shore messaging via Iridium with LoRa mesh for inter-vessel coordination. Geofence alerts for exclusion zones.</p>
-            </div>
-            <div class="use-case-card">
-                <div class="use-case-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-                <h3>Emergency Preparedness</h3>
-                <p>Community mesh networks that stay connected when cell towers fail. Automatic failover from cellular to satellite.</p>
-            </div>
-            <div class="use-case-card">
-                <div class="use-case-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="2" x2="9" y2="4"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="22"/><line x1="15" y1="20" x2="15" y2="22"/></svg></div>
-                <h3>IoT / Remote Monitoring</h3>
-                <p>ZigBee sensor networks bridged to satellite for pipeline monitoring, agricultural sensing, or infrastructure telemetry.</p>
-            </div>
-        </div>
-    </div>
-</section>
+        <h2 class="section-title">The rest of the system</h2>
+        <p class="section-subtitle">The Bridge is one device and works entirely on its own. Two other pieces exist for when one device is not the whole picture.</p>
 
-<!-- Pricing -->
-<section id="pricing" class="section">
-    <div class="container">
-        <h2 class="section-title">Pricing</h2>
-        <p class="section-subtitle">The Bridge is free and open source. The Hub manages fleets.</p>
-        <p class="section-status">
-            <span class="badge badge-beta">Private beta</span>
-            <span class="section-status-text">Hub plans below are planned for launch. During the private beta, access is by request and free of charge.</span>
-        </p>
-
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3 class="pricing-name">Explorer</h3>
-                <div class="pricing-price">Free</div>
-                <ul class="pricing-features"><li>3 devices</li><li>1 tenant</li><li>7-day retention</li><li>Community support</li></ul>
+        <div class="system-grid">
+            <div class="system-card">
+                <h3>MeshSat Hub</h3>
+                <p class="section-status">
+                    <span class="badge badge-beta">Private beta</span>
+                    <span class="section-status-text">MeshSat Hub is not launched yet. It runs as a private beta on our own infrastructure. Access for demos and beta testing is arranged on request.</span>
+                </p>
+                <p>Fleet management across many bridges: OAuth2 and OIDC accounts, API keys with roles, multi-tenant isolation, SOS escalation chains, per-device rate limits and an Ed25519 hash-chain audit log. Deployable standalone, clustered, or on Kubernetes.</p>
                 <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20demo%20%2F%20beta%20access" class="btn btn-outline">Request beta access</a>
             </div>
-            <div class="pricing-card">
-                <h3 class="pricing-name">Field</h3>
-                <div class="pricing-price">&euro;19<span class="pricing-period">/mo</span></div>
-                <ul class="pricing-features"><li>25 devices</li><li>3 tenants</li><li>30-day retention</li><li>Prioritized issues</li></ul>
-                <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20notify%20me%20at%20launch%20(Field)" class="btn btn-outline">Notify me at launch</a>
-            </div>
-            <div class="pricing-card pricing-card-featured">
-                <h3 class="pricing-name">Expedition</h3>
-                <div class="pricing-price">&euro;49<span class="pricing-period">/mo</span></div>
-                <ul class="pricing-features"><li>100 devices</li><li>Unlimited tenants</li><li>90-day retention</li><li>Email support (48h)</li></ul>
-                <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20notify%20me%20at%20launch%20(Expedition)" class="btn btn-primary">Notify me at launch</a>
-            </div>
-            <div class="pricing-card">
-                <h3 class="pricing-name">Mission</h3>
-                <div class="pricing-price">Custom</div>
-                <ul class="pricing-features"><li>Unlimited devices</li><li>Unlimited tenants</li><li>Custom retention</li><li>SLA negotiated</li></ul>
-                <a href="mailto:{{ .Site.Params.contact_email }}" class="btn btn-outline">Contact Us</a>
+            <div class="system-card">
+                <h3>MeshSat Android</h3>
+                <p>A phone as a standalone gateway, with no Pi and no cables. It talks to a Meshtastic radio over Bluetooth LE, an Iridium modem over Bluetooth SPP, and uses the phone's own SMS, all at the same time. Same encryption and message formats as the Bridge.</p>
+                <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">Android source</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Comparison -->
-<section id="comparison" class="section section-alt">
-    <div class="container">
-        <h2 class="section-title">How MeshSat compares</h2>
-        <p class="section-subtitle">Most off-grid communicators do one thing. MeshSat routes across all of them. MeshSat competes on flexibility and openness, not certification — it is pre-release open-source software, not a certified commercial product.</p>
-
-        <div class="table-wrap">
-            <table class="data-table comparison-table">
-                <thead>
-                    <tr><th>Feature</th><th class="highlight-col">MeshSat</th><th>Garmin inReach</th><th>ACR Bivy</th><th>goTenna Pro X2</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Transport count</td><td class="highlight-col"><span class="check">&#10003;</span> 11</td><td>1 (Iridium)</td><td>1 (Iridium)</td><td>1 (mesh)</td></tr>
-                    <tr><td>Multi-transport routing</td><td class="highlight-col"><span class="check">&#10003;</span></td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td></tr>
-                    <tr><td>Mesh networking</td><td class="highlight-col"><span class="check">&#10003;</span> LoRa + ZigBee</td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td><td><span class="check">&#10003;</span></td></tr>
-                    <tr><td>Satellite messaging</td><td class="highlight-col"><span class="check">&#10003;</span> Iridium</td><td><span class="check">&#10003;</span> Iridium</td><td><span class="check">&#10003;</span> Iridium</td><td><span class="cross">&#10007;</span></td></tr>
-                    <tr><td>Max satellite message</td><td class="highlight-col">100 KB (9704)</td><td>160 chars</td><td>160 chars</td><td>N/A</td></tr>
-                    <tr><td>Custom routing rules</td><td class="highlight-col"><span class="check">&#10003;</span> Policy engine</td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td></tr>
-                    <tr><td>Open source</td><td class="highlight-col"><span class="check">&#10003;</span> GPLv3</td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td><td><span class="cross">&#10007;</span></td></tr>
-                    <tr><td>Self-hosted / no cloud</td><td class="highlight-col"><span class="check">&#10003;</span></td><td><span class="cross">&#10007;</span> Garmin cloud</td><td><span class="cross">&#10007;</span> ACR cloud</td><td><span class="partial">~</span> Relay only</td></tr>
-                    <tr><td>API / integrations</td><td class="highlight-col"><span class="check">&#10003;</span> 280+ endpoints</td><td><span class="partial">~</span> MapShare</td><td><span class="cross">&#10007;</span></td><td><span class="partial">~</span> SDK</td></tr>
-                    <tr><td>Web dashboard</td><td class="highlight-col"><span class="check">&#10003;</span></td><td><span class="cross">&#10007;</span> App only</td><td><span class="cross">&#10007;</span> App only</td><td><span class="cross">&#10007;</span> App only</td></tr>
-                    <tr><td>Subscription required</td><td class="highlight-col"><span class="check">No</span></td><td><span class="cross">Yes</span> $15-65/mo</td><td><span class="cross">Yes</span> $20-50/mo</td><td><span class="cross">Yes</span></td></tr>
-                    <tr><td>Hardware cost</td><td class="highlight-col">~$150-400 (DIY)</td><td>$350-600</td><td>$300</td><td>$2,000+</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
+{{/* 7. START */}}
 <section class="section cta-section">
-    <div class="container cta-inner">
-        <h2 class="section-title">Ready to deploy?</h2>
-        <p class="section-subtitle">Install MeshSat Bridge on any Linux machine in under two minutes. Free, open source, no cloud dependency.</p>
-        <div class="cta-actions">
-            <a href="/install/" class="btn btn-primary btn-lg">Install Guide</a>
-            <a href="{{ .Site.Params.docs_url }}" class="btn btn-outline btn-lg" target="_blank" rel="noopener">Read the Docs</a>
+    <div class="container">
+        <h2 class="section-title">Try it</h2>
+        <p class="section-subtitle">One command on a Linux machine with a radio plugged into it. A single device is enough to start, and anything missing is logged as a warning rather than an error.</p>
+        <div class="code-block code-block-inline cta-install">
+            <pre class="code-block-body"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
+            <button class="copy-btn" onclick="copyCode(this)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span class="copy-text">Copy</span>
+            </button>
         </div>
+        <div class="hero-actions">
+            <a href="{{ .Site.Params.github }}" class="btn btn-primary" target="_blank" rel="noopener">Read the source</a>
+            <a href="{{ .Site.Params.docs_url }}" class="btn btn-outline" target="_blank" rel="noopener">Documentation</a>
+            {{ with .Site.Params.matrix_url }}<a href="{{ . }}" class="btn btn-outline" target="_blank" rel="noopener">Ask on Matrix</a>{{ end }}
+        </div>
+        <p class="table-note">Bug reports from people running hardware we have not tried are the most useful thing you can send. The supported-device list is short because it only names what we have physically run.</p>
     </div>
 </section>
 
-{{ end }}
-
-{{ define "scripts" }}
-<script>
-function copyCode(btn) {
-    var code = btn.closest('.code-block').querySelector('code').textContent;
-    navigator.clipboard.writeText(code).then(function() {
-        var text = btn.querySelector('.copy-text');
-        text.textContent = 'Copied';
-        setTimeout(function() { text.textContent = 'Copy'; }, 2000);
-    });
-}
-</script>
 {{ end }}
