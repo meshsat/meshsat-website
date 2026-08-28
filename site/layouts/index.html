@@ -10,21 +10,21 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-        <p class="hero-label">Open source routing across radios that cannot reach each other</p>
-        <h1 class="hero-title">One message.<br><span class="highlight">Every way out.</span></h1>
-        <p class="hero-subtitle">A mesh keeps a village talking to itself but has no route out of the valley. A satellite modem reaches anywhere and costs real money per message. MeshSat is the layer in between: it takes a message off the mesh and sends it by whatever bearer is still alive, spending satellite bytes only when nothing free is left.</p>
+        <p class="hero-label">{{ i18n "hero_eyebrow" }}</p>
+        <h1 class="hero-title">{{ i18n "hero_title_a" }}<br><span class="highlight">{{ i18n "hero_title_b" }}</span></h1>
+        <p class="hero-subtitle">{{ i18n "hero_sub" }}</p>
 
-        <p class="hero-status"><span class="dot"></span> Pre-release prototype. Never deployed to a real user, never used in an emergency.</p>
+        <p class="hero-status"><span class="dot"></span> {{ i18n "hero_status" }}</p>
 
-        <div class="trace" role="img" aria-label="Example routing trace: an SOS arrives over LoRa mesh, the Iridium leg fails because the satellite is below the horizon, and the message is delivered by cellular SMS, TAK and MQTT instead.">
-            <div class="trace-head"><span>Routing trace &middot; one distress message</span><span>bridge tesseract</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.118</span><span class="trace-if">mesh_0</span><span class="trace-dir">RX</span><span class="trace-msg">SOS from node !a4f2c1, 17 bytes</span><span class="trace-state"></span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.140</span><span class="trace-if">router</span><span class="trace-dir">&middot;&middot;</span><span class="trace-msg">3 rules matched, 4 routes selected</span><span class="trace-state"></span></div>
-            <div class="trace-row is-fail"><span class="trace-t">09:14:02.191</span><span class="trace-if">iridium_0</span><span class="trace-dir">TX</span><span class="trace-msg">below horizon, next pass in 11m 38s</span><span class="trace-state fail">FAILED</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.204</span><span class="trace-if">cellular_0</span><span class="trace-dir">TX</span><span class="trace-msg">smaz2 17&rarr;11 bytes, SMS to contact group</span><span class="trace-state ok">DELIVERED</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.209</span><span class="trace-if">tak_0</span><span class="trace-dir">TX</span><span class="trace-msg">position as Cursor-on-Target, in parallel</span><span class="trace-state ok">DELIVERED</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.318</span><span class="trace-if">mqtt_0</span><span class="trace-dir">TX</span><span class="trace-msg">logged for dashboard and webhooks</span><span class="trace-state ok">DELIVERED</span></div>
-            <p class="trace-foot">The satellite leg failed and the message still arrived. That is the whole product. Routes, failover order and transform chains are configured per interface.</p>
+        <div class="trace" role="img" aria-label="{{ i18n "trace_alt" }}">
+            <div class="trace-head"><span>{{ i18n "trace_title" }}</span><span>{{ i18n "trace_bridge" }}</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.118</span><span class="trace-if">mesh_0</span><span class="trace-dir">RX</span><span class="trace-msg">{{ i18n "t1" }}</span><span class="trace-state"></span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.140</span><span class="trace-if">router</span><span class="trace-dir">&middot;&middot;</span><span class="trace-msg">{{ i18n "t2" }}</span><span class="trace-state"></span></div>
+            <div class="trace-row is-fail"><span class="trace-t">09:14:02.191</span><span class="trace-if">iridium_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t3" }}</span><span class="trace-state fail">FAILED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.204</span><span class="trace-if">cellular_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t4" }}</span><span class="trace-state ok">DELIVERED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.209</span><span class="trace-if">tak_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t5" }}</span><span class="trace-state ok">DELIVERED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.318</span><span class="trace-if">mqtt_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t6" }}</span><span class="trace-state ok">DELIVERED</span></div>
+            <p class="trace-foot">{{ i18n "trace_foot" }}</p>
         </div>
 
         <div class="hero-install">
@@ -42,77 +42,77 @@
 {{/* 2. WHAT IT BRIDGES */}}
 <section id="transports" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">Eight bearers, nine wired interfaces</h2>
-        <p class="section-subtitle">Iridium runs on two modems, the 9603N for SBD and the 9704 for IMT. Every bearer is a first-class interface with its own MTU, cost model and transform pipeline. TAK and webhooks are integrations rather than bearers. Status says what we have actually run, not what we hope.</p>
+        <h2 class="section-title">{{ i18n "tr_title" }}</h2>
+        <p class="section-subtitle">{{ i18n "tr_sub" }}</p>
 
         <div class="table-wrap">
             <table class="data-table">
                 <thead>
-                    <tr><th>Category</th><th>Transport</th><th>Status</th></tr>
+                    <tr><th>{{ i18n "th_category" }}</th><th>{{ i18n "th_transport" }}</th><th>{{ i18n "th_status" }}</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><span class="category-label">Mesh</span></td><td>Meshtastic LoRa</td><td><span class="badge badge-stable">Field tested</span></td></tr>
-                    <tr><td rowspan="2"><span class="category-label">Satellite</span></td><td>Iridium SBD 9603N</td><td><span class="badge badge-stable">Field tested</span></td></tr>
-                    <tr><td>Iridium IMT 9704</td><td><span class="badge badge-stable">Verified over satellite</span></td></tr>
-                    <tr><td><span class="category-label">Cellular</span></td><td>SMS and data (A7670E)</td><td><span class="badge badge-stable">Field tested</span></td></tr>
-                    <tr><td><span class="category-label">Wireless</span></td><td>ZigBee 3.0 (CC2652P)</td><td><span class="badge badge-beta">Little field exposure</span></td></tr>
-                    <tr><td rowspan="4"><span class="category-label">IP / Network</span></td><td>MQTT</td><td><span class="badge badge-stable">Field tested</span></td></tr>
-                    <tr><td>Webhooks</td><td><span class="badge badge-stable">Field tested</span></td></tr>
-                    <tr><td>APRS (bundled Direwolf, KISS)</td><td><span class="badge badge-stable">Field tested</span></td></tr>
-                    <tr><td>TAK / Cursor-on-Target</td><td><span class="badge badge-stable">Field tested</span></td></tr>
-                    <tr><td><span class="category-label">Routing</span></td><td>Reticulum TCP (HDLC framed)</td><td><span class="badge badge-stable">Interoperates with Python RNS</span></td></tr>
+                    <tr><td><span class="category-label">{{ i18n "cat_mesh" }}</span></td><td>Meshtastic LoRa</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
+                    <tr><td rowspan="2"><span class="category-label">{{ i18n "cat_sat" }}</span></td><td>Iridium SBD 9603N</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
+                    <tr><td>Iridium IMT 9704</td><td><span class="badge badge-stable">{{ i18n "st_sat" }}</span></td></tr>
+                    <tr><td><span class="category-label">{{ i18n "cat_cell" }}</span></td><td>{{ i18n "tx_cell" }}</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
+                    <tr><td><span class="category-label">{{ i18n "cat_wireless" }}</span></td><td>ZigBee 3.0 (CC2652P)</td><td><span class="badge badge-beta">{{ i18n "st_little" }}</span></td></tr>
+                    <tr><td rowspan="4"><span class="category-label">{{ i18n "cat_ip" }}</span></td><td>MQTT</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
+                    <tr><td>Webhooks</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
+                    <tr><td>{{ i18n "tx_aprs" }}</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
+                    <tr><td>TAK / Cursor-on-Target</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
+                    <tr><td><span class="category-label">{{ i18n "cat_routing" }}</span></td><td>{{ i18n "tx_rns" }}</td><td><span class="badge badge-stable">{{ i18n "st_rns" }}</span></td></tr>
                 </tbody>
             </table>
         </div>
-        <p class="table-note">Multi-bearer bonding over a paid satellite link is not validated yet, and the jamming detector has only ever seen ambient noise. <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">The repository sets out the full list</a> of what has and has not been proven.</p>
+        <p class="table-note">{{ i18n "tr_note_a" }} <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">{{ i18n "tr_note_link" }}</a> {{ i18n "tr_note_b" }}</p>
     </div>
 </section>
 
 {{/* 3. WHY IT EXISTS — the cost argument is the design argument */}}
 <section id="cost" class="section cost-section">
     <div class="container">
-        <h2 class="section-title">Satellite bytes are expensive. That is the whole design.</h2>
-        <p class="section-subtitle">An Iridium line costs tens of euros a month plus credits per message, billed in 340 byte blocks. Give one to every person in a team and the bill scales with headcount. That price is the reason the routing layer exists at all.</p>
+        <h2 class="section-title">{{ i18n "cost_title" }}</h2>
+        <p class="section-subtitle">{{ i18n "cost_sub" }}</p>
 
         <div class="reason-grid">
             <div class="reason-card">
-                <h3>One paid link, shared</h3>
-                <p>A team carries cheap mesh radios. One gateway holds the expensive satellite line. Everyone reaches the outside through it, so cost stops scaling with the number of people.</p>
+                <h3>{{ i18n "c1_h" }}</h3>
+                <p>{{ i18n "c1_p" }}</p>
             </div>
             <div class="reason-card">
-                <h3>Free bearers first</h3>
-                <p>Every interface declares a cost. The router prefers the free ones, mesh, packet radio, Bluetooth and WiFi, and only reaches for satellite or SMS when nothing free is up.</p>
+                <h3>{{ i18n "c2_h" }}</h3>
+                <p>{{ i18n "c2_p" }}</p>
             </div>
             <div class="reason-card">
-                <h3>Fewer bytes when it does</h3>
-                <p>Anything leaving on a metered bearer is compressed first. SMAZ2 runs in under a millisecond on short text, which matters when you are billed per block rather than per byte.</p>
+                <h3>{{ i18n "c3_h" }}</h3>
+                <p>{{ i18n "c3_p" }}</p>
             </div>
             <div class="reason-card">
-                <h3>Sent when the sky is right</h3>
-                <p>Pass prediction from SGP4 orbital elements holds traffic for visibility windows instead of burning battery retrying against a satellite that is below the horizon.</p>
+                <h3>{{ i18n "c4_h" }}</h3>
+                <p>{{ i18n "c4_p" }}</p>
             </div>
         </div>
 
-        <p class="funding-note">MeshSat is free software under the GPLv3. Development is supported by <a href="https://www.sidnfonds.nl/projecten/meshsat-keeping-people-connected-when-the-network-is-not" target="_blank" rel="noopener">SIDN fonds</a>, and a six month field programme starts in November 2026.</p>
+        <p class="funding-note">{{ i18n "funding_a" }} <a href="https://www.sidnfonds.nl/projecten/meshsat-keeping-people-connected-when-the-network-is-not" target="_blank" rel="noopener">SIDN fonds</a>{{ i18n "funding_b" }}</p>
     </div>
 </section>
 
 {{/* 4. THE DEVICE */}}
 <section id="hardware" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">What it runs on</h2>
-        <p class="section-subtitle">A Raspberry Pi in a waterproof case with radios on USB and GPIO. Devices are identified at startup by USB ID and protocol probe, so plugging one in is the whole configuration step.</p>
+        <h2 class="section-title">{{ i18n "hw_title" }}</h2>
+        <p class="section-subtitle">{{ i18n "hw_sub" }}</p>
 
         <div class="table-wrap">
             <table class="data-table">
-                <thead><tr><th>Part</th><th>Role</th></tr></thead>
+                <thead><tr><th>{{ i18n "th_part" }}</th><th>{{ i18n "th_role" }}</th></tr></thead>
                 <tbody>
-                    <tr><td><strong>Raspberry Pi 5</strong> (8 GB)</td><td>Host. ARM64, or any x86_64 Linux with Docker and USB serial.</td></tr>
-                    <tr><td><strong>Heltec LoRa V4</strong> or <strong>XIAO ESP32-S3</strong></td><td>Meshtastic mesh radio at 868 or 915 MHz.</td></tr>
-                    <tr><td><strong>RockBLOCK 9603</strong> or <strong>9704</strong></td><td>Iridium satellite. SBD at 340 bytes, or IMT at 100 KB.</td></tr>
-                    <tr><td><strong>LILYGO T-Call A7670E</strong></td><td>4G and 2G cellular, for SMS and data.</td></tr>
-                    <tr><td><strong>CC2652P dongle</strong></td><td>ZigBee coordinator.</td></tr>
-                    <tr><td><strong>UPS and battery</strong></td><td>Because the interesting cases are the ones where mains power has gone too.</td></tr>
+                    <tr><td><strong>Raspberry Pi 5</strong> (8 GB)</td><td>{{ i18n "hw1" }}</td></tr>
+                    <tr><td><strong>Heltec LoRa V4</strong> or <strong>XIAO ESP32-S3</strong></td><td>{{ i18n "hw2" }}</td></tr>
+                    <tr><td><strong>RockBLOCK 9603</strong> or <strong>9704</strong></td><td>{{ i18n "hw3" }}</td></tr>
+                    <tr><td><strong>LILYGO T-Call A7670E</strong></td><td>{{ i18n "hw4" }}</td></tr>
+                    <tr><td><strong>CC2652P dongle</strong></td><td>{{ i18n "hw5" }}</td></tr>
+                    <tr><td><strong>{{ i18n "hw6" }}</strong></td><td>{{ i18n "hw6r" }}</td></tr>
                 </tbody>
             </table>
         </div>
@@ -120,47 +120,47 @@
         <div class="screenshots-grid">
             <div class="screenshot-card">
                 <img src="/images/screenshots/bridge-dashboard.webp" alt="MeshSat dashboard showing Iridium signal, MQTT traffic and cellular status" loading="lazy" width="1280" height="720">
-                <p>Signal, traffic and channel health, served by the device itself</p>
+                <p>{{ i18n "cap1" }}</p>
             </div>
             <div class="screenshot-card">
                 <img src="/images/screenshots/bridge-passes.webp" alt="Satellite pass predictor showing a visibility timeline" loading="lazy" width="1280" height="720">
-                <p>Pass prediction, so the queue waits for a satellite that is actually up</p>
+                <p>{{ i18n "cap2" }}</p>
             </div>
             <div class="screenshot-card">
                 <img src="/images/screenshots/bridge-topology.webp" alt="Live mesh network topology graph" loading="lazy" width="1280" height="720">
-                <p>Live mesh topology</p>
+                <p>{{ i18n "cap3" }}</p>
             </div>
             <div class="screenshot-card">
                 <img src="/images/screenshots/bridge-rules.webp" alt="Forwarding rules and gateway connection status" loading="lazy" width="1280" height="720">
-                <p>Forwarding rules and per-gateway status</p>
+                <p>{{ i18n "cap4" }}</p>
             </div>
         </div>
-        <p class="table-note">The dashboard is embedded in the binary and served from the device. No cloud dependency, no account.</p>
+        <p class="table-note">{{ i18n "hw_note" }}</p>
     </div>
 </section>
 
 {{/* 5. WHAT IT IS NOT */}}
 <section class="section not-for">
     <div class="container">
-        <h2 class="section-title">What it is not</h2>
-        <p class="section-subtitle">The fastest way to waste an afternoon is to expect the wrong thing from it.</p>
+        <h2 class="section-title">{{ i18n "nf_title" }}</h2>
+        <p class="section-subtitle">{{ i18n "nf_sub" }}</p>
 
         <div class="not-for-grid">
             <div class="not-for-card">
-                <h3>Not a Starlink replacement</h3>
-                <p>MeshSat moves text, positions and telemetry. If you need video calls or the web, use Starlink. This is for the cases a dish cannot serve: battery powered, pocket sized, no mains.</p>
+                <h3>{{ i18n "nf1_h" }}</h3>
+                <p>{{ i18n "nf1_p" }}</p>
             </div>
             <div class="not-for-card">
-                <h3>Not voice or video</h3>
-                <p>Satellite and mesh links are high latency and low throughput. This is store and forward messaging. Think SMS, not a phone call.</p>
+                <h3>{{ i18n "nf2_h" }}</h3>
+                <p>{{ i18n "nf2_p" }}</p>
             </div>
             <div class="not-for-card">
-                <h3>Not a LoRaWAN network server</h3>
-                <p>The mesh side speaks Meshtastic, which is its own protocol over LoRa. For LoRaWAN, run ChirpStack and bridge it in over MQTT.</p>
+                <h3>{{ i18n "nf3_h" }}</h3>
+                <p>{{ i18n "nf3_p" }}</p>
             </div>
             <div class="not-for-card">
-                <h3>Not an emergency service</h3>
-                <p>A research prototype, not a replacement for 112, 911 or any national emergency number. Nothing here is certified and nothing here has been used in a real emergency.</p>
+                <h3>{{ i18n "nf4_h" }}</h3>
+                <p>{{ i18n "nf4_p" }}</p>
             </div>
         </div>
     </div>
@@ -169,23 +169,23 @@
 {{/* 6. THE REST OF THE SYSTEM */}}
 <section id="hub" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">The rest of the system</h2>
-        <p class="section-subtitle">The Bridge is one device and works entirely on its own. Two other pieces exist for when one device is not the whole picture.</p>
+        <h2 class="section-title">{{ i18n "sys_title" }}</h2>
+        <p class="section-subtitle">{{ i18n "sys_sub" }}</p>
 
         <div class="system-grid">
             <div class="system-card">
                 <h3>MeshSat Hub</h3>
                 <p class="section-status">
-                    <span class="badge badge-beta">Private beta</span>
-                    <span class="section-status-text">MeshSat Hub is not launched yet. It runs as a private beta on our own infrastructure. Access for demos and beta testing is arranged on request.</span>
+                    <span class="badge badge-beta">{{ i18n "hub_badge" }}</span>
+                    <span class="section-status-text">{{ i18n "hub_status" }}</span>
                 </p>
-                <p>Fleet management across many bridges: OAuth2 and OIDC accounts, API keys with roles, multi-tenant isolation, SOS escalation chains, per-device rate limits and an Ed25519 hash-chain audit log. Deployable standalone, clustered, or on Kubernetes.</p>
-                <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20demo%20%2F%20beta%20access" class="btn btn-outline">Request beta access</a>
+                <p>{{ i18n "hub_p" }}</p>
+                <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20demo%20%2F%20beta%20access" class="btn btn-outline">{{ i18n "hub_cta" }}</a>
             </div>
             <div class="system-card">
                 <h3>MeshSat Android</h3>
-                <p>A phone as a standalone gateway, with no Pi and no cables. It talks to a Meshtastic radio over Bluetooth LE, an Iridium modem over Bluetooth SPP, and uses the phone's own SMS, all at the same time. Same encryption and message formats as the Bridge.</p>
-                <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">Android source</a>
+                <p>{{ i18n "and_p" }}</p>
+                <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "and_cta" }}</a>
             </div>
         </div>
     </div>
@@ -194,8 +194,8 @@
 {{/* 7. START */}}
 <section class="section cta-section">
     <div class="container">
-        <h2 class="section-title">Try it</h2>
-        <p class="section-subtitle">One command on a Linux machine with a radio plugged into it. A single device is enough to start, and anything missing is logged as a warning rather than an error.</p>
+        <h2 class="section-title">{{ i18n "cta_title" }}</h2>
+        <p class="section-subtitle">{{ i18n "cta_sub" }}</p>
         <div class="code-block code-block-inline cta-install">
             <pre class="code-block-body"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
             <button class="copy-btn" onclick="copyCode(this)">
@@ -204,11 +204,11 @@
             </button>
         </div>
         <div class="hero-actions">
-            <a href="{{ .Site.Params.github }}" class="btn btn-primary" target="_blank" rel="noopener">Read the source</a>
-            <a href="{{ .Site.Params.docs_url }}" class="btn btn-outline" target="_blank" rel="noopener">Documentation</a>
-            {{ with .Site.Params.matrix_url }}<a href="{{ . }}" class="btn btn-outline" target="_blank" rel="noopener">Ask on Matrix</a>{{ end }}
+            <a href="{{ .Site.Params.github }}" class="btn btn-primary" target="_blank" rel="noopener">{{ i18n "cta_source" }}</a>
+            <a href="{{ .Site.Params.docs_url }}" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "cta_docs" }}</a>
+            {{ with .Site.Params.matrix_url }}<a href="{{ . }}" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "cta_matrix" }}</a>{{ end }}
         </div>
-        <p class="table-note">Bug reports from people running hardware we have not tried are the most useful thing you can send. The supported-device list is short because it only names what we have physically run.</p>
+        <p class="table-note">{{ i18n "cta_note" }}</p>
     </div>
 </section>
 

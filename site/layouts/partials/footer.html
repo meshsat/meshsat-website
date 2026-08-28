@@ -2,14 +2,14 @@
     <!-- Pre-release banner -->
     <div class="prerelease-banner">
         <div class="container">
-            <p>MeshSat is <strong>pre-release software</strong>. APIs, configuration, and pricing may change. Production deployments should expect breaking changes between versions.</p>
+            <p>{{ i18n "f_prerelease" }}</p>
         </div>
     </div>
 
     <!-- Built With -->
     <div class="partners-bar">
         <div class="container">
-            <p class="partners-label">Built With</p>
+            <p class="partners-label">{{ i18n "f_builtwith" }}</p>
             <div class="partners-logos">
                 <a href="https://meshtastic.org/" target="_blank" rel="noopener" title="Meshtastic">Meshtastic</a>
                 <a href="https://www.iridium.com/" target="_blank" rel="noopener" title="Iridium">Iridium</a>
@@ -22,7 +22,7 @@
     <!-- Supported By -->
     <div class="partners-bar">
         <div class="container">
-            <p class="partners-label">Supported By</p>
+            <p class="partners-label">{{ i18n "f_supported" }}</p>
             <div class="partners-logos">
                 <a href="https://www.sidnfonds.nl/projecten/meshsat-keeping-people-connected-when-the-network-is-not" target="_blank" rel="noopener" title="Dit project wordt mede mogelijk gemaakt met steun van SIDN fonds">
                     <img src="/images/sidnfonds-woordmerk-wit.png" alt="SIDN fonds" class="sidn-logo sidn-logo-dark" width="149" height="28">
@@ -47,8 +47,8 @@
                     </svg>
                     <span class="logo-text"><span class="logo-mesh">Mesh</span><span class="logo-sat">Sat</span></span>
                 </a>
-                <p>Keeping people connected when the network is not.</p>
-                <p class="footer-tagline">Built in the Netherlands</p>
+                <p>{{ i18n "f_strapline" }}</p>
+                <p class="footer-tagline">{{ i18n "f_madein" }}</p>
                 <p class="footer-contact"><a href="mailto:hello@meshsat.net">hello@meshsat.net</a></p>
 
                 <div class="footer-social">
@@ -84,7 +84,7 @@
             </div>
 
             <div class="footer-col">
-                <p class="footer-heading">Products</p>
+                <p class="footer-heading">{{ i18n "f_products" }}</p>
                 <ul>
                     <li><a href="/#features">MeshSat Bridge</a></li>
                     <li><a href="/#hub">MeshSat Hub</a></li>
@@ -93,27 +93,27 @@
             </div>
 
             <div class="footer-col">
-                <p class="footer-heading">Resources</p>
+                <p class="footer-heading">{{ i18n "f_resources" }}</p>
                 <ul>
-                    <li><a href="/install/">Install</a></li>
-                    <li><a href="{{ .Site.Params.docs_url }}" target="_blank" rel="noopener">Documentation</a></li>
-                    <li><a href="/changelog/">Changelog</a></li>
+                    <li><a href="/install/">{{ i18n "nav_install" }}</a></li>
+                    <li><a href="{{ .Site.Params.docs_url }}" target="_blank" rel="noopener">{{ i18n "cta_docs" }}</a></li>
+                    <li><a href="/changelog/">{{ i18n "nav_changelog" }}</a></li>
                     <li><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <p class="footer-heading">Legal</p>
+                <p class="footer-heading">{{ i18n "f_legal" }}</p>
                 <ul>
-                    <li><a href="/privacy/">Privacy Policy</a></li>
-                    <li><a href="/terms/">Terms of Service</a></li>
-                    <li><a href="{{ .Site.Params.github }}/blob/main/LICENSE" target="_blank" rel="noopener">GPLv3 License</a></li>
+                    <li><a href="/privacy/">{{ i18n "f_privacy" }}</a></li>
+                    <li><a href="/terms/">{{ i18n "f_terms" }}</a></li>
+                    <li><a href="{{ .Site.Params.github }}/blob/main/LICENSE" target="_blank" rel="noopener">{{ i18n "f_license" }}</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; {{ now.Year }} Elli &amp; Kyriakos. <a href="https://github.com/cubeos-app" target="_blank" rel="noopener">MeshSat</a> is free software, released under the GPLv3.</p>
+            <p>&copy; {{ now.Year }} Elli &amp; Kyriakos. <a href="https://github.com/cubeos-app" target="_blank" rel="noopener">MeshSat</a> {{ i18n "f_copy" }}</p>
         </div>
     </div>
 </footer>

@@ -1,0 +1,222 @@
+nav_transports:
+  other: "Übertragungswege"
+nav_why:
+  other: "Warum"
+nav_hardware:
+  other: "Hardware"
+nav_install:
+  other: "Installation"
+nav_changelog:
+  other: "Änderungen"
+nav_docs:
+  other: "Doku"
+nav_hub:
+  other: "Hub"
+skip_link:
+  other: "Zum Hauptinhalt springen"
+toggle_theme:
+  other: "Design wechseln"
+toggle_menu:
+  other: "Menü öffnen"
+choose_language:
+  other: "Sprache wählen"
+hero_eyebrow:
+  other: "Quelloffenes Routing zwischen Funkgeräten, die einander nicht erreichen"
+hero_title_a:
+  other: "Eine Nachricht."
+hero_title_b:
+  other: "Jeder Weg hinaus."
+hero_sub:
+  other: "Ein Mesh hält ein Dorf im Gespräch mit sich selbst, hat aber keinen Weg aus dem Tal heraus. Ein Satellitenmodem erreicht die ganze Welt und kostet echtes Geld pro Nachricht. MeshSat ist die Schicht dazwischen: Es nimmt eine Nachricht aus dem Mesh und sendet sie über den Träger, der noch funktioniert, und gibt Satellitenbytes erst aus, wenn nichts Kostenloses mehr übrig ist."
+hero_status:
+  other: "Prototyp vor der Veröffentlichung. Nie bei echten Nutzern eingesetzt, nie in einem Notfall verwendet."
+trace_title:
+  other: "Routing-Protokoll, eine Notmeldung"
+trace_bridge:
+  other: "bridge tesseract"
+trace_alt:
+  other: "Beispielhaftes Routing-Protokoll: Ein SOS trifft über LoRa-Mesh ein, der Iridium-Versuch schlägt fehl, weil der Satellit unter dem Horizont steht, und die Nachricht wird stattdessen über SMS, TAK und MQTT zugestellt."
+t1:
+  other: "SOS von Knoten !a4f2c1, 17 Bytes"
+t2:
+  other: "3 Regeln zutreffend, 4 Routen gewählt"
+t3:
+  other: "unter dem Horizont, nächster Überflug in 11m 38s"
+t4:
+  other: "smaz2 17 auf 11 Bytes, SMS an Kontaktgruppe"
+t5:
+  other: "Position als Cursor-on-Target, parallel"
+t6:
+  other: "protokolliert für Dashboard und Webhooks"
+trace_foot:
+  other: "Die Satellitenstrecke schlug fehl und die Nachricht kam trotzdem an. Das ist das ganze Produkt. Routen, Failover-Reihenfolge und Transformationsketten werden je Schnittstelle konfiguriert."
+tr_title:
+  other: "Acht Träger, neun verdrahtete Schnittstellen"
+tr_sub:
+  other: "Iridium läuft auf zwei Modems, dem 9603N für SBD und dem 9704 für IMT. Jeder Träger ist eine vollwertige Schnittstelle mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette. TAK und Webhooks sind Integrationen, keine Träger. Der Status nennt, was wir tatsächlich betrieben haben, nicht was wir hoffen."
+th_category:
+  other: "Kategorie"
+th_transport:
+  other: "Übertragungsweg"
+th_status:
+  other: "Status"
+cat_mesh:
+  other: "Mesh"
+cat_sat:
+  other: "Satellit"
+cat_cell:
+  other: "Mobilfunk"
+cat_wireless:
+  other: "Funk"
+cat_ip:
+  other: "IP / Netzwerk"
+cat_routing:
+  other: "Routing"
+st_field:
+  other: "Im Feld erprobt"
+st_sat:
+  other: "Über Satellit bestätigt"
+st_little:
+  other: "Wenig Felderfahrung"
+st_rns:
+  other: "Arbeitet mit Python RNS zusammen"
+tx_cell:
+  other: "SMS und Daten (A7670E)"
+tx_aprs:
+  other: "APRS (mitgeliefertes Direwolf, KISS)"
+tx_rns:
+  other: "Reticulum TCP (HDLC-Rahmen)"
+tr_note_a:
+  other: "Die Bündelung mehrerer Träger über eine kostenpflichtige Satellitenstrecke ist noch nicht validiert, und die Störerkennung hat bisher nur Umgebungsrauschen gesehen."
+tr_note_link:
+  other: "Das Repository führt die vollständige Liste"
+tr_note_b:
+  other: "dessen, was belegt ist und was nicht."
+cost_title:
+  other: "Satellitenbytes sind teuer. Das ist der ganze Entwurf."
+cost_sub:
+  other: "Eine Iridium-Leitung kostet mehrere zehn Euro im Monat plus Guthaben je Nachricht, abgerechnet in Blöcken zu 340 Bytes. Gibt man jeder Person im Team eine, wächst die Rechnung mit der Teamgröße. Genau dieser Preis ist der Grund, warum es die Routing-Schicht überhaupt gibt."
+c1_h:
+  other: "Eine bezahlte Strecke, gemeinsam genutzt"
+c1_p:
+  other: "Ein Team trägt günstige Mesh-Funkgeräte. Ein Gateway hält die teure Satellitenleitung. Alle erreichen die Außenwelt darüber, sodass die Kosten nicht mehr mit der Personenzahl wachsen."
+c2_h:
+  other: "Kostenlose Träger zuerst"
+c2_p:
+  other: "Jede Schnittstelle gibt Kosten an. Der Router bevorzugt die kostenlosen, also Mesh, Packet Radio, Bluetooth und WLAN, und greift erst zu Satellit oder SMS, wenn nichts Kostenloses verfügbar ist."
+c3_h:
+  other: "Und dann möglichst wenige Bytes"
+c3_p:
+  other: "Alles, was über einen kostenpflichtigen Träger geht, wird zuerst komprimiert. SMAZ2 braucht dafür bei kurzem Text unter einer Millisekunde, was zählt, wenn pro Block statt pro Byte abgerechnet wird."
+c4_h:
+  other: "Gesendet, wenn der Himmel stimmt"
+c4_p:
+  other: "Überflugvorhersage aus SGP4-Bahndaten hält Verkehr bis zum Sichtbarkeitsfenster zurück, statt Akku für Versuche gegen einen Satelliten unter dem Horizont zu verbrauchen."
+funding_a:
+  other: "MeshSat ist freie Software unter der GPLv3. Die Entwicklung wird gefördert von"
+funding_b:
+  other: ", und ein sechsmonatiges Feldprogramm beginnt im November 2026."
+hw_title:
+  other: "Worauf es läuft"
+hw_sub:
+  other: "Ein Raspberry Pi in einem wasserdichten Koffer, mit Funkgeräten an USB und GPIO. Geräte werden beim Start über USB-Kennung und Protokolltest erkannt, das Anstecken ist also die gesamte Konfiguration."
+th_part:
+  other: "Komponente"
+th_role:
+  other: "Funktion"
+hw1:
+  other: "Host. ARM64 oder jedes x86_64-Linux mit Docker und USB-Seriell."
+hw2:
+  other: "Meshtastic-Mesh-Funk auf 868 oder 915 MHz."
+hw3:
+  other: "Iridium-Satellit. SBD mit 340 Bytes oder IMT mit 100 KB."
+hw4:
+  other: "4G und 2G Mobilfunk, für SMS und Daten."
+hw5:
+  other: "ZigBee-Koordinator."
+hw6:
+  other: "USV und Akku"
+hw6r:
+  other: "Weil die interessanten Fälle genau die sind, in denen auch der Netzstrom weg ist."
+cap1:
+  other: "Signal, Verkehr und Kanalzustand, vom Gerät selbst ausgeliefert"
+cap2:
+  other: "Überflugvorhersage, damit die Warteschlange auf einen wirklich sichtbaren Satelliten wartet"
+cap3:
+  other: "Mesh-Topologie in Echtzeit"
+cap4:
+  other: "Weiterleitungsregeln und Status je Gateway"
+hw_note:
+  other: "Das Dashboard steckt in der Binärdatei und wird vom Gerät ausgeliefert. Keine Cloud, kein Konto."
+nf_title:
+  other: "Was es nicht ist"
+nf_sub:
+  other: "Am schnellsten verliert man einen Nachmittag, wenn man das Falsche davon erwartet."
+nf1_h:
+  other: "Kein Ersatz für Starlink"
+nf1_p:
+  other: "MeshSat bewegt Text, Positionen und Telemetrie. Wer Videoanrufe oder das Web braucht, nimmt Starlink. Dies ist für die Fälle, die eine Schüssel nicht abdeckt: akkubetrieben, hosentaschengroß, ohne Netzstrom."
+nf2_h:
+  other: "Keine Sprache, kein Video"
+nf2_p:
+  other: "Satelliten- und Mesh-Strecken haben hohe Latenz und geringen Durchsatz. Dies ist Store-and-Forward-Nachrichtenverkehr. Eher SMS als Telefonat."
+nf3_h:
+  other: "Kein LoRaWAN-Netzwerkserver"
+nf3_p:
+  other: "Die Mesh-Seite spricht Meshtastic, ein eigenes Protokoll über LoRa. Für LoRaWAN ChirpStack betreiben und per MQTT anbinden."
+nf4_h:
+  other: "Kein Notrufdienst"
+nf4_p:
+  other: "Ein Forschungsprototyp, kein Ersatz für 112 oder eine andere nationale Notrufnummer. Nichts davon ist zertifiziert und nichts davon wurde in einem echten Notfall eingesetzt."
+sys_title:
+  other: "Der Rest des Systems"
+sys_sub:
+  other: "Die Bridge ist ein einzelnes Gerät und arbeitet vollständig eigenständig. Zwei weitere Teile gibt es für den Fall, dass ein Gerät nicht das ganze Bild ist."
+hub_badge:
+  other: "Geschlossene Beta"
+hub_status:
+  other: "MeshSat Hub ist noch nicht gestartet. Er läuft als geschlossene Beta auf unserer eigenen Infrastruktur. Zugang für Demos und Beta-Tests wird auf Anfrage eingerichtet."
+hub_p:
+  other: "Flottenverwaltung über viele Bridges: OAuth2- und OIDC-Konten, API-Schlüssel mit Rollen, Mandantentrennung, SOS-Eskalationsketten, Ratenbegrenzung je Gerät und ein Ed25519-Hash-Chain-Auditlog. Betreibbar einzeln, im Cluster oder auf Kubernetes."
+hub_cta:
+  other: "Beta-Zugang anfragen"
+and_p:
+  other: "Ein Telefon als eigenständiges Gateway, ohne Pi und ohne Kabel. Es spricht mit einem Meshtastic-Funkgerät über Bluetooth LE, mit einem Iridium-Modem über Bluetooth SPP und nutzt die eigene SMS des Telefons, alles gleichzeitig. Gleiche Verschlüsselung und gleiche Nachrichtenformate wie die Bridge."
+and_cta:
+  other: "Android-Quellcode"
+cta_title:
+  other: "Ausprobieren"
+cta_sub:
+  other: "Ein Befehl auf einem Linux-Rechner mit angeschlossenem Funkgerät. Ein einzelnes Gerät genügt zum Start, und was fehlt, wird als Warnung protokolliert, nicht als Fehler."
+cta_source:
+  other: "Quellcode ansehen"
+cta_docs:
+  other: "Dokumentation"
+cta_matrix:
+  other: "Auf Matrix fragen"
+cta_note:
+  other: "Fehlerberichte von Leuten mit Hardware, die wir nicht ausprobiert haben, sind das Nützlichste, was Sie schicken können. Die Liste unterstützter Geräte ist kurz, weil dort nur steht, was wir physisch betrieben haben."
+f_builtwith:
+  other: "Gebaut mit"
+f_supported:
+  other: "Gefördert von"
+f_products:
+  other: "Produkte"
+f_resources:
+  other: "Ressourcen"
+f_legal:
+  other: "Rechtliches"
+f_strapline:
+  other: "Menschen erreichbar halten, wenn das Netz es nicht ist."
+f_madein:
+  other: "Gebaut in den Niederlanden"
+f_prerelease:
+  other: "MeshSat ist noch nicht veröffentlichte Software. APIs und Konfiguration können sich ändern. Rechnen Sie zwischen Versionen mit brechenden Änderungen."
+f_privacy:
+  other: "Datenschutz"
+f_terms:
+  other: "Nutzungsbedingungen"
+f_license:
+  other: "GPLv3-Lizenz"
+f_copy:
+  other: "ist freie Software, veröffentlicht unter der GPLv3."

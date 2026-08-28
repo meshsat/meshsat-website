@@ -1,5 +1,4 @@
 baseURL: "https://meshsat.net/"
-languageCode: "en-us"
 title: "MeshSat: keeping people connected when the network is not"
 params:
   description: "Open source gateway bridging Meshtastic LoRa, Iridium satellite, cellular SMS, APRS and TAK over a Reticulum routing layer. Runs on a Raspberry Pi."
@@ -15,33 +14,64 @@ params:
   hub_url: "https://hub.meshsat.net"
   docs_url: "https://docs.meshsat.net"
   install_url: "https://get.meshsat.net"
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+
+languages:
+  en:
+    languageName: "English"
+    languageCode: "en-US"
+    weight: 1
+    title: "MeshSat"
+  nl:
+    languageName: "Nederlands"
+    languageCode: "nl-NL"
+    weight: 2
+    title: "MeshSat"
+  de:
+    languageName: "Deutsch"
+    languageCode: "de-DE"
+    weight: 3
+    title: "MeshSat"
+  fr:
+    languageName: "Français"
+    languageCode: "fr-FR"
+    weight: 4
+    title: "MeshSat"
+  el:
+    languageName: "Ελληνικά"
+    languageCode: "el-GR"
+    weight: 5
+    title: "MeshSat"
+
 menu:
   main:
-    - name: "Transports"
+    - identifier: transports
       url: "/#transports"
       weight: 1
-    - name: "Why"
+    - identifier: why
       url: "/#cost"
       weight: 2
-    - name: "Hardware"
+    - identifier: hardware
       url: "/#hardware"
       weight: 3
-    - name: "Install"
+    - identifier: install
       url: "/install/"
       weight: 4
-    - name: "Changelog"
+    - identifier: changelog
       url: "/changelog/"
       weight: 5
-    - name: "Docs"
+    - identifier: docs
       url: "https://docs.meshsat.net"
       weight: 6
       params:
         external: true
-    - name: "Hub"
+    - identifier: hub
       url: "/#hub"
       weight: 7
       params:
         highlight: true
+
 markup:
   goldmark:
     renderer:

@@ -1,0 +1,222 @@
+nav_transports:
+  other: "Transports"
+nav_why:
+  other: "Pourquoi"
+nav_hardware:
+  other: "Matériel"
+nav_install:
+  other: "Installation"
+nav_changelog:
+  other: "Journal"
+nav_docs:
+  other: "Docs"
+nav_hub:
+  other: "Hub"
+skip_link:
+  other: "Aller au contenu principal"
+toggle_theme:
+  other: "Changer de thème"
+toggle_menu:
+  other: "Ouvrir le menu"
+choose_language:
+  other: "Choisir la langue"
+hero_eyebrow:
+  other: "Routage libre entre des radios qui ne peuvent pas se joindre"
+hero_title_a:
+  other: "Un message."
+hero_title_b:
+  other: "Toutes les sorties."
+hero_sub:
+  other: "Un maillage permet à un village de se parler à lui-même mais n'offre aucune sortie de la vallée. Un modem satellite atteint le monde entier et coûte de l'argent à chaque message. MeshSat est la couche intermédiaire : elle prend un message sur le maillage et l'envoie par le porteur encore vivant, en ne dépensant des octets satellite que lorsqu'il ne reste plus rien de gratuit."
+hero_status:
+  other: "Prototype avant publication. Jamais déployé chez un utilisateur réel, jamais utilisé lors d'une urgence."
+trace_title:
+  other: "Journal de routage, un message de détresse"
+trace_bridge:
+  other: "bridge tesseract"
+trace_alt:
+  other: "Exemple de journal de routage : un SOS arrive par maillage LoRa, la tentative Iridium échoue car le satellite est sous l'horizon, et le message est livré par SMS, TAK et MQTT à la place."
+t1:
+  other: "SOS du nœud !a4f2c1, 17 octets"
+t2:
+  other: "3 règles correspondantes, 4 routes retenues"
+t3:
+  other: "sous l'horizon, prochain passage dans 11m 38s"
+t4:
+  other: "smaz2 17 vers 11 octets, SMS au groupe de contacts"
+t5:
+  other: "position en Cursor-on-Target, en parallèle"
+t6:
+  other: "journalisé pour le tableau de bord et les webhooks"
+trace_foot:
+  other: "La liaison satellite a échoué et le message est quand même arrivé. C'est tout le produit. Les routes, l'ordre de bascule et les chaînes de transformation se configurent par interface."
+tr_title:
+  other: "Huit porteurs, neuf interfaces câblées"
+tr_sub:
+  other: "Iridium fonctionne sur deux modems, le 9603N pour SBD et le 9704 pour IMT. Chaque porteur est une interface à part entière, avec sa propre MTU, son modèle de coût et sa chaîne de transformation. TAK et les webhooks sont des intégrations, pas des porteurs. Le statut indique ce que nous avons réellement fait tourner, pas ce que nous espérons."
+th_category:
+  other: "Catégorie"
+th_transport:
+  other: "Transport"
+th_status:
+  other: "Statut"
+cat_mesh:
+  other: "Maillage"
+cat_sat:
+  other: "Satellite"
+cat_cell:
+  other: "Cellulaire"
+cat_wireless:
+  other: "Sans fil"
+cat_ip:
+  other: "IP / Réseau"
+cat_routing:
+  other: "Routage"
+st_field:
+  other: "Testé sur le terrain"
+st_sat:
+  other: "Confirmé par satellite"
+st_little:
+  other: "Peu d'usage sur le terrain"
+st_rns:
+  other: "Interopère avec Python RNS"
+tx_cell:
+  other: "SMS et données (A7670E)"
+tx_aprs:
+  other: "APRS (Direwolf inclus, KISS)"
+tx_rns:
+  other: "Reticulum TCP (trames HDLC)"
+tr_note_a:
+  other: "L'agrégation de plusieurs porteurs sur une liaison satellite payante n'est pas encore validée, et le détecteur de brouillage n'a vu que du bruit ambiant."
+tr_note_link:
+  other: "Le dépôt donne la liste complète"
+tr_note_b:
+  other: "de ce qui est prouvé et de ce qui ne l'est pas."
+cost_title:
+  other: "Les octets satellite coûtent cher. C'est toute la conception."
+cost_sub:
+  other: "Une ligne Iridium coûte quelques dizaines d'euros par mois plus des crédits par message, facturés par blocs de 340 octets. Donnez-en une à chaque personne d'une équipe et la facture suit les effectifs. Ce prix est précisément la raison d'être de la couche de routage."
+c1_h:
+  other: "Une liaison payante, partagée"
+c1_p:
+  other: "Une équipe porte des radios maillées bon marché. Une passerelle détient la ligne satellite coûteuse. Tout le monde atteint l'extérieur par elle, si bien que le coût cesse de suivre le nombre de personnes."
+c2_h:
+  other: "Les porteurs gratuits d'abord"
+c2_p:
+  other: "Chaque interface déclare un coût. Le routeur préfère les gratuits, maillage, packet radio, Bluetooth et WiFi, et ne recourt au satellite ou au SMS que lorsque plus rien de gratuit n'est disponible."
+c3_h:
+  other: "Et alors le moins d'octets possible"
+c3_p:
+  other: "Tout ce qui part sur un porteur facturé est d'abord compressé. SMAZ2 s'exécute en moins d'une milliseconde sur du texte court, ce qui compte quand la facturation se fait par bloc et non par octet."
+c4_h:
+  other: "Envoyé quand le ciel s'y prête"
+c4_p:
+  other: "La prédiction de passage à partir des éléments orbitaux SGP4 retient le trafic jusqu'à une fenêtre de visibilité, au lieu d'épuiser la batterie contre un satellite sous l'horizon."
+funding_a:
+  other: "MeshSat est un logiciel libre sous GPLv3. Le développement est soutenu par"
+funding_b:
+  other: ", et un programme de terrain de six mois commence en novembre 2026."
+hw_title:
+  other: "Ce sur quoi il tourne"
+hw_sub:
+  other: "Un Raspberry Pi dans une valise étanche, avec des radios sur USB et GPIO. Les appareils sont identifiés au démarrage par leur identifiant USB et une sonde de protocole : les brancher constitue toute la configuration."
+th_part:
+  other: "Élément"
+th_role:
+  other: "Rôle"
+hw1:
+  other: "Hôte. ARM64, ou tout Linux x86_64 avec Docker et série USB."
+hw2:
+  other: "Radio maillée Meshtastic à 868 ou 915 MHz."
+hw3:
+  other: "Satellite Iridium. SBD à 340 octets, ou IMT à 100 Ko."
+hw4:
+  other: "Cellulaire 4G et 2G, pour SMS et données."
+hw5:
+  other: "Coordinateur ZigBee."
+hw6:
+  other: "Onduleur et batterie"
+hw6r:
+  other: "Parce que les cas intéressants sont justement ceux où le secteur a lâché aussi."
+cap1:
+  other: "Signal, trafic et santé des canaux, servis par l'appareil lui-même"
+cap2:
+  other: "Prédiction de passage, pour que la file attende un satellite réellement visible"
+cap3:
+  other: "Topologie du maillage en direct"
+cap4:
+  other: "Règles de transfert et état par passerelle"
+hw_note:
+  other: "Le tableau de bord est intégré au binaire et servi depuis l'appareil. Aucun nuage, aucun compte."
+nf_title:
+  other: "Ce que ce n'est pas"
+nf_sub:
+  other: "Le moyen le plus rapide de perdre un après-midi est d'en attendre la mauvaise chose."
+nf1_h:
+  other: "Pas un remplacement de Starlink"
+nf1_p:
+  other: "MeshSat transporte du texte, des positions et de la télémétrie. Pour les appels vidéo ou le web, prenez Starlink. Ceci vise les cas qu'une parabole ne couvre pas : sur batterie, format de poche, sans secteur."
+nf2_h:
+  other: "Ni voix ni vidéo"
+nf2_p:
+  other: "Les liaisons satellite et maillées ont une latence élevée et un faible débit. Il s'agit de messagerie en stockage et retransmission. Pensez SMS, pas appel téléphonique."
+nf3_h:
+  other: "Pas un serveur de réseau LoRaWAN"
+nf3_p:
+  other: "Le côté maillage parle Meshtastic, son propre protocole sur LoRa. Pour LoRaWAN, faites tourner ChirpStack et raccordez-le en MQTT."
+nf4_h:
+  other: "Pas un service d'urgence"
+nf4_p:
+  other: "Un prototype de recherche, pas un remplacement du 112, du 911 ni d'aucun numéro d'urgence national. Rien ici n'est certifié et rien ici n'a servi lors d'une urgence réelle."
+sys_title:
+  other: "Le reste du système"
+sys_sub:
+  other: "La Bridge est un seul appareil et fonctionne de façon entièrement autonome. Deux autres pièces existent pour quand un appareil ne suffit pas à décrire la situation."
+hub_badge:
+  other: "Bêta privée"
+hub_status:
+  other: "MeshSat Hub n'est pas encore lancé. Il tourne en bêta privée sur notre propre infrastructure. L'accès pour les démonstrations et les tests se met en place sur demande."
+hub_p:
+  other: "Gestion de flotte sur de nombreuses bridges : comptes OAuth2 et OIDC, clés d'API avec rôles, cloisonnement des locataires, chaînes d'escalade SOS, limites de débit par appareil et journal d'audit Ed25519 en chaîne de hachage. Déployable seul, en grappe ou sur Kubernetes."
+hub_cta:
+  other: "Demander un accès bêta"
+and_p:
+  other: "Un téléphone en passerelle autonome, sans Pi ni câbles. Il parle à une radio Meshtastic en Bluetooth LE, à un modem Iridium en Bluetooth SPP, et utilise le SMS du téléphone, le tout en même temps. Même chiffrement et mêmes formats de message que la Bridge."
+and_cta:
+  other: "Code source Android"
+cta_title:
+  other: "Essayer"
+cta_sub:
+  other: "Une commande sur une machine Linux avec une radio branchée. Un seul appareil suffit pour commencer, et ce qui manque est journalisé comme un avertissement, pas comme une erreur."
+cta_source:
+  other: "Lire le code source"
+cta_docs:
+  other: "Documentation"
+cta_matrix:
+  other: "Demander sur Matrix"
+cta_note:
+  other: "Les rapports de bogue venant de personnes qui utilisent du matériel que nous n'avons pas essayé sont ce que vous pouvez envoyer de plus utile. La liste du matériel pris en charge est courte parce qu'elle ne cite que ce que nous avons fait tourner physiquement."
+f_builtwith:
+  other: "Construit avec"
+f_supported:
+  other: "Soutenu par"
+f_products:
+  other: "Produits"
+f_resources:
+  other: "Ressources"
+f_legal:
+  other: "Mentions légales"
+f_strapline:
+  other: "Garder les gens joignables quand le réseau ne l'est plus."
+f_madein:
+  other: "Construit aux Pays-Bas"
+f_prerelease:
+  other: "MeshSat est un logiciel avant publication. Les API et la configuration peuvent changer. Attendez-vous à des ruptures entre les versions."
+f_privacy:
+  other: "Confidentialité"
+f_terms:
+  other: "Conditions d'utilisation"
+f_license:
+  other: "Licence GPLv3"
+f_copy:
+  other: "est un logiciel libre, publié sous GPLv3."
