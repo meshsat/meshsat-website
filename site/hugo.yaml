@@ -9,6 +9,8 @@ params:
   github: "https://github.com/cubeos-app/meshsat"
   x_url: "https://x.com/meshsat"
   linkedin_url: "https://www.linkedin.com/company/meshsat/"
+  matrix_url: "https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net"
+  matrix_alias: "#meshsat:matrix.nuclearlighters.net"
   x_handle: "@meshsat"
   hub_url: "https://hub.meshsat.net"
   docs_url: "https://docs.meshsat.net"
