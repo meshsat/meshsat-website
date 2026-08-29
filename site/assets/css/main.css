@@ -3336,3 +3336,16 @@ img {
 }
 .cta-system .system-grid { margin-top: 0; }
 .system-card { padding: var(--space-md) var(--space-lg); }
+
+/* 1.4.3: black on the light-theme orange is 4.25:1, the exact nav-hub-btn
+   failure from MESHSAT-723. It was masked from axe by the CTA's decorative
+   glow behind the button; removing the glow exposed it. White clears light
+   at 4.94:1; dark keeps near-black ink on the brighter orange. */
+.btn-primary,
+.btn-primary:hover { color: #FFFFFF; }
+:root[data-theme="dark"] .btn-primary,
+:root[data-theme="dark"] .btn-primary:hover { color: var(--color-bg); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .btn-primary,
+  :root:not([data-theme="light"]) .btn-primary:hover { color: var(--color-bg); }
+}
