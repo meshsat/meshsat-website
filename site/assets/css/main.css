@@ -2343,7 +2343,7 @@ img {
     color: var(--color-text-muted);
     font-size: 0.85rem;
     font-weight: 600;
-    opacity: 0.8;
+    opacity: 1;
     transition: all 0.2s;
     text-decoration: none;
 }
@@ -2974,8 +2974,9 @@ img {
 
 /* 1.4.3 Contrast. opacity:0.6 on an already-muted token dropped these links to
    3.16:1 (dark) and 2.86:1 (light). The token passes at full strength, so the
-   de-emphasis moves to weight and size instead of transparency. */
-.partners-logos a { opacity: 1; font-weight: 400; }
+   de-emphasis moves to size instead of transparency. Weight 600 by owner
+   request 2026-08-29; bolder only helps contrast, opacity must stay 1. */
+.partners-logos a { opacity: 1; font-weight: 600; }
 .partners-logos a:hover,
 .partners-logos a:focus-visible { color: var(--color-primary); opacity: 1; }
 
