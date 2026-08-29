@@ -3223,7 +3223,7 @@ img {
 
 /* "What it is not": the boxed cards were the heaviest containers left on the
    page. A hairline on the top edge carries the same grouping at a third of
-   the height. forced-colors re-boxes these (see the MESHSAT-723 block). */
+   the height. */
 .not-for-card {
     background: transparent;
     border: 0;
@@ -3232,5 +3232,13 @@ img {
     padding: var(--space-md) 0 0;
 }
 .not-for-card:hover { transform: none; box-shadow: none; }
+
+/* The MESHSAT-723 forced-colors block re-boxes .not-for-card so the grouping
+   survives when our borders lose their colour, but it sits EARLIER in this
+   file and @media adds no specificity, so `border: 0` above would silently
+   win there. Restore the box here, after it. */
+@media (forced-colors: active) {
+    .not-for-card { border: 1px solid CanvasText; }
+}
 
 .reason-grid, .system-grid { margin-top: var(--space-xl); }
