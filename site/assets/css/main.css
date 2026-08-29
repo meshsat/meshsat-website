@@ -3365,12 +3365,15 @@ img {
    glow behind the button; removing the glow exposed it. White clears light
    at 4.94:1; dark keeps near-black ink on the brighter orange. */
 .btn-primary,
-.btn-primary:hover { color: #FFFFFF; }
+.btn-primary:hover,
+.skip-link { color: #FFFFFF; }
 :root[data-theme="dark"] .btn-primary,
-:root[data-theme="dark"] .btn-primary:hover { color: var(--color-bg); }
+:root[data-theme="dark"] .btn-primary:hover,
+:root[data-theme="dark"] .skip-link { color: var(--color-bg); }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .btn-primary,
-  :root:not([data-theme="light"]) .btn-primary:hover { color: var(--color-bg); }
+  :root:not([data-theme="light"]) .btn-primary:hover,
+  :root:not([data-theme="light"]) .skip-link { color: var(--color-bg); }
 }
 
 /* ---------- Symmetry repair + screenshot lightbox (2026-08-30, audit 2) ----
