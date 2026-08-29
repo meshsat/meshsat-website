@@ -2,9 +2,11 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'MeshSat Docs',
-  description: 'Documentation for MeshSat — unified routing across mesh, satellite, and IP networks',
+  description: 'Documentation for MeshSat: unified routing across mesh, satellite, and IP networks',
 
   appearance: 'dark',
+
+  sitemap: { hostname: 'https://docs.meshsat.net' },
 
   head: [
     ['meta', { name: 'theme-color', content: '#040406' }],
