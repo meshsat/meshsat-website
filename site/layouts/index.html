@@ -240,4 +240,13 @@
     </div>
 </dialog>
 
+{{/* Video modal — playIntroVideo() injects the nocookie iframe here; closing
+     removes it so playback actually stops. */}}
+<dialog class="shot-dialog video-dialog" id="video-dialog" aria-label="MeshSat-intro.mp4">
+    <div class="shot-frame">
+        <div class="shot-head"><span>MeshSat-intro.mp4</span><span class="shot-time">2:02</span><button type="button" class="shot-close" onclick="this.closest('dialog').close()" aria-label="{{ i18n "lightbox_close" }}">&#10005;</button></div>
+        <div class="video-media" id="video-dialog-media"></div>
+    </div>
+</dialog>
+
 {{ end }}

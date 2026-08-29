@@ -101,14 +101,25 @@ function copyToClipboard(text, btn) {
     });
 }
 
-// Intro video — swap the poster facade for the YouTube embed on demand
+// Intro video — the poster facade opens a centred modal at double the inline
+// size; nothing loads from YouTube until this click. Falls back to the old
+// in-place swap if the dialog is unavailable.
 function playIntroVideo(btn) {
     var frame = document.createElement('iframe');
     frame.src = btn.getAttribute('data-embed');
     frame.title = btn.getAttribute('aria-label');
     frame.allow = 'autoplay; encrypted-media; picture-in-picture';
     frame.setAttribute('allowfullscreen', '');
-    btn.parentNode.replaceChild(frame, btn);
+
+    var dlg = document.getElementById('video-dialog');
+    var media = document.getElementById('video-dialog-media');
+    if (dlg && media && typeof dlg.showModal === 'function') {
+        media.innerHTML = '';
+        media.appendChild(frame);
+        dlg.showModal();
+    } else {
+        btn.parentNode.replaceChild(frame, btn);
+    }
 }
 
 // Screenshot lightbox — one dialog, filled from the clicked thumbnail
@@ -127,7 +138,19 @@ function closeShot() {
     var dlg = document.getElementById('shot-dialog');
     if (dlg) dlg.close();
 }
+// Any modal closes on a backdrop click (clicks on ::backdrop target the
+// dialog element itself; clicks inside land on its children).
 document.addEventListener('click', function(e) {
-    var dlg = document.getElementById('shot-dialog');
-    if (dlg && dlg.open && e.target === dlg) dlg.close();
+    if (e.target && e.target.tagName === 'DIALOG' && e.target.open) e.target.close();
 });
+
+// Closing the video modal removes the iframe so playback actually stops,
+// whichever close path was used (Esc, backdrop, the button).
+(function() {
+    var dlg = document.getElementById('video-dialog');
+    if (!dlg) return;
+    dlg.addEventListener('close', function() {
+        var media = document.getElementById('video-dialog-media');
+        if (media) media.innerHTML = '';
+    });
+})();

@@ -3412,6 +3412,12 @@ img {
 .shot-frame img { display: block; width: 100%; height: auto; max-height: 82vh; object-fit: contain; background: #000; }
 @media (forced-colors: active) { .shot-frame { border: 1px solid CanvasText; } }
 
+/* The film opens the same way: centred, at double the inline card's size,
+   width capped so the 16:9 box always fits the viewport height. */
+.video-dialog { width: min(980px, 94vw, calc((94vh - 3.5rem) * 16 / 9)); }
+.video-dialog .shot-head { gap: var(--space-md); }
+.video-dialog .shot-time { margin-left: auto; }
+
 /* not-for: explicit symmetric tracks, never an auto-fit orphan row. Cards
    stretch to row height, so a bottom rule closes every card on one line;
    the cost row-list closes with the same rule. */
