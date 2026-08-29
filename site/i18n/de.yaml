@@ -226,3 +226,13 @@ table_transports_label:
   other: "Tabelle der Übertragungsträger, scrollbar"
 table_hardware_label:
   other: "Hardware-Tabelle, scrollbar"
+video_title:
+  other: "In zwei Minuten erklärt"
+video_sub:
+  other: "Die Prototypen auf der Werkbank, ein lokaler Sendevorgang im Web-Dashboard und das 3D-Design der Feldkits im Bau."
+video_play:
+  other: "Einführungsvideo abspielen"
+video_foot:
+  other: "Das Video wird erst von YouTube geladen, wenn du auf Abspielen drückst."
+video_watch:
+  other: "Auf YouTube ansehen"

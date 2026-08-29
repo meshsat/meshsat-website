@@ -226,3 +226,13 @@ table_transports_label:
   other: "Tabel met transportdragers, scrollbaar"
 table_hardware_label:
   other: "Hardwaretabel, scrollbaar"
+video_title:
+  other: "Bekijk het in twee minuten"
+video_sub:
+  other: "De prototypes op de werkbank, een lokale verzending in het webdashboard en het 3D-ontwerp van de veldkits in aanbouw."
+video_play:
+  other: "Speel de introductievideo af"
+video_foot:
+  other: "De video wordt pas van YouTube geladen nadat je op afspelen drukt."
+video_watch:
+  other: "Bekijk op YouTube"
