@@ -236,3 +236,5 @@ video_foot:
   other: "La vidéo n'est chargée depuis YouTube qu'après avoir appuyé sur lecture."
 video_watch:
   other: "Regarder sur YouTube"
+lightbox_close:
+  other: "Fermer"

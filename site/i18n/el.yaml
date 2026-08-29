@@ -236,3 +236,5 @@ video_foot:
   other: "Το βίντεο φορτώνεται από το YouTube μόνο αφού πατήσετε αναπαραγωγή."
 video_watch:
   other: "Παρακολουθήστε στο YouTube"
+lightbox_close:
+  other: "Κλείσιμο"

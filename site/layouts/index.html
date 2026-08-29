@@ -125,11 +125,15 @@
 
         <div class="screenshots-grid">
             <div class="screenshot-card">
-                <img src="/images/screenshots/bridge-dashboard.webp" alt="MeshSat dashboard showing Iridium signal, MQTT traffic and cellular status" loading="lazy" width="1280" height="720">
+                <button type="button" class="shot-open" onclick="openShot(this)">
+                    <img src="/images/screenshots/bridge-dashboard.webp" alt="MeshSat dashboard showing Iridium signal, MQTT traffic and cellular status" loading="lazy" width="1280" height="720">
+                </button>
                 <p>{{ i18n "cap1" }}</p>
             </div>
             <div class="screenshot-card">
-                <img src="/images/screenshots/bridge-passes.webp" alt="Satellite pass predictor showing a visibility timeline" loading="lazy" width="1280" height="720">
+                <button type="button" class="shot-open" onclick="openShot(this)">
+                    <img src="/images/screenshots/bridge-passes.webp" alt="Satellite pass predictor showing a visibility timeline" loading="lazy" width="1280" height="720">
+                </button>
                 <p>{{ i18n "cap2" }}</p>
             </div>
         </div>
@@ -227,5 +231,13 @@
         </div>
     </div>
 </section>
+
+{{/* Screenshot lightbox — one dialog, filled on demand by openShot() in main.js. */}}
+<dialog class="shot-dialog" id="shot-dialog">
+    <div class="shot-frame">
+        <div class="shot-head"><span id="shot-caption"></span><button type="button" class="shot-close" onclick="closeShot()" aria-label="{{ i18n "lightbox_close" }}">&#10005;</button></div>
+        <img id="shot-img" src="" alt="">
+    </div>
+</dialog>
 
 {{ end }}

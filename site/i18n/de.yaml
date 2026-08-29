@@ -236,3 +236,5 @@ video_foot:
   other: "Das Video wird erst von YouTube geladen, wenn du auf Abspielen drückst."
 video_watch:
   other: "Auf YouTube ansehen"
+lightbox_close:
+  other: "Schließen"

@@ -3372,3 +3372,60 @@ img {
   :root:not([data-theme="light"]) .btn-primary,
   :root:not([data-theme="light"]) .btn-primary:hover { color: var(--color-bg); }
 }
+
+/* ---------- Symmetry repair + screenshot lightbox (2026-08-30, audit 2) ----
+   Three raggednesses the owner read as misalignment, all real: the 880px
+   screenshot cap stopped 272px short of the table edge, the auto-fit
+   not-for grid wrapped a lone orphan card at laptop widths, and the
+   workbench columns ended 158px apart. */
+
+/* Screenshots: full container width, explicit tracks, click to view full
+   size (the inline cards are evidence thumbnails). */
+.screenshots-grid { max-width: none; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 700px) { .screenshots-grid { grid-template-columns: minmax(0, 1fr); } }
+.shot-open { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.shot-open img { display: block; width: 100%; }
+.shot-open:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+
+/* The global `* { margin: 0 }` reset kills the UA margin:auto that centres
+   native dialogs, leaving them pinned to the top-left. Restore it. */
+.shot-dialog { border: 0; padding: 0; margin: auto; background: transparent; width: min(1160px, 94vw); }
+.shot-dialog::backdrop { background: rgba(10, 9, 7, 0.84); }
+.shot-frame {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+.shot-head {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: var(--space-md); padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-mono); font-size: 0.75rem;
+    color: var(--color-text-muted); border-bottom: 1px solid var(--color-border);
+}
+.shot-close {
+    flex: none; min-width: 28px; min-height: 28px; cursor: pointer;
+    background: none; border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm); color: var(--color-text-muted);
+}
+.shot-close:hover, .shot-close:focus-visible { color: var(--color-primary); border-color: var(--color-primary); }
+.shot-frame img { display: block; width: 100%; height: auto; max-height: 82vh; object-fit: contain; background: #000; }
+@media (forced-colors: active) { .shot-frame { border: 1px solid CanvasText; } }
+
+/* not-for: explicit symmetric tracks, never an auto-fit orphan row. Cards
+   stretch to row height, so a bottom rule closes every card on one line;
+   the cost row-list closes with the same rule. */
+.not-for-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 1100px) { .not-for-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .not-for-grid { grid-template-columns: minmax(0, 1fr); } }
+.not-for-card { border-bottom: 1px solid var(--color-border-light); padding-bottom: var(--space-md); }
+.reason-grid { border-bottom: 1px solid var(--color-border-light); }
+
+/* Workbench bottom edges align: the start column stretches to the film
+   column's height (align-items:start earlier blocked this) and the note
+   pins to the shared baseline. */
+@media (min-width: 1100px) {
+    .cta-grid { align-items: stretch; }
+    .cta-start { display: flex; flex-direction: column; }
+    .cta-start .table-note { margin-top: auto; padding-top: var(--space-lg); }
+}
