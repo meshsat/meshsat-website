@@ -10,6 +10,7 @@ params:
   linkedin_url: "https://www.linkedin.com/company/meshsat/"
   matrix_url: "https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net"
   matrix_alias: "#meshsat:matrix.nuclearlighters.net"
+  reddit_url: "https://www.reddit.com/r/meshsat/"
   x_handle: "@meshsat"
   hub_url: "https://hub.meshsat.net"
   docs_url: "https://docs.meshsat.net"
