@@ -226,3 +226,13 @@ table_transports_label:
   other: "Tableau des porteurs, défilable"
 table_hardware_label:
   other: "Tableau du matériel, défilable"
+video_title:
+  other: "Deux minutes pour comprendre"
+video_sub:
+  other: "Les prototypes d'atelier, un envoi local dans le tableau de bord web et le design 3D des kits de terrain en construction."
+video_play:
+  other: "Lire la vidéo d'introduction"
+video_foot:
+  other: "La vidéo n'est chargée depuis YouTube qu'après avoir appuyé sur lecture."
+video_watch:
+  other: "Regarder sur YouTube"

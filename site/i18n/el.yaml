@@ -226,3 +226,13 @@ table_transports_label:
   other: "Πίνακας φορέων μεταφοράς, με κύλιση"
 table_hardware_label:
   other: "Πίνακας εξοπλισμού, με κύλιση"
+video_title:
+  other: "Δείτε το σε δύο λεπτά"
+video_sub:
+  other: "Τα πρωτότυπα στον πάγκο εργασίας, μια τοπική αποστολή στο web dashboard και ο τρισδιάστατος σχεδιασμός των field kits που κατασκευάζονται."
+video_play:
+  other: "Αναπαραγωγή του εισαγωγικού βίντεο"
+video_foot:
+  other: "Το βίντεο φορτώνεται από το YouTube μόνο αφού πατήσετε αναπαραγωγή."
+video_watch:
+  other: "Παρακολουθήστε στο YouTube"

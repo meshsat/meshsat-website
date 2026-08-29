@@ -100,3 +100,13 @@ function copyToClipboard(text, btn) {
         setTimeout(function() { btn.textContent = orig; }, 2000);
     });
 }
+
+// Intro video — swap the poster facade for the YouTube embed on demand
+function playIntroVideo(btn) {
+    var frame = document.createElement('iframe');
+    frame.src = btn.getAttribute('data-embed');
+    frame.title = btn.getAttribute('aria-label');
+    frame.allow = 'autoplay; encrypted-media; picture-in-picture';
+    frame.setAttribute('allowfullscreen', '');
+    btn.parentNode.replaceChild(frame, btn);
+}
