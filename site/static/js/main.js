@@ -110,3 +110,24 @@ function playIntroVideo(btn) {
     frame.setAttribute('allowfullscreen', '');
     btn.parentNode.replaceChild(frame, btn);
 }
+
+// Screenshot lightbox — one dialog, filled from the clicked thumbnail
+function openShot(btn) {
+    var dlg = document.getElementById('shot-dialog');
+    if (!dlg) return;
+    var img = btn.querySelector('img');
+    var cap = btn.parentNode.querySelector('p');
+    var big = document.getElementById('shot-img');
+    big.src = img.currentSrc || img.src;
+    big.alt = img.alt;
+    document.getElementById('shot-caption').textContent = cap ? cap.textContent : img.alt;
+    dlg.showModal();
+}
+function closeShot() {
+    var dlg = document.getElementById('shot-dialog');
+    if (dlg) dlg.close();
+}
+document.addEventListener('click', function(e) {
+    var dlg = document.getElementById('shot-dialog');
+    if (dlg && dlg.open && e.target === dlg) dlg.close();
+});

@@ -236,3 +236,5 @@ video_foot:
   other: "De video wordt pas van YouTube geladen nadat je op afspelen drukt."
 video_watch:
   other: "Bekijk op YouTube"
+lightbox_close:
+  other: "Sluiten"

@@ -236,3 +236,5 @@ video_foot:
   other: "The video loads from YouTube only after you press play."
 video_watch:
   other: "Watch on YouTube"
+lightbox_close:
+  other: "Close"
