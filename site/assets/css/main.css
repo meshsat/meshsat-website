@@ -3337,6 +3337,29 @@ img {
 .cta-system .system-grid { margin-top: 0; }
 .system-card { padding: var(--space-md) var(--space-lg); }
 
+/* ---------- Alignment repair (2026-08-30 visual audit) ----------
+   End-aligned section heads made every title start at a different offset
+   from its subtitle (12 to 42px, in both directions, section by section).
+   Top-align them and pad the subtitle so the two first baselines sit
+   together, identically, in every section. */
+.section-head { align-items: start; }
+@media (min-width: 960px) {
+    .section-head .section-subtitle { padding-top: 1.05rem; }
+}
+
+/* One seam per section: the cost rows adopt the head's exact column split,
+   so the subtitle and every row explanation hang from the same vertical. */
+@media (min-width: 960px) {
+    .reason-card {
+        grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+        gap: var(--space-xs) var(--space-3xl);
+    }
+}
+
+/* Workbench columns stay top-anchored like every other section; centring
+   the install column was tried and read as floating. The air below the
+   note is trailing space, not a hole. */
+
 /* 1.4.3: black on the light-theme orange is 4.25:1, the exact nav-hub-btn
    failure from MESHSAT-723. It was masked from axe by the CTA's decorative
    glow behind the button; removing the glow exposed it. White clears light
