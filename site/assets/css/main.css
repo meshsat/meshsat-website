@@ -1470,14 +1470,13 @@ img {
     color: var(--color-warning);
 }
 
-/* Section status line (private-beta notice under a section subtitle) */
+/* Section status line (badge + note at the top of a system card). Its only
+   consumer is the Hub card; it must flow normally after the card heading. */
 .section-status {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
     gap: var(--space-sm);
-    max-width: 700px;
-    margin: calc(var(--space-3xl) * -1 + var(--space-lg)) auto var(--space-3xl);
+    margin: 0 0 var(--space-md);
     font-size: 0.95rem;
     line-height: 1.6;
     color: var(--color-text-muted);
@@ -3156,3 +3155,8 @@ img {
     .video-play-glyph { transition: none; }
     .video-play:hover .video-play-glyph, .video-play:focus-visible .video-play-glyph { transform: translate(-50%, -50%); }
 }
+
+/* CTA section reuses .hero-actions and .table-note, both styled for
+   left-aligned contexts; centre them here to match the section. */
+.cta-section .hero-actions { justify-content: center; }
+.cta-section .table-note { margin-inline: auto; }
