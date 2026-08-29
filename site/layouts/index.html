@@ -39,31 +39,13 @@
     </div>
 </section>
 
-{{/* 1b. THE VIDEO — two minutes, framed as a log artifact. YouTube loads only on click. */}}
-<section id="video" class="section video-section">
-    <div class="container">
-        <h2 class="section-title">{{ i18n "video_title" }}</h2>
-        <p class="section-subtitle">{{ i18n "video_sub" }}</p>
-        <div class="video-frame">
-            <div class="video-head"><span>MeshSat-intro.mp4</span><span>2:02</span></div>
-            <div class="video-media">
-                <button type="button" class="video-play" onclick="playIntroVideo(this)" data-embed="https://www.youtube-nocookie.com/embed/Q-JKNwWlzpE?autoplay=1&amp;rel=0" aria-label="{{ i18n "video_play" }}">
-                    <img src="/images/video-poster.jpg" alt="" width="1280" height="720" loading="lazy">
-                    <span class="video-play-glyph" aria-hidden="true">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                    </span>
-                </button>
-            </div>
-            <p class="video-foot">{{ i18n "video_foot" }} <a href="https://www.youtube.com/watch?v=Q-JKNwWlzpE" target="_blank" rel="noopener">{{ i18n "video_watch" }}</a></p>
-        </div>
-    </div>
-</section>
-
 {{/* 2. WHAT IT BRIDGES */}}
 <section id="transports" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">{{ i18n "tr_title" }}</h2>
-        <p class="section-subtitle">{{ i18n "tr_sub" }}</p>
+        <div class="section-head">
+            <h2 class="section-title">{{ i18n "tr_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "tr_sub" }}</p>
+        </div>
 
         <div class="table-wrap" tabindex="0" role="region" aria-label="{{ i18n "table_transports_label" }}">
             <table class="data-table">
@@ -88,11 +70,34 @@
     </div>
 </section>
 
+{{/* 2b. THE VIDEO — two minutes, framed as a log artifact. YouTube loads only on click.
+     Sits after the evidence table since 2026-08-29: facts first, film second. */}}
+<section id="video" class="section video-section">
+    <div class="container">
+        <h2 class="section-title">{{ i18n "video_title" }}</h2>
+        <p class="section-subtitle">{{ i18n "video_sub" }}</p>
+        <div class="video-frame">
+            <div class="video-head"><span>MeshSat-intro.mp4</span><span>2:02</span></div>
+            <div class="video-media">
+                <button type="button" class="video-play" onclick="playIntroVideo(this)" data-embed="https://www.youtube-nocookie.com/embed/Q-JKNwWlzpE?autoplay=1&amp;rel=0" aria-label="{{ i18n "video_play" }}">
+                    <img src="/images/video-poster.jpg" alt="" width="1280" height="720" loading="lazy">
+                    <span class="video-play-glyph" aria-hidden="true">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    </span>
+                </button>
+            </div>
+            <p class="video-foot">{{ i18n "video_foot" }} <a href="https://www.youtube.com/watch?v=Q-JKNwWlzpE" target="_blank" rel="noopener">{{ i18n "video_watch" }}</a></p>
+        </div>
+    </div>
+</section>
+
 {{/* 3. WHY IT EXISTS — the cost argument is the design argument */}}
 <section id="cost" class="section cost-section">
     <div class="container">
-        <h2 class="section-title">{{ i18n "cost_title" }}</h2>
-        <p class="section-subtitle">{{ i18n "cost_sub" }}</p>
+        <div class="section-head">
+            <h2 class="section-title">{{ i18n "cost_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "cost_sub" }}</p>
+        </div>
 
         <div class="reason-grid">
             <div class="reason-card">
@@ -120,8 +125,10 @@
 {{/* 4. THE DEVICE */}}
 <section id="hardware" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">{{ i18n "hw_title" }}</h2>
-        <p class="section-subtitle">{{ i18n "hw_sub" }}</p>
+        <div class="section-head">
+            <h2 class="section-title">{{ i18n "hw_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "hw_sub" }}</p>
+        </div>
 
         <div class="table-wrap" tabindex="0" role="region" aria-label="{{ i18n "table_hardware_label" }}">
             <table class="data-table">
@@ -162,8 +169,10 @@
 {{/* 5. WHAT IT IS NOT */}}
 <section class="section not-for">
     <div class="container">
-        <h2 class="section-title">{{ i18n "nf_title" }}</h2>
-        <p class="section-subtitle">{{ i18n "nf_sub" }}</p>
+        <div class="section-head">
+            <h2 class="section-title">{{ i18n "nf_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "nf_sub" }}</p>
+        </div>
 
         <div class="not-for-grid">
             <div class="not-for-card">
@@ -189,8 +198,10 @@
 {{/* 6. THE REST OF THE SYSTEM */}}
 <section id="hub" class="section section-alt">
     <div class="container">
-        <h2 class="section-title">{{ i18n "sys_title" }}</h2>
-        <p class="section-subtitle">{{ i18n "sys_sub" }}</p>
+        <div class="section-head">
+            <h2 class="section-title">{{ i18n "sys_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "sys_sub" }}</p>
+        </div>
 
         <div class="system-grid">
             <div class="system-card">

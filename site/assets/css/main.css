@@ -3160,3 +3160,77 @@ img {
    left-aligned contexts; centre them here to match the section. */
 .cta-section .hero-actions { justify-content: center; }
 .cta-section .table-note { margin-inline: auto; }
+
+/* ==========================================================================
+   Density recomposition (MESHSAT-731)
+   The page's job is evidence, so the composition puts more of it in each
+   viewport. Same content, same tokens, same contracts; only the frame moves.
+   ========================================================================== */
+
+/* Section rhythm: a fifth of every section boundary was empty chrome. */
+.section { padding: 4rem 0; }
+
+/* Split section header: claim left, argument right, baselines aligned.
+   Scoped to .section-head so changelog/install keep their centred titles.
+   The centred header survives on the video and CTA sections deliberately:
+   media moment and closing cadence, not evidence. */
+.section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-sm) var(--space-3xl);
+    align-items: end;
+    margin-bottom: var(--space-xl);
+}
+.section-head .section-title { text-align: left; margin-bottom: 0; }
+.section-head .section-subtitle { text-align: left; margin: 0; max-width: 60ch; }
+@media (min-width: 960px) {
+    .section-head { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+}
+
+/* The hero's own padding shorthand had been cancelling .container's side
+   gutters, so hero text sat flush against the viewport edge on phones. */
+.hero-content { padding: var(--space-4xl) var(--space-lg); }
+
+/* Two-column hero from 1100px: thesis left, the trace as evidence right, both
+   inside the first viewport. Below 1100px the stacked flow is untouched.
+   Vertical rhythm inside each column still comes from the elements' own
+   margins; the grid only places them. */
+@media (min-width: 1100px) {
+    .hero { min-height: 0; } /* the 90vh floor is what made the hero tall */
+    .hero-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+            "label    trace"
+            "title    trace"
+            "subtitle trace"
+            "status   trace"
+            "install  trace";
+        grid-template-rows: auto auto auto auto 1fr;
+        column-gap: var(--space-2xl);
+        max-width: 1200px;
+        /* Horizontal padding matches .container so the hero's left edge lines
+           up with every section head below it. */
+        padding: var(--space-3xl) var(--space-lg);
+    }
+    .hero-label    { grid-area: label; }
+    .hero-title    { grid-area: title; }
+    .hero-subtitle { grid-area: subtitle; }
+    .hero-status   { grid-area: status; align-self: start; justify-self: start; }
+    .hero-install  { grid-area: install; align-self: start; }
+    .hero-content .trace { grid-area: trace; align-self: center; min-width: 0; }
+}
+
+/* "What it is not": the boxed cards were the heaviest containers left on the
+   page. A hairline on the top edge carries the same grouping at a third of
+   the height. forced-colors re-boxes these (see the MESHSAT-723 block). */
+.not-for-card {
+    background: transparent;
+    border: 0;
+    border-top: 1px solid var(--color-border-light);
+    border-radius: 0;
+    padding: var(--space-md) 0 0;
+}
+.not-for-card:hover { transform: none; box-shadow: none; }
+
+.reason-grid, .system-grid { margin-top: var(--space-xl); }
