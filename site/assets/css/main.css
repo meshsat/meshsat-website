@@ -2342,8 +2342,8 @@ img {
 .partners-logos a {
     color: var(--color-text-muted);
     font-size: 0.85rem;
-    font-weight: 500;
-    opacity: 0.6;
+    font-weight: 600;
+    opacity: 0.8;
     transition: all 0.2s;
     text-decoration: none;
 }
