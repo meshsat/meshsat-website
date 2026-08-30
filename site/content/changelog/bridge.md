@@ -1,6 +1,6 @@
 ---
 title: "Bridge"
-description: "MeshSat Bridge changelog — standalone gateway releases."
+description: "MeshSat Bridge changelog: standalone gateway releases."
 ---
 
 ## v0.2.0 (2026-03-23)

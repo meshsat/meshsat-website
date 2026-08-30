@@ -1,6 +1,6 @@
 ---
 title: "Hub"
-description: "MeshSat Hub changelog — fleet management platform releases."
+description: "MeshSat Hub changelog: fleet management platform releases."
 ---
 
 ## v0.1.0 (2026-03-23)
