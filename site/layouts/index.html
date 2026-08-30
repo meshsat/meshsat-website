@@ -192,7 +192,7 @@
                             <span class="copy-text">Copy</span>
                         </button>
                     </div>
-                    <pre class="term-log"><span class="ok">[OK]</span>    Running as root
+                    <pre class="term-log" tabindex="0" role="region" aria-label="{{ i18n "term_log_label" }}"><span class="ok">[OK]</span>    Running as root
 <span class="ok">[OK]</span>    Architecture: aarch64
 <span class="ok">[OK]</span>    MeshSat Bridge started
 
@@ -223,10 +223,9 @@
             </div>
 
             <div class="artifact" id="hub">
-                <div class="artifact-head"><h3>MeshSat Hub</h3></div>
+                <div class="artifact-head"><h3>MeshSat Hub</h3><span class="badge badge-beta">{{ i18n "hub_badge" }}</span></div>
                 <div class="artifact-body">
                     <p class="section-status">
-                        <span class="badge badge-beta">{{ i18n "hub_badge" }}</span>
                         <span class="section-status-text">{{ i18n "hub_status" }}</span>
                     </p>
                     <p>{{ i18n "hub_p" }}</p>
@@ -238,7 +237,10 @@
                 <div class="artifact-head"><h3>MeshSat Android</h3></div>
                 <div class="artifact-body">
                     <p>{{ i18n "and_p" }}</p>
-                    <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "and_cta" }}</a>
+                    <div class="artifact-actions">
+                        <a href="{{ .Site.Params.github }}-android/releases/latest" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "and_apk" }}</a>
+                        <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "and_cta" }}</a>
+                    </div>
                 </div>
             </div>
         </div>

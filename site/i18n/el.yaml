@@ -238,3 +238,7 @@ video_watch:
   other: "Παρακολουθήστε στο YouTube"
 lightbox_close:
   other: "Κλείσιμο"
+term_log_label:
+  other: "Έξοδος εγκατάστασης"
+and_apk:
+  other: "Λήψη APK"

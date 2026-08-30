@@ -238,3 +238,7 @@ video_watch:
   other: "Bekijk op YouTube"
 lightbox_close:
   other: "Sluiten"
+term_log_label:
+  other: "Installatie-uitvoer"
+and_apk:
+  other: "APK downloaden"
