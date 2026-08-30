@@ -59,15 +59,4 @@
 </section>
 {{ end }}
 
-{{ define "scripts" }}
-<script>
-function copyCode(btn) {
-    var code = btn.closest('.code-block').querySelector('code').textContent;
-    navigator.clipboard.writeText(code).then(function() {
-        var text = btn.querySelector('.copy-text');
-        text.textContent = 'Copied';
-        setTimeout(function() { text.textContent = 'Copy'; }, 2000);
-    });
-}
-</script>
-{{ end }}
+{{/* copyCode now lives in /js/main.js, which baseof loads on every page. */}}

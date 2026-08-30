@@ -3453,9 +3453,12 @@ img {
 }
 .bench .video-frame .video-foot { margin-top: auto; }
 /* Inside the stretched row the media fills the frame between head and foot
-   (the poster cover-crops a little; the modal shows the true 16:9). */
+   (the poster cover-crops a little; the modal shows the true 16:9).
+   flex-basis stays `auto` so the base 16:9 box remains the FLOOR: with
+   `flex: 1` the basis is 0 and the poster collapses to nothing on any width
+   where the film column is the taller of the two. */
 @media (min-width: 1100px) {
-    .bench .video-frame .video-media { aspect-ratio: auto; flex: 1; min-height: 0; }
+    .bench .video-frame .video-media { flex: 1 1 auto; min-height: 0; }
 }
 
 .artifact-head {
@@ -3477,6 +3480,11 @@ img {
     margin: 0;
     color: var(--color-text);
 }
+/* The Hub's status badge is this artifact's right-hand meta, the slot holding
+   `bash` on the terminal and `2:02` on the film. Scaled to the head bar so all
+   four bars keep one height; ink and pill are the shared badge tokens, which
+   the MESHSAT-723 block already tuned for this surface. */
+.artifact-head .badge { font-size: 0.68rem; padding: 0.1rem 0.45rem; }
 
 .artifact-body {
     padding: var(--space-md) var(--space-lg) var(--space-lg);
@@ -3489,6 +3497,8 @@ img {
 .artifact-body .section-status { display: flex; align-items: baseline; gap: var(--space-sm); flex-wrap: wrap; margin: 0; }
 /* CTAs sit on one shared baseline across the row (stretch + auto margin). */
 .artifact-body .btn-outline { width: auto; align-self: flex-start; margin-top: auto; }
+.artifact-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: auto; }
+.artifact-actions .btn-outline { margin-top: 0; }
 
 /* The terminal */
 .term-body {
@@ -3516,6 +3526,7 @@ img {
     color: var(--color-text-muted);
     white-space: pre;
     overflow-x: auto;
+    scrollbar-width: thin; /* scrollable region, keyboard-reachable (2.1.1) */
 }
 .term-log .ok { color: var(--color-success); }
 .term-log .t { color: var(--color-text); }

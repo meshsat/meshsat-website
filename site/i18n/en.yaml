@@ -238,3 +238,7 @@ video_watch:
   other: "Watch on YouTube"
 lightbox_close:
   other: "Close"
+term_log_label:
+  other: "Installer output"
+and_apk:
+  other: "Download APK"

@@ -101,6 +101,21 @@ function copyToClipboard(text, btn) {
     });
 }
 
+// Copy a code block's command. Lives here, not in a per-page scripts block:
+// the home page has two copy buttons (hero + the closing terminal) and defines
+// no scripts block, so the page-local definition on /install/ left both dead.
+function copyCode(btn) {
+    var block = btn.closest('.code-block');
+    if (!block) return;
+    var code = block.querySelector('code').textContent;
+    navigator.clipboard.writeText(code).then(function() {
+        var text = btn.querySelector('.copy-text');
+        if (!text) return;
+        text.textContent = 'Copied';
+        setTimeout(function() { text.textContent = 'Copy'; }, 2000);
+    });
+}
+
 // Intro video — the poster facade opens a centred modal at double the inline
 // size; nothing loads from YouTube until this click. Falls back to the old
 // in-place swap if the dialog is unavailable.

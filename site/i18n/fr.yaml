@@ -238,3 +238,7 @@ video_watch:
   other: "Regarder sur YouTube"
 lightbox_close:
   other: "Fermer"
+term_log_label:
+  other: "Sortie de l'installation"
+and_apk:
+  other: "Télécharger l'APK"
