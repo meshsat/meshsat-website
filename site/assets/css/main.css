@@ -3421,6 +3421,160 @@ img {
 .video-dialog .shot-head { gap: var(--space-md); }
 .video-dialog .shot-time { margin-left: auto; }
 
+/* ==========================================================================
+   The closing bench + colophon (MESHSAT-735)
+   The page opens with the bridge's log, so it closes with the user's
+   terminal: four artifacts in one head-bar chrome (the film already spoke
+   this language), and the footer's status strip becomes a colophon: the
+   binary's version line and its dependency list. The old cta-grid /
+   cta-watch / cta-system / section-eyebrow rules above are dead markup-side.
+   ========================================================================== */
+
+.bench {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-lg);
+}
+@media (min-width: 1100px) {
+    .bench { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: stretch; }
+}
+
+.artifact,
+.bench .video-frame {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+}
+.bench .video-frame .video-foot { margin-top: auto; }
+/* Inside the stretched row the media fills the frame between head and foot
+   (the poster cover-crops a little; the modal shows the true 16:9). */
+@media (min-width: 1100px) {
+    .bench .video-frame .video-media { aspect-ratio: auto; flex: 1; min-height: 0; }
+}
+
+.artifact-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    border-bottom: 1px solid var(--color-border);
+}
+.artifact-head h3 {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text);
+}
+
+.artifact-body {
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    flex: 1;
+}
+.artifact-body p { margin: 0; color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.6; }
+.artifact-body .section-status { display: flex; align-items: baseline; gap: var(--space-sm); flex-wrap: wrap; margin: 0; }
+/* CTAs sit on one shared baseline across the row (stretch + auto margin). */
+.artifact-body .btn-outline { width: auto; align-self: flex-start; margin-top: auto; }
+
+/* The terminal */
+.term-body {
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    flex: 1;
+}
+/* Both .code-block base rules set column direction and centring; the prompt
+   row resets every axis explicitly or it inherits them property by property. */
+.term-cmd {
+    background: transparent; border: 0; margin: 0; padding: 0;
+    display: flex; flex-direction: row; align-items: center;
+    justify-content: flex-start; text-align: left; gap: var(--space-md);
+}
+.term-cmd .code-block-body { padding: 0; flex: 1; min-width: 0; overflow-x: auto; }
+.term-cmd .copy-btn { flex: none; }
+.term-cmd code::before { content: "$ "; color: var(--color-text-muted); }
+.term-log {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    white-space: pre;
+    overflow-x: auto;
+}
+.term-log .ok { color: var(--color-success); }
+.term-log .t { color: var(--color-text); }
+.term-foot {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+.term-note { margin: 0; font-size: 0.82rem; line-height: 1.6; color: var(--color-text-muted); }
+
+/* The colophon (footer): status line left, the stack right. */
+.colophon {
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+}
+.colophon-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-2xl);
+    justify-content: space-between;
+    align-items: baseline;
+    padding-block: var(--space-md);
+}
+.colophon-status {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.55em;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+}
+.colophon-status .dot { width: 0.5em; height: 0.5em; border-radius: 50%; background: var(--color-warning); flex: none; }
+.colophon-stack {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em 1.1em;
+    align-items: baseline;
+    color: var(--color-text-muted);
+}
+.colophon-label { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.68rem; }
+.colophon-stack a {
+    color: var(--color-text-muted);
+    font-weight: 600;
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+}
+.colophon-stack a:hover,
+.colophon-stack a:focus-visible { color: var(--color-primary); }
+
+@media (forced-colors: active) {
+    .artifact { border: 1px solid CanvasText; }
+}
+
 /* not-for: explicit symmetric tracks, never an auto-fit orphan row. Cards
    stretch to row height, so a bottom rule closes every card on one line;
    the cost row-list closes with the same rule. */

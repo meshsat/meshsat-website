@@ -1,24 +1,10 @@
 <footer class="site-footer">
-    <!-- Pre-release banner -->
-    <div class="prerelease-banner">
-        <div class="container">
-            <p>{{ i18n "f_prerelease" }}</p>
-        </div>
-    </div>
-
-    <!-- Built With -->
-    <div class="partners-bar">
-        <div class="container">
-            <p class="partners-label">{{ i18n "f_builtwith" }}</p>
-            <div class="partners-logos">
-                <a href="https://github.com/papadopouloskyriakos/hemb" target="_blank" rel="noopener" title="HeMB">HeMB</a>
-                <a href="https://reticulum.network/" target="_blank" rel="noopener" title="Reticulum">Reticulum</a>
-                <a href="https://meshtastic.org/" target="_blank" rel="noopener" title="Meshtastic">Meshtastic</a>
-                <a href="https://www.iridium.com/" target="_blank" rel="noopener" title="Iridium">Iridium</a>
-                <a href="https://www.groundcontrol.com/" target="_blank" rel="noopener" title="Ground Control">Ground Control</a>
-                <a href="https://www.raspberrypi.com/" target="_blank" rel="noopener" title="Raspberry Pi">Raspberry Pi</a>
-                <a href="https://www.docker.com/" target="_blank" rel="noopener" title="Docker">Docker</a>
-            </div>
+    <!-- Colophon: pre-release status left, the stack right. One strip, the
+         binary's own voice: a version line and its dependency list. -->
+    <div class="colophon">
+        <div class="container colophon-inner">
+            <p class="colophon-status"><span class="dot" aria-hidden="true"></span>{{ i18n "f_prerelease" }}</p>
+            <p class="colophon-stack"><span class="colophon-label">{{ i18n "f_builtwith" }}</span><a href="https://github.com/papadopouloskyriakos/hemb" target="_blank" rel="noopener" title="HeMB">HeMB</a><a href="https://reticulum.network/" target="_blank" rel="noopener" title="Reticulum">Reticulum</a><a href="https://meshtastic.org/" target="_blank" rel="noopener" title="Meshtastic">Meshtastic</a><a href="https://www.iridium.com/" target="_blank" rel="noopener" title="Iridium">Iridium</a><a href="https://www.groundcontrol.com/" target="_blank" rel="noopener" title="Ground Control">Ground Control</a><a href="https://www.raspberrypi.com/" target="_blank" rel="noopener" title="Raspberry Pi">Raspberry Pi</a><a href="https://www.docker.com/" target="_blank" rel="noopener" title="Docker">Docker</a></p>
         </div>
     </div>
 

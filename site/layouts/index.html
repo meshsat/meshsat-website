@@ -178,42 +178,53 @@
             <h2 class="section-title">{{ i18n "cta_title" }}</h2>
             <p class="section-subtitle">{{ i18n "cta_sub" }}</p>
         </div>
-        <div class="cta-grid">
-            <div class="cta-start">
-                <div class="code-block code-block-inline cta-install">
-                    <pre class="code-block-body" tabindex="0" role="group" aria-label="{{ i18n "install_cmd_label" }}"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
-                    <button class="copy-btn" onclick="copyCode(this)">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                        <span class="copy-text">Copy</span>
-                    </button>
-                </div>
-                <div class="hero-actions">
-                    <a href="{{ .Site.Params.github }}" class="btn btn-primary" target="_blank" rel="noopener">{{ i18n "cta_source" }}</a>
-                    <a href="{{ .Site.Params.docs_url }}" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "cta_docs" }}</a>
-                    {{ with .Site.Params.matrix_url }}<a href="{{ . }}" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "cta_matrix" }}</a>{{ end }}
-                </div>
-                <p class="table-note">{{ i18n "cta_note" }}</p>
-            </div>
-            <div class="cta-watch" id="video">
-                <p class="section-eyebrow">{{ i18n "video_title" }}</p>
-                <div class="video-frame">
-                    <div class="video-head"><span>MeshSat-intro.mp4</span><span>2:02</span></div>
-                    <div class="video-media">
-                        <button type="button" class="video-play" onclick="playIntroVideo(this)" data-embed="https://www.youtube-nocookie.com/embed/Q-JKNwWlzpE?autoplay=1&amp;rel=0" aria-label="{{ i18n "video_play" }}">
-                            <img src="/images/video-poster.jpg" alt="" width="1280" height="720" loading="lazy">
-                            <span class="video-play-glyph" aria-hidden="true">
-                                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                            </span>
+        {{/* The bench: four artifacts in the same head-bar chrome. The page
+             opens with the bridge's log; it closes with the user's terminal.
+             Every terminal line below is literal install.sh output. */}}
+        <div class="bench">
+            <div class="artifact">
+                <div class="artifact-head"><span>get.meshsat.net</span><span>bash</span></div>
+                <div class="term-body">
+                    <div class="code-block code-block-inline term-cmd">
+                        <pre class="code-block-body" tabindex="0" role="group" aria-label="{{ i18n "install_cmd_label" }}"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span class="copy-text">Copy</span>
                         </button>
                     </div>
-                    <p class="video-foot">{{ i18n "video_foot" }} <a href="https://www.youtube.com/watch?v=Q-JKNwWlzpE" target="_blank" rel="noopener">{{ i18n "video_watch" }}</a></p>
+                    <pre class="term-log"><span class="ok">[OK]</span>    Running as root
+<span class="ok">[OK]</span>    Architecture: aarch64
+<span class="ok">[OK]</span>    MeshSat Bridge started
+
+  Dashboard:  <span class="t">http://192.168.4.20:6050</span>
+  USB devices will be auto-detected.</pre>
+                </div>
+                <div class="artifact-foot term-foot">
+                    <div class="hero-actions">
+                        <a href="{{ .Site.Params.github }}" class="btn btn-primary" target="_blank" rel="noopener">{{ i18n "cta_source" }}</a>
+                        <a href="{{ .Site.Params.docs_url }}" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "cta_docs" }}</a>
+                        {{ with .Site.Params.matrix_url }}<a href="{{ . }}" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "cta_matrix" }}</a>{{ end }}
+                    </div>
+                    <p class="term-note">{{ i18n "cta_note" }}</p>
                 </div>
             </div>
-            <div class="cta-system" id="hub">
-            <p class="section-eyebrow">{{ i18n "sys_title" }}</p>
-            <div class="system-grid">
-                <div class="system-card">
-                    <h3>MeshSat Hub</h3>
+
+            <div class="video-frame" id="video">
+                <div class="video-head"><span>MeshSat-intro.mp4</span><span>2:02</span></div>
+                <div class="video-media">
+                    <button type="button" class="video-play" onclick="playIntroVideo(this)" data-embed="https://www.youtube-nocookie.com/embed/Q-JKNwWlzpE?autoplay=1&amp;rel=0" aria-label="{{ i18n "video_play" }}">
+                        <img src="/images/video-poster.jpg" alt="" width="1280" height="720" loading="lazy">
+                        <span class="video-play-glyph" aria-hidden="true">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        </span>
+                    </button>
+                </div>
+                <p class="video-foot">{{ i18n "video_foot" }} <a href="https://www.youtube.com/watch?v=Q-JKNwWlzpE" target="_blank" rel="noopener">{{ i18n "video_watch" }}</a></p>
+            </div>
+
+            <div class="artifact" id="hub">
+                <div class="artifact-head"><h3>MeshSat Hub</h3></div>
+                <div class="artifact-body">
                     <p class="section-status">
                         <span class="badge badge-beta">{{ i18n "hub_badge" }}</span>
                         <span class="section-status-text">{{ i18n "hub_status" }}</span>
@@ -221,12 +232,14 @@
                     <p>{{ i18n "hub_p" }}</p>
                     <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20demo%20%2F%20beta%20access" class="btn btn-outline">{{ i18n "hub_cta" }}</a>
                 </div>
-                <div class="system-card">
-                    <h3>MeshSat Android</h3>
+            </div>
+
+            <div class="artifact">
+                <div class="artifact-head"><h3>MeshSat Android</h3></div>
+                <div class="artifact-body">
                     <p>{{ i18n "and_p" }}</p>
                     <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "and_cta" }}</a>
                 </div>
-            </div>
             </div>
         </div>
     </div>
