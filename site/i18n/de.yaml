@@ -219,7 +219,7 @@ f_terms:
 f_license:
   other: "GPLv3-Lizenz"
 f_copy:
-  other: "ist freie Software, veröffentlicht unter der GPLv3."
+  other: "ist freie Software, veröffentlicht unter der"
 install_cmd_label:
   other: "Installationsbefehl, scrollbar"
 table_transports_label:
