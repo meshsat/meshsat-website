@@ -3546,13 +3546,23 @@ img {
     font-family: var(--font-mono);
     font-size: 0.75rem;
 }
+/* One band, three segments: the status line spans, then BUILT WITH left and
+   SUPPORTED BY right on the second row. The old .partners-bar gave the SIDN
+   stamp a 200px centred stage of its own; the credit now sits in the system
+   (same logo, same size, same theme swap). */
 .colophon-inner {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: var(--space-sm) var(--space-2xl);
-    justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     padding-block: var(--space-md);
+}
+.colophon-status { grid-column: 1 / -1; }
+.colophon-sidn { justify-self: end; }
+.colophon .partners-logos { display: inline-flex; align-items: center; margin: 0; }
+@media (max-width: 900px) {
+    .colophon-inner { grid-template-columns: minmax(0, 1fr); }
+    .colophon-sidn { justify-self: start; }
 }
 .colophon-status {
     margin: 0;
