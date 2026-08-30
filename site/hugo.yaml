@@ -12,6 +12,7 @@ params:
   matrix_alias: "#meshsat:matrix.nuclearlighters.net"
   reddit_url: "https://www.reddit.com/r/meshsat/"
   youtube_url: "https://www.youtube.com/@MeshSat"
+  facebook_url: "https://www.facebook.com/meshsat"
   x_handle: "@meshsat"
   hub_url: "https://hub.meshsat.net"
   docs_url: "https://docs.meshsat.net"
