@@ -3001,6 +3001,7 @@ img {
 .table-note a,
 .funding-note a,
 .section-subtitle a,
+.footer-bottom a,
 .trace-foot a {
   text-decoration: underline;
   text-underline-offset: 0.18em;
