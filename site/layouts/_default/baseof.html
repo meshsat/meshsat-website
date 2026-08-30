@@ -67,8 +67,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    {{ $css := resources.Get "css/main.css" | minify }}
+    <!-- Styles. Fingerprinted: nginx serves assets with a 1y immutable
+         Cache-Control, so without a content hash in the URL every deploy
+         leaves returning browsers on stale CSS against new HTML. -->
+    {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
     {{ partial "analytics.html" . }}
@@ -116,7 +118,8 @@
 
     {{ partial "footer.html" . }}
 
-    <script src="/js/main.js"></script>
+    {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}"></script>
     {{ block "scripts" . }}{{ end }}
 </body>
 </html>
