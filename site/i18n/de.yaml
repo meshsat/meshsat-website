@@ -30,6 +30,8 @@ hero_sub:
   other: "Ein Mesh hält ein Dorf im Gespräch mit sich selbst, hat aber keinen Weg aus dem Tal heraus. Ein Satellitenmodem erreicht die ganze Welt und kostet echtes Geld pro Nachricht. MeshSat ist die Schicht dazwischen: Es nimmt eine Nachricht aus dem Mesh und sendet sie über den Träger, der noch funktioniert, und gibt Satellitenbytes erst aus, wenn nichts Kostenloses mehr übrig ist."
 hero_status:
   other: "Prototyp vor der Veröffentlichung. Nie bei echten Nutzern eingesetzt, nie in einem Notfall verwendet."
+hero_star:
+  other: "Auf GitHub einen Stern geben"
 trace_title:
   other: "Routing-Protokoll, eine Notmeldung"
 trace_bridge:

@@ -30,6 +30,8 @@ hero_sub:
   other: "A mesh keeps a village talking to itself but has no route out of the valley. A satellite modem reaches anywhere and costs real money per message. MeshSat is the layer in between: it takes a message off the mesh and sends it by whatever bearer is still alive, spending satellite bytes only when nothing free is left."
 hero_status:
   other: "Pre-release prototype. Never deployed to a real user, never used in an emergency."
+hero_star:
+  other: "Star on GitHub"
 trace_title:
   other: "Routing trace, one distress message"
 trace_bridge:

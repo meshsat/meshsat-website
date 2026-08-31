@@ -30,6 +30,8 @@ hero_sub:
   other: "Een mesh houdt een dorp met zichzelf in gesprek, maar heeft geen route het dal uit. Een satellietmodem bereikt de hele wereld en kost echt geld per bericht. MeshSat is de laag daartussen: het haalt een bericht van de mesh en verstuurt het via welke drager dan ook die nog werkt, en geeft pas satellietbytes uit als er niets gratis meer over is."
 hero_status:
   other: "Prototype, nog niet uitgebracht. Nooit bij een echte gebruiker ingezet, nooit gebruikt bij een noodgeval."
+hero_star:
+  other: "Geef een ster op GitHub"
 trace_title:
   other: "Routeringslog, één noodbericht"
 trace_bridge:

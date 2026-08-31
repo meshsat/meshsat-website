@@ -169,3 +169,20 @@ document.addEventListener('click', function(e) {
         if (media) media.innerHTML = '';
     });
 })();
+
+// Live star count on the hero repo button. Progressive enhancement: the
+// count chip only appears if the GitHub API answers (CSP allows the origin).
+(function() {
+    var el = document.querySelector('[data-gh-stars]');
+    if (!el || typeof fetch !== 'function') return;
+    fetch('https://api.github.com/repos/meshsat/meshsat')
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(d) {
+            if (!d || typeof d.stargazers_count !== 'number') return;
+            var n = d.stargazers_count;
+            el.textContent = n >= 1000 ? (n / 1000).toFixed(1).replace('.', ',') + 'k' : String(n);
+            var chip = el.closest('.gh-star-count');
+            if (chip) chip.hidden = false;
+        })
+        .catch(function() {});
+})();
