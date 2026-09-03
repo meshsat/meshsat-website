@@ -32,6 +32,8 @@ hero_status:
   other: "Pre-release prototype. Never deployed to a real user, never used in an emergency."
 hero_star:
   other: "Star on GitHub"
+hero_visitors:
+  other: "Visitors"
 trace_title:
   other: "Routing trace, one distress message"
 trace_bridge:

@@ -186,3 +186,35 @@ document.addEventListener('click', function(e) {
         })
         .catch(function() {});
 })();
+
+// Live visitor count beside the star button, from our own Umami. Same
+// progressive-enhancement contract as the star chip: the chip ships hidden and
+// is unhidden only once a real number arrives, so there is no broken state when
+// analytics is down, blocked by an extension, or the share token has been
+// rotated away. One plain GET with no custom headers and no query string: the
+// analytics proxy injects the read-only share token server-side and pins the
+// range to all-time, so nothing secret reaches the browser, the request needs
+// no CORS preflight, and the response is cacheable (5 min at the proxy and in
+// the browser). The endpoint comes from the umami_url param, so a
+// non-production build simply leaves the chip hidden.
+(function() {
+    var el = document.querySelector('[data-visitor-count]');
+    if (!el || typeof fetch !== 'function') return;
+    var chip = el.closest('.visitors-chip');
+    var url = chip && chip.getAttribute('data-visitors-endpoint');
+    if (!url) return;
+    fetch(url)
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(d) {
+            if (!d) return;
+            // Umami has shipped both {visitors: 2079} and {visitors: {value:
+            // 2079}} across versions. Accept either shape, reject everything
+            // else rather than render "undefined" or "[object Object]".
+            var v = d.visitors;
+            if (v && typeof v === 'object') v = v.value;
+            if (typeof v !== 'number' || !isFinite(v) || v < 0) return;
+            el.textContent = v >= 1000 ? (v / 1000).toFixed(1).replace('.', ',') + 'k' : String(v);
+            chip.hidden = false;
+        })
+        .catch(function() {});
+})();

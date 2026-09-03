@@ -414,7 +414,13 @@ img {
 /* The star ask lives under the install command: same translucent chip
    treatment as the install block so it reads on the photo in both themes.
    The count chip stays hidden until main.js fills it from the GitHub API. */
-.hero-repo { margin: var(--space-sm) 0 0; }
+.hero-repo {
+    margin: var(--space-sm) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
+}
 .gh-star-btn {
     display: inline-flex;
     align-items: center;
@@ -440,6 +446,37 @@ img {
     border-left: 1px solid var(--color-border);
 }
 .gh-star-count[hidden] { display: none; }
+
+/* The visitor chip sits BESIDE the star button, not inside it: the count is not
+   a GitHub fact, and nesting it in the anchor would fold it into the link's
+   accessible name. Same translucent chrome as .gh-star-btn above, duplicated
+   rather than factored out so an edit here cannot disturb the hero CTA; keep
+   the two in sync. Filled from our own Umami by main.js. [MESHSAT-782] */
+.visitors-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: rgba(10, 10, 11, 0.6);
+    backdrop-filter: blur(4px);
+}
+[data-theme="light"] .visitors-chip { background: rgba(255, 255, 255, 0.8); }
+.visitors-chip svg { flex-shrink: 0; }
+.visitors-count {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding-left: 0.6rem;
+    border-left: 1px solid var(--color-border);
+}
+/* Declared explicitly so a future display rule on the class cannot defeat the
+   hidden attribute, same reason as .gh-star-count[hidden]. */
+.visitors-chip[hidden] { display: none; }
 
 /* ---------- How It Works ---------- */
 .steps-grid {
