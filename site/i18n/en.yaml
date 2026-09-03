@@ -150,6 +150,10 @@ cap4:
   other: "Forwarding rules and per-gateway status"
 hw_note:
   other: "The dashboard is embedded in the binary and served from the device. No cloud dependency, no account."
+hw_repo_a:
+  other: "The hardware has its own repository, "
+hw_repo_b:
+  other: ": the two kits built so far with their build guide, and the V2 carrier boards for a Peli 1520 case, designed and prepared for fabrication but not built yet."
 nf_title:
   other: "What it is not"
 nf_sub:

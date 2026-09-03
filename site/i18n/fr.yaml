@@ -150,6 +150,10 @@ cap4:
   other: "Règles de transfert et état par passerelle"
 hw_note:
   other: "Le tableau de bord est intégré au binaire et servi depuis l'appareil. Aucun nuage, aucun compte."
+hw_repo_a:
+  other: "Le matériel a son propre dépôt, "
+hw_repo_b:
+  other: " : les deux kits construits à ce jour avec leur guide de montage, et les cartes porteuses V2 pour une valise Peli 1520, conçues et prêtes pour la fabrication mais pas encore construites."
 nf_title:
   other: "Ce que ce n'est pas"
 nf_sub:

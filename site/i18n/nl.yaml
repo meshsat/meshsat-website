@@ -150,6 +150,10 @@ cap4:
   other: "Doorstuurregels en status per gateway"
 hw_note:
   other: "Het dashboard zit in de binary en wordt vanaf het apparaat geserveerd. Geen cloud, geen account."
+hw_repo_a:
+  other: "De hardware heeft een eigen repository, "
+hw_repo_b:
+  other: ": de twee tot nu toe gebouwde kits met hun bouwhandleiding, en de V2-dragerprinten voor een Peli 1520-koffer, ontworpen en klaar voor fabricage maar nog niet gebouwd."
 nf_title:
   other: "Wat het niet is"
 nf_sub:
