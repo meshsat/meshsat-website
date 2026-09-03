@@ -32,6 +32,8 @@ hero_status:
   other: "Prototyp vor der Veröffentlichung. Nie bei echten Nutzern eingesetzt, nie in einem Notfall verwendet."
 hero_star:
   other: "Auf GitHub einen Stern geben"
+hero_visitors:
+  other: "Besucher"
 trace_title:
   other: "Routing-Protokoll, eine Notmeldung"
 trace_bridge:
