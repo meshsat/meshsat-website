@@ -172,6 +172,12 @@ document.addEventListener('click', function(e) {
 
 // Live star count on the hero repo button. Progressive enhancement: the
 // count chip only appears if the GitHub API answers (CSP allows the origin).
+// One formatter for both hero count chips (stars, visitors), so they can never
+// drift apart: below 1000 the plain integer, from 1000 up two decimals with a
+// dot and a k suffix ("2.08k"), the format the owner asked for (MESHSAT-782).
+function formatCount(n) {
+    return n >= 1000 ? (n / 1000).toFixed(2) + 'k' : String(n);
+}
 (function() {
     var el = document.querySelector('[data-gh-stars]');
     if (!el || typeof fetch !== 'function') return;
@@ -180,7 +186,7 @@ document.addEventListener('click', function(e) {
         .then(function(d) {
             if (!d || typeof d.stargazers_count !== 'number') return;
             var n = d.stargazers_count;
-            el.textContent = n >= 1000 ? (n / 1000).toFixed(1).replace('.', ',') + 'k' : String(n);
+            el.textContent = formatCount(n);
             var chip = el.closest('.gh-star-count');
             if (chip) chip.hidden = false;
         })
@@ -213,7 +219,7 @@ document.addEventListener('click', function(e) {
             var v = d.visitors;
             if (v && typeof v === 'object') v = v.value;
             if (typeof v !== 'number' || !isFinite(v) || v < 0) return;
-            el.textContent = v >= 1000 ? (v / 1000).toFixed(1).replace('.', ',') + 'k' : String(v);
+            el.textContent = formatCount(v);
             chip.hidden = false;
         })
         .catch(function() {});
