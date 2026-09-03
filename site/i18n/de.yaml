@@ -150,6 +150,10 @@ cap4:
   other: "Weiterleitungsregeln und Status je Gateway"
 hw_note:
   other: "Das Dashboard steckt in der Binärdatei und wird vom Gerät ausgeliefert. Keine Cloud, kein Konto."
+hw_repo_a:
+  other: "Die Hardware hat ein eigenes Repository, "
+hw_repo_b:
+  other: ": die beiden bisher gebauten Kits mit ihrer Bauanleitung und die V2-Trägerplatinen für einen Peli 1520 Koffer, entworfen und für die Fertigung vorbereitet, aber noch nicht gebaut."
 nf_title:
   other: "Was es nicht ist"
 nf_sub:
