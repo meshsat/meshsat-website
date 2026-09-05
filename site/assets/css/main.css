@@ -478,6 +478,34 @@ img {
    hidden attribute, same reason as .gh-star-count[hidden]. */
 .visitors-chip[hidden] { display: none; }
 
+/* The Ko-fi ask sits between the star button and the visitor chip: a plain
+   link, never Ko-fi's Widget_2.js (blocked by the CSP script-src, third-party
+   JS before consent, and its white-on-#F25C05 ink is ~3.2:1). Same chrome as
+   .gh-star-btn, duplicated per element like .visitors-chip so an edit here
+   cannot disturb the star CTA; keep the three in sync. The cup carries
+   --color-primary (>= 3:1 on both chip grounds), the label stays neutral so no
+   new text/background pair is introduced. Hidden when kofi_url is unset
+   (the anchor is inside a `with`). [MESHSAT-816] */
+.kofi-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: rgba(10, 10, 11, 0.6);
+    backdrop-filter: blur(4px);
+    transition: border-color 0.2s, color 0.2s;
+}
+[data-theme="light"] .kofi-btn { background: rgba(255, 255, 255, 0.8); }
+.kofi-btn svg { flex-shrink: 0; color: var(--color-primary); }
+.kofi-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
 /* ---------- How It Works ---------- */
 .steps-grid {
     display: flex;

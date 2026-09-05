@@ -34,6 +34,8 @@ hero_star:
   other: "Δώστε αστέρι στο GitHub"
 hero_visitors:
   other: "Επισκέπτες"
+hero_donate:
+  other: "Υποστήριξη στο Ko-fi"
 trace_title:
   other: "Ίχνος δρομολόγησης, ένα μήνυμα κινδύνου"
 trace_bridge:
