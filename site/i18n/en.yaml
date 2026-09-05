@@ -34,6 +34,8 @@ hero_star:
   other: "Star on GitHub"
 hero_visitors:
   other: "Visitors"
+hero_donate:
+  other: "Support on Ko-fi"
 trace_title:
   other: "Routing trace, one distress message"
 trace_bridge:

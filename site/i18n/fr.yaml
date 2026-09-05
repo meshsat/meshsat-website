@@ -34,6 +34,8 @@ hero_star:
   other: "Ajouter une étoile sur GitHub"
 hero_visitors:
   other: "Visiteurs"
+hero_donate:
+  other: "Soutenir sur Ko-fi"
 trace_title:
   other: "Journal de routage, un message de détresse"
 trace_bridge:
