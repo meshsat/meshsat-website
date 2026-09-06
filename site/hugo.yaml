@@ -83,6 +83,12 @@ markup:
   highlight:
     style: dracula
 enableRobotsTXT: true
+# No taxonomy pages: the theme has no list layout, so Hugo emitted only an RSS
+# index.xml per /categories/ and /tags/ directory (nginx 403) while still listing
+# them in every language sitemap. Google flagged 10 such URLs (MESHSAT-832).
+disableKinds:
+  - taxonomy
+  - term
 minify:
   disableHTML: false
   minifyOutput: true
