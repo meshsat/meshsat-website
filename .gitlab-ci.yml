@@ -24,6 +24,7 @@ variables:
   rules:
     - if: '$CHANGELOG_RUN == "1"'
       when: never
+    - if: '$DEPLOY_RUN == "1" && $CI_COMMIT_BRANCH == "main"'
     - if: '($CI_PIPELINE_SOURCE == "push" || $CI_PIPELINE_SOURCE == "web") && $CI_COMMIT_BRANCH == "main"'
 
 # -----------------------------------------------------------------------------
@@ -73,6 +74,11 @@ lint:consistency:
 # read_api) and CHANGELOG_PUSH_TOKEN (project access token
 # "meshsat-changelog-push" on this project, Maintainer, write_repository).
 # Both expire 2027-09-01; rotation steps are in scripts/generate-changelog.py.
+# The bot pushes with ci.skip and then starts the deploy pipeline with its own
+# job token (DEPLOY_RUN=1): a pipeline created by the bot user's push cannot
+# pull the private hugo-runner image (project bots cannot be members of the
+# infrastructure project, verified 7 Sep 2026), whereas the job-token pipeline
+# runs as the schedule owner or the tag pusher, like a human push.
 changelog:regenerate:
   stage: validate
   image: python:3.12-alpine
@@ -83,7 +89,7 @@ changelog:regenerate:
     GIT_STRATEGY: none
     CHANGELOG_ISSUE: "MESHSAT-853"
   before_script:
-    - apk add --no-cache git
+    - apk add --no-cache git curl
   script:
     - |
       set -euo pipefail
@@ -101,10 +107,22 @@ changelog:regenerate:
       fi
       git -c user.name="Kyriakos Papadopoulos" -c user.email="ncpjfuzl@mxmx.email" \
         commit -q -m "docs(changelog): regenerate from GitLab [${CHANGELOG_ISSUE}]"
-      git push --quiet origin HEAD:main
-      echo "changelog: pushed $(git rev-parse --short HEAD); its push pipeline builds and deploys"
+      git push --quiet -o ci.skip origin HEAD:main
+      SHA=$(git rev-parse --short HEAD)
+      for attempt in 1 2 3; do
+        if RESP=$(curl -sf -X POST -F "token=${CI_JOB_TOKEN}" -F "ref=main" -F "variables[DEPLOY_RUN]=1" \
+             "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/trigger/pipeline"); then
+          echo "changelog: pushed ${SHA} (ci.skip); deploy pipeline $(echo "$RESP" | python3 -c 'import sys,json;print(json.load(sys.stdin)["id"])') started"
+          exit 0
+        fi
+        echo "changelog: deploy trigger attempt ${attempt} failed, retrying"; sleep 10
+      done
+      echo "changelog: pushed ${SHA} but could not start its deploy pipeline; start one by hand with DEPLOY_RUN=1"
+      exit 1
   rules:
     - if: '$CI_COMMIT_BRANCH != "main"'
+      when: never
+    - if: '$DEPLOY_RUN == "1"'
       when: never
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
     - if: '$CI_PIPELINE_SOURCE == "pipeline"'
