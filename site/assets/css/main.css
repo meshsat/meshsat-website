@@ -1337,6 +1337,7 @@ img {
 
 .changelog-nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: var(--space-sm);
     margin-bottom: var(--space-2xl);
@@ -1402,6 +1403,127 @@ img {
 
 .changelog-content a {
     color: var(--color-primary);
+}
+
+/* ---------- Changelog overview board (MESHSAT-854) ----------
+   /changelog/ is a status board of the four products, rendered from the
+   `changelog:` frontmatter the generator maintains. Hairline rows like the
+   cost list; product names in the display mono, versions in mono (machine
+   tokens), dates in body sans. Below 640px the header row hides and each
+   cell carries its column name from data-label. */
+.changelog-board-wrap {
+    max-width: 800px;
+    margin: 0 auto var(--space-lg);
+    overflow-x: auto;
+}
+
+.changelog-board {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.changelog-board th,
+.changelog-board td {
+    padding: var(--space-md) var(--space-sm);
+    vertical-align: top;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.changelog-board thead th {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+}
+
+.changelog-board tbody th {
+    font-weight: 400;
+}
+
+.board-product {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--color-text);
+}
+
+.board-product:hover,
+.board-product:focus-visible {
+    color: var(--color-primary);
+}
+
+.board-tagline {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.board-version,
+.board-count {
+    font-family: var(--font-mono);
+    color: var(--color-primary);
+}
+
+.changelog-board time {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.board-none {
+    color: var(--color-text-muted);
+}
+
+.changelog-note {
+    margin-inline: auto;
+    text-align: center;
+}
+
+.changelog-content :where(h2, h3)[id] {
+    scroll-margin-top: 5rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+    .changelog-board thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+    }
+
+    .changelog-board tr {
+        display: block;
+        padding: var(--space-sm) 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .changelog-board th,
+    .changelog-board td {
+        display: block;
+        padding: var(--space-xs) 0;
+        border-bottom: 0;
+    }
+
+    .changelog-board td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.75rem;
+        color: var(--color-text-muted);
+    }
 }
 
 /* ---------- Page Content (privacy, terms) ---------- */
@@ -1745,47 +1867,6 @@ img {
 }
 
 /* Tabs (changelog) */
-.tabs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-2xl);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--space-md);
-}
-
-.tab {
-    padding: var(--space-sm) var(--space-lg);
-    background: transparent;
-    border: 1px solid transparent;
-    border-radius: var(--radius-md);
-    color: var(--color-text-muted);
-    cursor: pointer;
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.2s;
-}
-
-.tab:hover {
-    color: var(--color-text);
-}
-
-.tab.active {
-    background: var(--color-bg-card);
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-}
-
-.tab-panel {
-    display: none;
-}
-
-.tab-panel.active {
-    display: block;
-}
-
 /* ---------- Hero label ---------- */
 .hero-label {
     font-size: 0.85rem;
@@ -3112,6 +3193,7 @@ img {
 .section-subtitle a,
 .footer-bottom a,
 .changelog-content a,
+.changelog-board a,
 .trace-foot a {
   text-decoration: underline;
   text-underline-offset: 0.18em;

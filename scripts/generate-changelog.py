@@ -10,8 +10,10 @@ rewrites the block between the markers
     <!-- generated:begin -->
     <!-- generated:end -->
 
-in site/content/changelog/<key>.md. Everything outside the markers is
-hand-written and left alone. Sections are newest first: "Unreleased" (main
+in site/content/changelog/<key>.md, and maintains a `changelog:` mapping in
+that file's frontmatter (latest tag, unreleased count and dates, section
+anchors) that the /changelog/ overview board renders. Everything else outside
+the markers is hand-written and left alone. Sections are newest first: "Unreleased" (main
 since the last tag), then one section per tag. Only the commit types listed
 per repo appear (feat, fix, perf by default); each bullet links the commit on
 the public GitHub mirror, because GitLab is private.
@@ -312,8 +314,8 @@ def generate_block(token, repo):
     unreleased_range = f"{last['name']}..main" if last else "main"
     unreleased = list_commits(token, repo, unreleased_range)
     date = newest_listed_date(repo, unreleased)
-    heading = f"Unreleased (main, last change {date})" if date else "Unreleased (main)"
-    lines, count = render_section(repo, heading, unreleased, "No unreleased changes.")
+    unreleased_heading = f"Unreleased (main, last change {date})" if date else "Unreleased (main)"
+    lines, count = render_section(repo, unreleased_heading, unreleased, "No unreleased changes.")
     blocks.append(lines)
     summary.append(f"Unreleased {count} bullets / {len(unreleased)} commits")
 
@@ -339,7 +341,43 @@ def generate_block(token, repo):
     while out and out[-1] == "":
         out.pop()
     log(f"{repo['key']}: " + "; ".join(summary))
-    return "\n".join(out) + "\n"
+    unreleased_count = sum(1 for c in unreleased if (parse_subject(c["title"]) or ("", None, ""))[0] in repo["types"])
+    stats = [
+        ("tags", len(tags)),
+        ("latest_tag", last["name"] if last else ""),
+        ("latest_tag_date", last["date"] if last else ""),
+        ("latest_tag_anchor", heading_id(f"{last['name']} ({last['date']})") if last else ""),
+        ("unreleased_count", unreleased_count),
+        ("unreleased_since", date or ""),
+        ("unreleased_anchor", heading_id(unreleased_heading)),
+    ]
+    return "\n".join(out) + "\n", stats
+
+
+def heading_id(text):
+    """Hugo's default heading id: lowercase, drop punctuation, spaces to hyphens."""
+    text = re.sub(r"[^\w\s-]", "", text.lower())
+    return re.sub(r"\s+", "-", text.strip())
+
+
+def splice_frontmatter(content, stats, path):
+    """Maintain a `changelog:` mapping in the frontmatter for the overview board."""
+    if not content.startswith("---\n"):
+        raise SystemExit(f"{path}: no frontmatter")
+    end = content.index("\n---\n", 4)
+    lines = content[4:end].split("\n")
+    kept = []
+    skipping = False
+    for line in lines:
+        if line.startswith("changelog:"):
+            skipping = True
+            continue
+        if skipping and line.startswith("  "):
+            continue
+        skipping = False
+        kept.append(line)
+    block = ["changelog:"] + [f"  {key}: {json.dumps(value)}" for key, value in stats]
+    return "---\n" + "\n".join(kept + block) + content[end:]
 
 
 def splice(content, block, path):
@@ -410,8 +448,8 @@ def main():
             path = os.path.join(args.root, repo["path"])
             with open(path, encoding="utf-8") as handle:
                 current = handle.read()
-            block = generate_block(token, repo)
-            updated = splice(current, block, path)
+            block, stats = generate_block(token, repo)
+            updated = splice_frontmatter(splice(current, block, path), stats, path)
             if updated == current:
                 log(f"{repo['key']}: unchanged")
                 continue

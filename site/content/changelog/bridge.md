@@ -1,7 +1,16 @@
 ---
 title: "Bridge"
 description: "MeshSat Bridge changelog: standalone gateway releases."
+tagline: "Standalone gateway"
 weight: 1
+changelog:
+  tags: 1
+  latest_tag: "v0.1.0"
+  latest_tag_date: "2026-03-04"
+  latest_tag_anchor: "v010-2026-03-04"
+  unreleased_count: 754
+  unreleased_since: "2026-09-07"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-07"
 ---
 
 Generated from the commit history of
