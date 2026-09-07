@@ -15,6 +15,7 @@ is not launched.
 
 ### Features
 
+- **api**: provider-aware MT send routes with Cloudloop/IMT support ([f8c584b3](https://github.com/meshsat/meshsat-hub/commit/f8c584b39b42d94175b87e024290d6839cadaf70))
 - **directory**: Hub precedence-default policy seeding ([fdfe9e1f](https://github.com/meshsat/meshsat-hub/commit/fdfe9e1f976af149e67fb977c7c055e36a574fe5))
 - **directory,api**: vCard 4.0 + CSV import/export (Hub) ([cc446886](https://github.com/meshsat/meshsat-hub/commit/cc446886e53091062586ae7029ee0ba78e9dd1b3))
 - **directory**: Hub directory foundation + signed push ([22cf806f](https://github.com/meshsat/meshsat-hub/commit/22cf806f60755fda604f42ebdcde805586a2cc8a))
