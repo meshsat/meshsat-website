@@ -1747,6 +1747,7 @@ img {
 /* Tabs (changelog) */
 .tabs {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: var(--space-sm);
     margin-bottom: var(--space-2xl);

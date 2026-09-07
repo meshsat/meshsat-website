@@ -1,5 +1,6 @@
 ---
 title: "Bridge"
+weight: 1
 description: "MeshSat Bridge changelog: standalone gateway releases."
 ---
 
