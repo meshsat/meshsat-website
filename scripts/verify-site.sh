@@ -35,7 +35,7 @@ echo "=== 3. house style: no em or en dashes anywhere in the built HTML ==="
 # Scans the RAW html, meta tags included. Tag-stripping would have hidden a stale
 # og:title carrying both the old slogan and an em dash, which is exactly the class
 # of bug this is meant to catch. No python here: the Hugo runner has none.
-for f in "$PUB/index.html" "$PUB"/nl/index.html "$PUB"/de/index.html "$PUB"/fr/index.html "$PUB"/el/index.html; do
+for f in "$PUB/index.html" "$PUB"/nl/index.html "$PUB"/de/index.html "$PUB"/fr/index.html "$PUB"/el/index.html "$PUB"/changelog/index.html "$PUB"/changelog/*/index.html; do
   [ -f "$f" ] || continue
   N=$( { grep -o -e '—' -e '–' "$f" || true; } | wc -l | tr -d ' ' )
   if [ "$N" -eq 0 ]; then pass "no em/en dashes in ${f#$PUB/}"
@@ -63,6 +63,16 @@ for f in site/i18n/*.yaml; do
   rm -f "$CUR"
 done
 rm -f "$BASE"
+
+echo "=== 5. changelog tabs are generated and non-empty ==="
+# The four tabs are rewritten by scripts/generate-changelog.py; an empty
+# generated block (API failure, bad markers) must not reach production.
+for t in bridge hub android fieldkit; do
+  f="$PUB/changelog/$t/index.html"
+  if [ ! -f "$f" ]; then fail "changelog/$t/index.html missing"; continue; fi
+  N=$(grep -o '<h2' "$f" | wc -l | tr -d ' ')
+  if [ "$N" -ge 1 ]; then pass "changelog/$t: $N section heading(s)"; else fail "changelog/$t: no section headings"; fi
+done
 
 echo
 if [ "$FAIL" -eq 0 ]; then echo "verify-site: PASSED"; else echo "verify-site: FAILED"; fi
