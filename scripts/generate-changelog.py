@@ -45,7 +45,9 @@ project variable CHANGELOG_READ_TOKEN (a Reporter group access token on the
 top group "products", name meshsat-changelog-read, scope read_api). The push
 uses CHANGELOG_PUSH_TOKEN (a Maintainer project access token on
 meshsat-website, name meshsat-changelog-push, scope write_repository). Both
-expire 2027-09-01.
+expire 2027-09-01. The job pushes with ci.skip and starts the deploy pipeline
+itself with its job token (DEPLOY_RUN=1), because a pipeline created by the
+bot user's push cannot pull the private hugo-runner image.
 
 Rotation: create replacement tokens with the same names, update the two
 project variables (masked + protected), start a pipeline on main with
