@@ -2457,6 +2457,13 @@ img {
     vertical-align: middle;
 }
 
+/* The two-line Ground Control lockup at 28px reads smaller than the SIDN slab
+   (its text block is 75% of the box); 40px puts both wordmarks at the same
+   optical size. Owner call, 7 Sep 2026. */
+.partners-logos .partner-logo {
+    height: 40px;
+}
+
 .partners-logos .sidn-logo-light,
 .partners-logos .partner-logo-light {
     display: none;
@@ -3649,10 +3656,11 @@ img {
     font-family: var(--font-mono);
     font-size: 0.75rem;
 }
-/* One band, three segments: the status line spans, then BUILT WITH left and
-   SUPPORTED BY right on the second row. The old .partners-bar gave the SIDN
-   stamp a 200px centred stage of its own; the credit now sits in the system
-   (same logo, same size, same theme swap). */
+/* One band, two segments: BUILT WITH left, SUPPORTED BY right. The old
+   .partners-bar gave the SIDN stamp a 200px centred stage of its own; the
+   credit now sits in the system (same logo, same size, same theme swap). The
+   spanning pre-release status line was removed 7 Sep 2026 (owner: invisible
+   at that size, and the hero pill already says it). */
 .colophon-inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -3660,22 +3668,12 @@ img {
     align-items: center;
     padding-block: var(--space-md);
 }
-.colophon-status { grid-column: 1 / -1; }
 .colophon-sidn { justify-self: end; }
 .colophon .partners-logos { display: inline-flex; align-items: center; margin: 0; }
 @media (max-width: 900px) {
     .colophon-inner { grid-template-columns: minmax(0, 1fr); }
     .colophon-sidn { justify-self: start; }
 }
-.colophon-status {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.55em;
-    letter-spacing: 0.04em;
-    color: var(--color-text-muted);
-}
-.colophon-status .dot { width: 0.5em; height: 0.5em; border-radius: 50%; background: var(--color-warning); flex: none; }
 .colophon-stack {
     margin: 0;
     display: flex;
@@ -3684,9 +3682,10 @@ img {
     align-items: baseline;
     color: var(--color-text-muted);
 }
-.colophon-label { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.68rem; }
+.colophon-label { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem; }
 .colophon-stack a {
     color: var(--color-text-muted);
+    font-size: 0.875rem; /* owner 7 Sep 2026: the stack names read too small at 0.75rem */
     font-weight: 600;
     min-height: 24px;
     display: inline-flex;
