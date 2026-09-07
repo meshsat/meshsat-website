@@ -1,5 +1,6 @@
 ---
 title: "Hub"
+weight: 2
 description: "MeshSat Hub changelog: fleet management platform releases."
 ---
 

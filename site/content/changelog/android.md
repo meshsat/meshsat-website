@@ -1,5 +1,6 @@
 ---
 title: "Android"
+weight: 3
 description: "MeshSat Android changelog: mobile gateway app releases."
 ---
 
