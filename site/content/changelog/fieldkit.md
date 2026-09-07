@@ -1,7 +1,16 @@
 ---
 title: "Field Kit"
 description: "MeshSat Field Kit changelog: the go-box hardware, the V1 kits as built and the V2 carrier PCB set."
+tagline: "Go-box hardware"
 weight: 4
+changelog:
+  tags: 1
+  latest_tag: "revA"
+  latest_tag_date: "2026-09-03"
+  latest_tag_anchor: "reva-2026-09-03"
+  unreleased_count: 228
+  unreleased_since: "2026-09-07"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-07"
 ---
 
 Generated from the commit history of the hardware repository
