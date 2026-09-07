@@ -1,0 +1,5 @@
+{{- /* External links in markdown open in a new tab, like the rest of the site's external links (MESHSAT-854). */ -}}
+{{- $url := .Destination -}}
+{{- $external := or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
+<a href="{{ $url | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- /**/ -}}

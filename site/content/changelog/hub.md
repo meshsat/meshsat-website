@@ -1,7 +1,16 @@
 ---
 title: "Hub"
 description: "MeshSat Hub changelog: fleet management platform releases."
+tagline: "Fleet management platform, private beta"
 weight: 2
+changelog:
+  tags: 0
+  latest_tag: ""
+  latest_tag_date: ""
+  latest_tag_anchor: ""
+  unreleased_count: 326
+  unreleased_since: "2026-09-01"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-01"
 ---
 
 Generated from the commit history of

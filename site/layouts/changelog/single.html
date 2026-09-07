@@ -5,7 +5,7 @@
         <p class="section-subtitle">{{ .Description }}</p>
 
         <div class="changelog-nav">
-            <a href="/changelog/">All</a>
+            <a href="/changelog/">Overview</a>
             {{ range .Parent.Pages }}
             <a href="{{ .RelPermalink }}" class="{{ if eq $.RelPermalink .RelPermalink }}active{{ end }}">{{ .Title }}</a>
             {{ end }}
