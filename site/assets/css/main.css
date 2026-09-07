@@ -2447,22 +2447,28 @@ img {
     color: var(--color-primary);
 }
 
-.partners-logos .sidn-logo {
+/* Supported-by logos: SIDN fonds, then Ground Control (MESHSAT-851). One height,
+   one theme swap; the SIDN classes stay for every rule that already matches them. */
+.partners-logos .sidn-logo,
+.partners-logos .partner-logo {
     height: 28px;
     width: auto;
     display: inline-block;
     vertical-align: middle;
 }
 
-.partners-logos .sidn-logo-light {
+.partners-logos .sidn-logo-light,
+.partners-logos .partner-logo-light {
     display: none;
 }
 
-[data-theme="light"] .partners-logos .sidn-logo-dark {
+[data-theme="light"] .partners-logos .sidn-logo-dark,
+[data-theme="light"] .partners-logos .partner-logo-dark {
     display: none;
 }
 
-[data-theme="light"] .partners-logos .sidn-logo-light {
+[data-theme="light"] .partners-logos .sidn-logo-light,
+[data-theme="light"] .partners-logos .partner-logo-light {
     display: inline-block;
 }
 
