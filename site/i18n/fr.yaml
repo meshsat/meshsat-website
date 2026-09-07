@@ -220,8 +220,6 @@ f_strapline:
   other: "Garder les gens joignables quand le réseau ne l'est plus."
 f_madein:
   other: "Construit aux Pays-Bas"
-f_prerelease:
-  other: "MeshSat est un logiciel avant publication. Les API et la configuration peuvent changer. Attendez-vous à des ruptures entre les versions."
 f_privacy:
   other: "Confidentialité"
 f_terms:
