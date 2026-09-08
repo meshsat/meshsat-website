@@ -63,10 +63,11 @@
     <link rel="preload" href="/images/hero/field-comms.webp" as="image" fetchpriority="high">
     {{ end }}
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts: self-hosted IBM Plex (MESHSAT-950). @font-face lives in main.css;
+         /fonts/ is served with CORS for auth.meshsat.net (the authentik brand CSS
+         loads the same files). No third-party font host, no Google Fonts. -->
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/ibm-plex-mono-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Styles. Fingerprinted: nginx serves assets with a 1y immutable
          Cache-Control, so without a content hash in the URL every deploy
