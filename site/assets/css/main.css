@@ -3199,6 +3199,18 @@ img {
   border-bottom: 1px solid color-mix(in srgb, var(--color-warning) 34%, transparent);
 }
 
+/* /security/ names third-party domains that are NOT ours. Red here is the
+   site's FUNCTIONAL state colour (this failed our check / do not trust this),
+   not decoration, and it is the one string on that page a reader must not
+   mistake for an official source. The meaning is carried by the sentence
+   around it ("is not affiliated with this project"), so colour is emphasis
+   and 1.4.1 is satisfied without it. Contrast measured: 5.98:1 dark
+   (#F0655A on #14120F), 6.63:1 light (#A32A22 on #F7F5F2). */
+.page-content code.not-ours {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
 /* 1.4.1 Use of Colour. Links inside running text need a non-colour cue.
    .page-content covers the markdown pages (/security/, /privacy/, /terms/),
    which are prose end to end and whose links were colour-only until now. */

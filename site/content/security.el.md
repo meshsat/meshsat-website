@@ -35,6 +35,7 @@ description: "Πού δημοσιεύεται το MeshSat, πώς ελέγχε�
 <thead><tr><th>Πλατφόρμα</th><th>Λογαριασμός</th></tr></thead>
 <tbody>
 <tr><td>GitHub</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
+<tr><td>GitLab</td><td><a href="https://gitlab.com/meshsat">gitlab.com/meshsat</a>, δεσμευμένο, δεν υπάρχει κώδικας εκεί</td></tr>
 <tr><td>Matrix</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a></td></tr>
 <tr><td>LinkedIn</td><td><a href="https://www.linkedin.com/company/meshsat/">linkedin.com/company/meshsat</a></td></tr>
 <tr><td>X</td><td><a href="https://x.com/meshsat">x.com/meshsat</a></td></tr>
@@ -96,7 +97,7 @@ script και δεν προλάβαμε να ενημερώσουμε τη σε�
 Και άλλοι δημοσιεύουν έργα με το όνομα MeshSat. Δεν τους ελέγχουμε και δεν μπορούμε να εγγυηθούμε για
 όσα διανέμουν.
 
-Το `meshsat.info` δεν σχετίζεται με αυτό το έργο, δεν το λειτουργούμε εμείς, και το λογισμικό του δεν
+Το <code class="not-ours">meshsat.info</code> δεν σχετίζεται με αυτό το έργο, δεν το λειτουργούμε εμείς, και το λογισμικό του δεν
 είναι δικό μας.
 
 ## Αναφορά ζητήματος ασφάλειας
