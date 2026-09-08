@@ -35,6 +35,7 @@ Nur von diesen Konten aus veröffentlichen wir.
 <thead><tr><th>Plattform</th><th>Konto</th></tr></thead>
 <tbody>
 <tr><td>GitHub</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
+<tr><td>GitLab</td><td><a href="https://gitlab.com/meshsat">gitlab.com/meshsat</a>, reserviert, dort liegt kein Code</td></tr>
 <tr><td>Matrix</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a></td></tr>
 <tr><td>LinkedIn</td><td><a href="https://www.linkedin.com/company/meshsat/">linkedin.com/company/meshsat</a></td></tr>
 <tr><td>X</td><td><a href="https://x.com/meshsat">x.com/meshsat</a></td></tr>
@@ -99,7 +100,7 @@ Datei nicht von uns stammt.
 Andere veröffentlichen Projekte unter dem Namen MeshSat. Wir kontrollieren sie nicht und können für
 das, was dort verbreitet wird, nicht einstehen.
 
-`meshsat.info` steht in keiner Verbindung zu diesem Projekt, wird nicht von uns betrieben, und die
+<code class="not-ours">meshsat.info</code> steht in keiner Verbindung zu diesem Projekt, wird nicht von uns betrieben, und die
 Software dort ist nicht unsere.
 
 ## Ein Sicherheitsproblem melden

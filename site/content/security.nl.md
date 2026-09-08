@@ -35,6 +35,7 @@ Dit zijn de enige accounts waarvandaan wij plaatsen.
 <thead><tr><th>Platform</th><th>Account</th></tr></thead>
 <tbody>
 <tr><td>GitHub</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
+<tr><td>GitLab</td><td><a href="https://gitlab.com/meshsat">gitlab.com/meshsat</a>, gereserveerd, daar staat geen code</td></tr>
 <tr><td>Matrix</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a></td></tr>
 <tr><td>LinkedIn</td><td><a href="https://www.linkedin.com/company/meshsat/">linkedin.com/company/meshsat</a></td></tr>
 <tr><td>X</td><td><a href="https://x.com/meshsat">x.com/meshsat</a></td></tr>
@@ -98,7 +99,7 @@ niet van ons hebt gekregen.
 Anderen publiceren projecten onder de naam MeshSat. Wij beheren die niet en kunnen niet instaan voor
 wat zij verspreiden.
 
-`meshsat.info` houdt geen verband met dit project, wordt niet door ons beheerd, en de software daar is
+<code class="not-ours">meshsat.info</code> houdt geen verband met dit project, wordt niet door ons beheerd, en de software daar is
 niet van ons.
 
 ## Een beveiligingsprobleem melden
