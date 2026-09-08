@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 228
-  unreleased_since: "2026-09-07"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-07"
+  unreleased_count: 241
+  unreleased_since: "2026-09-08"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-08"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,10 +28,18 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-07)
+## Unreleased (main, last change 2026-09-08)
 
 ### Features
 
+- **tools**: rule 3, the power-copper pattern of A21 as a shared module for the placement generators (bands with keep-outs, islands, spines, stitch vias, IPC-2221 widths) ([02c3eb72](https://github.com/meshsat/meshsat-fieldkit/commit/02c3eb72113fa4a242f142002c3dc525e79313ff))
+- **tools**: rule 2, a per-class layer rule in the DSN (FR\_LAYER\_RULES, routeflow layer\_rules, the profiles); rule 1 in progress: pair\_preroute.py lays a pair's legs as locked copper on a smoothed centreline with stations, twists detected ([19914e74](https://github.com/meshsat/meshsat-fieldkit/commit/19914e746e84170e9237ee6a009dc391e84d3026))
+- **tools**: the intent layer and the electrical verdicts (Stage C), the measured placement predictor (Stage D), the learned-critic data tools (Stage E) ([4a6db066](https://github.com/meshsat/meshsat-fieldkit/commit/4a6db066d0a6035f1bb9d007e198ed2befbfbf51))
+- **tools**: partition jobs confined to their region by keep-outs, strict net assignment ([ec193b2f](https://github.com/meshsat/meshsat-fieldkit/commit/ec193b2f22ac87bc31def01235fb1337cda195f7))
+- **tools**: partition reconcile: rip the boundary conflicts, close with the stub router ([8eca62d2](https://github.com/meshsat/meshsat-fieldkit/commit/8eca62d2f96122a1da8dc53267e7e2b60d02f97b))
+- **tools**: partition stage two: lock the global session, route the regions concurrently, merge by net ([5426a079](https://github.com/meshsat/meshsat-fieldkit/commit/5426a079a9497b557eda83651911025402b0a16a))
+- **tools**: net-partition routing: DSN class rewrite per region, one-group Freerouting job, DSN export of a locked board ([9b65f303](https://github.com/meshsat/meshsat-fieldkit/commit/9b65f30328f89584703735107bd13f89c829bf46))
+- **tools**: cont\_route keeps the plane nets and power layers and reads FR\_OIT ([27521dd0](https://github.com/meshsat/meshsat-fieldkit/commit/27521dd0a64ace4d87ff761c8aa1aa7d848a0bbe))
 - **release**: E5 rebuilt from the final A22 routed clean on the box, deliverable meshsat-pcb-e5-revA-E5 ([33785fba](https://github.com/meshsat/meshsat-fieldkit/commit/33785fba64052acc644b388ae18e3df594d54350))
 - **release**: A22 (six layers, run 12 with the hand closures) routed clean on the box, deliverable meshsat-pcb-a-revA-A22 ([cbe75988](https://github.com/meshsat/meshsat-fieldkit/commit/cbe75988b80a03818bbbf2cb9c5e4e5cd35c2084))
 - **tools**: hand\_route.py (locked waypoint tracks with vias, DRC-tested on a copy); appendix: the A22 run 12 closures ([737d26d6](https://github.com/meshsat/meshsat-fieldkit/commit/737d26d645ee761f012d5ebdf1e13671fe772f73))
@@ -140,6 +148,11 @@ appear below.
 
 ### Fixes
 
+- **tools**: jitter campaign: expand the profile's tilde jar path, a 9999 score is no session ([63813365](https://github.com/meshsat/meshsat-fieldkit/commit/638133652d4eb88d40e5761b9e9ea77832dd91b0))
+- **tools**: the jitter campaign moves the passives only and gets one directory per sample; pruned escapes warn in the predictor ([ff673a6d](https://github.com/meshsat/meshsat-fieldkit/commit/ff673a6ddadce579e3af0634aa15ea39e5ecae1a))
+- **tools**: re-arm the gates of the audit 32.64: one hard set, ERC and zone nets block, contracts in every finish, deliverable read back, copper checks restored ([c5880477](https://github.com/meshsat/meshsat-fieldkit/commit/c5880477616a214a183b6ca4870f4e944cd4a67b))
+- **tools**: partition stage two: bash's GROUPS is a read-only array, the group list is PARTS; the project file travels with every board ([4deae0e3](https://github.com/meshsat/meshsat-fieldkit/commit/4deae0e35a3d7bfbf0e114716fb230b05541a3dd))
+- **tools**: cont\_route kills only its own router (absolute session path) ([fc5fb645](https://github.com/meshsat/meshsat-fieldkit/commit/fc5fb645a67e505986dc6c335e8d6180c34dbb22))
 - **tools**: finish\_b16 runs the DRC the knot removal reads ([ef0cf20f](https://github.com/meshsat/meshsat-fieldkit/commit/ef0cf20fc567ec590dd40c81910328e232df3e8d))
 - **ecad**: ground pads of a part with an exposed pad join it along their own axis (the ring of 0.4 mm escape vias fences the plane on every layer); the C7 gate counts vias only where a keep-out forbids them ([9fd73788](https://github.com/meshsat/meshsat-fieldkit/commit/9fd73788389d48539c26f3e865a8a80a881b73b2))
 - **ecad**: D8 silk legend names the south edge for the PA leads (post-route text swap, deliverable rebuilt) ([b1413ffa](https://github.com/meshsat/meshsat-fieldkit/commit/b1413ffa99f31c36439f4520762bab9577e1266c))

@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 326
-  unreleased_since: "2026-09-01"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-01"
+  unreleased_count: 335
+  unreleased_since: "2026-09-08"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-08"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,14 @@ under Unreleased. The Hub runs as a private beta on our own infrastructure and
 is not launched.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-01)
+## Unreleased (main, last change 2026-09-08)
 
 ### Features
 
+- **store**: shared helpers and conventions for the Postgres domain files ([ddfb0ae1](https://github.com/meshsat/meshsat-hub/commit/ddfb0ae10023ed634056b2678fea0ebd7aea1e20))
+- **store**: Postgres store skeleton, versioned migrations, conformance harness ([59558c2c](https://github.com/meshsat/meshsat-hub/commit/59558c2c09113183e568ecf6aa9de147cdc58c55))
+- **auth**: EC JWKS keys, discovery endpoints, slash-tolerant issuer check ([d91d56aa](https://github.com/meshsat/meshsat-hub/commit/d91d56aae0134ca0a5821ea98268f9890e54d775))
+- **health**: readiness probe classes, drain on shutdown, startup marker ([0e233860](https://github.com/meshsat/meshsat-hub/commit/0e233860317dcff5edfc5e7068579f7880a34f70))
 - **api**: provider-aware MT send routes with Cloudloop/IMT support ([f8c584b3](https://github.com/meshsat/meshsat-hub/commit/f8c584b39b42d94175b87e024290d6839cadaf70))
 - **directory**: Hub precedence-default policy seeding ([fdfe9e1f](https://github.com/meshsat/meshsat-hub/commit/fdfe9e1f976af149e67fb977c7c055e36a574fe5))
 - **directory,api**: vCard 4.0 + CSV import/export (Hub) ([cc446886](https://github.com/meshsat/meshsat-hub/commit/cc446886e53091062586ae7029ee0ba78e9dd1b3))
@@ -214,6 +218,11 @@ is not launched.
 
 ### Fixes
 
+- **message**: stable inbound message IDs, duplicate insert is a no-op ([f7390932](https://github.com/meshsat/meshsat-hub/commit/f73909325e233d8b4b24d44b8d8db3643c9f18e3))
+- **auth**: on-curve check via crypto/ecdh, lint cleanups ([8597ac26](https://github.com/meshsat/meshsat-hub/commit/8597ac2687fe0761f3d88192e642b74e01f45996))
+- **leader**: compile the Lease elector unconditionally, never leader on error ([20445365](https://github.com/meshsat/meshsat-hub/commit/204453656bbd5c711e66dad1c7e7f53c2250c80d))
+- **deps**: bump x/text to v0.39.0 and x/net to v0.55.0 (GO-2026-5970, GO-2026-5026) ([e42672ae](https://github.com/meshsat/meshsat-hub/commit/e42672ae0e1455bd30990b308b485469569431a5))
+- **dbwrap**: bounded driver-agnostic DB retry, fix int64 backoff overflow ([5634c128](https://github.com/meshsat/meshsat-hub/commit/5634c128a05a836ac7d129f931d9715293f3af2c))
 - **cloudloop**: resolver learns IMT things from live API shape + env seed ([52163c8b](https://github.com/meshsat/meshsat-hub/commit/52163c8be845b1c1d82fbe78526b94fb14f004ef))
 - **bus**: fan out same-filter MQTT subscriptions: stop paho router clobbering ([ffdce804](https://github.com/meshsat/meshsat-hub/commit/ffdce80462d6943b932b35023fcf0303666f63ef))
 - **security**: drop deprecated middleware.RealIP: restore direct-peer RemoteAddr ([1496e148](https://github.com/meshsat/meshsat-hub/commit/1496e1489a10bf02308a1082bf5bd8ecd3d90b8f))
