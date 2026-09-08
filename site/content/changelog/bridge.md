@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 754
-  unreleased_since: "2026-09-07"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-07"
+  unreleased_count: 768
+  unreleased_since: "2026-09-08"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-08"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,19 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-07)
+## Unreleased (main, last change 2026-09-08)
 
 ### Features
 
+- **hub**: wire the satellite fallback uplink, position/health/SOS frames to the Hub over IMT/SBD or SMS when MQTT is down ([0d3c1609](https://github.com/meshsat/meshsat/commit/0d3c1609d865f2e44347459b7d850d773f417e4a))
+- **cellular**: plaintext peers for the Hub SMS leg, \[origin\] prefix parsed, the Hub's echo of a kit's own SMS dropped ([0597731f](https://github.com/meshsat/meshsat/commit/0597731f68cb3332e1f7ad3d55fe1c260b495e6c))
+- **ttc**: booth flow selector, three paths drawn on the panel, tap a lane to choose this kit's way out ([dad90ac3](https://github.com/meshsat/meshsat/commit/dad90ac37cce6baead82a4ac095f49d7d2c67481))
+- **aprs**: beacons carry the same repeat copies as messages ([f9c9a24d](https://github.com/meshsat/meshsat/commit/f9c9a24d654595b5f82b4d4582c0325acb906958))
+- **api**: POST /api/messages/simulate-mesh-rx feeds a text through the radio-receive path for relay pre-flight without a handheld ([ca9f8b9f](https://github.com/meshsat/meshsat/commit/ca9f8b9f05001071c1844fb80e2a445d97f02d0d))
+- **aprs**: tx\_repeat sends each message twice on the air; the far kit dedups ([9d28e3bc](https://github.com/meshsat/meshsat/commit/9d28e3bce4148c9e6bfd16c6f2928f3cd8c5a7ea))
+- **aprs**: status beacon, Direwolf timing keys, watchdog rungs gated on a hung Direwolf; relayed texts travel as text on text bearers ([41f3ee98](https://github.com/meshsat/meshsat/commit/41f3ee98044f33ccd3431d94ee9c2e7c9619c457))
+- **failover**: groups skip a member whose receiver is deaf, for the APRS-first booth relay ([41fad9a3](https://github.com/meshsat/meshsat/commit/41fad9a3047127446f4558888d0b740b2422abd8))
+- **api,web**: nodes carry other\_mesh, the dashboard lists this mesh first and counts only it as peers ([bf99aeaa](https://github.com/meshsat/meshsat/commit/bf99aeaa4c64a6a812955cfc4fa76660a1b5da13))
 - **web**: TTC composer, double-tap the kit to type a message on the panel and send it to the local or the remote mesh ([390f884b](https://github.com/meshsat/meshsat/commit/390f884bfacec5e9a144c97a15a9e91a8d28e2b2))
 - **web**: leaving TTC mode is an easter egg, three taps on the mark then one on the QR ([2259905e](https://github.com/meshsat/meshsat/commit/2259905ebc0cee50b592b4d440643adf7ca3fd3a))
 - **web**: TTC device drawings are the real T-Deck Plus and T-Echo, photos with a live screen overlay ([29ea75ad](https://github.com/meshsat/meshsat/commit/29ea75ad4b069035b225da9679905810c594938e))
@@ -355,6 +364,11 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **gateway**: shutdown skips a gateway still being created instead of crashing on the nil sentinel ([a6bc9c8c](https://github.com/meshsat/meshsat/commit/a6bc9c8cf85449ab339d59f0ede60e10bcf34e54))
+- **failover**: a member served by a connected gateway counts as online; the booth group picked SMS over a healthy APRS ([b265c06f](https://github.com/meshsat/meshsat/commit/b265c06f13a0ce4ff4a925d878198db676ab4bd8))
+- **aprs**: status beacons are liveness only, never an inbound message or a booth-screen trip ([eab9283f](https://github.com/meshsat/meshsat/commit/eab9283fe026b56e56a5962308c9b4f3ae4e3b3b))
+- **gateway**: inbound receivers run under the manager's context, not the restarting caller's ([56e2f9b8](https://github.com/meshsat/meshsat/commit/56e2f9b8046a4166b1119c0f72d4616dfb63fe12))
+- **web**: TTC panel audit round two, composer journeys, housekeeping frames, replay caption, spectrum skip ([2d385983](https://github.com/meshsat/meshsat/commit/2d385983c7fdf089d129bf9e3a0286691052c2ca))
 - **web**: TTC message box never squeezes the drawing on the panel, three lines at most ([30882d63](https://github.com/meshsat/meshsat/commit/30882d637559b325fce049f8806d2669230d613e))
 - **web**: operator dashboard's four glance rows fit above the bottom nav on the 7 inch panel ([4bf72736](https://github.com/meshsat/meshsat/commit/4bf72736f58830e294721350f15f16961d4f1853))
 - **web**: TTC mode designed for the panel's real viewport, 853x480 CSS px at scale 1.5, and immune to the NVIS theme ([eadfabd3](https://github.com/meshsat/meshsat/commit/eadfabd3631e4966d9d365d7dc39d330437d99f2))
