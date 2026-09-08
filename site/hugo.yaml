@@ -62,17 +62,20 @@ menu:
     - identifier: install
       url: "/install/"
       weight: 4
+    - identifier: security
+      pageRef: "/security"
+      weight: 5
     - identifier: changelog
       url: "/changelog/"
-      weight: 5
+      weight: 6
     - identifier: docs
       url: "https://docs.meshsat.net"
-      weight: 6
+      weight: 7
       params:
         external: true
     - identifier: hub
       url: "/#hub"
-      weight: 7
+      weight: 8
       params:
         highlight: true
 

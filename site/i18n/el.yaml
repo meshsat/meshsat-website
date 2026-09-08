@@ -6,6 +6,8 @@ nav_hardware:
   other: "Εξοπλισμός"
 nav_install:
   other: "Εγκατάσταση"
+nav_security:
+  other: "Ασφάλεια"
 nav_changelog:
   other: "Αλλαγές"
 nav_docs:

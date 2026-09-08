@@ -1,0 +1,13 @@
+// Security contact for MeshSat (meshsat.net). RFC 9116.
+// Human-readable version, including our official sources and installer
+// checksum: https://meshsat.net/security/
+
+Contact: mailto:security@meshsat.net
+Expires: 2027-09-08T00:00:00.000Z
+Preferred-Languages: en, nl, de, fr, el
+Canonical: https://meshsat.net/.well-known/security.txt
+Policy: https://meshsat.net/security/
+
+// MeshSat is free software (GPL-3.0). Source: https://github.com/meshsat/meshsat
+// We also want to hear about software published under our name that is not
+// ours. There is no bounty programme.
