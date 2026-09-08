@@ -35,7 +35,10 @@ echo "=== 3. house style: no em or en dashes anywhere in the built HTML ==="
 # Scans the RAW html, meta tags included. Tag-stripping would have hidden a stale
 # og:title carrying both the old slogan and an em dash, which is exactly the class
 # of bug this is meant to catch. No python here: the Hugo runner has none.
-for f in "$PUB/index.html" "$PUB"/nl/index.html "$PUB"/de/index.html "$PUB"/fr/index.html "$PUB"/el/index.html "$PUB"/changelog/index.html "$PUB"/changelog/*/index.html; do
+# /security/ and its four translations are standalone pages like the changelog
+# children, so they are named explicitly: the changelog tabs sat outside this
+# scan and carried em dashes for months before anyone noticed.
+for f in "$PUB/index.html" "$PUB"/nl/index.html "$PUB"/de/index.html "$PUB"/fr/index.html "$PUB"/el/index.html "$PUB"/changelog/index.html "$PUB"/changelog/*/index.html "$PUB"/security/index.html "$PUB"/??/security/index.html; do
   [ -f "$f" ] || continue
   N=$( { grep -o -e '—' -e '–' "$f" || true; } | wc -l | tr -d ' ' )
   if [ "$N" -eq 0 ]; then pass "no em/en dashes in ${f#$PUB/}"

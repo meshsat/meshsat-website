@@ -3199,7 +3199,10 @@ img {
   border-bottom: 1px solid color-mix(in srgb, var(--color-warning) 34%, transparent);
 }
 
-/* 1.4.1 Use of Colour. Links inside running text need a non-colour cue. */
+/* 1.4.1 Use of Colour. Links inside running text need a non-colour cue.
+   .page-content covers the markdown pages (/security/, /privacy/, /terms/),
+   which are prose end to end and whose links were colour-only until now. */
+.page-content a,
 .table-note a,
 .funding-note a,
 .section-subtitle a,
