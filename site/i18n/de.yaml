@@ -6,6 +6,8 @@ nav_hardware:
   other: "Hardware"
 nav_install:
   other: "Installation"
+nav_security:
+  other: "Sicherheit"
 nav_changelog:
   other: "Änderungen"
 nav_docs:
