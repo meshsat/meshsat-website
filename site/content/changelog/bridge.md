@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 768
+  unreleased_count: 776
   unreleased_since: "2026-09-08"
   unreleased_anchor: "unreleased-main-last-change-2026-09-08"
 ---
@@ -23,6 +23,10 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Features
 
+- **ttc**: the four routes become one row each, riding their own lane ([6a3d6842](https://github.com/meshsat/meshsat/commit/6a3d68421ee93b96b8a3e20efdec515cc095d62b))
+- **oob**: the Hub can pair as a management peer, by its own key or the kit's ([1d813987](https://github.com/meshsat/meshsat/commit/1d8139874fd7569360713fe38efaa3b64c13e223))
+- **ttc**: fourth booth path, kit to kit over Iridium IMT, with a satellite lane on the panel and satellite traffic in the packet feed ([0d6802a5](https://github.com/meshsat/meshsat/commit/0d6802a5f772f85611cead4963975c8c2fa1c0c5))
+- **ttc**: the island with the kit and the handheld is the hero of the booth screen, the message strip is one row ([d1278695](https://github.com/meshsat/meshsat/commit/d127869589f93f3ce900d327c4ccc8f185c46e19))
 - **hub**: wire the satellite fallback uplink, position/health/SOS frames to the Hub over IMT/SBD or SMS when MQTT is down ([0d3c1609](https://github.com/meshsat/meshsat/commit/0d3c1609d865f2e44347459b7d850d773f417e4a))
 - **cellular**: plaintext peers for the Hub SMS leg, \[origin\] prefix parsed, the Hub's echo of a kit's own SMS dropped ([0597731f](https://github.com/meshsat/meshsat/commit/0597731f68cb3332e1f7ad3d55fe1c260b495e6c))
 - **ttc**: booth flow selector, three paths drawn on the panel, tap a lane to choose this kit's way out ([dad90ac3](https://github.com/meshsat/meshsat/commit/dad90ac37cce6baead82a4ac095f49d7d2c67481))
@@ -364,6 +368,10 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **ttc**: the route rows fit the panel, and every glyph sits on its wire ([6ad829d7](https://github.com/meshsat/meshsat/commit/6ad829d7bf048f3cf4a646eac3d11a232c7850dd))
+- **kiosk**: one autostart for both kits, and stop the installer flipping the panels ([124aab43](https://github.com/meshsat/meshsat/commit/124aab439c072dfaed04183f8a04c2c7b2a43d45))
+- **ttc**: shorter satellite lane text so it fits the right-hand kit's lane ([f04fa41c](https://github.com/meshsat/meshsat/commit/f04fa41c686160f6d8d6326f3f8b84bb43f3b337))
+- **ttc**: the booth flow rules are ingress rules on mesh\_0, the relay convention the dispatcher evaluates ([41deb0f6](https://github.com/meshsat/meshsat/commit/41deb0f6c6d9b55afd47e996a8d4305dc79aa97b))
 - **gateway**: shutdown skips a gateway still being created instead of crashing on the nil sentinel ([a6bc9c8c](https://github.com/meshsat/meshsat/commit/a6bc9c8cf85449ab339d59f0ede60e10bcf34e54))
 - **failover**: a member served by a connected gateway counts as online; the booth group picked SMS over a healthy APRS ([b265c06f](https://github.com/meshsat/meshsat/commit/b265c06f13a0ce4ff4a925d878198db676ab4bd8))
 - **aprs**: status beacons are liveness only, never an inbound message or a booth-screen trip ([eab9283f](https://github.com/meshsat/meshsat/commit/eab9283fe026b56e56a5962308c9b4f3ae4e3b3b))
