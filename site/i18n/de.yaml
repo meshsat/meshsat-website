@@ -31,7 +31,7 @@ hero_title_b:
 hero_sub:
   other: "Ein Mesh hält ein Dorf im Gespräch mit sich selbst, hat aber keinen Weg aus dem Tal heraus. Ein Satellitenmodem erreicht die ganze Welt und kostet echtes Geld pro Nachricht. MeshSat ist die Schicht dazwischen: Es nimmt eine Nachricht aus dem Mesh und sendet sie über den Träger, der noch funktioniert, und gibt Satellitenbytes erst aus, wenn nichts Kostenloses mehr übrig ist."
 hero_status:
-  other: "Prototyp vor der Veröffentlichung. Nie bei echten Nutzern eingesetzt, nie in einem Notfall verwendet."
+  other: "Hub offen. Noch keine Flotte im Einsatz, nie in einem echten Notfall verwendet."
 hero_star:
   other: "Auf GitHub einen Stern geben"
 hero_visitors:
@@ -185,13 +185,41 @@ sys_title:
 sys_sub:
   other: "Die Bridge ist ein einzelnes Gerät und arbeitet vollständig eigenständig. Zwei weitere Teile gibt es für den Fall, dass ein Gerät nicht das ganze Bild ist."
 hub_badge:
-  other: "Geschlossene Beta"
+  other: "Offen"
 hub_status:
-  other: "MeshSat Hub ist noch nicht gestartet. Er läuft als geschlossene Beta auf unserer eigenen Infrastruktur. Zugang für Demos und Beta-Tests wird auf Anfrage eingerichtet."
+  other: "Der Hub ist offen. Erstellen Sie ein Konto, wir prüfen es, bevor es freigeschaltet wird."
 hub_p:
   other: "Flottenverwaltung über viele Bridges: OAuth2- und OIDC-Konten, API-Schlüssel mit Rollen, Mandantentrennung, SOS-Eskalationsketten, Ratenbegrenzung je Gerät und ein Ed25519-Hash-Chain-Auditlog. Betreibbar einzeln, im Cluster oder auf Kubernetes."
 hub_cta:
-  other: "Beta-Zugang anfragen"
+  other: "Konto erstellen"
+hub_signin:
+  other: "Anmelden"
+plans_title:
+  other: "Tarife"
+plans_sub:
+  other: "Zwischen den Tarifen ändert sich eine Zahl: wie viele Geräte und Bridges Sie registrieren dürfen. Alles andere ist überall gleich."
+plans_col:
+  other: "Geräte und Bridges"
+plan_free:
+  other: "Kostenlos"
+plan_crew:
+  other: "Crew"
+plan_fleet:
+  other: "Fleet"
+plan_more:
+  other: "Mehr"
+plan_free_price:
+  other: "inbegriffen"
+plan_crew_price:
+  other: "9 Euro im Monat"
+plan_fleet_price:
+  other: "29 Euro im Monat"
+plan_more_price:
+  other: "sprechen Sie uns an"
+plans_airtime:
+  other: "Ihre Sendezeit bleibt Ihre. Binden Sie Ihre eigenen Cloudloop, Twilio und Rock7 Konten ein; wir verkaufen weder Satellit noch SMS weiter."
+plans_keeps:
+  other: "Ein registriertes Gerät funktioniert in jedem Tarif weiter. Ein kleinerer Tarif verhindert nur neue Registrierungen, ein SOS ist nie betroffen."
 and_p:
   other: "Ein Telefon als eigenständiges Gateway, ohne Pi und ohne Kabel. Es spricht mit einem Meshtastic-Funkgerät über Bluetooth LE, mit einem Iridium-Modem über Bluetooth SPP und nutzt die eigene SMS des Telefons, alles gleichzeitig. Gleiche Verschlüsselung und gleiche Nachrichtenformate wie die Bridge."
 and_cta:

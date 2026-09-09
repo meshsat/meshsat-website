@@ -31,7 +31,7 @@ hero_title_b:
 hero_sub:
   other: "Een mesh houdt een dorp met zichzelf in gesprek, maar heeft geen route het dal uit. Een satellietmodem bereikt de hele wereld en kost echt geld per bericht. MeshSat is de laag daartussen: het haalt een bericht van de mesh en verstuurt het via welke drager dan ook die nog werkt, en geeft pas satellietbytes uit als er niets gratis meer over is."
 hero_status:
-  other: "Prototype, nog niet uitgebracht. Nooit bij een echte gebruiker ingezet, nooit gebruikt bij een noodgeval."
+  other: "Hub open. Nog geen vloot actief, nooit gebruikt bij een echt noodgeval."
 hero_star:
   other: "Geef een ster op GitHub"
 hero_visitors:
@@ -185,13 +185,41 @@ sys_title:
 sys_sub:
   other: "De Bridge is één apparaat en werkt volledig zelfstandig. Er zijn twee andere onderdelen voor als één apparaat niet het hele verhaal is."
 hub_badge:
-  other: "Besloten bèta"
+  other: "Open"
 hub_status:
-  other: "MeshSat Hub is nog niet gelanceerd. Het draait als besloten bèta op onze eigen infrastructuur. Toegang voor demo's en bètatests regelen we op aanvraag."
+  other: "De Hub is open. Maak een account aan; wij beoordelen het voordat het live gaat."
 hub_p:
   other: "Vlootbeheer over veel bridges: OAuth2- en OIDC-accounts, API-sleutels met rollen, scheiding tussen tenants, SOS-escalatieketens, snelheidslimieten per apparaat en een Ed25519 hash-chain auditlog. Uit te rollen zelfstandig, als cluster of op Kubernetes."
 hub_cta:
-  other: "Bètatoegang aanvragen"
+  other: "Account aanmaken"
+hub_signin:
+  other: "Inloggen"
+plans_title:
+  other: "Abonnementen"
+plans_sub:
+  other: "Tussen abonnementen verandert één getal: hoeveel apparaten en bridges je mag registreren. De rest is overal gelijk."
+plans_col:
+  other: "apparaten en bridges"
+plan_free:
+  other: "Gratis"
+plan_crew:
+  other: "Crew"
+plan_fleet:
+  other: "Fleet"
+plan_more:
+  other: "Meer"
+plan_free_price:
+  other: "inbegrepen"
+plan_crew_price:
+  other: "9 euro per maand"
+plan_fleet_price:
+  other: "29 euro per maand"
+plan_more_price:
+  other: "neem contact op"
+plans_airtime:
+  other: "Je zendtijd blijft van jou. Koppel je eigen Cloudloop, Twilio en Rock7 accounts; wij verkopen geen satelliet of SMS door."
+plans_keeps:
+  other: "Een geregistreerd apparaat blijft werken op elk abonnement. Een kleiner abonnement stopt alleen het toevoegen van nieuwe, en een SOS wordt nooit geraakt."
 and_p:
   other: "Een telefoon als zelfstandige gateway, zonder Pi en zonder kabels. Hij praat met een Meshtastic-radio over Bluetooth LE, met een Iridium-modem over Bluetooth SPP, en gebruikt de eigen sms van de telefoon, alles tegelijk. Dezelfde versleuteling en berichtformaten als de Bridge."
 and_cta:
