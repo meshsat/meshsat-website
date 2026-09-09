@@ -17,7 +17,7 @@ vergleichen Sie ihn zuerst mit der folgenden Liste.
 <tr><td>Quellcode</td><td><a href="https://github.com/meshsat/meshsat">github.com/meshsat/meshsat</a></td></tr>
 <tr><td>Alle unsere Repositories</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
 <tr><td>Container-Images</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
-<tr><td>Hub</td><td><code>hub.meshsat.net</code>, geschlossene Beta, keine öffentliche Anmeldung</td></tr>
+<tr><td>Hub</td><td><code>hub.meshsat.net</code>, offen, Konten werden vor der Freischaltung geprüft</td></tr>
 <tr><td>Chat</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a> auf Matrix</td></tr>
 <tr><td>E-Mail</td><td><a href="mailto:hello@meshsat.net">hello@meshsat.net</a></td></tr>
 </tbody>

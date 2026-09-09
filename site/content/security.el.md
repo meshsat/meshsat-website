@@ -17,7 +17,7 @@ description: "Πού δημοσιεύεται το MeshSat, πώς ελέγχε�
 <tr><td>Πηγαίος κώδικας</td><td><a href="https://github.com/meshsat/meshsat">github.com/meshsat/meshsat</a></td></tr>
 <tr><td>Όλα τα repositories μας</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
 <tr><td>Container images</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
-<tr><td>Hub</td><td><code>hub.meshsat.net</code>, κλειστή beta, χωρίς δημόσια εγγραφή</td></tr>
+<tr><td>Hub</td><td><code>hub.meshsat.net</code>, ανοιχτό, οι λογαριασμοί ελέγχονται πριν ενεργοποιηθούν</td></tr>
 <tr><td>Συνομιλία</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a> στο Matrix</td></tr>
 <tr><td>Email</td><td><a href="mailto:hello@meshsat.net">hello@meshsat.net</a></td></tr>
 </tbody>

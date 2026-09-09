@@ -17,7 +17,7 @@ dan eerst met de lijst hieronder.
 <tr><td>Broncode</td><td><a href="https://github.com/meshsat/meshsat">github.com/meshsat/meshsat</a></td></tr>
 <tr><td>Al onze repositories</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
 <tr><td>Container images</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
-<tr><td>Hub</td><td><code>hub.meshsat.net</code>, besloten bèta, geen openbare aanmelding</td></tr>
+<tr><td>Hub</td><td><code>hub.meshsat.net</code>, open, accounts worden voor activering beoordeeld</td></tr>
 <tr><td>Chat</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a> op Matrix</td></tr>
 <tr><td>E-mail</td><td><a href="mailto:hello@meshsat.net">hello@meshsat.net</a></td></tr>
 </tbody>

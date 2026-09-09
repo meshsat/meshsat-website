@@ -31,7 +31,7 @@ hero_title_b:
 hero_sub:
   other: "A mesh keeps a village talking to itself but has no route out of the valley. A satellite modem reaches anywhere and costs real money per message. MeshSat is the layer in between: it takes a message off the mesh and sends it by whatever bearer is still alive, spending satellite bytes only when nothing free is left."
 hero_status:
-  other: "Pre-release prototype. Never deployed to a real user, never used in an emergency."
+  other: "Hub open. No fleet running on it yet, never used in a real emergency."
 hero_star:
   other: "Star on GitHub"
 hero_visitors:
@@ -185,13 +185,41 @@ sys_title:
 sys_sub:
   other: "The Bridge is one device and works entirely on its own. Two other pieces exist for when one device is not the whole picture."
 hub_badge:
-  other: "Private beta"
+  other: "Open"
 hub_status:
-  other: "MeshSat Hub is not launched yet. It runs as a private beta on our own infrastructure. Access for demos and beta testing is arranged on request."
+  other: "The Hub is open. Create an account and we review it before it goes live."
 hub_p:
   other: "Fleet management across many bridges: OAuth2 and OIDC accounts, API keys with roles, multi-tenant isolation, SOS escalation chains, per-device rate limits and an Ed25519 hash-chain audit log. Deployable standalone, clustered, or on Kubernetes."
 hub_cta:
-  other: "Request beta access"
+  other: "Create an account"
+hub_signin:
+  other: "Sign in"
+plans_title:
+  other: "Plans"
+plans_sub:
+  other: "One number changes between plans: how many devices and bridges you can register. Everything else is the same on all of them."
+plans_col:
+  other: "devices and bridges"
+plan_free:
+  other: "Free"
+plan_crew:
+  other: "Crew"
+plan_fleet:
+  other: "Fleet"
+plan_more:
+  other: "More"
+plan_free_price:
+  other: "included"
+plan_crew_price:
+  other: "9 euro a month"
+plan_fleet_price:
+  other: "29 euro a month"
+plan_more_price:
+  other: "talk to us"
+plans_airtime:
+  other: "Your airtime stays yours. Connect your own Cloudloop, Twilio and Rock7 accounts; we never resell satellite or SMS minutes."
+plans_keeps:
+  other: "A device you have registered keeps working on any plan. A smaller plan only stops you adding more, and an SOS is never affected."
 and_p:
   other: "A phone as a standalone gateway, with no Pi and no cables. It talks to a Meshtastic radio over Bluetooth LE, an Iridium modem over Bluetooth SPP, and uses the phone's own SMS, all at the same time. Same encryption and message formats as the Bridge."
 and_cta:
