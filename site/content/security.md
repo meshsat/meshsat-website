@@ -17,7 +17,7 @@ below first.
 <tr><td>Source code</td><td><a href="https://github.com/meshsat/meshsat">github.com/meshsat/meshsat</a></td></tr>
 <tr><td>All our repositories</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
 <tr><td>Container images</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
-<tr><td>Hub</td><td><code>hub.meshsat.net</code>, private beta, no public signup</td></tr>
+<tr><td>Hub</td><td><code>hub.meshsat.net</code>, open, accounts reviewed before activation</td></tr>
 <tr><td>Chat</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a> on Matrix</td></tr>
 <tr><td>Email</td><td><a href="mailto:hello@meshsat.net">hello@meshsat.net</a></td></tr>
 </tbody>
