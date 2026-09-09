@@ -9,9 +9,11 @@ description: "Terms for MeshSat Bridge and the hosted MeshSat Hub."
 
 These terms cover two different things: software you run yourself, and a service we run for you.
 
+<!--more-->
+
 ### Who you are contracting with
 
-MeshSat is operated from the Netherlands and reached at [hello@meshsat.net](mailto:hello@meshsat.net). The operating entity is being registered; its name and registration number will appear here once it is, and these terms will be reissued with that detail.
+MeshSat is a trading name of Elli.Z.G., a sole proprietorship (eenmanszaak) under Dutch law, registered in Leiden, the Netherlands, Chamber of Commerce number 99812584, VAT identification number NL005411721B30. Write to [hello@meshsat.net](mailto:hello@meshsat.net); a postal address for service of legal documents is available on request.
 
 ### MeshSat Bridge
 
