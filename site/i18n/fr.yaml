@@ -31,7 +31,7 @@ hero_title_b:
 hero_sub:
   other: "Un maillage permet à un village de se parler à lui-même mais n'offre aucune sortie de la vallée. Un modem satellite atteint le monde entier et coûte de l'argent à chaque message. MeshSat est la couche intermédiaire : elle prend un message sur le maillage et l'envoie par le porteur encore vivant, en ne dépensant des octets satellite que lorsqu'il ne reste plus rien de gratuit."
 hero_status:
-  other: "Prototype avant publication. Jamais déployé chez un utilisateur réel, jamais utilisé lors d'une urgence."
+  other: "Hub ouvert. Aucune flotte en service, jamais utilisé lors d'une vraie urgence."
 hero_star:
   other: "Ajouter une étoile sur GitHub"
 hero_visitors:
@@ -185,13 +185,41 @@ sys_title:
 sys_sub:
   other: "La Bridge est un seul appareil et fonctionne de façon entièrement autonome. Deux autres pièces existent pour quand un appareil ne suffit pas à décrire la situation."
 hub_badge:
-  other: "Bêta privée"
+  other: "Ouvert"
 hub_status:
-  other: "MeshSat Hub n'est pas encore lancé. Il tourne en bêta privée sur notre propre infrastructure. L'accès pour les démonstrations et les tests se met en place sur demande."
+  other: "Le Hub est ouvert. Créez un compte, nous le vérifions avant son activation."
 hub_p:
   other: "Gestion de flotte sur de nombreuses bridges : comptes OAuth2 et OIDC, clés d'API avec rôles, cloisonnement des locataires, chaînes d'escalade SOS, limites de débit par appareil et journal d'audit Ed25519 en chaîne de hachage. Déployable seul, en grappe ou sur Kubernetes."
 hub_cta:
-  other: "Demander un accès bêta"
+  other: "Créer un compte"
+hub_signin:
+  other: "Se connecter"
+plans_title:
+  other: "Formules"
+plans_sub:
+  other: "Une seule valeur change d'une formule à l'autre : le nombre d'appareils et de bridges que vous pouvez enregistrer. Tout le reste est identique."
+plans_col:
+  other: "appareils et bridges"
+plan_free:
+  other: "Gratuit"
+plan_crew:
+  other: "Crew"
+plan_fleet:
+  other: "Fleet"
+plan_more:
+  other: "Plus"
+plan_free_price:
+  other: "inclus"
+plan_crew_price:
+  other: "9 euros par mois"
+plan_fleet_price:
+  other: "29 euros par mois"
+plan_more_price:
+  other: "parlons-en"
+plans_airtime:
+  other: "Votre temps d'antenne reste le vôtre. Connectez vos propres comptes Cloudloop, Twilio et Rock7 ; nous ne revendons ni satellite ni SMS."
+plans_keeps:
+  other: "Un appareil déjà enregistré continue de fonctionner sur toutes les formules. Une formule plus petite empêche seulement d'en ajouter, et un SOS n'est jamais affecté."
 and_p:
   other: "Un téléphone en passerelle autonome, sans Pi ni câbles. Il parle à une radio Meshtastic en Bluetooth LE, à un modem Iridium en Bluetooth SPP, et utilise le SMS du téléphone, le tout en même temps. Même chiffrement et mêmes formats de message que la Bridge."
 and_cta:
