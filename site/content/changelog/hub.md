@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 335
-  unreleased_since: "2026-09-08"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-08"
+  unreleased_count: 426
+  unreleased_since: "2026-09-09"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-09"
 ---
 
 Generated from the commit history of
@@ -20,11 +20,57 @@ under Unreleased. The Hub runs as a private beta on our own infrastructure and
 is not launched.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-08)
+## Unreleased (main, last change 2026-09-09)
 
 ### Features
 
+- **signups**: the approval panel ([9d03902e](https://github.com/meshsat/meshsat-hub/commit/9d03902e8a3abf1ff6cfa3572a8d05476bf0da37))
+- **signups**: give the Hub its own identity at the provider ([98647f79](https://github.com/meshsat/meshsat-hub/commit/98647f79fe46661d25169eb604e744e5ca0accac))
+- **signups**: approve a beta request from the Hub ([d6d15421](https://github.com/meshsat/meshsat-hub/commit/d6d15421482df424ea9b4f0261848f837877561c))
+- **tenant**: let a tenant take its data and have it destroyed ([964a39dd](https://github.com/meshsat/meshsat-hub/commit/964a39dd85d25950eb57ad4afe1295cc02bb7b92))
+- **auth**: a password reset flow, and MeshSat mail that says MeshSat ([04c0737f](https://github.com/meshsat/meshsat-hub/commit/04c0737fc6e79b2948bb963dd6ed4ce2c4977156))
+- **webhook**: give every tenant its own inbound endpoint ([909b9941](https://github.com/meshsat/meshsat-hub/commit/909b99415965f7c0f9dbe3365ac633d92ae6d2e4))
+- **map**: basemap replicas copy the archive from each other ([d0a6335d](https://github.com/meshsat/meshsat-hub/commit/d0a6335dc9b277d0289653d6f0bab5543b638ada))
+- **map**: all of Europe at street-name detail, on its own disks ([003bc420](https://github.com/meshsat/meshsat-hub/commit/003bc420afb1c3105cc23bed910d3da001be4fe2))
+- **k8s**: a second Reticulum terminator, and the placement rules rewritten ([c93e4e25](https://github.com/meshsat/meshsat-hub/commit/c93e4e25c50b2c205688d630abdb0a4bc2d8ce14))
+- **k8s**: the broker becomes a three node JetStream cluster on the control-plane tier ([57902a25](https://github.com/meshsat/meshsat-hub/commit/57902a257dbaf879e3edb6d533dd824fbd11ad81))
+- **k8s**: KeyDB replaces the single Redis, two masters on two machines ([b7c9ee03](https://github.com/meshsat/meshsat-hub/commit/b7c9ee03d32148ea876a4eca1f12998a5fcc5559))
+- **k8s**: the Hub can land on any worker, and gets there faster ([fa3f07f5](https://github.com/meshsat/meshsat-hub/commit/fa3f07f528f769d946f77805847dd36865773cc3))
+- **map**: self-hosted MapLibre vector basemap, no third-party tile host ([58a2924d](https://github.com/meshsat/meshsat-hub/commit/58a2924dc66cdf23b303752274e496b3174423bf))
+- **k8s**: two Hub replicas with rolling updates, a PDB and a per-pod leader identity ([1d6ef137](https://github.com/meshsat/meshsat-hub/commit/1d6ef137eb86023ff141be688a3e7cc5e07b2a83))
+- **edge**: gated registration, file-backed IP allowlist and enrollment exemption ([ea4e9547](https://github.com/meshsat/meshsat-hub/commit/ea4e9547c36f8257475da1a1e83847bf44dfe81a))
+- **routing**: satellite route destination delivers a text to a bridge over its Iridium modem ([413d0384](https://github.com/meshsat/meshsat-hub/commit/413d0384cdb8df2766f5de9605c8920f142e4cbe))
+- **oob**: bridge commands over SMS, Iridium IMT and SBD as sealed OOB frames with replies correlated by counter ([b05a163a](https://github.com/meshsat/meshsat-hub/commit/b05a163af5a5acba954c4f0c90bb5f7396e15ee1))
+- **fleet**: uplink frames over SMS, SBD and IMT become fleet state and SOS alerts, last report bearer on the bridge ([86ba57ab](https://github.com/meshsat/meshsat-hub/commit/86ba57ab5edf8aa5c1c53e13645d2a22cd7dfdbd))
+- **routing**: optional sender list per route so kit A reaches kit B without an echo ([30ddf857](https://github.com/meshsat/meshsat-hub/commit/30ddf857d87c5707e70fe019ec07e3b1711cdceb))
+- **providers**: Twilio, Rock7, RockBLOCK and Globalstar per tenant ([fb0cb60e](https://github.com/meshsat/meshsat-hub/commit/fb0cb60e36f3d31f93a4a825545d42d681763928))
+- **cloudloop**: use the tenant's own Cloudloop account for MT sends, thing lookup, credits and the MO webhook ([043c5903](https://github.com/meshsat/meshsat-hub/commit/043c5903b07e1f90f526b7bdd1265ee182ab8965))
+- **tenant**: per-tenant provider accounts: encrypted Cloudloop, Twilio, Rock7, RockBLOCK and Globalstar credentials with a tenant API and Integrations page ([d22dad2a](https://github.com/meshsat/meshsat-hub/commit/d22dad2a30a2a656984dc59b995b4c9a044a499d))
+- **audit**: archive purged entries to S3 for every tenant ([a686f294](https://github.com/meshsat/meshsat-hub/commit/a686f2948d508ef71292a7323ff618dea1ca574b))
+- **nats**: per-bridge NATS users and permissions rendered into a Secret ([56d08734](https://github.com/meshsat/meshsat-hub/commit/56d08734879e8d468cd2d7cbea8a91d250709443))
+- **mqtt**: tenant-prefixed topic namespace with dual-shape subscriptions ([7f864f07](https://github.com/meshsat/meshsat-hub/commit/7f864f078bef5aba7448891de8456be2ab02c647))
+- **routing**: evaluate routes and persist inbound traffic for the device's tenant ([02b7dea9](https://github.com/meshsat/meshsat-hub/commit/02b7dea91c6c24634ddc3277f4a2cce57e679586))
+- **k8s**: run one Hub replica on notrf01 for the cutover ([49210628](https://github.com/meshsat/meshsat-hub/commit/4921062860a404d92a3d8b050d915a8884c73fd8))
+- **k8s**: bootstrap owner attaches to the default tenant; operators count as verified ([f52ade0e](https://github.com/meshsat/meshsat-hub/commit/f52ade0edc667f8c0b061b4f6a47a62fce9941f0))
+- **k8s**: edge HAProxy patcher for the auth, cutover and rollback changes ([492fb54b](https://github.com/meshsat/meshsat-hub/commit/492fb54b3878365df0a4630777fa5e82dc455043))
+- **cli**: `--migrate-only` and the MariaDB to Postgres rehearsal tooling ([4c12c480](https://github.com/meshsat/meshsat-hub/commit/4c12c480a771a75a39b3db09c712f47c93c816de))
+- **k8s**: authentik bootstrap for the MeshSat brand, enrollment and approval ([d2741afc](https://github.com/meshsat/meshsat-hub/commit/d2741afcab8c4ef6a02888daeb578977dd1ceea1))
+- **k8s**: kustomize tree for MeshSat Hub on notrf01cl01k8s ([43c62a6d](https://github.com/meshsat/meshsat-hub/commit/43c62a6da7eb35fd414cdb7f4b43aec8ed9c78e6))
+- **bridge**: keep the bridge CA certificate in a Kubernetes Secret ([01090eb5](https://github.com/meshsat/meshsat-hub/commit/01090eb525372738eea19f08846ee88fd183dea0))
+- **api**: tenant self-service and platform-admin tenant directory ([45290690](https://github.com/meshsat/meshsat-hub/commit/4529069042858785476c142ff1dead520c9be9d8))
+- **web**: SSO-first UX pass, first-run onboarding, tenant panel, light-theme parity ([5655b5ce](https://github.com/meshsat/meshsat-hub/commit/5655b5ced23c35d979dcddc993ca8d906a13baf6))
+- **web**: MeshSat brand tokens, IBM Plex fonts, lockup and light theme ([dfa90534](https://github.com/meshsat/meshsat-hub/commit/dfa90534ef8895057f35dead2a7dde6db643c1ba))
+- **web**: sign in with MeshSat ID (OIDC) and auth callback view ([e3b48174](https://github.com/meshsat/meshsat-hub/commit/e3b48174d0cdafa583cdd00b22d8761de9ffbf87))
+- **auth**: OIDC authorization-code login with JIT tenant provisioning ([47d973bc](https://github.com/meshsat/meshsat-hub/commit/47d973bcc8d1a0e8654d15d5c2109f74cc0489a4))
+- **store**: tenants and tenant invites, default tenant seeded ([d113d97f](https://github.com/meshsat/meshsat-hub/commit/d113d97f08c81c802476b201cbbaecf308ce7830))
+- **leader**: run pollers, reapers, retention and evaluators on the leader only ([970b4fc6](https://github.com/meshsat/meshsat-hub/commit/970b4fc695c438cf1ae08328933e8e8aa8eb470c))
+- **store**: dispatch claims and CAS so N replicas send each message once ([48794544](https://github.com/meshsat/meshsat-hub/commit/48794544223b57e867081e3dec87ca5b4a6d2f63))
+- **config**: HUB\_DB\_DRIVER selects sqlite/mariadb/postgres, configurable sqlite path ([28af0fb5](https://github.com/meshsat/meshsat-hub/commit/28af0fb5ecfe185b3929da0781d77c09a8e0cd15))
+- **store**: Postgres port of users, tokens, API keys, device keys, routes, escalation, alerts, prefs ([c075cfed](https://github.com/meshsat/meshsat-hub/commit/c075cfed904ed07abd5a950f08b8dfe278c9695e))
+- **store**: Postgres port of devices, messages, webhooks, positions, audit, device configs ([2363a088](https://github.com/meshsat/meshsat-hub/commit/2363a0884156f16bd92e66a6fe6aa6b39379f45c))
+- **store**: Postgres implements store.Store, conformance suite runs on Postgres ([81c58de7](https://github.com/meshsat/meshsat-hub/commit/81c58de7961ef6a85d1dca241345c8e0fbc70803))
 - **store**: shared helpers and conventions for the Postgres domain files ([ddfb0ae1](https://github.com/meshsat/meshsat-hub/commit/ddfb0ae10023ed634056b2678fea0ebd7aea1e20))
+- **store**: Postgres port of bridges, bond groups, costs, groups, templates, alert rules, credentials ([49b4d04a](https://github.com/meshsat/meshsat-hub/commit/49b4d04a18ef3cc421572a40a59d150041599947))
 - **store**: Postgres store skeleton, versioned migrations, conformance harness ([59558c2c](https://github.com/meshsat/meshsat-hub/commit/59558c2c09113183e568ecf6aa9de147cdc58c55))
 - **auth**: EC JWKS keys, discovery endpoints, slash-tolerant issuer check ([d91d56aa](https://github.com/meshsat/meshsat-hub/commit/d91d56aae0134ca0a5821ea98268f9890e54d775))
 - **health**: readiness probe classes, drain on shutdown, startup marker ([0e233860](https://github.com/meshsat/meshsat-hub/commit/0e233860317dcff5edfc5e7068579f7880a34f70))
@@ -218,6 +264,51 @@ is not launched.
 
 ### Fixes
 
+- **auth**: stop sending MeshSat alerts from another brand's address ([25e9b64d](https://github.com/meshsat/meshsat-hub/commit/25e9b64dc4b5b70f38f76bd56326904784d7a324))
+- **rockblock**: actually verify the signature Ground Control sends ([8504c09c](https://github.com/meshsat/meshsat-hub/commit/8504c09c65403e19670890abd04e13b9553af0fc))
+- **tenant**: apply a suspension on every replica at once ([be6d538a](https://github.com/meshsat/meshsat-hub/commit/be6d538adf692e3d37b1b31e761b9cda7dc46eb9))
+- **signups**: decode a real authentik user, not an imagined one ([38907ab5](https://github.com/meshsat/meshsat-hub/commit/38907ab5605abe363fc8018782795d26203538a8))
+- **tenant**: keep secrets out of the export ([d412ce9e](https://github.com/meshsat/meshsat-hub/commit/d412ce9ede8dc9bd42d1642ccc5e539602461787))
+- **webhook**: stop the IP allowlist refusing a tenant's own webhook ([a9d88220](https://github.com/meshsat/meshsat-hub/commit/a9d882208f62afe05a6c83cab52b71c986b7347c))
+- **k8s**: give the platform tenant a RockBLOCK webhook secret ([0e1dd787](https://github.com/meshsat/meshsat-hub/commit/0e1dd7873b7a4ff4e1489b69408bff35d819d128))
+- **map**: make the map labels readable on the brand background ([ec67e370](https://github.com/meshsat/meshsat-hub/commit/ec67e3701c6eb1baa2dcc95c82c162e674c9904c))
+- **map**: give the basemap server somewhere to write ([5805cdf5](https://github.com/meshsat/meshsat-hub/commit/5805cdf5c5763f56f97457253e17790a0a7126b1))
+- **map**: let the basemap build collect garbage instead of being killed ([d10c60ba](https://github.com/meshsat/meshsat-hub/commit/d10c60bab1b17d60f5392e8bebfe903c1d840a1a))
+- **map**: the deep basemap covers Greece too, where half the fleet is ([63f87cb8](https://github.com/meshsat/meshsat-hub/commit/63f87cb8eec74887fab8c38ffa9a18e027c0694a))
+- **map**: put the streets back, with a second deeper basemap archive ([3f965b7a](https://github.com/meshsat/meshsat-hub/commit/3f965b7adedae1f9d793b5620e8bc632d64fe2c0))
+- **cloudloop**: subscribe to the satellite feed on the leader only ([6aacf229](https://github.com/meshsat/meshsat-hub/commit/6aacf229ac9fc2b72a1ee1a0361f5d7299e4f4c2))
+- **k8s**: mount the Cloudloop MQTT client certificate, the Iridium feed was dead ([4729c538](https://github.com/meshsat/meshsat-hub/commit/4729c538013d43cdcd07bb94558758f91cae5e26))
+- **edge**: let provider callbacks through the beta gate ([0514a72c](https://github.com/meshsat/meshsat-hub/commit/0514a72c474a92d445eefb3ba5278598a5d9802e))
+- **k8s**: roll the Hub one pod at a time, two eligible workers cannot host a surge pod ([a2c0725d](https://github.com/meshsat/meshsat-hub/commit/a2c0725d9b85974aca407ecf326682848061520a))
+- **bus**: MQTT client id per pod so two replicas do not replace each other's broker session ([eee2ed66](https://github.com/meshsat/meshsat-hub/commit/eee2ed668598bf0310e28931ceaf4dbebad585ec))
+- **escalation**: notify with the alert's tenant in the context so SMS use the tenant's Twilio account ([64d7fb4f](https://github.com/meshsat/meshsat-hub/commit/64d7fb4f77431d5cec621ec91b6c1f9a69f7b3f0))
+- **ui**: OTA and Email pages say the feature is not enabled on this Hub instead of an empty list ([67f3e068](https://github.com/meshsat/meshsat-hub/commit/67f3e068081a9e69b8aaac5075f5a19eb0f2153a))
+- **oob**: bounded conversions for the stored peer id, role and replay window (gosec G115) ([833d5532](https://github.com/meshsat/meshsat-hub/commit/833d5532db32ef93348b23491b4214a988ca8ca2))
+- **ui**: allow the OpenStreetMap apex host in the CSP, refresh the session once per burst, phone layouts for Messages and the Tenant panel ([41b275c9](https://github.com/meshsat/meshsat-hub/commit/41b275c96d0c2f30d826c983904c7ec78980f5a5))
+- **webhook**: store inbound messages in the device's tenant, gate the email webhook and the wildcard Cloudloop allowlist ([2663517a](https://github.com/meshsat/meshsat-hub/commit/2663517aebd60c3f4a02f24692b71ba8b0b007d0))
+- **auth**: refreshed sessions keep the platform-admin flag, IdP name updates the user row ([ca026716](https://github.com/meshsat/meshsat-hub/commit/ca026716eb41b87630450b4ee0e0a2a5cf759d5a))
+- **auth**: the Hub owner is the dedicated MeshSat identity admin@meshsat.net, not an omoikane account ([075a7f21](https://github.com/meshsat/meshsat-hub/commit/075a7f2145b1d6c7d5871c6cc53271a185f64a9b))
+- **cloudloop**: key MT cost rows and mt/status by device IMEI, not the Cloudloop thing ID ([c51cb895](https://github.com/meshsat/meshsat-hub/commit/c51cb895f7965b95e0544930df69b981f1fd23cb))
+- **ui**: ship the rebuilt SPA bundle, keep the authentik card below the language switcher on phones ([4d9237b9](https://github.com/meshsat/meshsat-hub/commit/4d9237b9df5bd5356265f1c569b636ea43105ccf))
+- **ui**: geofence map on OpenStreetMap tiles too, Credentials buttons on the brand tokens ([ef722440](https://github.com/meshsat/meshsat-hub/commit/ef722440f73633cf5e7442310217fd67a2c4f287))
+- **ui**: browser audit round 1 after the cutover ([2d22a588](https://github.com/meshsat/meshsat-hub/commit/2d22a5882aebabbbdef99181a12144ec772df952))
+- **authentik**: dark card container, hide the injected omoikane sky canvas ([ed3f6d6e](https://github.com/meshsat/meshsat-hub/commit/ed3f6d6e779dd0c56a267755915cd6601c0135a5))
+- **nats**: explicit permissions for the shared user so a reload does not crash nats-server ([12fee660](https://github.com/meshsat/meshsat-hub/commit/12fee66064be06481f59b237dc59ad843de24bfd))
+- **ci**: keep the deploy stage for bump\_k8s\_pin; lint fixes from the post-cutover MRs ([6d7881e2](https://github.com/meshsat/meshsat-hub/commit/6d7881e2cf03e38462f63905b210cfafc091113c))
+- **audit**: verify the retained chain segment after retention purged its head ([e0441c86](https://github.com/meshsat/meshsat-hub/commit/e0441c86d4621274f30a50be0844715d0637e030))
+- **store**: audit chain verification read zero entries on mariadb and postgres ([09137a30](https://github.com/meshsat/meshsat-hub/commit/09137a300cef686c5b278f21c82d768e45ecf560))
+- **authentik**: give the signup notification rule a destination ([8a002b2c](https://github.com/meshsat/meshsat-hub/commit/8a002b2c2548c959e62c5794ec982b33079a5c82))
+- **authentik**: report the enrollment email-verified marker in the email scope ([e98a635a](https://github.com/meshsat/meshsat-hub/commit/e98a635a3f34dd663237988d785e48981f80637d))
+- **k8s**: NATS password variable, OAuth2 grant types, tolerant approval mail ([67506189](https://github.com/meshsat/meshsat-hub/commit/675061891ca392b7dfbb3c5ad2b6c3ae299d31fb))
+- **bus**: redact broker credentials in logs and stop overriding the MQTT URL on k8s ([4d8277df](https://github.com/meshsat/meshsat-hub/commit/4d8277df32bcab0ccad47f9286d5f05f715c1cfd))
+- **deps**: bump golang.org/x/crypto to v0.55.0 and x/net to v0.57.0 ([890685b5](https://github.com/meshsat/meshsat-hub/commit/890685b5b34581b86a85531b7f75bd7e8cba182b))
+- **authentik**: validate the Matrix ID from either prompt\_data key shape ([4f35ce47](https://github.com/meshsat/meshsat-hub/commit/4f35ce47727621720e75844bee5b1838cae51946))
+- **k8s**: authentik 2026.8 ClientType import, wrapper grep exit codes, phase 3 notes ([5491282e](https://github.com/meshsat/meshsat-hub/commit/5491282e3de8bc0491fd0fb67c7add91df7b9135))
+- **k8s**: edge auth backend health checks a static asset, not /-/health/live/ ([959a5735](https://github.com/meshsat/meshsat-hub/commit/959a5735d8378ff4124bc690b7d33d4330a49e5f))
+- **k8s**: relay health checks via the NATS monitor port ([fd0b3f5c](https://github.com/meshsat/meshsat-hub/commit/fd0b3f5cf42e24860bd9fe4215123d1c1a252bcd))
+- **security**: annotate operator-path file access for gosec v2.29.0 G703 ([3095a490](https://github.com/meshsat/meshsat-hub/commit/3095a490918550ebc7f1e471f0db393161b2a1af))
+- **security**: inline path cleaning so gosec v2.29.0 sees the sanitizer ([12a52f05](https://github.com/meshsat/meshsat-hub/commit/12a52f0596d67d207b91d34e4f82d558913a2661))
+- **security**: make the gosec HIGH gate real and resolve its 84 findings ([0be356ab](https://github.com/meshsat/meshsat-hub/commit/0be356ab4b3442ad040842845a6db4d61f71847b))
 - **message**: stable inbound message IDs, duplicate insert is a no-op ([f7390932](https://github.com/meshsat/meshsat-hub/commit/f73909325e233d8b4b24d44b8d8db3643c9f18e3))
 - **auth**: on-curve check via crypto/ecdh, lint cleanups ([8597ac26](https://github.com/meshsat/meshsat-hub/commit/8597ac2687fe0761f3d88192e642b74e01f45996))
 - **leader**: compile the Lease elector unconditionally, never leader on error ([20445365](https://github.com/meshsat/meshsat-hub/commit/204453656bbd5c711e66dad1c7e7f53c2250c80d))
