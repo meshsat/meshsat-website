@@ -4,7 +4,6 @@ params:
   description: "Open source gateway bridging Meshtastic LoRa, Iridium satellite, cellular SMS, APRS and TAK over a Reticulum routing layer. Runs on a Raspberry Pi."
   author: "MeshSat"
   contact_email: "hello@meshsat.net"
-  beta_access_email: "beta-access-hub@meshsat.net"
   github: "https://github.com/meshsat/meshsat"
   kofi_url: "https://ko-fi.com/X2S326G23T"
   x_url: "https://x.com/meshsat"
@@ -16,6 +15,9 @@ params:
   facebook_url: "https://www.facebook.com/meshsat"
   x_handle: "@meshsat"
   hub_url: "https://hub.meshsat.net"
+  # The authentik enrollment flow. Signup is open; an owner approves each account
+  # before it activates, which the Hub card says out loud (MESHSAT-995).
+  signup_url: "https://auth.meshsat.net/if/flow/meshsat-enrollment/"
   docs_url: "https://docs.meshsat.net"
   install_url: "https://get.meshsat.net"
 defaultContentLanguage: en

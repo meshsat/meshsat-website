@@ -1,7 +1,7 @@
 ---
 title: "Hub"
 description: "MeshSat Hub changelog: fleet management platform releases."
-tagline: "Fleet management platform, private beta"
+tagline: "Fleet management platform, open to sign up"
 weight: 2
 changelog:
   tags: 0
@@ -16,8 +16,8 @@ changelog:
 Generated from the commit history of
 [meshsat-hub](https://github.com/meshsat/meshsat-hub): features and fixes,
 newest first, one section per tag. Untagged work on the main branch is listed
-under Unreleased. The Hub runs as a private beta on our own infrastructure and
-is not launched.
+under Unreleased. The Hub is open: create an account and we review it before
+it goes live.
 
 <!-- generated:begin -->
 ## Unreleased (main, last change 2026-09-09)
