@@ -1,10 +1,32 @@
 # MeshSat Hub
 
-MeshSat Hub is a multi-tenant fleet management platform for satellite-connected field devices. It ingests messages from Iridium and Globalstar, provides a web dashboard with live mapping, and bridges to TAK, APRS-IS, webhooks, and push notifications.
+MeshSat Hub is the hosted fleet manager at [hub.meshsat.net](https://hub.meshsat.net). One place
+to watch every bridge and device you run: a live map, the full message log, routing between
+bearers, SOS escalation and a tamper-evident audit log.
 
-**The Hub is open.** It runs as a hosted service at [hub.meshsat.net](https://hub.meshsat.net): [create an account](https://auth.meshsat.net/if/flow/meshsat-enrollment/), we review it before it goes live, and your first sign-in puts you on the free plan. See [Accounts and plans](/hub/accounts) for what each plan allows.
+You do not install it to use it. [Create an account](https://auth.meshsat.net/if/flow/meshsat-enrollment/),
+we review it before it goes live, and your first sign-in puts you on the free plan of four
+devices.
 
-The rest of this page describes the Hub as software, for anyone deploying their own.
+## Start here
+
+| | |
+|---|---|
+| [Accounts and plans](/hub/accounts) | Signing up, what each plan allows, upgrading, lapsing |
+| [Connect a bridge](/hub/connect-a-bridge) | The one thing to do first |
+| [Devices](/hub/devices) | Registering them, and what counts against your plan |
+| [Map and messages](/hub/map-and-messages) | The day to day surface |
+| [SOS and escalation](/hub/sos-and-escalation) | Who gets told, and how to test it |
+| [Provider accounts](/hub/provider-accounts) | Your own Cloudloop, Rock7 and Twilio |
+| [Your team](/hub/team) | Invites and roles |
+| [Your data](/hub/your-data) | Export, audit log, closing the account |
+| [Hub API](/hub/api) | Doing all of it from a script |
+
+## Running your own Hub
+
+Everything below this line is for deploying your own instance rather than using the hosted one.
+If you are a customer at hub.meshsat.net, none of it applies to you and none of these settings
+are yours to change.
 
 ## How Hub differs from Bridge
 
