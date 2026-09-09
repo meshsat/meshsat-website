@@ -17,64 +17,122 @@ export default defineConfig({
   themeConfig: {
     logo: { light: '/logo-light.png', dark: '/logo-dark.png', alt: '' },
     nav: [
-      { text: 'Guide', link: '/guide/' },
+      { text: 'Bridge', link: '/guide/getting-started' },
       { text: 'Hub', link: '/hub/' },
-      { text: 'API Reference', link: '/api/' },
-      { text: 'Changelog', link: 'https://gitlab.nuclearlighters.net/products/cubeos/meshsat/-/blob/main/CHANGELOG.md' },
+      { text: 'Android', link: '/android/' },
+      { text: 'Reference', link: '/api/' },
+      { text: 'Changelog', link: 'https://meshsat.net/changelog/' },
     ],
 
-    sidebar: [
-      {
-        text: 'Getting Started',
-        items: [
-          { text: 'Introduction', link: '/guide/' },
-          { text: 'Installation', link: '/guide/installation' },
-          { text: 'Quick Start', link: '/guide/quick-start' },
-          { text: 'Configuration', link: '/guide/configuration' },
-        ],
-      },
-      {
-        text: 'Transports',
-        items: [
-          { text: 'Overview', link: '/transports/' },
-          { text: 'Meshtastic', link: '/transports/meshtastic' },
-          { text: 'Iridium SBD', link: '/transports/iridium-sbd' },
-          { text: 'Iridium IMT', link: '/transports/iridium-imt' },
-          { text: 'Cellular', link: '/transports/cellular' },
-          { text: 'ZigBee', link: '/transports/zigbee' },
-          { text: 'MQTT', link: '/transports/mqtt' },
-          { text: 'Webhooks', link: '/transports/webhooks' },
-          { text: 'APRS', link: '/transports/aprs' },
-          { text: 'TAK', link: '/transports/tak' },
-        ],
-      },
-      {
-        text: 'Architecture',
-        items: [
-          { text: 'Overview', link: '/architecture/' },
-          { text: 'Policy Engine', link: '/architecture/policy-engine' },
-          { text: 'Transform Pipeline', link: '/architecture/transform-pipeline' },
-          { text: 'Pass Scheduler', link: '/architecture/pass-scheduler' },
-          { text: 'Dead Letter Queue', link: '/architecture/dead-letter-queue' },
-        ],
-      },
-      {
-        text: 'Hub',
-        items: [
-          { text: 'Overview', link: '/hub/' },
-          { text: 'Accounts and plans', link: '/hub/accounts' },
-          { text: 'Authentication', link: '/hub/authentication' },
-          { text: 'Tenants', link: '/hub/tenants' },
-          { text: 'API Keys', link: '/hub/api-keys' },
-        ],
-      },
-      {
-        text: 'API Reference',
-        items: [
-          { text: 'REST API', link: '/api/' },
-        ],
-      },
-    ],
+    sidebar: {
+      '/guide/': [
+        {
+          text: 'Bridge',
+          items: [
+            { text: 'Start here', link: '/guide/getting-started' },
+            { text: 'What MeshSat is', link: '/guide/' },
+            { text: 'Installation', link: '/guide/installation' },
+            { text: 'Quick Start', link: '/guide/quick-start' },
+            { text: 'Configuration', link: '/guide/configuration' },
+            { text: 'Hardware', link: '/guide/hardware' },
+          ],
+        },
+        {
+          text: 'Features',
+          items: [
+            { text: 'Access rules', link: '/guide/features/access-rules' },
+            { text: 'Compression', link: '/guide/features/compression' },
+            { text: 'Failover', link: '/guide/features/failover' },
+            { text: 'Field intelligence', link: '/guide/features/field-intelligence' },
+            { text: 'Satellite passes', link: '/guide/features/passes' },
+            { text: 'Reticulum', link: '/guide/features/reticulum' },
+            { text: 'Transforms', link: '/guide/features/transforms' },
+          ],
+        },
+      ],
+
+      '/hub/': [
+        {
+          text: 'Using the Hub',
+          items: [
+            { text: 'Overview', link: '/hub/' },
+            { text: 'Accounts and plans', link: '/hub/accounts' },
+            { text: 'API keys', link: '/hub/api-keys' },
+          ],
+        },
+        {
+          text: 'Running your own',
+          items: [
+            { text: 'Authentication', link: '/hub/authentication' },
+            { text: 'Multi-tenancy', link: '/hub/tenants' },
+            { text: 'Configuration', link: '/reference/hub-configuration' },
+          ],
+        },
+      ],
+
+      '/android/': [
+        {
+          text: 'Android',
+          items: [
+            { text: 'Overview', link: '/android/' },
+          ],
+        },
+      ],
+
+      '/transports/': [
+        {
+          text: 'Transports',
+          items: [
+            { text: 'Overview', link: '/transports/' },
+            { text: 'Meshtastic', link: '/transports/meshtastic' },
+            { text: 'Iridium SBD', link: '/transports/iridium-sbd' },
+            { text: 'Iridium IMT', link: '/transports/iridium-imt' },
+            { text: 'Cellular', link: '/transports/cellular' },
+            { text: 'ZigBee', link: '/transports/zigbee' },
+            { text: 'MQTT', link: '/transports/mqtt' },
+            { text: 'Webhooks', link: '/transports/webhooks' },
+            { text: 'APRS', link: '/transports/aprs' },
+            { text: 'TAK', link: '/transports/tak' },
+          ],
+        },
+      ],
+
+      '/architecture/': [
+        {
+          text: 'Architecture',
+          items: [
+            { text: 'Overview', link: '/architecture/' },
+            { text: 'Policy engine', link: '/architecture/policy-engine' },
+            { text: 'Transform pipeline', link: '/architecture/transform-pipeline' },
+            { text: 'Pass scheduler', link: '/architecture/pass-scheduler' },
+            { text: 'Dead letter queue', link: '/architecture/dead-letter-queue' },
+          ],
+        },
+      ],
+
+      '/': [
+        {
+          text: 'Bridge API',
+          items: [
+            { text: 'Overview', link: '/api/' },
+            { text: 'Interfaces', link: '/api/interfaces' },
+            { text: 'Messages', link: '/api/messages' },
+            { text: 'Rules', link: '/api/rules' },
+            { text: 'Config', link: '/api/config' },
+            { text: 'Deliveries', link: '/api/deliveries' },
+          ],
+        },
+        {
+          text: 'Reference',
+          items: [
+            { text: 'Environment variables', link: '/reference/environment-variables' },
+            { text: 'Hub configuration', link: '/reference/hub-configuration' },
+            { text: 'Database', link: '/reference/database' },
+            { text: 'Ports', link: '/reference/ports' },
+          ],
+        },
+      ],
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/meshsat/meshsat' },
