@@ -177,6 +177,22 @@ verify:site:
   rules: !reference [.rules-main-deploy, rules]
 
 # -----------------------------------------------------------------------------
+# VERIFY:DOCS — link gates. BLOCKS the docs deploy on purpose.
+# The docs had no gate at all while the site had one, which is how a sidebar
+# entry pointing at a page that does not exist rendered a 404 link on every page
+# of docs.meshsat.net. Runs on the source tree, not the build, so it needs no
+# artifacts. Logic lives in scripts/verify-docs.sh so it can be run locally.
+# -----------------------------------------------------------------------------
+verify:docs:
+  stage: build
+  image: $HUGO_IMAGE
+  tags: [docker]
+  script:
+    - ./scripts/verify-docs.sh docs
+  needs: []
+  rules: !reference [.rules-main-deploy, rules]
+
+# -----------------------------------------------------------------------------
 # DOCKER — Build and push container images to GHCR
 # -----------------------------------------------------------------------------
 docker:site:
@@ -212,6 +228,7 @@ docker:docs:
   needs:
     - job: build:docs
       artifacts: true
+    - job: verify:docs
   rules: !reference [.rules-main-deploy, rules]
 
 docker:install:
