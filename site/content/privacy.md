@@ -9,9 +9,11 @@ description: "What MeshSat collects, why, who else sees it, and how to get it ba
 
 Three products, three very different answers. The Bridge and the Android app run on your hardware and send us nothing. The Hub is a service we operate, so this policy is mostly about the Hub.
 
+<!--more-->
+
 ### Who is responsible
 
-MeshSat, operated from the Netherlands, is the controller for data held in MeshSat Hub and on meshsat.net. Contact: [hello@meshsat.net](mailto:hello@meshsat.net). The operating entity is being registered and will be named here once it is.
+The controller for personal data held in MeshSat Hub and on meshsat.net is Elli.Z.G., a sole proprietorship registered in Leiden, the Netherlands, Chamber of Commerce number 99812584, trading as MeshSat. Contact: [hello@meshsat.net](mailto:hello@meshsat.net).
 
 ### meshsat.net
 
