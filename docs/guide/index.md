@@ -18,17 +18,19 @@ The standalone gateway. A single Go binary that runs on a Raspberry Pi (or any A
 
 ### MeshSat Hub
 
-The multi-tenant SaaS platform. Hub manages fleets of Bridge instances across multiple organizations. It provides centralized authentication, tenant isolation, API key management, and aggregated monitoring.
+The hosted fleet manager at [hub.meshsat.net](https://hub.meshsat.net). One place to watch every bridge and device you run: live map, message history, routing between bearers, SOS escalation and an audit log. You bring your own satellite and SMS accounts, so your airtime stays yours.
 
-- OAuth2/OIDC authentication
-- Multi-tenant with full data isolation
-- NATS and MQTT message bus
-- MariaDB Galera cluster for shared state
-- Per-tenant SQLite for message storage
+- Free for four devices and bridges, paid plans above that
+- Live map and message log across the whole fleet
+- SOS escalation chains and a dead man's switch
+- Your own Cloudloop, Rock7 and Twilio credentials, encrypted per account
+- [Accounts and plans](/hub/accounts) covers signing up and what each plan allows
+
+You can also run your own Hub; see [Authentication](/hub/authentication) and [Hub configuration](/reference/hub-configuration).
 
 ### MeshSat Android
 
-The mobile gateway. An Android app that turns a phone into a portable MeshSat node using BLE for Meshtastic, SPP for Iridium, and native SMS for cellular.
+The mobile gateway. An Android app that turns a phone into a portable MeshSat node using BLE for Meshtastic, SPP for Iridium, and native SMS for cellular. See [Android](/android/).
 
 - BLE mesh networking with Meshtastic devices
 - SPP serial for Iridium satellite modems
@@ -41,4 +43,5 @@ The mobile gateway. An Android app that turns a phone into a portable MeshSat no
 - [Installation](/guide/installation) — Get MeshSat running on your hardware
 - [Quick Start](/guide/quick-start) — Connect your first device and send a test message
 - [Configuration](/guide/configuration) — Tune transports, policies, and transforms
-- [Transports](/transports/) — Explore all supported transport types
+- [Transports](/transports/) — every bearer the router speaks
+- [The Hub](/hub/accounts) — the hosted fleet manager, and what it costs
