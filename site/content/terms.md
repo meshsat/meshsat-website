@@ -50,6 +50,8 @@ Subscriptions are taken through [Ko-fi](https://ko-fi.com/X2S326G23T), which han
 | Fleet | 100 | EUR 29 per month |
 | Custom | agreed with us | on request |
 
+Those are the final amounts you pay. Any VAT is included in them, so nothing is added at checkout.
+
 The number is a combined ceiling on registered devices and bridges. It limits how many you may add. It does not limit messages, and it does not throttle anything you have already registered.
 
 A payment extends your plan by 32 days from the later of today or your current expiry date. That is deliberately more than a calendar month: it absorbs a late payment notification without dropping you, and paying early adds to your existing time rather than replacing it.
