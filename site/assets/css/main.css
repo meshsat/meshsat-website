@@ -930,70 +930,6 @@ img {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* ---------- Pricing ---------- */
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
-}
-
-.pricing-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.pricing-card-highlight {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 30px var(--color-primary-glow);
-    position: relative;
-}
-
-.pricing-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-md);
-}
-
-.pricing-price {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: var(--space-lg);
-    color: var(--color-primary);
-}
-
-.pricing-price span {
-    font-size: 1rem;
-    color: var(--color-text-muted);
-    font-family: var(--font-sans);
-    font-weight: 400;
-}
-
-.pricing-features {
-    list-style: none;
-    text-align: left;
-    margin-bottom: var(--space-xl);
-    flex-grow: 1;
-}
-
-.pricing-features li {
-    padding: var(--space-sm) 0;
-    border-bottom: 1px solid var(--color-border);
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-}
-
-.pricing-features li:last-child {
-    border-bottom: none;
-}
-
-.pricing-card .btn {
-    width: 100%;
-}
 
 /* ---------- Use Cases ---------- */
 .use-cases-grid {
@@ -1699,6 +1635,13 @@ img {
     color: var(--color-warning);
 }
 
+/* "Open" is not a message state, so it does not borrow --color-success. State
+   colours here mean delivered and failed and nothing else. Brand orange instead. */
+.badge-open {
+    background: var(--color-primary-glow);
+    color: var(--color-primary);
+}
+
 /* Section status line (badge + note at the top of a system card). Its only
    consumer is the Hub card; it must flow normally after the card heading. */
 .section-status {
@@ -1773,49 +1716,6 @@ img {
     margin-left: auto;
 }
 
-/* Pricing (linter names) */
-.pricing-name {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-md);
-}
-
-.pricing-period {
-    font-size: 1rem;
-    color: var(--color-text-muted);
-    font-family: var(--font-sans);
-    font-weight: 400;
-}
-
-.pricing-card {
-    transition: all 0.3s;
-}
-
-.pricing-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-.pricing-card-featured {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 30px rgba(45, 212, 191, 0.15), 0 8px 32px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.pricing-card-featured::after {
-    content: 'Most Popular';
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-primary);
-    color: #000;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.2rem 0.75rem;
-    border-radius: 999px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
 
 .btn-outline {
     background: transparent;
@@ -2678,9 +2578,6 @@ img {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-    .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
@@ -2747,9 +2644,6 @@ img {
         grid-template-columns: 1fr;
     }
 
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
 
     .footer-grid {
         grid-template-columns: 1fr;
@@ -3083,7 +2977,7 @@ img {
 .reason-card p,
 .system-card p { color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.6; }
 
-/* .btn-outline is width:100% for the old pricing cards; scope it back. */
+/* .btn-outline is width:100% by inheritance; scope it back for inline rows. */
 .system-card .btn-outline { width: auto; margin-top: var(--space-md); }
 
 .table-note,
@@ -3824,4 +3718,89 @@ img {
     .cta-grid { align-items: stretch; }
     .cta-start { display: flex; flex-direction: column; }
     .cta-start .table-note { margin-top: auto; padding-top: var(--space-lg); }
+}
+
+
+/* ---------- Plans (MESHSAT-995) ----------
+   A manifest, not a card grid. Every plan carries every feature and only one
+   number changes, so the figures are the whole design: one right-aligned column
+   of tabular numerals in the display mono, the same readout language as the hero
+   trace. Deliberately no tier cards, no "most popular" badge, no hover lift and
+   no entrance animation. */
+.plans-section .section-head { text-align: left; }
+.plans-section .section-subtitle { margin-left: 0; max-width: 62ch; }
+
+.plans {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-2xl);
+}
+
+.plans th,
+.plans td {
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    vertical-align: baseline;
+}
+
+.plans thead th {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    border-bottom-color: var(--color-border-light);
+}
+
+.plans tbody th {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-text);
+    white-space: nowrap;
+}
+
+.plans-count,
+.plans-price { text-align: right; }
+
+.plans-count { width: 42%; }
+.plans-price { width: 30%; color: var(--color-text-muted); font-size: 0.95rem; }
+.plans-price a { color: var(--color-text-muted); text-decoration: underline; }
+.plans-price a:hover { color: var(--color-primary); }
+
+/* The one number that changes between plans. */
+.plans-n {
+    font-family: var(--font-display);
+    font-variant-numeric: tabular-nums;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-primary);
+}
+
+/* "100+" is a boundary, not a count, so it is stated quietly. */
+.plans-n-open {
+    font-size: 1.4rem;
+    color: var(--color-text-muted);
+}
+
+.plans-notes {
+    margin-top: var(--space-xl);
+    display: grid;
+    gap: var(--space-md);
+    max-width: 68ch;
+}
+
+.plans-notes p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+    .plans-n { font-size: 1.8rem; }
+    .plans-count { width: 34%; }
+    .plans-price { width: 34%; font-size: 0.85rem; }
+    .plans thead th { font-size: 0.72rem; }
 }

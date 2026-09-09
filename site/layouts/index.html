@@ -189,6 +189,61 @@
     </div>
 </section>
 
+{{/* 5b. PLANS — the Hub is a paid service now.
+
+     Deliberately NOT a card grid. Every plan carries every feature; the only
+     thing that differs is one number, so a feature checklist would imply
+     differences that do not exist and this site has a contract against that.
+     The figures are the visual event: one right-aligned column of tabular
+     numerals in the display mono, which is the same readout language as the
+     hero trace. No "most popular" badge, no hover lift, no entrance animation. */}}
+<section id="plans" class="section plans-section">
+    <div class="container">
+        <div class="section-head">
+            <h2 class="section-title">{{ i18n "plans_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "plans_sub" }}</p>
+        </div>
+
+        <table class="plans">
+            <caption class="visually-hidden">{{ i18n "plans_sub" }}</caption>
+            <thead>
+                <tr>
+                    <th scope="col">{{ i18n "plans_title" }}</th>
+                    <th scope="col" class="plans-count">{{ i18n "plans_col" }}</th>
+                    <th scope="col" class="plans-price">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">{{ i18n "plan_free" }}</th>
+                    <td class="plans-count"><span class="plans-n">4</span></td>
+                    <td class="plans-price">{{ i18n "plan_free_price" }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">{{ i18n "plan_crew" }}</th>
+                    <td class="plans-count"><span class="plans-n">24</span></td>
+                    <td class="plans-price">{{ i18n "plan_crew_price" }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">{{ i18n "plan_fleet" }}</th>
+                    <td class="plans-count"><span class="plans-n">100</span></td>
+                    <td class="plans-price">{{ i18n "plan_fleet_price" }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">{{ i18n "plan_more" }}</th>
+                    <td class="plans-count"><span class="plans-n plans-n-open">100+</span></td>
+                    <td class="plans-price"><a href="mailto:{{ .Site.Params.contact_email }}?subject=MeshSat%20Hub%3A%20custom%20plan">{{ i18n "plan_more_price" }}</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="plans-notes">
+            <p>{{ i18n "plans_keeps" }}</p>
+            <p>{{ i18n "plans_airtime" }}</p>
+        </div>
+    </div>
+</section>
+
 {{/* 6. START — the closing workbench: install, watch, and the rest of the system.
      #video and #hub live here as anchored blocks since MESHSAT-732. */}}
 <section class="section cta-section">
@@ -242,13 +297,16 @@
             </div>
 
             <div class="artifact" id="hub">
-                <div class="artifact-head"><h3>MeshSat Hub</h3><span class="badge badge-beta">{{ i18n "hub_badge" }}</span></div>
+                <div class="artifact-head"><h3>MeshSat Hub</h3><span class="badge badge-open">{{ i18n "hub_badge" }}</span></div>
                 <div class="artifact-body">
                     <p class="section-status">
                         <span class="section-status-text">{{ i18n "hub_status" }}</span>
                     </p>
                     <p>{{ i18n "hub_p" }}</p>
-                    <a href="mailto:{{ .Site.Params.beta_access_email }}?subject=MeshSat%20Hub%3A%20demo%20%2F%20beta%20access" class="btn btn-outline">{{ i18n "hub_cta" }}</a>
+                    <div class="artifact-actions">
+                        <a href="{{ .Site.Params.signup_url }}" class="btn btn-outline" rel="noopener">{{ i18n "hub_cta" }}</a>
+                        <a href="{{ .Site.Params.hub_url }}" class="btn btn-outline" rel="noopener">{{ i18n "hub_signin" }}</a>
+                    </div>
                 </div>
             </div>
 

@@ -18,6 +18,7 @@ export default defineConfig({
     logo: { light: '/logo-light.png', dark: '/logo-dark.png', alt: '' },
     nav: [
       { text: 'Guide', link: '/guide/' },
+      { text: 'Hub', link: '/hub/' },
       { text: 'API Reference', link: '/api/' },
       { text: 'Changelog', link: 'https://gitlab.nuclearlighters.net/products/cubeos/meshsat/-/blob/main/CHANGELOG.md' },
     ],
@@ -61,6 +62,7 @@ export default defineConfig({
         text: 'Hub',
         items: [
           { text: 'Overview', link: '/hub/' },
+          { text: 'Accounts and plans', link: '/hub/accounts' },
           { text: 'Authentication', link: '/hub/authentication' },
           { text: 'Tenants', link: '/hub/tenants' },
           { text: 'API Keys', link: '/hub/api-keys' },
