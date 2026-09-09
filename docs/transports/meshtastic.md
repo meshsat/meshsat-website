@@ -1,5 +1,5 @@
 # Meshtastic
 
 ::: warning Work in Progress
-This page is under construction. See the [guide](/guide/transports/meshtastic) for now.
+This page is not written yet. The transport works; the documentation for it does not exist.
 :::

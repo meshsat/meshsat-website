@@ -17,7 +17,7 @@ Response includes the key once — store it securely:
 {
   "id": "abc123",
   "label": "CI pipeline",
-  "key": "meshsat_live_abc123...",
+  "key": "meshsat_a1b2c3d4...",
   "role": "admin",
   "created_at": "2026-03-23T00:00:00Z"
 }
@@ -27,7 +27,7 @@ Response includes the key once — store it securely:
 
 ```bash
 curl https://hub.meshsat.net/api/devices \
-  -H "Authorization: Bearer meshsat_live_abc123..."
+  -H "Authorization: Bearer meshsat_a1b2c3d4..."
 ```
 
 ## List and delete
