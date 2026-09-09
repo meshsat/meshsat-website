@@ -1636,10 +1636,17 @@ img {
 }
 
 /* "Open" is not a message state, so it does not borrow --color-success. State
-   colours here mean delivered and failed and nothing else. Brand orange instead. */
+   colours here mean delivered and failed and nothing else. Brand orange instead.
+
+   The ink is --color-primary-hover, NOT --color-primary. The pill's own tinted
+   background composites to #402616 in dark and #F9EDE7 in light, and the plain
+   primary lands at 4.18:1 and 4.30:1 on those, both under AA. Computed against
+   the page ground it looks fine, which is the trap this file already warns about
+   for .badge-stable and .badge-beta. The hover token is a genuine pass on the
+   composited pill in both themes: 5.4:1 dark, 5.9:1 light. */
 .badge-open {
     background: var(--color-primary-glow);
-    color: var(--color-primary);
+    color: var(--color-primary-hover);
 }
 
 /* Section status line (badge + note at the top of a system card). Its only
