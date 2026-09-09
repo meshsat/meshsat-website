@@ -14,7 +14,7 @@ MeshSat connects heterogeneous communication systems through a unified routing l
 | **Hub** | Multi-tenant fleet management | Hosted at [hub.meshsat.net](https://hub.meshsat.net), [create an account](https://auth.meshsat.net/if/flow/meshsat-enrollment/) |
 | **Android** | Mobile gateway app | Google Play (coming soon) |
 
-This documentation covers the **Bridge** — the open-source standalone gateway.
+These pages cover all three. The Bridge sections are the largest because it is the oldest and the most hands-on; if you are here for the hosted Hub, start at [Accounts and plans](/hub/accounts).
 
 ## Quick Install
 
@@ -36,4 +36,4 @@ This installs MeshSat as a Docker container in standalone mode. See the [Install
 - [Installation](./installation.md) — detailed setup options
 - [Configuration](./configuration.md) — environment variables and settings
 - [Hardware Setup](./hardware.md) — supported devices and wiring
-- [Transports](./transports/meshtastic.md) — per-transport guides
+- [Transports](/transports/) — every bearer the router speaks

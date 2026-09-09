@@ -72,7 +72,6 @@ export default defineConfig({
         text: 'API Reference',
         items: [
           { text: 'REST API', link: '/api/' },
-          { text: 'WebSocket', link: '/api/websocket' },
         ],
       },
     ],
