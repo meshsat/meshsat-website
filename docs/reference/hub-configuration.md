@@ -15,9 +15,17 @@ MeshSat Hub is configured via environment variables with the `HUB_*` prefix, or 
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `HUB_DATABASE_URL` | — | MariaDB DSN (cluster/k8s mode) |
-| `HUB_REDIS_URL` | — | Redis URL (cluster/k8s mode) |
+| `HUB_DB_DRIVER` | sniffed | `sqlite` or `postgres` |
+| `HUB_DATABASE_URL` | — | PostgreSQL DSN (cluster and kubernetes modes) |
+| `HUB_SQLITE_PATH` | `/data/hub.db` | SQLite file (standalone mode) |
+| `HUB_REDIS_URL` | — | Redis or KeyDB URL (cluster and kubernetes modes) |
 | `HUB_NATS_URL` | — | NATS URL |
+
+Without `HUB_DB_DRIVER` the driver is worked out from the rest: a `postgres://` DSN means
+Postgres, so does `HUB_MODE=cluster` or `kubernetes`, and anything else means SQLite. MariaDB and
+Galera are no longer supported.
+
+See [Database](/reference/database) for what each engine is used for.
 
 ## MQTT
 
