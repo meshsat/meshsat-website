@@ -1,6 +1,6 @@
 # Transports
 
-MeshSat supports 10 transport types across four categories. Each transport handles the protocol-specific details of sending and receiving messages, while the policy engine handles routing between them.
+MeshSat routes across eleven transports. Nine are listed below; Reticulum TCP and direct serial are also supported and are not documented here yet. Each transport handles the protocol-specific details of sending and receiving messages, while the policy engine handles routing between them.
 
 ## Mesh Networks
 
