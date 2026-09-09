@@ -1,5 +1,10 @@
 # API Keys
 
+::: tip Where the token comes from
+The examples below need a key that already exists. Create your first one in the Hub under
+**API keys**; after that a key with the owner role can mint more. See [Hub API](/hub/api).
+:::
+
 API keys provide programmatic access to the Hub API.
 
 ## Create a key
