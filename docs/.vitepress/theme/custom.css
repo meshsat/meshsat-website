@@ -54,3 +54,28 @@
   --vp-button-brand-active-text: #14120F;
   --vp-button-brand-active-bg: #E85A04;
 }
+
+/**
+ * A link inside a danger callout, on hover (MESHSAT-995).
+ *
+ * VitePress paints hovered links in a danger block with --vp-c-danger-2, which
+ * is tuned for the page background rather than for the block's own tinted one.
+ * The pill composites to #FDE4E8 in light and #3E2129 in dark, and the stock
+ * hover colours land at 3.89:1 and 3.88:1 there. Both fail AA.
+ *
+ * axe does not evaluate :hover, so this would never have shown up in the sweep
+ * that keeps this site at zero violations. It is still text a reader has to
+ * read. Resting state is fine: #B8272C measures 5.18:1 and #F66F81 5.16:1.
+ *
+ *   light  #9B1F24 on #FDE4E8 6.67:1   (on #FFFFFF 8.03:1)
+ *   dark   #FF9AA6 on #3E2129 7.17:1   (on #1B1B1F 8.52:1)
+ */
+.custom-block.danger a:hover,
+.custom-block.danger a:hover > code {
+  color: #9B1F24;
+}
+
+.dark .custom-block.danger a:hover,
+.dark .custom-block.danger a:hover > code {
+  color: #FF9AA6;
+}
