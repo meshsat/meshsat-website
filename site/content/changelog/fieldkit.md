@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 332
-  unreleased_since: "2026-09-09"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-09"
+  unreleased_count: 388
+  unreleased_since: "2026-09-10"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-10"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,10 +28,28 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-09)
+## Unreleased (main, last change 2026-09-10)
 
 ### Features
 
+- **tools**: the partition's regions can be routed one at a time, each locking the last ([19b1c322](https://github.com/meshsat/meshsat-fieldkit/commit/19b1c32269359d021a973e46f61fe7e3c6c400cf))
+- **tools**: an optional coarser grid for the long pairs, off until it is measured ([1f0a0115](https://github.com/meshsat/meshsat-fieldkit/commit/1f0a01155eb3eb24033bf26a648002be872b5758))
+- **tools**: the pair pre-router lays the corridor as found when no smoothing clears ([79c7ec25](https://github.com/meshsat/meshsat-fieldkit/commit/79c7ec253e8224ba7e30c31f4880c205b3ee2739))
+- **tools**: pair\_report.py, who blocked which pair and where, counted ([b6c22aa3](https://github.com/meshsat/meshsat-fieldkit/commit/b6c22aa3d4d3e0c2d1ba97df7b7ae52e5eb0f7d2))
+- **tools**: B19, the phase that carries the I/O high-availability layer, with its chain, finish and probe profile ([384ec20e](https://github.com/meshsat/meshsat-fieldkit/commit/384ec20e48e73a85f5e4b0a7b9a31279fe3656e1))
+- **ecad**: the mesh radio is duplicated on slot 3 and the two cards share the antennas through a voted changeover ([95ca54a9](https://github.com/meshsat/meshsat-fieldkit/commit/95ca54a9b631694ec11226b1905ae55cce4538b8))
+- **tools**: the B gate checks the I/O ownership invariants, the safe states and the bearer spread ([e5a93fb0](https://github.com/meshsat/meshsat-fieldkit/commit/e5a93fb0088b84d66bc630a58f19f7bf0d58b37f))
+- **sch**: the I/O control plane, three STM32H753 supervisors on two CAN-FD fabrics with 2-of-3 majority voters ([97c436fa](https://github.com/meshsat/meshsat-fieldkit/commit/97c436fa50db294049d19ea90a4ff4032282cc5c))
+- **tools**: the host-selection switches take their place beside the hub they feed ([fbb0b1af](https://github.com/meshsat/meshsat-fieldkit/commit/fbb0b1af2ed8b2e3d064cd450601a995c4b30d5b))
+- **sch**: the per-bank USB host-selection fabric, TMUXHS4212 and TS3USB221A, with the ring and its safe state ([ace6f5e4](https://github.com/meshsat/meshsat-fieldkit/commit/ace6f5e431211cd4468699e1929c501cab15547b))
+- **cad**: the face section drawing, and the render stack follows B16 down ([a3298c18](https://github.com/meshsat/meshsat-fieldkit/commit/a3298c18a778c9d73867305555aeccc41832a21c))
+- **tools**: a corridor that cannot be found says why: the search never began, the node budget ran out, or the map has no path ([3101b1aa](https://github.com/meshsat/meshsat-fieldkit/commit/3101b1aa5e098df3685a00133a7063a22bfafe33))
+- **ecad**: P3 released, the pack BMS with the decoupling floor plan; 0 hard, 0 unrouted, 36 of 36 deliverable properties ([0a1f16a4](https://github.com/meshsat/meshsat-fieldkit/commit/0a1f16a4a71fe27e42414e4320a66faa97cd9548))
+- **tools**: a pair stub may join any point of its own net's escape, not only the via it aimed at ([62555f99](https://github.com/meshsat/meshsat-fieldkit/commit/62555f9928f0a5a863159cd5af292ec7face50b5))
+- **tools**: the pre-router lays the long pairs first; alphabetical order decided which pair got the room ([b8b6172f](https://github.com/meshsat/meshsat-fieldkit/commit/b8b6172f902ef9cb94b8a4b7a3c7120451dbf7a9))
+- **ecad**: the whole set moves to A24 B18 C9 D10 E7 P3 with the decoupling floor-plan pass ([922bf0d5](https://github.com/meshsat/meshsat-fieldkit/commit/922bf0d59c237315a092e85a8a396f3bf23fca31))
+- **tools**: the decoupling floor-plan pass in all six placement generators, and the second pass wired into every chain ([ec009ba0](https://github.com/meshsat/meshsat-fieldkit/commit/ec009ba0093557711cae5f1ebdb0c8c035b38e9d))
+- **tools**: declared decoupling takes its slot beside the pin before the packer fills the regions; wired into the D generator first ([cfd3d232](https://github.com/meshsat/meshsat-fieldkit/commit/cfd3d23287e3d796ac7591042a0c5ef8f9d46450))
 - **tools**: the E board declares its decoupling as data, thirteen entries including the buck's input loop ([c3c21600](https://github.com/meshsat/meshsat-fieldkit/commit/c3c21600cc7e8f9852f9fedf36f81df177d86d78))
 - **tools**: the B placement packs each differential pair's two series parts as a couple, pads across the pair axis, read from the netlist ([47f3d39b](https://github.com/meshsat/meshsat-fieldkit/commit/47f3d39bc037b3e9019b453dd61b117a0f04c3b3))
 - **tools**: the C board declares its decoupling as data, so the loop gate measures fifteen entries instead of none ([ac0f39af](https://github.com/meshsat/meshsat-fieldkit/commit/ac0f39af8c739ac7c6acee66ebd1f549149a4646))
@@ -183,6 +201,43 @@ appear below.
 
 ### Fixes
 
+- **tools**: the partition reconcile judges the stub router's closures like every other finish does ([610ef820](https://github.com/meshsat/meshsat-fieldkit/commit/610ef82041fab9a1bf6aae3d0f1d5b1e34ac1297))
+- **tools**: calibrate the pair expansion budget, and the mitre change is measured as neutral ([5769e87f](https://github.com/meshsat/meshsat-fieldkit/commit/5769e87fcbaeb17c9a6a45a9ea5ed2f81b637364))
+- **tools**: a right-angle corner takes the arc, not the mitre, in the pair legs ([be43f81e](https://github.com/meshsat/meshsat-fieldkit/commit/be43f81e5b310954fcd26113dc8dee94de1b3a5d))
+- **tools**: the pair budget is counted in expansions, because a clock made the pass non-reproducible ([d8493868](https://github.com/meshsat/meshsat-fieldkit/commit/d8493868c295b0b7526af3891ae3820be8f8dd81))
+- **tools**: stub\_accept refuses a closure that costs more copper than the net is worth ([2ccb7fc6](https://github.com/meshsat/meshsat-fieldkit/commit/2ccb7fc658aeb0d61dfc8d070529ea1c4ec43005))
+- **tools**: the stub router no longer asks a pad for a polygon on a layer it is not on ([376602e6](https://github.com/meshsat/meshsat-fieldkit/commit/376602e62f9f11fe9e34acfd106a7a3f0c4deb04))
+- **pcb-b**: the voted logic takes the QMX bay's underside instead of crowding the controller pockets ([4fbd0324](https://github.com/meshsat/meshsat-fieldkit/commit/4fbd03240e340744b72241d43efffb9a08a6b414))
+- **pcb-b**: R500 was listed twice when the voted logic was split three ways ([0dd7b15c](https://github.com/meshsat/meshsat-fieldkit/commit/0dd7b15c01c218d021bd9fceded1afe792211891))
+- **pcb-b**: the placement predictor went from one collision to twenty three, and the cause was mine ([2e208fba](https://github.com/meshsat/meshsat-fieldkit/commit/2e208fba8605e9f8612c02d0e4b6996c515a10ed))
+- **tools**: the pair pre-router reports each pair as it happens, not only when the pass ends ([1bea879e](https://github.com/meshsat/meshsat-fieldkit/commit/1bea879eb0e4245221a5d60c0ec52ac15afbef16))
+- **tools**: the B19 chain runs the pair pre-router with a 300 second budget per pair ([7efd252b](https://github.com/meshsat/meshsat-fieldkit/commit/7efd252b8e5b751778f5f9ffa0b76ad75e5e8a72))
+- **sch**: A22's device rail is declared at the current B16 now draws from it ([793ea7fd](https://github.com/meshsat/meshsat-fieldkit/commit/793ea7fd09a097218d9c6fde039bd228a26fdc41))
+- **sch**: a bank now outlives its module: hub, both host selects and the hub core leave the slot rail ([b22524e4](https://github.com/meshsat/meshsat-fieldkit/commit/b22524e4db7dec104177090211714f5eab122099))
+- **ecad**: three controller pockets instead of one band, both ends of each CAN fabric terminated, the gate follows the ring ([280a3a1d](https://github.com/meshsat/meshsat-fieldkit/commit/280a3a1d0b613b8ead4da8a2f105871851eb9751))
+- **ecad**: the two host-select muxes get their TI land patterns and the TMUXHS4212 its missing ground pins ([ab0e12f2](https://github.com/meshsat/meshsat-fieldkit/commit/ab0e12f221b779395643c2ce2ae13810d9a15eaf))
+- **tools**: the deliverable gate stops reading a board's own name as a stale phase, and bare lands as missing from the CPL ([ae6ec69c](https://github.com/meshsat/meshsat-fieldkit/commit/ae6ec69caa03af349a47bfc7a545028ac2bcb644))
+- **sch**: the fabric's capacitors clear the SIM blocks at C86 to C91; the generator builds and the ring reads back correct ([612860f0](https://github.com/meshsat/meshsat-fieldkit/commit/612860f07ccf00834facb2f42bd2f2646a1d863e))
+- **sch**: the four USB bridges leave the slot rails, three floating FET gates get their pull-downs, the panel controller is on slot 1's hub ([096b67cc](https://github.com/meshsat/meshsat-fieldkit/commit/096b67cc78a9ef467d2a2ac476059f2a8eac9bce))
+- **tools**: the body notch is only as deep as the window needs, and the notch test reads the courtyard, not the silk ([c2333029](https://github.com/meshsat/meshsat-fieldkit/commit/c23330299fb479e24d050eb222b119b539d0267e))
+- **sch**: the E comment goes on its own line, it had swallowed TP13 and two pull-ups; C becomes C10 for the recessed face ([44e2e2c2](https://github.com/meshsat/meshsat-fieldkit/commit/44e2e2c24f5064c531c4817681b7bc87fe1f0551))
+- **cad**: the monitor sits IN the plate with its glass level with the aluminium, per the standing ruling; a gate for proud display surfaces ([ad3b00c2](https://github.com/meshsat/meshsat-fieldkit/commit/ad3b00c2710c3be4ddb3cb3e7beb521890c48227))
+- **tools**: D defined pour() twice and the live one never removed pour islands; P had no island removal at all ([e55113ea](https://github.com/meshsat/meshsat-fieldkit/commit/e55113ea27d3d1aab96ba0bdd4ae7f08d81fe32a))
+- **cad**: the face re-spaced around the Xenarc, which is 19 mm taller than the display it replaced; a gate for two things on the plate ([6c489fc6](https://github.com/meshsat/meshsat-fieldkit/commit/6c489fc69fa0c71bbed939fcf94ad72aeae6a28a))
+- **tools**: a corridor keeps its own ends free of the behind-station mask and starts from an open block, not the first pocket that fits ([e6d5d859](https://github.com/meshsat/meshsat-fieldkit/commit/e6d5d8593c7ec558d76917937da262446b57b210))
+- **sch**: E's Geiger series resistor is in the path it was drawn for; contract 16 refuses an in-line part that is in line with nothing ([0fa39ec7](https://github.com/meshsat/meshsat-fieldkit/commit/0fa39ec7cd4232e0a3dd5098efcbd936661949f2))
+- **tools**: the dense fanout sample tests tracks only, not the pad lane; a D placement candidate can be swept from the environment ([fd096e65](https://github.com/meshsat/meshsat-fieldkit/commit/fd096e65f7029f31f491a6caacce603a3dba7173))
+- **tools**: the pre-router never leaves its two legs crossing; the stagger rule applies to pad rows, not to two-pad passives; appendix 32.83 ([ec7eca1b](https://github.com/meshsat/meshsat-fieldkit/commit/ec7eca1be02542954210a7020c138c47bca562f7))
+- **tools**: the fanout stub is sampled every 0.2 mm, not at two points; a stub's A\* frees a disc at both ends, which are its own net's copper ([9d9eac15](https://github.com/meshsat/meshsat-fieldkit/commit/9d9eac157d51136eae77cfed7f6832a8e334d006))
+- **tools**: the escape stagger never lands on the router's own limit; the pairs claim copper before the fanout; pour\_stitch armed in every finish ([0eb5d108](https://github.com/meshsat/meshsat-fieldkit/commit/0eb5d108584910beb4766b6050838c62407d8603))
+- **tools**: restore gen\_sch\_d.py, my rail-note edit had cut 350 lines out of it; the 3 percent budget is one line now ([5c243a68](https://github.com/meshsat/meshsat-fieldkit/commit/5c243a685c9aa654b954214b40dee0b7bf846d25))
+- **tools**: repair the D rail note, and the E dock's only pair is a full-speed link with no impedance target ([ba9df2ca](https://github.com/meshsat/meshsat-fieldkit/commit/ba9df2cae72f4ca922b15c3bf476969e74286e89))
+- **tools**: the D hub's port 3 resistors move 1.5 mm east; the 3.6 mm hop from U4 pin 19 had no path on any layer ([04477d3d](https://github.com/meshsat/meshsat-fieldkit/commit/04477d3dc51ba58934e747fbc757b20506a78786))
+- **tools**: the D mezzanine rail carries the budget its loads need, 3 percent, with the load list as the reason ([9e61ee3f](https://github.com/meshsat/meshsat-fieldkit/commit/9e61ee3fa7d4b674b53a9a6ce35a2ec3f32563fe))
+- **tools**: the escape-fan box was only ever the inflate, so the protection never ran; built from the courtyard edges now ([c18d936b](https://github.com/meshsat/meshsat-fieldkit/commit/c18d936bea5f1ebd0ab2da1b3bc2d90cc5a323dd))
+- **tools**: the second decoupling pass keeps out of escape fans; measured as the cause of the lost escapes, not the reservation ([299fd363](https://github.com/meshsat/meshsat-fieldkit/commit/299fd36358f30c7caf999204cc33a49b16a87381))
+- **tools**: the fan a reserved slot must avoid belongs to every escaped IC, not only 0.4 mm parts ([26825060](https://github.com/meshsat/meshsat-fieldkit/commit/26825060e181c24cda3b67c0fb784eded2a545ba))
+- **tools**: a reserved decoupling slot never sits in a fine-pitch part's escape fan, and the block imports its own os ([0e2570f7](https://github.com/meshsat/meshsat-fieldkit/commit/0e2570f78a7bfddae621c5ec6b8601194c7bfe29))
 - **tools**: the new EMCON pull-downs get a place beside the gates they protect ([c7efd6e5](https://github.com/meshsat/meshsat-fieldkit/commit/c7efd6e5712e66c69f0b5010e8d741a4ec445bad))
 - **hw**: EMCON has one driver and one sense, low silences everywhere, and a missing panel inhibits; the PoE feed loses its 24.9 ohm series resistor ([5d9efaf7](https://github.com/meshsat/meshsat-fieldkit/commit/5d9efaf71c852a01e7e34605ce4e51d0fbf5bde5))
 - **release**: the 23 wrong LCSC codes reach the deliverable BOMs; verify\_deliverable refuses a blocked code from now on ([dd7fcda2](https://github.com/meshsat/meshsat-fieldkit/commit/dd7fcda218897f85f1e38df9333957d9f3420eb8))
@@ -369,6 +424,7 @@ appear below.
 
 ### Performance
 
+- **tools**: the pair pre-router gets a wall-clock budget per pair, so a pass always ends ([2d03bbd1](https://github.com/meshsat/meshsat-fieldkit/commit/2d03bbd1f6d3f80879273fbb7d1dfc42e8e7522f))
 - **tools**: pair pre-router rasterises each pad and zone once per grow value for the whole run ([56b2a291](https://github.com/meshsat/meshsat-fieldkit/commit/56b2a2913a56bd5ee419eeb7c9d561dd548fe3ba))
 
 ## revA (2026-09-03)

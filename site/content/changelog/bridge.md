@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 776
-  unreleased_since: "2026-09-08"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-08"
+  unreleased_count: 779
+  unreleased_since: "2026-09-09"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-09"
 ---
 
 Generated from the commit history of
@@ -19,7 +19,7 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-08)
+## Unreleased (main, last change 2026-09-09)
 
 ### Features
 
@@ -368,6 +368,9 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **sos**: the dead man's switch was never wired into the shipped binary ([8371faf0](https://github.com/meshsat/meshsat/commit/8371faf07040d0c894b921530face848677067e1))
+- **zigbee**: the interface scan no longer re-probes ports a transport already owns ([38a03edc](https://github.com/meshsat/meshsat/commit/38a03edca8d469a58bb4209f21657934a28c8a4f))
+- **kiosk**: the bridge comes back after a power-on, and the kiosk follows it ([06ebbe3f](https://github.com/meshsat/meshsat/commit/06ebbe3f61d0909adba70cd27038cb98e84f8d37))
 - **ttc**: the route rows fit the panel, and every glyph sits on its wire ([6ad829d7](https://github.com/meshsat/meshsat/commit/6ad829d7bf048f3cf4a646eac3d11a232c7850dd))
 - **kiosk**: one autostart for both kits, and stop the installer flipping the panels ([124aab43](https://github.com/meshsat/meshsat/commit/124aab439c072dfaed04183f8a04c2c7b2a43d45))
 - **ttc**: shorter satellite lane text so it fits the right-hand kit's lane ([f04fa41c](https://github.com/meshsat/meshsat/commit/f04fa41c686160f6d8d6326f3f8b84bb43f3b337))
