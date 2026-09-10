@@ -70,6 +70,8 @@ If you are a consumer in the EU you have 14 days from the start of a subscriptio
 
 Outside that, payments are for the period they buy and are not refundable, because the period is already provided. If we get something badly wrong, ask anyway and we will deal with it fairly.
 
+When we refund you, we email you a credit note for it. It reverses the original invoice and the VAT included in the price, so the two documents together are the complete record for your own books. If the refund covers a whole payment, the time that payment bought comes off your plan; everything you have registered keeps working either way.
+
 ### Your data
 
 You own your data. You can export all of it at any time, from Settings, as a single archive. Provider credentials and other secrets are deliberately left out of that archive.
