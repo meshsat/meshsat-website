@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 426
+  unreleased_count: 438
   unreleased_since: "2026-09-09"
   unreleased_anchor: "unreleased-main-last-change-2026-09-09"
 ---
@@ -24,6 +24,11 @@ it goes live.
 
 ### Features
 
+- **login**: the Hub sign-in gets the meshsat.net hero ([5c0c4576](https://github.com/meshsat/meshsat-hub/commit/5c0c4576212b9d3f5e1fd25b8b49a29112fcc9ed))
+- **auth**: harden the enrollment flow now that it is public ([ffd0bab5](https://github.com/meshsat/meshsat-hub/commit/ffd0bab59c8d27d68618c7e8ea395c79ac69c2c5))
+- **auth**: the enrollment page gets meshsat.net's rolling hero ([13e9ddda](https://github.com/meshsat/meshsat-hub/commit/13e9dddaaac09b0775e482a337dc0385ba996b4d))
+- **ux**: carry the claim code to the upgrade, and link password recovery ([6d75e67a](https://github.com/meshsat/meshsat-hub/commit/6d75e67a2d178d7274a9c8f40009dcb45fbf85b9))
+- **plans**: four subscription tiers metered by device count ([f0436220](https://github.com/meshsat/meshsat-hub/commit/f0436220270fde0972f2abd4755305b86917c66f))
 - **signups**: the approval panel ([9d03902e](https://github.com/meshsat/meshsat-hub/commit/9d03902e8a3abf1ff6cfa3572a8d05476bf0da37))
 - **signups**: give the Hub its own identity at the provider ([98647f79](https://github.com/meshsat/meshsat-hub/commit/98647f79fe46661d25169eb604e744e5ca0accac))
 - **signups**: approve a beta request from the Hub ([d6d15421](https://github.com/meshsat/meshsat-hub/commit/d6d15421482df424ea9b4f0261848f837877561c))
@@ -264,6 +269,13 @@ it goes live.
 
 ### Fixes
 
+- **auth**: the enrollment hero was only half painting ([096cec09](https://github.com/meshsat/meshsat-hub/commit/096cec096e85c6d162a514f9777576cdbb023be5))
+- **security**: close what the IP allowlist was hiding, part 2 ([0e5628d4](https://github.com/meshsat/meshsat-hub/commit/0e5628d4aa84e3fc08de004cb1633a3127e41d89))
+- **security**: close what the IP allowlist was hiding, part 1 ([b46f5b09](https://github.com/meshsat/meshsat-hub/commit/b46f5b095de25c68cb6feec68634f239b29fb3bd))
+- **kofi**: a retried delivery must not buy a second month ([e54ee748](https://github.com/meshsat/meshsat-hub/commit/e54ee748ff8c309958e21ae9676d9674ae4fbbd1))
+- **kofi**: remember the payer, or every renewal loses the claim code ([0f456382](https://github.com/meshsat/meshsat-hub/commit/0f456382cf1bdb935dfa99efadc2342b8f718bc5))
+- **plans**: a new tenant starts on free, not on the unlimited beta plan ([77c8e9ee](https://github.com/meshsat/meshsat-hub/commit/77c8e9eef935ecb7cbed91eafb8c93428e6c3e66))
+- **bridge**: a birth cannot choose its own tenant ([18c67518](https://github.com/meshsat/meshsat-hub/commit/18c6751821175cf4ef1f6ccca23e6869968d08f9))
 - **auth**: stop sending MeshSat alerts from another brand's address ([25e9b64d](https://github.com/meshsat/meshsat-hub/commit/25e9b64dc4b5b70f38f76bd56326904784d7a324))
 - **rockblock**: actually verify the signature Ground Control sends ([8504c09c](https://github.com/meshsat/meshsat-hub/commit/8504c09c65403e19670890abd04e13b9553af0fc))
 - **tenant**: apply a suspension on every replica at once ([be6d538a](https://github.com/meshsat/meshsat-hub/commit/be6d538adf692e3d37b1b31e761b9cda7dc46eb9))
