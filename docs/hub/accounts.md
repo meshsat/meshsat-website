@@ -42,24 +42,25 @@ registered and never on the path a message travels.
 
 ## Upgrading
 
-Payment is a [Ko-fi membership](https://ko-fi.com/X2S326G23T).
-
-1. Open **Settings** in the Hub and copy your **claim code**.
-2. Start a Crew or Fleet membership on Ko-fi.
-3. **Put the claim code in the Ko-fi message.** This is what tells us which account paid.
+Open **Settings** in the Hub and press **Subscribe to crew** or **Subscribe to fleet**.
+That opens Stripe's checkout page, where you pay by card.
 
 Your plan changes within a second of the payment arriving.
 
-The claim code matters because people often pay from a different address than the one they
-signed up with. If you forget it and the addresses do not match, the payment reaches us,
-nothing is granted, and we have to sort it out by hand. Ko-fi only lets you send a message
-with the payment that starts a membership, so the code is needed once: every renewal after
-that is matched automatically from the address you paid with.
+There is no code to quote and nothing to copy across. The checkout session carries your
+account with it, so the payment is bound to the right account by construction, whatever
+address or card you pay with.
 
 ## Cancelling and lapsing
 
-Cancel from your Ko-fi account at any time. Cancelling stops future payments; your plan
-stays active until the end of the period you have already paid for, then returns to free.
+Cancel at any time from **Manage billing** in Settings. That opens Stripe's own portal,
+where you can cancel, change the card and read past invoices.
+
+Cancelling stops the next renewal; your plan stays active until the end of the period you
+have already paid for, then returns to free.
+
+If a payment fails, Stripe retries it over the following days. Your plan is not cancelled
+while that is happening.
 
 Returning to free does not delete anything and does not stop any device you already have.
 It only limits registering new ones.
