@@ -42,7 +42,6 @@ These are the only accounts we post from.
 <tr><td>YouTube</td><td><a href="https://www.youtube.com/@MeshSat">youtube.com/@MeshSat</a></td></tr>
 <tr><td>Facebook</td><td><a href="https://www.facebook.com/meshsat">facebook.com/meshsat</a></td></tr>
 <tr><td>Reddit</td><td><a href="https://www.reddit.com/r/meshsat/">reddit.com/r/meshsat</a></td></tr>
-<tr><td>Ko-fi</td><td><a href="https://ko-fi.com/X2S326G23T">ko-fi.com/X2S326G23T</a></td></tr>
 </tbody>
 </table>
 </div>
