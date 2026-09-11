@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 438
-  unreleased_since: "2026-09-09"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-09"
+  unreleased_count: 478
+  unreleased_since: "2026-09-11"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-11"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,26 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-09)
+## Unreleased (main, last change 2026-09-11)
 
 ### Features
 
+- **billing**: donations, and they are outside the scope of BTW ([f2b7873c](https://github.com/meshsat/meshsat-hub/commit/f2b7873c45d1fba7a1f4bd883bae64163e3e3c4c))
+- **billing**: move Stripe to the dedicated MeshSat Hub account ([cf1d11eb](https://github.com/meshsat/meshsat-hub/commit/cf1d11eb024f1b31b4a87aeda908592140031aee))
+- **billing**: Stripe is the payment provider; Ko-fi is decommissioned ([baa6ab8c](https://github.com/meshsat/meshsat-hub/commit/baa6ab8c0bc758ccc630a8966e801f62141763f0))
+- **billing**: switch Stripe on ([c50c90c7](https://github.com/meshsat/meshsat-hub/commit/c50c90c79a08a58452f1d135fad5cb69196bd109))
+- **billing**: checkout starts in the Hub, and a cancellation ends a plan ([1331d9ec](https://github.com/meshsat/meshsat-hub/commit/1331d9ecea44e531fb36d0707eaca7b804967735))
+- **stripe**: the payment provider, inert until it is configured ([e7aa50aa](https://github.com/meshsat/meshsat-hub/commit/e7aa50aa96181eda3b73bf5cea64003918e7b387))
+- **mail**: write money the way the customer's document writes it ([21efd1ec](https://github.com/meshsat/meshsat-hub/commit/21efd1eca8d936af1d5f095d4606ceea0d085a81))
+- **mail**: give Hub email the billing system's brand shell ([4d4dfad5](https://github.com/meshsat/meshsat-hub/commit/4d4dfad59fef26ccce8d3054e2c1dc3aa0dcb497))
+- **invoiceninja**: watch the sender setting, not just the tax one ([3c565510](https://github.com/meshsat/meshsat-hub/commit/3c565510439dcba0aa7f0d0c4cba0cf0b2b7091a))
+- **refunds**: money given back now leaves a credit note behind it ([d8f29b70](https://github.com/meshsat/meshsat-hub/commit/d8f29b7018caf274c8fa6fd1cbbcd363938fc9ff))
+- **vat**: a receipt follows where the buyer is, and the threshold is measured ([aab7195d](https://github.com/meshsat/meshsat-hub/commit/aab7195d2a9fd8ff651a8232ab676c0e14a49e69))
+- **enrollment**: CAPTCHA is live, and the stage has to be interactive ([1f017bca](https://github.com/meshsat/meshsat-hub/commit/1f017bcaef68289fa3e5503c12a4cc5081f50a87))
+- **admin**: money that upgraded nobody is now visible and recoverable ([b337ed1f](https://github.com/meshsat/meshsat-hub/commit/b337ed1f165669f9afb77ce0d9bad1ab91609357))
+- **mail**: the Hub can tell a customer what happened to their account ([109ab4fa](https://github.com/meshsat/meshsat-hub/commit/109ab4faf67bd87ebbe64b8bd3ef0a9000844b7a))
+- **k8s**: wire the Invoice Ninja token so receipts actually go out ([2c89aad8](https://github.com/meshsat/meshsat-hub/commit/2c89aad87277efbee318c0ef9b392a2eaa6677a4))
+- **kofi**: issue a VAT receipt for every paid subscription ([a312ffa7](https://github.com/meshsat/meshsat-hub/commit/a312ffa7bb812a8f22937165cbbffc728eedf466))
 - **login**: the Hub sign-in gets the meshsat.net hero ([5c0c4576](https://github.com/meshsat/meshsat-hub/commit/5c0c4576212b9d3f5e1fd25b8b49a29112fcc9ed))
 - **auth**: harden the enrollment flow now that it is public ([ffd0bab5](https://github.com/meshsat/meshsat-hub/commit/ffd0bab59c8d27d68618c7e8ea395c79ac69c2c5))
 - **auth**: the enrollment page gets meshsat.net's rolling hero ([13e9ddda](https://github.com/meshsat/meshsat-hub/commit/13e9dddaaac09b0775e482a337dc0385ba996b4d))
@@ -269,6 +285,30 @@ it goes live.
 
 ### Fixes
 
+- **api**: unattributed payments have been invisible since the Stripe migration ([37f269c1](https://github.com/meshsat/meshsat-hub/commit/37f269c1fc2746a98e8ed27540135a1cae3262de))
+- **billing**: the Subscribe button 403'd for every real customer ([2d9d26f0](https://github.com/meshsat/meshsat-hub/commit/2d9d26f01fb80394c4d0fe655aed3cf35d9c05ab))
+- **routing**: seeded fan-out routes listen to satellite channels only, SOS over SMS escalates, duplicate persist is not a warning ([66cb9d4c](https://github.com/meshsat/meshsat-hub/commit/66cb9d4c5a599dbd02ae42fb7e40cb08cc6a9634))
+- **billing**: the half of the Stripe wiring that never reached the commit ([10014fbe](https://github.com/meshsat/meshsat-hub/commit/10014fbed119218a97b6dd2783b72f2990daac7f))
+- **mqtt**: a phone number as device id no longer puts an MQTT wildcard in a publish topic ([56babac9](https://github.com/meshsat/meshsat-hub/commit/56babac9210d7a04ff050550c93668332b2eb434))
+- **sms**: a plain-text inbound SMS reaches the routing engine, so the kit to Hub to kit relay fires ([f02108f5](https://github.com/meshsat/meshsat-hub/commit/f02108f51491cf10e476d603b997c661fd5ddaea))
+- **refunds**: the two drainers share a receipt row, and could both lose ([a702ffd0](https://github.com/meshsat/meshsat-hub/commit/a702ffd0ec1d28442f157abda883306d793fd1d0))
+- **refunds**: record the refund before taking the paid period back ([b3e52b41](https://github.com/meshsat/meshsat-hub/commit/b3e52b413ea59ee7871e7da423ad9cbe73cf10fd))
+- **invoiceninja**: the inclusive-taxes guard was checking a URL that does not exist ([06a10543](https://github.com/meshsat/meshsat-hub/commit/06a105433d468227b031103bef24b1d0abaeb019))
+- **vat**: a donation is not a subscription and not the free plan ([27ccc22e](https://github.com/meshsat/meshsat-hub/commit/27ccc22e53d84b4fef0443177311c367b04cba8a))
+- **billing**: the tenant owner keeps owner, and a receipt is claimed before it is issued ([ba315733](https://github.com/meshsat/meshsat-hub/commit/ba3157331f4292bdee906e78c4d0ccb18519a69f))
+- **enrollment**: the flow title wrapped to an orphan and broke the card's axis ([6cb265ba](https://github.com/meshsat/meshsat-hub/commit/6cb265ba060c64b0665d989d288a3d2b739cd58e))
+- **enrollment**: the bootstrap never checked the template it repoints to ([e8666d95](https://github.com/meshsat/meshsat-hub/commit/e8666d9544276ab99013c3e49d2f84d93f6df4ff))
+- **k8s**: the grace period was shorter than the shutdown it has to allow ([3147ba28](https://github.com/meshsat/meshsat-hub/commit/3147ba284915cf83be751a8bfab90b17caa835aa))
+- **oidc**: never discard the tenant this request just won ([92e5a7e5](https://github.com/meshsat/meshsat-hub/commit/92e5a7e533d905b9e78916af8a198a54d12b0554))
+- **billing**: an operator-set plan could lapse, and a handover could double-issue ([9be09a90](https://github.com/meshsat/meshsat-hub/commit/9be09a90220dbb551b1ad1fbe6ffab4a2fd3688e))
+- **oidc**: two sign-ins for one new account left an orphaned tenant ([06b01619](https://github.com/meshsat/meshsat-hub/commit/06b01619452d0dc954a941b4ea1cfb90a2ebfaf8))
+- **tenant**: a claim code shown to a customer was not always the stored one ([80c60521](https://github.com/meshsat/meshsat-hub/commit/80c60521d7e6a405253cd8783564c43edc11d329))
+- **mail**: state the exact moment a plan ends, not "tomorrow" ([fde3ee3b](https://github.com/meshsat/meshsat-hub/commit/fde3ee3bee285f5cc4811f0f1e0874b727faf8e5))
+- **auth**: an API key resolved no tenant, so every key answered 403 ([6896aa1a](https://github.com/meshsat/meshsat-hub/commit/6896aa1a5ce8cb8f2b7cb6a8247a458143243158))
+- **enrollment**: the first mail a customer gets was branded authentik ([9eab4759](https://github.com/meshsat/meshsat-hub/commit/9eab47592bb65cbdf74f5600c2a5d6fb0536203e))
+- **enrollment**: stop the bootstrap silently deleting the CAPTCHA ([3f56605d](https://github.com/meshsat/meshsat-hub/commit/3f56605d99434aeb038ebf5445ed5f5828ccbf86))
+- **signups**: approving a request could activate any account on the shared IdP ([fdd31244](https://github.com/meshsat/meshsat-hub/commit/fdd31244f692c99abeee772c1ed2dc4e2f8eb2a0))
+- **kofi**: close four ways a subscription could be granted wrongly ([96982325](https://github.com/meshsat/meshsat-hub/commit/96982325f01314c4b9681792df74825289d000c4))
 - **auth**: the enrollment hero was only half painting ([096cec09](https://github.com/meshsat/meshsat-hub/commit/096cec096e85c6d162a514f9777576cdbb023be5))
 - **security**: close what the IP allowlist was hiding, part 2 ([0e5628d4](https://github.com/meshsat/meshsat-hub/commit/0e5628d4aa84e3fc08de004cb1633a3127e41d89))
 - **security**: close what the IP allowlist was hiding, part 1 ([b46f5b09](https://github.com/meshsat/meshsat-hub/commit/b46f5b095de25c68cb6feec68634f239b29fb3bd))

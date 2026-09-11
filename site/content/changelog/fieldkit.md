@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 388
-  unreleased_since: "2026-09-10"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-10"
+  unreleased_count: 457
+  unreleased_since: "2026-09-11"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-11"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,10 +28,39 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-10)
+## Unreleased (main, last change 2026-09-11)
 
 ### Features
 
+- **tools**: jlc\_certify.py, every part on the shipped BOMs checked against JLCPCB with a date ([4aabbed2](https://github.com/meshsat/meshsat-fieldkit/commit/4aabbed2f24c9e8d6359cef63cea8fee0b660630))
+- **vendor**: seven of the fifteen open picks researched, with the manufacturer's document for each ([4ffbf639](https://github.com/meshsat/meshsat-fieldkit/commit/4ffbf63906c10469fd4f73914def6babdddea8b5))
+- **tools**: currency as a dated check, and the two places status was declared now have to agree ([ff02854f](https://github.com/meshsat/meshsat-fieldkit/commit/ff02854f142f509c49dfaed372bc794228ce71fb))
+- **vendor**: the five drawings that search could not reach now have OCR sidecars ([c3fda8ff](https://github.com/meshsat/meshsat-fieldkit/commit/c3fda8fff91c290a650882d6bb5c3cd0d6a80010))
+- **vendor**: every document now records where it came from and what revision it claims ([0b577fc8](https://github.com/meshsat/meshsat-fieldkit/commit/0b577fc87902c5b66cf87804a925e5c6b5bd10bc))
+- **vendor**: PARTS.md, everything V2 uses enumerated from three sources that must agree ([e19f9299](https://github.com/meshsat/meshsat-fieldkit/commit/e19f9299e6cf79dae60a6ce052fb88bdfe7840fd))
+- **tools**: the parts this design builds with against the documents we hold, and the geometry of every vendor model ([81fba69c](https://github.com/meshsat/meshsat-fieldkit/commit/81fba69c4ae0349eda8e30a204d7e3f1193ca60b))
+- **tools**: a datasheet knowledge base over v2/vendor/, advisory only and off every verdict path ([5f254654](https://github.com/meshsat/meshsat-fieldkit/commit/5f2546540b89d61c0259662dc37bab34b0000cdf))
+- **tools**: the inner-layer pair geometry is per class, because only the 90 ohm class misses there ([cd5b8e62](https://github.com/meshsat/meshsat-fieldkit/commit/cd5b8e62e839b79d91abab4a1e96bfd56cd7eef9))
+- **tools**: a pair takes the width its layer needs, because an inner layer is a stripline ([a8a04c14](https://github.com/meshsat/meshsat-fieldkit/commit/a8a04c14f461eeb70dd003a3a434e745dce73769))
+- **tools**: every benchmark row records the KiCad build, the Python version and the core count ([c477dd7e](https://github.com/meshsat/meshsat-fieldkit/commit/c477dd7e7815db26038a86236ef1b951befeab79))
+- **tools**: the impedance gate carries the 2D field solver's numbers and says where each one came from ([15501015](https://github.com/meshsat/meshsat-fieldkit/commit/15501015d65d6b5d54dc28fd6f5f0f85b9afc93e))
+- **tools**: route with our 1.9.0 build by default, its output proved identical to stock ([11051f36](https://github.com/meshsat/meshsat-fieldkit/commit/11051f3666f11383d81dbb9df550d7f06af8ba87))
+- **tools**: patch Freerouting 1.9.0 to write its session after every pass, and pass it from route\_one ([6188e0be](https://github.com/meshsat/meshsat-fieldkit/commit/6188e0be2f3f2fede087e07be6ceb77e735c3c00))
+- **tools**: the engine carries the project name and seeds its uuids from it, so a board regenerates byte for byte ([7563bd77](https://github.com/meshsat/meshsat-fieldkit/commit/7563bd7759d69b1d1ce7073d392343dc78a8c9f6))
+- **tools**: kisch, the schematic engine in one module with a strict ic() and deterministic uuids; the P board is the first to import it ([43824920](https://github.com/meshsat/meshsat-fieldkit/commit/438249207ebee89780d739017ec565f260808313))
+- **tools**: a run gets its own immutable directory with provenance, and a deliverable is promoted only after it reads back ([0e43d237](https://github.com/meshsat/meshsat-fieldkit/commit/0e43d2376e3767e343a0b9302bffd6cea32d7945))
+- **tools**: a pair with no corridor at all is searched again with a slim one: a 2.54 mm header leaves 0.94 mm and the corridor asks 1.02 ([2317a99c](https://github.com/meshsat/meshsat-fieldkit/commit/2317a99c038099b6fa83fbb636ba357e7f18a4c8))
+- **tools**: the negotiator keeps every iteration's plan, not only its own pick ([15b5b3b8](https://github.com/meshsat/meshsat-fieldkit/commit/15b5b3b8b8f103430fdfd5de2bad2a0dd1ea6d97))
+- **tools**: negotiated-congestion pre-routing: pairs price the shared cells instead of fighting for them ([d8fe7333](https://github.com/meshsat/meshsat-fieldkit/commit/d8fe733324591e71677886e7b5b758579feb4664))
+- **tools**: multi-pass pre-routing, the pairs that failed go first next time and the best pass wins ([cb2d638c](https://github.com/meshsat/meshsat-fieldkit/commit/cb2d638c47f9d46e64f48093a0b58462fc6d7326))
+- **tools**: the A placement's fine-pitch margin is a knob too ([0ae12e5d](https://github.com/meshsat/meshsat-fieldkit/commit/0ae12e5dec6d29346dd8f5f3c546d70d552cb970))
+- **tools**: the pre-router's corridor search box is a measured knob ([ccf330e3](https://github.com/meshsat/meshsat-fieldkit/commit/ccf330e355a12ebe77f6dbedbd3a0e53f05440c8))
+- **tools**: the room the B placement leaves around a fine-pitch part is a measured knob ([3a2056e2](https://github.com/meshsat/meshsat-fieldkit/commit/3a2056e2b1a7934fb09fc76f18264d3652a5c4ec))
+- **tools**: the pre-router's corridor slack over its legs is a measured knob ([1d421853](https://github.com/meshsat/meshsat-fieldkit/commit/1d421853ccbf0f3be80373dd9346c056136f1fe6))
+- **tools**: a rip-up episode is a trial, kept only when it leaves more pairs laid than it found ([7c19e911](https://github.com/meshsat/meshsat-fieldkit/commit/7c19e911b7da4119fc7f38a2e54ee64d85579c05))
+- **tools**: pre-router debug: name the copper a leg hits, not just the point ([e6779c8e](https://github.com/meshsat/meshsat-fieldkit/commit/e6779c8ebd3b7e6b56812d46794e1851fbafd198))
+- **tools**: pre-router: PAIR\_ENTRY\_VIA ends a leg at an IC's escape via instead of stripping the escape and entering the pad ([1f601666](https://github.com/meshsat/meshsat-fieldkit/commit/1f601666c0414bb65736a513a64867b6eb67abcf))
+- **tools**: pre-router rip-up and retry: a failed pair takes the laid pairs out of its corridor and is laid again first ([e8e41efa](https://github.com/meshsat/meshsat-fieldkit/commit/e8e41efa7741fb4c7f45ed2bcd71fef31577cdfd))
 - **tools**: the partition's regions can be routed one at a time, each locking the last ([19b1c322](https://github.com/meshsat/meshsat-fieldkit/commit/19b1c32269359d021a973e46f61fe7e3c6c400cf))
 - **tools**: an optional coarser grid for the long pairs, off until it is measured ([1f0a0115](https://github.com/meshsat/meshsat-fieldkit/commit/1f0a01155eb3eb24033bf26a648002be872b5758))
 - **tools**: the pair pre-router lays the corridor as found when no smoothing clears ([79c7ec25](https://github.com/meshsat/meshsat-fieldkit/commit/79c7ec253e8224ba7e30c31f4880c205b3ee2739))
@@ -201,6 +230,43 @@ appear below.
 
 ### Fixes
 
+- **tools**: the coverage scan read only the schematic generators, and four real parts were named elsewhere ([c095abdd](https://github.com/meshsat/meshsat-fieldkit/commit/c095abdd2124e501c04fe129892240ceb7919fb6))
+- **tools**: the deliverable DRC histogram has never printed, its pattern was a grep error ([f7bf0e59](https://github.com/meshsat/meshsat-fieldkit/commit/f7bf0e59d1e541332bba26d7f0d41c12d168c52c))
+- **tools**: no silent fallbacks in the pre-router, an exact heuristic, and the chain carries the pair configuration ([fa3cbbfe](https://github.com/meshsat/meshsat-fieldkit/commit/fa3cbbfe3fd585c6566806b12159a9b88b232cfd))
+- **tools**: the hard set is one set in the shell too, and a broken attempt can no longer read as a routing failure ([f4c754e6](https://github.com/meshsat/meshsat-fieldkit/commit/f4c754e65c8f351598e1015c56718d0337b6523a))
+- **tools**: close the fix-propagation matrix across the six finishes ([7d8eb959](https://github.com/meshsat/meshsat-fieldkit/commit/7d8eb9598e86dfffa28df18e04229f52f4150d95))
+- **tools**: the stripline comparison was two different geometries, and the record's 74 ohm finding falls with it ([eaa3e2f6](https://github.com/meshsat/meshsat-fieldkit/commit/eaa3e2f6dae5f89da5d34b37a66c997c7271b786))
+- **tools**: the DRC report is an output, not a file that happens to be there ([9768cd5b](https://github.com/meshsat/meshsat-fieldkit/commit/9768cd5ba45cfae3e110a517b612e163e3589e8a))
+- **tools**: every finish's wait has a deadline and refuses rather than waiting forever ([0bfba73c](https://github.com/meshsat/meshsat-fieldkit/commit/0bfba73c6dab967e3634d772ed34f4b4ad954e1c))
+- **tools**: the pre-router's re-exec is for the script, never for an importer ([6858e524](https://github.com/meshsat/meshsat-fieldkit/commit/6858e524722ace0534172ffcb91e6b816693ea65))
+- **tools**: dc\_drop says what it does, prints the budget it used, and refuses a mesh it did not solve ([f19cdd4e](https://github.com/meshsat/meshsat-fieldkit/commit/f19cdd4e45bda00617b8786ae23b09368118d2d7))
+- **tools**: the rasterisation cache belongs to its grid, and the adaptive grid refuses to run under a negotiated plan ([fc75809a](https://github.com/meshsat/meshsat-fieldkit/commit/fc75809a9e7f3b15bd55b59b89c759d39ecfc13a))
+- **ecad**: the six schematic generators share one engine and ic() is strict on every board again ([60d9e098](https://github.com/meshsat/meshsat-fieldkit/commit/60d9e09898b9b9a2fa200c34180ca54503a4acc9))
+- **tools**: the P board shares the engine's part list from the first part, not from halfway down ([15c0c6ab](https://github.com/meshsat/meshsat-fieldkit/commit/15c0c6ab3c8769662760e5f6b3d64457308682e3))
+- **tools**: regrade the benchmark by board and mark every six-type verdict; the negotiator returns what the laying pass did ([802f8a30](https://github.com/meshsat/meshsat-fieldkit/commit/802f8a309d42305c63f2aadd2ff00fb4029be0a5))
+- **tools**: one hard set for every gate, the baseline keyed by board, failure propagated, preflight before the spend ([7baedd89](https://github.com/meshsat/meshsat-fieldkit/commit/7baedd8950495e3722fc3d3b27ed0d09c40c37b3))
+- **tools**: the negotiator keeps the least contested plan, not the one with the most corridors ([d4693ccc](https://github.com/meshsat/meshsat-fieldkit/commit/d4693ccc16ab13479e3b03bc5640e4426f673375))
+- **tools**: a negotiated corridor owns its ends, the laying pass does not re-choose them ([56265c1d](https://github.com/meshsat/meshsat-fieldkit/commit/56265c1d938d901e7bf7d8cd5685194f3b8904db))
+- **tools**: the negotiator counts its sections and says what it planned ([e7f6aaab](https://github.com/meshsat/meshsat-fieldkit/commit/e7f6aaabc4b075951c9ad965629e4b6ca19d75a5))
+- **ecad**: B's fine-pitch margin goes back to 1.6, measured against the corrected corridor slack ([e3a7af64](https://github.com/meshsat/meshsat-fieldkit/commit/e3a7af64ed0080763a5ba8bfaeadc231691567a5))
+- **tools**: A's placement gets the new spare-line test point ([39a0a55e](https://github.com/meshsat/meshsat-fieldkit/commit/39a0a55e28c1aee6d39126e4a274fc5de10ab41e))
+- **tools**: a pair whose legs cross gets the escape-via second chance, like a failed section ([edd1c604](https://github.com/meshsat/meshsat-fieldkit/commit/edd1c6040153187bd10ed4746b2dbbc0ff0fc9eb))
+- **tools**: the pre-router's corridor slack is 0.12 mm, measured: 38 of 113 pairs at 0.25, 49 at 0.12 ([67dd214d](https://github.com/meshsat/meshsat-fieldkit/commit/67dd214dbedf8b746b949f20a23c954adb865465))
+- **ecad**: B's fine-pitch escape margin is 2.6 mm, measured: 194 pads with no escape at 1.6, 69 at 2.6 ([b33d8b6f](https://github.com/meshsat/meshsat-fieldkit/commit/b33d8b6f0ffa3b1b02e625bc73fc1681dd6f6d4d))
+- **tools**: the B placement gives the wide escape margin only to the QFN and QFP rows, as C and E already do ([0d5f27eb](https://github.com/meshsat/meshsat-fieldkit/commit/0d5f27eb7b7c0fc33e418df794633dd9e998abea))
+- **tools**: every chain with a pre-router keeps the placed board before it ([388c1f67](https://github.com/meshsat/meshsat-fieldkit/commit/388c1f6757b880bacba2d44a59f53d4a7bffebd8))
+- **tools**: rip-up is off by default: measured, it lays 224 times and ends with 29 of 113 against the greedy pass's 38 ([fee28f10](https://github.com/meshsat/meshsat-fieldkit/commit/fee28f101c69c50359c16e475f2600b80b709880))
+- **tools**: a station walled in along the P to N normal falls back to the sweep instead of returning a blocked corridor end ([f3db3fd6](https://github.com/meshsat/meshsat-fieldkit/commit/f3db3fd6225dd89999fc9ddae55b7be1f8289c74))
+- **tools**: the escape-via entry is a per-pair fallback, not a mode: it gains 27 pairs on B19 and costs D10 two ([81bbd290](https://github.com/meshsat/meshsat-fieldkit/commit/81bbd2902b92a7ca01ef9b1ccdf85a35c2b3d9bd))
+- **tools**: pour coverage, use the KiCad 9 intersection call so the board clip actually applies ([70b6d93f](https://github.com/meshsat/meshsat-fieldkit/commit/70b6d93f883643cc7cdea3582bad3f12a4c62ca2))
+- **tools**: pour coverage is measured against the outline inside the board, not the drawn rectangle ([5df349c7](https://github.com/meshsat/meshsat-fieldkit/commit/5df349c7f2a01ecc1754002dbe631398c37abeaf))
+- **ecad**: the spare ribbon line keeps a test point on A and none on B, where it no longer lands ([9d643ea5](https://github.com/meshsat/meshsat-fieldkit/commit/9d643ea5da47a7d4efd381d0d515b50310aa9dcc))
+- **ecad**: every ribbon differential pair sits in one column of its header, ground pins on both sides ([8bc3a0e1](https://github.com/meshsat/meshsat-fieldkit/commit/8bc3a0e1181534bf0dbb2f50d64254a0184c8248))
+- **tools**: the B chain keeps the placed board before the pre-router, the input every pre-router measurement needs ([85344c7d](https://github.com/meshsat/meshsat-fieldkit/commit/85344c7d64b61f743417b3feade06e3a2883d353))
+- **tools**: pre-router: a corridor end must be a cell both legs can still reach their pads from ([a7222f10](https://github.com/meshsat/meshsat-fieldkit/commit/a7222f1054154c523b011feae79b6eb8206f8274))
+- **tools**: pre-router: strip a station's escape by following the chain out of the pad, not by a 3 mm radius ([977997f5](https://github.com/meshsat/meshsat-fieldkit/commit/977997f5937e80912f11e43e7b9a7fa47471f10f))
+- **tools**: pre-router: cut the self-intersections out of an offset leg, which is what made the two legs of nine B19 pairs cross ([d5da2078](https://github.com/meshsat/meshsat-fieldkit/commit/d5da2078936cb116d3a3997645faa8da0d4f9bad))
+- **tools**: partition stage two, sequential mode: the merged board is stage1, and a stale session or log of a previous pass is cleared ([a6d41c4c](https://github.com/meshsat/meshsat-fieldkit/commit/a6d41c4ca6b4ee4c753dd9420cd913ef5694de50))
 - **tools**: the partition reconcile judges the stub router's closures like every other finish does ([610ef820](https://github.com/meshsat/meshsat-fieldkit/commit/610ef82041fab9a1bf6aae3d0f1d5b1e34ac1297))
 - **tools**: calibrate the pair expansion budget, and the mitre change is measured as neutral ([5769e87f](https://github.com/meshsat/meshsat-fieldkit/commit/5769e87fcbaeb17c9a6a45a9ea5ed2f81b637364))
 - **tools**: a right-angle corner takes the arc, not the mitre, in the pair legs ([be43f81e](https://github.com/meshsat/meshsat-fieldkit/commit/be43f81e5b310954fcd26113dc8dee94de1b3a5d))
@@ -424,6 +490,9 @@ appear below.
 
 ### Performance
 
+- **tools**: the pre-router's station matching stops being factorial above the cliff ([93d22d80](https://github.com/meshsat/meshsat-fieldkit/commit/93d22d806de2207ff39222c3eeb7b68821692b79))
+- **tools**: the corridor search as a pure function of arrays, compiled, and tested against the original ([7d2231f4](https://github.com/meshsat/meshsat-fieldkit/commit/7d2231f450248a80ef607e0939ae3d953a2b8383))
+- **tools**: rasterise the pre-router's occupancy maps with one vectorised point-in-polygon call ([6c69b863](https://github.com/meshsat/meshsat-fieldkit/commit/6c69b863b9d52e92c1b19dac33b5ca8b37203bcc))
 - **tools**: the pair pre-router gets a wall-clock budget per pair, so a pass always ends ([2d03bbd1](https://github.com/meshsat/meshsat-fieldkit/commit/2d03bbd1f6d3f80879273fbb7d1dfc42e8e7522f))
 - **tools**: pair pre-router rasterises each pad and zone once per grow value for the whole run ([56b2a291](https://github.com/meshsat/meshsat-fieldkit/commit/56b2a2913a56bd5ee419eeb7c9d561dd548fe3ba))
 
