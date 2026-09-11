@@ -41,7 +41,7 @@ You may not use the service unlawfully, interfere with it or with other users, a
 
 ### Plans and payment
 
-Subscriptions are taken through [Ko-fi](https://ko-fi.com/X2S326G23T), which handles the payment. We do not see or store your card details.
+Subscriptions are taken through [Stripe](https://stripe.com), which handles the payment. We do not see or store your card details.
 
 | Plan | Devices and bridges | Price |
 |---|---|---|
@@ -54,11 +54,11 @@ Those are the final amounts you pay. Any VAT is included in them, so nothing is 
 
 The number is a combined ceiling on registered devices and bridges. It limits how many you may add. It does not limit messages, and it does not throttle anything you have already registered.
 
-A payment extends your plan by 32 days from the later of today or your current expiry date. That is deliberately more than a calendar month: it absorbs a late payment notification without dropping you, and paying early adds to your existing time rather than replacing it.
+A subscription renews every month until you cancel it. Each payment covers the month ahead, and we add three days to the date it is paid to, so a slow notification never drops you. If a payment fails, Stripe retries it over the following days; your plan is not cancelled while that is happening.
 
 ### When a plan ends
 
-Cancel in Ko-fi whenever you like. Ko-fi tells us about payments, not cancellations, so we do not act on a cancellation: your plan simply runs to the date it is already paid to and then ends.
+Cancel whenever you like, from **Manage billing** in your account settings. Your plan then runs to the end of the period you have already paid for and ends there. You do not have to tell us separately: we are notified when you cancel, and again when the period runs out.
 
 When it ends, the account moves to the free plan. **Nothing is deleted.** Every device and bridge you registered keeps working and keeps reporting. What changes is that you cannot add another until you are back under the free ceiling or you subscribe again.
 
