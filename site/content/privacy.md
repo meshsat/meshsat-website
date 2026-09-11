@@ -37,7 +37,7 @@ If you self-host your own Hub, everything below describes data that stays on you
 
 **Credentials you give us.** Provider API keys for your own Iridium, Twilio, Rock7 or Globalstar accounts, encrypted at rest, used only to send and receive on your behalf. They are deliberately excluded from your data export so they cannot leak through it.
 
-We do not hold your payment card. Ko-fi does.
+We do not hold your payment card. Stripe does.
 
 ### Why we hold it
 
@@ -47,7 +47,7 @@ To run the service you asked us to run: relaying your messages, showing your fle
 
 Only where the work requires it:
 
-- **Ko-fi**, for subscription payments. They tell us that a payment happened, from which address, and any message attached to it.
+- **Stripe**, for subscription payments. They process the card and tell us that a payment happened, which account it was for, the billing country on the card, and when a subscription renews, fails or ends.
 - **Satellite and messaging carriers**, for traffic you route through them: Ground Control and Cloudloop for Iridium, Rock7 and RockBLOCK, Globalstar, Twilio for SMS. These are your accounts. What passes through them is subject to their terms as well as ours.
 - **Nobody else.** We do not sell your data, we do not share it for advertising, and there is no third-party analytics or tracking in the Hub.
 
