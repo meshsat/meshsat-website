@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 779
-  unreleased_since: "2026-09-09"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-09"
+  unreleased_count: 785
+  unreleased_since: "2026-09-10"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-10"
 ---
 
 Generated from the commit history of
@@ -19,7 +19,7 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-09)
+## Unreleased (main, last change 2026-09-10)
 
 ### Features
 
@@ -368,6 +368,12 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **aprs**: keep a KISS frame the PicoAPRS closes with a stray FESC, count it as repaired ([0392aa74](https://github.com/meshsat/meshsat/commit/0392aa74d8a591ac912eabf634fccdbffe9aedeb))
+- **aprs**: a bad KISS frame is dropped and logged, the TNC port stays open, and the beacon wait is jittered ([0f8ea2c0](https://github.com/meshsat/meshsat/commit/0f8ea2c0dca086194d21e0dbdb4611ab2df32f98))
+- **x1202**: the battery reads 100 % on mains, the monitor learns the pack's own full point from the fuel-gauge plateau ([da4cd6c6](https://github.com/meshsat/meshsat/commit/da4cd6c6326882ee0bb8b04a488a3b24a51c63ff))
+- **ttc**: the booth screen draws a relayed text from the inbound event, not from the encrypted frame ([c563581e](https://github.com/meshsat/meshsat/commit/c563581edd27f5969c925cd54878f9adb8a15fd3))
+- **spectrum**: an RTL-SDR that appears after startup is attached without a restart, and its hard reset tries the hub port cut first ([f275ecc4](https://github.com/meshsat/meshsat/commit/f275ecc4c6906baf3514ec6e31304300e148fdc7))
+- **mesh**: the two kit radios no longer loop NodeInfo requests across the split channels ([ccad4d9a](https://github.com/meshsat/meshsat/commit/ccad4d9a01fc9e40938b6475b983d86bc8fbce3e))
 - **sos**: the dead man's switch was never wired into the shipped binary ([8371faf0](https://github.com/meshsat/meshsat/commit/8371faf07040d0c894b921530face848677067e1))
 - **zigbee**: the interface scan no longer re-probes ports a transport already owns ([38a03edc](https://github.com/meshsat/meshsat/commit/38a03edca8d469a58bb4209f21657934a28c8a4f))
 - **kiosk**: the bridge comes back after a power-on, and the kiosk follows it ([06ebbe3f](https://github.com/meshsat/meshsat/commit/06ebbe3f61d0909adba70cd27038cb98e84f8d37))
