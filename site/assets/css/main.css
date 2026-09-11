@@ -490,15 +490,18 @@ img {
    hidden attribute, same reason as .gh-star-count[hidden]. */
 .visitors-chip[hidden] { display: none; }
 
-/* The Ko-fi ask sits between the star button and the visitor chip: a plain
-   link, never Ko-fi's Widget_2.js (blocked by the CSP script-src, third-party
-   JS before consent, and its white-on-#F25C05 ink is ~3.2:1). Same chrome as
-   .gh-star-btn, duplicated per element like .visitors-chip so an edit here
-   cannot disturb the star CTA; keep the three in sync. The cup carries
-   --color-primary (>= 3:1 on both chip grounds), the label stays neutral so no
-   new text/background pair is introduced. Hidden when kofi_url is unset
-   (the anchor is inside a `with`). [MESHSAT-816] */
-.kofi-btn {
+/* The donation ask sits between the star button and the visitor chip: a plain
+   link to hub.meshsat.net/donate, which creates a Stripe Checkout session and
+   redirects. It has to be a LINK and not a fetch or a form: this site's CSP
+   allows connect-src only to itself, its analytics host and api.github.com,
+   and form-action only to 'self', so the browser would block either. Carries
+   rel="nofollow" because following it has an effect at Stripe, small as that
+   is. Same chrome as .gh-star-btn, duplicated per element like .visitors-chip
+   so an edit here cannot disturb the star CTA; keep the three in sync. The
+   glyph carries --color-primary (>= 3:1 on both chip grounds), the label stays
+   neutral so no new text/background pair is introduced. Hidden when donate_url
+   is unset (the anchor is inside a `with`). [MESHSAT-816, MESHSAT-1023] */
+.donate-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -514,9 +517,9 @@ img {
     backdrop-filter: blur(4px);
     transition: border-color 0.2s, color 0.2s;
 }
-[data-theme="light"] .kofi-btn { background: rgba(255, 255, 255, 0.8); }
-.kofi-btn svg { flex-shrink: 0; color: var(--color-primary); }
-.kofi-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+[data-theme="light"] .donate-btn { background: rgba(255, 255, 255, 0.8); }
+.donate-btn svg { flex-shrink: 0; color: var(--color-primary); }
+.donate-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
 
 /* ---------- How It Works ---------- */
 .steps-grid {
