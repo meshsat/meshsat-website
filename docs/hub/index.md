@@ -18,9 +18,11 @@ devices.
 | [Map and messages](/hub/map-and-messages) | The day to day surface |
 | [SOS and escalation](/hub/sos-and-escalation) | Who gets told, and how to test it |
 | [Provider accounts](/hub/provider-accounts) | Your own Cloudloop, Rock7 and Twilio |
+| [TAK](/hub/tak) | A TAK server of your own, or your own server |
 | [Your team](/hub/team) | Invites and roles |
 | [Your data](/hub/your-data) | Export, audit log, closing the account |
 | [Hub API](/hub/api) | Doing all of it from a script |
+| [When something does not work](/hub/troubleshooting) | Where to look first |
 
 ## Running your own Hub
 
