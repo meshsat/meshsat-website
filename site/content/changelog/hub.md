@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 478
-  unreleased_since: "2026-09-11"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-11"
+  unreleased_count: 507
+  unreleased_since: "2026-09-12"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-12"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,20 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-11)
+## Unreleased (main, last change 2026-09-12)
 
 ### Features
 
+- **k8s**: foundations for hosted per-tenant TAK ([b4b8a898](https://github.com/meshsat/meshsat-hub/commit/b4b8a89870f3ee0bfa7874745c740807b9da21a5))
+- **db**: a stuck Backup no longer holds the slot until somebody notices \[IFRNLLEI01PRD-2833\] ([80523a0c](https://github.com/meshsat/meshsat-hub/commit/80523a0cc3e459ab22d7e45c1db6d792b4971086))
+- **billing**: the donation page is MeshSat's, with Stripe's form inside it ([27a0af30](https://github.com/meshsat/meshsat-hub/commit/27a0af300e89da3cb8fa6fcc57df1403c4a37b0d))
+- **auth**: customers can change their password and turn on two-factor ([7dcaf0ee](https://github.com/meshsat/meshsat-hub/commit/7dcaf0eed950dc1d06e1fbc2692b5ce3fe6af258))
+- **webhook**: watch where satellite deliveries come from, never refuse one ([47e27c69](https://github.com/meshsat/meshsat-hub/commit/47e27c69d937e489d77e9f5baac7444e9a01aa5c))
+- **tenant**: a customer can take their data and leave ([e16bcb24](https://github.com/meshsat/meshsat-hub/commit/e16bcb243f925ebb0470088cc02c52cf3681dd14))
+- **stripe**: a moved Stripe field can no longer pass unnoticed ([ed335d05](https://github.com/meshsat/meshsat-hub/commit/ed335d0526dc660ea553625fd9beb942f9772c8d))
+- **billing**: the checkout page says whose it is ([07f29c3e](https://github.com/meshsat/meshsat-hub/commit/07f29c3e375e062a6b8c5514b77f224de01a16bb))
+- **billing**: a renewal that fails is no longer invisible ([741e595b](https://github.com/meshsat/meshsat-hub/commit/741e595b0f2841cf2626a06c9416acf3f9d08eb6))
+- **billing**: a public donate link, and the last of Ko-fi ([1b3648f5](https://github.com/meshsat/meshsat-hub/commit/1b3648f5dbd2511e1b27e99b58c70ecb787a03d0))
 - **billing**: donations, and they are outside the scope of BTW ([f2b7873c](https://github.com/meshsat/meshsat-hub/commit/f2b7873c45d1fba7a1f4bd883bae64163e3e3c4c))
 - **billing**: move Stripe to the dedicated MeshSat Hub account ([cf1d11eb](https://github.com/meshsat/meshsat-hub/commit/cf1d11eb024f1b31b4a87aeda908592140031aee))
 - **billing**: Stripe is the payment provider; Ko-fi is decommissioned ([baa6ab8c](https://github.com/meshsat/meshsat-hub/commit/baa6ab8c0bc758ccc630a8966e801f62141763f0))
@@ -285,6 +295,25 @@ it goes live.
 
 ### Fixes
 
+- **ots**: drop pip from the runtime image, it vendors a vulnerable msgpack and setuptools ([07c5802b](https://github.com/meshsat/meshsat-hub/commit/07c5802bcea1469184eac4203efff2b016fb50ab))
+- **ots**: patch the vulnerable dependencies OpenTAKServer pins, and gate branch builds on CVEs ([27a79833](https://github.com/meshsat/meshsat-hub/commit/27a7983362f95dcbd936356c326b7ff413d5ea53))
+- **tak**: only the platform's own traffic reaches the operator's TAK server and APRS-IS ([e6da23b2](https://github.com/meshsat/meshsat-hub/commit/e6da23b22947ec2e9698805c1ec49bff312853c7))
+- **tak**: federation refuses to start without its own CA, and is off until it has one ([dd6e0d4f](https://github.com/meshsat/meshsat-hub/commit/dd6e0d4fab3e9299fe31046177293ba1327866da))
+- **scripts**: no early-exiting pipe reader survives pipefail ([8273bccc](https://github.com/meshsat/meshsat-hub/commit/8273bccc52b796f50f8065586374b9f5fbc399a0))
+- **stripe**: raising the pinned API version no longer breaks donations ([80f9dd0a](https://github.com/meshsat/meshsat-hub/commit/80f9dd0ada59433799013416a741662fa5730fb2))
+- **ci**: the pin guard blocked every deploy with SIGPIPE ([5734ba12](https://github.com/meshsat/meshsat-hub/commit/5734ba127a4ecbc20fca224aeeb74bf0a2398679))
+- **billing**: the donation page stops arguing against its own ask ([3d52bd7a](https://github.com/meshsat/meshsat-hub/commit/3d52bd7a8df6b14061564783a05b8fde9284c039))
+- **metrics**: the money alert should not wait for money to go missing ([ee25ec20](https://github.com/meshsat/meshsat-hub/commit/ee25ec20fe76458829ee892f9b7de935cbbef467))
+- **scratchpad**: a probe must not manufacture the alerts it helps prove ([a9896c3b](https://github.com/meshsat/meshsat-hub/commit/a9896c3b08f9f09993409e10539a2752014d78b6))
+- **stripe**: only real money counts as an unattributed payment ([4e158bcf](https://github.com/meshsat/meshsat-hub/commit/4e158bcf4a5fe3ce42a3eaf3ce3ef96da444f3e2))
+- **stripe**: Subscribe stopped working for a day after the first attempt ([b6bcaa51](https://github.com/meshsat/meshsat-hub/commit/b6bcaa512df36b633531cfa90baeecb7461a5f1d))
+- **refunds**: refunding a donation took a month off the customer's subscription ([fd9d588e](https://github.com/meshsat/meshsat-hub/commit/fd9d588e064c60d566e0d323c1913e7ccf6e2129))
+- **stripe**: a refunded subscription issued no credit note ([d0a41ae0](https://github.com/meshsat/meshsat-hub/commit/d0a41ae0e17341a8ddf65f1ad1348625ccecc1a0))
+- **invoiceninja**: a tenant paying from a second address got no document at all ([9e6e8646](https://github.com/meshsat/meshsat-hub/commit/9e6e864694f57f5ffcb19a12086038bda7a37493))
+- **stripe**: a plan expired on a date the Hub invented, not the one Stripe bills on ([f32de103](https://github.com/meshsat/meshsat-hub/commit/f32de103115c1b655d9a29dd299736b811e859a3))
+- **stripe**: the first subscription payment took the money and issued no document ([282a18fe](https://github.com/meshsat/meshsat-hub/commit/282a18fe833dbc26d8e5f31343481920b61bbd9e))
+- **billing**: a donation returned the giver to a sign-in wall and a subscription receipt ([8be80fd7](https://github.com/meshsat/meshsat-hub/commit/8be80fd7532651d660acf29a1f9112ed74fabe76))
+- **mail**: the plan-changed email described a cancellation that does not happen ([a4218530](https://github.com/meshsat/meshsat-hub/commit/a42185306d1df09db8acf8eb97e5b44a1ca02623))
 - **api**: unattributed payments have been invisible since the Stripe migration ([37f269c1](https://github.com/meshsat/meshsat-hub/commit/37f269c1fc2746a98e8ed27540135a1cae3262de))
 - **billing**: the Subscribe button 403'd for every real customer ([2d9d26f0](https://github.com/meshsat/meshsat-hub/commit/2d9d26f01fb80394c4d0fe655aed3cf35d9c05ab))
 - **routing**: seeded fan-out routes listen to satellite channels only, SOS over SMS escalates, duplicate persist is not a warning ([66cb9d4c](https://github.com/meshsat/meshsat-hub/commit/66cb9d4c5a599dbd02ae42fb7e40cb08cc6a9634))
