@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 785
-  unreleased_since: "2026-09-10"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-10"
+  unreleased_count: 791
+  unreleased_since: "2026-09-11"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-11"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,13 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-10)
+## Unreleased (main, last change 2026-09-11)
 
 ### Features
 
+- **web**: the kiosk poster is an interlude in the attract loop, not a lid: 20 s every 4 min after 3 min idle ([0c5a7e73](https://github.com/meshsat/meshsat/commit/0c5a7e7329afe8070c0b7de667bf833ad2768942))
+- **web**: kiosk poster screensaver after 30 s idle, any touch or a live message wakes the panel ([063521e1](https://github.com/meshsat/meshsat/commit/063521e1860842fcec22d957ed2e26667db2640a))
+- **web**: TTC handhelds are the T-Deck Pro on tesseract and a T-Deck Plus without the SMA stub ([6e98e32b](https://github.com/meshsat/meshsat/commit/6e98e32b2a6c54336978c43051f58ce7ec92e201))
 - **ttc**: the four routes become one row each, riding their own lane ([6a3d6842](https://github.com/meshsat/meshsat/commit/6a3d68421ee93b96b8a3e20efdec515cc095d62b))
 - **oob**: the Hub can pair as a management peer, by its own key or the kit's ([1d813987](https://github.com/meshsat/meshsat/commit/1d8139874fd7569360713fe38efaa3b64c13e223))
 - **ttc**: fourth booth path, kit to kit over Iridium IMT, with a satellite lane on the panel and satellite traffic in the packet feed ([0d6802a5](https://github.com/meshsat/meshsat/commit/0d6802a5f772f85611cead4963975c8c2fa1c0c5))
@@ -368,6 +371,9 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **spectrum**: LTE bands scan in one hop and calibration is sample-driven, so cellular jamming detection calibrates instead of burning a core forever ([e3eb692e](https://github.com/meshsat/meshsat/commit/e3eb692ef1136c12decf40a6bd0142d3e7daf852))
+- **web**: booth route tap times out and says "failed" instead of hanging; kiosk idle dim after 3 min ([be6c92a7](https://github.com/meshsat/meshsat/commit/be6c92a74ccf16b1b863aebf73a8dd75b17768aa))
+- **web**: T-Deck Plus photo under a new name so the kiosk browser drops the cached SMA version ([5ee788fa](https://github.com/meshsat/meshsat/commit/5ee788fa46940b10c633cc72fb548e17f1f05259))
 - **aprs**: keep a KISS frame the PicoAPRS closes with a stray FESC, count it as repaired ([0392aa74](https://github.com/meshsat/meshsat/commit/0392aa74d8a591ac912eabf634fccdbffe9aedeb))
 - **aprs**: a bad KISS frame is dropped and logged, the TNC port stays open, and the beacon wait is jittered ([0f8ea2c0](https://github.com/meshsat/meshsat/commit/0f8ea2c0dca086194d21e0dbdb4611ab2df32f98))
 - **x1202**: the battery reads 100 % on mains, the monitor learns the pack's own full point from the fuel-gauge plateau ([da4cd6c6](https://github.com/meshsat/meshsat/commit/da4cd6c6326882ee0bb8b04a488a3b24a51c63ff))
