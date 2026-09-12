@@ -62,10 +62,12 @@ export default defineConfig({
             { text: 'Map and messages', link: '/hub/map-and-messages' },
             { text: 'SOS and escalation', link: '/hub/sos-and-escalation' },
             { text: 'Provider accounts', link: '/hub/provider-accounts' },
+            { text: 'TAK', link: '/hub/tak' },
             { text: 'Your team', link: '/hub/team' },
             { text: 'Your data', link: '/hub/your-data' },
             { text: 'Hub API', link: '/hub/api' },
             { text: 'API keys', link: '/hub/api-keys' },
+            { text: 'When something does not work', link: '/hub/troubleshooting' },
           ],
         },
         {
