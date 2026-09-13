@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 507
-  unreleased_since: "2026-09-12"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-12"
+  unreleased_count: 534
+  unreleased_since: "2026-09-13"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-13"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,24 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-12)
+## Unreleased (main, last change 2026-09-13)
 
 ### Features
 
+- **signups**: email the operator when an account request is waiting ([c27a6c92](https://github.com/meshsat/meshsat-hub/commit/c27a6c9219b1a3f789fa3a37c41f98fe3157b31c))
+- **tak**: switch the hosted TAK front on ([90f09f31](https://github.com/meshsat/meshsat-hub/commit/90f09f31c9b0278ec535592745cae54a3a67ef3b))
+- **tak**: switch the hosted TAK front on ([d84051df](https://github.com/meshsat/meshsat-hub/commit/d84051dfd65937c3f467cc7c14b71a966d0af0fd))
+- **tak**: a TAK page for tenants, with one-time enrolment and a QR ([9365c46e](https://github.com/meshsat/meshsat-hub/commit/9365c46eed2fbaf6de42d3744e57e88137802cb0))
+- **tak**: one-time enrolment packages for a tenant's TAK users ([5a7857e4](https://github.com/meshsat/meshsat-hub/commit/5a7857e4da2f6683e8d775fa64ded2e6d205c6c2))
+- **tak**: build ATAK, WinTAK and iTAK enrolment packages ([afd7ea24](https://github.com/meshsat/meshsat-hub/commit/afd7ea24f551c36155a426ebb59f3a2a6e0b58de))
+- **tak**: a tenant can forward CoT to their own TAK server ([afcf0d29](https://github.com/meshsat/meshsat-hub/commit/afcf0d298e4cca5c4747d2538b5f08b9a0141253))
+- **tak**: open the hosted TAK leg at the edge on 8089 ([cb3b3920](https://github.com/meshsat/meshsat-hub/commit/cb3b3920a757cbbf72ca4430602e6502f2816dc0))
+- **tak**: a tenant can turn TAK on and manage who sees the map ([a1dcc8ad](https://github.com/meshsat/meshsat-hub/commit/a1dcc8ad68e1c2ccd3f34873a21e8ce523fd7b7f))
+- **tak**: operator creates OpenTAKServer accounts on request ([55ee6c2f](https://github.com/meshsat/meshsat-hub/commit/55ee6c2fdc7b0718a05597b03098a5a6cc27a2a5))
+- **tak**: destroy a closed tenant's TAK server when its data is purged ([d0b90394](https://github.com/meshsat/meshsat-hub/commit/d0b90394060ce20859ed48d55f90cda72ee34de9))
+- **tak**: forward device positions to each tenant's own TAK server ([48a5b50b](https://github.com/meshsat/meshsat-hub/commit/48a5b50b907f8deaa3e2d11fb591f38948a5cbe4))
+- **tak**: wire the Hub to hosted per-tenant TAK ([8d7db133](https://github.com/meshsat/meshsat-hub/commit/8d7db133bf84f1afdf530ed884ad901b694cb477))
+- **tak**: per-tenant TAK schema and the TAK account ceiling ([3cbcde86](https://github.com/meshsat/meshsat-hub/commit/3cbcde86559804ed7d3c71b623a928405a5c2ace))
 - **k8s**: foundations for hosted per-tenant TAK ([b4b8a898](https://github.com/meshsat/meshsat-hub/commit/b4b8a89870f3ee0bfa7874745c740807b9da21a5))
 - **db**: a stuck Backup no longer holds the slot until somebody notices \[IFRNLLEI01PRD-2833\] ([80523a0c](https://github.com/meshsat/meshsat-hub/commit/80523a0cc3e459ab22d7e45c1db6d792b4971086))
 - **billing**: the donation page is MeshSat's, with Stripe's form inside it ([27a0af30](https://github.com/meshsat/meshsat-hub/commit/27a0af300e89da3cb8fa6fcc57df1403c4a37b0d))
@@ -295,6 +309,19 @@ it goes live.
 
 ### Fixes
 
+- **web**: point Help at the docs, and offer the iTAK package ([654c44e4](https://github.com/meshsat/meshsat-hub/commit/654c44e452595fae6d65fbe9f783a465bf4cab8a))
+- **tak**: give each Hub replica its own upstream identity ([425b79e9](https://github.com/meshsat/meshsat-hub/commit/425b79e927b288b0c0c258c89b3cb9232b8d1b64))
+- **tak**: switch the hosted TAK front back off until the identity race is fixed ([90c29689](https://github.com/meshsat/meshsat-hub/commit/90c2968906c6bae9a11ed383f9b9f8d7c478f977))
+- **tak**: let the Hub ask for its own upstream identity ([a588323f](https://github.com/meshsat/meshsat-hub/commit/a588323f87183df64e05661fd528ddfea33cb817))
+- **tak**: reload the front's server certificate when it is renewed ([e385d97d](https://github.com/meshsat/meshsat-hub/commit/e385d97dc8266e663d9c000cf79dd1f5b1992fe0))
+- **tak**: put the front's chain in the enrolment truststore, not the tenant CA ([9ab486d2](https://github.com/meshsat/meshsat-hub/commit/9ab486d29b4b35b49a86f493c0d8bb136891507e))
+- **tak**: point the operator at the icon-fix OTS image ([fc7d3df5](https://github.com/meshsat/meshsat-hub/commit/fc7d3df5f4c6066903f7c36d07289c23370793da))
+- **ots**: load marker icons from the image instead of a blocked network fetch ([4244752a](https://github.com/meshsat/meshsat-hub/commit/4244752aed96825ec12aa73976d1256948eb0277))
+- **tak**: point the operator at the CVE-clean OTS image ([4920b89f](https://github.com/meshsat/meshsat-hub/commit/4920b89fb34f00c04f808d03074414e00153b815))
+- **tak**: a TAK server that refuses the Hub no longer loses positions in silence ([02082e65](https://github.com/meshsat/meshsat-hub/commit/02082e65d203d5e76802c1947f2e62d16d07a30a))
+- **ots**: apply Debian security updates to the hosted TAK image ([199d4333](https://github.com/meshsat/meshsat-hub/commit/199d43333e0d5664a999f621fef1fd0511605edb))
+- **ci**: the image pin comment names the build it pins ([d83a9cef](https://github.com/meshsat/meshsat-hub/commit/d83a9cef243e3af3500993b58e099b3d69a33fc6))
+- **tak**: change the administrator password from OpenTAKServer's default ([69c4f37d](https://github.com/meshsat/meshsat-hub/commit/69c4f37d71feb4d4d81b5bc970cd58f3dcbcd19c))
 - **ots**: drop pip from the runtime image, it vendors a vulnerable msgpack and setuptools ([07c5802b](https://github.com/meshsat/meshsat-hub/commit/07c5802bcea1469184eac4203efff2b016fb50ab))
 - **ots**: patch the vulnerable dependencies OpenTAKServer pins, and gate branch builds on CVEs ([27a79833](https://github.com/meshsat/meshsat-hub/commit/27a7983362f95dcbd936356c326b7ff413d5ea53))
 - **tak**: only the platform's own traffic reaches the operator's TAK server and APRS-IS ([e6da23b2](https://github.com/meshsat/meshsat-hub/commit/e6da23b22947ec2e9698805c1ec49bff312853c7))

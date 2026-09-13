@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 791
-  unreleased_since: "2026-09-11"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-11"
+  unreleased_count: 801
+  unreleased_since: "2026-09-12"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-12"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,11 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-11)
+## Unreleased (main, last change 2026-09-12)
 
 ### Features
 
+- **time**: establish the clock before the bridge starts, and never export one we cannot trust ([4b94bd19](https://github.com/meshsat/meshsat/commit/4b94bd19dc6a8ef121f05ef9b89b55ebf6e7b380))
 - **web**: the kiosk poster is an interlude in the attract loop, not a lid: 20 s every 4 min after 3 min idle ([0c5a7e73](https://github.com/meshsat/meshsat/commit/0c5a7e7329afe8070c0b7de667bf833ad2768942))
 - **web**: kiosk poster screensaver after 30 s idle, any touch or a live message wakes the panel ([063521e1](https://github.com/meshsat/meshsat/commit/063521e1860842fcec22d957ed2e26667db2640a))
 - **web**: TTC handhelds are the T-Deck Pro on tesseract and a T-Deck Plus without the SMA stub ([6e98e32b](https://github.com/meshsat/meshsat/commit/6e98e32b2a6c54336978c43051f58ce7ec92e201))
@@ -371,6 +372,15 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **deploy**: pass MESHSAT\_API\_RATE\_LIMIT through compose so it can actually be set ([c5eacaf2](https://github.com/meshsat/meshsat/commit/c5eacaf27870904ba5a6c254c0762a3273d396a8))
+- **aprs**: the beacon and the message no longer keep the same cadence ([37f4a3b6](https://github.com/meshsat/meshsat/commit/37f4a3b6450910b73a1b75a3309d1fe5f505ba59))
+- **health**: a probe that never returns can no longer freeze the heal ladder ([3f4f4798](https://github.com/meshsat/meshsat/commit/3f4f4798ad7ca5fbae3da0fe549f853936ea34f9))
+- **hub**: keep retrying a first MQTT connect that failed, and stop paying for the fallback afterwards ([215c024b](https://github.com/meshsat/meshsat/commit/215c024bf400f560a8b12acf7b4a9cda5ffe0b4d))
+- **kiosk**: the booth screen survives a recycle, and no recycle fires at power-on ([09a7d61c](https://github.com/meshsat/meshsat/commit/09a7d61c4da58f454c5d7be1e4a64f6db9653374))
+- **ci**: read the pushed digest from buildx's metadata file, not from imagetools ([b72eb035](https://github.com/meshsat/meshsat/commit/b72eb0357157b9a875822fc120410a209aef4ac2))
+- **delivery**: a bearer that is down for a moment no longer kills the message queued to it ([58fbe0f7](https://github.com/meshsat/meshsat/commit/58fbe0f7cea064cf0bdc9f109c48092b68b48ca8))
+- **deploy**: a deploy is green only when the kit runs the image the pipeline built, and it survives a dropped SSH session ([d7caf601](https://github.com/meshsat/meshsat/commit/d7caf601207ddab6c7cf21da050ad437a18f1adb))
+- **time**: the modem's unset clock reads as 2070, not 1970, and the unit's Documentation line was not a URL ([73778e82](https://github.com/meshsat/meshsat/commit/73778e8232c0fafc0e3eb0daa76e1ff0c34f1308))
 - **spectrum**: LTE bands scan in one hop and calibration is sample-driven, so cellular jamming detection calibrates instead of burning a core forever ([e3eb692e](https://github.com/meshsat/meshsat/commit/e3eb692ef1136c12decf40a6bd0142d3e7daf852))
 - **web**: booth route tap times out and says "failed" instead of hanging; kiosk idle dim after 3 min ([be6c92a7](https://github.com/meshsat/meshsat/commit/be6c92a74ccf16b1b863aebf73a8dd75b17768aa))
 - **web**: T-Deck Plus photo under a new name so the kiosk browser drops the cached SMA version ([5ee788fa](https://github.com/meshsat/meshsat/commit/5ee788fa46940b10c633cc72fb548e17f1f05259))
