@@ -23,13 +23,13 @@ toggle_menu:
 choose_language:
   other: "Choisir la langue"
 hero_eyebrow:
-  other: "Routage libre entre des radios qui ne peuvent pas se joindre"
+  other: "Quand les réseaux tombent, ce qui survit devient des îles. MeshSat les relie."
 hero_title_a:
   other: "Un message."
 hero_title_b:
   other: "Toutes les sorties."
 hero_sub:
-  other: "Un maillage permet à un village de se parler à lui-même mais n'offre aucune sortie de la vallée. Un modem satellite atteint le monde entier et coûte de l'argent à chaque message. MeshSat est la couche intermédiaire : elle prend un message sur le maillage et l'envoie par le porteur encore vivant, en ne dépensant des octets satellite que lorsqu'il ne reste plus rien de gratuit."
+  other: "Un maillage qui fait parler une vallée, un réseau radio de bénévoles, un modem satellite, la carte d'un poste de commandement : chacun peut encore fonctionner, et aucun n'atteint les autres. MeshSat est un logiciel libre qui prend un message sur l'un et le livre dans un autre par le porteur encore vivant, en ne dépensant des octets satellite que lorsqu'il ne reste plus rien de gratuit."
 hero_status:
   other: "Hub ouvert. Aucune flotte en service, jamais utilisé lors d'une vraie urgence."
 hero_star:
@@ -57,11 +57,11 @@ t5:
 t6:
   other: "journalisé pour le tableau de bord et les webhooks"
 trace_foot:
-  other: "La liaison satellite a échoué et le message est quand même arrivé. C'est tout le produit. Les routes, l'ordre de bascule et les chaînes de transformation se configurent par interface."
+  other: "La liaison satellite a échoué et le message est quand même arrivé, dans trois systèmes que le maillage n'atteint pas seul. Les routes, l'ordre de bascule et les chaînes de transformation se configurent par interface."
 tr_title:
   other: "Huit porteurs, neuf interfaces câblées"
 tr_sub:
-  other: "Iridium fonctionne sur deux modems, le 9603N pour SBD et le 9704 pour IMT. Chaque porteur est une interface à part entière, avec sa propre MTU, son modèle de coût et sa chaîne de transformation. TAK et les webhooks sont des intégrations, pas des porteurs. Le statut indique ce que nous avons réellement fait tourner, pas ce que nous espérons."
+  other: "Chaque système se branche comme un adaptateur derrière une même interface, avec sa propre MTU, son modèle de coût et sa chaîne de transformation, et une règle peut router de n'importe quel adaptateur vers n'importe quel autre. Iridium compte deux fois, sur le 9603N et le 9704 ; TAK et les webhooks sont des intégrations, pas des porteurs. La radio HF et le DMR figurent sur la feuille de route et ne sont pas construits. Le statut indique ce que nous avons réellement fait tourner, pas ce que nous espérons."
 th_category:
   other: "Catégorie"
 th_transport:
@@ -103,7 +103,7 @@ tr_note_b:
 cost_title:
   other: "Les octets satellite coûtent cher. C'est toute la conception."
 cost_sub:
-  other: "Une ligne Iridium coûte quelques dizaines d'euros par mois plus des crédits par message, facturés par blocs de 340 octets. Donnez-en une à chaque personne d'une équipe et la facture suit les effectifs. Ce prix est précisément la raison d'être de la couche de routage."
+  other: "Une ligne Iridium coûte quelques dizaines d'euros par mois plus des crédits par message, facturés par blocs de 340 octets. Donnez-en une à chaque personne d'une équipe et la facture suit les effectifs. Ce prix pèse sur chaque décision de routage."
 c1_h:
   other: "Une liaison payante, partagée"
 c1_p:
@@ -163,7 +163,7 @@ hw_repo_b:
 nf_title:
   other: "Ce que ce n'est pas"
 nf_sub:
-  other: "Le moyen le plus rapide de perdre un après-midi est d'en attendre la mauvaise chose."
+  other: "Starlink, c'est la connectivité ; Meshtastic, un maillage local ; Reticulum, un réseau qui passe par n'importe quel porteur ; TAK, une carte partagée de la situation. MeshSat ne remplace aucun d'eux. Il fait passer les messages entre eux."
 nf1_h:
   other: "Pas un remplacement de Starlink"
 nf1_p:
@@ -306,3 +306,51 @@ host_self_n:
   other: "à vous de voir"
 host_self_price:
   other: "gratuit, Apache 2.0"
+is_title:
+  other: "Les réseaux se brisent en îles"
+is_sub:
+  other: "Une catastrophe fait rarement taire tous les systèmes à la fois. Elle coupe les liens entre eux : la radio continue de fonctionner au sein d'un service ou d'une cellule, le réseau téléphonique tombe, et ce qu'une équipe sait n'atteint pas l'équipe qui en a besoin."
+is_record_h:
+  other: "C'est déjà arrivé"
+is_joins_h:
+  other: "À quoi ressemble la jonction"
+is_to:
+  other: "vers"
+join1_h:
+  other: "Deux équipes sur deux maillages, sans internet"
+join1_s:
+  other: "Testé de kit à kit le 12 septembre 2026 par APRS, puis par SMS. C'est la deuxième vidéo ci-dessous."
+join2_h:
+  other: "Une vallée sans réseau, un bureau au loin"
+join2_s:
+  other: "La liaison satellite est confirmée sur une vraie liaison Iridium, mars 2026."
+join3_h:
+  other: "Un réseau radio de bénévoles et un poste de commandement"
+join3_s:
+  other: "Les deux interfaces sont testées sur le terrain. Cette route n'a pas encore été exécutée de bout en bout."
+is_who:
+  other: "Conçu pour les personnes qui travaillent entre ces îles : équipes de recherche et de sauvetage, sécurité civile et gestion de crise, organisations humanitaires, réseaux d'urgence de radioamateurs, expéditions, équipages en mer et industrie isolée. Aucune ne l'utilise encore ; le programme de terrain qui commence en novembre 2026 en est le premier vrai test."
+inc1_h:
+  other: "Ouragan Katrina, côte du golfe des États-Unis."
+inc1_p:
+  other: "Dans bien des cas, les secours de services différents ne pouvaient pas se parler à cause d'attributions de fréquences incompatibles. Un hélicoptère militaire a dû larguer un message dans une bouteille pour les avertir d'une fuite de gaz."
+inc1_src:
+  other: "rapport du panel de la FCC"
+inc2_h:
+  other: "Crues de la vallée de l'Ahr et de l'Eifel, Allemagne."
+inc2_p:
+  other: "34 stations de base du réseau radio des secours ont été touchées. En mode dégradé, la radio ne fonctionnait plus qu'à l'intérieur de la cellule de chaque station, et les liaisons au-delà ont été rétablies au cas par cas, par exemple par des passerelles."
+inc2_src:
+  other: "Landtag Rheinland-Pfalz, Drucksache 18/1947"
+inc3_h:
+  other: "Incendie de Lahaina, Maui."
+inc3_p:
+  other: "Le réseau radio de sécurité publique du comté semble avoir fonctionné tout du long, mais la police n'entendait pas les canaux des pompiers ni les pompiers ceux de la police, et une couverture mobile peu fiable a privé de coordination les camions-citernes privés."
+inc3_src:
+  other: "rapport du FSRI pour le procureur général d'Hawaï"
+inc4_h:
+  other: "Panne d'électricité en Espagne et au Portugal."
+inc4_p:
+  other: "Les réseaux téléphoniques publics, fixes et mobiles, sont tombés, et le distributeur portugais s'est rabattu sur des téléphones satellites. Le gestionnaire du réseau espagnol pouvait encore appeler mais ne joignait pas le centre de conduite de la distribution à Séville, et le rétablissement en Andalousie a été suspendu."
+inc4_src:
+  other: "rapport du groupe d'experts de l'ENTSO-E"

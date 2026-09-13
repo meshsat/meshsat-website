@@ -23,13 +23,13 @@ toggle_menu:
 choose_language:
   other: "Choose language"
 hero_eyebrow:
-  other: "Open source routing across radios that cannot reach each other"
+  other: "When networks fail, what survives becomes islands. MeshSat connects them."
 hero_title_a:
   other: "One message."
 hero_title_b:
   other: "Every way out."
 hero_sub:
-  other: "A mesh keeps a village talking to itself but has no route out of the valley. A satellite modem reaches anywhere and costs real money per message. MeshSat is the layer in between: it takes a message off the mesh and sends it by whatever bearer is still alive, spending satellite bytes only when nothing free is left."
+  other: "A mesh that keeps one valley talking, a volunteer radio net, a satellite modem, a command post's map: each can still work, and none can reach the others. MeshSat is open source software that takes a message off one and delivers it into another by whatever bearer is still alive, spending satellite bytes only when nothing free is left."
 hero_status:
   other: "Hub open. No fleet running on it yet, never used in a real emergency."
 hero_star:
@@ -57,11 +57,11 @@ t5:
 t6:
   other: "logged for dashboard and webhooks"
 trace_foot:
-  other: "The satellite leg failed and the message still arrived. That is the whole product. Routes, failover order and transform chains are configured per interface."
+  other: "The satellite leg failed and the message still arrived, in three systems the mesh cannot reach on its own. Routes, failover order and transform chains are configured per interface."
 tr_title:
   other: "Eight bearers, nine wired interfaces"
 tr_sub:
-  other: "Iridium runs on two modems, the 9603N for SBD and the 9704 for IMT. Every bearer is a first-class interface with its own MTU, cost model and transform pipeline. TAK and webhooks are integrations rather than bearers. Status says what we have actually run, not what we hope."
+  other: "Every system plugs in as an adapter behind one interface, with its own MTU, cost model and transform pipeline, and a rule can route from any adapter to any other. Iridium counts twice, on the 9603N and the 9704; TAK and webhooks are integrations rather than bearers. HF radio and DMR are on the roadmap and not built. Status says what we have actually run, not what we hope."
 th_category:
   other: "Category"
 th_transport:
@@ -103,7 +103,7 @@ tr_note_b:
 cost_title:
   other: "Satellite bytes are expensive. That is the whole design."
 cost_sub:
-  other: "An Iridium line costs tens of euros a month plus credits per message, billed in 340 byte blocks. Give one to every person in a team and the bill scales with headcount. That price is the reason the routing layer exists at all."
+  other: "An Iridium line costs tens of euros a month plus credits per message, billed in 340 byte blocks. Give one to every person in a team and the bill scales with headcount. That price shapes every routing decision."
 c1_h:
   other: "One paid link, shared"
 c1_p:
@@ -163,7 +163,7 @@ hw_repo_b:
 nf_title:
   other: "What it is not"
 nf_sub:
-  other: "The fastest way to waste an afternoon is to expect the wrong thing from it."
+  other: "Starlink is connectivity, Meshtastic a local mesh, Reticulum a network that runs over any bearer, TAK a shared map of the situation. MeshSat replaces none of them. It carries messages between them."
 nf1_h:
   other: "Not a Starlink replacement"
 nf1_p:
@@ -306,3 +306,51 @@ host_self_n:
   other: "you decide"
 host_self_price:
   other: "free, Apache 2.0"
+is_title:
+  other: "Networks fail into islands"
+is_sub:
+  other: "A disaster rarely silences every system at once. It cuts the links between them: radio keeps working inside one agency or one cell, the phone network goes, and what one team knows does not reach the team that needs it."
+is_record_h:
+  other: "It has happened before"
+is_joins_h:
+  other: "What joining them looks like"
+is_to:
+  other: "to"
+join1_h:
+  other: "Two teams on two meshes, no internet"
+join1_s:
+  other: "Run kit to kit on 12 September 2026 over APRS, then over SMS. It is the second film below."
+join2_h:
+  other: "A valley with no signal, an office far away"
+join2_s:
+  other: "The satellite leg is verified over a real Iridium link, March 2026."
+join3_h:
+  other: "A volunteer radio net and a command post"
+join3_s:
+  other: "Both interfaces are field tested. This route has not been run end to end yet."
+is_who:
+  other: "Built for the people who work between those islands: search and rescue teams, civil protection and emergency management, humanitarian organisations, amateur radio emergency groups, expeditions, maritime crews and remote industry. None of them runs it yet; the field programme that starts in November 2026 is its first real test."
+inc1_h:
+  other: "Hurricane Katrina, US Gulf Coast."
+inc1_p:
+  other: "In many cases responders in different agencies could not talk to each other because of incompatible frequency assignments. A military helicopter had to drop a message in a bottle to warn them of a gas leak."
+inc1_src:
+  other: "FCC panel report"
+inc2_h:
+  other: "Floods in the Ahr valley and the Eifel, Germany."
+inc2_p:
+  other: "34 emergency radio base stations were affected. In fallback mode radio kept working only inside each station's own cell, and links beyond it were patched case by case, for example with gateway connections."
+inc2_src:
+  other: "Landtag Rheinland-Pfalz, Drucksache 18/1947"
+inc3_h:
+  other: "Lahaina wildfire, Maui."
+inc3_p:
+  other: "The county's public safety radio system appears to have worked throughout, but police could not hear fire channels and fire could not hear police, and unreliable cell service left private water tankers uncoordinated."
+inc3_src:
+  other: "FSRI report for the Hawaii Attorney General"
+inc4_h:
+  other: "Blackout in Spain and Portugal."
+inc4_p:
+  other: "Public phone and mobile networks failed, and Portugal's distribution operator fell back on satellite phones. Spain's grid operator could still make calls but could not reach the distribution control centre in Seville, and restoring supply in Andalusia was paused."
+inc4_src:
+  other: "ENTSO-E expert panel report"
