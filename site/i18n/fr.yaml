@@ -59,9 +59,9 @@ t6:
 trace_foot:
   other: "La liaison satellite a échoué et le message est quand même arrivé, dans trois systèmes que le maillage n'atteint pas seul. Les routes, l'ordre de bascule et les chaînes de transformation se configurent par interface."
 tr_title:
-  other: "Huit porteurs, neuf interfaces câblées"
+  other: "Chaque système se branche sur le même routeur"
 tr_sub:
-  other: "Chaque système se branche comme un adaptateur derrière une même interface, avec sa propre MTU, son modèle de coût et sa chaîne de transformation, et une règle peut router de n'importe quel adaptateur vers n'importe quel autre. Iridium compte deux fois, sur le 9603N et le 9704 ; TAK et les webhooks sont des intégrations, pas des porteurs. La radio HF et le DMR figurent sur la feuille de route et ne sont pas construits. Le statut indique ce que nous avons réellement fait tourner, pas ce que nous espérons."
+  other: "Chaque système est un adaptateur derrière une même interface, avec sa propre MTU, son modèle de coût et sa chaîne de transformation, et une règle peut router de n'importe quel adaptateur vers n'importe quel autre. Aujourd'hui, huit porteurs tournent sur neuf interfaces, car Iridium compte deux fois, sur le 9603N et le 9704. La radio HF et le DMR figurent sur la feuille de route et ne sont pas construits. Le statut indique ce que nous avons réellement fait tourner, pas ce que nous espérons."
 th_category:
   other: "Catégorie"
 th_transport:
@@ -101,7 +101,7 @@ tr_note_link:
 tr_note_b:
   other: "de ce qui est prouvé et de ce qui ne l'est pas."
 cost_title:
-  other: "Les octets satellite coûtent cher. C'est toute la conception."
+  other: "Prendre le chemin le moins cher qui fonctionne encore."
 cost_sub:
   other: "Une ligne Iridium coûte quelques dizaines d'euros par mois plus des crédits par message, facturés par blocs de 340 octets. Donnez-en une à chaque personne d'une équipe et la facture suit les effectifs. Ce prix pèse sur chaque décision de routage."
 c1_h:
@@ -360,3 +360,9 @@ shot_prev:
   other: "Capture précédente"
 shot_next:
   other: "Capture suivante"
+fab_bus:
+  other: "règles, chaînes de transformation, ordre de bascule, coût"
+fab_future:
+  other: "pas construit"
+fab_cap:
+  other: "Les porteurs en haut, les intégrations en bas, un seul routeur entre eux : une règle peut router de n'importe quel adaptateur vers n'importe quel autre. En pointillés : sur la feuille de route, pas construit."
