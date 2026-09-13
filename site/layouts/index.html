@@ -117,6 +117,37 @@
             <p class="section-subtitle">{{ i18n "tr_sub" }}</p>
         </div>
 
+        {{/* The layer between networks (MESHSAT-1096 review 2). Every adapter
+             hangs off one router: bearers above, integrations below, the
+             roadmap dashed. Real interface IDs from the Bridge's code (the
+             trace's own vocabulary); HF and DMR have no ID because they do not
+             exist yet. The stubs and bus are drawn in CSS; a screen reader gets
+             two plain lists and the caption. */}}
+        {{ $bearers := slice
+            (dict "id" "mesh_0" "name" "Meshtastic")
+            (dict "id" "aprs_0" "name" "APRS")
+            (dict "id" "cellular_0" "name" "SMS")
+            (dict "id" "iridium_0" "name" "Iridium")
+            (dict "id" "zigbee_0" "name" "ZigBee")
+            (dict "id" "tcp_0" "name" "Reticulum")
+        }}
+        {{ $integrations := slice
+            (dict "id" "tak_0" "name" "TAK")
+            (dict "id" "mqtt_0" "name" "MQTT")
+            (dict "id" "webhook_0" "name" "Webhooks")
+        }}
+        <figure class="fabric" aria-labelledby="fabric-cap">
+            <ul class="fabric-row fabric-top">
+                {{ range $bearers }}<li class="fabric-node"><code>{{ .id }}</code><span>{{ .name }}</span></li>{{ end }}
+                {{ range (slice "HF" "DMR") }}<li class="fabric-node is-future"><span>{{ . }}</span><em>{{ i18n "fab_future" }}</em></li>{{ end }}
+            </ul>
+            <p class="fabric-bus"><code>router</code><span>{{ i18n "fab_bus" }}</span></p>
+            <ul class="fabric-row fabric-bottom">
+                {{ range $integrations }}<li class="fabric-node"><code>{{ .id }}</code><span>{{ .name }}</span></li>{{ end }}
+            </ul>
+            <figcaption id="fabric-cap">{{ i18n "fab_cap" }}</figcaption>
+        </figure>
+
         <div class="table-wrap" tabindex="0" role="region" aria-label="{{ i18n "table_transports_label" }}">
             <table class="data-table">
                 <thead>
