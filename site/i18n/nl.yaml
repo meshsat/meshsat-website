@@ -59,9 +59,9 @@ t6:
 trace_foot:
   other: "De satellietverbinding mislukte en het bericht kwam toch aan, in drie systemen die de mesh zelf niet kan bereiken. Routes, failover-volgorde en transformatieketens worden per interface ingesteld."
 tr_title:
-  other: "Acht dragers, negen bedrade interfaces"
+  other: "Elk systeem sluit aan op dezelfde router"
 tr_sub:
-  other: "Elk systeem sluit aan als adapter achter één interface, met een eigen MTU, kostenmodel en transformatieketen, en een regel kan van elke adapter naar elke andere routeren. Iridium telt twee keer, op de 9603N en de 9704; TAK en webhooks zijn integraties, geen dragers. HF-radio en DMR staan op de roadmap en zijn niet gebouwd. De status zegt wat we werkelijk hebben gedraaid, niet wat we hopen."
+  other: "Elk systeem is een adapter achter dezelfde interface, met een eigen MTU, kostenmodel en transformatieketen, en een regel kan van elke adapter naar elke andere routeren. Vandaag draaien acht dragers op negen interfaces, omdat Iridium twee keer telt, op de 9603N en de 9704. HF-radio en DMR staan op de roadmap en zijn niet gebouwd. De status zegt wat we werkelijk hebben gedraaid, niet wat we hopen."
 th_category:
   other: "Categorie"
 th_transport:
@@ -101,7 +101,7 @@ tr_note_link:
 tr_note_b:
   other: "van wat wel en niet bewezen is."
 cost_title:
-  other: "Satellietbytes zijn duur. Dat is het hele ontwerp."
+  other: "Neem de goedkoopste route die nog werkt."
 cost_sub:
   other: "Een Iridium-abonnement kost tientallen euro's per maand plus credits per bericht, afgerekend in blokken van 340 bytes. Geef er iedereen in een team één en de rekening groeit mee met het aantal mensen. Die prijs bepaalt elke routeringsbeslissing."
 c1_h:
@@ -360,3 +360,9 @@ shot_prev:
   other: "Vorige schermafbeelding"
 shot_next:
   other: "Volgende schermafbeelding"
+fab_bus:
+  other: "regels, transformatieketens, failover-volgorde, kosten"
+fab_future:
+  other: "niet gebouwd"
+fab_cap:
+  other: "Dragers boven, integraties onder, één router ertussen: een regel kan van elke adapter naar elke andere routeren. Gestippeld staat op de roadmap en is niet gebouwd."
