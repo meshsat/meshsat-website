@@ -188,8 +188,6 @@ hub_badge:
   other: "Ouvert"
 hub_status:
   other: "Le Hub est ouvert. Créez un compte, nous le vérifions avant son activation."
-hub_p:
-  other: "Gestion de flotte sur de nombreuses bridges : comptes OAuth2 et OIDC, clés d'API avec rôles, cloisonnement des locataires, chaînes d'escalade SOS, limites de débit par appareil et journal d'audit Ed25519 en chaîne de hachage. Déployable seul, en grappe ou sur Kubernetes."
 hub_cta:
   other: "Créer un compte"
 hub_signin:
@@ -285,27 +283,23 @@ film_kits_cap:
 host_title:
   other: "Hébergez le Hub sur vos serveurs, ou essayez-le sur les nôtres"
 host_caption:
-  other: "Où tourne le Hub, et combien d'appareils et de bridges chaque option peut enregistrer"
+  other: "Formules sur hub.meshsat.net"
 host_self_h:
   other: "Sur vos propres serveurs"
 host_self_p:
-  other: "Le Hub est open source sous licence Apache 2.0 : le même code que celui qui fait tourner hub.meshsat.net. Sur vos serveurs, vous fixez vous-même les limites d'appareils et n'avez besoin d'aucun compte chez nous."
+  other: "Le même code que celui de hub.meshsat.net, sur du matériel que vous contrôlez."
 host_self_src:
   other: "Code source du Hub"
 host_self_deploy:
   other: "Guide de déploiement"
 host_ours_h:
-  other: "Sur hub.meshsat.net"
-host_th_where:
-  other: "Où il tourne"
+  other: "Sur nos serveurs"
 host_th_cost:
   other: "Coût"
-host_row_self:
-  other: "Vos serveurs"
 host_self_n:
-  other: "à vous de voir"
+  other: "autant que vous en fixez"
 host_self_price:
-  other: "gratuit, Apache 2.0"
+  other: "gratuit"
 is_title:
   other: "Les réseaux se brisent en îles"
 is_sub:
@@ -366,3 +360,17 @@ fab_future:
   other: "pas construit"
 fab_cap:
   other: "Les porteurs en haut, les intégrations en bas, un seul routeur entre eux : une règle peut router de n'importe quel adaptateur vers n'importe quel autre. En pointillés : sur la feuille de route, pas construit."
+host_lead:
+  other: "Le Hub gère de nombreuses bridges depuis un seul endroit : comptes avec rôles, clés d'API, chaînes d'escalade SOS et un journal d'audit où toute modification se voit. Le code est le même dans les deux cas. Ce qui change, c'est qui le fait tourner et combien d'appareils vous pouvez enregistrer."
+host_k_devices:
+  other: "Appareils et bridges"
+host_k_account:
+  other: "Compte chez nous"
+host_v_account:
+  other: "aucun"
+host_k_runs:
+  other: "Déploiement"
+host_v_runs:
+  other: "un serveur, une grappe ou Kubernetes"
+host_th_plan:
+  other: "Formule"

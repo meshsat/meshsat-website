@@ -188,8 +188,6 @@ hub_badge:
   other: "Open"
 hub_status:
   other: "The Hub is open. Create an account and we review it before it goes live."
-hub_p:
-  other: "Fleet management across many bridges: OAuth2 and OIDC accounts, API keys with roles, multi-tenant isolation, SOS escalation chains, per-device rate limits and an Ed25519 hash-chain audit log. Deployable standalone, clustered, or on Kubernetes."
 hub_cta:
   other: "Create an account"
 hub_signin:
@@ -285,27 +283,23 @@ film_kits_cap:
 host_title:
   other: "Run the Hub on your own servers, or try it on ours"
 host_caption:
-  other: "Where the Hub runs, and how many devices and bridges each option can register"
+  other: "Plans on hub.meshsat.net"
 host_self_h:
   other: "On your own servers"
 host_self_p:
-  other: "The Hub is open source under the Apache 2.0 licence: the same code that runs hub.meshsat.net. On your own servers you set the device limits yourself and need no account with us."
+  other: "The same code that runs hub.meshsat.net, on hardware you control."
 host_self_src:
   other: "Hub source"
 host_self_deploy:
   other: "Deployment guide"
 host_ours_h:
-  other: "On hub.meshsat.net"
-host_th_where:
-  other: "Where it runs"
+  other: "On our servers"
 host_th_cost:
   other: "Cost"
-host_row_self:
-  other: "Your servers"
 host_self_n:
-  other: "you decide"
+  other: "as many as you set"
 host_self_price:
-  other: "free, Apache 2.0"
+  other: "free"
 is_title:
   other: "Networks fail into islands"
 is_sub:
@@ -366,3 +360,17 @@ fab_future:
   other: "not built"
 fab_cap:
   other: "Bearers above, integrations below, one router between them: a rule can route from any adapter to any other. Dashed is on the roadmap and not built."
+host_lead:
+  other: "The Hub runs many bridges from one place: accounts with roles, API keys, SOS escalation chains and an audit log that shows any change. The code is the same either way. What changes is who runs it and how many devices you can register."
+host_k_devices:
+  other: "Devices and bridges"
+host_k_account:
+  other: "Account with us"
+host_v_account:
+  other: "none"
+host_k_runs:
+  other: "Runs as"
+host_v_runs:
+  other: "one server, a cluster or Kubernetes"
+host_th_plan:
+  other: "Plan"

@@ -365,87 +365,74 @@
     </div>
 </section>
 
-{{/* 8. THE HUB: your servers or ours (MESHSAT-1096). Replaces the MESHSAT-995
-     "Plans" section, which made the whole site read as a subscription service.
-     Self-hosting leads. The hosted plans follow in one readout that starts with
-     the self-hosted row, so the table says "where it runs", not "what it costs".
-     Still deliberately not a card grid: every plan carries every feature and
-     only the device ceiling changes. #plans stays as an anchor for old links. */}}
+{{/* 8. THE HUB: your servers or ours (MESHSAT-1096, redesigned MESHSAT-1103).
+     Two deployments of the same code, drawn as two parallel artifacts in the
+     bench's head-bar chrome: the head names where it runs, the body carries a
+     short readout, the foot carries one primary action. Both readouts are
+     label / value rows, so the two choices read side by side. The hosted plans
+     stay a table (every plan carries every feature and only the device
+     ceiling changes), set quietly: no oversized orange numerals, no tier
+     cards. #plans stays as an anchor for old links. */}}
 <section id="hub" class="section host-section">
     <div class="container">
         <div class="section-head">
             <h2 class="section-title">{{ i18n "host_title" }}</h2>
-            <p class="section-subtitle">{{ i18n "hub_p" }}</p>
+            <p class="section-subtitle">{{ i18n "host_lead" }}</p>
         </div>
 
-        <div class="host-grid">
-            <div class="host-paths">
-                <div class="host-path">
+        <div class="host-bench">
+            <div class="artifact">
+                <div class="artifact-head"><span>meshsat-hub</span><span>Apache 2.0</span></div>
+                <div class="artifact-body host-body">
                     <h3>{{ i18n "host_self_h" }}</h3>
                     <p>{{ i18n "host_self_p" }}</p>
-                    <div class="host-actions">
+                    <dl class="readout">
+                        <div><dt>{{ i18n "host_k_devices" }}</dt><dd>{{ i18n "host_self_n" }}</dd></div>
+                        <div><dt>{{ i18n "host_th_cost" }}</dt><dd>{{ i18n "host_self_price" }}</dd></div>
+                        <div><dt>{{ i18n "host_k_account" }}</dt><dd>{{ i18n "host_v_account" }}</dd></div>
+                        <div><dt>{{ i18n "host_k_runs" }}</dt><dd>{{ i18n "host_v_runs" }}</dd></div>
+                    </dl>
+                </div>
+                <div class="artifact-foot term-foot">
+                    <div class="hero-actions">
+                        <a href="{{ .Site.Params.github }}-hub#deployment" class="btn btn-primary" target="_blank" rel="noopener">{{ i18n "host_self_deploy" }}</a>
                         <a href="{{ .Site.Params.github }}-hub" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "host_self_src" }}</a>
-                        <a href="{{ .Site.Params.github }}-hub#deployment" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "host_self_deploy" }}</a>
                     </div>
                 </div>
-                <div class="host-path">
-                    <h3>{{ i18n "host_ours_h" }} <span class="badge badge-open">{{ i18n "hub_badge" }}</span></h3>
+            </div>
+
+            <div class="artifact" id="plans">
+                <div class="artifact-head"><span>hub.meshsat.net</span><span class="badge badge-open">{{ i18n "hub_badge" }}</span></div>
+                <div class="artifact-body host-body">
+                    <h3>{{ i18n "host_ours_h" }}</h3>
                     <p>{{ i18n "hub_status" }}</p>
-                    <div class="host-actions">
-                        <a href="{{ .Site.Params.signup_url }}" class="btn btn-outline" rel="noopener">{{ i18n "hub_cta" }}</a>
+                    <table class="readout-table">
+                        <caption class="visually-hidden">{{ i18n "host_caption" }}</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">{{ i18n "host_th_plan" }}</th>
+                                <th scope="col" class="num">{{ i18n "plans_col" }}</th>
+                                <th scope="col" class="num">{{ i18n "host_th_cost" }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">{{ i18n "plan_free" }}</th><td class="num count">4</td><td class="num">{{ i18n "plan_free_price" }}</td></tr>
+                            <tr><th scope="row">{{ i18n "plan_crew" }}</th><td class="num count">24</td><td class="num">{{ i18n "plan_crew_price" }}</td></tr>
+                            <tr><th scope="row">{{ i18n "plan_fleet" }}</th><td class="num count">100</td><td class="num">{{ i18n "plan_fleet_price" }}</td></tr>
+                            <tr><th scope="row">{{ i18n "plan_more" }}</th><td class="num count">100+</td><td class="num"><a href="mailto:{{ .Site.Params.contact_email }}?subject=MeshSat%20Hub%3A%20custom%20plan">{{ i18n "plan_more_price" }}</a></td></tr>
+                        </tbody>
+                    </table>
+                    <p class="host-note">{{ i18n "plans_keeps" }}</p>
+                </div>
+                <div class="artifact-foot term-foot">
+                    <div class="hero-actions">
+                        <a href="{{ .Site.Params.signup_url }}" class="btn btn-primary" rel="noopener">{{ i18n "hub_cta" }}</a>
                         <a href="{{ .Site.Params.hub_url }}" class="btn btn-outline" rel="noopener">{{ i18n "hub_signin" }}</a>
                     </div>
                 </div>
             </div>
-
-            <div class="host-readout" id="plans">
-                <table class="plans">
-                    <caption class="visually-hidden">{{ i18n "host_caption" }}</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">{{ i18n "host_th_where" }}</th>
-                            <th scope="col" class="plans-count">{{ i18n "plans_col" }}</th>
-                            <th scope="col" class="plans-price">{{ i18n "host_th_cost" }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{ i18n "host_row_self" }}</th>
-                            <td class="plans-count"><span class="plans-n plans-n-open">{{ i18n "host_self_n" }}</span></td>
-                            <td class="plans-price">{{ i18n "host_self_price" }}</td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr class="plans-group"><th scope="rowgroup" colspan="3">hub.meshsat.net</th></tr>
-                        <tr>
-                            <th scope="row">{{ i18n "plan_free" }}</th>
-                            <td class="plans-count"><span class="plans-n">4</span></td>
-                            <td class="plans-price">{{ i18n "plan_free_price" }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">{{ i18n "plan_crew" }}</th>
-                            <td class="plans-count"><span class="plans-n">24</span></td>
-                            <td class="plans-price">{{ i18n "plan_crew_price" }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">{{ i18n "plan_fleet" }}</th>
-                            <td class="plans-count"><span class="plans-n">100</span></td>
-                            <td class="plans-price">{{ i18n "plan_fleet_price" }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">{{ i18n "plan_more" }}</th>
-                            <td class="plans-count"><span class="plans-n plans-n-open">100+</span></td>
-                            <td class="plans-price"><a href="mailto:{{ .Site.Params.contact_email }}?subject=MeshSat%20Hub%3A%20custom%20plan">{{ i18n "plan_more_price" }}</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="plans-notes">
-                    <p>{{ i18n "plans_keeps" }}</p>
-                    <p>{{ i18n "plans_airtime" }}</p>
-                </div>
-            </div>
         </div>
+        <p class="host-shared">{{ i18n "plans_airtime" }}</p>
     </div>
 </section>
 
