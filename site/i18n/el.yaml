@@ -194,10 +194,6 @@ hub_cta:
   other: "Δημιουργία λογαριασμού"
 hub_signin:
   other: "Σύνδεση"
-plans_title:
-  other: "Πλάνα"
-plans_sub:
-  other: "Ένας αριθμός αλλάζει ανάμεσα στα πλάνα: πόσες συσκευές και bridges μπορείτε να καταχωρίσετε. Όλα τα υπόλοιπα είναι ίδια."
 plans_col:
   other: "συσκευές και bridges"
 plan_free:
@@ -264,14 +260,10 @@ table_transports_label:
   other: "Πίνακας φορέων μεταφοράς, με κύλιση"
 table_hardware_label:
   other: "Πίνακας εξοπλισμού, με κύλιση"
-video_title:
-  other: "Δείτε το σε δύο λεπτά"
 video_sub:
   other: "Τα πρωτότυπα στον πάγκο εργασίας, μια τοπική αποστολή στο web dashboard και ο τρισδιάστατος σχεδιασμός των field kits που κατασκευάζονται."
 video_play:
   other: "Αναπαραγωγή του εισαγωγικού βίντεο"
-video_foot:
-  other: "Το βίντεο φορτώνεται από το YouTube μόνο αφού πατήσετε αναπαραγωγή."
 video_watch:
   other: "Παρακολουθήστε στο YouTube"
 lightbox_close:
@@ -280,3 +272,37 @@ term_log_label:
   other: "Έξοδος εγκατάστασης"
 and_apk:
   other: "Λήψη APK"
+films_title:
+  other: "Δείτε το να λειτουργεί"
+films_sub:
+  other: "Πρώτα η εισαγωγή, μετά δύο field kits στον πάγκο που περνούν ένα μήνυμα από το ένα πλέγμα στο άλλο, μέσω ασυρμάτου APRS και έπειτα μέσω SMS."
+films_consent:
+  other: "Τίποτα δεν φορτώνεται από το YouTube μέχρι να πατήσετε αναπαραγωγή."
+film_kits_play:
+  other: "Αναπαραγωγή του βίντεο με τα field kits"
+film_kits_cap:
+  other: "Γυρίστηκε στο Λάιντεν στις 12 Σεπτεμβρίου 2026: ένα μήνυμα περνά από το πλέγμα του ενός κιτ στο πλέγμα του άλλου μέσω APRS στα 144,800 MHz και ξανά μέσω SMS."
+host_title:
+  other: "Τρέξτε το Hub στους δικούς σας διακομιστές ή δοκιμάστε το στους δικούς μας"
+host_caption:
+  other: "Πού τρέχει το Hub και πόσες συσκευές και bridges μπορεί να καταχωρίσει κάθε επιλογή"
+host_self_h:
+  other: "Στους δικούς σας διακομιστές"
+host_self_p:
+  other: "Το Hub είναι ανοιχτού κώδικα με άδεια Apache 2.0: ο ίδιος κώδικας που τρέχει στο hub.meshsat.net. Στους δικούς σας διακομιστές ορίζετε μόνοι σας τα όρια συσκευών και δεν χρειάζεστε λογαριασμό σε εμάς."
+host_self_src:
+  other: "Κώδικας του Hub"
+host_self_deploy:
+  other: "Οδηγός εγκατάστασης"
+host_ours_h:
+  other: "Στο hub.meshsat.net"
+host_th_where:
+  other: "Πού τρέχει"
+host_th_cost:
+  other: "Κόστος"
+host_row_self:
+  other: "Οι διακομιστές σας"
+host_self_n:
+  other: "το ορίζετε εσείς"
+host_self_price:
+  other: "δωρεάν, Apache 2.0"
