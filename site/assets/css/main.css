@@ -4017,8 +4017,21 @@ img {
 @media (min-width: 960px) {
     .islands-grid { align-items: stretch; }
     .islands-col { display: flex; flex-direction: column; }
-    .islands-col .joins { margin-bottom: var(--space-xl); }
+    /* The spare height is shared by the three routes as equal bands, content
+       centred in each, rather than left as one hole above the who line (tried:
+       its rule then landed 38px off the record's last row rule, a near miss). */
+    .islands-col .joins { flex: 1; display: flex; flex-direction: column; margin-bottom: var(--space-xl); }
+    .islands-col .join { flex: 1; align-content: center; }
+    .islands-col .join:last-child { padding-bottom: var(--space-md); }
     .islands-who { margin-top: auto; }
+    /* Side by side, only the two heading rules may cross the seam: they align
+       exactly. Rules between routes landed 6 to 38px off the record's row rules
+       beside them, so at two columns the routes are separated by space alone. */
+    .islands-col .join,
+    .islands-who { border: 0; }
+}
+@media (min-width: 960px) and (forced-colors: active) {
+    .islands-who { border-top: 1px solid CanvasText; }
 }
 @media (forced-colors: active) {
     .join-route code { border-color: CanvasText; }
