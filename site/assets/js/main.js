@@ -116,10 +116,10 @@ function copyCode(btn) {
     });
 }
 
-// Intro video — the poster facade opens a centred modal at double the inline
-// size; nothing loads from YouTube until this click. Falls back to the old
-// in-place swap if the dialog is unavailable.
-function playIntroVideo(btn) {
+// Films — each poster facade opens one shared, centred modal at double the
+// inline size, named after the film it plays; nothing loads from YouTube until
+// this click. Falls back to an in-place swap if the dialog is unavailable.
+function playVideo(btn) {
     var frame = document.createElement('iframe');
     frame.src = btn.getAttribute('data-embed');
     frame.title = btn.getAttribute('aria-label');
@@ -129,6 +129,10 @@ function playIntroVideo(btn) {
     var dlg = document.getElementById('video-dialog');
     var media = document.getElementById('video-dialog-media');
     if (dlg && media && typeof dlg.showModal === 'function') {
+        var name = document.getElementById('video-dialog-name');
+        var time = document.getElementById('video-dialog-time');
+        if (name) name.textContent = btn.getAttribute('data-name') || '';
+        if (time) time.textContent = btn.getAttribute('data-time') || '';
         media.innerHTML = '';
         media.appendChild(frame);
         dlg.showModal();

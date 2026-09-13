@@ -194,10 +194,6 @@ hub_cta:
   other: "Créer un compte"
 hub_signin:
   other: "Se connecter"
-plans_title:
-  other: "Formules"
-plans_sub:
-  other: "Une seule valeur change d'une formule à l'autre : le nombre d'appareils et de bridges que vous pouvez enregistrer. Tout le reste est identique."
 plans_col:
   other: "appareils et bridges"
 plan_free:
@@ -264,14 +260,10 @@ table_transports_label:
   other: "Tableau des porteurs, défilable"
 table_hardware_label:
   other: "Tableau du matériel, défilable"
-video_title:
-  other: "Deux minutes pour comprendre"
 video_sub:
   other: "Les prototypes d'atelier, un envoi local dans le tableau de bord web et le design 3D des kits de terrain en construction."
 video_play:
   other: "Lire la vidéo d'introduction"
-video_foot:
-  other: "La vidéo n'est chargée depuis YouTube qu'après avoir appuyé sur lecture."
 video_watch:
   other: "Regarder sur YouTube"
 lightbox_close:
@@ -280,3 +272,37 @@ term_log_label:
   other: "Sortie de l'installation"
 and_apk:
   other: "Télécharger l'APK"
+films_title:
+  other: "Le voir fonctionner"
+films_sub:
+  other: "D'abord la présentation, puis deux kits de terrain sur l'établi qui font passer un message d'un maillage à l'autre, par radio APRS puis par SMS."
+films_consent:
+  other: "Rien n'est chargé depuis YouTube avant que vous appuyiez sur lecture."
+film_kits_play:
+  other: "Lire la vidéo des kits de terrain"
+film_kits_cap:
+  other: "Enregistré à Leyde le 12 septembre 2026 : un message passe du maillage d'un kit à celui de l'autre par APRS sur 144,800 MHz, puis à nouveau par SMS."
+host_title:
+  other: "Hébergez le Hub sur vos serveurs, ou essayez-le sur les nôtres"
+host_caption:
+  other: "Où tourne le Hub, et combien d'appareils et de bridges chaque option peut enregistrer"
+host_self_h:
+  other: "Sur vos propres serveurs"
+host_self_p:
+  other: "Le Hub est open source sous licence Apache 2.0 : le même code que celui qui fait tourner hub.meshsat.net. Sur vos serveurs, vous fixez vous-même les limites d'appareils et n'avez besoin d'aucun compte chez nous."
+host_self_src:
+  other: "Code source du Hub"
+host_self_deploy:
+  other: "Guide de déploiement"
+host_ours_h:
+  other: "Sur hub.meshsat.net"
+host_th_where:
+  other: "Où il tourne"
+host_th_cost:
+  other: "Coût"
+host_row_self:
+  other: "Vos serveurs"
+host_self_n:
+  other: "à vous de voir"
+host_self_price:
+  other: "gratuit, Apache 2.0"

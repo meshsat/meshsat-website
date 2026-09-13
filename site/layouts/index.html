@@ -189,72 +189,49 @@
     </div>
 </section>
 
-{{/* 5b. PLANS — the Hub is a paid service now.
-
-     Deliberately NOT a card grid. Every plan carries every feature; the only
-     thing that differs is one number, so a feature checklist would imply
-     differences that do not exist and this site has a contract against that.
-     The figures are the visual event: one right-aligned column of tabular
-     numerals in the display mono, which is the same readout language as the
-     hero trace. No "most popular" badge, no hover lift, no entrance animation. */}}
-<section id="plans" class="section plans-section">
+{{/* 6. FILMS (MESHSAT-1096). Two recordings side by side in the bench's
+     head-bar chrome. Each poster is a click-to-play facade: nothing loads from
+     YouTube until a press, then playVideo() in main.js opens the shared modal. */}}
+{{ $films := slice
+    (dict "id" "Q-JKNwWlzpE" "name" "MeshSat-intro.mp4" "time" "2:02" "poster" "/images/video-poster.jpg" "play" "video_play" "cap" "video_sub")
+    (dict "id" "-yTImop3Qk8" "name" "MeshSat-field-kits.mp4" "time" "3:04" "poster" "/images/video-poster-fieldkits.jpg" "play" "film_kits_play" "cap" "film_kits_cap")
+}}
+<section id="video" class="section films-section">
     <div class="container">
         <div class="section-head">
-            <h2 class="section-title">{{ i18n "plans_title" }}</h2>
-            <p class="section-subtitle">{{ i18n "plans_sub" }}</p>
+            <h2 class="section-title">{{ i18n "films_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "films_sub" }} {{ i18n "films_consent" }}</p>
         </div>
 
-        <table class="plans">
-            <caption class="visually-hidden">{{ i18n "plans_sub" }}</caption>
-            <thead>
-                <tr>
-                    <th scope="col">{{ i18n "plans_title" }}</th>
-                    <th scope="col" class="plans-count">{{ i18n "plans_col" }}</th>
-                    <th scope="col" class="plans-price">&nbsp;</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">{{ i18n "plan_free" }}</th>
-                    <td class="plans-count"><span class="plans-n">4</span></td>
-                    <td class="plans-price">{{ i18n "plan_free_price" }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">{{ i18n "plan_crew" }}</th>
-                    <td class="plans-count"><span class="plans-n">24</span></td>
-                    <td class="plans-price">{{ i18n "plan_crew_price" }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">{{ i18n "plan_fleet" }}</th>
-                    <td class="plans-count"><span class="plans-n">100</span></td>
-                    <td class="plans-price">{{ i18n "plan_fleet_price" }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">{{ i18n "plan_more" }}</th>
-                    <td class="plans-count"><span class="plans-n plans-n-open">100+</span></td>
-                    <td class="plans-price"><a href="mailto:{{ .Site.Params.contact_email }}?subject=MeshSat%20Hub%3A%20custom%20plan">{{ i18n "plan_more_price" }}</a></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="plans-notes">
-            <p>{{ i18n "plans_keeps" }}</p>
-            <p>{{ i18n "plans_airtime" }}</p>
+        <div class="films-grid">
+            {{ range $films }}
+            <figure class="video-frame">
+                <div class="video-head"><span>{{ .name }}</span><span>{{ .time }}</span></div>
+                <div class="video-media">
+                    <button type="button" class="video-play" onclick="playVideo(this)" data-embed="https://www.youtube-nocookie.com/embed/{{ .id }}?autoplay=1&amp;rel=0" data-name="{{ .name }}" data-time="{{ .time }}" aria-label="{{ i18n .play }}">
+                        <img src="{{ .poster }}" alt="" width="1280" height="720" loading="lazy">
+                        <span class="video-play-glyph" aria-hidden="true">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        </span>
+                    </button>
+                </div>
+                <figcaption class="video-foot">{{ i18n .cap }} <a href="https://www.youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">{{ i18n "video_watch" }}</a></figcaption>
+            </figure>
+            {{ end }}
         </div>
     </div>
 </section>
 
-{{/* 6. START — the closing workbench: install, watch, and the rest of the system.
-     #video and #hub live here as anchored blocks since MESHSAT-732. */}}
-<section class="section cta-section">
+{{/* 7. TRY IT: the closing workbench. It opens the self-serve half of the
+     page (the Hub follows), so it holds the two things a reader can start on
+     alone: the Bridge's installer and the phone. Every terminal line below is
+     literal install.sh output. */}}
+<section id="try" class="section cta-section">
     <div class="container">
         <div class="section-head">
             <h2 class="section-title">{{ i18n "cta_title" }}</h2>
             <p class="section-subtitle">{{ i18n "cta_sub" }}</p>
         </div>
-        {{/* The bench: four artifacts in the same head-bar chrome. The page
-             opens with the bridge's log; it closes with the user's terminal.
-             Every terminal line below is literal install.sh output. */}}
         <div class="bench">
             <div class="artifact">
                 <div class="artifact-head"><span>get.meshsat.net</span><span>bash</span></div>
@@ -283,41 +260,100 @@
                 </div>
             </div>
 
-            <div class="video-frame" id="video">
-                <div class="video-head"><span>MeshSat-intro.mp4</span><span>2:02</span></div>
-                <div class="video-media">
-                    <button type="button" class="video-play" onclick="playIntroVideo(this)" data-embed="https://www.youtube-nocookie.com/embed/Q-JKNwWlzpE?autoplay=1&amp;rel=0" aria-label="{{ i18n "video_play" }}">
-                        <img src="/images/video-poster.jpg" alt="" width="1280" height="720" loading="lazy">
-                        <span class="video-play-glyph" aria-hidden="true">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                        </span>
-                    </button>
-                </div>
-                <p class="video-foot">{{ i18n "video_foot" }} <a href="https://www.youtube.com/watch?v=Q-JKNwWlzpE" target="_blank" rel="noopener">{{ i18n "video_watch" }}</a></p>
-            </div>
-
-            <div class="artifact" id="hub">
-                <div class="artifact-head"><h3>MeshSat Hub</h3><span class="badge badge-open">{{ i18n "hub_badge" }}</span></div>
+            <div class="artifact">
+                <div class="artifact-head"><h3>MeshSat Android</h3></div>
                 <div class="artifact-body">
-                    <p class="section-status">
-                        <span class="section-status-text">{{ i18n "hub_status" }}</span>
-                    </p>
-                    <p>{{ i18n "hub_p" }}</p>
-                    <div class="artifact-actions">
+                    <p>{{ i18n "and_p" }}</p>
+                </div>
+                <div class="artifact-foot term-foot">
+                    <div class="hero-actions">
+                        <a href="{{ .Site.Params.github }}-android/releases/latest" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "and_apk" }}</a>
+                        <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "and_cta" }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{/* 8. THE HUB: your servers or ours (MESHSAT-1096). Replaces the MESHSAT-995
+     "Plans" section, which made the whole site read as a subscription service.
+     Self-hosting leads. The hosted plans follow in one readout that starts with
+     the self-hosted row, so the table says "where it runs", not "what it costs".
+     Still deliberately not a card grid: every plan carries every feature and
+     only the device ceiling changes. #plans stays as an anchor for old links. */}}
+<section id="hub" class="section host-section">
+    <div class="container">
+        <div class="section-head">
+            <h2 class="section-title">{{ i18n "host_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "hub_p" }}</p>
+        </div>
+
+        <div class="host-grid">
+            <div class="host-paths">
+                <div class="host-path">
+                    <h3>{{ i18n "host_self_h" }}</h3>
+                    <p>{{ i18n "host_self_p" }}</p>
+                    <div class="host-actions">
+                        <a href="{{ .Site.Params.github }}-hub" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "host_self_src" }}</a>
+                        <a href="{{ .Site.Params.github }}-hub#deployment" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "host_self_deploy" }}</a>
+                    </div>
+                </div>
+                <div class="host-path">
+                    <h3>{{ i18n "host_ours_h" }} <span class="badge badge-open">{{ i18n "hub_badge" }}</span></h3>
+                    <p>{{ i18n "hub_status" }}</p>
+                    <div class="host-actions">
                         <a href="{{ .Site.Params.signup_url }}" class="btn btn-outline" rel="noopener">{{ i18n "hub_cta" }}</a>
                         <a href="{{ .Site.Params.hub_url }}" class="btn btn-outline" rel="noopener">{{ i18n "hub_signin" }}</a>
                     </div>
                 </div>
             </div>
 
-            <div class="artifact">
-                <div class="artifact-head"><h3>MeshSat Android</h3></div>
-                <div class="artifact-body">
-                    <p>{{ i18n "and_p" }}</p>
-                    <div class="artifact-actions">
-                        <a href="{{ .Site.Params.github }}-android/releases/latest" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "and_apk" }}</a>
-                        <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "and_cta" }}</a>
-                    </div>
+            <div class="host-readout" id="plans">
+                <table class="plans">
+                    <caption class="visually-hidden">{{ i18n "host_caption" }}</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">{{ i18n "host_th_where" }}</th>
+                            <th scope="col" class="plans-count">{{ i18n "plans_col" }}</th>
+                            <th scope="col" class="plans-price">{{ i18n "host_th_cost" }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{ i18n "host_row_self" }}</th>
+                            <td class="plans-count"><span class="plans-n plans-n-open">{{ i18n "host_self_n" }}</span></td>
+                            <td class="plans-price">{{ i18n "host_self_price" }}</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr class="plans-group"><th scope="rowgroup" colspan="3">hub.meshsat.net</th></tr>
+                        <tr>
+                            <th scope="row">{{ i18n "plan_free" }}</th>
+                            <td class="plans-count"><span class="plans-n">4</span></td>
+                            <td class="plans-price">{{ i18n "plan_free_price" }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{{ i18n "plan_crew" }}</th>
+                            <td class="plans-count"><span class="plans-n">24</span></td>
+                            <td class="plans-price">{{ i18n "plan_crew_price" }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{{ i18n "plan_fleet" }}</th>
+                            <td class="plans-count"><span class="plans-n">100</span></td>
+                            <td class="plans-price">{{ i18n "plan_fleet_price" }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">{{ i18n "plan_more" }}</th>
+                            <td class="plans-count"><span class="plans-n plans-n-open">100+</span></td>
+                            <td class="plans-price"><a href="mailto:{{ .Site.Params.contact_email }}?subject=MeshSat%20Hub%3A%20custom%20plan">{{ i18n "plan_more_price" }}</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="plans-notes">
+                    <p>{{ i18n "plans_keeps" }}</p>
+                    <p>{{ i18n "plans_airtime" }}</p>
                 </div>
             </div>
         </div>
@@ -332,11 +368,12 @@
     </div>
 </dialog>
 
-{{/* Video modal — playIntroVideo() injects the nocookie iframe here; closing
-     removes it so playback actually stops. */}}
-<dialog class="shot-dialog video-dialog" id="video-dialog" aria-label="MeshSat-intro.mp4">
+{{/* Video modal, shared by both films. playVideo() names it after the film
+     and injects the nocookie iframe; closing removes the iframe so playback
+     actually stops. */}}
+<dialog class="shot-dialog video-dialog" id="video-dialog" aria-labelledby="video-dialog-name">
     <div class="shot-frame">
-        <div class="shot-head"><span>MeshSat-intro.mp4</span><span class="shot-time">2:02</span><button type="button" class="shot-close" onclick="this.closest('dialog').close()" aria-label="{{ i18n "lightbox_close" }}">&#10005;</button></div>
+        <div class="shot-head"><span id="video-dialog-name"></span><span class="shot-time" id="video-dialog-time"></span><button type="button" class="shot-close" onclick="this.closest('dialog').close()" aria-label="{{ i18n "lightbox_close" }}">&#10005;</button></div>
         <div class="video-media" id="video-dialog-media"></div>
     </div>
 </dialog>
