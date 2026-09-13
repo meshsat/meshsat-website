@@ -188,8 +188,6 @@ hub_badge:
   other: "Offen"
 hub_status:
   other: "Der Hub ist offen. Erstellen Sie ein Konto, wir prüfen es, bevor es freigeschaltet wird."
-hub_p:
-  other: "Flottenverwaltung über viele Bridges: OAuth2- und OIDC-Konten, API-Schlüssel mit Rollen, Mandantentrennung, SOS-Eskalationsketten, Ratenbegrenzung je Gerät und ein Ed25519-Hash-Chain-Auditlog. Betreibbar einzeln, im Cluster oder auf Kubernetes."
 hub_cta:
   other: "Konto erstellen"
 hub_signin:
@@ -285,27 +283,23 @@ film_kits_cap:
 host_title:
   other: "Den Hub auf eigenen Servern betreiben oder auf unseren ausprobieren"
 host_caption:
-  other: "Wo der Hub läuft und wie viele Geräte und Bridges jede Variante registrieren kann"
+  other: "Tarife auf hub.meshsat.net"
 host_self_h:
   other: "Auf Ihren eigenen Servern"
 host_self_p:
-  other: "Der Hub ist Open Source unter der Apache-2.0-Lizenz: derselbe Code, auf dem hub.meshsat.net läuft. Auf eigenen Servern legen Sie die Gerätegrenzen selbst fest und brauchen kein Konto bei uns."
+  other: "Derselbe Code, auf dem hub.meshsat.net läuft, auf Hardware unter Ihrer Kontrolle."
 host_self_src:
   other: "Quellcode des Hub"
 host_self_deploy:
   other: "Installationsanleitung"
 host_ours_h:
-  other: "Auf hub.meshsat.net"
-host_th_where:
-  other: "Wo er läuft"
+  other: "Auf unseren Servern"
 host_th_cost:
   other: "Kosten"
-host_row_self:
-  other: "Ihre Server"
 host_self_n:
-  other: "Sie entscheiden"
+  other: "so viele, wie Sie festlegen"
 host_self_price:
-  other: "kostenlos, Apache 2.0"
+  other: "kostenlos"
 is_title:
   other: "Netze zerfallen in Inseln"
 is_sub:
@@ -366,3 +360,17 @@ fab_future:
   other: "nicht gebaut"
 fab_cap:
   other: "Träger oben, Integrationen unten, ein Router dazwischen: Eine Regel kann von jedem Adapter zu jedem anderen routen. Gestrichelt steht auf der Roadmap und ist nicht gebaut."
+host_lead:
+  other: "Der Hub verwaltet viele Bridges an einem Ort: Konten mit Rollen, API-Schlüssel, SOS-Eskalationsketten und ein Auditlog, in dem jede Änderung sichtbar wird. Der Code ist in beiden Fällen derselbe. Es ändert sich nur, wer ihn betreibt und wie viele Geräte Sie registrieren können."
+host_k_devices:
+  other: "Geräte und Bridges"
+host_k_account:
+  other: "Konto bei uns"
+host_v_account:
+  other: "keines"
+host_k_runs:
+  other: "Betrieb als"
+host_v_runs:
+  other: "ein Server, ein Cluster oder Kubernetes"
+host_th_plan:
+  other: "Tarif"

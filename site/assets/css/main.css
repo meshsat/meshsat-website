@@ -3763,142 +3763,6 @@ img {
     padding: var(--space-sm) var(--space-md) var(--space-md);
 }
 
-/* ---------- The Hub: your servers or ours (MESHSAT-1096) ----------
-   Replaces the MESHSAT-995 Plans section. Two ways to run the Hub on the left,
-   one readout on the right, on the same 5fr / 6fr seam as the section head.
-   Still a manifest, not a card grid: every plan carries every feature and only
-   the device ceiling changes, so no tier cards, no "most popular", no hover lift. */
-.host-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-xl) var(--space-3xl);
-    align-items: start;
-}
-@media (min-width: 960px) {
-    .host-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
-}
-.host-path {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-    padding-block: var(--space-md) var(--space-xl);
-    border-top: 1px solid var(--color-border-light);
-}
-.host-path:last-child { padding-bottom: 0; }
-.host-path h3 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--space-sm);
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--color-text);
-}
-.host-path p {
-    margin: 0;
-    max-width: 52ch;
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    line-height: 1.65;
-}
-.host-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-    margin-top: var(--space-sm);
-}
-.host-actions .btn-outline { width: auto; }
-
-#plans { scroll-margin-top: 5rem; }
-
-.plans {
-    width: 100%;
-    border-collapse: collapse;
-}
-.plans th,
-.plans td {
-    padding: var(--space-sm) 0;
-    border-bottom: 1px solid var(--color-border);
-    text-align: left;
-    vertical-align: baseline;
-}
-/* The header row's top padding matches .host-path's, so the first path title
-   and the column labels share a baseline across the seam. */
-.plans thead th {
-    padding-top: var(--space-md);
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--color-text-muted);
-    border-top: 1px solid var(--color-border-light);
-    border-bottom-color: var(--color-border-light);
-}
-.plans tbody th {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text);
-    white-space: nowrap;
-}
-/* Two classes deep on purpose. The MESHSAT-995 version declared these at one
-   class, under the .plans th / .plans td rule above, so the numerals never
-   right-aligned: they floated a third of the way in with a dead middle. */
-.plans .plans-count,
-.plans .plans-price { text-align: right; }
-.plans .plans-count { width: 30%; }
-.plans .plans-price {
-    width: 38%;
-    padding-left: var(--space-lg);
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-}
-.plans-price a { color: var(--color-text-muted); text-decoration: underline; }
-.plans-price a:hover { color: var(--color-primary); }
-
-/* The one number that changes between plans. */
-.plans-n {
-    font-family: var(--font-display);
-    font-variant-numeric: tabular-nums;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 1.1;
-    color: var(--color-primary);
-}
-/* "100+" and "you decide" are boundaries, not counts, so they are quiet. */
-.plans-n-open {
-    font-size: 1.05rem;
-    color: var(--color-text-muted);
-}
-/* The hosted rows sit under their address, named like a group label. */
-.plans .plans-group th {
-    padding: var(--space-lg) 0 var(--space-xs);
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--color-text-muted);
-    border-bottom-color: var(--color-border-light);
-}
-
-.plans-notes {
-    margin-top: var(--space-lg);
-    display: grid;
-    gap: var(--space-sm);
-}
-.plans-notes p {
-    margin: 0;
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    line-height: 1.65;
-}
-
-@media (max-width: 640px) {
-    .plans-n { font-size: 1.6rem; }
-    .plans-n-open { font-size: 0.9rem; }
-    .plans .plans-price { padding-left: var(--space-md); font-size: 0.82rem; }
-    .plans thead th { font-size: 0.72rem; }
-}
-
 /* ---------- Hero lead line (MESHSAT-1096) ----------
    The eyebrow now carries the page's first sentence, the islands thesis, so it
    is set to be read: sentence case at reading size, no tracking. An uppercase
@@ -4164,4 +4028,257 @@ img {
 }
 @media (forced-colors: active) {
     .fabric-bus { border-color: CanvasText; }
+}
+
+/* ==========================================================================
+   Type and layout pass (MESHSAT-1103, 13 Sep 2026)
+   From a measured audit of the live site. Appended last so it settles the
+   cascade; each rule names the defect it removes.
+   ========================================================================== */
+
+/* Headings: display type inherited body leading (1.6), so every two-line
+   section title stood ~53px line to line at 34px. Balanced wrapping stops a
+   single word stranding on the last line ("islands", "ours", "Bridge"). */
+h1, h2, h3 { text-wrap: balance; }
+.section-title,
+.page-title,
+.page-content h1,
+.install-page h1 { line-height: 1.2; }
+p, li, dd, figcaption { text-wrap: pretty; }
+
+/* One sans scale, four steps, instead of ten sizes between 13 and 18px:
+   14px captions and notes under media, 15px card and table text, 16px body,
+   18px lead. */
+.section-subtitle { font-size: 1.125rem; }
+.term-note,
+.join-state,
+.fabric figcaption,
+.screenshot-card figcaption,
+.films-grid .video-foot { font-size: 0.875rem; }
+.not-for-card p,
+.incident p,
+.reason-card p,
+.artifact-body p,
+.islands-who,
+.join-h,
+.table-note,
+.funding-note,
+.data-table th,
+.data-table td { font-size: 0.9375rem; }
+@media (max-width: 640px) {
+    .section-subtitle { font-size: 1rem; line-height: 1.6; }
+    .data-table th,
+    .data-table td { font-size: 0.875rem; }
+    /* The title and its lead sat 8px apart under a two-line title. */
+    .section-head { row-gap: var(--space-md); }
+}
+
+/* Nothing under 12px: the status pill (11.8px), the trace foot (11.5px) and
+   the diagram's "not built" (11.5px). The pill is a squared tag, not a
+   capsule, because its sentence wraps to two lines at most widths, and a
+   two-line capsule reads as a mistake. */
+.hero-status {
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    border-radius: var(--radius-md);
+    text-wrap: balance;
+}
+.trace-foot { font-size: 0.78rem; }
+.fabric-node em { font-size: 0.75rem; }
+
+/* One card heading: display mono, 600, body ink, 1.05rem. "What it is not"
+   was sans 700 in --color-warning, a state colour used as decoration and a
+   different orange from the brand's. */
+.not-for-card h3,
+.reason-card h3,
+.host-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+}
+
+/* "What it is not" on one column drew a bottom rule and the next card's top
+   rule 32px apart: two lines for one boundary. */
+@media (max-width: 700px) {
+    .not-for-card { border-bottom: 0; }
+    .not-for-card:last-child { border-bottom: 1px solid var(--color-border-light); }
+}
+
+/* The hero on a phone ended in ~95px of empty photograph. */
+@media (max-width: 1099px) {
+    .hero-content { padding-block: var(--space-3xl) var(--space-2xl); }
+}
+
+/* Footer on a phone: three stacked link lists ran ~550px; two columns. */
+@media (max-width: 640px) {
+    .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xl) var(--space-lg); }
+    .footer-brand { grid-column: 1 / -1; }
+}
+
+/* Short pages (404) left a band of page ground under the footer. */
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1 0 auto; }
+
+/* ---------- Content pages ---------- */
+/* Prose ran 800 to 1128px wide at 16px: 90 to 127 characters a line. Tables
+   keep the full width; running text stops near 75. */
+.page-content :is(p, ul, ol, h2, h3, blockquote) { max-width: 66ch; }
+.page-content h2 { margin-top: var(--space-2xl); margin-bottom: var(--space-sm); line-height: 1.25; }
+.page-content h3 { margin-top: var(--space-xl); margin-bottom: var(--space-xs); line-height: 1.3; }
+.page-content table { margin-bottom: var(--space-lg); }
+.page-content li { margin-bottom: var(--space-xs); }
+
+/* Code blocks with a header: the base .code-block centres its children in a
+   column, so the header shrank to a tab around "Quick Install" and its Copy
+   button (on /install/ and /security/). */
+.code-block > .code-block-header,
+.code-block > .code-block-header + .code-block-body { align-self: stretch; text-align: left; }
+
+/* /install/ centred its title and install block over left-aligned content.
+   Ranged left like every other page. */
+.install-page .page-title { text-align: left; }
+.install-page .container > .section-subtitle { text-align: left; margin-inline: 0; max-width: 66ch; margin-bottom: var(--space-xl); }
+.install-hero { margin: 0 0 var(--space-2xl); max-width: 40rem; }
+.install-hero .table-note { margin-inline: 0; }
+
+/* ---------- The Hub: your servers or ours (MESHSAT-1103 redesign) ----------
+   Two artifacts on one set of rails (the Try it bench's subgrid): head,
+   readout, one primary action each. */
+#plans { scroll-margin-top: 5rem; }
+.host-bench {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-lg);
+}
+@media (min-width: 900px) {
+    .host-bench { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto 1fr auto; }
+    .host-bench > .artifact { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
+}
+.host-section .hero-actions { justify-content: flex-start; margin-bottom: 0; }
+.host-body { gap: var(--space-sm); }
+.host-body > p { font-size: 0.9375rem; }
+.host-body > .host-note { font-size: 0.875rem; line-height: 1.6; margin-top: var(--space-xs); }
+
+/* Label / value rows. The value is the data, so it takes the mono. */
+.readout { margin: var(--space-sm) 0 0; }
+.readout > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-md);
+    align-items: baseline;
+    padding-block: 0.6rem;
+    border-top: 1px solid var(--color-border);
+}
+.readout > div:last-child { border-bottom: 1px solid var(--color-border); }
+.readout dt { font-size: 0.9375rem; color: var(--color-text-muted); }
+.readout dd { margin: 0; font-family: var(--font-mono); font-size: 0.9rem; color: var(--color-text); text-align: right; }
+
+.readout-table { width: 100%; border-collapse: collapse; margin-top: var(--space-sm); }
+.readout-table th,
+.readout-table td {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    vertical-align: baseline;
+    font-weight: 400;
+}
+.readout-table thead th {
+    padding-top: 0;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    border-bottom-color: var(--color-border-light);
+}
+.readout-table tbody th {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+.readout-table .num { text-align: right; padding-left: var(--space-md); }
+.readout-table td.count {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+.readout-table td:last-child { font-size: 0.9375rem; color: var(--color-text-muted); }
+.readout-table a { color: var(--color-text-muted); text-decoration: underline; text-underline-offset: 0.18em; }
+.readout-table a:hover { color: var(--color-primary); }
+@media (max-width: 480px) {
+    .readout-table thead th { font-size: 0.75rem; }
+    .readout > div { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
+    .readout dd { text-align: left; }
+}
+
+/* ---------- 404 ----------
+   The page had no styles at all: icon, heading, text and button stacked flush,
+   the button touching the footer rule. */
+.error-page { padding-block: var(--space-4xl); }
+.error-content { max-width: 40rem; }
+.error-code {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+}
+.error-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+}
+.error-detail { color: var(--color-text-muted); font-size: 1.125rem; margin-bottom: var(--space-lg); }
+.error-log {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-error);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-card);
+    margin-bottom: var(--space-xl);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem var(--space-md);
+}
+.error-log .trace-if { color: var(--color-accent); }
+.error-log .trace-state.fail { color: var(--color-error); font-weight: 600; margin-left: auto; }
+.error-page .hero-actions { justify-content: flex-start; margin-bottom: 0; }
+/* The 404 block aligns to the site's left gutter like every other page head,
+   instead of a narrow column centred at x=424. */
+.error-content { max-width: 1200px; }
+.error-content > * { max-width: 40rem; }
+
+/* Second audit round (local render of the pass above). */
+/* The last text under 12px: the head-bar badge (10.9px), the trace header
+   (11.2px) and the phone trace (10.6 to 11.5px). */
+.artifact-head .badge { font-size: 0.75rem; }
+.trace-head { font-size: 0.75rem; }
+@media (max-width: 640px) {
+    .trace { font-size: 0.8rem; }
+    .trace-head { font-size: 0.75rem; }
+    .trace-state { font-size: 1em; }
+}
+/* 66ch of Plex Sans still ran 85 to 92 characters; 60ch sits near 75. */
+.page-content :is(p, ul, ol, h2, h3, blockquote) { max-width: 60ch; }
+.term-note { max-width: 60ch; }
+/* One column of "What it is not": the rule now carries the separation, so the
+   gap only needs to clear it. */
+@media (max-width: 700px) {
+    .not-for-grid { row-gap: var(--space-lg); }
+}
+/* Airtime applies to both deployments, so it is said once under both cards,
+   which also stops the hosted card's note leaving the other card half empty. */
+.host-shared {
+    margin: var(--space-md) 0 0;
+    max-width: 66ch;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
 }
