@@ -194,10 +194,6 @@ hub_cta:
   other: "Create an account"
 hub_signin:
   other: "Sign in"
-plans_title:
-  other: "Plans"
-plans_sub:
-  other: "One number changes between plans: how many devices and bridges you can register. Everything else is the same on all of them."
 plans_col:
   other: "devices and bridges"
 plan_free:
@@ -264,14 +260,10 @@ table_transports_label:
   other: "Transport bearers table, scrollable"
 table_hardware_label:
   other: "Hardware table, scrollable"
-video_title:
-  other: "See it in two minutes"
 video_sub:
   other: "The bench prototypes, a local send in the web dashboard, and the 3D design of the field kits being built."
 video_play:
   other: "Play the introduction video"
-video_foot:
-  other: "The video loads from YouTube only after you press play."
 video_watch:
   other: "Watch on YouTube"
 lightbox_close:
@@ -280,3 +272,37 @@ term_log_label:
   other: "Installer output"
 and_apk:
   other: "Download APK"
+films_title:
+  other: "See it working"
+films_sub:
+  other: "The introduction first, then two field kits on the bench passing a message from one mesh to the other, over APRS radio and then over SMS."
+films_consent:
+  other: "Nothing loads from YouTube until you press play."
+film_kits_play:
+  other: "Play the field kit video"
+film_kits_cap:
+  other: "Recorded in Leiden on 12 September 2026: a message crosses from one kit's mesh to the other's over APRS on 144.800 MHz, then again over SMS."
+host_title:
+  other: "Run the Hub on your own servers, or try it on ours"
+host_caption:
+  other: "Where the Hub runs, and how many devices and bridges each option can register"
+host_self_h:
+  other: "On your own servers"
+host_self_p:
+  other: "The Hub is open source under the Apache 2.0 licence: the same code that runs hub.meshsat.net. On your own servers you set the device limits yourself and need no account with us."
+host_self_src:
+  other: "Hub source"
+host_self_deploy:
+  other: "Deployment guide"
+host_ours_h:
+  other: "On hub.meshsat.net"
+host_th_where:
+  other: "Where it runs"
+host_th_cost:
+  other: "Cost"
+host_row_self:
+  other: "Your servers"
+host_self_n:
+  other: "you decide"
+host_self_price:
+  other: "free, Apache 2.0"
