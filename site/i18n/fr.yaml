@@ -147,13 +147,13 @@ hw6:
 hw6r:
   other: "Parce que les cas intéressants sont justement ceux où le secteur a lâché aussi."
 cap1:
-  other: "Signal, trafic et santé des canaux, servis par l'appareil lui-même"
+  other: "Spectre par bande, liaisons et santé de chaque porteur, servis par l'appareil lui-même"
 cap2:
   other: "Prédiction de passage, pour que la file attende un satellite réellement visible"
 cap3:
-  other: "Topologie du maillage en direct"
+  other: "Six heures de la bande LoRa 868 MHz. Le détecteur de brouillage n'a vu que du bruit ambiant."
 cap4:
-  other: "Règles de transfert et état par passerelle"
+  other: "Un capteur ZigBee de température et d'humidité, et ses dernières 24 heures"
 hw_note:
   other: "Le tableau de bord est intégré au binaire et servi depuis l'appareil. Aucun nuage, aucun compte."
 hw_repo_a:
@@ -354,3 +354,9 @@ inc4_p:
   other: "Les réseaux téléphoniques publics, fixes et mobiles, sont tombés, et le distributeur portugais s'est rabattu sur des téléphones satellites. Le gestionnaire du réseau espagnol pouvait encore appeler mais ne joignait pas le centre de conduite de la distribution à Séville, et le rétablissement en Andalousie a été suspendu."
 inc4_src:
   other: "rapport du groupe d'experts de l'ENTSO-E"
+shot_open:
+  other: "Ouvrir en grand format"
+shot_prev:
+  other: "Capture précédente"
+shot_next:
+  other: "Capture suivante"
