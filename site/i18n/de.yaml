@@ -23,13 +23,13 @@ toggle_menu:
 choose_language:
   other: "Sprache wählen"
 hero_eyebrow:
-  other: "Quelloffenes Routing zwischen Funkgeräten, die einander nicht erreichen"
+  other: "Wenn Netze ausfallen, zerfällt, was übrig bleibt, in Inseln. MeshSat verbindet sie."
 hero_title_a:
   other: "Eine Nachricht."
 hero_title_b:
   other: "Jeder Weg hinaus."
 hero_sub:
-  other: "Ein Mesh hält ein Dorf im Gespräch mit sich selbst, hat aber keinen Weg aus dem Tal heraus. Ein Satellitenmodem erreicht die ganze Welt und kostet echtes Geld pro Nachricht. MeshSat ist die Schicht dazwischen: Es nimmt eine Nachricht aus dem Mesh und sendet sie über den Träger, der noch funktioniert, und gibt Satellitenbytes erst aus, wenn nichts Kostenloses mehr übrig ist."
+  other: "Ein Mesh, das ein Tal im Gespräch hält, ein Funknetz von Freiwilligen, ein Satellitenmodem, die Lagekarte einer Einsatzleitung: Jedes kann noch funktionieren, und keines erreicht die anderen. MeshSat ist quelloffene Software, die eine Nachricht aus dem einen nimmt und im anderen zustellt, über den Träger, der noch funktioniert, und Satellitenbytes erst ausgibt, wenn nichts Kostenloses mehr übrig ist."
 hero_status:
   other: "Hub offen. Noch keine Flotte im Einsatz, nie in einem echten Notfall verwendet."
 hero_star:
@@ -57,11 +57,11 @@ t5:
 t6:
   other: "protokolliert für Dashboard und Webhooks"
 trace_foot:
-  other: "Die Satellitenstrecke schlug fehl und die Nachricht kam trotzdem an. Das ist das ganze Produkt. Routen, Failover-Reihenfolge und Transformationsketten werden je Schnittstelle konfiguriert."
+  other: "Die Satellitenstrecke schlug fehl und die Nachricht kam trotzdem an, in drei Systemen, die das Mesh allein nicht erreicht. Routen, Failover-Reihenfolge und Transformationsketten werden je Schnittstelle konfiguriert."
 tr_title:
   other: "Acht Träger, neun verdrahtete Schnittstellen"
 tr_sub:
-  other: "Iridium läuft auf zwei Modems, dem 9603N für SBD und dem 9704 für IMT. Jeder Träger ist eine vollwertige Schnittstelle mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette. TAK und Webhooks sind Integrationen, keine Träger. Der Status nennt, was wir tatsächlich betrieben haben, nicht was wir hoffen."
+  other: "Jedes System wird als Adapter hinter derselben Schnittstelle angebunden, mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette, und eine Regel kann von jedem Adapter zu jedem anderen routen. Iridium zählt doppelt, mit dem 9603N und dem 9704; TAK und Webhooks sind Integrationen, keine Träger. HF-Funk und DMR stehen auf der Roadmap und sind nicht gebaut. Der Status nennt, was wir tatsächlich betrieben haben, nicht was wir hoffen."
 th_category:
   other: "Kategorie"
 th_transport:
@@ -103,7 +103,7 @@ tr_note_b:
 cost_title:
   other: "Satellitenbytes sind teuer. Das ist der ganze Entwurf."
 cost_sub:
-  other: "Eine Iridium-Leitung kostet mehrere zehn Euro im Monat plus Guthaben je Nachricht, abgerechnet in Blöcken zu 340 Bytes. Gibt man jeder Person im Team eine, wächst die Rechnung mit der Teamgröße. Genau dieser Preis ist der Grund, warum es die Routing-Schicht überhaupt gibt."
+  other: "Eine Iridium-Leitung kostet mehrere zehn Euro im Monat plus Guthaben je Nachricht, abgerechnet in Blöcken zu 340 Bytes. Gibt man jeder Person im Team eine, wächst die Rechnung mit der Teamgröße. Dieser Preis prägt jede Routing-Entscheidung."
 c1_h:
   other: "Eine bezahlte Strecke, gemeinsam genutzt"
 c1_p:
@@ -163,7 +163,7 @@ hw_repo_b:
 nf_title:
   other: "Was es nicht ist"
 nf_sub:
-  other: "Am schnellsten verliert man einen Nachmittag, wenn man das Falsche davon erwartet."
+  other: "Starlink ist Konnektivität, Meshtastic ein lokales Mesh, Reticulum ein Netz über beliebige Träger, TAK ein gemeinsames Lagebild. MeshSat ersetzt keines davon. Es trägt Nachrichten zwischen ihnen."
 nf1_h:
   other: "Kein Ersatz für Starlink"
 nf1_p:
@@ -306,3 +306,51 @@ host_self_n:
   other: "Sie entscheiden"
 host_self_price:
   other: "kostenlos, Apache 2.0"
+is_title:
+  other: "Netze zerfallen in Inseln"
+is_sub:
+  other: "Eine Katastrophe legt selten alle Systeme zugleich still. Sie trennt die Verbindungen dazwischen: Der Funk arbeitet innerhalb einer Behörde oder einer Funkzelle weiter, das Telefonnetz fällt aus, und was ein Team weiß, erreicht das Team nicht, das es braucht."
+is_record_h:
+  other: "Das ist schon passiert"
+is_joins_h:
+  other: "So sieht das Verbinden aus"
+is_to:
+  other: "nach"
+join1_h:
+  other: "Zwei Teams in zwei Meshes, kein Internet"
+join1_s:
+  other: "Am 12. September 2026 von Kit zu Kit über APRS und danach über SMS betrieben. Es ist das zweite Video unten."
+join2_h:
+  other: "Ein Tal ohne Empfang, ein Büro weit weg"
+join2_s:
+  other: "Die Satellitenstrecke ist über eine echte Iridium-Verbindung bestätigt, März 2026."
+join3_h:
+  other: "Ein Funknetz von Freiwilligen und eine Einsatzleitung"
+join3_s:
+  other: "Beide Schnittstellen sind im Feld erprobt. Diese Route wurde noch nicht durchgehend betrieben."
+is_who:
+  other: "Gebaut für die Menschen, die zwischen diesen Inseln arbeiten: Such- und Rettungsteams, Katastrophenschutz und Krisenmanagement, humanitäre Organisationen, Notfunkgruppen von Funkamateuren, Expeditionen, Schiffsbesatzungen und abgelegene Industrie. Noch nutzt es keiner von ihnen; das Feldprogramm, das im November 2026 beginnt, ist der erste echte Test."
+inc1_h:
+  other: "Hurrikan Katrina, US-Golfküste."
+inc1_p:
+  other: "In vielen Fällen konnten Einsatzkräfte verschiedener Behörden wegen unvereinbarer Frequenzzuteilungen nicht miteinander sprechen. Ein Militärhubschrauber musste eine Flaschenpost abwerfen, um sie vor einem Gasleck zu warnen."
+inc1_src:
+  other: "Bericht des FCC-Gremiums"
+inc2_h:
+  other: "Hochwasser im Ahrtal und in der Eifel."
+inc2_p:
+  other: "34 Basisstationen des BOS-Digitalfunks waren betroffen. Im Rückfallbetrieb funktionierte der Funk nur noch innerhalb der eigenen Funkzelle, und die überörtliche Kommunikation wurde im Einzelfall überbrückt, etwa mit Gateway-Schaltungen."
+inc2_src:
+  other: "Landtag Rheinland-Pfalz, Drucksache 18/1947"
+inc3_h:
+  other: "Waldbrand in Lahaina, Maui."
+inc3_p:
+  other: "Das Funksystem der Sicherheitsbehörden des Countys scheint durchgehend funktioniert zu haben, doch die Polizei konnte die Kanäle der Feuerwehr nicht hören und die Feuerwehr die der Polizei nicht, und unzuverlässiger Mobilfunk ließ private Tankwagen ohne Koordination."
+inc3_src:
+  other: "FSRI-Bericht für den Generalstaatsanwalt von Hawaii"
+inc4_h:
+  other: "Stromausfall in Spanien und Portugal."
+inc4_p:
+  other: "Die öffentlichen Fest- und Mobilfunknetze fielen aus, und Portugals Verteilnetzbetreiber wich auf Satellitentelefone aus. Spaniens Übertragungsnetzbetreiber konnte noch telefonieren, erreichte aber die Verteilnetzleitstelle in Sevilla nicht, und der Netzwiederaufbau in Andalusien wurde unterbrochen."
+inc4_src:
+  other: "Bericht des ENTSO-E-Expertengremiums"

@@ -3898,3 +3898,128 @@ img {
     .plans .plans-price { padding-left: var(--space-md); font-size: 0.82rem; }
     .plans thead th { font-size: 0.72rem; }
 }
+
+/* ---------- Hero lead line (MESHSAT-1096) ----------
+   The eyebrow now carries the page's first sentence, the islands thesis, so it
+   is set to be read: sentence case at reading size, no tracking. An uppercase
+   tracked label at 0.75rem was fine for six words and a shout for fourteen.
+   The H1 stays the typographic event beneath it. */
+.hero-label {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 46ch;
+}
+
+/* ---------- Islands (MESHSAT-1096) ----------
+   The problem before the mechanism. Left: a dated record of real failures,
+   each linked to its source. Right: what joining the islands looks like, in
+   the trace's own interface IDs (same sand as .trace-if), with an honest state
+   under every route. Same 5fr / 6fr seam as the section head; hairlines, not
+   cards. */
+.islands-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-2xl) var(--space-3xl);
+    align-items: start;
+}
+@media (min-width: 960px) {
+    .islands-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+}
+.islands-h {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border-light);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+.incidents,
+.joins { list-style: none; margin: 0; padding: 0; }
+
+.incident {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: var(--space-md);
+    padding-block: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+}
+.incident-when {
+    display: block;
+    padding-top: 0.12rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-muted);
+}
+.incident p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+.incident strong { font-weight: 600; color: var(--color-text); }
+.incident a { color: var(--color-text-muted); text-decoration: underline; }
+.incident a:hover { color: var(--color-primary); }
+
+.join {
+    display: grid;
+    gap: var(--space-xs);
+    padding-block: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+}
+.incident:last-child,
+.join:last-child { border-bottom: 0; padding-bottom: 0; }
+.join-h { margin: 0; font-size: 0.95rem; font-weight: 600; color: var(--color-text); }
+.join-route {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs) var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+}
+.join-route code {
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--color-accent);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.05rem 0.5rem;
+}
+.join-arrow { color: var(--color-text-muted); }
+.join-state { margin: 0; font-size: 0.85rem; line-height: 1.55; color: var(--color-text-muted); }
+
+/* Who it is for closes the joins column rather than spanning under both: the
+   record is the longer column, and a full-width line under it left the joins
+   column a 300px hole and a hairline that stopped mid-page. */
+.islands-who {
+    margin: var(--space-xl) 0 0;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+}
+/* On a phone the date column costs a third of the measure; the date moves
+   above its entry instead, like a log line's timestamp. */
+@media (max-width: 640px) {
+    .incident { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); }
+    .incident-when { padding-top: 0; }
+}
+
+/* Both columns close on one line, the workbench rule (MESHSAT-735): the grid
+   stretches, and the who line pins to the shared bottom edge, so any spare
+   height sits between the routes and that line rather than under a column. */
+@media (min-width: 960px) {
+    .islands-grid { align-items: stretch; }
+    .islands-col { display: flex; flex-direction: column; }
+    .islands-col .joins { margin-bottom: var(--space-xl); }
+    .islands-who { margin-top: auto; }
+}
+@media (forced-colors: active) {
+    .join-route code { border-color: CanvasText; }
+}

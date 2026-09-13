@@ -23,13 +23,13 @@ toggle_menu:
 choose_language:
   other: "Taal kiezen"
 hero_eyebrow:
-  other: "Open source routering tussen radio's die elkaar niet kunnen bereiken"
+  other: "Als netwerken uitvallen, valt wat overblijft uiteen in eilanden. MeshSat verbindt ze."
 hero_title_a:
   other: "Eén bericht."
 hero_title_b:
   other: "Elke weg naar buiten."
 hero_sub:
-  other: "Een mesh houdt een dorp met zichzelf in gesprek, maar heeft geen route het dal uit. Een satellietmodem bereikt de hele wereld en kost echt geld per bericht. MeshSat is de laag daartussen: het haalt een bericht van de mesh en verstuurt het via welke drager dan ook die nog werkt, en geeft pas satellietbytes uit als er niets gratis meer over is."
+  other: "Een mesh die één dal met zichzelf laat praten, een radionet van vrijwilligers, een satellietmodem, de kaart van een commandopost: elk werkt misschien nog, en geen ervan bereikt de andere. MeshSat is open source software die een bericht van het ene haalt en in het andere aflevert via welke drager dan ook die nog werkt, en pas satellietbytes uitgeeft als er niets gratis meer over is."
 hero_status:
   other: "Hub open. Nog geen vloot actief, nooit gebruikt bij een echt noodgeval."
 hero_star:
@@ -57,11 +57,11 @@ t5:
 t6:
   other: "vastgelegd voor dashboard en webhooks"
 trace_foot:
-  other: "De satellietverbinding mislukte en het bericht kwam toch aan. Dat is het hele product. Routes, failover-volgorde en transformatieketens worden per interface ingesteld."
+  other: "De satellietverbinding mislukte en het bericht kwam toch aan, in drie systemen die de mesh zelf niet kan bereiken. Routes, failover-volgorde en transformatieketens worden per interface ingesteld."
 tr_title:
   other: "Acht dragers, negen bedrade interfaces"
 tr_sub:
-  other: "Iridium draait op twee modems, de 9603N voor SBD en de 9704 voor IMT. Elke drager is een volwaardige interface met een eigen MTU, kostenmodel en transformatieketen. TAK en webhooks zijn integraties, geen dragers. De status zegt wat we werkelijk hebben gedraaid, niet wat we hopen."
+  other: "Elk systeem sluit aan als adapter achter één interface, met een eigen MTU, kostenmodel en transformatieketen, en een regel kan van elke adapter naar elke andere routeren. Iridium telt twee keer, op de 9603N en de 9704; TAK en webhooks zijn integraties, geen dragers. HF-radio en DMR staan op de roadmap en zijn niet gebouwd. De status zegt wat we werkelijk hebben gedraaid, niet wat we hopen."
 th_category:
   other: "Categorie"
 th_transport:
@@ -103,7 +103,7 @@ tr_note_b:
 cost_title:
   other: "Satellietbytes zijn duur. Dat is het hele ontwerp."
 cost_sub:
-  other: "Een Iridium-abonnement kost tientallen euro's per maand plus credits per bericht, afgerekend in blokken van 340 bytes. Geef er iedereen in een team één en de rekening groeit mee met het aantal mensen. Die prijs is precies waarom de routeringslaag bestaat."
+  other: "Een Iridium-abonnement kost tientallen euro's per maand plus credits per bericht, afgerekend in blokken van 340 bytes. Geef er iedereen in een team één en de rekening groeit mee met het aantal mensen. Die prijs bepaalt elke routeringsbeslissing."
 c1_h:
   other: "Eén betaalde verbinding, gedeeld"
 c1_p:
@@ -163,7 +163,7 @@ hw_repo_b:
 nf_title:
   other: "Wat het niet is"
 nf_sub:
-  other: "De snelste manier om een middag te verspillen is het verkeerde ervan verwachten."
+  other: "Starlink is connectiviteit, Meshtastic een lokale mesh, Reticulum een netwerk dat over elke drager loopt, TAK een gedeelde kaart van de situatie. MeshSat vervangt geen van allen. Het brengt berichten tussen ze over."
 nf1_h:
   other: "Geen vervanging van Starlink"
 nf1_p:
@@ -306,3 +306,51 @@ host_self_n:
   other: "jij bepaalt"
 host_self_price:
   other: "gratis, Apache 2.0"
+is_title:
+  other: "Netwerken vallen uiteen in eilanden"
+is_sub:
+  other: "Een ramp legt zelden alle systemen tegelijk stil. Hij verbreekt de verbindingen ertussen: de radio blijft werken binnen één dienst of één cel, het telefoonnet valt weg, en wat het ene team weet bereikt het team dat het nodig heeft niet."
+is_record_h:
+  other: "Het is eerder gebeurd"
+is_joins_h:
+  other: "Hoe verbinden eruitziet"
+is_to:
+  other: "naar"
+join1_h:
+  other: "Twee teams op twee meshes, geen internet"
+join1_s:
+  other: "Op 12 september 2026 van kit naar kit gedraaid via APRS en daarna via sms. Het is de tweede video hieronder."
+join2_h:
+  other: "Een dal zonder bereik, een kantoor ver weg"
+join2_s:
+  other: "De satellietverbinding is bevestigd over een echte Iridium-link, maart 2026."
+join3_h:
+  other: "Een radionet van vrijwilligers en een commandopost"
+join3_s:
+  other: "Beide interfaces zijn in het veld getest. Deze route is nog niet van begin tot eind gedraaid."
+is_who:
+  other: "Gebouwd voor de mensen die tussen die eilanden werken: zoek- en reddingsteams, crisisbeheersing en civiele bescherming, humanitaire organisaties, noodnetten van zendamateurs, expedities, bemanningen op zee en industrie op afgelegen plekken. Geen van hen gebruikt het nog; het veldprogramma dat in november 2026 begint is de eerste echte test."
+inc1_h:
+  other: "Orkaan Katrina, Golfkust van de VS."
+inc1_p:
+  other: "In veel gevallen konden hulpverleners van verschillende diensten elkaar niet bereiken door onverenigbare frequentietoewijzingen. Een militaire helikopter moest een briefje in een fles afwerpen om hen voor een gaslek te waarschuwen."
+inc1_src:
+  other: "rapport van het FCC-panel"
+inc2_h:
+  other: "Overstromingen in het Ahrdal en de Eifel, Duitsland."
+inc2_p:
+  other: "34 basisstations van het noodradionet werden getroffen. In terugvalmodus bleef de radio alleen binnen de eigen cel van elk station werken, en verbindingen daarbuiten werden per geval hersteld, bijvoorbeeld met gatewayverbindingen."
+inc2_src:
+  other: "Landtag Rheinland-Pfalz, Drucksache 18/1947"
+inc3_h:
+  other: "Bosbrand in Lahaina, Maui."
+inc3_p:
+  other: "Het radiosysteem van de hulpdiensten van de county lijkt de hele tijd te hebben gewerkt, maar de politie kon de brandweerkanalen niet horen en de brandweer de politie niet, en onbetrouwbaar mobiel bereik liet particuliere watertankers zonder coördinatie."
+inc3_src:
+  other: "FSRI-rapport voor de procureur-generaal van Hawaï"
+inc4_h:
+  other: "Stroomstoring in Spanje en Portugal."
+inc4_p:
+  other: "Het openbare vaste en mobiele telefoonnet viel uit, en de Portugese distributienetbeheerder week uit naar satelliettelefoons. De Spaanse netbeheerder kon nog bellen maar het distributiecentrum in Sevilla niet bereiken, en het herstel van de stroomvoorziening in Andalusië werd gepauzeerd."
+inc4_src:
+  other: "rapport van het ENTSO-E-expertpanel"
