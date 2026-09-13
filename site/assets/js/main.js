@@ -141,22 +141,72 @@ function playVideo(btn) {
     }
 }
 
-// Screenshot lightbox — one dialog, filled from the clicked thumbnail
-function openShot(btn) {
+// Screenshot lightbox — one dialog for every thumbnail (MESHSAT-1101). A click
+// shows the thumbnail at once (it is already loaded) and swaps in the @2x file
+// named in data-full as soon as that has loaded; Left / Right and the head-bar
+// buttons step through the set and wrap; the neighbours are fetched ahead so a
+// step is instant; closing puts focus back on the thumbnail last shown.
+(function() {
     var dlg = document.getElementById('shot-dialog');
-    if (!dlg) return;
-    var img = btn.querySelector('img');
-    var cap = btn.parentNode.querySelector('p');
+    var shots = Array.prototype.slice.call(document.querySelectorAll('.shot-open'));
+    if (!dlg || !shots.length || typeof dlg.showModal !== 'function') return;
     var big = document.getElementById('shot-img');
-    big.src = img.currentSrc || img.src;
-    big.alt = img.alt;
-    document.getElementById('shot-caption').textContent = cap ? cap.textContent : img.alt;
-    dlg.showModal();
-}
-function closeShot() {
-    var dlg = document.getElementById('shot-dialog');
-    if (dlg) dlg.close();
-}
+    var caption = document.getElementById('shot-caption');
+    var count = document.getElementById('shot-count');
+    var full = {};
+    var current = 0;
+
+    function fetchFull(i) {
+        var url = shots[i].getAttribute('data-full');
+        if (url && !full[url]) {
+            full[url] = new Image();
+            full[url].src = url;
+        }
+        return url;
+    }
+
+    function show(i) {
+        var n = shots.length;
+        current = ((i % n) + n) % n;
+        var btn = shots[current];
+        var thumb = btn.querySelector('img');
+        var fig = btn.closest('figure');
+        var cap = fig ? fig.querySelector('figcaption') : null;
+        var text = cap ? cap.textContent : '';
+        big.src = thumb.currentSrc || thumb.src;
+        big.alt = text;
+        caption.textContent = text;
+        if (count) count.textContent = (current + 1) + ' / ' + n;
+        var url = fetchFull(current);
+        if (url) {
+            var want = current;
+            var im = full[url];
+            var swap = function() { if (current === want) big.src = url; };
+            if (im.complete && im.naturalWidth) swap();
+            else im.addEventListener('load', swap, { once: true });
+        }
+        if (n > 1) {
+            fetchFull((current + 1) % n);
+            fetchFull((current + n - 1) % n);
+        }
+    }
+
+    shots.forEach(function(btn, i) {
+        btn.addEventListener('click', function() {
+            if (!dlg.open) dlg.showModal();
+            show(i);
+        });
+    });
+    Array.prototype.forEach.call(dlg.querySelectorAll('[data-step]'), function(b) {
+        b.addEventListener('click', function() { show(current + Number(b.getAttribute('data-step'))); });
+    });
+    dlg.addEventListener('keydown', function(e) {
+        if (e.altKey || e.ctrlKey || e.metaKey) return;
+        if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1); }
+    });
+    dlg.addEventListener('close', function() { shots[current].focus(); });
+})();
 // Any modal closes on a backdrop click (clicks on ::backdrop target the
 // dialog element itself; clicks inside land on its children).
 document.addEventListener('click', function(e) {

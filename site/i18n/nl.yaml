@@ -147,13 +147,13 @@ hw6:
 hw6r:
   other: "Omdat de interessante gevallen juist die zijn waarin ook de netstroom is weggevallen."
 cap1:
-  other: "Signaal, verkeer en kanaalgezondheid, geserveerd door het apparaat zelf"
+  other: "Spectrum per band, verbindingen en de gezondheid van elke drager, geserveerd door het apparaat zelf"
 cap2:
   other: "Passagevoorspelling, zodat de wachtrij wacht op een satelliet die er echt is"
 cap3:
-  other: "Live mesh-topologie"
+  other: "Zes uur van de 868 MHz LoRa-band. De stoordetectie heeft alleen nog omgevingsruis gezien."
 cap4:
-  other: "Doorstuurregels en status per gateway"
+  other: "Een ZigBee-sensor voor temperatuur en luchtvochtigheid, en zijn laatste 24 uur"
 hw_note:
   other: "Het dashboard zit in de binary en wordt vanaf het apparaat geserveerd. Geen cloud, geen account."
 hw_repo_a:
@@ -354,3 +354,9 @@ inc4_p:
   other: "Het openbare vaste en mobiele telefoonnet viel uit, en de Portugese distributienetbeheerder week uit naar satelliettelefoons. De Spaanse netbeheerder kon nog bellen maar het distributiecentrum in Sevilla niet bereiken, en het herstel van de stroomvoorziening in Andalusië werd gepauzeerd."
 inc4_src:
   other: "rapport van het ENTSO-E-expertpanel"
+shot_open:
+  other: "Openen op volle grootte"
+shot_prev:
+  other: "Vorige schermafbeelding"
+shot_next:
+  other: "Volgende schermafbeelding"
