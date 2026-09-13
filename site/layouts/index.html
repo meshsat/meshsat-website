@@ -193,20 +193,26 @@
             </table>
         </div>
 
+        {{/* Evidence thumbnails (MESHSAT-1101): the 1x file inline, the @2x file in
+             data-full for the lightbox, which main.js steps through with the arrow
+             keys. Each button is named by its caption, so the name is translated. */}}
+        {{ $shots := slice
+            (dict "file" "bridge-dashboard-2026-09" "cap" "cap1")
+            (dict "file" "bridge-passes-2026-09" "cap" "cap2")
+            (dict "file" "bridge-spectrum-waterfall-2026-09" "cap" "cap3")
+            (dict "file" "bridge-zigbee-sensor-2026-09" "cap" "cap4")
+        }}
         <div class="screenshots-grid">
-            <div class="screenshot-card">
-                <button type="button" class="shot-open" onclick="openShot(this)">
-                    <img src="/images/screenshots/bridge-dashboard.webp" alt="MeshSat dashboard showing Iridium signal, MQTT traffic and cellular status" loading="lazy" width="1280" height="720">
+            {{ range $i, $s := $shots }}
+            <figure class="screenshot-card">
+                <button type="button" class="shot-open" data-full="/images/screenshots/{{ $s.file }}@2x.webp" aria-labelledby="shot-cap-{{ $i }}" aria-describedby="shot-hint">
+                    <img src="/images/screenshots/{{ $s.file }}.webp" alt="" loading="lazy" width="1280" height="720">
                 </button>
-                <p>{{ i18n "cap1" }}</p>
-            </div>
-            <div class="screenshot-card">
-                <button type="button" class="shot-open" onclick="openShot(this)">
-                    <img src="/images/screenshots/bridge-passes.webp" alt="Satellite pass predictor showing a visibility timeline" loading="lazy" width="1280" height="720">
-                </button>
-                <p>{{ i18n "cap2" }}</p>
-            </div>
+                <figcaption id="shot-cap-{{ $i }}">{{ i18n $s.cap }}</figcaption>
+            </figure>
+            {{ end }}
         </div>
+        <span id="shot-hint" class="visually-hidden">{{ i18n "shot_open" }}</span>
         <p class="table-note">{{ i18n "hw_note" }}</p>
         <p class="table-note">{{ i18n "hw_repo_a" }}<a href="https://github.com/meshsat/meshsat-fieldkit" target="_blank" rel="noopener">meshsat-fieldkit</a>{{ i18n "hw_repo_b" }}</p>
     </div>
@@ -412,11 +418,20 @@
     </div>
 </section>
 
-{{/* Screenshot lightbox — one dialog, filled on demand by openShot() in main.js. */}}
-<dialog class="shot-dialog" id="shot-dialog">
+{{/* Screenshot lightbox (MESHSAT-1101): one dialog for every thumbnail. main.js
+     shows the thumbnail at once, swaps in the @2x file when it has loaded, and
+     steps with Left / Right or the head-bar buttons, wrapping at either end.
+     Focus lands on Next, so Enter keeps stepping. */}}
+<dialog class="shot-dialog" id="shot-dialog" aria-labelledby="shot-caption">
     <div class="shot-frame">
-        <div class="shot-head"><span id="shot-caption"></span><button type="button" class="shot-close" onclick="closeShot()" aria-label="{{ i18n "lightbox_close" }}">&#10005;</button></div>
-        <img id="shot-img" src="" alt="">
+        <div class="shot-head">
+            <span id="shot-caption" aria-live="polite"></span>
+            <span class="shot-count" id="shot-count"></span>
+            <button type="button" class="shot-close shot-nav" data-step="-1" aria-keyshortcuts="ArrowLeft" aria-label="{{ i18n "shot_prev" }}">&#8592;</button>
+            <button type="button" class="shot-close shot-nav" data-step="1" aria-keyshortcuts="ArrowRight" aria-label="{{ i18n "shot_next" }}" autofocus>&#8594;</button>
+            <button type="button" class="shot-close" onclick="this.closest('dialog').close()" aria-label="{{ i18n "lightbox_close" }}">&#10005;</button>
+        </div>
+        <img id="shot-img" alt="">
     </div>
 </dialog>
 
