@@ -3563,8 +3563,7 @@ img {
     .bench { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: stretch; }
 }
 
-.artifact,
-.bench .video-frame {
+.artifact {
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
@@ -3574,15 +3573,6 @@ img {
     min-width: 0;
     max-width: none;
     margin: 0;
-}
-.bench .video-frame .video-foot { margin-top: auto; }
-/* Inside the stretched row the media fills the frame between head and foot
-   (the poster cover-crops a little; the modal shows the true 16:9).
-   flex-basis stays `auto` so the base 16:9 box remains the FLOOR: with
-   `flex: 1` the basis is 0 and the poster collapses to nothing on any width
-   where the film column is the taller of the two. */
-@media (min-width: 1100px) {
-    .bench .video-frame .video-media { flex: 1 1 auto; min-height: 0; }
 }
 
 .artifact-head {
@@ -3731,50 +3721,138 @@ img {
 }
 
 
-/* ---------- Plans (MESHSAT-995) ----------
-   A manifest, not a card grid. Every plan carries every feature and only one
-   number changes, so the figures are the whole design: one right-aligned column
-   of tabular numerals in the display mono, the same readout language as the hero
-   trace. Deliberately no tier cards, no "most popular" badge, no hover lift and
-   no entrance animation. */
-.plans-section .section-head { text-align: left; }
-.plans-section .section-subtitle { margin-left: 0; max-width: 62ch; }
-
-.plans {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: var(--space-2xl);
+/* ---------- Try it: two artifacts on one set of rails (MESHSAT-1096) ----------
+   With the film gone the bench is the terminal and the phone. Both cards are
+   head / body / foot, laid on a shared subgrid so the head bars, the foot rules
+   and the button rows line up across the pair, whichever body is longer.
+   Without subgrid support each card simply falls back to its flex column. */
+@media (min-width: 1100px) {
+    .bench { grid-template-rows: auto 1fr auto; }
+    .bench > .artifact {
+        display: grid;
+        grid-row: span 3;
+        grid-template-rows: subgrid;
+        row-gap: 0;
+    }
 }
 
-.plans th,
-.plans td {
-    padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--color-border);
-    text-align: left;
-    vertical-align: baseline;
+/* ---------- Films (MESHSAT-1096) ----------
+   Two recordings side by side in the bench's head-bar chrome. The caption is
+   running text, so it is set in the body face; the head bar stays mono. */
+.films-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-lg);
 }
-
-.plans thead th {
+@media (min-width: 860px) {
+    .films-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.films-grid .video-frame {
+    max-width: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+/* The foot absorbs the difference between the two caption lengths, so both
+   posters start on one line and both frames close on one line. */
+.films-grid .video-foot {
+    flex: 1;
     font-family: var(--font-sans);
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--color-text-muted);
-    border-bottom-color: var(--color-border-light);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    padding: var(--space-sm) var(--space-md) var(--space-md);
 }
 
-.plans tbody th {
+/* ---------- The Hub: your servers or ours (MESHSAT-1096) ----------
+   Replaces the MESHSAT-995 Plans section. Two ways to run the Hub on the left,
+   one readout on the right, on the same 5fr / 6fr seam as the section head.
+   Still a manifest, not a card grid: every plan carries every feature and only
+   the device ceiling changes, so no tier cards, no "most popular", no hover lift. */
+.host-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-xl) var(--space-3xl);
+    align-items: start;
+}
+@media (min-width: 960px) {
+    .host-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+}
+.host-path {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-block: var(--space-md) var(--space-xl);
+    border-top: 1px solid var(--color-border-light);
+}
+.host-path:last-child { padding-bottom: 0; }
+.host-path h3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
     font-family: var(--font-display);
     font-size: 1.05rem;
     font-weight: 600;
     color: var(--color-text);
+}
+.host-path p {
+    margin: 0;
+    max-width: 52ch;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+.host-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+.host-actions .btn-outline { width: auto; }
+
+#plans { scroll-margin-top: 5rem; }
+
+.plans {
+    width: 100%;
+    border-collapse: collapse;
+}
+.plans th,
+.plans td {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    vertical-align: baseline;
+}
+/* The header row's top padding matches .host-path's, so the first path title
+   and the column labels share a baseline across the seam. */
+.plans thead th {
+    padding-top: var(--space-md);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border-light);
+    border-bottom-color: var(--color-border-light);
+}
+.plans tbody th {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
     white-space: nowrap;
 }
-
-.plans-count,
-.plans-price { text-align: right; }
-
-.plans-count { width: 42%; }
-.plans-price { width: 30%; color: var(--color-text-muted); font-size: 0.95rem; }
+/* Two classes deep on purpose. The MESHSAT-995 version declared these at one
+   class, under the .plans th / .plans td rule above, so the numerals never
+   right-aligned: they floated a third of the way in with a dead middle. */
+.plans .plans-count,
+.plans .plans-price { text-align: right; }
+.plans .plans-count { width: 30%; }
+.plans .plans-price {
+    width: 38%;
+    padding-left: var(--space-lg);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
 .plans-price a { color: var(--color-text-muted); text-decoration: underline; }
 .plans-price a:hover { color: var(--color-primary); }
 
@@ -3782,35 +3860,41 @@ img {
 .plans-n {
     font-family: var(--font-display);
     font-variant-numeric: tabular-nums;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 600;
-    line-height: 1;
+    line-height: 1.1;
     color: var(--color-primary);
 }
-
-/* "100+" is a boundary, not a count, so it is stated quietly. */
+/* "100+" and "you decide" are boundaries, not counts, so they are quiet. */
 .plans-n-open {
-    font-size: 1.4rem;
+    font-size: 1.05rem;
     color: var(--color-text-muted);
+}
+/* The hosted rows sit under their address, named like a group label. */
+.plans .plans-group th {
+    padding: var(--space-lg) 0 var(--space-xs);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    border-bottom-color: var(--color-border-light);
 }
 
 .plans-notes {
-    margin-top: var(--space-xl);
+    margin-top: var(--space-lg);
     display: grid;
-    gap: var(--space-md);
-    max-width: 68ch;
+    gap: var(--space-sm);
 }
-
 .plans-notes p {
     margin: 0;
     color: var(--color-text-muted);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.65;
 }
 
 @media (max-width: 640px) {
-    .plans-n { font-size: 1.8rem; }
-    .plans-count { width: 34%; }
-    .plans-price { width: 34%; font-size: 0.85rem; }
+    .plans-n { font-size: 1.6rem; }
+    .plans-n-open { font-size: 0.9rem; }
+    .plans .plans-price { padding-left: var(--space-md); font-size: 0.82rem; }
     .plans thead th { font-size: 0.72rem; }
 }
