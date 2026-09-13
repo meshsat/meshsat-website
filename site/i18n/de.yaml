@@ -147,13 +147,13 @@ hw6:
 hw6r:
   other: "Weil die interessanten Fälle genau die sind, in denen auch der Netzstrom weg ist."
 cap1:
-  other: "Signal, Verkehr und Kanalzustand, vom Gerät selbst ausgeliefert"
+  other: "Spektrum je Band, Verbindungen und der Zustand jedes Trägers, vom Gerät selbst ausgeliefert"
 cap2:
   other: "Überflugvorhersage, damit die Warteschlange auf einen wirklich sichtbaren Satelliten wartet"
 cap3:
-  other: "Mesh-Topologie in Echtzeit"
+  other: "Sechs Stunden des 868-MHz-LoRa-Bands. Die Störerkennung hat bisher nur Umgebungsrauschen gesehen."
 cap4:
-  other: "Weiterleitungsregeln und Status je Gateway"
+  other: "Ein ZigBee-Sensor für Temperatur und Luftfeuchte und seine letzten 24 Stunden"
 hw_note:
   other: "Das Dashboard steckt in der Binärdatei und wird vom Gerät ausgeliefert. Keine Cloud, kein Konto."
 hw_repo_a:
@@ -354,3 +354,9 @@ inc4_p:
   other: "Die öffentlichen Fest- und Mobilfunknetze fielen aus, und Portugals Verteilnetzbetreiber wich auf Satellitentelefone aus. Spaniens Übertragungsnetzbetreiber konnte noch telefonieren, erreichte aber die Verteilnetzleitstelle in Sevilla nicht, und der Netzwiederaufbau in Andalusien wurde unterbrochen."
 inc4_src:
   other: "Bericht des ENTSO-E-Expertengremiums"
+shot_open:
+  other: "In voller Größe öffnen"
+shot_prev:
+  other: "Vorheriger Screenshot"
+shot_next:
+  other: "Nächster Screenshot"

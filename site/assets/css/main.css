@@ -4036,3 +4036,30 @@ img {
 @media (forced-colors: active) {
     .join-route code { border-color: CanvasText; }
 }
+
+/* ---------- Screenshots: four thumbnails and a stepping lightbox (MESHSAT-1101) ----------
+   Evidence thumbnails, so four across on a desktop rather than two rows of large
+   cards; the lightbox carries the detail at 2x. The caption is a figcaption now
+   and takes over the two older `.screenshot-card p` rules. The hover lift and
+   glow go: a click-to-zoom thumbnail signals with its border and the cursor. */
+.screenshots-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); }
+@media (min-width: 1100px) { .screenshots-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .screenshots-grid { grid-template-columns: minmax(0, 1fr); } }
+.screenshot-card { margin: 0; display: flex; flex-direction: column; }
+.screenshot-card:hover { transform: none; box-shadow: none; }
+.screenshot-card figcaption {
+    padding: var(--space-sm) var(--space-md) var(--space-md);
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.55;
+}
+.shot-head #shot-caption { flex: 1; min-width: 0; }
+.shot-count { flex: none; font-variant-numeric: tabular-nums; }
+.shot-nav { font-size: 0.95rem; line-height: 1; }
+/* On a phone the caption takes its own row under the counter and buttons,
+   instead of being squeezed to a 180px column beside them. */
+@media (max-width: 560px) {
+    .shot-head { flex-wrap: wrap; }
+    .shot-head #shot-caption { order: 2; flex-basis: 100%; }
+    .shot-count { margin-right: auto; }
+}
