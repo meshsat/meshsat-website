@@ -57,6 +57,58 @@
     </div>
 </section>
 
+{{/* 1b. ISLANDS (MESHSAT-1096). The problem before the mechanism. Left: a
+     dated record of real failures, each sentence kept inside its linked
+     primary source. Right: what joining the islands looks like, written in the
+     trace's own interface IDs, with an honest state under every route: one run
+     on the bench, one verified leg, one not run end to end. */}}
+{{ $incidents := slice
+    (dict "when" "2005-08" "key" "inc1" "url" "https://docs.fcc.gov/public/attachments/FCC-06-83A1.pdf")
+    (dict "when" "2021-07" "key" "inc2" "url" "https://dokumente.landtag.rlp.de/landtag/drucksachen/1947-18.pdf")
+    (dict "when" "2023-08" "key" "inc3" "url" "https://fsri.org/resource/phase-two-lahaina-fire-incident-analysis-report")
+    (dict "when" "2025-04" "key" "inc4" "url" "https://www.entsoe.eu/publications/blackout/28-april-2025-iberian-blackout/")
+}}
+{{ $joins := slice
+    (dict "key" "join1" "route" (slice "mesh_0" "aprs_0" "mesh_0"))
+    (dict "key" "join2" "route" (slice "mesh_0" "iridium_0"))
+    (dict "key" "join3" "route" (slice "aprs_0" "tak_0"))
+}}
+<section id="islands" class="section section-alt islands-section">
+    <div class="container">
+        <div class="section-head">
+            <h2 class="section-title">{{ i18n "is_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "is_sub" }}</p>
+        </div>
+
+        <div class="islands-grid">
+            <div class="islands-col">
+                <h3 class="islands-h">{{ i18n "is_record_h" }}</h3>
+                <ol class="incidents">
+                    {{ range $incidents }}
+                    <li class="incident">
+                        <time class="incident-when" datetime="{{ .when }}">{{ .when }}</time>
+                        <p><strong>{{ i18n (printf "%s_h" .key) }}</strong> {{ i18n (printf "%s_p" .key) }} <a href="{{ .url }}" target="_blank" rel="noopener">{{ i18n (printf "%s_src" .key) }}</a></p>
+                    </li>
+                    {{ end }}
+                </ol>
+            </div>
+            <div class="islands-col">
+                <h3 class="islands-h">{{ i18n "is_joins_h" }}</h3>
+                <ul class="joins">
+                    {{ range $joins }}
+                    <li class="join">
+                        <p class="join-h">{{ i18n (printf "%s_h" .key) }}</p>
+                        <p class="join-route">{{ range $i, $hop := .route }}{{ if $i }}<span class="join-arrow" aria-hidden="true">&rarr;</span><span class="visually-hidden">{{ i18n "is_to" }}</span>{{ end }}<code>{{ $hop }}</code>{{ end }}</p>
+                        <p class="join-state">{{ i18n (printf "%s_s" .key) }}</p>
+                    </li>
+                    {{ end }}
+                </ul>
+                <p class="islands-who">{{ i18n "is_who" }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 {{/* 2. WHAT IT BRIDGES */}}
 <section id="transports" class="section">
     <div class="container">
