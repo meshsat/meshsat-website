@@ -147,13 +147,13 @@ hw6:
 hw6r:
   other: "Because the interesting cases are the ones where mains power has gone too."
 cap1:
-  other: "Signal, traffic and channel health, served by the device itself"
+  other: "Spectrum per band, links and every bearer's health, served by the device itself"
 cap2:
   other: "Pass prediction, so the queue waits for a satellite that is actually up"
 cap3:
-  other: "Live mesh topology"
+  other: "Six hours of the 868 MHz LoRa band. The jamming detector has only ever seen ambient noise."
 cap4:
-  other: "Forwarding rules and per-gateway status"
+  other: "A ZigBee temperature and humidity sensor and its last 24 hours"
 hw_note:
   other: "The dashboard is embedded in the binary and served from the device. No cloud dependency, no account."
 hw_repo_a:
@@ -354,3 +354,9 @@ inc4_p:
   other: "Public phone and mobile networks failed, and Portugal's distribution operator fell back on satellite phones. Spain's grid operator could still make calls but could not reach the distribution control centre in Seville, and restoring supply in Andalusia was paused."
 inc4_src:
   other: "ENTSO-E expert panel report"
+shot_open:
+  other: "Open at full size"
+shot_prev:
+  other: "Previous screenshot"
+shot_next:
+  other: "Next screenshot"
