@@ -59,9 +59,9 @@ t6:
 trace_foot:
   other: "Die Satellitenstrecke schlug fehl und die Nachricht kam trotzdem an, in drei Systemen, die das Mesh allein nicht erreicht. Routen, Failover-Reihenfolge und Transformationsketten werden je Schnittstelle konfiguriert."
 tr_title:
-  other: "Acht Träger, neun verdrahtete Schnittstellen"
+  other: "Jedes System hängt am selben Router"
 tr_sub:
-  other: "Jedes System wird als Adapter hinter derselben Schnittstelle angebunden, mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette, und eine Regel kann von jedem Adapter zu jedem anderen routen. Iridium zählt doppelt, mit dem 9603N und dem 9704; TAK und Webhooks sind Integrationen, keine Träger. HF-Funk und DMR stehen auf der Roadmap und sind nicht gebaut. Der Status nennt, was wir tatsächlich betrieben haben, nicht was wir hoffen."
+  other: "Jedes System ist ein Adapter hinter derselben Schnittstelle, mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette, und eine Regel kann von jedem Adapter zu jedem anderen routen. Heute laufen acht Träger auf neun Schnittstellen, weil Iridium doppelt zählt, mit dem 9603N und dem 9704. HF-Funk und DMR stehen auf der Roadmap und sind nicht gebaut. Der Status nennt, was wir tatsächlich betrieben haben, nicht was wir hoffen."
 th_category:
   other: "Kategorie"
 th_transport:
@@ -101,7 +101,7 @@ tr_note_link:
 tr_note_b:
   other: "dessen, was belegt ist und was nicht."
 cost_title:
-  other: "Satellitenbytes sind teuer. Das ist der ganze Entwurf."
+  other: "Den günstigsten Weg nehmen, der noch funktioniert."
 cost_sub:
   other: "Eine Iridium-Leitung kostet mehrere zehn Euro im Monat plus Guthaben je Nachricht, abgerechnet in Blöcken zu 340 Bytes. Gibt man jeder Person im Team eine, wächst die Rechnung mit der Teamgröße. Dieser Preis prägt jede Routing-Entscheidung."
 c1_h:
@@ -360,3 +360,9 @@ shot_prev:
   other: "Vorheriger Screenshot"
 shot_next:
   other: "Nächster Screenshot"
+fab_bus:
+  other: "Regeln, Transformationsketten, Failover-Reihenfolge, Kosten"
+fab_future:
+  other: "nicht gebaut"
+fab_cap:
+  other: "Träger oben, Integrationen unten, ein Router dazwischen: Eine Regel kann von jedem Adapter zu jedem anderen routen. Gestrichelt steht auf der Roadmap und ist nicht gebaut."

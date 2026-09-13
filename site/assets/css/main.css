@@ -4063,3 +4063,105 @@ img {
     .shot-head #shot-caption { order: 2; flex-basis: 100%; }
     .shot-count { margin-right: auto; }
 }
+
+/* ---------- The layer between networks (MESHSAT-1096, review 2) ----------
+   The transports section's thesis drawn once: every adapter hangs off the same
+   router. Nodes use the trace's vocabulary (interface IDs in sand, like
+   .trace-if); the bus is the one orange element because orange means MeshSat.
+   The roadmap is dashed and muted. Stubs are pseudo-elements, so assistive
+   technology reads two plain lists and a caption. Below 900px the stubs go and
+   the rows simply wrap around the bus. */
+.fabric {
+    --fab-gap: var(--space-lg);
+    margin: 0 0 var(--space-xl);
+    padding: var(--space-xl) var(--space-xl) var(--space-lg);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+.fabric-row {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-sm);
+}
+.fabric-top { grid-template-columns: repeat(auto-fit, minmax(min(7.5rem, 100%), 1fr)); }
+.fabric-bottom { grid-template-columns: repeat(auto-fit, minmax(min(7.5rem, 100%), 1fr)); }
+.fabric-node {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+    padding: 0.45rem 0.5rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    text-align: center;
+    min-width: 0;
+}
+.fabric-node code {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+}
+.fabric-node span { font-size: 0.8rem; color: var(--color-text); }
+.fabric-node.is-future { border-style: dashed; background: transparent; }
+.fabric-node.is-future span { font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-muted); }
+.fabric-node em { font-style: normal; font-size: 0.72rem; color: var(--color-text-muted); }
+
+.fabric-bus {
+    margin: var(--fab-gap) 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.2rem var(--space-md);
+    padding: 0.55rem var(--space-md);
+    border-block: 1px solid var(--color-primary);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-text);
+    text-align: center;
+}
+/* The router token is body ink, not orange: orange text on the orange tint
+   failed 1.4.3 in both themes (axe). The orange stays on the bus rules, where
+   3:1 non-text contrast is the bar. */
+.fabric-bus code { font-family: inherit; font-weight: 600; color: var(--color-text); }
+
+.fabric figcaption {
+    margin-top: var(--space-lg);
+    max-width: 72ch;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+/* Stubs from each node to the bus, only where the rows do not wrap. */
+@media (min-width: 900px) {
+    .fabric-top { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+    .fabric-bottom { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: calc(3 / 8 * 100%); margin-inline: auto; }
+    .fabric-top .fabric-node::after,
+    .fabric-bottom .fabric-node::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        height: var(--fab-gap);
+        border-left: 1px solid var(--color-border-light);
+    }
+    .fabric-top .fabric-node::after { top: 100%; }
+    .fabric-bottom .fabric-node::before { bottom: 100%; }
+    .fabric-top .fabric-node.is-future::after { border-left-style: dashed; }
+}
+/* On a phone the panel's inner padding gives the chips their room back, and
+   the three integrations share one row instead of orphaning webhook_0. */
+@media (max-width: 560px) {
+    .fabric { padding: var(--space-md); }
+    .fabric-bottom { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .fabric-node { padding-inline: 0.25rem; }
+    .fabric-node code { font-size: 0.78rem; }
+}
+@media (forced-colors: active) {
+    .fabric-bus { border-color: CanvasText; }
+}

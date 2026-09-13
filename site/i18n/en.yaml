@@ -59,9 +59,9 @@ t6:
 trace_foot:
   other: "The satellite leg failed and the message still arrived, in three systems the mesh cannot reach on its own. Routes, failover order and transform chains are configured per interface."
 tr_title:
-  other: "Eight bearers, nine wired interfaces"
+  other: "Every system plugs into the same router"
 tr_sub:
-  other: "Every system plugs in as an adapter behind one interface, with its own MTU, cost model and transform pipeline, and a rule can route from any adapter to any other. Iridium counts twice, on the 9603N and the 9704; TAK and webhooks are integrations rather than bearers. HF radio and DMR are on the roadmap and not built. Status says what we have actually run, not what we hope."
+  other: "Each one is an adapter behind the same interface, with its own MTU, cost model and transform pipeline, and a rule can route from any adapter to any other. Eight bearers run on nine interfaces today, because Iridium counts twice, on the 9603N and the 9704. HF radio and DMR are on the roadmap and not built. Status says what we have actually run, not what we hope."
 th_category:
   other: "Category"
 th_transport:
@@ -101,7 +101,7 @@ tr_note_link:
 tr_note_b:
   other: "of what has and has not been proven."
 cost_title:
-  other: "Satellite bytes are expensive. That is the whole design."
+  other: "Use the cheapest path that still works."
 cost_sub:
   other: "An Iridium line costs tens of euros a month plus credits per message, billed in 340 byte blocks. Give one to every person in a team and the bill scales with headcount. That price shapes every routing decision."
 c1_h:
@@ -360,3 +360,9 @@ shot_prev:
   other: "Previous screenshot"
 shot_next:
   other: "Next screenshot"
+fab_bus:
+  other: "rules, transform chains, failover order, cost"
+fab_future:
+  other: "not built"
+fab_cap:
+  other: "Bearers above, integrations below, one router between them: a rule can route from any adapter to any other. Dashed is on the roadmap and not built."
