@@ -35,6 +35,7 @@ export default defineConfig({
             { text: 'Quick Start', link: '/guide/quick-start' },
             { text: 'Configuration', link: '/guide/configuration' },
             { text: 'Hardware', link: '/guide/hardware' },
+            { text: 'Radios and range', link: '/guide/radios-and-range' },
           ],
         },
         {
