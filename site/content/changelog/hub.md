@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 534
-  unreleased_since: "2026-09-13"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-13"
+  unreleased_count: 560
+  unreleased_since: "2026-09-14"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-14"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,15 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-13)
+## Unreleased (main, last change 2026-09-14)
 
 ### Features
 
+- **geo**: geofences actually fire now ([bbfc047b](https://github.com/meshsat/meshsat-hub/commit/bbfc047b453e725ce0e896cb4447f490c64f73e3))
+- **ratelimit**: the send budget follows the plan ([279fdc75](https://github.com/meshsat/meshsat-hub/commit/279fdc75fc983af260d523272c3fdae84851058c))
+- **tenant**: audit retention belongs to the tenant ([3d686635](https://github.com/meshsat/meshsat-hub/commit/3d68663594ab8b07d208546dd5896172c23f347d))
+- **tenant**: the bridge offline timeout belongs to the tenant ([828d6a8a](https://github.com/meshsat/meshsat-hub/commit/828d6a8a44a3ac0e3e93d392804eadc11e2ec265))
+- **signups**: tell someone when their account request is refused ([dd30d53d](https://github.com/meshsat/meshsat-hub/commit/dd30d53dc939aa34a4e671b47134f3fad2dc1497))
 - **signups**: email the operator when an account request is waiting ([c27a6c92](https://github.com/meshsat/meshsat-hub/commit/c27a6c9219b1a3f789fa3a37c41f98fe3157b31c))
 - **tak**: switch the hosted TAK front on ([90f09f31](https://github.com/meshsat/meshsat-hub/commit/90f09f31c9b0278ec535592745cae54a3a67ef3b))
 - **tak**: switch the hosted TAK front on ([d84051df](https://github.com/meshsat/meshsat-hub/commit/d84051dfd65937c3f467cc7c14b71a966d0af0fd))
@@ -309,6 +314,27 @@ it goes live.
 
 ### Fixes
 
+- **web**: pick a geofence's escalation chain, don't type it ([5e21483b](https://github.com/meshsat/meshsat-hub/commit/5e21483bd774039231a3ed4d928423146018b94b))
+- **webhook**: a created webhook could never be deleted, and had no timeout ([7f2e1f99](https://github.com/meshsat/meshsat-hub/commit/7f2e1f99f1b37443e2256e57b2010b92d45d53fd))
+- **geo**: a device could cross another tenant's fence ([98edde4c](https://github.com/meshsat/meshsat-hub/commit/98edde4c3d44da9a12aceb2636e3882b416c3f65))
+- **ratelimit**: one tenant could lift another's send budget ([bcb4f5fa](https://github.com/meshsat/meshsat-hub/commit/bcb4f5fa8008f66bf19e0e838ba7f0b813b6d582))
+- **webhook**: every tenant's events went to every tenant's webhook ([e1d1813d](https://github.com/meshsat/meshsat-hub/commit/e1d1813d9a19a9466060745e2c598958968acc7d))
+- **deadman**: the dead man's switch was every tenant writing yours ([9210f6dd](https://github.com/meshsat/meshsat-hub/commit/9210f6ddc5a28d797e58313baff87091b457234e))
+- **security**: gate the remaining platform-only routes ([67c8768d](https://github.com/meshsat/meshsat-hub/commit/67c8768dee60b2c519a58cc5240a0d5a76b4b904))
+- **security**: stop the backup export leaking live credentials ([8ae92917](https://github.com/meshsat/meshsat-hub/commit/8ae929176efd099a2b8010770824534879b02b30))
+- **escalation**: let a tenant configure an SOS chain, and make it hold ([ed490ec1](https://github.com/meshsat/meshsat-hub/commit/ed490ec15f653cd656daf3cdb11930c41cadd6bf))
+- **ots**: own the httpx timeout, and test the icon patch ([68de93f3](https://github.com/meshsat/meshsat-hub/commit/68de93f3695e48a171b978282a2b0d006fb42acb))
+- **web**: stop asking for credits once the answer is 404 ([cff1ef6d](https://github.com/meshsat/meshsat-hub/commit/cff1ef6db684a4861a0e8b88394998669af2b375))
+- **takfront**: audit the one refusal that names a real client ([4a54881a](https://github.com/meshsat/meshsat-hub/commit/4a54881ad5516a805bffb8f291afeee21ed1c62f))
+- **tenancy**: evict a purged tenant from every cache, on every replica ([352e1d82](https://github.com/meshsat/meshsat-hub/commit/352e1d82e37032cd314128e1c7602337a726fafb))
+- **security**: one-time provisioning material must not outlive its claim ([965b265c](https://github.com/meshsat/meshsat-hub/commit/965b265cafb4b5bc4119c058f41833e51bbb8cd1))
+- **security**: seal the Hub's own long-lived keys at rest ([0a47b7fa](https://github.com/meshsat/meshsat-hub/commit/0a47b7fa9a2ddc1047ae3290db51359af1ad6f68))
+- **takfront**: tell plaintext on the TAK port apart from a refused client ([1a47d2b2](https://github.com/meshsat/meshsat-hub/commit/1a47d2b2cbc72f670e1ee87ed80a5409c757b2cc))
+- **ots**: guard close\_connection, which is the call site that mattered ([9cc3a558](https://github.com/meshsat/meshsat-hub/commit/9cc3a558d95c3e0ff1ea89844c78856256fb64b8))
+- **tak**: the Hub asks for the identity name the CRD admits ([78d75eaa](https://github.com/meshsat/meshsat-hub/commit/78d75eaa9dd8e79b8dc787cd2bead85c6e78fbc7))
+- **ots**: stop the probe traceback flood, and time out every request ([bd117c51](https://github.com/meshsat/meshsat-hub/commit/bd117c51263024d9e7bd1bf9d1e2ceb11188bbe2))
+- **tak**: give each instance an OTS account for the identity the front uses ([740d4bac](https://github.com/meshsat/meshsat-hub/commit/740d4bac77c5c681f7a2374679dfdc7d35001c41))
+- **tak**: quiet the probe WARN, and recover from a refused identity ([868c0a92](https://github.com/meshsat/meshsat-hub/commit/868c0a92f37f2290f0fd4a68627f40da5bdf2902))
 - **web**: point Help at the docs, and offer the iTAK package ([654c44e4](https://github.com/meshsat/meshsat-hub/commit/654c44e452595fae6d65fbe9f783a465bf4cab8a))
 - **tak**: give each Hub replica its own upstream identity ([425b79e9](https://github.com/meshsat/meshsat-hub/commit/425b79e927b288b0c0c258c89b3cb9232b8d1b64))
 - **tak**: switch the hosted TAK front back off until the identity race is fixed ([90c29689](https://github.com/meshsat/meshsat-hub/commit/90c2968906c6bae9a11ed383f9b9f8d7c478f977))
