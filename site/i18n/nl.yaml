@@ -248,6 +248,8 @@ f_privacy:
   other: "Privacybeleid"
 f_terms:
   other: "Gebruiksvoorwaarden"
+f_status:
+  other: "Dienststatus"
 f_license:
   other: "GPLv3-licentie"
 f_copy:

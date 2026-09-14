@@ -22,6 +22,7 @@ export default defineConfig({
       { text: 'Android', link: '/android/' },
       { text: 'Reference', link: '/api/' },
       { text: 'Changelog', link: 'https://meshsat.net/changelog/' },
+      { text: 'Status', link: 'https://status.meshsat.net' },
     ],
 
     sidebar: {

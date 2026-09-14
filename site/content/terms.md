@@ -27,7 +27,7 @@ MeshSat Hub is a hosted service. You create an account, connect bridges and devi
 
 Message delivery is best effort. Mesh radio, satellite and cellular links fail for reasons nobody controls: weather, terrain, orbital geometry, carrier outages, spectrum interference and jamming. We do not promise that a message will arrive, or arrive within any period. We do not monitor your traffic, and nobody is watching your account for an alert on your behalf.
 
-We give no warranty that the service will be available, uninterrupted or error free. It runs from a single site. We do not offer a service level agreement, and we do not offer one at any price.
+We give no warranty that the service will be available, uninterrupted or error free. It is served from a small number of sites that we run ourselves. Observed availability is published at [status.meshsat.net](https://status.meshsat.net); that page is information, not a commitment. We do not offer a service level agreement, and we do not offer one at any price.
 
 ## Accounts
 

@@ -248,6 +248,8 @@ f_privacy:
   other: "Privacy Policy"
 f_terms:
   other: "Terms of Service"
+f_status:
+  other: "Service status"
 f_license:
   other: "GPLv3 License"
 f_copy:
