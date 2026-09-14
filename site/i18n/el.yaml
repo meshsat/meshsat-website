@@ -248,6 +248,8 @@ f_privacy:
   other: "Απόρρητο"
 f_terms:
   other: "Όροι χρήσης"
+f_status:
+  other: "Κατάσταση υπηρεσίας"
 f_license:
   other: "Άδεια GPLv3"
 f_copy:
