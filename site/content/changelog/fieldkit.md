@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 684
-  unreleased_since: "2026-09-13"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-13"
+  unreleased_count: 763
+  unreleased_since: "2026-09-14"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-14"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,10 +28,34 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-13)
+## Unreleased (main, last change 2026-09-14)
 
 ### Features
 
+- **pcb-b**: a current B quote folder, every BOM line coded or declared, and the 8 September one retired ([d5000713](https://github.com/meshsat/meshsat-fieldkit/commit/d50007138d160bedb112f97aeeacd1c246529756))
+- **pcb-e**: E9 is cut, 0 hard, 0 unrouted, both rails MET and 36 of 36 deliverable properties ([b7a06131](https://github.com/meshsat/meshsat-fieldkit/commit/b7a06131a65b35a8b14641de4e8d8bd64a10c492))
+- **ecad**: A27 and E9, the profiles for the copper the routed boards asked for ([06ae6489](https://github.com/meshsat/meshsat-fieldkit/commit/06ae6489d060c325b4616f091f94a46cf642b878))
+- **pcb-b**: the underside may not sit under a fine-pitch part's escape field, behind a knob until an arm grades it ([2c07103c](https://github.com/meshsat/meshsat-fieldkit/commit/2c07103ce5b1db35924c7873bd22b4affd8b4550))
+- **pcb-a**: A26, the profile for the second density pass ([8d3e7868](https://github.com/meshsat/meshsat-fieldkit/commit/8d3e7868e5a00ade4edbb72ad0a5895380b90a3f))
+- **pcb-e**: E8, the profile for the VIN\_RAW copper pass ([466db629](https://github.com/meshsat/meshsat-fieldkit/commit/466db629ecc0ee7d276295046e6dda0a90b41d4a))
+- **pcb-d**: D11 is cut, owner ruling 15 implemented and measured ([b01fef25](https://github.com/meshsat/meshsat-fieldkit/commit/b01fef255b03f62cb6bdc14bb2067a652bdacc54))
+- **pcb-p**: P4 is cut, 0 hard, 0 unrouted, 3 of 3 rails MET ([6d1b5a15](https://github.com/meshsat/meshsat-fieldkit/commit/6d1b5a15f0eb50d0ce9a5f02634de53e8423d02f))
+- **ecad**: routeflow profile p4, P3 measured clean at 3 of 3 rails ([ee3f9669](https://github.com/meshsat/meshsat-fieldkit/commit/ee3f96694bd62cc066b5f399da64f43093d0c138))
+- **ecad**: owner ruling 13, B's nine overflowing regions resized for the pair-corridor margin ([ef2ab18a](https://github.com/meshsat/meshsat-fieldkit/commit/ef2ab18af96b4a35f76d0e178f7c8bdd28edc3db))
+- **ecad**: routeflow profile d11, owner ruling 15 measured clean in an isolated tree ([dd51bdb1](https://github.com/meshsat/meshsat-fieldkit/commit/dd51bdb13eeb96247ce5ba5385918850c5786b00))
+- **ecad**: route\_one refuses a route that drops its board's plane nets ([333f736d](https://github.com/meshsat/meshsat-fieldkit/commit/333f736d5e0f4b0beb8be8efcf3050d5d81950e1))
+- **ecad**: routeflow profile c11, C with its USB class actually registered ([b4ddd7b8](https://github.com/meshsat/meshsat-fieldkit/commit/b4ddd7b855582f5297b7bfe8ff2b33a9a127d15a))
+- **ecad**: owner ruling 15 on D, the class back to 0.5 mm and the rail in locked inner copper ([2d025d1f](https://github.com/meshsat/meshsat-fieldkit/commit/2d025d1f5515ac69d482b854088857abc7b7fd44))
+- **ecad**: routeflow profile a25, A with the power copper its density asked for ([b9bc2ed3](https://github.com/meshsat/meshsat-fieldkit/commit/b9bc2ed334291b7233188aa807e57cfc57566f21))
+- **ecad**: a joint is not a conductor, and every piece too short to be one is reported ([f052d38f](https://github.com/meshsat/meshsat-fieldkit/commit/f052d38f43062b1d40ae4556fc5c0063896bdb60))
+- **ecad**: a via is judged on its own barrel, and the pour bar is applied to pour copper ([721f55a9](https://github.com/meshsat/meshsat-fieldkit/commit/721f55a9da5b47c4a0911b2b3bc8c50fb05ae541))
+- **ecad**: power copper for A24's VBUS20 and +12V\_HF, a wider PA band, a keep-out on the VBAT plane's neck ([595e1337](https://github.com/meshsat/meshsat-fieldkit/commit/595e133760a7aedf618c8ff476ecb05c265c6a58))
+- **tools**: owner ruling 22, the density is judged on the conductor and not on a grid square ([f98cbbd9](https://github.com/meshsat/meshsat-fieldkit/commit/f98cbbd987127233db0b2f75f861ac5e6e9bb46f))
+- **tools**: owner ruling 19, under 1.1x of the density bar counts as MET ([8a2d80ca](https://github.com/meshsat/meshsat-fieldkit/commit/8a2d80cadea688084d51ba64871d4c693f92fd1e))
+- **tools**: density\_probe, what is AT an over-density cell, and A24's eight rails are four jobs ([39ef1858](https://github.com/meshsat/meshsat-fieldkit/commit/39ef18580865e7d69dd5f2f510861eb78015c0b8))
+- **ecad**: 3D views of all seven current boards, and a retired pack leaves two silkscreens ([c17fabe0](https://github.com/meshsat/meshsat-fieldkit/commit/c17fabe03d3ff1c09ddbd98a93a443191b92e39b))
+- **ecad**: EasyEDA Pro import archives for the CURRENT state of all seven boards ([5be8e6e5](https://github.com/meshsat/meshsat-fieldkit/commit/5be8e6e5c7dafc68d0cb5704ba35dc0a8502a33e))
+- **tools**: the current density decides alongside the drop, and ruling 15 is amended to outer copper ([9633a337](https://github.com/meshsat/meshsat-fieldkit/commit/9633a3373a6d0d459cae0d3e27a8888106aa9db2))
 - **tools**: direct\_close tries the escape stub's far end when the pad is walled in ([82f17830](https://github.com/meshsat/meshsat-fieldkit/commit/82f17830a6daac1963a562b91e6c574f862472f0))
 - **tools**: every board records its regions, and region\_room reads the right generator ([27218845](https://github.com/meshsat/meshsat-fieldkit/commit/27218845088f710c99b5e42b1c3aa7036dbcccf8))
 - **pcb-b**: B's placed board is LEGAL, 0 hard of the fifteen types ([dfbf51ed](https://github.com/meshsat/meshsat-fieldkit/commit/dfbf51edac49bc6c6e9eb59b781ca96512b57c94))
@@ -305,6 +329,59 @@ appear below.
 
 ### Fixes
 
+- **order**: a class row stays unanswered whatever an allow list says, and B's phase copy carries its board's declaration ([1bfc361b](https://github.com/meshsat/meshsat-fieldkit/commit/1bfc361b0b21c71cbe76aaf4cc5bc9db5f8c06c3))
+- **order**: the certification reads the boards' own allow lists too: 513 of 517 rows settled ([34571171](https://github.com/meshsat/meshsat-fieldkit/commit/345711717df9edfd3a52c4d18d65faadaf7fa454))
+- **pcb-b**: the controllers' SWD lands are declared: copper on our own board, no part fitted ([8b2e80d8](https://github.com/meshsat/meshsat-fieldkit/commit/8b2e80d88c8a03388f2e5aabc82f4ede190d8c43))
+- **pcb-b**: the three fan connectors carry the JST part the schematic names ([6abb4120](https://github.com/meshsat/meshsat-fieldkit/commit/6abb4120cff1e6427456a0dba253f49ad13dd64d))
+- **tools**: the meander ladder goes down to a quarter of a millimetre, where A's free space is ([daed7710](https://github.com/meshsat/meshsat-fieldkit/commit/daed77107f952e87259947da449b578b7161ce67))
+- **pcb-c**: the stub router gets a window that can hold C's last connection ([58c88b9a](https://github.com/meshsat/meshsat-fieldkit/commit/58c88b9ab220b2c100783861fa632abfa79fbe2a))
+- **pcb-c**: the continuation's ceiling comes from C's measured pass rate, not from 80 passes in 900 seconds ([6d288fc4](https://github.com/meshsat/meshsat-fieldkit/commit/6d288fc43b38c29b837ee7b0d0bd546a95bd6f83))
+- **tools**: direct\_close measured a trial board at KiCad's unconnected cap, and the finish never saw it crash ([0b38cf05](https://github.com/meshsat/meshsat-fieldkit/commit/0b38cf054a14b5f39823b2bd8132cabf1603ac51))
+- **pcb-a**: the VBAT comb walks round the charger's via column instead of being cut by it ([e4564a3f](https://github.com/meshsat/meshsat-fieldkit/commit/e4564a3fa7266badb5014b0a76078187a1717cb2))
+- **pcb-e**: the VIN\_RAW In2 pour takes the empty strip north of its own via heads ([c007c247](https://github.com/meshsat/meshsat-fieldkit/commit/c007c2479a9ec53635d95f78808777a9ea13ae12))
+- **tools**: an island gets six candidate spots before it is left open, which is E8's last connection ([4b33e029](https://github.com/meshsat/meshsat-fieldkit/commit/4b33e02982a8449829bf649cd147806bb034afe8))
+- **ecad**: the finish refills before the gate and the rail checks: E8's CELL\_F reads MET on the board it is cutting ([9619f425](https://github.com/meshsat/meshsat-fieldkit/commit/9619f425018536c62534aa04f63be6b31023fa0b))
+- **gates**: a supplementary ground pour on a routing layer is not judged by its coverage ([e29f4580](https://github.com/meshsat/meshsat-fieldkit/commit/e29f45809cba5196b3ff2f7a0261dc5bb0a34210))
+- **tools**: stitch\_prune refuses an unfilled board, where every via reads as abandoned ([2c1e49a3](https://github.com/meshsat/meshsat-fieldkit/commit/2c1e49a3c3e92a3a23a5fb999c7713be71e0ff34))
+- **pcb-b**: the pair's end emissions are asked about the partner before they are laid, and the approach moves when the last hop is the violation ([583bd88b](https://github.com/meshsat/meshsat-fieldkit/commit/583bd88bff98754eda09c9965e1d06185dfe7627))
+- **pcb-a**: A26 power copper: the PA band reaches its shunt, VIN\_RAW's head gets its second layer, VBUS20 leaves VBAT's trunk, the HF run steps round J\_AB2 ([f3e9e4ac](https://github.com/meshsat/meshsat-fieldkit/commit/f3e9e4ac18bbe868032fffbfef585236896412a9))
+- **tools**: an option a usage line offers must be read; dc\_drop draws the picture it has promised since 8 September ([8402c3a1](https://github.com/meshsat/meshsat-fieldkit/commit/8402c3a1558a23c0f8ee88fa9ef6c0fee46e4fb4))
+- **ecad**: the stub stage must not leave a board more open than it found it ([6e0dcd54](https://github.com/meshsat/meshsat-fieldkit/commit/6e0dcd540af0fe5a9578270dc9b1847ceda461de))
+- **ecad**: a netlist older than its schematic describes a board that no longer exists ([c99cd183](https://github.com/meshsat/meshsat-fieldkit/commit/c99cd183f21ed3a85d79a886634eab21af6cba1b))
+- **ecad**: the barrel ratio is reported, not gated, because it does not converge ([4cd6efd8](https://github.com/meshsat/meshsat-fieldkit/commit/4cd6efd8f2d891312cc37fb173edb6bffafae3ed))
+- **ecad**: two barrels per source track on P3, six per FET ([50a335b7](https://github.com/meshsat/meshsat-fieldkit/commit/50a335b7cd14b6cb68543d66f44d8c5464c6725c))
+- **ecad**: E7's source pad takes ten barrels, not six ([edbe4b98](https://github.com/meshsat/meshsat-fieldkit/commit/edbe4b98b889b492c6aedc8801b070974f367898))
+- **ecad**: P3's vias go where the crossing is, in the FET's own source tracks ([a5c74be8](https://github.com/meshsat/meshsat-fieldkit/commit/a5c74be87c3173a9a382c73cb1389f9bb88a47f0))
+- **ecad**: P3's two failing bands give up the second layer, because the crossing was the problem ([376e78bb](https://github.com/meshsat/meshsat-fieldkit/commit/376e78bbad554a8cce7f4a156edef96be4d2cfd5))
+- **ecad**: P3's bands go to 3.6 mm so either layer can carry the rail ([b61f45e3](https://github.com/meshsat/meshsat-fieldkit/commit/b61f45e3641f974048f07e98f2c4ceef927c4dbf))
+- **ecad**: IOCA grows north, not west, and the two rails get what they still needed ([d77947d2](https://github.com/meshsat/meshsat-fieldkit/commit/d77947d25f5220cb05fa7e0db280afa49dbf2541))
+- **ecad**: D's band reaches C7's pad instead of stopping short of it ([35dc4f82](https://github.com/meshsat/meshsat-fieldkit/commit/35dc4f824a983741d2c2edc33c230fe81c8a35f0))
+- **ecad**: the board files declare A25 and C11, which their new profiles cut ([98e4a95a](https://github.com/meshsat/meshsat-fieldkit/commit/98e4a95aa16d98d184639735eebf0ff7a537220d))
+- **ecad**: B's ground return is not always at the part that supplies it ([e5ef7b9f](https://github.com/meshsat/meshsat-fieldkit/commit/e5ef7b9f5bba1b4ba1b298d3a8481930f039795a))
+- **ecad**: D's rail trunk went through J\_HARN1's pin field ([e59d6491](https://github.com/meshsat/meshsat-fieldkit/commit/e59d649195a82a249b52838790da86681efde85d))
+- **ecad**: a via tangent to the copper it joins is not joined to it ([de64970a](https://github.com/meshsat/meshsat-fieldkit/commit/de64970af26f30a1798d605c3895e66fd45b73c6))
+- **ecad**: P3's layer crossing happens at one end, so the vias go three across at 1.0 mm ([0238ffe2](https://github.com/meshsat/meshsat-fieldkit/commit/0238ffe29de8eb191868e90df57fef1e25bbd902))
+- **ecad**: E7's block lands each had one 0.4 mm via for 2 A, and its source pad had no copper on its own layer ([d9613db4](https://github.com/meshsat/meshsat-fieldkit/commit/d9613db49e721d52f1c51d7f5d5a0cea3b99d9ad))
+- **ecad**: P3's stitch vias go across the band, not only along it ([73af8e51](https://github.com/meshsat/meshsat-fieldkit/commit/73af8e51cae4323be211ba577706d84de948825c))
+- **ecad**: P3's barrels were the neck and nothing had ever judged them ([5e55bf36](https://github.com/meshsat/meshsat-fieldkit/commit/5e55bf3620428bf4503d0da9006f876e836a98bf))
+- **ecad**: the stackup reader wanted one line per layer and KiCad 9 writes five ([75327b69](https://github.com/meshsat/meshsat-fieldkit/commit/75327b69abd7417888f09037e49d41ffc466b1e1))
+- **ecad**: the via rule asserts the property, not the spelling it was written against ([bf0e8f43](https://github.com/meshsat/meshsat-fieldkit/commit/bf0e8f43b017fd17d2dd6e35c3568c3c52d246c2))
+- **ecad**: the via pass read dT before the loop assigns it ([9b361dcc](https://github.com/meshsat/meshsat-fieldkit/commit/9b361dccf083f9e21a334f6bce79060ac4dd9849))
+- **ecad**: VBUS20's island was cut and the current found an inner track; the HF island squeezed its own gate drive ([e572c4ba](https://github.com/meshsat/meshsat-fieldkit/commit/e572c4ba57ede4a45298f4758d90086c18912a23))
+- **ecad**: the USB net class was built on C, D and E and never registered, inside a comment ([67e375c6](https://github.com/meshsat/meshsat-fieldkit/commit/67e375c6d7a7f42ba24f7e64596711d638441ac0))
+- **ecad**: board B's BOM, 44 uncoded lines answered and two defects behind them ([eb7cb700](https://github.com/meshsat/meshsat-fieldkit/commit/eb7cb70091c9b935ef16b718e9197ff3d52558cc))
+- **ecad**: E7's source pad gets a second row of power vias ([56856155](https://github.com/meshsat/meshsat-fieldkit/commit/56856155fb983a0e07cb0a721aa92d806405f155))
+- **ecad**: the first VBUS20 copper bought two hard items and no current ([729f12a0](https://github.com/meshsat/meshsat-fieldkit/commit/729f12a0af9abc54f312b8e9a2fcfe45a2805ddb))
+- **ecad**: board A's placement generator could not run, and nothing said so until a chain tried ([18fcf43a](https://github.com/meshsat/meshsat-fieldkit/commit/18fcf43ad1072a08342b06383704a03eed8cca6b))
+- **ecad**: P3's pack current enters its band through three 0.6 mm tracks; decision 23 puts a number in front of ruling 9 ([3a1f36b5](https://github.com/meshsat/meshsat-fieldkit/commit/3a1f36b51ee111f9ad0ba861f86a512097f9de59))
+- **ecad**: a rail's source is the power path, not the part that controls it ([27625ab6](https://github.com/meshsat/meshsat-fieldkit/commit/27625ab6a0f35d6b31c6ff80f76fabfb76a6e946))
+- **ecad**: a cell a pour fills is full copper, and a track inside its own pour is not a lone conductor ([e014e7c4](https://github.com/meshsat/meshsat-fieldkit/commit/e014e7c4b89b868a667643ce1863fa8bc140f36d))
+- **ecad**: clamp a conductor to the current its rail is given, refuse only the gross excess ([08716531](https://github.com/meshsat/meshsat-fieldkit/commit/08716531cf87edc2a463d13f7faa46eeb76125a9))
+- **ecad**: the conductor current was a potential difference across a path the conductance did not describe ([70dbd5cb](https://github.com/meshsat/meshsat-fieldkit/commit/70dbd5cb46c2a13c060a12fb69f70efa9611f12c))
+- **ecad**: every rail names where its current goes, and a rail without loads is refused at declaration ([2f8d2194](https://github.com/meshsat/meshsat-fieldkit/commit/2f8d21940ab11aa3bdf4cf31e88c14a9a972df48))
+- **tools**: tier 2b caught a fix that was written and never applied, and two more ([77e1c66a](https://github.com/meshsat/meshsat-fieldkit/commit/77e1c66ad6b859527283515520bf9543ee332d8e))
+- **tools**: a rail whose loads are undeclared is not judged, and that is half the density failures ([cbaedc77](https://github.com/meshsat/meshsat-fieldkit/commit/cbaedc77b291251466cf6e2f621b64142c2730a0))
+- **ecad**: the import note leaves the project folder, which must match what was proved ([eaac2378](https://github.com/meshsat/meshsat-fieldkit/commit/eaac23789b9c49eba5c0c0d51538624a29fe300e))
 - **order**: a manufacturer's prefix is the same part, and every LED row carries a code ([589012fc](https://github.com/meshsat/meshsat-fieldkit/commit/589012fca80d7c33cc90965994d1fb0f93e1aec5))
 - **tools**: the current-density bar is lenient, not strict, and twelve rails exceed it ([a69923f0](https://github.com/meshsat/meshsat-fieldkit/commit/a69923f08188ef53c1accc7223ac93a56f3669fb))
 - **tools**: the stub router's class lookup was dead twice over ([625657a7](https://github.com/meshsat/meshsat-fieldkit/commit/625657a70a6f5ffd5d82e7a2c7b4543d3ca65eea))
@@ -706,6 +783,8 @@ appear below.
 
 ### Performance
 
+- **pcb-b**: the corridor covers its own legs on B: 71 of 113 against 65 ([82259637](https://github.com/meshsat/meshsat-fieldkit/commit/82259637ac04cfef8974fe4c9d5063532129f892))
+- **pcb-b**: the corridor slack re-measured on today's tools: 0.08 lays 65 of 113 where the declared 0.06 lays 54 ([4e7dd1f2](https://github.com/meshsat/meshsat-fieldkit/commit/4e7dd1f2dbc2a664e2c66dcdda73894292577a92))
 - **b**: ten points of the corridor slack, and it is a curve rather than a scatter ([325217e4](https://github.com/meshsat/meshsat-fieldkit/commit/325217e49f6af2f8ddad0ea5046cb23a1f20d647))
 - **b**: the corridor slack swept again, 0.06 lays 57 of 113 against 47 ([2353e42b](https://github.com/meshsat/meshsat-fieldkit/commit/2353e42b16ddadee09cf89b1496bfd3b73d68b0a))
 - **pre-router**: the stub search takes the compiled kernel, on where numba is ([dd7b3059](https://github.com/meshsat/meshsat-fieldkit/commit/dd7b305927e16b39f0e04a146bd586e29d7840b8))

@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 801
-  unreleased_since: "2026-09-12"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-12"
+  unreleased_count: 818
+  unreleased_since: "2026-09-14"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-14"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,13 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-12)
+## Unreleased (main, last change 2026-09-14)
 
 ### Features
 
+- **ups**: battery events on the event stream when the pack changes state ([43d783e1](https://github.com/meshsat/meshsat/commit/43d783e10182c7ea3ab62d07e10322e995efbe19))
+- **health**: show device health beside the link state for gateways, the modem and the booth screen ([124ce57e](https://github.com/meshsat/meshsat/commit/124ce57ee2dc2d7ac79ae21a2ed2b0f432b93595))
+- **oob**: follow a peer kit's radio to its new node number ([908dae33](https://github.com/meshsat/meshsat/commit/908dae33404c1604f2be263e9d320f6de5c9754e))
 - **time**: establish the clock before the bridge starts, and never export one we cannot trust ([4b94bd19](https://github.com/meshsat/meshsat/commit/4b94bd19dc6a8ef121f05ef9b89b55ebf6e7b380))
 - **web**: the kiosk poster is an interlude in the attract loop, not a lid: 20 s every 4 min after 3 min idle ([0c5a7e73](https://github.com/meshsat/meshsat/commit/0c5a7e7329afe8070c0b7de667bf833ad2768942))
 - **web**: kiosk poster screensaver after 30 s idle, any touch or a live message wakes the panel ([063521e1](https://github.com/meshsat/meshsat/commit/063521e1860842fcec22d957ed2e26667db2640a))
@@ -372,6 +375,20 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **failover**: copy the stored plaintext, not the mutated ciphertext, when a no-ack message moves bearers ([4fc4b300](https://github.com/meshsat/meshsat/commit/4fc4b300282c634fe7518c422f8f8160d8112041))
+- **aprs**: send an ack-requested frame once per attempt, without a blind repeat copy ([30d100b3](https://github.com/meshsat/meshsat/commit/30d100b3381dc70f3ae4214583f65f61b31c43e5))
+- **mesh**: tell the radio before closing its port, and pace writes like the official client ([bd6c8163](https://github.com/meshsat/meshsat/commit/bd6c8163f7a2eae5eed27b1bd19f43f97068c1df))
+- **aprs**: an unacknowledged relayed text is sent again and then moves to SMS ([da5401fc](https://github.com/meshsat/meshsat/commit/da5401fc6e3573e3169da0a5264c5d3068047fde))
+- **cellular**: a modem command can only act on the session it was queued to ([bb7da1ae](https://github.com/meshsat/meshsat/commit/bb7da1aed345e9f445749ea9d1ccea5328713f54))
+- **mesh**: keep DTR up when the radio's port closes, and report the radio's reboot count ([df1d1add](https://github.com/meshsat/meshsat/commit/df1d1addf7a314cdefb62508eedc0450507ba8d6))
+- **mesh**: retry the handshake until the radio sends its node info ([89cb4a7c](https://github.com/meshsat/meshsat/commit/89cb4a7c5248619b42296d5b6c46b49de237ee59))
+- **mesh**: count a silent handshake as a silent radio so the hub-port cut comes first ([5c9d9e90](https://github.com/meshsat/meshsat/commit/5c9d9e908f411de773e90dc75013232f108c5bc0))
+- **ui**: keep the compact battery chip its width when the pack drains on mains ([da01f5e4](https://github.com/meshsat/meshsat/commit/da01f5e480d846c232fc2b5b961a72bd9aef7493))
+- **aprs**: listen before talking on every APRS transmission ([c4bcc9d1](https://github.com/meshsat/meshsat/commit/c4bcc9d1bb8a96ef885de4653f9e524a8822abe0))
+- **ups**: halt before the X1202 cuts out and flag a pack draining on mains ([f1b869aa](https://github.com/meshsat/meshsat/commit/f1b869aab2bb0afc30f04eafb4f2fd3a877a70ce))
+- **mesh**: cut a silent radio's hub port at once and stop zeroing the radio's own node entry ([24b61a97](https://github.com/meshsat/meshsat/commit/24b61a97dabfda6a8796c8d8207b0e93f79b3eab))
+- **kiosk**: rebind the touch controller when its probe misreads the config ([5337b5cd](https://github.com/meshsat/meshsat/commit/5337b5cdf661ee5dd4cb53a468cc0e14924802db))
+- **time**: drop docker.socket from the clock guard ordering, it was deleting Docker's start job ([424fa40b](https://github.com/meshsat/meshsat/commit/424fa40b46e92f4a798ed62601f2b363c7a3b640))
 - **deploy**: pass MESHSAT\_API\_RATE\_LIMIT through compose so it can actually be set ([c5eacaf2](https://github.com/meshsat/meshsat/commit/c5eacaf27870904ba5a6c254c0762a3273d396a8))
 - **aprs**: the beacon and the message no longer keep the same cadence ([37f4a3b6](https://github.com/meshsat/meshsat/commit/37f4a3b6450910b73a1b75a3309d1fe5f505ba59))
 - **health**: a probe that never returns can no longer freeze the heal ladder ([3f4f4798](https://github.com/meshsat/meshsat/commit/3f4f4798ad7ca5fbae3da0fe549f853936ea34f9))
