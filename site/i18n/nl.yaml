@@ -293,7 +293,7 @@ host_self_p:
 host_self_src:
   other: "Broncode van de Hub"
 host_self_deploy:
-  other: "Installatiehandleiding"
+  other: "Handleiding zelf hosten"
 host_ours_h:
   other: "Op onze servers"
 host_th_cost:

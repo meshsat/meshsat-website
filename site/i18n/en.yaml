@@ -293,7 +293,7 @@ host_self_p:
 host_self_src:
   other: "Hub source"
 host_self_deploy:
-  other: "Deployment guide"
+  other: "Self-hosting guide"
 host_ours_h:
   other: "On our servers"
 host_th_cost:
