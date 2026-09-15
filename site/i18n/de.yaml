@@ -293,7 +293,7 @@ host_self_p:
 host_self_src:
   other: "Quellcode des Hub"
 host_self_deploy:
-  other: "Installationsanleitung"
+  other: "Anleitung zum Selbsthosten"
 host_ours_h:
   other: "Auf unseren Servern"
 host_th_cost:

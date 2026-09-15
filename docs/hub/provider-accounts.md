@@ -28,7 +28,17 @@ message can never land in the wrong account.
 Treat the URL as a credential. It travels through consoles, logs and support tickets, so the
 providers that can sign their requests are still required to sign them.
 
-## One thing you cannot bring yet
+## Cloudloop's MQTT feed
 
-Cloudloop's MQTT feed uses mutual TLS with certificate files and is configured at the platform
-level, so it is shared rather than per account. Everything else on this page is yours.
+Cloudloop can push your satellite messages over MQTT as well as by webhook. It is mutual TLS:
+Cloudloop issues a client certificate for your account, and the Hub presents it. On the
+Cloudloop account under Settings → Integrations, fill in the broker (`ssl://host:8883`), your
+account id, and the three PEM blocks: the broker's CA, your client certificate and its key.
+Paste each block whole, `-----BEGIN` to `-----END`; the Hub refuses a block that does not parse
+or a certificate whose key is not its own, at save time, so a bad paste is an error on the page
+and not a silent reconnect loop.
+
+The Hub keeps one connection per account, subscribed to your account's `MO` topic. Messages it
+receives are filed under your account only: a device you have not registered is yours to
+register, a device another account owns is refused. Leave the broker empty and the webhook
+alone carries your traffic.

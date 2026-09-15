@@ -75,6 +75,7 @@ export default defineConfig({
         {
           text: 'Running your own',
           items: [
+            { text: 'Self-hosting', link: '/hub/self-hosting' },
             { text: 'Authentication', link: '/hub/authentication' },
             { text: 'Multi-tenancy', link: '/hub/tenants' },
             { text: 'Configuration', link: '/reference/hub-configuration' },
