@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 560
-  unreleased_since: "2026-09-14"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-14"
+  unreleased_count: 610
+  unreleased_since: "2026-09-15"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-15"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,28 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-14)
+## Unreleased (main, last change 2026-09-15)
 
 ### Features
 
+- **k8s**: nightly in-cluster production verification ([336bd8af](https://github.com/meshsat/meshsat-hub/commit/336bd8af60275ff5c5afd58fc9d0517abee701c1))
+- **cloudloop**: a tenant can bring its own Cloudloop MQTT certificate ([5137ae12](https://github.com/meshsat/meshsat-hub/commit/5137ae12053021d255bada1ad77b087f9b58ab34))
+- **k8s**: Reloader annotations on hub, stunnel and tak-operator ([c86a808c](https://github.com/meshsat/meshsat-hub/commit/c86a808cb5f423f77340560630911b1b56c50c06))
+- **k8s**: onion heartbeat for the status page; admin-only OIDC client for it ([95094347](https://github.com/meshsat/meshsat-hub/commit/950943473f26bde685a9a8824b89773647bf8afe))
+- **web**: HUB status badge links to status.meshsat.net ([93c4db87](https://github.com/meshsat/meshsat-hub/commit/93c4db87cb2e40815c2ff3d548156b0ee279c785))
+- **health**: report Stripe reachability as an informational dependency ([0788b57d](https://github.com/meshsat/meshsat-hub/commit/0788b57d2c3d0774c3c11dc04fb0244773a3b327))
+- **hawkbit**: move the OTA database from bundled H2 to CNPG Postgres ([d4f861ae](https://github.com/meshsat/meshsat-hub/commit/d4f861ae068d755c8518ea67ea5a725cab13548f))
+- **api**: tell the customer when a feature will not do anything ([c508f0f0](https://github.com/meshsat/meshsat-hub/commit/c508f0f0f4ecda3851661bbf61a22f36e6fc059c))
+- **tor**: publish the Hub's .onion address ([5add20ad](https://github.com/meshsat/meshsat-hub/commit/5add20adebf58b7200b8a487e93bf400366605f7))
+- **apprise**: deploy the notification relay that never existed ([461e6424](https://github.com/meshsat/meshsat-hub/commit/461e6424d0bfc42d44f0cdb1ef806f9d2044d814))
+- **tor**: run the hidden service on Kubernetes at last ([6edd131e](https://github.com/meshsat/meshsat-hub/commit/6edd131eaba3db78c91f655247e171d5406dbec4))
+- **hawkbit**: per-tenant OTA, and guard every tenant-supplied URL ([f321d43e](https://github.com/meshsat/meshsat-hub/commit/f321d43e78c66d1e59f8992ee4f1347bff50c92f))
+- **wireguard**: per-tenant wg-easy, and deploy the platform's own ([68f892b2](https://github.com/meshsat/meshsat-hub/commit/68f892b23baed3973057e5c0cf90ae5f8df57a23))
+- **oob**: per-tenant command policy, migration v24 ([dc7ac374](https://github.com/meshsat/meshsat-hub/commit/dc7ac3745b568d3a269f087dd8ba2f1f27bbda80))
+- **email**: per-tenant PGP gateway, and contacts stop colliding ([e0a932be](https://github.com/meshsat/meshsat-hub/commit/e0a932be6e2465ea2ee6a04f4c41d7d579f25f52))
+- **notify**: per-tenant Apprise and ntfy delivery backends ([54b3bad4](https://github.com/meshsat/meshsat-hub/commit/54b3bad4ce4393238456b0ad3496c518a3901ee6))
+- **aprsis**: each tenant transmits under its own amateur callsign ([f704414d](https://github.com/meshsat/meshsat-hub/commit/f704414d1f885727a499d19acaf2fc36db6a2791))
+- **geo**: a fence stays quiet for a while after it alerts ([fa732825](https://github.com/meshsat/meshsat-hub/commit/fa7328259b91d93d9c76b151f19947cf8c263148))
 - **geo**: geofences actually fire now ([bbfc047b](https://github.com/meshsat/meshsat-hub/commit/bbfc047b453e725ce0e896cb4447f490c64f73e3))
 - **ratelimit**: the send budget follows the plan ([279fdc75](https://github.com/meshsat/meshsat-hub/commit/279fdc75fc983af260d523272c3fdae84851058c))
 - **tenant**: audit retention belongs to the tenant ([3d686635](https://github.com/meshsat/meshsat-hub/commit/3d68663594ab8b07d208546dd5896172c23f347d))
@@ -314,6 +332,38 @@ it goes live.
 
 ### Fixes
 
+- **replicas**: one send per MT and SMS request, one HeMB publish, one inbound SMS row ([5c20472d](https://github.com/meshsat/meshsat-hub/commit/5c20472da2345b8198f2c3719a18b9f9f67e585f))
+- **store**: scoping ratchet parses files without the deprecated ParseDir ([2c61d0a8](https://github.com/meshsat/meshsat-hub/commit/2c61d0a87e91425db2121e888e1d0411eb2f95a9))
+- **store**: tenant-scoping ratchet; UpdateMessageStatus ignored its tenant ([92a79315](https://github.com/meshsat/meshsat-hub/commit/92a79315e59bb4c10d866290a44fe44ec38c61cf))
+- **k8s**: onion heartbeat: DataDirectory tor owns ([3abd5aa5](https://github.com/meshsat/meshsat-hub/commit/3abd5aa560c51705b2139aa9e296d18797b452ea))
+- **k8s**: onion heartbeat: tor needs a regular torrc, written to /tmp ([227efa3b](https://github.com/meshsat/meshsat-hub/commit/227efa3b0dd8dcb0174524124284384b68abb771))
+- **k8s**: onion heartbeat: tor must not read the image torrc on a read-only root ([85bc4044](https://github.com/meshsat/meshsat-hub/commit/85bc404439b18dabec76ce38ad3acf808d94595f))
+- **hawkbit**: activate the postgres profile the way the image can actually hear ([c5d3ff19](https://github.com/meshsat/meshsat-hub/commit/c5d3ff193842c434ec57c3c8809d4705ae724f65))
+- **scripts**: the digest gate must also see no OLD pod left ([ddb42efe](https://github.com/meshsat/meshsat-hub/commit/ddb42efe8ec281b00532158f907d4f0d16d9bba3))
+- **store**: a comment inside an applied migration is a text change ([d07f7e30](https://github.com/meshsat/meshsat-hub/commit/d07f7e30414c230961e5c029c4107f3a1ea795c2))
+- **hawkbit**: OTA was non-functional since deploy; H2 2.x removed IDENTITY() ([26c31108](https://github.com/meshsat/meshsat-hub/commit/26c311082497fef35b1f80ad181d3dbb85bc64a7))
+- **scripts**: no grep -m1 under pipefail in the digest check ([efc465e0](https://github.com/meshsat/meshsat-hub/commit/efc465e04b81a71998243e71bf8805fbe35a058c))
+- **devices**: tell the second tenant whose IMEI it is, and keep the global key ([880a0ba4](https://github.com/meshsat/meshsat-hub/commit/880a0ba4638580a77117d018e9e7780c70067d00))
+- **bus**: a broker blip at startup no longer silences a replica for good ([0e3a2a24](https://github.com/meshsat/meshsat-hub/commit/0e3a2a242aad96dce184bad2d8301c5f14b11708))
+- **integrations**: retry the replica subscription instead of giving up once ([81ebe3fb](https://github.com/meshsat/meshsat-hub/commit/81ebe3fb820d01f46680024a0437a27920ed842c))
+- **integrations**: a saved provider account reaches both replicas at once ([5443cdaa](https://github.com/meshsat/meshsat-hub/commit/5443cdaace13a7b35b0044528b859353ff5683f0))
+- **api**: rewrite the customer-facing capability messages ([c29704f2](https://github.com/meshsat/meshsat-hub/commit/c29704f2f41ac5d32c3199c75132775d3ebc5f0c))
+- **tor**: drop fsGroup, which made the onion key too readable to start ([37a6b35f](https://github.com/meshsat/meshsat-hub/commit/37a6b35f798f437a6053b88e3af2a35dae34758a))
+- **tor,wireguard**: the onion key survives losing the volume; tighten wg-easy ([372732da](https://github.com/meshsat/meshsat-hub/commit/372732da726a3ed832f3317d1e708b68720c5709))
+- **k8s**: cap apprise's worker pool; memory was never the problem ([ea1893e9](https://github.com/meshsat/meshsat-hub/commit/ea1893e919c58c26fa63b0e6f52d5b7401fa6d2f))
+- **k8s**: apprise needs more than 256Mi ([71753d7c](https://github.com/meshsat/meshsat-hub/commit/71753d7cc5603284e62c8b3e84ec34528ac6b2c3))
+- **k8s**: apprise creates its own user, so it cannot run with no capabilities ([1ba8e43e](https://github.com/meshsat/meshsat-hub/commit/1ba8e43e6d387dd77af492d93ac9d9b514a40e5e))
+- **k8s**: stop overriding the tor image's command ([2127702c](https://github.com/meshsat/meshsat-hub/commit/2127702c418ca7ccb58e58bd1b9fe0edc46dc7c6))
+- **wireguard**: log in on demand, not once at startup ([c7f8327f](https://github.com/meshsat/meshsat-hub/commit/c7f8327f4b7cb8e9b0000a40997dcc88ba436d6e))
+- **k8s**: wg-easy needs root and NET\_RAW, not the kernel modules ([cec89115](https://github.com/meshsat/meshsat-hub/commit/cec891157bedf7749d0375a48b29b846d385104b))
+- **k8s**: hawkBit's user property is a map keyed by username ([99ea9c3a](https://github.com/meshsat/meshsat-hub/commit/99ea9c3a199495f55ded7679af6139e036c01188))
+- **k8s**: wg-easy and hawkBit name a storage class that exists ([edf3332a](https://github.com/meshsat/meshsat-hub/commit/edf3332a50049e7c4409423bd7b0d83371e2b487))
+- **email**: persist PGP contacts and share them across replicas ([82c39c50](https://github.com/meshsat/meshsat-hub/commit/82c39c50b870743770ccf749404dbb91c2baee34))
+- **config**: always seal OOB frames, classify every setting's owner ([b57e9c7d](https://github.com/meshsat/meshsat-hub/commit/b57e9c7d80e47fd13f92a0ec3a458f8265dbadfb))
+- **aprsis**: both replicas would transmit the same packet ([7490f0c7](https://github.com/meshsat/meshsat-hub/commit/7490f0c7b041bc5b3125bbaa65a011029d0f2e10))
+- **position**: every position was stored twice ([9de4c1be](https://github.com/meshsat/meshsat-hub/commit/9de4c1be86a842ed0466d02eab095a74f2e389f9))
+- **webhook**: a customer's endpoint was being POSTed to twice ([61515f9d](https://github.com/meshsat/meshsat-hub/commit/61515f9d2f3aed608e6b3bf9502ee7ed585a5f2b))
+- **geo**: one crossing, one page, on two replicas ([607f2de0](https://github.com/meshsat/meshsat-hub/commit/607f2de0407f788dc00df8c62ee89953d1341988))
 - **web**: pick a geofence's escalation chain, don't type it ([5e21483b](https://github.com/meshsat/meshsat-hub/commit/5e21483bd774039231a3ed4d928423146018b94b))
 - **webhook**: a created webhook could never be deleted, and had no timeout ([7f2e1f99](https://github.com/meshsat/meshsat-hub/commit/7f2e1f99f1b37443e2256e57b2010b92d45d53fd))
 - **geo**: a device could cross another tenant's fence ([98edde4c](https://github.com/meshsat/meshsat-hub/commit/98edde4c3d44da9a12aceb2636e3882b416c3f65))

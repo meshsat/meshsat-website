@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 763
-  unreleased_since: "2026-09-14"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-14"
+  unreleased_count: 822
+  unreleased_since: "2026-09-15"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-15"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,10 +28,23 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-14)
+## Unreleased (main, last change 2026-09-15)
 
 ### Features
 
+- **pcb-b**: decision 24 delegated by the owner and taken, option 2: B's pair hold judges the coupled fraction at 0.80 ([2a38d31a](https://github.com/meshsat/meshsat-fieldkit/commit/2a38d31ac517c0ce139adc6663b861a0dc2af675))
+- **pcb-c**: C17, the forty test points sit beside the nets they tap ([781476e7](https://github.com/meshsat/meshsat-fieldkit/commit/781476e7a13af9252d7869063ecee4a48173fd75))
+- **pcb-a**: A31, A30's copper with the slot islands' column keep-outs, under the corrected supervisor ([76074255](https://github.com/meshsat/meshsat-fieldkit/commit/7607425591e56a445461ab599771c336ee7fa8ec))
+- **pcb-c**: C16 pre-lays the whole six-wire e-paper bus, because one lane taken by hand moved the shortage to the lines beside it ([04f9bf40](https://github.com/meshsat/meshsat-fieldkit/commit/04f9bf401709155ad936233eec8ea060039ec311))
+- **pcb-c**: C15 routes with /EPD\_SDA pre-laid ([1e06e44a](https://github.com/meshsat/meshsat-fieldkit/commit/1e06e44a556918e437edf7d7e0f3cd10d8b7521b))
+- **pcb-c**: a long net the router will not take is laid before the router runs ([ec6f9bb9](https://github.com/meshsat/meshsat-fieldkit/commit/ec6f9bb92c57efea98ee459a870fec5e876e2db7))
+- **pcb-a**: the A29 profile ([1a4be371](https://github.com/meshsat/meshsat-fieldkit/commit/1a4be3717b0233377b09b76ea274f2bf1160f3af))
+- **pcb-a**: A28, the routed board with its pairs matched and its last two connections closed ([23a8481d](https://github.com/meshsat/meshsat-fieldkit/commit/23a8481dccfa685b1fd74138dc0739f3797e0f89))
+- **pcb-c**: C13 routes the same copper with the rip-up cost at 10 ([9097230a](https://github.com/meshsat/meshsat-fieldkit/commit/9097230ad471624353e6b372783a4666f946d9ca))
+- **pcb-b**: the pre-router's obstacle map can grow each obstacle by its own class clearance ([d3afbf31](https://github.com/meshsat/meshsat-fieldkit/commit/d3afbf31fd184a589a722922dcad2840b6ee89c6))
+- **pcb-a**: the pre-router measures its two legs and gives the short one the difference back ([84c598b8](https://github.com/meshsat/meshsat-fieldkit/commit/84c598b8719005c1b5c42b3d1f8a770b86bc76d4))
+- **tools**: the final gate pass, one table over every deliverable folder in the tree ([ebc17082](https://github.com/meshsat/meshsat-fieldkit/commit/ebc170828a2569d0cd43e92c1f8e204c7908b08e))
+- **pcb-c**: C12, more passes for the one connection the corridor would not give up ([6508a4e9](https://github.com/meshsat/meshsat-fieldkit/commit/6508a4e9176682ec09762b41abe7152a8e8c9713))
 - **pcb-b**: a current B quote folder, every BOM line coded or declared, and the 8 September one retired ([d5000713](https://github.com/meshsat/meshsat-fieldkit/commit/d50007138d160bedb112f97aeeacd1c246529756))
 - **pcb-e**: E9 is cut, 0 hard, 0 unrouted, both rails MET and 36 of 36 deliverable properties ([b7a06131](https://github.com/meshsat/meshsat-fieldkit/commit/b7a06131a65b35a8b14641de4e8d8bd64a10c492))
 - **ecad**: A27 and E9, the profiles for the copper the routed boards asked for ([06ae6489](https://github.com/meshsat/meshsat-fieldkit/commit/06ae6489d060c325b4616f091f94a46cf642b878))
@@ -329,6 +342,45 @@ appear below.
 
 ### Fixes
 
+- **tools**: MISSING is a list; the previous commit called update on it and three contract fixtures failed ([6dd67510](https://github.com/meshsat/meshsat-fieldkit/commit/6dd675105f0bc856340a5e1511cf9b8fa9091c14))
+- **tools**: an empty pin map is a missing board, and B runs no gate on its mechanical board ([7ff45584](https://github.com/meshsat/meshsat-fieldkit/commit/7ff45584cc5eae4425fff2441b0c255c9f3d9b53))
+- **pcb-b**: a board that declares a coupled fraction is judged on the routed board by length, not held on a count; B19 routes twelve passes ([7b9678f2](https://github.com/meshsat/meshsat-fieldkit/commit/7b9678f2ec2dec7fd16b37fcb8460ff9feeeba3b))
+- **pcb-c**: the test-point columns clear the switches' courtyards, which run 2.3 mm past their cut-outs ([38709642](https://github.com/meshsat/meshsat-fieldkit/commit/38709642922abda9b1e12eaa2ea71515a189ec0b))
+- **pcb-c**: the two e-paper test points are in one region list, not two ([1a5e6d11](https://github.com/meshsat/meshsat-fieldkit/commit/1a5e6d11ee71272309fa05b97fcec0da0e3fb7b7))
+- **pcb-c**: the test points join FIXED before the loop that places it, so the region lists skip them ([5cf4e6cc](https://github.com/meshsat/meshsat-fieldkit/commit/5cf4e6cc9f60e8a9a930f21137309b8f0f96c2a4))
+- **pcb-c**: the test points are placed by the one FIXED loop, not twice ([5d9ee8ca](https://github.com/meshsat/meshsat-fieldkit/commit/5d9ee8caadbb740856834c87abcbc0a5e9caecad))
+- **pcb-a**: A32 closes the three gaps A30's route bridged with 0.5 mm inner tracks ([f39f222c](https://github.com/meshsat/meshsat-fieldkit/commit/f39f222cbc57f0b703c2377fe74d6bc49a6fd47d))
+- **tools**: a track goal in the stub router is the track's own copper, not a disc around the DRC's point ([fe5760cc](https://github.com/meshsat/meshsat-fieldkit/commit/fe5760ccd89b896b11c55069b94d2690b639c406))
+- **pcb-a**: the slot island keep-out stops at the finger's foot ([d5a3bb9d](https://github.com/meshsat/meshsat-fieldkit/commit/d5a3bb9dac66d550851475ba8802a28dad102e1f))
+- **routeflow**: a worse round is not finished, and every exit restores and finishes the best board ([fef26cd3](https://github.com/meshsat/meshsat-fieldkit/commit/fef26cd31a79568f6cacdd9a15db1b3c28ba412f))
+- **pcb-a**: the VBAT slot islands' via columns carry a track keep-out ([00188ff8](https://github.com/meshsat/meshsat-fieldkit/commit/00188ff8221b04b44300aab6f732253e9030398f))
+- **pcb-c**: the committed C profiles pin the clone, not the scratch tree a driver built ([3528d1d1](https://github.com/meshsat/meshsat-fieldkit/commit/3528d1d10ec8ec4f2c2e9a6344780d8eeac9f432))
+- **tools**: the closure ladder gets a wall-clock budget, because every shape costs a board DRC ([14573b5f](https://github.com/meshsat/meshsat-fieldkit/commit/14573b5fdd5d26002f434952f3b64334c4597c33))
+- **tools**: the stub router writes unbuffered, so a search that is cut leaves its line ([575ea76a](https://github.com/meshsat/meshsat-fieldkit/commit/575ea76aa35d679b19ddbd82967e0e735c673006))
+- **pcb-a**: the HF head island is the capacitor column, not the bounding box of four scattered pads ([d1b63449](https://github.com/meshsat/meshsat-fieldkit/commit/d1b634499ab62cc912b8bfec2e21eef2a707b519))
+- **tools**: the cross-board contracts read the declared phase directory, not the newest arm ([a9be3216](https://github.com/meshsat/meshsat-fieldkit/commit/a9be3216fa6a101bd1e5c3d6f8de856127a9b08e))
+- **pcb-a**: no keep-out on the VBUS20 island, and the two attempts at one are why ([888d9e6c](https://github.com/meshsat/meshsat-fieldkit/commit/888d9e6c33a82ff910e4e6b7068932f109b5ed02))
+- **pcb-a**: the gap between two of these capacitors is the next one's ground pad ([876c59b0](https://github.com/meshsat/meshsat-fieldkit/commit/876c59b0dac2c78325f71f3d2d7e095bf07e1767))
+- **pcb-a**: the VBUS20 keep-out is the pad row's band, not the island's outer margin ([3af804bc](https://github.com/meshsat/meshsat-fieldkit/commit/3af804bcbb75a93260596f1c94f08857c5f53f83))
+- **pcb-a**: the VBAT hand-over vias find their own clear stretch of the trunk ([7a213283](https://github.com/meshsat/meshsat-fieldkit/commit/7a213283506db89edf1812dc1362b6c0c100f38d))
+- **pcb-a**: A29, four rails measured on A28's own copper and every one is a layer transition ([26eeda25](https://github.com/meshsat/meshsat-fieldkit/commit/26eeda2502060aa8056bd843cfa49b10728bc0e2))
+- **order**: a maker and a part number inside parentheses name the part ([c09f11a5](https://github.com/meshsat/meshsat-fieldkit/commit/c09f11a5928a4562482daa33adca02d1f4d9d4c4))
+- **tools**: a via and a track end at one point are one point, with one layer set ([44b8499d](https://github.com/meshsat/meshsat-fieldkit/commit/44b8499db5b13b13039989033ac0a2be0dbd53ce))
+- **tools**: an island pair is named as it is tried, and the refusal list is no longer cut at fourteen ([07a474fb](https://github.com/meshsat/meshsat-fieldkit/commit/07a474fb35027e2476679afe5acaad2ef5b40773))
+- **tools**: a closure is searched at the clearance the net's class asks for ([2c28b731](https://github.com/meshsat/meshsat-fieldkit/commit/2c28b73196ca5ec8655ead521aa4f5ef0ea1ef1e))
+- **tools**: a closure is tried on every layer its two anchors share ([d9139460](https://github.com/meshsat/meshsat-fieldkit/commit/d91394607420030d45c6f0891d1ad311b97bfc13))
+- **pcb-b**: the pair's own two tracks at a layer change are a fold test, not a clearance test ([776f5b8c](https://github.com/meshsat/meshsat-fieldkit/commit/776f5b8ce736d2d0e726c6e6f5a485576e52f1e5))
+- **tools**: every trial board of a closure is built in its own process ([7ad6dd1d](https://github.com/meshsat/meshsat-fieldkit/commit/7ad6dd1d94c842557e46d21af6dfb469d492a4da))
+- **tools**: a refused closure is offered the other pairs of the same two islands ([5e06e16d](https://github.com/meshsat/meshsat-fieldkit/commit/5e06e16d80657be1eb31ba32224a38371d5b1990))
+- **pcb-a**: the length matcher is offered the pair's locked copper alongside its unlocked pieces ([04f03caf](https://github.com/meshsat/meshsat-fieldkit/commit/04f03caf4b2799a9daa1b31cefd3d399d3a87295))
+- **pcb-b**: the pair's layer change is judged against its partner before it is laid ([5644d93f](https://github.com/meshsat/meshsat-fieldkit/commit/5644d93f347655dadfcef4a81fdbf31f9230c43c))
+- **order**: a bare board has no BOM, so it cannot have a BOM status ([f9afbe43](https://github.com/meshsat/meshsat-fieldkit/commit/f9afbe43222c3d7811ac2a5b26b2e8efa47cf07c))
+- **tests**: the leg-match rules read the equaliser's whole body and its local side test ([b906c8e9](https://github.com/meshsat/meshsat-fieldkit/commit/b906c8e9eb8fe8b2299f6391800a6cacdc52e829))
+- **pcb-a**: the bump's side is the nearest partner piece, not the partner's centroid ([879940c8](https://github.com/meshsat/meshsat-fieldkit/commit/879940c8db7a1519c57aacf518e027067808f1b7))
+- **pcb-a**: the leg match measures the whole net, tries smaller bumps and names what refused them ([e400503e](https://github.com/meshsat/meshsat-fieldkit/commit/e400503ef262f847dfd8bd89ce9bf33012cec2fc))
+- **pcb-a**: the leg equaliser takes the pair's net objects, not its names ([ccbc590b](https://github.com/meshsat/meshsat-fieldkit/commit/ccbc590b54b7a6692ac26401d21eb01cf607057a))
+- **tools**: a pair laid end to end by the pre-router has no unlocked copper, so the length gate is given its locked copper ([22cc6adc](https://github.com/meshsat/meshsat-fieldkit/commit/22cc6adcc6307cd5f9cb44f793223ad2c5b1a238))
+- **tools**: the final gate takes its stem from the gerber zip and is declared a reader on the pin ([32275c4b](https://github.com/meshsat/meshsat-fieldkit/commit/32275c4bd741071cd348e412f484ad0976491313))
 - **order**: a class row stays unanswered whatever an allow list says, and B's phase copy carries its board's declaration ([1bfc361b](https://github.com/meshsat/meshsat-fieldkit/commit/1bfc361b0b21c71cbe76aaf4cc5bc9db5f8c06c3))
 - **order**: the certification reads the boards' own allow lists too: 513 of 517 rows settled ([34571171](https://github.com/meshsat/meshsat-fieldkit/commit/345711717df9edfd3a52c4d18d65faadaf7fa454))
 - **pcb-b**: the controllers' SWD lands are declared: copper on our own board, no part fitted ([8b2e80d8](https://github.com/meshsat/meshsat-fieldkit/commit/8b2e80d88c8a03388f2e5aabc82f4ede190d8c43))
@@ -783,6 +835,13 @@ appear below.
 
 ### Performance
 
+- **pcb-c**: the pre-lay is measured twice and declared for no board; C14's board stands at 0 hard and 2 unrouted ([b15cfceb](https://github.com/meshsat/meshsat-fieldkit/commit/b15cfcebdcdea55dfaf80f08a3dd057f8c496045))
+- **pcb-a**: A30 routes A29's copper with the via-cost remedy from the first round ([66f93c7a](https://github.com/meshsat/meshsat-fieldkit/commit/66f93c7a70290cfeb601db8db0b8400435035758))
+- **pcb-c**: the rip-up cost measured at 10 and it is far worse, so C14 goes back to C11's recipe ([adb541bd](https://github.com/meshsat/meshsat-fieldkit/commit/adb541bdef90f23a9546305504907a88068334d8))
+- **pcb-b**: the class-aware obstacle map is declared for B, worth +2 of 113 ([4717445a](https://github.com/meshsat/meshsat-fieldkit/commit/4717445a260206a9c3c4fa969313546f53b2b114))
+- **pcb-b**: the layer-change pre-lay test is measured, costs 14 pairs, and goes behind its own knob, off ([595a7f4c](https://github.com/meshsat/meshsat-fieldkit/commit/595a7f4cccf9bb03aa266281488f21022d50ac19))
+- **pcb-b**: the leg matcher is off by default: it costs B ten pairs and fits nothing on A ([cbb92dcc](https://github.com/meshsat/meshsat-fieldkit/commit/cbb92dccbaf9173edd275076310ca4d6f5074d79))
+- **pcb-a**: a wider pair corridor, where USB\_D8's two legs come out matched by themselves ([98bd0e14](https://github.com/meshsat/meshsat-fieldkit/commit/98bd0e14c376663d1abf23b73da5bcd38b73243f))
 - **pcb-b**: the corridor covers its own legs on B: 71 of 113 against 65 ([82259637](https://github.com/meshsat/meshsat-fieldkit/commit/82259637ac04cfef8974fe4c9d5063532129f892))
 - **pcb-b**: the corridor slack re-measured on today's tools: 0.08 lays 65 of 113 where the declared 0.06 lays 54 ([4e7dd1f2](https://github.com/meshsat/meshsat-fieldkit/commit/4e7dd1f2dbc2a664e2c66dcdda73894292577a92))
 - **b**: ten points of the corridor slack, and it is a curve rather than a scatter ([325217e4](https://github.com/meshsat/meshsat-fieldkit/commit/325217e49f6af2f8ddad0ea5046cb23a1f20d647))
