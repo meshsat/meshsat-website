@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 818
-  unreleased_since: "2026-09-14"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-14"
+  unreleased_count: 820
+  unreleased_since: "2026-09-15"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-15"
 ---
 
 Generated from the commit history of
@@ -19,7 +19,7 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-14)
+## Unreleased (main, last change 2026-09-15)
 
 ### Features
 
@@ -375,6 +375,8 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **aprs**: keep third-party frames out of the message pipeline, only messages to us and MeshSat relays are forwarded ([007b45a7](https://github.com/meshsat/meshsat/commit/007b45a7c71aee9b194bf42abc2a86bf08c8b2c2))
+- **oob**: let the host agent power-cycle a Meshtastic 2.8 radio on its HWCDC identity ([83ff614a](https://github.com/meshsat/meshsat/commit/83ff614aab7b17e175721e830d05b3fa18cb701d))
 - **failover**: copy the stored plaintext, not the mutated ciphertext, when a no-ack message moves bearers ([4fc4b300](https://github.com/meshsat/meshsat/commit/4fc4b300282c634fe7518c422f8f8160d8112041))
 - **aprs**: send an ack-requested frame once per attempt, without a blind repeat copy ([30d100b3](https://github.com/meshsat/meshsat/commit/30d100b3381dc70f3ae4214583f65f61b31c43e5))
 - **mesh**: tell the radio before closing its port, and pace writes like the official client ([bd6c8163](https://github.com/meshsat/meshsat/commit/bd6c8163f7a2eae5eed27b1bd19f43f97068c1df))
