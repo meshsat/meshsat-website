@@ -293,7 +293,7 @@ host_self_p:
 host_self_src:
   other: "Κώδικας του Hub"
 host_self_deploy:
-  other: "Οδηγός εγκατάστασης"
+  other: "Οδηγός αυτο-φιλοξενίας"
 host_ours_h:
   other: "Στους δικούς μας διακομιστές"
 host_th_cost:
