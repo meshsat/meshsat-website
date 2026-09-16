@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 820
+  unreleased_count: 831
   unreleased_since: "2026-09-15"
   unreleased_anchor: "unreleased-main-last-change-2026-09-15"
 ---
@@ -23,6 +23,9 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Features
 
+- **relay**: serve the bridge API to the tenant's phones through the Hub relay ([07d3750f](https://github.com/meshsat/meshsat/commit/07d3750f91dd8222399751e966caefb93035212e))
+- **ttc**: both kits pair a T-Deck Pro, captioned (A) on tesseract and (B) on parallax ([172fdd5a](https://github.com/meshsat/meshsat/commit/172fdd5a3da0ea3a2878d4ee4d9d9dd996d7ab08))
+- **aprs**: report a serial TNC that has sent nothing since its link opened as silent, with a PTT hint on the panel ([c01f719f](https://github.com/meshsat/meshsat/commit/c01f719f920517f15fcca57ffa9f3b3fa6583b15))
 - **ups**: battery events on the event stream when the pack changes state ([43d783e1](https://github.com/meshsat/meshsat/commit/43d783e10182c7ea3ab62d07e10322e995efbe19))
 - **health**: show device health beside the link state for gateways, the modem and the booth screen ([124ce57e](https://github.com/meshsat/meshsat/commit/124ce57ee2dc2d7ac79ae21a2ed2b0f432b93595))
 - **oob**: follow a peer kit's radio to its new node number ([908dae33](https://github.com/meshsat/meshsat/commit/908dae33404c1604f2be263e9d320f6de5c9754e))
@@ -375,6 +378,14 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **oob**: BEARER on for a running bearer and off for a stopped one answer ok, as the spec promises ([483d1f63](https://github.com/meshsat/meshsat/commit/483d1f63d54aa906ee9fb3174fbd2a97745696b0))
+- **ttc**: satellite lane and chip name the modem that is present; visitor line measure ([6913a829](https://github.com/meshsat/meshsat/commit/6913a8292f18077b7db1d74d9555a814a76d88c1))
+- **relay**: fetch the bridge CA from the Hub instead of the MQTT root store ([b104f47c](https://github.com/meshsat/meshsat/commit/b104f47c16b9bba46a70e31fc7e3a6b01fe44124))
+- **cellular**: the SMS bundle PUT applies every field under one lock before the thresholds run ([e5552ac6](https://github.com/meshsat/meshsat/commit/e5552ac63f8d8623acb5f0a943f6c5cb4bb454a4))
+- **engine**: a gateway restarting under a delivery in flight is a retry, not a bridge crash ([a1875b5d](https://github.com/meshsat/meshsat/commit/a1875b5d7a5472cb77b31a6a709e87a561a91ef1))
+- **aprs**: hold the status beacon while this kit waits for an ack ([6b581b87](https://github.com/meshsat/meshsat/commit/6b581b8707f75e8b816562cb20ab22a7d81ed819))
+- **mesh**: serial watchdog off by default and never reopens a radio that still answers ([2bc88920](https://github.com/meshsat/meshsat/commit/2bc889202118c97f9209afbd6a8e01f03750ad91))
+- **engine**: drop inbound frames that fail the decrypt chain on an encrypted interface ([232970d2](https://github.com/meshsat/meshsat/commit/232970d22699924b503ff902c3df60719133483c))
 - **aprs**: keep third-party frames out of the message pipeline, only messages to us and MeshSat relays are forwarded ([007b45a7](https://github.com/meshsat/meshsat/commit/007b45a7c71aee9b194bf42abc2a86bf08c8b2c2))
 - **oob**: let the host agent power-cycle a Meshtastic 2.8 radio on its HWCDC identity ([83ff614a](https://github.com/meshsat/meshsat/commit/83ff614aab7b17e175721e830d05b3fa18cb701d))
 - **failover**: copy the stored plaintext, not the mutated ciphertext, when a no-ack message moves bearers ([4fc4b300](https://github.com/meshsat/meshsat/commit/4fc4b300282c634fe7518c422f8f8160d8112041))

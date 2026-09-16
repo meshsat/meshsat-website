@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v2.8.6"
   latest_tag_date: "2026-04-05"
   latest_tag_anchor: "v286-2026-04-05"
-  unreleased_count: 8
-  unreleased_since: "2026-09-01"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-01"
+  unreleased_count: 9
+  unreleased_since: "2026-09-15"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-15"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,10 +23,11 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-01)
+## Unreleased (main, last change 2026-09-15)
 
 ### Features
 
+- **hub**: relay client, a tunnel through the Hub to reach a kit behind NAT ([6966896f](https://github.com/meshsat/meshsat-android/commit/6966896f8f8eecd1ae7b8c04f6110ac602b6ebdf))
 - **sdd-tier6**: customer-facing CHANGELOG.md generated from git history ([e0ae89b1](https://github.com/meshsat/meshsat-android/commit/e0ae89b18a0e1ff22bf5055fd4a94ae126c2490b))
 - **sdd-tier5**: per-tag release notes generated from outcomes ([4f3f1be4](https://github.com/meshsat/meshsat-android/commit/4f3f1be415cb2d007bddc55863c5c758a1e9f727))
 - **sdd-tier4**: CI gate + retrospective outcomes ([186bdc5a](https://github.com/meshsat/meshsat-android/commit/186bdc5af255127e02c128fc0f19c879caab8898))
