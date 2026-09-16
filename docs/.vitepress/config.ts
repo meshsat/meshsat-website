@@ -37,6 +37,7 @@ export default defineConfig({
             { text: 'Configuration', link: '/guide/configuration' },
             { text: 'Hardware', link: '/guide/hardware' },
             { text: 'Radios and range', link: '/guide/radios-and-range' },
+            { text: 'Troubleshooting', link: '/guide/troubleshooting' },
           ],
         },
         {
@@ -48,6 +49,7 @@ export default defineConfig({
             { text: 'Field intelligence', link: '/guide/features/field-intelligence' },
             { text: 'Satellite passes', link: '/guide/features/passes' },
             { text: 'Reticulum', link: '/guide/features/reticulum' },
+            { text: 'Security', link: '/guide/features/security' },
             { text: 'Transforms', link: '/guide/features/transforms' },
           ],
         },
