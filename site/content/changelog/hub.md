@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 610
-  unreleased_since: "2026-09-15"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-15"
+  unreleased_count: 635
+  unreleased_since: "2026-09-16"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-16"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,14 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-15)
+## Unreleased (main, last change 2026-09-16)
 
 ### Features
 
+- **relay**: publish the bridge CA at GET /api/relay/ca for the Bridge relay client ([0a75c18d](https://github.com/meshsat/meshsat-hub/commit/0a75c18d778b5ed0b3c949899ecac9313f0472cd))
+- **certauth**: bridge certificates can serve a relay tunnel as the TLS server ([21f6289c](https://github.com/meshsat/meshsat-hub/commit/21f6289c034c0a3868929dbeeea81e55f4f67ae7))
+- **relay**: Hub side of the WebSocket relay, a rendezvous over the bus ([79a17da2](https://github.com/meshsat/meshsat-hub/commit/79a17da2faa4b86a9b5723b5d0f6844292789da2))
+- **store**: slow-query log names the statement; pg\_stat\_statements on the cluster ([517bf1a6](https://github.com/meshsat/meshsat-hub/commit/517bf1a678b14570995e835277326b9c90d8433c))
 - **k8s**: nightly in-cluster production verification ([336bd8af](https://github.com/meshsat/meshsat-hub/commit/336bd8af60275ff5c5afd58fc9d0517abee701c1))
 - **cloudloop**: a tenant can bring its own Cloudloop MQTT certificate ([5137ae12](https://github.com/meshsat/meshsat-hub/commit/5137ae12053021d255bada1ad77b087f9b58ab34))
 - **k8s**: Reloader annotations on hub, stunnel and tak-operator ([c86a808c](https://github.com/meshsat/meshsat-hub/commit/c86a808cb5f423f77340560630911b1b56c50c06))
@@ -332,6 +336,23 @@ it goes live.
 
 ### Fixes
 
+- **nats**: a bridge credential can no longer read the Hub's internal bus or another tenant ([1915d362](https://github.com/meshsat/meshsat-hub/commit/1915d362a1a52f9c09c894ac15b662bd2b91cf04))
+- **sms**: the Android inbound subscriber ignores the Hub's own sms/inbound topic ([cee990ec](https://github.com/meshsat/meshsat-hub/commit/cee990ec10bd67dff968a92c84aba369e11279cf))
+- **api**: a bridge command outlives the server's 15 s write timeout ([8f275573](https://github.com/meshsat/meshsat-hub/commit/8f2755733584d8c3195c26a62619a5b5fc7aa8c3))
+- **oob**: correlate command replies across replicas and assemble multi-segment replies ([d7e00c31](https://github.com/meshsat/meshsat-hub/commit/d7e00c319e505aa85021d4b2c770e091bb4f3a35))
+- **tor**: the onion heartbeat is a warm Tor client, not a cold bootstrap every ten minutes ([5ad4654b](https://github.com/meshsat/meshsat-hub/commit/5ad4654b9e0c9c74fe10839a9b50f8af78970a0c))
+- **verify**: notify suite may read hub-config, and keeps the log tail its last check needs ([98854270](https://github.com/meshsat/meshsat-hub/commit/98854270b98a990d5f709aa51177b777a386416d))
+- **http**: WebSocket upgrades survive the metrics and logging wrappers ([eb34a40f](https://github.com/meshsat/meshsat-hub/commit/eb34a40ffcb06b9ec276a1d96e894037f92861f4))
+- **verify**: notify suite reads the ConfigMap, not a startup line that scrolls away ([d7b8f6e0](https://github.com/meshsat/meshsat-hub/commit/d7b8f6e0254766f11acebb853f8400b8617610f9))
+- **verify**: the journey probe drops the exec power it never used ([706dcaa5](https://github.com/meshsat/meshsat-hub/commit/706dcaa55bed30dc40e9469d09559eb8e53df333))
+- **signups**: a verification probe is approved without mailing anyone ([9c908239](https://github.com/meshsat/meshsat-hub/commit/9c90823987c2572772bb824aa063e88ff7e7664d))
+- **verify**: restore run.sh, which the previous fix truncated to nothing ([42586278](https://github.com/meshsat/meshsat-hub/commit/42586278045781dc96b1f632c394edf158136e7b))
+- **verify**: the all-green run crashed before reporting ([da407750](https://github.com/meshsat/meshsat-hub/commit/da407750a50f48627ccdd0c15084baba82c04520))
+- **verify**: replica suite survives a rollout that swaps a pod mid-run ([c5ac51a1](https://github.com/meshsat/meshsat-hub/commit/c5ac51a1f08a65e2a192d2dd56f94ced8808b90a))
+- **verify**: journey suite reads both replicas; MQTT broker field gets the public-address guard ([a7133ccb](https://github.com/meshsat/meshsat-hub/commit/a7133ccbfe185ec99b195a4752834ef6b50b6dac))
+- **verify**: suites that assumed the runner or the Ko-fi era ([822249e2](https://github.com/meshsat/meshsat-hub/commit/822249e267dc4eb2af6c7e7df511858d1a6376ec))
+- **k8s**: verify job pulls with the registry secret; image pinned by digest; Secret canary ([81d50ebc](https://github.com/meshsat/meshsat-hub/commit/81d50ebcdc28e2fa0e73f69f100d51b3bb2f4053))
+- **k8s**: verify suites ConfigMap without a name hash ([a67328b3](https://github.com/meshsat/meshsat-hub/commit/a67328b388e1248bd66a458560a1e89ee32febe1))
 - **replicas**: one send per MT and SMS request, one HeMB publish, one inbound SMS row ([5c20472d](https://github.com/meshsat/meshsat-hub/commit/5c20472da2345b8198f2c3719a18b9f9f67e585f))
 - **store**: scoping ratchet parses files without the deprecated ParseDir ([2c61d0a8](https://github.com/meshsat/meshsat-hub/commit/2c61d0a87e91425db2121e888e1d0411eb2f95a9))
 - **store**: tenant-scoping ratchet; UpdateMessageStatus ignored its tenant ([92a79315](https://github.com/meshsat/meshsat-hub/commit/92a79315e59bb4c10d866290a44fe44ec38c61cf))
@@ -637,4 +658,11 @@ it goes live.
 - **ci**: merge duplicate variables blocks ([2ad469fc](https://github.com/meshsat/meshsat-hub/commit/2ad469fc58b27e541d831bdeb90f760664b3863b))
 - **aprsis**: handle SetReadDeadline error return values ([3fa1fe54](https://github.com/meshsat/meshsat-hub/commit/3fa1fe54fcecfc5d45fdb25489a4bde5c71aae8b))
 - resolve golangci-lint errcheck and unused warnings ([6ae0df27](https://github.com/meshsat/meshsat-hub/commit/6ae0df27e5c2fe1e8027c3e74c7e4b8560d78a42))
+
+### Performance
+
+- **store**: migrate the sqlite conformance template once and copy it per sub-test ([5149f331](https://github.com/meshsat/meshsat-hub/commit/5149f33133b8e90fc62e607855469611032d7aba))
+- **bridge**: only the Lease holder writes a health report to the store ([e2d64864](https://github.com/meshsat/meshsat-hub/commit/e2d64864a0f80b8618165c4d904d1f6e4a16ab84))
+- **bridge**: a health report is one UPDATE, not four queued on the same row ([7102bfd0](https://github.com/meshsat/meshsat-hub/commit/7102bfd0605c52dc0629927b66dc4074777ef410))
+- **ci**: test databases skip fsync; the fixed cost was never Argon2 ([74460cd4](https://github.com/meshsat/meshsat-hub/commit/74460cd46af30fc9d34879f0ae383150fe91154f))
 <!-- generated:end -->
