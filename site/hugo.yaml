@@ -28,7 +28,10 @@ languages:
     languageName: "English"
     languageCode: "en-US"
     weight: 1
-    title: "MeshSat"
+    # Keep in sync with the root title, content/_index.md and og:title (MESHSAT-1183):
+    # a per-language title overrides the root one, and "MeshSat" alone left the home
+    # page with an 8-character <title> while og:title carried the full sentence.
+    title: "MeshSat: keeping people connected when the network is not"
   nl:
     languageName: "Nederlands"
     languageCode: "nl-NL"
