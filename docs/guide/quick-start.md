@@ -27,7 +27,7 @@ Plug a Meshtastic radio (T-Echo, Heltec V3, etc.) into a USB port on your device
 You can verify the connection via the API:
 
 ```bash
-curl -s http://localhost:6050/api/v1/transports | jq .
+curl -s http://localhost:6050/api/transports | jq .
 ```
 
 You should see your Meshtastic transport listed with status `connected`.
@@ -37,7 +37,7 @@ You should see your Meshtastic transport listed with status `connected`.
 Send a test message through the API to verify routing is working:
 
 ```bash
-curl -X POST http://localhost:6050/api/v1/messages \
+curl -X POST http://localhost:6050/api/messages \
   -H "Content-Type: application/json" \
   -d '{
     "transport": "meshtastic",
@@ -53,7 +53,7 @@ The message will be transmitted over your Meshtastic radio to all nodes in range
 Check that the message was recorded:
 
 ```bash
-curl -s http://localhost:6050/api/v1/messages?limit=10 | jq .
+curl -s http://localhost:6050/api/messages?limit=10 | jq .
 ```
 
 ## Next Steps

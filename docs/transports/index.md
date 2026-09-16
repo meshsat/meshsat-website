@@ -1,6 +1,6 @@
 # Transports
 
-MeshSat routes across eleven transports. Nine are documented below. Reticulum TCP and direct serial are also supported: Reticulum is covered under [Reticulum](/guide/features/reticulum), and direct serial needs no configuration beyond a port. Each transport handles the protocol-specific details of sending and receiving messages, while the policy engine handles routing between them.
+MeshSat runs eight transport bearers on nine Reticulum interfaces, and routes to TAK, MQTT and webhooks as destinations. Iridium counts twice, on the 9603N and the 9704. The pages below cover each one; Reticulum itself is covered under [Reticulum](/guide/features/reticulum), and direct serial needs no configuration beyond a port. Each transport handles the protocol-specific details of sending and receiving messages, while the policy engine handles routing between them.
 
 ## Mesh Networks
 

@@ -4,15 +4,17 @@ MeshSat runs on any ARM64 or x86_64 Linux machine with USB ports.
 
 ## Supported Devices
 
+**Tested** means the device has been physically run. **Should work** means it matches a class that has. The list is short on purpose: it records hardware that has actually been used, not everything that ought to be compatible.
+
 ### Host Computers
 
-| Device | RAM | Notes |
-|--------|-----|-------|
-| Raspberry Pi 5 | 4-8 GB | Recommended |
-| Raspberry Pi 4 | 2-8 GB | Fully supported |
-| BananaPi BPI-M4 Zero | 4 GB | Compact, eMMC |
-| Any ARM64 SBC | 2+ GB | Docker required |
-| x86_64 server | 2+ GB | Docker required |
+| Device | RAM | Status | Notes |
+|--------|-----|--------|-------|
+| Raspberry Pi 5 | 4-8 GB | Tested | Recommended |
+| Raspberry Pi 4 | 2-8 GB | Tested | Fully supported |
+| BananaPi BPI-M4 Zero | 4 GB | Not recommended | Compact with eMMC, but the Allwinner H618 USB stack proved unreliable under sustained serial load |
+| Any ARM64 SBC | 2+ GB | Should work | Docker required |
+| x86_64 server | 2+ GB | Should work | Docker required |
 
 ### Meshtastic Radios
 
