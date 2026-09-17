@@ -36,7 +36,7 @@ Running it
 ----------
 Local dry run on the runner (read-only, prints a unified diff):
 
-    set -a; . ~/gitlab/products/cubeos/.env; set +a
+    set -a; . ~/gitlab/products/meshsat/.env; set +a
     python3 scripts/generate-changelog.py --dry-run --check --verify-mirror
 
 Real run: drop --dry-run. Exit codes: 0 ok, 1 API or mirror error, 2 --check
