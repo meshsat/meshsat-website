@@ -18,4 +18,4 @@
 
 Total 5 Sep: EUR 374.05 excl. VAT (EUR 452.61 incl. VAT) across twelve orders: two card runs, one leaflet run, seven brochures, one stand-up card, three embroidered caps (the list view shows amounts excl. VAT; the order page shows 21 % on top). "Geen ontwerp aangeleverd" in the order list is the thumbnail placeholder (it shows on the delivered sticker order too), not a missing file. Which folder order is Seeed and which is NextPCB is not visible in the list; read the packing slips.
 
-All seven brochures ordered 5 Sep. The tent card for the kit on the Meshtastic stand comes LAST, after the demo is set up in the lab and locked, so that the instructions printed on it are valid (owner ruling 5 Sep); it also needs Thomas's OK for anything on their stand.
+All seven brochures ordered 5 Sep. The tent card for the kit on the Meshtastic stand comes LAST, after the demo is set up in the lab and locked, so that the instructions printed on it are valid (owner ruling 5 Sep). **Owner ruling 17 Sep 2026: it needs no approval from Thomas, in advance or on the spot** — he asked for the field kits on his booth, so he gets the complete show or nothing.
