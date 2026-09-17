@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 635
-  unreleased_since: "2026-09-16"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-16"
+  unreleased_count: 659
+  unreleased_since: "2026-09-17"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-17"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,21 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-16)
+## Unreleased (main, last change 2026-09-17)
 
 ### Features
 
+- **monitoring**: add the Hub's first security alert rules ([f18a3296](https://github.com/meshsat/meshsat-hub/commit/f18a3296445a34570edd6e3913d6a5fd635eda06))
+- **auth**: count and log every refused request ([27242ea8](https://github.com/meshsat/meshsat-hub/commit/27242ea80eb94a8ada529534e0a81aa7395e574e))
+- **booth**: know which meshes have someone listening, and say so ([647d8fd5](https://github.com/meshsat/meshsat-hub/commit/647d8fd51d918dda30cd163243b08c91fe31b6a7))
+- **booth**: a spend ceiling, and no more silent unanswered relays ([06f1f644](https://github.com/meshsat/meshsat-hub/commit/06f1f64441d8f5fb9da8820d405209b6e6426b68))
+- **booth**: run the stand on SMS as well as WhatsApp ([898c80d9](https://github.com/meshsat/meshsat-hub/commit/898c80d9faeb90626afa203a469e06fc2a4316fd))
+- **booth**: wire the stand flow end to end and enable it ([d5537f96](https://github.com/meshsat/meshsat-hub/commit/d5537f962ab3b9db2a88cb58dbe875838b332357))
+- **booth**: route a mesh reply back to the visitor who started it ([e8e41027](https://github.com/meshsat/meshsat-hub/commit/e8e4102700872d321b7c8b5629eebe79ed028d68))
+- **booth**: scripted visitor flow and the deterministic relay gate ([fdd18c8c](https://github.com/meshsat/meshsat-hub/commit/fdd18c8c7207d09f6d4e74274f99cc886441e83b))
+- **whatsapp**: register the inbound and status routes ([40bbdb28](https://github.com/meshsat/meshsat-hub/commit/40bbdb28c76676fba64d8440ceef91756257c4db))
+- **booth**: persist the visitor session and the return-leg correlation ([ee480c5e](https://github.com/meshsat/meshsat-hub/commit/ee480c5e776310014fb5cd0913d8e2758cdecda4))
+- **whatsapp**: make the SMS bearer channel-aware ([f791fd24](https://github.com/meshsat/meshsat-hub/commit/f791fd248ef94ae5b9c12ade1eb03e25f0b53460))
 - **relay**: publish the bridge CA at GET /api/relay/ca for the Bridge relay client ([0a75c18d](https://github.com/meshsat/meshsat-hub/commit/0a75c18d778b5ed0b3c949899ecac9313f0472cd))
 - **certauth**: bridge certificates can serve a relay tunnel as the TLS server ([21f6289c](https://github.com/meshsat/meshsat-hub/commit/21f6289c034c0a3868929dbeeea81e55f4f67ae7))
 - **relay**: Hub side of the WebSocket relay, a rendezvous over the bus ([79a17da2](https://github.com/meshsat/meshsat-hub/commit/79a17da2faa4b86a9b5723b5d0f6844292789da2))
@@ -336,6 +347,19 @@ it goes live.
 
 ### Fixes
 
+- **k8s**: confine the Hub's onion and Reticulum listeners ([4e2dc3c6](https://github.com/meshsat/meshsat-hub/commit/4e2dc3c6893fdb1ec2a8ce9d7f6ef02704e33b05))
+- **k8s**: bring stunnel and basemap up to the restricted profile ([1fc1ef20](https://github.com/meshsat/meshsat-hub/commit/1fc1ef20653f3e54551e9a79cea204eedeb8bc41))
+- **k8s**: drop capabilities and seal the root filesystem on the Hub ([b1c68018](https://github.com/meshsat/meshsat-hub/commit/b1c6801853e3b083da685ed40f3e9771f78b75d7))
+- **auth**: require a role on every state-changing API route ([12668500](https://github.com/meshsat/meshsat-hub/commit/12668500c9e6cf1c85815c7036a3eb7dcc0d8931))
+- **sms**: ask for a delivery receipt on every outbound message ([47428fec](https://github.com/meshsat/meshsat-hub/commit/47428fec409e2089a547c7157fe2303fdc99d399))
+- **booth**: keep every message inside one SMS segment ([d9b5e368](https://github.com/meshsat/meshsat-hub/commit/d9b5e3680e1666eebf1d50ff9f638bf7c11637d5))
+- **booth**: deliver a mesh reply once, not once per replica ([eecd97e3](https://github.com/meshsat/meshsat-hub/commit/eecd97e39e46219b254a45992a1016c28c946830))
+- **booth**: subscribe to a real wildcard, not a device named "+" ([fa35ccfc](https://github.com/meshsat/meshsat-hub/commit/fa35ccfc388ddc7355b11c53fbb44f2130c6b869))
+- **booth**: one conversation per kit, and a token that survives the kit ([873e42d6](https://github.com/meshsat/meshsat-hub/commit/873e42d612964dae8f2748eb6b9ec158aba9ba37))
+- **tor**: confine the onion pod and gate credential minting ([710f8e87](https://github.com/meshsat/meshsat-hub/commit/710f8e878e055a138acd45c1bbb359f305f3e025))
+- **onion**: terminate MQTT with client-certificate verification ([cf85b918](https://github.com/meshsat/meshsat-hub/commit/cf85b9189b720f29daded1a78eed99e732944250))
+- **onion**: serve Tor on its own listener and key it separately ([972e4a3b](https://github.com/meshsat/meshsat-hub/commit/972e4a3bc7fb2036373e6153ab9b7c97298b09b5))
+- **sms**: require a configured credential on the inbound webhook ([4c5a763d](https://github.com/meshsat/meshsat-hub/commit/4c5a763d641f1e0d476f294acf26432665e72a87))
 - **nats**: a bridge credential can no longer read the Hub's internal bus or another tenant ([1915d362](https://github.com/meshsat/meshsat-hub/commit/1915d362a1a52f9c09c894ac15b662bd2b91cf04))
 - **sms**: the Android inbound subscriber ignores the Hub's own sms/inbound topic ([cee990ec](https://github.com/meshsat/meshsat-hub/commit/cee990ec10bd67dff968a92c84aba369e11279cf))
 - **api**: a bridge command outlives the server's 15 s write timeout ([8f275573](https://github.com/meshsat/meshsat-hub/commit/8f2755733584d8c3195c26a62619a5b5fc7aa8c3))
