@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 831
-  unreleased_since: "2026-09-15"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-15"
+  unreleased_count: 839
+  unreleased_since: "2026-09-17"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-17"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,12 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-15)
+## Unreleased (main, last change 2026-09-17)
 
 ### Features
 
+- **booth**: print a receipt for every message that arrives on a kit ([2c914ef8](https://github.com/meshsat/meshsat/commit/2c914ef83ac0e9115d9a882508785165a8bb8ad5))
+- **hub**: keep the correlation token on inbound SMS, and publish mesh text to the Hub ([d1e1fa72](https://github.com/meshsat/meshsat/commit/d1e1fa72460b82cdfc751c79c79cd16d9e2b67c6))
 - **relay**: serve the bridge API to the tenant's phones through the Hub relay ([07d3750f](https://github.com/meshsat/meshsat/commit/07d3750f91dd8222399751e966caefb93035212e))
 - **ttc**: both kits pair a T-Deck Pro, captioned (A) on tesseract and (B) on parallax ([172fdd5a](https://github.com/meshsat/meshsat/commit/172fdd5a3da0ea3a2878d4ee4d9d9dd996d7ab08))
 - **aprs**: report a serial TNC that has sent nothing since its link opened as silent, with a PTT hint on the panel ([c01f719f](https://github.com/meshsat/meshsat/commit/c01f719f920517f15fcca57ffa9f3b3fa6583b15))
@@ -378,6 +380,12 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **ci**: bound the deploy probe, and stop the HeMB frame test failing on a coin toss ([9a9be531](https://github.com/meshsat/meshsat/commit/9a9be5314f5486e7c1831222c84be8e2092250c8))
+- **ci**: the address probe must not kill the job when the first address is silent ([d987c289](https://github.com/meshsat/meshsat/commit/d987c2898364c62e0ed99c19b9821b62bef576d2))
+- **gateway**: start a gateway on the manager's context, not the HTTP request's ([029f3fbb](https://github.com/meshsat/meshsat/commit/029f3fbb6183542e6d98f4b77785b2984aabfe37))
+- **ttc**: the SMS lane's sentence comes from the radio state, not from this browser ([24cc0e07](https://github.com/meshsat/meshsat/commit/24cc0e0799fcdea692f8f835d5be8c3e9666f396))
+- **ttc**: the auto-move watcher watches the lane too, so a failed first poll cannot strand it ([7e04d268](https://github.com/meshsat/meshsat/commit/7e04d268edffb90b3759fc6e9af1469c17c0fe7d))
+- **ttc**: radio off reads red, and the panel moves the lane to SMS while the radio is off ([6ee37f59](https://github.com/meshsat/meshsat/commit/6ee37f598d39832bf2c577ef2e64d7ff4636dc77))
 - **oob**: BEARER on for a running bearer and off for a stopped one answer ok, as the spec promises ([483d1f63](https://github.com/meshsat/meshsat/commit/483d1f63d54aa906ee9fb3174fbd2a97745696b0))
 - **ttc**: satellite lane and chip name the modem that is present; visitor line measure ([6913a829](https://github.com/meshsat/meshsat/commit/6913a8292f18077b7db1d74d9555a814a76d88c1))
 - **relay**: fetch the bridge CA from the Hub instead of the MQTT root store ([b104f47c](https://github.com/meshsat/meshsat/commit/b104f47c16b9bba46a70e31fc7e3a6b01fe44124))
