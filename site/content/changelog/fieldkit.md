@@ -8,7 +8,7 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 927
+  unreleased_count: 984
   unreleased_since: "2026-09-16"
   unreleased_anchor: "unreleased-main-last-change-2026-09-16"
 ---
@@ -32,6 +32,31 @@ appear below.
 
 ### Features
 
+- **rules**: a verdict is evidence for the board it names and for no other ([590a6733](https://github.com/meshsat/meshsat-fieldkit/commit/590a673387426a7844870cb02cde385203d1e33b))
+- **ecad**: rule SI-001, a net is a transmission line because of its edge and its length ([9b71b60d](https://github.com/meshsat/meshsat-fieldkit/commit/9b71b60d6a1baad896aea9d78bed1cfe31f5988c))
+- **ecad**: the stitching rule reports how far the nearest capacitor is, not whether one is close enough ([d8cc31a5](https://github.com/meshsat/meshsat-fieldkit/commit/d8cc31a56de7b51a2e13d6ee922031451ae62b87))
+- **ecad**: rule ISO-001, the high-voltage spacing is measured on the board for the first time ([09a7bf11](https://github.com/meshsat/meshsat-fieldkit/commit/09a7bf115cb361fe750a265a5872b0304ff2725a))
+- **ecad**: rule THM-001 has its first half, a dissipation table built from the board ([a82ac16a](https://github.com/meshsat/meshsat-fieldkit/commit/a82ac16a2d41c609426d9db8849399b9bf8a9c31))
+- **ecad**: six more rails cross a connector, and an unsplit budget is an open question ([2ded18c5](https://github.com/meshsat/meshsat-fieldkit/commit/2ded18c5dbba57dc4a48f8136278a561aa1c5e98))
+- **ecad**: board E5 gets the gate it never had ([8f7a31d9](https://github.com/meshsat/meshsat-fieldkit/commit/8f7a31d98096694f5d9de07e11d3ba9d9de50dc3))
+- **ecad**: rule RET-003 is measured and gated, the reference conductor before and after a transition ([0bd0b332](https://github.com/meshsat/meshsat-fieldkit/commit/0bd0b332e69f1b8347424772391187a17b86f605))
+- **ecad**: board E's re-finished board, 0 hard and one connection open ([4b61aa10](https://github.com/meshsat/meshsat-fieldkit/commit/4b61aa10ec57f34f3024844ba7473319981cdea2))
+- **ecad**: a report of where a signal's reference changes and to what (rule RET-003) ([b4e73a91](https://github.com/meshsat/meshsat-fieldkit/commit/b4e73a91c7a06e4437c7f3a8077a77a8732aeeea))
+- **ecad**: rule PI-003, a rail's layer transition is carried by the vias at it and they are counted and rated ([4300adeb](https://github.com/meshsat/meshsat-fieldkit/commit/4300adeb5576c4ba0b0e7661738c83be6b4134be))
+- **ecad**: board E declares the direct closure, with the connection that asked for it ([40c2ee78](https://github.com/meshsat/meshsat-fieldkit/commit/40c2ee787f8ae62de5cb327a681f4b8e6eb6ec3d))
+- **ecad**: the sweep re-judges the cross-board contracts too ([67794307](https://github.com/meshsat/meshsat-fieldkit/commit/67794307a1d771f79f87cecddd26ae2f7a7310e8))
+- **ecad**: dot\_prune, a track shorter than the process can draw is an island and not a conductor ([d02f5fab](https://github.com/meshsat/meshsat-fieldkit/commit/d02f5fabd1439a3dc93e1092c373b5461a34a2ad))
+- **ecad**: D12 re-finished at 0 hard and 0 unrouted; its last return via is 2.25 mm and measured ([24e0b03f](https://github.com/meshsat/meshsat-fieldkit/commit/24e0b03fd1abbbaa96795165e4eb7eb75b6e86e7))
+- **ecad**: the return-via fixer reaches past its target and records what it achieved; owner decision 32 ([0db50d9c](https://github.com/meshsat/meshsat-fieldkit/commit/0db50d9c357d5d2facca46da6b44bfe877d11f5c))
+- **ecad**: rule TRN-001, every conductor that leaves the case is followed from its connector to a clamp ([f746b3d2](https://github.com/meshsat/meshsat-fieldkit/commit/f746b3d219cce87168b601abdf4e58f1e71162f2))
+- **tools**: the sweep runs the derating, crystal and fabricator-limit checks too ([b92e1c2b](https://github.com/meshsat/meshsat-fieldkit/commit/b92e1c2b2a7ae59094323836b01c60395e7d5587))
+- **tools**: clock\_check.py, a crystal that does not start is a board that is perfectly routed and dead ([7a521222](https://github.com/meshsat/meshsat-fieldkit/commit/7a521222ddc3be0b88fffde8ebbba39a0e8b468a))
+- **tools**: a board's copper layer count is a declaration, not a literal in its gate ([33268c6b](https://github.com/meshsat/meshsat-fieldkit/commit/33268c6b7248eef6d5802fcf379d3800b3533f83))
+- **docs**: PCB-BRING-UP.md, how each board is powered for the first time ([00847867](https://github.com/meshsat/meshsat-fieldkit/commit/008478676636207479cb0ba5a2c92621f392ce7f))
+- **vendor**: the fabricator's impedance stackups are a document now, not a code comment ([8af3a56d](https://github.com/meshsat/meshsat-fieldkit/commit/8af3a56d37106be254388c042335a08425daffe4))
+- **tools**: one verdict per rule in intent\_checks, so a decoupling miss stops failing the return path ([9a866bd7](https://github.com/meshsat/meshsat-fieldkit/commit/9a866bd75d2907816ba91a9b5a1cac4758fe6389))
+- **tools**: STK-001 closes, and it took three findings to get there ([6690f539](https://github.com/meshsat/meshsat-fieldkit/commit/6690f53987342fccdd813b0f3b9cefde54a76ced))
+- **tools**: the return-via screen reads the signal's class, like the return-path rule ([e9f2f48f](https://github.com/meshsat/meshsat-fieldkit/commit/e9f2f48f08d348eae94ba67224704e405bffba17))
 - **vendor**: the fabricator's capability document is in the tree, and the annular ring has an authority ([4b90ba4b](https://github.com/meshsat/meshsat-fieldkit/commit/4b90ba4b163c249a1200a03b9f261a263d915c1b))
 - **tools**: via\_audit.py, and the via rule splits along the line of who can answer it ([ab13233a](https://github.com/meshsat/meshsat-fieldkit/commit/ab13233ac4e74aadebd842c4f1d495e2ce30b818))
 - **tools**: an open owner decision must arrive as costed options with a recommendation ([4bc95ba5](https://github.com/meshsat/meshsat-fieldkit/commit/4bc95ba53e8f38f05c2714fb65b62c0f42970196))
@@ -387,6 +412,38 @@ appear below.
 
 ### Fixes
 
+- **sweep**: the DRC report travels with the board, so it stops describing a different one ([310a1f2e](https://github.com/meshsat/meshsat-fieldkit/commit/310a1f2e910670960677aa5bcb246c988fc5fc23))
+- **contracts**: a contract declares which boards it is about, and its failure lands on those boards ([04cfc782](https://github.com/meshsat/meshsat-fieldkit/commit/04cfc78298a12035346de0f3d61b3bd66933f2bd))
+- **route**: the optimiser is bounded in seconds, and the autoroute's own session survives it ([bf587ff3](https://github.com/meshsat/meshsat-fieldkit/commit/bf587ff3bec35208563803aa3ebf62a5678ad2b6))
+- **rules**: six rules reported that nothing verifies them while their own entry said the gap was the source ([1537fe34](https://github.com/meshsat/meshsat-fieldkit/commit/1537fe344a8e16bd402bf033dc03ef8b5b428b0f))
+- **rules**: board E5's evidence was looked for in a board retired on 4 September ([d5129d80](https://github.com/meshsat/meshsat-fieldkit/commit/d5129d804c87f74927d7dc87af00c83babc443e9))
+- **rules**: a verdict named for one board was demanded of six, so a rule verified on all of them reported as verified on one ([deb4b64c](https://github.com/meshsat/meshsat-fieldkit/commit/deb4b64c90012299e51a2eafae13b7937194eb15))
+- **ecad**: a prefixed finish declaration lives inside the block its prefix names ([fae722bb](https://github.com/meshsat/meshsat-fieldkit/commit/fae722bb48bcd95477e09d43adc0e9e83cd5e7a3))
+- **ecad**: the direct-close budget is a declaration, and board A's is ninety minutes ([788ba6ff](https://github.com/meshsat/meshsat-fieldkit/commit/788ba6ffdc329f41ef6ba0e116e382992b6b4839))
+- **ecad**: a pad is a fat segment, not a circle of its longest side ([142c2705](https://github.com/meshsat/meshsat-fieldkit/commit/142c27051bd27d29d9cad93517a97d8197fdc4fd))
+- **ecad**: the sum of every rail's peak is not a board's power ([d14c79b6](https://github.com/meshsat/meshsat-fieldkit/commit/d14c79b62035ee279917bdcd2ea4c10dc318c988))
+- **ecad**: the spacing gate crashed writing down what it measured ([9267c1f7](https://github.com/meshsat/meshsat-fieldkit/commit/9267c1f7fdcdddb5cf192f656f4a24633079e821))
+- **ecad**: the set's paperwork verdict stops deciding every board's own ([4e3e9d76](https://github.com/meshsat/meshsat-fieldkit/commit/4e3e9d76eba43e3274e3199e41050a61dfc04503))
+- **ecad**: the stitching rule reads the same spectral content the return rules do; board E5's gate passes 27 of 27 ([fb188762](https://github.com/meshsat/meshsat-fieldkit/commit/fb1887625f41bbcb87f747a1618f31d92a436131))
+- **ecad**: a rail that crosses a connector is one conductor with one budget ([899f9587](https://github.com/meshsat/meshsat-fieldkit/commit/899f95876dbc2dc6952dcf78cc584bf1f41b770a))
+- **ecad**: board B's gate follows the PCIe receive path instead of asserting the topology before the capacitors ([28001ed3](https://github.com/meshsat/meshsat-fieldkit/commit/28001ed311a77b49108b8286a5ec4399abb2a979))
+- **ecad**: board B's PCIe coupling capacitors get a seat, beside the switch that drives them ([07b879cf](https://github.com/meshsat/meshsat-fieldkit/commit/07b879cf7bf3d7df1fb189dbe5b34996912fec0c))
+- **ecad**: a declaration must not contradict its own basis, and boards D and E are each one item from clean ([b4a48e95](https://github.com/meshsat/meshsat-fieldkit/commit/b4a48e95fa3b06a3e44b7ec4d9ef16171ad1658a))
+- **ecad**: board B is phase B21, and the reference is sampled beside the via and not in its anti-pad ([0595b5a9](https://github.com/meshsat/meshsat-fieldkit/commit/0595b5a9dfcb3580565d9691b8b2ed830ff5b9be))
+- **ecad**: the phase has to reach the verdict, not only the shell ([7a5aa339](https://github.com/meshsat/meshsat-fieldkit/commit/7a5aa339477acdcd61a6d9aff3e30fa9d5ca4e6f))
+- **ecad**: the reference is the pour under the via, not every pour that shares its layer ([15d290d6](https://github.com/meshsat/meshsat-fieldkit/commit/15d290d6dd99edfab0aaeb3e74d669d0cfb28ccf))
+- **ecad**: the exposed-port rule blocks what ships, not what routes ([71dbed7d](https://github.com/meshsat/meshsat-fieldkit/commit/71dbed7de0de15f08b778bc55e05b168bde2b393))
+- **ecad**: the via-current rule is a measurement until it knows which via the current crosses ([7e2bbe6b](https://github.com/meshsat/meshsat-fieldkit/commit/7e2bbe6bd35b19eb2872b2fb63abce1efeff3468))
+- **ecad**: the stub router could not see a filled pour, and had been searching through them since it was written ([17669416](https://github.com/meshsat/meshsat-fieldkit/commit/176694168c73a641c3f6ab1dc1323e1b0ac2eca0))
+- **ecad**: a rule that does not apply to a board stops blocking its route ([28e97de8](https://github.com/meshsat/meshsat-fieldkit/commit/28e97de8dc2b7f3952a4422e490b115accd6dad0))
+- **ecad**: the board gate reports the intent items and the intent verdicts decide them ([bb3f0e1e](https://github.com/meshsat/meshsat-fieldkit/commit/bb3f0e1e9a3f35af6306d8a0741276dfa1987b81))
+- **ecad**: every board gate reads its copper layer count instead of carrying it ([2a756f4c](https://github.com/meshsat/meshsat-fieldkit/commit/2a756f4c8c2f48ea526f2fc145d3f423414fa271))
+- **ecad**: the gate sweep can name board E5, which had no board table at all ([08db2bba](https://github.com/meshsat/meshsat-fieldkit/commit/08db2bba7c8b7f442750061de2ec0993b26b40ad))
+- **ecad**: the port-protection verdict carries the category that decided it ([686f96bb](https://github.com/meshsat/meshsat-fieldkit/commit/686f96bb9a3f3d233f22f20662d0c3198b9d57f0))
+- **ecad**: a closure that reaches the goal cell tries to land on the copper, and says what it measured ([cfdd35ff](https://github.com/meshsat/meshsat-fieldkit/commit/cfdd35ffd9ad9e388906edd1c99b98a5d398df75))
+- **ecad**: rule VIA-002 judges a via by the via rows and a component hole by the annular row ([0f01e677](https://github.com/meshsat/meshsat-fieldkit/commit/0f01e677fc0b16ae7c208f5c4ada05615da5d923))
+- **pcb-d**: the codec's supply and analogue nodes were classified as clocked digital ([1226f664](https://github.com/meshsat/meshsat-fieldkit/commit/1226f664c9bb2b2defb647d628ecbc3ab82d81f0))
+- **tools**: boards A and B reached the router with no stackup, while their logs said it was written ([176886fd](https://github.com/meshsat/meshsat-fieldkit/commit/176886fde7b222c7bee1941695f06748b8423461))
 - **pcb-p**: the board was designed to numbers the process does not make at its own copper weight ([41a73474](https://github.com/meshsat/meshsat-fieldkit/commit/41a734747dbb25747c6070ec4eb67cbb3dac164c))
 - **tools**: the rail check crashed the gate at the moment it decided, and board E lost its best result ([31976dbd](https://github.com/meshsat/meshsat-fieldkit/commit/31976dbdfeb9ddd1d78c758ad50d424dbf220009))
 - **pcb-d**: the 3.3 V rail named a load on another net and its own source as a load ([61f4a750](https://github.com/meshsat/meshsat-fieldkit/commit/61f4a750d98c916ace70f936e3f95817ee4e3be8))
