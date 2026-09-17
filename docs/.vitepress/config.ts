@@ -164,7 +164,7 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://gitlab.nuclearlighters.net/products/cubeos/meshsat-website/-/edit/main/docs/:path',
+      pattern: 'https://gitlab.nuclearlighters.net/products/meshsat/meshsat-website/-/edit/main/docs/:path',
       text: 'Edit this page on GitLab',
     },
 
