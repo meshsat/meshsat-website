@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 659
-  unreleased_since: "2026-09-17"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-17"
+  unreleased_count: 688
+  unreleased_since: "2026-09-18"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-18"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,23 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-17)
+## Unreleased (main, last change 2026-09-18)
 
 ### Features
 
+- **monitoring**: alert when a request budget refuses traffic ([c18deb7a](https://github.com/meshsat/meshsat-hub/commit/c18deb7a348badb2ab548833cba1a1e868050144))
+- **api**: request budgets on every authenticated route and the capability URLs; opaque 500s ([a5a6dc31](https://github.com/meshsat/meshsat-hub/commit/a5a6dc3192ee6fe647d9f4655b05c4ab3bfa0bb0))
+- **ci**: supply-chain gates: gitleaks, IaC scan, SBOM and cosign signing ([fca38e05](https://github.com/meshsat/meshsat-hub/commit/fca38e05effeb8780cf7ec197f492b4e56e63442))
+- **auth**: retire the static break-glass token; fix the nightly's unlabelled publisher ([bd685a90](https://github.com/meshsat/meshsat-hub/commit/bd685a904f6072ce1ac1ca4e9d4ed9aabc28b9b4))
+- **verify**: cut the nightly off the static token onto its own platform key ([43f34e19](https://github.com/meshsat/meshsat-hub/commit/43f34e19305d2c5c061293ace6906e341ddfa1d2))
+- **auth**: API keys can carry platform-admin, so the static token is replaceable ([c14cedbc](https://github.com/meshsat/meshsat-hub/commit/c14cedbc8192a7ce94bc94becc237bd564cbdb8f))
+- **k8s**: ResourceQuota, LimitRange and no SA tokens where none are used ([901a95b7](https://github.com/meshsat/meshsat-hub/commit/901a95b7d2c5b1fb0e20029d81c3af7aac1228b7))
+- **k8s**: default-deny ingress in both Hub namespaces ([20e2abd2](https://github.com/meshsat/meshsat-hub/commit/20e2abd29512fa1009005fdb90f3d958d16ae7bd))
+- **k8s**: confine the last six workloads, every pod now policy-covered ([2303dd5f](https://github.com/meshsat/meshsat-hub/commit/2303dd5f6eb16bcc55b6d8165a971bed8e91d7bb))
+- **k8s**: confine keydb with a policy built from observed flows ([b157b112](https://github.com/meshsat/meshsat-hub/commit/b157b1121d4f58852fca87535487d55908bdf9e1))
+- **k8s**: enforce restricted on the DB namespace, minimise every capability set ([4ffdc9ea](https://github.com/meshsat/meshsat-hub/commit/4ffdc9eaf93448e244fc1e7a349f7cd59658a7f7))
+- **auth**: make the break-glass platform-admin token accountable ([114a6cff](https://github.com/meshsat/meshsat-hub/commit/114a6cff81f0e9e96262308e623cb33610eb851b))
+- **tor**: adopt a vanity .onion with a meshsat prefix ([e3a678f2](https://github.com/meshsat/meshsat-hub/commit/e3a678f25fc8bbd6aa851fcd028935d5b86f601f))
 - **monitoring**: add the Hub's first security alert rules ([f18a3296](https://github.com/meshsat/meshsat-hub/commit/f18a3296445a34570edd6e3913d6a5fd635eda06))
 - **auth**: count and log every refused request ([27242ea8](https://github.com/meshsat/meshsat-hub/commit/27242ea80eb94a8ada529534e0a81aa7395e574e))
 - **booth**: know which meshes have someone listening, and say so ([647d8fd5](https://github.com/meshsat/meshsat-hub/commit/647d8fd51d918dda30cd163243b08c91fe31b6a7))
@@ -347,6 +360,22 @@ it goes live.
 
 ### Fixes
 
+- **nats**: routes speak TLS with certificates from the cluster's internal CA ([a6998e6a](https://github.com/meshsat/meshsat-hub/commit/a6998e6a3b9bec7326d45e7364d51681819e6211))
+- **verify**: the onion probe pod satisfies the restricted profile ([43bf3d7d](https://github.com/meshsat/meshsat-hub/commit/43bf3d7d2209e904abe4ac8c521961b1a68cdf35))
+- **ci**: the IaC gate reads key names; the NATS route credential is an env reference ([f168ba9a](https://github.com/meshsat/meshsat-hub/commit/f168ba9a956c16fdcfc2df0071714d7dddcfff64))
+- **ci**: the ZAP baseline scans the Hub authenticated, as a read-only probe tenant ([7d1eb37c](https://github.com/meshsat/meshsat-hub/commit/7d1eb37c3143a9273f0f851badaaa715485f88bf))
+- **nats**: routes authenticate; members roll fifteen seconds apart ([85bd6f03](https://github.com/meshsat/meshsat-hub/commit/85bd6f03e05e3dd8328b5831c39db3c6dd13645b))
+- **api**: bounded list limits, CSV injection neutralised, cookie Secure from config, audit on the credential surface ([4bfb9af4](https://github.com/meshsat/meshsat-hub/commit/4bfb9af49795338b2a4b9cf76317883451fb7b35))
+- **verify**: the nightly's throwaway publisher pod satisfies the restricted profile ([c7ab653f](https://github.com/meshsat/meshsat-hub/commit/c7ab653f2610b30ca95bd40488e36502c3e05113))
+- **k8s**: nats, keydb and the edge relay run as declared non-root users ([4ce6ecfb](https://github.com/meshsat/meshsat-hub/commit/4ce6ecfb09f243a8ca0eb874766f6267c202ea67))
+- **audit**: hash chain binds tenant, id and timestamp; appends serialised per tenant ([168cbd8c](https://github.com/meshsat/meshsat-hub/commit/168cbd8c013e6206178b5053ab565c360262fd5e))
+- **k8s**: the Hub could not complete a rollout: maxSurge 1 -\> 0 ([61923b89](https://github.com/meshsat/meshsat-hub/commit/61923b892e1973323dc82d305e3e645735f39e3f))
+- **k8s**: default-deny must be a k8s NetworkPolicy: two Cilium attempts did nothing ([056f40b6](https://github.com/meshsat/meshsat-hub/commit/056f40b6ab7c3bdaf08c8013bd9b4ab6fa7c8dc4))
+- **k8s**: the default-deny was a no-op: enableDefaultDeny is what turns it on ([7209e45c](https://github.com/meshsat/meshsat-hub/commit/7209e45c53759c0cba178151f01fac9558885ef7))
+- **reticulum**: bound the HDLC reassembly buffer ([72589113](https://github.com/meshsat/meshsat-hub/commit/72589113c99b9f203a670511629cd2d2e5be4abc))
+- **monitoring**: key the auth alerts on rejected credentials, not missing ones ([724dd3db](https://github.com/meshsat/meshsat-hub/commit/724dd3dbefb8b0df23acd057f3fce5f623b2b6dd))
+- **k8s**: confine the Hub's Postgres cluster ([20b0cb9b](https://github.com/meshsat/meshsat-hub/commit/20b0cb9bb53cefea711d4303083a71520ca1d008))
+- **k8s**: confine the NATS listeners, including the cluster route port ([05372e6a](https://github.com/meshsat/meshsat-hub/commit/05372e6a4e27737ce0f840a2a178ead51b3e9c61))
 - **k8s**: confine the Hub's onion and Reticulum listeners ([4e2dc3c6](https://github.com/meshsat/meshsat-hub/commit/4e2dc3c6893fdb1ec2a8ce9d7f6ef02704e33b05))
 - **k8s**: bring stunnel and basemap up to the restricted profile ([1fc1ef20](https://github.com/meshsat/meshsat-hub/commit/1fc1ef20653f3e54551e9a79cea204eedeb8bc41))
 - **k8s**: drop capabilities and seal the root filesystem on the Hub ([b1c68018](https://github.com/meshsat/meshsat-hub/commit/b1c6801853e3b083da685ed40f3e9771f78b75d7))
