@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 839
+  unreleased_count: 859
   unreleased_since: "2026-09-17"
   unreleased_anchor: "unreleased-main-last-change-2026-09-17"
 ---
@@ -23,6 +23,12 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Features
 
+- **printer**: scripts/slip-counter.sh, and zero the counters after every test ([8a653401](https://github.com/meshsat/meshsat/commit/8a6534014b5b8bf700ea9fece9f80a07f85367d6))
+- **printer**: print the whole path, not just the bearer that carried it ([2dd21f82](https://github.com/meshsat/meshsat/commit/2dd21f82afa279a8eb20550f39133fd4012c4c1b))
+- **printer**: the hat on the 666th slip, and a way to preview a slip ([693a1061](https://github.com/meshsat/meshsat/commit/693a1061e16cd0d3bd3c652bdbb840558bebbde4))
+- **printer**: number every slip, and a hat at 666 ([db5fb89c](https://github.com/meshsat/meshsat/commit/db5fb89c1aa728371047beae7eaf7ce3872bfbfd))
+- **printer**: the owner's sentence in bold under the callsign ([4f32e431](https://github.com/meshsat/meshsat/commit/4f32e431447ad9d3c4335fa7101a5bc8a6ee0bc5))
+- **ttc**: second screensaver poster, the TTC26 hall with stand S27 lit ([f721ddf3](https://github.com/meshsat/meshsat/commit/f721ddf37fa38747809234641886f09f2230e746))
 - **booth**: print a receipt for every message that arrives on a kit ([2c914ef8](https://github.com/meshsat/meshsat/commit/2c914ef83ac0e9115d9a882508785165a8bb8ad5))
 - **hub**: keep the correlation token on inbound SMS, and publish mesh text to the Hub ([d1e1fa72](https://github.com/meshsat/meshsat/commit/d1e1fa72460b82cdfc751c79c79cd16d9e2b67c6))
 - **relay**: serve the bridge API to the tenant's phones through the Hub relay ([07d3750f](https://github.com/meshsat/meshsat/commit/07d3750f91dd8222399751e966caefb93035212e))
@@ -380,6 +386,20 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **spectrum**: thin transition captions by pixels, not percent ([6c7d951c](https://github.com/meshsat/meshsat/commit/6c7d951c4405d7933392dd83ebeb7b81b5f9a5c5))
+- **spectrum**: the noise floor is a low quantile, not the median ([ff89161b](https://github.com/meshsat/meshsat/commit/ff89161b4b23ce61f85b1971a1414e2f8e6381ca))
+- **spectrum**: the baseline's plus-minus is the robust spread ([7d7f8104](https://github.com/meshsat/meshsat/commit/7d7f810472fa4ebd6346eaf950edaa83e3e9a0ba))
+- **spectrum**: the baseline level is the median, not the mean ([1f76b56c](https://github.com/meshsat/meshsat/commit/1f76b56cc733ae95855352fced7543a03afeb85c))
+- **spectrum**: keep the reference line on the plot, and stop markers colliding ([23cb4d59](https://github.com/meshsat/meshsat/commit/23cb4d5936b9cf342ed3f2c61b80d6b441e3572b))
+- **spectrum**: the seven findings from the visual audit ([c7ebd682](https://github.com/meshsat/meshsat/commit/c7ebd68224cf3cade432d33a8439f0b6faa5586c))
+- **spectrum**: watch the frequency the mesh actually transmits on ([e50b399f](https://github.com/meshsat/meshsat/commit/e50b399fe1a92fd949234c0b4b1a14c297884299))
+- **spectrum**: five defects from the waterfall audit ([7edb58f8](https://github.com/meshsat/meshsat/commit/7edb58f8853c3491e75d3f9e98ecf941e2f2c9c4))
+- **printer**: a slip is proof a message crossed, not proof one arrived ([c87f2dc2](https://github.com/meshsat/meshsat/commit/c87f2dc299e9d25de2be06fde07c00c71412bd6e))
+- **printer**: one slip sequence across both kits, not one each ([9ca68ac6](https://github.com/meshsat/meshsat/commit/9ca68ac6a6439df729d5b0621cf02ccfb777f26c))
+- **ttc**: rotate the screensaver posters about every minute ([fb270e46](https://github.com/meshsat/meshsat/commit/fb270e460a03e68b4f32507c52f44b1f88820f2c))
+- **aprs**: count the ack against the last beacon, not a fixed window ([060bff9c](https://github.com/meshsat/meshsat/commit/060bff9cf570adf92389270bcf049b2bc67d811a))
+- **aprs**: skip the beacon when the peer just acked us ([8fe9e2da](https://github.com/meshsat/meshsat/commit/8fe9e2da507cb77decd566d63b967d26d20496f0))
+- **oob**: cut the TNC's own hub port on a PicoAPRS kit ([5c5bd5af](https://github.com/meshsat/meshsat/commit/5c5bd5afa0d42d5266c84265e604eb5c8169c162))
 - **ci**: bound the deploy probe, and stop the HeMB frame test failing on a coin toss ([9a9be531](https://github.com/meshsat/meshsat/commit/9a9be5314f5486e7c1831222c84be8e2092250c8))
 - **ci**: the address probe must not kill the job when the first address is silent ([d987c289](https://github.com/meshsat/meshsat/commit/d987c2898364c62e0ed99c19b9821b62bef576d2))
 - **gateway**: start a gateway on the manager's context, not the HTTP request's ([029f3fbb](https://github.com/meshsat/meshsat/commit/029f3fbb6183542e6d98f4b77785b2984aabfe37))
