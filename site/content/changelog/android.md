@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 58
-  latest_tag: "v2.9.1"
+  tags: 60
+  latest_tag: "v2.9.3"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v291-2026-09-19"
+  latest_tag_anchor: "v293-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,18 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.9.3 (2026-09-19)
+
+### Features
+
+- **messages**: New message sends over the satellite or the mesh from an empty inbox ([74bff754](https://github.com/meshsat/meshsat-android/commit/74bff7540e5667eb950502bcfaf744c8bfa0e265))
+
+## v2.9.2 (2026-09-19)
+
+### Features
+
+- **iridium**: Check Mailbox asks the satellite for waiting messages on request ([0d0f7758](https://github.com/meshsat/meshsat-android/commit/0d0f775845790aca1ca8ad4cf42c469bbf088a85))
 
 ## v2.9.1 (2026-09-19)
 
