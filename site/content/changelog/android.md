@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 66
-  latest_tag: "v2.9.9"
+  tags: 67
+  latest_tag: "v2.9.10"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v299-2026-09-19"
+  latest_tag_anchor: "v2910-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.9.10 (2026-09-19)
+
+### Features
+
+- **ble**: reconnect to the MeshSat node and take its modem by itself ([74c5f100](https://github.com/meshsat/meshsat-android/commit/74c5f10053e8849d53a03089530df2a73e8dab13))
 
 ## v2.9.9 (2026-09-19)
 
