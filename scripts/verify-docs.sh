@@ -45,6 +45,20 @@ while IFS= read -r src; do
     case "$target" in http*|mailto:*|"#"*|"") continue ;; esac
     t="${target%%#*}"                                  # drop any anchor
     [ -z "$t" ] && continue
+    # Images and other files are served from docs/public (absolute) or sit next to the page.
+    case "$t" in
+      *.png|*.jpg|*.jpeg|*.webp|*.svg|*.gif|*.pdf)
+        case "$t" in
+          /*) f="$D/public/${t#/}" ;;
+          *)  f="$(dirname "$src")/$t" ;;
+        esac
+        N=$((N+1))
+        if [ ! -f "$f" ]; then
+          fail "$src links to $target, a file that does not exist"
+          BAD=$((BAD+1))
+        fi
+        continue ;;
+    esac
     case "$t" in
       /*) f=$(resolve "$t") ;;
       *)  d=$(dirname "$src"); f="$d/$t"
