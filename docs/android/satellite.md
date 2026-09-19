@@ -12,12 +12,11 @@ queue survives a restart of the app. Setup > Advanced > Message queue shows ever
 sent or given up.
 
 Home counts the messages on their way, and the satellite line shows an orange dot while one is
-travelling. In a conversation, a clock means queued and a tick means sent.
+travelling. In a conversation, a clock means queued and a tick means sent. When you write a
+satellite message, the compose bar shows its size in bytes and credits before you send.
 
-::: warning Known issue in 2.11.1
-A message that arrives while the app is sending by satellite can be lost. Two were, on
-19 September 2026. It is fixed for the next release.
-:::
+A message that arrives during any satellite session is stored straight away. In 2.11.1 it could
+be lost while the app was sending (two were, on 19 September 2026), so update to 2.12.0 or later.
 
 ## What a message costs
 
