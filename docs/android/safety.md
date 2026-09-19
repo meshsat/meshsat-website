@@ -11,8 +11,9 @@ SOS sends three alerts 30 seconds apart: over the mesh, by satellite if the mode
 at that moment, and by SMS to your kit's phone number (Setup > SMS). It is on Home: **ARM SOS**
 asks you to confirm, the card then counts the sends, and **CANCEL SOS** stops them.
 
-A rework is in progress: hold to send, a list of emergency contacts, and alerts that go through
-the retrying satellite queue. Until it ships, SOS works as described here.
+A rework is in development: hold to send, a list of emergency contacts, alerts that go through
+the retrying satellite queue, and cancelling from the notification. Until it ships, SOS works as
+described here.
 
 <div class="phone-shots">
 
@@ -29,7 +30,7 @@ timeout.
 
 ## Zones
 
-Zones record when a mesh node enters or leaves an area. Setup > Safety > Zones.
+Zones, drawn on the map, record when a mesh node enters or leaves an area. Setup > Safety > Zones.
 
 ## On the Hub
 

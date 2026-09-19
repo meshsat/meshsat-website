@@ -87,9 +87,11 @@ number too.
 
 ## Send something
 
-Write a message in Messages. Home shows each way out: a solid line works, a dotted line is not
-available, and an orange dot is a message on its way. A message shows a clock while it waits and
-a tick once it is sent; red means it failed.
+In Messages, tap **New message** and pick who it is for: a node, everyone on the mesh, a phone
+number or the satellite. For a satellite message the compose bar shows the bytes and credits
+before you send. Home shows each way out: a solid line works, a dotted line is not available, and
+an orange dot is a message on its way. A message shows a clock while it waits and a tick once it
+is sent; red means it failed.
 
 ## When something does not work
 
@@ -102,5 +104,5 @@ battery use to Unrestricted, and see [dontkillmyapp.com](https://dontkillmyapp.c
 **"App not installed".** Usually a signature mismatch with a copy that is already installed, or
 the old `com.cubeos.meshsat` app from before 2.9. Uninstall it first.
 
-**The map is blank.** Map tiles come from the internet. In 2.11.1 the offline map setting is
-saved but not used yet.
+**The map only shows countries.** Detailed tiles come from the internet. Offline, the map falls
+back to the world overview built into the app, which stops at country level.
