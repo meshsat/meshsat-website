@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 63
-  latest_tag: "v2.9.6"
+  tags: 64
+  latest_tag: "v2.9.7"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v296-2026-09-19"
+  latest_tag_anchor: "v297-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.9.7 (2026-09-19)
+
+### Fixes
+
+- **messages**: the message box stays above the keyboard, and sent messages show a delivery mark ([3667a275](https://github.com/meshsat/meshsat-android/commit/3667a275eb64fa60d53a8e09f66d7ee1f549da48))
 
 ## v2.9.6 (2026-09-19)
 
