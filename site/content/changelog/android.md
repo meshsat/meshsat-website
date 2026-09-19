@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 69
-  latest_tag: "v2.10.0"
+  tags: 70
+  latest_tag: "v2.11.0"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v2100-2026-09-19"
+  latest_tag_anchor: "v2110-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.11.0 (2026-09-19)
+
+### Features
+
+- **ui**: Home shows how a message can get out, and Setup replaces the long Settings scroll ([7532e5eb](https://github.com/meshsat/meshsat-android/commit/7532e5eb0fc8fed9edcc7feb80ebf3e9486dd384))
 
 ## v2.10.0 (2026-09-19)
 
