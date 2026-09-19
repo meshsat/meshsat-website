@@ -28,7 +28,7 @@ radios over one Bluetooth connection, so there is no special phone to buy and no
 
 ## Start here
 
-| | |
+| Page | What it covers |
 |---|---|
 | [Set up](/android/setup) | Install, pair the node, connect the Hub, allow SMS |
 | [Satellite](/android/satellite) | The queue, what a message costs, pass prediction |
@@ -59,7 +59,7 @@ the phone keeps relaying with the screen off.
 
 ## What works, and what does not
 
-| | State |
+| What | State |
 |---|---|
 | Mesh through a MeshSat node over Bluetooth | Verified 19 September 2026 on a Pixel 9a |
 | Satellite messages out through the node, landing at the Hub | Verified 19 September 2026 |

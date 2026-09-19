@@ -182,7 +182,11 @@ function playVideo(btn) {
         var fig = btn.closest('figure');
         var cap = fig ? fig.querySelector('figcaption') : null;
         var text = cap ? cap.textContent : '';
-        dlg.classList.toggle('is-portrait', thumb.naturalHeight > thumb.naturalWidth);
+        // The declared size, not naturalWidth: a lazy thumbnail clicked as it
+        // scrolls into view has not loaded yet and reports 0 x 0.
+        var tw = Number(thumb.getAttribute('width')) || thumb.naturalWidth;
+        var th = Number(thumb.getAttribute('height')) || thumb.naturalHeight;
+        dlg.classList.toggle('is-portrait', th > tw);
         big.src = thumb.currentSrc || thumb.src;
         big.alt = text;
         caption.textContent = text;
