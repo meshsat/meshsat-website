@@ -9,7 +9,7 @@ instead.
 
 ## What you get
 
-| | Hosted (hub.meshsat.net) | Your own |
+| Aspect | Hosted (hub.meshsat.net) | Your own |
 |---|---|---|
 | Device ceiling | by plan: Free 4, Crew 24, Fleet 100 | yours: `HUB_PLAN_FREE_DEVICES` and friends, `-1` for no ceiling |
 | Sign-in | MeshSat ID (OIDC) | a bearer token, local accounts, or your own OIDC provider |
