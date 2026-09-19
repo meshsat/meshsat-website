@@ -71,7 +71,10 @@ the phone keeps relaying with the screen off.
 | Pass prediction with no internet | Verified 19 September 2026 |
 | The phone connected to the Hub as a bridge | Verified 19 September 2026 |
 | Recovery when the node drops out mid-session | Not exercised yet |
-| SOS rework: hold to send, emergency contacts, retries through the queue | In development |
+| SOS: hold to send, SMS to an emergency contact, cancel, and the cancellation after it | Verified 19 September 2026 on the Android 11 emulator (2.13.0) |
+| SOS by satellite to the Hub | The frame matches the kits' byte for byte in tests; not sent through the Hub yet, because it would page the on-call chain |
+| SOS over the mesh and to the Hub online, and Test the alarm on the phone | Not exercised yet |
+| SMS on Android 8 to 12 | Fixed in 2.13.0; verified on the Android 11 emulator |
 | A second tick when the Hub confirms a satellite message arrived | In development |
 | RockBLOCK 9704 | Not tested on hardware |
 | Deployment to a real end user | Never |
