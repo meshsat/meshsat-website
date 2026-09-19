@@ -16,7 +16,7 @@ You do this once per bridge. It takes about two minutes.
 
 The Fleet page walks these three steps in order the first time you add a bridge.
 
-![Fleet: three bridges, a phone running MeshSat Android online and two field kits offline, each with its version, last report and the interfaces it carries](/images/hub/fleet.webp)
+![Fleet: three bridges, a phone running MeshSat Android online and two field kits offline with their hostnames blurred, each with its version, last report and the interfaces it carries](/images/hub/fleet-hosts-blurred.webp)
 
 A phone running [MeshSat Android](/android/) joins the fleet the same way, without the copying:
 in the app, Setup > Hub > **Scan Hub Provision QR** takes the address, the credentials and the
