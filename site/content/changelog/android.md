@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 64
-  latest_tag: "v2.9.7"
+  tags: 65
+  latest_tag: "v2.9.8"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v297-2026-09-19"
+  latest_tag_anchor: "v298-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.9.8 (2026-09-19)
+
+### Fixes
+
+- **iridium**: wait for the node's modem to answer before probing it ([04bbcfad](https://github.com/meshsat/meshsat-android/commit/04bbcfaddcfb0e1326d08919ba80b05109cecd1f))
 
 ## v2.9.7 (2026-09-19)
 
