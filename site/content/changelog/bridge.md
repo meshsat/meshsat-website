@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 869
-  unreleased_since: "2026-09-18"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-18"
+  unreleased_count: 870
+  unreleased_since: "2026-09-19"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-19"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,11 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-18)
+## Unreleased (main, last change 2026-09-19)
 
 ### Features
 
+- **passes**: predict Iridium passes offline from elements shipped in the binary, refresh via the TLE API when Celestrak fails ([92c5a769](https://github.com/meshsat/meshsat/commit/92c5a769fd7e503b356410c65af690991222de86))
 - **mesh**: keep the radio's plain-text console lines too ([3f5ea61b](https://github.com/meshsat/meshsat/commit/3f5ea61bb5e985685eeab19008d579b22b444519))
 - **mesh**: keep the radio's own log, reboot flag and notifications ([6fd324bc](https://github.com/meshsat/meshsat/commit/6fd324bc56dd9978cc58e0c26ca37b368f9cf835))
 - **printer**: scripts/slip-counter.sh, and zero the counters after every test ([8a653401](https://github.com/meshsat/meshsat/commit/8a6534014b5b8bf700ea9fece9f80a07f85367d6))
