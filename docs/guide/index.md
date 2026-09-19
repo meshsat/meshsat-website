@@ -18,7 +18,7 @@ The standalone gateway. A single Go binary that runs on a Raspberry Pi (or any A
 
 ### MeshSat Hub
 
-The hosted fleet manager at [hub.meshsat.net](https://hub.meshsat.net). One place to watch every bridge and device you run: live map, message history, routing between bearers, SOS escalation and an audit log. You bring your own satellite and SMS accounts, so your airtime stays yours.
+The control room for every kit, phone and node you run, on your own server or on ours at [hub.meshsat.net](https://hub.meshsat.net). One place to watch every bridge and device: live map, message history, routing between bearers, SOS escalation and an audit log. You bring your own satellite and SMS accounts, so your airtime stays yours.
 
 - Free for four devices and bridges, paid plans above that
 - Live map and message log across the whole fleet
@@ -26,17 +26,16 @@ The hosted fleet manager at [hub.meshsat.net](https://hub.meshsat.net). One plac
 - Your own Cloudloop, Rock7 and Twilio credentials, encrypted per account
 - [Accounts and plans](/hub/accounts) covers signing up and what each plan allows
 
-You can also run your own Hub; see [Authentication](/hub/authentication) and [Hub configuration](/reference/hub-configuration).
+To run your own Hub, start at [Self-hosting](/hub/self-hosting).
 
 ### MeshSat Android
 
-The mobile gateway. An Android app that turns a phone into a portable MeshSat node using BLE for Meshtastic, SPP for Iridium, and native SMS for cellular. See [Android](/android/).
+The phone as the gateway. Paired with a [MeshSat node](/node/), one Android phone sends and receives over the mesh, by satellite and by SMS, and keeps working with no internet. See [Android](/android/).
 
-- BLE mesh networking with Meshtastic devices
-- SPP serial for Iridium satellite modems
-- Native SMS gateway
-- ONNX Runtime for on-device ML inference
-- Jetpack Compose UI
+- Meshtastic over Bluetooth LE, through the node or any Meshtastic radio
+- Iridium SBD through the node's RockBLOCK 9603, with a queue that waits for the next pass
+- SMS through the phone's own SIM
+- Joins the Hub's fleet like a field kit, set up by QR code
 
 ## Next Steps
 

@@ -19,9 +19,9 @@ features:
   - title: Bridge
     details: A single Go binary on a Raspberry Pi or any ARM64 or x86 Linux machine, wired straight to the hardware. Free software under the GPLv3, self-hosted, no account needed.
   - title: Hub
-    details: Fleet management for many bridges, hosted at hub.meshsat.net. Live map, SOS escalation, routing and audit across your whole fleet. Free for four devices.
+    details: The control room for every kit, phone and node you run. Live map, every message, routing and SOS escalation. Run it on your own server, or try it on ours at hub.meshsat.net.
   - title: Android
-    details: A phone as a standalone gateway with no Pi and no cables. Meshtastic over Bluetooth LE, an Iridium modem over Bluetooth SPP, and the phone's own SMS, all at once.
+    details: An ordinary Android phone as the gateway. Paired with a MeshSat node it reaches the mesh and an Iridium modem over one Bluetooth connection, and adds SMS from its own SIM.
   - title: Node
     details: A pocket-sized box with a Meshtastic LoRa radio and a RockBLOCK Iridium modem, reached by MeshSat Android over one Bluetooth connection. A prototype, tested on the bench.
     link: /node/

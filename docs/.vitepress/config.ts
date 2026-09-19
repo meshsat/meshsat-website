@@ -91,6 +91,9 @@ export default defineConfig({
           text: 'Android',
           items: [
             { text: 'Overview', link: '/android/' },
+            { text: 'Set up', link: '/android/setup' },
+            { text: 'Satellite', link: '/android/satellite' },
+            { text: 'Safety', link: '/android/safety' },
           ],
         },
       ],

@@ -8,6 +8,8 @@ You do not install it to use it. [Create an account](https://auth.meshsat.net/if
 we review it before it goes live, and your first sign-in puts you on the free plan of four
 devices.
 
+![The Hub's operations dashboard: Hub OK, bridges online, devices, messages, credits and alerts, then constellations, safety and network panels and the message activity chart](/images/hub/dashboard.webp)
+
 ## Start here
 
 | | |
@@ -34,69 +36,75 @@ are yours to change.
 
 | Aspect | Bridge | Hub |
 |--------|--------|-----|
-| **Runs on** | Raspberry Pi / SBC | Server / cloud / Kubernetes |
-| **Devices** | Directly connected via USB | Managed remotely via API |
+| **Runs on** | Raspberry Pi or another small computer | A server, or Kubernetes |
+| **Devices** | Connected directly over USB and serial | Managed remotely over MQTT and the API |
 | **Authentication** | None (local device) | OAuth2/OIDC, API keys, local accounts |
 | **Multi-tenancy** | No | Yes, with data isolation |
-| **Satellite access** | Direct serial (9603N, 9704) | Via Cloudloop/Globalstar APIs |
-| **Deployment** | Docker Compose (standalone) | Standalone, Cluster (Galera+NATS), Kubernetes |
-| **Database** | SQLite | SQLite (standalone) or MariaDB Galera (cluster) |
+| **Satellite access** | Direct serial (9603N, 9704) | Through the providers' APIs (Cloudloop, Rock7, Globalstar) |
+| **Deployment** | Docker Compose | Docker Compose on one server, or Kubernetes |
+| **Database** | SQLite | SQLite on one server, PostgreSQL on Kubernetes |
 
-## Three deployment modes
+## Two shapes
 
-### Standalone
-Single server. SQLite + Mosquitto MQTT. Best for development, edge deployments, or small teams.
+The same binary runs in both; [Self-hosting](/hub/self-hosting) has the steps.
 
-### Cluster
-Active-active high availability. MariaDB Galera for replicated storage, Redis for cluster-wide dedup and rate limiting, NATS JetStream for leader election and message bus. HAProxy in front.
+### One server
+A single Docker Compose stack: the Hub with SQLite, Mosquitto for the bridges, Caddy for TLS
+from Let's Encrypt, and a Tor hidden service. A notification relay, OpenTAKServer and Prometheus
+are optional extras. Right for a team, a region or an exercise.
 
 ### Kubernetes
-Helm charts with pod anti-affinity, StatefulSets for MariaDB and NATS, Kubernetes lease-based leader election, liveness/readiness probes.
+Two or more Hub replicas with lease-based leader election, PostgreSQL through CloudNativePG, and
+NATS as the MQTT broker, checking a client certificate for every bridge. This is the tree
+hub.meshsat.net runs from.
+
+The two-host MariaDB Galera cluster that used to sit between these two was retired on
+8 September 2026.
 
 ## Multi-constellation satellite routing
 
-Hub routes messages through **Iridium** and **Globalstar** — and picks the optimal backend per device.
+The Hub routes messages through **Iridium** and **Globalstar** and picks the backend per device.
 
 **Routing strategies:**
-- **Available** — first constellation with connectivity
-- **Cheapest** — lowest cost per message
-- **Fastest** — Iridium preferred (lowest latency)
-- **Preferred** — per-device constellation preference
+- **Available:** the first constellation with connectivity
+- **Cheapest:** the lowest cost per message
+- **Fastest:** Iridium first, for the lowest latency
+- **Preferred:** a constellation chosen per device
 
-## Authentication & authorization
+## Authentication and authorisation
 
 **Four auth modes:**
-- `none` — development only
-- `token` — simple bearer token
-- `local` — built-in accounts with Argon2id password hashing, JWT sessions
-- `oidc` — external OAuth2/OIDC provider with JWKS verification and TLS cert pinning
+- `none`: development only
+- `token`: a simple bearer token
+- `local`: built-in accounts with Argon2id password hashing and JWT sessions
+- `oidc`: an external OAuth2/OIDC provider, with JWKS verification and TLS certificate pinning
 
-**API keys** with RBAC roles (viewer/admin/owner), optional expiry, and usage tracking.
+**API keys** carry a role (viewer, operator or owner), with optional expiry and usage tracking.
 
 **Tenant isolation** via JWT claims or headers. Enforcement is optional.
 
 ## Key features
 
-- **60+ REST API endpoints** with Swagger documentation
-- **WebSocket event hub** for real-time dashboard updates
-- **SOS escalation chains** — multi-step notification (push → SMS → email → call)
-- **Dead man's switch** — alerts on missed device check-ins
-- **Geofencing** — polygon-based alerts with auto-escalation
-- **TAK/CoT gateway** — forward positions to OpenTAKServer
-- **APRS-IS IGate** — inject positions into amateur radio network
-- **Outbound webhooks** — fire on MO, SOS, position, MT status events
-- **Per-device rate limiting** — token bucket with burst, daily, and monthly caps
-- **Device config versioning** — YAML configs with full version history
-- **E2E encryption** — AES-256-GCM per-device keystores
-- **PGP email gateway** — encrypted email relay
-- **Tamper-evident audit log** — Ed25519 hash chain, verifiable integrity
-- **Backup/restore** — full state export/import with diff preview
-- **90+ notification backends** via Apprise + ntfy push
-- **Reticulum routing** across all satellite backends
-- **WireGuard VPN** peer management
-- **Tor hidden service** support
-- **MPTCP concentrator** for satellite + cellular link aggregation
-- **MSVQ-SC decoder** for Android semantic compression
+- **A REST API** with Swagger documentation, see [Hub API](/hub/api)
+- **SOS escalation chains:** notification in steps (push, SMS, email, call)
+- **Dead man's switch:** alerts when a device misses its check-in
+- **Geofencing:** polygon-based alerts with escalation
+- **A TAK server per account**, or forwarding to your own TAK server
+- **APRS-IS IGate:** positions into the amateur radio network
+- **Outbound webhooks** on MO, SOS, position and MT status events
+- **Per-device rate limiting:** a token bucket with burst, daily and monthly caps
+- **Device config versioning:** YAML configs with their full history
+- **End-to-end encryption:** AES-256-GCM keystores per device
+- **PGP email gateway:** an encrypted email relay
+- **Tamper-evident audit log:** an Ed25519 hash chain you can verify
+- **Backup and restore:** full state export and import with a diff preview
+- **90+ notification backends** through Apprise, plus ntfy push
+- **Reticulum routing** across all satellite backends; the Hub is a Reticulum transport node
+- **WireGuard** peer management and a **Tor hidden service**
+- **MPTCP concentrator** for satellite plus cellular link aggregation
+- **MSVQ-SC decoder** for messages compressed by MeshSat Android
+
+![Reticulum topology in the Hub: the Hub as a transport node, six transport interfaces (SMS, Tor, WireGuard, MQTT, TCP and Iridium) with cost, MTU and routes, and the network map](/images/hub/reticulum.webp)
 
 ## Configuration
 
