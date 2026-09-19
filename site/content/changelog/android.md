@@ -4,13 +4,13 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 55
-  latest_tag: "v2.8.6"
-  latest_tag_date: "2026-04-05"
-  latest_tag_anchor: "v286-2026-04-05"
-  unreleased_count: 9
-  unreleased_since: "2026-09-15"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-15"
+  tags: 56
+  latest_tag: "v2.8.7"
+  latest_tag_date: "2026-09-19"
+  latest_tag_anchor: "v287-2026-09-19"
+  unreleased_count: 0
+  unreleased_since: ""
+  unreleased_anchor: "unreleased-main"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,10 +23,15 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-15)
+## Unreleased (main)
+
+No unreleased changes.
+
+## v2.8.7 (2026-09-19)
 
 ### Features
 
+- **provision**: open meshsat://provision links, showing the Hub before anything is fetched ([0efc1ebe](https://github.com/meshsat/meshsat-android/commit/0efc1ebe617e1196383e073021b800b3fbd0be19))
 - **hub**: relay client, a tunnel through the Hub to reach a kit behind NAT ([6966896f](https://github.com/meshsat/meshsat-android/commit/6966896f8f8eecd1ae7b8c04f6110ac602b6ebdf))
 - **sdd-tier6**: customer-facing CHANGELOG.md generated from git history ([e0ae89b1](https://github.com/meshsat/meshsat-android/commit/e0ae89b18a0e1ff22bf5055fd4a94ae126c2490b))
 - **sdd-tier5**: per-tag release notes generated from outcomes ([4f3f1be4](https://github.com/meshsat/meshsat-android/commit/4f3f1be415cb2d007bddc55863c5c758a1e9f727))
@@ -36,6 +41,8 @@ carries the same history in Keep a Changelog form.
 
 ### Fixes
 
+- **hub**: subscribe and announce again after a reconnect, and report modem IMEIs in the birth ([f19ff18d](https://github.com/meshsat/meshsat-android/commit/f19ff18d0fdced40d2641695a30f098c7c8f5dbc))
+- **hub**: keep the MQTT client in release builds so the app reaches the Hub again ([5d157a1b](https://github.com/meshsat/meshsat-android/commit/5d157a1b084b517e4123d108644ed6abd81b3bcb))
 - **hub**: force TLS SNI on Hub MQTT sockets ([355bc027](https://github.com/meshsat/meshsat-android/commit/355bc0271e23fcd72b11670a6093a10000d4d5d2))
 - **sdd**: recount metrics, drop Astrocast, pin the SDD validator ([76ad448d](https://github.com/meshsat/meshsat-android/commit/76ad448d60ac675083e21af3ecaf070010f4a8db))
 - **license**: align all licence statements to GPLv3 and add NOTICE ([c933cdd3](https://github.com/meshsat/meshsat-android/commit/c933cdd334f3bd581d3a3666638e3a61809acb67))
