@@ -12,7 +12,7 @@ devices.
 
 ## Start here
 
-| | |
+| Page | What it covers |
 |---|---|
 | [Accounts and plans](/hub/accounts) | Signing up, what each plan allows, upgrading, lapsing |
 | [Connect a bridge](/hub/connect-a-bridge) | The one thing to do first |
