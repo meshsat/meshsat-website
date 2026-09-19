@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 75
-  latest_tag: "v2.14.0"
+  tags: 76
+  latest_tag: "v2.14.1"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v2140-2026-09-19"
+  latest_tag_anchor: "v2141-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.14.1 (2026-09-19)
+
+### Features
+
+- **ui**: the mesh and satellite icons come from the MeshSat mark ([1b3d5902](https://github.com/meshsat/meshsat-android/commit/1b3d590203670e891e4d05b51f7137745d0a62cf))
 
 ## v2.14.0 (2026-09-19)
 
