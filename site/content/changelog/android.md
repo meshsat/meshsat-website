@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 67
-  latest_tag: "v2.9.10"
+  tags: 68
+  latest_tag: "v2.9.11"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v2910-2026-09-19"
+  latest_tag_anchor: "v2911-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.9.11 (2026-09-19)
+
+### Fixes
+
+- **iridium**: the satellite icon actually shows in the status bar ([751b16e2](https://github.com/meshsat/meshsat-android/commit/751b16e22bd4a7628918a0c99ab405e228de2ebd))
 
 ## v2.9.10 (2026-09-19)
 
