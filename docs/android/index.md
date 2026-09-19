@@ -37,8 +37,9 @@ radios over one Bluetooth connection, so there is no special phone to buy and no
 ## What it does
 
 - **Mesh.** Meshtastic over Bluetooth LE with the official protobufs: text, positions,
-  telemetry, waypoints, node info and traceroute. Region, channels and transmit power are under
-  Setup > Mesh radio settings.
+  telemetry, waypoints, node info and traceroute. A reply to a node goes to that node, not to the
+  whole channel. People lists the nodes you hear, with a button to message one or show it on the
+  map. Region, channels and transmit power are under Setup > Mesh radio settings.
 - **Satellite.** Iridium SBD through the node's RockBLOCK 9603, up to 340 bytes out and 270
   bytes in. Messages wait in a queue until they go out. See [Satellite](/android/satellite).
 - **SMS** through the phone's own SIM, optionally encrypted per conversation with AES-256-GCM.
@@ -54,7 +55,8 @@ radios over one Bluetooth connection, so there is no special phone to buy and no
   itself, for example mesh messages out by satellite.
 
 Mesh and SMS messages are compressed with MSVQ-SC by default. It is lossy: what arrives means the
-same, but may not be word for word what was sent. The gateway runs as a foreground service, so
+same, but may not be word for word what was sent. The map works without internet down to country
+level, from a world overview built into the app. The gateway runs as a foreground service, so
 the phone keeps relaying with the screen off.
 
 ## What works, and what does not
@@ -64,11 +66,13 @@ the phone keeps relaying with the screen off.
 | Mesh through a MeshSat node over Bluetooth | Verified 19 September 2026 on a Pixel 9a |
 | Satellite messages out through the node, landing at the Hub | Verified 19 September 2026 |
 | A satellite message in, picked up by the app | Verified 19 September 2026 |
-| A message that arrives while the app is sending by satellite | Can be lost in 2.11.1; fixed for the next release |
+| A message that arrives while the app is sending by satellite | Stored straight away since 2.12.0; in 2.11.1 it could be lost |
 | Reconnecting to the node after an app restart | Verified 19 September 2026 |
 | Pass prediction with no internet | Verified 19 September 2026 |
 | The phone connected to the Hub as a bridge | Verified 19 September 2026 |
 | Recovery when the node drops out mid-session | Not exercised yet |
+| SOS rework: hold to send, emergency contacts, retries through the queue | In development |
+| A second tick when the Hub confirms a satellite message arrived | In development |
 | RockBLOCK 9704 | Not tested on hardware |
 | Deployment to a real end user | Never |
 
