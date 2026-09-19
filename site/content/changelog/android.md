@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 70
-  latest_tag: "v2.11.0"
+  tags: 71
+  latest_tag: "v2.11.1"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v2110-2026-09-19"
+  latest_tag_anchor: "v2111-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.11.1 (2026-09-19)
+
+### Fixes
+
+- **iridium**: the satellite queue sends in order, waits out the modem's pause, and says when a message may have arrived ([01137172](https://github.com/meshsat/meshsat-android/commit/01137172553c54078fac683113d7914aa11504e3))
 
 ## v2.11.0 (2026-09-19)
 
