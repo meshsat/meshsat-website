@@ -31,7 +31,7 @@ The node runs [meshsat-firmware](https://github.com/meshsat/meshsat-firmware), a
 
 ## Versions
 
-| | v0 (bench) | v1 (prototype) |
+| Part | v0 (bench) | v1 (prototype) |
 |---|---|---|
 | Board | Seeed Studio XIAO ESP32-S3 with a Wio-SX1262 | LILYGO T-Beam Supreme (ESP32-S3, SX1262, u-blox M10S GPS) |
 | Satellite | RockBLOCK 9603 | RockBLOCK 9603 |
@@ -43,7 +43,7 @@ How to put one together, wire it and flash it: [Build a node](/node/build).
 
 ## What is proven, and what is not
 
-| | State |
+| What | State |
 |---|---|
 | Meshtastic to MeshSat Android over Bluetooth (v0) | Verified on the bench, 19 September 2026: bonded with a fixed PIN, full config sync |
 | Iridium modem over the same Bluetooth link (v0) | Verified on the bench, 19 September 2026: AT commands, and a binary loopback of up to 270 bytes |
