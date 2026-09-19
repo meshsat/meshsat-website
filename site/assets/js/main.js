@@ -141,23 +141,32 @@ function playVideo(btn) {
     }
 }
 
-// Screenshot lightbox — one dialog for every thumbnail (MESHSAT-1101). A click
+// Screenshot lightbox: one dialog for every thumbnail (MESHSAT-1101). A click
 // shows the thumbnail at once (it is already loaded) and swaps in the @2x file
 // named in data-full as soon as that has loaded; Left / Right and the head-bar
-// buttons step through the set and wrap; the neighbours are fetched ahead so a
-// step is instant; closing puts focus back on the thumbnail last shown.
+// buttons step through the thumbnail's own set (the nearest [data-shots]: the
+// Bridge, the Hub, the phone; MESHSAT-1251) and wrap; a set of one hides the
+// stepping; the neighbours are fetched ahead so a step is instant; closing puts
+// focus back on the thumbnail last shown. A portrait screen gets a narrow frame.
 (function() {
     var dlg = document.getElementById('shot-dialog');
-    var shots = Array.prototype.slice.call(document.querySelectorAll('.shot-open'));
-    if (!dlg || !shots.length || typeof dlg.showModal !== 'function') return;
+    var all = Array.prototype.slice.call(document.querySelectorAll('.shot-open'));
+    if (!dlg || !all.length || typeof dlg.showModal !== 'function') return;
     var big = document.getElementById('shot-img');
     var caption = document.getElementById('shot-caption');
     var count = document.getElementById('shot-count');
+    var steps = Array.prototype.slice.call(dlg.querySelectorAll('[data-step]'));
     var full = {};
+    var set = all;
     var current = 0;
 
+    function setOf(btn) {
+        var group = btn.closest('[data-shots]');
+        return group ? Array.prototype.slice.call(group.querySelectorAll('.shot-open')) : [btn];
+    }
+
     function fetchFull(i) {
-        var url = shots[i].getAttribute('data-full');
+        var url = set[i].getAttribute('data-full');
         if (url && !full[url]) {
             full[url] = new Image();
             full[url].src = url;
@@ -166,22 +175,23 @@ function playVideo(btn) {
     }
 
     function show(i) {
-        var n = shots.length;
+        var n = set.length;
         current = ((i % n) + n) % n;
-        var btn = shots[current];
+        var btn = set[current];
         var thumb = btn.querySelector('img');
         var fig = btn.closest('figure');
         var cap = fig ? fig.querySelector('figcaption') : null;
         var text = cap ? cap.textContent : '';
+        dlg.classList.toggle('is-portrait', thumb.naturalHeight > thumb.naturalWidth);
         big.src = thumb.currentSrc || thumb.src;
         big.alt = text;
         caption.textContent = text;
         if (count) count.textContent = (current + 1) + ' / ' + n;
         var url = fetchFull(current);
         if (url) {
-            var want = current;
+            var want = url;
             var im = full[url];
-            var swap = function() { if (current === want) big.src = url; };
+            var swap = function() { if (set[current].getAttribute('data-full') === want) big.src = url; };
             if (im.complete && im.naturalWidth) swap();
             else im.addEventListener('load', swap, { once: true });
         }
@@ -191,21 +201,28 @@ function playVideo(btn) {
         }
     }
 
-    shots.forEach(function(btn, i) {
+    all.forEach(function(btn) {
         btn.addEventListener('click', function() {
+            set = setOf(btn);
+            // Before showModal, so autofocus never lands on a button that is
+            // about to disappear; a set of one opens on the close button.
+            var single = set.length < 2;
+            steps.forEach(function(b) { b.hidden = single; });
+            if (count) count.hidden = single;
             if (!dlg.open) dlg.showModal();
-            show(i);
+            if (single) dlg.querySelector('.shot-close:not([data-step])').focus();
+            show(set.indexOf(btn));
         });
     });
-    Array.prototype.forEach.call(dlg.querySelectorAll('[data-step]'), function(b) {
+    steps.forEach(function(b) {
         b.addEventListener('click', function() { show(current + Number(b.getAttribute('data-step'))); });
     });
     dlg.addEventListener('keydown', function(e) {
-        if (e.altKey || e.ctrlKey || e.metaKey) return;
+        if (e.altKey || e.ctrlKey || e.metaKey || set.length < 2) return;
         if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1); }
         else if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1); }
     });
-    dlg.addEventListener('close', function() { shots[current].focus(); });
+    dlg.addEventListener('close', function() { set[current].focus(); });
 })();
 // Any modal closes on a backdrop click (clicks on ::backdrop target the
 // dialog element itself; clicks inside land on its children).
