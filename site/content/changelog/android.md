@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 76
-  latest_tag: "v2.14.1"
+  tags: 77
+  latest_tag: "v2.14.2"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v2141-2026-09-19"
+  latest_tag_anchor: "v2142-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -25,7 +25,13 @@ carries the same history in Keep a Changelog form.
 <!-- generated:begin -->
 ## Unreleased (main)
 
-No unreleased changes.
+No user-facing changes (1 commits of other types).
+
+## v2.14.2 (2026-09-19)
+
+### Fixes
+
+- **map**: the map is dark like the rest of the app ([9b87c0f5](https://github.com/meshsat/meshsat-android/commit/9b87c0f5fded1b4b644fc1982a4edfe534ed9e7f))
 
 ## v2.14.1 (2026-09-19)
 
