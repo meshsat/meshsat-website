@@ -9,6 +9,8 @@ people.
 Select a device to see its track. Positions arrive from device reports, from bridges, and from
 TAK markers if you have that integration on.
 
+![The position map at country zoom over the Netherlands, with a bridge, a satellite modem and an SOS test device](/images/hub/map.webp)
+
 ## Messages
 
 **Messages** is the log of everything in and out, newest first, with the direction and the bearer
@@ -16,6 +18,8 @@ each one took. This is where you look when somebody says a message did not arriv
 whether the Hub ever had it, and what happened next.
 
 A message that was compressed shows both sizes. A message that failed shows why.
+
+![Messages: sending to a device over Iridium with SMAZ2 compression and AES-256-GCM, sending an SMS, and the log of satellite messages in both directions, two replies still queued](/images/hub/messages.webp)
 
 ## Routing
 
@@ -28,3 +32,5 @@ Two things worth knowing before you add a rule:
 - A wildcard source matches everything, including test messages. A rule that relays to SMS will
   text a real phone the first time you try anything.
 - Delivery happens once per route per message even though the Hub runs more than one replica.
+
+![Routing rules: the active route flow from satellite to APRS, MQTT, notifications, TAK and webhooks, and kit to kit over SMS, with the rules listed below it](/images/hub/routing.webp)

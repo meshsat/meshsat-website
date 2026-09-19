@@ -35,6 +35,8 @@ visible on the dashboard.
 A chain with one tier and one phone number is a valid chain and is much better than none. Start
 there.
 
+![Escalation and alerts: no active alerts, and a chain for the field kits with three tiers, immediately, after 300 seconds and after 900 seconds, targets blurred](/images/hub/escalation.webp)
+
 ## Where the messages actually go
 
 Delivery uses your own accounts. SMS goes through the Twilio credentials you added under

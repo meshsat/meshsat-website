@@ -1,7 +1,7 @@
 # Self-hosting the Hub
 
 MeshSat Hub is Apache 2.0. The hosted service at hub.meshsat.net is one deployment of it; you
-can run your own, on one server or on a cluster, and nothing in the software phones home or
+can run your own, on one server or on Kubernetes, and nothing in the software phones home or
 needs an account with us.
 
 This page is the operator's path. If you only want to use the Hub, [create an account](/hub/accounts)
@@ -18,6 +18,35 @@ instead.
 
 A registered device keeps working whatever the plan, and an SOS is never gated by anything on
 this page. That invariant is in the code, not in the hosting.
+
+## What running it takes
+
+The honest list, and the reason the hosted service exists. None of it is hard on its own; all of
+it has to keep happening.
+
+1. **A server that never sleeps,** with a public address, a domain name, a firewall and TLS
+   certificates that renew every 90 days. When a certificate lapses, bridges and providers stop
+   connecting.
+2. **An address the satellite provider can reach at any hour.** Messages from the field land
+   there. While the server is down, a message from the field has nowhere to land.
+3. **Provider wiring:** the Cloudloop or Rock7 webhook, a Twilio number and its inbound webhook,
+   and an email sender for notifications, each with secrets to keep safe.
+4. **Sign-in:** a token, local accounts or your own identity provider. Two-factor sign-in is
+   yours to set up.
+5. **A certificate authority for the bridges.** The Hub issues each bridge its own client
+   certificate; the key that signs them has to be kept safe and backed up.
+6. **Backups, and a restore you have actually tried.**
+7. **Upgrades:** new Hub versions and their migrations, the operating system, Docker and the
+   broker, and a fix each time a vulnerability is published in something the stack uses.
+8. **Monitoring, and a person who is woken up when it breaks.** An SOS system nobody watches is
+   not a safety system.
+9. **No single point of failure,** if you want it: several replicas, a replicated database and a
+   broker cluster. That is the Kubernetes shape, and it is a real operations job.
+
+On hub.meshsat.net all of that is done for you: two Hub replicas, PostgreSQL as three instances
+with continuous archiving and a daily backup, signed and scanned images, and a nightly end-to-end
+check against the live service. It is the same code, so a team can start there and move to its
+own server later.
 
 ## Pick a shape
 

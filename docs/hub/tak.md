@@ -6,7 +6,7 @@ server for you, or point it at one you already run.
 ::: warning New
 Hosted TAK landed in September 2026. It is tested against OpenTAKServer, including the parts that
 keep one customer's server away from another's, but it has little field exposure yet. If you are
-depending on it for something that matters, tell us — we would rather hear about it early.
+depending on it for something that matters, tell us: we would rather hear about it early.
 :::
 
 ## A TAK server of your own
@@ -27,10 +27,12 @@ it:
 
 The first time you enable it the server takes a minute or so to come up. After that it stays.
 
+![TAK: the account's own TAK server, ready on port 8089 with one person enrolled, a form to add a person, and Enrol, QR and QR iTAK actions](/images/hub/tak.webp)
+
 ### Adding a person
 
-Give them a username. **It may only contain lowercase letters and digits** — no hyphens, no dots,
-no `@` — because the TAK server refuses anything else, so an email address or a hyphenated callsign
+Give them a username. **It may only contain lowercase letters and digits** (no hyphens, no dots,
+no `@`), because the TAK server refuses anything else, so an email address or a hyphenated callsign
 will not do. The field shows you what the account will actually be called as you type, rather than
 letting you find out after the fact.
 
@@ -44,7 +46,7 @@ Press enrol. You get a link and a QR code, and two things about them matter:
 - **They work once, for fifteen minutes.** Long enough to walk over to somebody's phone, short
   enough that a link left in a chat window is useless by the time anyone finds it.
 
-Opening the link on the phone downloads a data package — the connection details, the trust anchors
+Opening the link on the phone downloads a data package: the connection details, the trust anchors
 and the phone's own certificate. Import it the way you would any data package. The phone then
 connects to `hub.meshsat.net` on port **8089**, the standard TAK streaming port.
 
@@ -52,8 +54,8 @@ connects to `hub.meshsat.net` on port **8089**, the standard TAK streaming port.
 flat archive with no manifest: add `?client=itak` to the end of the enrolment link before opening
 it on an iPhone or iPad. Importing the ATAK package into iTAK will not work.
 
-If the download fails part way, mint a new enrolment. The link is spent the moment it is used —
-deliberately, so that a half-delivered package cannot be fetched twice — so there is nothing to
+If the download fails part way, mint a new enrolment. The link is spent the moment it is used,
+deliberately, so that a half-delivered package cannot be fetched twice. So there is nothing to
 retry and nothing is lost by starting again.
 
 The certificate in that package is the phone's identity. Its private key is generated for that one
@@ -79,7 +81,7 @@ If you already run TAK, you do not have to adopt ours. Add a **TAK** provider ac
 certificate and key the Hub should present to it. The Hub connects out to you; it needs no server
 of its own and no enrolment, and your phones keep connecting where they already do.
 
-Your server decides whether to trust the Hub — which means the Hub's certificate has to be signed
+Your server decides whether to trust the Hub, which means the Hub's certificate has to be signed
 by something your server accepts. If it refuses, the Hub now tells you so in its logs rather than
 going quietly silent, which is a fault we have had and fixed.
 
