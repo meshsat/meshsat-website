@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 62
-  latest_tag: "v2.9.5"
+  tags: 63
+  latest_tag: "v2.9.6"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v295-2026-09-19"
+  latest_tag_anchor: "v296-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.9.6 (2026-09-19)
+
+### Features
+
+- **passes**: refresh Iridium elements from the TLE API when Celestrak cannot be reached ([66416594](https://github.com/meshsat/meshsat-android/commit/664165940e013ec72268eeec9a26b8a5cf7a4658))
 
 ## v2.9.5 (2026-09-19)
 
