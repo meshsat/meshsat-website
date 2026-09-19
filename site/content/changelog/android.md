@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 68
-  latest_tag: "v2.9.11"
+  tags: 69
+  latest_tag: "v2.10.0"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v2911-2026-09-19"
+  latest_tag_anchor: "v2100-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.10.0 (2026-09-19)
+
+### Features
+
+- **ui**: the MeshSat brand throughout the app: Space Black, Signal Orange, IBM Plex and the approved mark ([69e213b8](https://github.com/meshsat/meshsat-android/commit/69e213b84bd11f42c1b5a725ebbb7a1a26ef2c32))
 
 ## v2.9.11 (2026-09-19)
 
