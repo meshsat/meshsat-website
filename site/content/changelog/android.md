@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 74
-  latest_tag: "v2.13.1"
+  tags: 75
+  latest_tag: "v2.14.0"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v2131-2026-09-19"
+  latest_tag_anchor: "v2140-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.14.0 (2026-09-19)
+
+### Features
+
+- **messages**: a second tick when the Hub has a satellite message or the carrier delivered an SMS ([2be5b38e](https://github.com/meshsat/meshsat-android/commit/2be5b38e0da4dd855663b6d37800fea1388c060a))
 
 ## v2.13.1 (2026-09-19)
 
