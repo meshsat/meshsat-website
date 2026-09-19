@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 72
-  latest_tag: "v2.12.0"
+  tags: 73
+  latest_tag: "v2.13.0"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v2120-2026-09-19"
+  latest_tag_anchor: "v2130-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,20 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.13.0 (2026-09-19)
+
+### Features
+
+- **service**: an option to start the gateway after a phone restart ([401c5003](https://github.com/meshsat/meshsat-android/commit/401c5003f89fe767d413b34b4ae3536f787cb44f))
+- **ui**: a welcome that says what each permission is for, a getting-started list, and a red night mode ([e6f4595f](https://github.com/meshsat/meshsat-android/commit/e6f4595f3744d6d23543bbef61e3f56e7bcc9d7e))
+- **sos**: hold to send, emergency contacts, every route retried until you cancel, and a real alarm test ([2ff3df77](https://github.com/meshsat/meshsat-android/commit/2ff3df77f962dbcc4332cd198a4ff89a67e5f0a1))
+
+### Fixes
+
+- **ui**: the Hub page starts from its QR code, and dead or misleading controls work or are gone ([e48618b6](https://github.com/meshsat/meshsat-android/commit/e48618b6400118a2e255670960abf9063b7a9d08))
+- **ui**: no crash when the radios appear while a screen is open ([0787b587](https://github.com/meshsat/meshsat-android/commit/0787b587ad25c3d6b5e57042c0d217236f522579))
+- **sms**: SMS works on phones with Android 8 to 12 ([75cdff2f](https://github.com/meshsat/meshsat-android/commit/75cdff2f3123eec753f19e0fbfae2f8817369f07))
 
 ## v2.12.0 (2026-09-19)
 
