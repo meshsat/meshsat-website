@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 696
+  unreleased_count: 697
   unreleased_since: "2026-09-19"
   unreleased_anchor: "unreleased-main-last-change-2026-09-19"
 ---
@@ -24,6 +24,7 @@ it goes live.
 
 ### Features
 
+- **bridge**: the Hub tells a bridge when it has an MO from one of its modems ([a9d5df02](https://github.com/meshsat/meshsat-hub/commit/a9d5df02d21e29f102d9bb901d4b1afc290ec448))
 - **monitoring**: log-based security alerts for the Loki ruler ([f3232348](https://github.com/meshsat/meshsat-hub/commit/f3232348f280476147d38112aa5ad2c1f0a0e3c1))
 - **monitoring**: alert when a request budget refuses traffic ([c18deb7a](https://github.com/meshsat/meshsat-hub/commit/c18deb7a348badb2ab548833cba1a1e868050144))
 - **api**: request budgets on every authenticated route and the capability URLs; opaque 500s ([a5a6dc31](https://github.com/meshsat/meshsat-hub/commit/a5a6dc3192ee6fe647d9f4655b05c4ab3bfa0bb0))
