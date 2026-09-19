@@ -79,3 +79,44 @@
 .dark .custom-block.danger a:hover > code {
   color: #FF9AA6;
 }
+
+/**
+ * Screenshots (MESHSAT-1251).
+ *
+ * Hub and Android screens are dark UI on whatever theme the reader has, so each
+ * one gets a hairline and the card radius to sit as an object on the page.
+ * Phone screens go in a `.phone-shots` grid (markdown images inside a div, so
+ * verify-docs still checks every path): one to three across at a phone's
+ * width, never blown up to the full column, with the paragraph text under
+ * each image acting as its caption.
+ */
+.vp-doc img[src^="/images/hub/"],
+.vp-doc img[src^="/images/android/"] {
+  display: block;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+}
+
+.vp-doc img[src^="/images/hub/"] {
+  margin: 20px 0;
+}
+
+.vp-doc .phone-shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 240px));
+  gap: 16px 24px;
+  margin: 20px 0;
+}
+
+.vp-doc .phone-shots > p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc .phone-shots img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}

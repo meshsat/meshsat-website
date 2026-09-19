@@ -16,7 +16,7 @@ curl -X POST https://hub.meshsat.net/api/auth/keys \
   -d '{"label": "CI pipeline", "role": "admin"}'
 ```
 
-Response includes the key once — store it securely:
+The response includes the key once. Store it securely:
 
 ```json
 {
