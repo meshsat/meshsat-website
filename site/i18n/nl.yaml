@@ -215,7 +215,7 @@ plans_airtime:
 plans_keeps:
   other: "Een geregistreerd apparaat blijft werken op elk abonnement. Een kleiner abonnement stopt alleen het toevoegen van nieuwe, en een SOS wordt nooit geraakt."
 and_p:
-  other: "Een telefoon als zelfstandige gateway, zonder Pi en zonder kabels. Hij praat met een Meshtastic-radio over Bluetooth LE, met een Iridium-modem over Bluetooth SPP, en gebruikt de eigen sms van de telefoon, alles tegelijk. Dezelfde versleuteling en berichtformaten als de Bridge."
+  other: "Een gewone Android-telefoon wordt de gateway, zonder Pi. Gekoppeld aan een MeshSat-node op zakformaat bereikt één Bluetooth-verbinding zowel de meshradio als het Iridium-modem, en de eigen simkaart van de telefoon voegt sms toe. Satellietberichten wachten in een wachtrij op de volgende overgang, die de telefoon zonder internet voorspelt."
 and_cta:
   other: "Android-broncode"
 cta_title:
@@ -363,7 +363,7 @@ fab_future:
 fab_cap:
   other: "Dragers boven, integraties onder, één router ertussen: een regel kan van elke adapter naar elke andere routeren. Gestippeld staat op de roadmap en is niet gebouwd."
 host_lead:
-  other: "De Hub beheert veel bridges vanaf één plek: accounts met rollen, API-sleutels, SOS-escalatieketens en een auditlog waarin elke wijziging zichtbaar is. De code is in beide gevallen dezelfde. Wat verschilt is wie hem draait en hoeveel apparaten je kunt registreren."
+  other: "De controlekamer voor elke kit, telefoon en zaknode die je gebruikt: één kaart, elk bericht, de routes tussen netwerken, en wie er gebeld wordt als iemand op SOS drukt. De kits hebben hem nooit nodig om een bericht door te geven. De code is in beide gevallen dezelfde; wat verschilt is wie hem draait en hoeveel apparaten je kunt registreren."
 host_k_devices:
   other: "Apparaten en bridges"
 host_k_account:
@@ -373,6 +373,22 @@ host_v_account:
 host_k_runs:
   other: "Draait als"
 host_v_runs:
-  other: "één server, een cluster of Kubernetes"
+  other: "één server of Kubernetes"
 host_th_plan:
   other: "Abonnement"
+
+# Hub screens and the Android Home screen (MESHSAT-1251)
+and_cap:
+  other: "Home op een Pixel 9a: elke uitweg, en drie berichten die op een satelliet wachten"
+host_k_ops:
+  other: "Back-ups, updates, beveiliging"
+host_v_ops:
+  other: "zelf te regelen"
+hub_shot1:
+  other: "Routeringsregels: een satellietbericht gaat door naar APRS, MQTT, TAK, webhooks en meldingen, en de ene kit bereikt de andere via sms"
+hub_shot2:
+  other: "Berichten in beide richtingen via Iridium: een antwoord dat je hier typt wordt gecomprimeerd, versleuteld en klaargezet voor de volgende satellietovergang"
+hub_shot3:
+  other: "Een eigen TAK-server: mensen die je toevoegt zien de vloot in ATAK, WinTAK of iTAK"
+hub_shots_note:
+  other: "Dezelfde schermen op jouw server of op de onze. Vastgelegd op hub.meshsat.net op 19 september 2026, met telefoonnummers en IMEI's onscherp gemaakt."

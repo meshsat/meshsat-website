@@ -233,7 +233,7 @@
             (dict "file" "bridge-spectrum-waterfall-2026-09" "cap" "cap3")
             (dict "file" "bridge-zigbee-sensor-2026-09" "cap" "cap4")
         }}
-        <div class="screenshots-grid">
+        <div class="screenshots-grid" data-shots>
             {{ range $i, $s := $shots }}
             <figure class="screenshot-card">
                 <button type="button" class="shot-open" data-full="/images/screenshots/{{ $s.file }}@2x.webp" aria-labelledby="shot-cap-{{ $i }}" aria-describedby="shot-hint">
@@ -334,10 +334,16 @@
                     </div>
                     <pre class="term-log" tabindex="0" role="region" aria-label="{{ i18n "term_log_label" }}"><span class="ok">[OK]</span>    Running as root
 <span class="ok">[OK]</span>    Architecture: aarch64
+<span class="ok">[OK]</span>    Created /meshsat/data
+<span class="ok">[OK]</span>    Generated /meshsat/docker-compose.yml
+<span class="ok">[OK]</span>    Image pulled
 <span class="ok">[OK]</span>    MeshSat Bridge started
 
   Dashboard:  <span class="t">http://192.168.4.20:6050</span>
-  USB devices will be auto-detected.</pre>
+  Data dir:   /meshsat/data
+
+  USB devices will be auto-detected.
+  Plug in your Meshtastic radio or satellite modem.</pre>
                 </div>
                 <div class="artifact-foot term-foot">
                     <div class="hero-actions">
@@ -351,8 +357,16 @@
 
             <div class="artifact">
                 <div class="artifact-head"><h3>MeshSat Android</h3></div>
-                <div class="artifact-body">
+                <div class="artifact-body and-body" data-shots>
                     <p>{{ i18n "and_p" }}</p>
+                    {{/* The Home screen, cropped above the SOS card, which is the
+                         old design (MESHSAT-1249 replaces it). */}}
+                    <figure class="and-shot">
+                        <button type="button" class="shot-open" data-full="/images/screenshots/android-home-2026-09@2x.webp" aria-labelledby="and-shot-cap" aria-describedby="shot-hint">
+                            <img src="/images/screenshots/android-home-2026-09.webp" alt="" loading="lazy" width="480" height="771">
+                        </button>
+                        <figcaption id="and-shot-cap">{{ i18n "and_cap" }}</figcaption>
+                    </figure>
                 </div>
                 <div class="artifact-foot term-foot">
                     <div class="hero-actions">
@@ -380,6 +394,25 @@
             <p class="section-subtitle">{{ i18n "host_lead" }}</p>
         </div>
 
+        {{/* The Hub itself (MESHSAT-1251), above both cards because the screens
+             are the same whichever server runs them. Its own lightbox set. */}}
+        {{ $hubShots := slice
+            (dict "file" "hub-routing-2026-09" "cap" "hub_shot1")
+            (dict "file" "hub-messages-2026-09" "cap" "hub_shot2")
+            (dict "file" "hub-tak-2026-09" "cap" "hub_shot3")
+        }}
+        <div class="screenshots-grid hub-shots" data-shots>
+            {{ range $i, $s := $hubShots }}
+            <figure class="screenshot-card">
+                <button type="button" class="shot-open" data-full="/images/screenshots/{{ $s.file }}@2x.webp" aria-labelledby="hub-shot-cap-{{ $i }}" aria-describedby="shot-hint">
+                    <img src="/images/screenshots/{{ $s.file }}.webp" alt="" loading="lazy" width="1280" height="720">
+                </button>
+                <figcaption id="hub-shot-cap-{{ $i }}">{{ i18n $s.cap }}</figcaption>
+            </figure>
+            {{ end }}
+        </div>
+        <p class="hub-shots-note">{{ i18n "hub_shots_note" }}</p>
+
         <div class="host-bench">
             <div class="artifact">
                 <div class="artifact-head"><span>meshsat-hub</span><span>Apache 2.0</span></div>
@@ -391,6 +424,7 @@
                         <div><dt>{{ i18n "host_th_cost" }}</dt><dd>{{ i18n "host_self_price" }}</dd></div>
                         <div><dt>{{ i18n "host_k_account" }}</dt><dd>{{ i18n "host_v_account" }}</dd></div>
                         <div><dt>{{ i18n "host_k_runs" }}</dt><dd>{{ i18n "host_v_runs" }}</dd></div>
+                        <div><dt>{{ i18n "host_k_ops" }}</dt><dd>{{ i18n "host_v_ops" }}</dd></div>
                     </dl>
                 </div>
                 <div class="artifact-foot term-foot">
