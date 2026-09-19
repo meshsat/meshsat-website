@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 79
-  latest_tag: "v2.14.4"
+  tags: 80
+  latest_tag: "v2.14.5"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v2144-2026-09-19"
+  latest_tag_anchor: "v2145-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.14.5 (2026-09-19)
+
+### Fixes
+
+- **iridium**: the satellite signal is what the modem can actually hear ([32a126a3](https://github.com/meshsat/meshsat-android/commit/32a126a3a687de42a7040594f20426626dfacf33))
 
 ## v2.14.4 (2026-09-19)
 
