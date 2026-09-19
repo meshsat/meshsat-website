@@ -88,4 +88,6 @@ Then set it up like any Meshtastic node, with the Meshtastic app or CLI: your re
 
 ## Pair with MeshSat Android
 
-MeshSat Android 2.9 or later finds the node by its Iridium service, so the node's name does not matter. Pair it with your fixed PIN when the phone asks. While the app is connected it owns the modem, and it reconnects and takes the modem back by itself after the link drops. On v1 the modem answers about 10 seconds after power-up; the app keeps asking until it does.
+In MeshSat Android 2.9.10 or later, open Settings, tap **Scan for Meshtastic devices**, and tap **Connect** next to your node. The scan lists every Meshtastic device in range, so pick the node by its name: v0 advertises as `MSIR_` followed by four hex digits. Pair with your fixed PIN when the phone asks.
+
+With **Use the node's modem** on (the default), the app takes the modem while it is connected. After a restart it reconnects to the same node and takes the modem back by itself. **Disconnect** in Settings stops that until you connect again. On v1 the modem answers about 10 seconds after power-up, and the app keeps asking until it does.
