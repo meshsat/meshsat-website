@@ -4,13 +4,13 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 77
-  latest_tag: "v2.14.2"
+  tags: 78
+  latest_tag: "v2.14.3"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v2142-2026-09-19"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  latest_tag_anchor: "v2143-2026-09-19"
+  unreleased_count: 1
+  unreleased_since: "2026-09-19"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-19"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,7 +23,13 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-09-19)
+
+### Fixes
+
+- **iridium**: a satellite message is sent once, and goes as soon as the modem sees a satellite ([cbb35982](https://github.com/meshsat/meshsat-android/commit/cbb35982313c6f7faa93bc70d22371b8e4331d64))
+
+## v2.14.3 (2026-09-19)
 
 No user-facing changes (1 commits of other types).
 
