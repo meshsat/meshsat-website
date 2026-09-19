@@ -14,6 +14,8 @@ MeshSat Android is a standalone mobile gateway app that turns any Android phone 
 
 All three transports run simultaneously. The rules engine decides which messages go where.
 
+From version 2.9, the app can also use a [MeshSat node](/node/) instead of the HC-05 and a separate Meshtastic radio. The node carries both radios in one small box, and the app reaches the mesh and the satellite modem over a single Bluetooth connection.
+
 ## Key features
 
 ### Encrypted SMS bridge
@@ -23,7 +25,7 @@ Bridge two isolated LoRa mesh networks over cellular:
 [Mesh A] --LoRa--> [MeshSat Pi] --encrypted SMS--> [MeshSat Android] --BLE--> [Mesh B]
 ```
 
-The cellular link is AES-256-GCM encrypted — the carrier sees only ciphertext. Both the Pi Bridge and Android app share the same encryption codec.
+The cellular link is AES-256-GCM encrypted: the carrier sees only ciphertext. Both the Pi Bridge and Android app share the same encryption codec.
 
 ### MSVQ-SC semantic compression
 On-device ONNX Runtime encoder achieves 92% compression on typical field messages. Critical for Iridium SBD's 340-byte limit.

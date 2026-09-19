@@ -22,6 +22,9 @@ features:
     details: Fleet management for many bridges, hosted at hub.meshsat.net. Live map, SOS escalation, routing and audit across your whole fleet. Free for four devices.
   - title: Android
     details: A phone as a standalone gateway with no Pi and no cables. Meshtastic over Bluetooth LE, an Iridium modem over Bluetooth SPP, and the phone's own SMS, all at once.
+  - title: Node
+    details: A pocket-sized box with a Meshtastic LoRa radio and a RockBLOCK Iridium modem, reached by MeshSat Android over one Bluetooth connection. A prototype, tested on the bench.
+    link: /node/
   - title: Every bearer in one router
     details: Meshtastic, ZigBee, Iridium SBD and IMT, cellular, MQTT, webhooks, APRS, TAK, Reticulum TCP and direct serial. Messages arrive on any of them and leave by any other.
   - title: Policy-driven routing
