@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 56
-  latest_tag: "v2.8.7"
+  tags: 57
+  latest_tag: "v2.9.0"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v287-2026-09-19"
+  latest_tag_anchor: "v290-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,17 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.9.0 (2026-09-19)
+
+### Features
+
+- **iridium**: the RockBLOCK 9603 runs through the MeshSat node's BLE pipe, replacing HC-05 ([36742452](https://github.com/meshsat/meshsat-android/commit/36742452819d1dccf03e9dc79ec18faa38c34b2b))
+- **app**: the app is now net.meshsat.android ([66620b9a](https://github.com/meshsat/meshsat-android/commit/66620b9a27c7f2573e541de3e9a8b9e35cf21074))
+
+### Fixes
+
+- **mesh**: talk to real Meshtastic firmware over BLE ([8492b286](https://github.com/meshsat/meshsat-android/commit/8492b286337ce92f0fe89efbbeb436ad12329053))
 
 ## v2.8.7 (2026-09-19)
 
