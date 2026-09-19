@@ -17,8 +17,11 @@ Setup: node, satellite, Hub and SMS, each with where it stands.
 2. Let your browser or file manager install unknown apps. Android asks the first time.
 3. Open the APK and tap **Install**. Play Protect may warn about an unknown developer, because the
    app is not on the Play Store: tap **More details**, then **Install anyway**.
-4. Open MeshSat and allow Bluetooth, location, SMS and notifications. Android needs location for
-   Bluetooth scanning.
+4. Open MeshSat. A welcome page says what each permission is for before Android asks: nearby
+   devices (Bluetooth), location and notifications. Android needs location for Bluetooth scanning.
+   SMS is asked for later, in Setup > SMS.
+
+Until the steps below are done, Home keeps a **Getting started** list of them, each one tap away.
 
 You need Android 8.0 or later.
 
@@ -66,24 +69,36 @@ hardware.
 ## Hub (optional)
 
 The Hub is where the phone reports and where satellite messages land. In Setup > Hub, tap
-**Scan Hub Provision QR** and scan the QR code from the Hub (see
+**Scan the Hub's QR code** and scan the QR code from the Hub (see
 [Connect a bridge](/hub/connect-a-bridge)). That sets the Hub address, the credentials and the
 client certificate in one go, and the phone appears in the Hub's fleet like a field kit.
 
 <div class="phone-shots">
 
-![Hub: connected, with Ping Hub, Scan Hub Provision QR, the connection fields blurred, and Hub relay to a kit switched on](/images/android/hub.webp)
+![Hub: connected, with Scan the Hub's QR code first, Test the connection, and the fields folded under Connection details; the bridge id blurred](/images/android/hub-2-13.webp)
 Hub: connected, provisioned from the Hub's QR code.
 
 </div>
 
-**Hub relay to a kit** is a fallback: when a field kit cannot be reached directly, the app
-reaches it through the Hub.
+Everything the QR code fills in is under **Connection details**, for setting it up by hand.
+**Reach a kit through the Hub**, also there, is a fallback: when a field kit cannot be reached
+directly, the app reaches it through the Hub. It stays off until you enter the kit's bridge ID.
 
 ## SMS
 
-In Setup > SMS, tap **Allow SMS** and fill in the **Kit phone number**. SOS texts go to that
-number too.
+In Setup > SMS, tap **Allow SMS** and fill in the **Kit phone number**.
+
+## Emergency contacts
+
+In Setup > Safety, add the people an SOS goes to by SMS, each with the country code, then tap
+**Test the alarm** to see every route work. See [Safety](/android/safety).
+
+## Keep it running
+
+The gateway runs in the background, so the phone keeps relaying with the screen off. To have it
+start again by itself after a phone restart or an app update, switch on **Start after a phone
+restart** in Setup > Advanced > Diagnostics. It is off by default. Android gives the app your
+position only once you have opened it after a restart.
 
 ## Send something
 
