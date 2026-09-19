@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 65
-  latest_tag: "v2.9.8"
+  tags: 66
+  latest_tag: "v2.9.9"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v298-2026-09-19"
+  latest_tag_anchor: "v299-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.9.9 (2026-09-19)
+
+### Fixes
+
+- **iridium**: a modem notice no longer stalls the satellite queue ([069d7215](https://github.com/meshsat/meshsat-android/commit/069d7215a1ca377f3d682ed593aa7a18a0de9edb))
 
 ## v2.9.8 (2026-09-19)
 
