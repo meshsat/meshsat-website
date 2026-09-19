@@ -215,7 +215,7 @@ plans_airtime:
 plans_keeps:
   other: "Ein registriertes Gerät funktioniert in jedem Tarif weiter. Ein kleinerer Tarif verhindert nur neue Registrierungen, ein SOS ist nie betroffen."
 and_p:
-  other: "Ein Telefon als eigenständiges Gateway, ohne Pi und ohne Kabel. Es spricht mit einem Meshtastic-Funkgerät über Bluetooth LE, mit einem Iridium-Modem über Bluetooth SPP und nutzt die eigene SMS des Telefons, alles gleichzeitig. Gleiche Verschlüsselung und gleiche Nachrichtenformate wie die Bridge."
+  other: "Ein gewöhnliches Android-Telefon wird zum Gateway, ohne Pi. Gekoppelt mit einem MeshSat-Node im Taschenformat erreicht eine einzige Bluetooth-Verbindung sowohl das Mesh-Funkgerät als auch das Iridium-Modem, und die eigene SIM-Karte des Telefons ergänzt SMS. Satellitennachrichten warten in einer Warteschlange auf den nächsten Überflug, den das Telefon ohne Internet vorhersagt."
 and_cta:
   other: "Android-Quellcode"
 cta_title:
@@ -363,7 +363,7 @@ fab_future:
 fab_cap:
   other: "Träger oben, Integrationen unten, ein Router dazwischen: Eine Regel kann von jedem Adapter zu jedem anderen routen. Gestrichelt steht auf der Roadmap und ist nicht gebaut."
 host_lead:
-  other: "Der Hub verwaltet viele Bridges an einem Ort: Konten mit Rollen, API-Schlüssel, SOS-Eskalationsketten und ein Auditlog, in dem jede Änderung sichtbar wird. Der Code ist in beiden Fällen derselbe. Es ändert sich nur, wer ihn betreibt und wie viele Geräte Sie registrieren können."
+  other: "Die Leitstelle für jedes Kit, jedes Telefon und jeden Taschen-Node, den Sie betreiben: eine Karte, jede Nachricht, die Routen zwischen Netzen und wer angerufen wird, wenn jemand SOS drückt. Die Kits brauchen ihn nie, um eine Nachricht weiterzugeben. Der Code ist in beiden Fällen derselbe; es ändert sich nur, wer ihn betreibt und wie viele Geräte Sie registrieren können."
 host_k_devices:
   other: "Geräte und Bridges"
 host_k_account:
@@ -373,6 +373,22 @@ host_v_account:
 host_k_runs:
   other: "Betrieb als"
 host_v_runs:
-  other: "ein Server, ein Cluster oder Kubernetes"
+  other: "ein Server oder Kubernetes"
 host_th_plan:
   other: "Tarif"
+
+# Hub screens and the Android Home screen (MESHSAT-1251)
+and_cap:
+  other: "Startseite auf einem Pixel 9a: jeder Ausweg, und drei Nachrichten, die auf einen Satelliten warten"
+host_k_ops:
+  other: "Backups, Updates, Sicherheit"
+host_v_ops:
+  other: "Ihre Aufgabe"
+hub_shot1:
+  other: "Routing-Regeln: Eine Satellitennachricht geht weiter an APRS, MQTT, TAK, Webhooks und Benachrichtigungen, und ein Kit erreicht das andere per SMS"
+hub_shot2:
+  other: "Nachrichten in beide Richtungen über Iridium: Eine hier getippte Antwort wird komprimiert, verschlüsselt und für den nächsten Satellitenüberflug eingereiht"
+hub_shot3:
+  other: "Ein eigener TAK-Server: Personen, die Sie hinzufügen, sehen die Flotte in ATAK, WinTAK oder iTAK"
+hub_shots_note:
+  other: "Dieselben Bildschirme auf Ihrem Server oder auf unserem. Aufgenommen auf hub.meshsat.net am 19. September 2026, Telefonnummern und IMEIs unkenntlich gemacht."

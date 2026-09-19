@@ -215,7 +215,7 @@ plans_airtime:
 plans_keeps:
   other: "A device you have registered keeps working on any plan. A smaller plan only stops you adding more, and an SOS is never affected."
 and_p:
-  other: "A phone as a standalone gateway, with no Pi and no cables. It talks to a Meshtastic radio over Bluetooth LE, an Iridium modem over Bluetooth SPP, and uses the phone's own SMS, all at the same time. Same encryption and message formats as the Bridge."
+  other: "An ordinary Android phone becomes the gateway, with no Pi. Paired with a pocket MeshSat node, one Bluetooth link reaches both the mesh radio and the Iridium modem, and the phone's own SIM adds SMS. Satellite messages wait in a queue for the next pass, which the phone predicts with no internet."
 and_cta:
   other: "Android source"
 cta_title:
@@ -363,7 +363,7 @@ fab_future:
 fab_cap:
   other: "Bearers above, integrations below, one router between them: a rule can route from any adapter to any other. Dashed is on the roadmap and not built."
 host_lead:
-  other: "The Hub runs many bridges from one place: accounts with roles, API keys, SOS escalation chains and an audit log that shows any change. The code is the same either way. What changes is who runs it and how many devices you can register."
+  other: "The control room for every kit, phone and pocket node you run: one map, every message, the routes between networks, and who gets called when someone presses SOS. The kits never need it to pass a message. The code is the same either way; what changes is who runs it and how many devices you can register."
 host_k_devices:
   other: "Devices and bridges"
 host_k_account:
@@ -373,6 +373,22 @@ host_v_account:
 host_k_runs:
   other: "Runs as"
 host_v_runs:
-  other: "one server, a cluster or Kubernetes"
+  other: "one server or Kubernetes"
 host_th_plan:
   other: "Plan"
+
+# Hub screens and the Android Home screen (MESHSAT-1251)
+and_cap:
+  other: "Home on a Pixel 9a: every way out, and three messages waiting for a satellite"
+host_k_ops:
+  other: "Backups, upgrades, security"
+host_v_ops:
+  other: "yours to run"
+hub_shot1:
+  other: "Routing rules: a satellite message goes on to APRS, MQTT, TAK, webhooks and notifications, and one kit reaches the other over SMS"
+hub_shot2:
+  other: "Messages both ways over Iridium: a reply typed here is compressed, encrypted and queued for the next satellite pass"
+hub_shot3:
+  other: "A TAK server of your own: people you add see the fleet on ATAK, WinTAK or iTAK"
+hub_shots_note:
+  other: "The same screens on your server or on ours. Captured on hub.meshsat.net on 19 September 2026, with phone numbers and IMEIs blurred."
