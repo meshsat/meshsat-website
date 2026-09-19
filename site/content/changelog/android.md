@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 71
-  latest_tag: "v2.11.1"
+  tags: 72
+  latest_tag: "v2.12.0"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v2111-2026-09-19"
+  latest_tag_anchor: "v2120-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,20 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.12.0 (2026-09-19)
+
+### Features
+
+- **people**: message a node or find it on the map from People; the offline map opens where it has detail ([bdfeb9cc](https://github.com/meshsat/meshsat-android/commit/bdfeb9cc94d39cc741823e40bd5bfc6d8ea33580))
+- **messages**: conversations are with someone, mesh replies reach them, and a new message asks who it is for ([c969402a](https://github.com/meshsat/meshsat-android/commit/c969402a3a289d1ed1512889c4f1c3ff4dbfb679))
+
+### Fixes
+
+- **iridium**: a message that arrives during any satellite session is stored at once ([f943b168](https://github.com/meshsat/meshsat-android/commit/f943b16858cb6eb70b80edf434cecca308a37e77))
+- **map**: the map works off-grid, keeps its space and its zoom, and zones are placed on it ([7b2e159e](https://github.com/meshsat/meshsat-android/commit/7b2e159e3f36d73c18771b8ea6ffdab15885418b))
+- **mesh**: a real mesh topology, correct signal readings, node details, and radio settings that never send what was not read ([2213b095](https://github.com/meshsat/meshsat-android/commit/2213b095f3f2e5e31b71e4b8b9fcebec4d6b6d9f))
+- **ui**: routing rules, the message queue, links and the audit log speak plainly and keep what you set ([a3e31d21](https://github.com/meshsat/meshsat-android/commit/a3e31d21da9e4c3d9b56b85d19965df7ddc62481))
 
 ## v2.11.1 (2026-09-19)
 
