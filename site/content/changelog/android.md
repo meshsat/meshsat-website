@@ -4,13 +4,13 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 60
-  latest_tag: "v2.9.3"
+  tags: 61
+  latest_tag: "v2.9.4"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v293-2026-09-19"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  latest_tag_anchor: "v294-2026-09-19"
+  unreleased_count: 1
+  unreleased_since: "2026-09-19"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-19"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,9 +23,18 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-09-19)
 
-No unreleased changes.
+### Fixes
+
+- **iridium**: a satellite message is queued and retried, never dropped ([0206aa7b](https://github.com/meshsat/meshsat-android/commit/0206aa7b8ad784f257816c97f0e8e00b8fbbcb95))
+
+## v2.9.4 (2026-09-19)
+
+### Features
+
+- **iridium**: a satellite icon with the signal bars in the status bar ([3f29c99a](https://github.com/meshsat/meshsat-android/commit/3f29c99a5a0374ec9610738060fa6995c79252af))
+- **passes**: predict Iridium passes fully offline, from elements shipped in the app ([f2445dee](https://github.com/meshsat/meshsat-android/commit/f2445dee6c875bdbaca74098f6d6432c4b4c8952))
 
 ## v2.9.3 (2026-09-19)
 
