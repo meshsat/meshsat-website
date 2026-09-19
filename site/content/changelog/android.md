@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 57
-  latest_tag: "v2.9.0"
+  tags: 58
+  latest_tag: "v2.9.1"
   latest_tag_date: "2026-09-19"
-  latest_tag_anchor: "v290-2026-09-19"
+  latest_tag_anchor: "v291-2026-09-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.9.1 (2026-09-19)
+
+### Fixes
+
+- **mesh**: keep protobuf field names in release builds, so the Meshtastic sync runs ([f38b1480](https://github.com/meshsat/meshsat-android/commit/f38b1480b766246aea68c4078f907865ecbddb2d))
 
 ## v2.9.0 (2026-09-19)
 

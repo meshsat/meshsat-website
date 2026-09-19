@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 695
-  unreleased_since: "2026-09-18"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-18"
+  unreleased_count: 696
+  unreleased_since: "2026-09-19"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-19"
 ---
 
 Generated from the commit history of
@@ -20,7 +20,7 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-18)
+## Unreleased (main, last change 2026-09-19)
 
 ### Features
 
@@ -361,6 +361,7 @@ it goes live.
 
 ### Fixes
 
+- **auth**: the owner can provision a bridge by QR again ([20548d5a](https://github.com/meshsat/meshsat-hub/commit/20548d5a2cd2ec30a2f65d9e79e97009425b1380))
 - **k8s**: let ingress-nginx reach the basemap, so the map loads and shows streets again ([24d6c481](https://github.com/meshsat/meshsat-hub/commit/24d6c4819aaf5217a50e98ce012f9a1be80a20b4))
 - **auth**: the sign-up page no longer flashes authentik's stock background ([7b747fb8](https://github.com/meshsat/meshsat-hub/commit/7b747fb87908ae98e40bc2f9541eb14ffc5f7f3e))
 - **nats**: routes speak TLS from the internal CA, second attempt after the offline reproduction ([e2745ee9](https://github.com/meshsat/meshsat-hub/commit/e2745ee95a51d21576fe1ecfb1057ff0ae2b71d3))
