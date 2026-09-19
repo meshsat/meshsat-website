@@ -20,6 +20,7 @@ export default defineConfig({
       { text: 'Bridge', link: '/guide/getting-started' },
       { text: 'Hub', link: '/hub/' },
       { text: 'Android', link: '/android/' },
+      { text: 'Node', link: '/node/' },
       { text: 'Reference', link: '/api/' },
       { text: 'Changelog', link: 'https://meshsat.net/changelog/' },
       { text: 'Status', link: 'https://status.meshsat.net' },
@@ -90,6 +91,17 @@ export default defineConfig({
           text: 'Android',
           items: [
             { text: 'Overview', link: '/android/' },
+          ],
+        },
+      ],
+
+      '/node/': [
+        {
+          text: 'Node',
+          items: [
+            { text: 'Overview', link: '/node/' },
+            { text: 'Build a node', link: '/node/build' },
+            { text: 'Iridium Bluetooth service', link: '/node/iridium-ble' },
           ],
         },
       ],
