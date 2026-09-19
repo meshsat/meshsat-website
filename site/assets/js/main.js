@@ -187,6 +187,7 @@ function playVideo(btn) {
         var tw = Number(thumb.getAttribute('width')) || thumb.naturalWidth;
         var th = Number(thumb.getAttribute('height')) || thumb.naturalHeight;
         dlg.classList.toggle('is-portrait', th > tw);
+        if (tw && th) dlg.style.setProperty('--shot-ratio', String(tw / th));
         big.src = thumb.currentSrc || thumb.src;
         big.alt = text;
         caption.textContent = text;
