@@ -49,6 +49,7 @@ How to put one together, wire it and flash it: [Build a node](/node/build).
 | Iridium modem over the same Bluetooth link (v0) | Verified on the bench, 19 September 2026: AT commands, and a binary loopback of up to 270 bytes |
 | A satellite message out, from the Hub through the phone and the node | One message delivered, 19 September 2026 |
 | A satellite message in, fetched by the app after a ring alert | One message received, 19 September 2026 |
+| The app reconnecting after its own restart and taking the modem back | Verified 19 September 2026. Recovery from a drop mid-session (node power-cycled, out of range) uses the same code but **has not been exercised yet** |
 | v1 on the T-Beam Supreme | Firmware builds. **Not run on hardware yet** |
 | Routing on the node with no phone connected | **Not built yet** |
 | Battery life | **Not measured** |
