@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 1147
-  unreleased_since: "2026-09-17"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-17"
+  unreleased_count: 1211
+  unreleased_since: "2026-09-18"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-18"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,10 +28,36 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-17)
+## Unreleased (main, last change 2026-09-18)
 
 ### Features
 
+- **tools**: name the cross-section carrying a factor, solve six of them, and board B's inner pairs read 140 ohm against 100 ([68a53f41](https://github.com/meshsat/meshsat-fieldkit/commit/68a53f41fd9c04a250e527ed82c91ecc4d9eb94e))
+- **tools**: place the barrels a transition needs, and suggest the line each site would take ([a6408178](https://github.com/meshsat/meshsat-fieldkit/commit/a6408178de823cf450e2ba2edb54856bf02ee1f5))
+- **tools**: the barrel count a current needs is arithmetic, and a short stitch refuses the board ([98c3bfd8](https://github.com/meshsat/meshsat-fieldkit/commit/98c3bfd8932002f4c60ef8b39abf3b347d30bcae))
+- **pcb-e**: answer PI-003 on board E, two barrels at the fuse crossing and a 0.7 mm hole at the dock block ([a5371fe3](https://github.com/meshsat/meshsat-fieldkit/commit/a5371fe338f779ddf82dd15e572f1748449e4dd4))
+- **tools**: barrel\_sites, the map a PI-003 failure hands to whoever draws the copper; board D has two over-rated barrels, not one ([54b0cc0b](https://github.com/meshsat/meshsat-fieldkit/commit/54b0cc0bf43a369209ddd32e00d52fab19907ec1))
+- **rules**: give the stackup rule its own instrument, since a pair measurement of zero pairs was crediting three boards ([55a9c838](https://github.com/meshsat/meshsat-fieldkit/commit/55a9c83841a7c4fbc68640e347d88d8c1d961f29))
+- **pcb-d**: answer PI-003 with three parallel barrels at the one transition the mesh puts over its rating ([fb42ab4f](https://github.com/meshsat/meshsat-fieldkit/commit/fb42ab4f2a4202ec0568cdf37f0f42676cf2c59a))
+- **ecad**: board E's Kelvin filter resistors take fixed seats at the shunt, E18 measures it ([b70c7f9d](https://github.com/meshsat/meshsat-fieldkit/commit/b70c7f9d696f07ecbd6c2bd74d269feb31ac85fd))
+- **rules**: ANA-001 carries its datasheet sources and says a declared node is the one behind the filter; its readings re-taken on four boards ([d4cb62fb](https://github.com/meshsat/meshsat-fieldkit/commit/d4cb62fbc3839c95193b00027e12392e685f9821))
+- **ecad**: board E's sense filter capacitor is declared at its controller pin; the corrected ANA-001 reading on E17 is two real runs ([89241c88](https://github.com/meshsat/meshsat-fieldkit/commit/89241c8851d22ac7995d7ba5dbd44f95e82ba16b))
+- **ecad**: board A's five converter stages get the Kelvin current-sense ground and the 100 R / 1 nF filter the LM5176 datasheet asks for; a sensitive node may not be a power terminal ([1977ccce](https://github.com/meshsat/meshsat-fieldkit/commit/1977ccce10485b4b08c9e06205f51d4c0866942b))
+- **ecad**: board E adopts E17 (0 hard, 0 unrouted, refused only by decision 31); routeflow reads the finish's own gate before choosing a remedy ([bed211b6](https://github.com/meshsat/meshsat-fieldkit/commit/bed211b69c7a794814d1ff080879c4a19c7dab8c))
+- **ecad**: board E's bootstrap capacitor C30 is declared as U12 pin 6 decoupling, E17 routes it; A46 is board A as the partition ([1046f15f](https://github.com/meshsat/meshsat-fieldkit/commit/1046f15f96fb5688744fec93bef162523f731bb1))
+- **gen**: board E's hot-swap output DC\_HS in three locked B.Cu bands from Q7's source pads to L2 pin 1 (E14) ([a291a268](https://github.com/meshsat/meshsat-fieldkit/commit/a291a2688082edb1078332c6cf2c87d5051cd6da))
+- **evidence**: every phase directory carries its proved pre-route snapshot and the sweep judges PLC-001 on it, carried only after the footprints are proved the routed board's ([8c691891](https://github.com/meshsat/meshsat-fieldkit/commit/8c691891690e96829816327110c97c7fb125766b))
+- **gen**: board D's power-class via is 1.2/0.6 from D13, rated 1.19 A where +5V\_SA puts 1.10 A through one 0.4 mm barrel (PI-003) ([8c6a28a2](https://github.com/meshsat/meshsat-fieldkit/commit/8c6a28a2ac807c320a97849293336f0240b12e16))
+- **boards**: widen trials declared for B22's finish (nine rails B21's density reading names) and E12's (CELL\_F), each a DRC-decided trial in place ([fbb6fd7c](https://github.com/meshsat/meshsat-fieldkit/commit/fbb6fd7c0d1fc749c6f664db4b0ed11646484b3f))
+- **tools**: via\_parallel lays parallel barrels beside a via the solved mesh puts over its wall's rating (PI-003's fixer), a finish stage on every board ([b3aafe08](https://github.com/meshsat/meshsat-fieldkit/commit/b3aafe0884001bf52a9eb6d621cfb8e9d1f88d84))
+- **ecad**: adopt B21: the board, its schematic and its regenerated netlist together; the contract gate reads PASS of 72; dc\_drop has its fixture pair ([f2541bea](https://github.com/meshsat/meshsat-fieldkit/commit/f2541bea6e3a512e7448fdcbc05c558f98f2178f))
+- **pcb-e**: the tracker's switching nodes take an SW class of their own, so the class-pair rule names them ([24079f0f](https://github.com/meshsat/meshsat-fieldkit/commit/24079f0f875b2737bccb3ca5b0aec53d1ebde9ee))
+- **pcb-d,pcb-p**: the declared sensitive nets take the SENSE class on D and P as well ([422998a8](https://github.com/meshsat/meshsat-fieldkit/commit/422998a873e211d02d0cedf84ee1eb7b4872ce48))
+- **pcb-e**: board E's two declared sensitive nets take a SENSE class ahead of the power patterns ([590a9357](https://github.com/meshsat/meshsat-fieldkit/commit/590a93579271199e8fb6d64f20e2a07e42a0719b))
+- **pcb-a**: the declared sensitive nets take a SENSE class of their own, ahead of the switching patterns ([a9ef5cb9](https://github.com/meshsat/meshsat-fieldkit/commit/a9ef5cb916d192b3c500c2c323d165bdaa9e39d7))
+- **tools**: FR\_CLASS\_CLEAR writes a class-pair clearance into the DSN, the instrument ANA-001 was missing ([7ae80a15](https://github.com/meshsat/meshsat-fieldkit/commit/7ae80a15bbc755f6028ece99374ad64f1490b2b4))
+- **tools**: thermal\_pads.py, every exposed pad and whether a via of its net sits in it ([5e4723ce](https://github.com/meshsat/meshsat-fieldkit/commit/5e4723cea658a992b315655bf1a62a6c628b7bce))
+- **rules**: SCH-005, every pad of a part's land carries a net or a declared no-connect ([c26bb454](https://github.com/meshsat/meshsat-fieldkit/commit/c26bb454949468adda9bee591de4a4fb5d15e137))
 - **tools**: the finish blocks on a safety line that does not hold its safe state ([2bade3d6](https://github.com/meshsat/meshsat-fieldkit/commit/2bade3d697ecd2eeab65998cb18dc332ebabc097))
 - **rules**: a board may declare that no interface of its own carries a target ([dd44173c](https://github.com/meshsat/meshsat-fieldkit/commit/dd44173c91abb59659beb7ed0836a8eb0e305a1b))
 - **rules**: board E5 can answer a question at last, and a board with no netlist is not a board nobody looked at ([68b57fe1](https://github.com/meshsat/meshsat-fieldkit/commit/68b57fe14c7b12443c3e33e6f948d046fe569bb9))
@@ -466,6 +492,44 @@ appear below.
 
 ### Fixes
 
+- **tools**: the stripline caution counts its own table, and the impedance rules get their own file ([e392598b](https://github.com/meshsat/meshsat-fieldkit/commit/e392598bf372d88c4bc482e79ecd8cad467bf982))
+- **tools**: a site whose barrel is the generator's own gets a different instruction, and co-located sites are one transition ([81576780](https://github.com/meshsat/meshsat-fieldkit/commit/81576780ebb28245de12099c21e12da8821b9a73))
+- **tools**: the suggested axis is the one measured to keep the most room, not the larger displacement ([087a822b](https://github.com/meshsat/meshsat-fieldkit/commit/087a822b068ba3627de19a906c33940e8e8daa30))
+- **tools**: a stitch knows its own pitch and its own drill, so it refuses two holes too close ([e7d74629](https://github.com/meshsat/meshsat-fieldkit/commit/e7d746290bd8e226658d7cefe7d84e8bebb4dbae))
+- **pcb-e**: the wider hole is the dock block's alone, the source cluster's 0.8 mm pitch cannot take it ([cc5bd7fc](https://github.com/meshsat/meshsat-fieldkit/commit/cc5bd7fc9171708dfe7179b5ebb253ac07ee6dad))
+- **tools**: name every barrel over its rating, not only each rail's worst ([1cd33a02](https://github.com/meshsat/meshsat-fieldkit/commit/1cd33a02a3bf0274fcde38f20a4c995e04cc3b74))
+- **rules**: the transmit inhibit chain gets its own verdict, so a pack polarity can no longer fail it ([6b6cc196](https://github.com/meshsat/meshsat-fieldkit/commit/6b6cc196baa37c3754a535126da1e5480b21ff73))
+- **rules**: a verdict that decides several rules says what it measures for each of them ([6be63248](https://github.com/meshsat/meshsat-fieldkit/commit/6be632480890fb357a00138c05c083c2faffd0eb))
+- **rules**: the routed-board gate decides the route, not whether the fabricator can make the board ([3dc86a3c](https://github.com/meshsat/meshsat-fieldkit/commit/3dc86a3c28cfcd642e48d88dba1b5c64e3e39026))
+- **ecad**: board E's Kelvin seats move to the clear row, the placed board reads hard 0 ([71f4d95f](https://github.com/meshsat/meshsat-fieldkit/commit/71f4d95f0bcbf2645d22efe284154b9555487b6b))
+- **tools**: every deciding gate in the coverage map leaves a reading when it raises, and a netlist-only sensitive-node reading is inconclusive ([07e53438](https://github.com/meshsat/meshsat-fieldkit/commit/07e5343892ced8aff0f1d3271faaa4a648124810))
+- **ecad**: board D's power via returns to 0.8/0.4, the wide one cost nine connections to answer an advisory rule ([425bc23e](https://github.com/meshsat/meshsat-fieldkit/commit/425bc23eedd158eea89ef25c7a360ff4c67c224d))
+- **tools**: hardset carries the crash guard under its label's verdict name, the last gate without one ([bdecf5ee](https://github.com/meshsat/meshsat-fieldkit/commit/bdecf5ee744293e87f634ccf6faa9aa9c46144f1))
+- **tools**: a partition group that does not import stops the chain instead of merging a board without it ([5c392b10](https://github.com/meshsat/meshsat-fieldkit/commit/5c392b10668f21229401c8e2abf86c1977a4334d))
+- **tools**: the partition's stage two re-partitions with the caller's regions; the DSN class-pair clearance is measured and refused on E17 ([9bfe3bc5](https://github.com/meshsat/meshsat-fieldkit/commit/9bfe3bc51df9aa4d99c1b23f6dacb1a32638576c))
+- **ecad**: the Default class row comes from one tuple in the A and B generators too; E and P record the class-table finding ([78f3a40d](https://github.com/meshsat/meshsat-fieldkit/commit/78f3a40dd7445c5bbc1d04170366ba56ea97fb4a))
+- **ecad**: one net-class table per generator feeds both the board and the project file (D13 was routed with the 0.8/0.4 via, B22 its panel rail at 0.25 mm); the partition import removes tracks without staling the board; via\_parallel reaches past 3 mm ([82e893fc](https://github.com/meshsat/meshsat-fieldkit/commit/82e893fc2f37ad42601427301c93edc79bb3163a))
+- **tools**: the nine module-level gates install a crash hook that writes INCONCLUSIVE naming the exception ([2750eb8d](https://github.com/meshsat/meshsat-fieldkit/commit/2750eb8dda1e7adffd1d55c2841c82681aeca634))
+- **gen**: board E's DC\_HS band is one zone from three rectangles; three same-net bands at one priority read zones\_intersect at their corners ([dfa354dc](https://github.com/meshsat/meshsat-fieldkit/commit/dfa354dc052b51aeec6310a9725e54804a408cfa))
+- **tools**: the partition merge, the plain route and the continuation restore via drills from their sessions too ([be210a35](https://github.com/meshsat/meshsat-fieldkit/commit/be210a350b26c779d649dc4d7d49ad770ae5e2ab))
+- **tools**: via\_parallel judges each round by the set's worst barrel and puts a worsening round back; a barrel already in a via field is refused (E12 laid 39 and made VIN\_RAW worse) ([deebe508](https://github.com/meshsat/meshsat-fieldkit/commit/deebe50898d3791c3cf545a0bc96e45c5b9adbb1))
+- **gen**: the SENSE via note had swallowed the class registration on D, E and P; the suite's swallowed-line rules caught it ([55dd5222](https://github.com/meshsat/meshsat-fieldkit/commit/55dd5222c159203e22eb8fd2d9b9956f1aa6db5b))
+- **tools**: a session import leaves every via's drill undefined and the class's drill took the ring off E12's pre-laid vias; the drills are read back from the session's padstack names at every import ([7730e6f0](https://github.com/meshsat/meshsat-fieldkit/commit/7730e6f0fe6b4799ed6ef3a42b88a31f0789ee5f))
+- **gen**: the SENSE class via carries the 0.20 mm ring boards D, E and P declare (0.7/0.3); P's duplicate SENSE class removed ([eb5876cc](https://github.com/meshsat/meshsat-fieldkit/commit/eb5876cc0af350769a523b17c5c2029cc4ff6671))
+- **tools**: twelve gates run under verdict.guard, so a crash before the writer is an INCONCLUSIVE verdict naming it rather than an absence ([7f82fe8e](https://github.com/meshsat/meshsat-fieldkit/commit/7f82fe8ea698ea7435e4bda769c38ed25f41793d))
+- **tools**: the impedance gate crashed on a pair with an unrouted leg and left no verdict; verdict.guard turns a gate's crash into INCONCLUSIVE; board B's antenna paths get an RF class from B23 ([05562701](https://github.com/meshsat/meshsat-fieldkit/commit/055627016b3896212d2702888aa9eabf76be1a57))
+- **tools**: place\_audit declines a routed board: a placement rule judged on router copper is judged on the wrong artefact (19 collisions read over B21's placed 10) ([4c93d49d](https://github.com/meshsat/meshsat-fieldkit/commit/4c93d49df25ec87b9057b22824e45be3f13e9fbb))
+- **rules**: SCH-005 is conditional on a schematic (E5 has none); board B's evidence re-taken on the adopted B21 tree, pin\_map\_lands PASS of 930 ([3cb9c545](https://github.com/meshsat/meshsat-fieldkit/commit/3cb9c54536fd15a2ae91af911927b053a23f0a44))
+- **tools**: pruned\_gate unpacked five fields from a seven-column list and would have raised in the first finish that reached it; its fixture pair ([c121dc58](https://github.com/meshsat/meshsat-fieldkit/commit/c121dc58aa46aa2a9750afb094cbe513fd737bbb))
+- **tools**: the pair pre-router's site test asked every via for a bare width; the rule now reaches pair\_router ([bfb7e9ee](https://github.com/meshsat/meshsat-fieldkit/commit/bfb7e9eecae2b6ca296caca7bb5f71cafd0a31a6))
+- **tools**: a tab is the part's own largest pad by a margin, not any square-ish pad ([9a2dfdc2](https://github.com/meshsat/meshsat-fieldkit/commit/9a2dfdc246c1b49d78be1e36ff1ee02c8e0670ac))
+- **tools**: the class-pair rule covers KiCad's comma-joined class names ([e3bf2952](https://github.com/meshsat/meshsat-fieldkit/commit/e3bf295274783d345ae91bfba6e97a08a6ac20a6))
+- **pcb-a**: the eleven RF drops laid by the generator on F.Cu at 0.14 mm, which is 50 ohm on this stackup ([ffb08122](https://github.com/meshsat/meshsat-fieldkit/commit/ffb081224c432805083d9f90e2f5c9895af88d82))
+- **pcb-b**: the panel 5 V leaves the PWR class for a PANEL class at 0.8 mm ([c161b3d8](https://github.com/meshsat/meshsat-fieldkit/commit/c161b3d817bc0c8a82609a6af64a9cb0991e20f9))
+- **tools**: an exposed pad gets its thermal vias whatever the part's pitch ([95162d80](https://github.com/meshsat/meshsat-fieldkit/commit/95162d8048d6166eb623f9f4453d17e4a5823e91))
+- **ecad**: the six netlists regenerated under tonight's engine, with their provenance committed beside them ([5d3201a5](https://github.com/meshsat/meshsat-fieldkit/commit/5d3201a5b5b5c5c4d0cbb0180bdcf8aed9390268))
+- **tools**: a verdict stamps the digests of the rules the coverage map gives it, not only the ones the gate typed ([16170d8a](https://github.com/meshsat/meshsat-fieldkit/commit/16170d8a9928b1b16ae37e66fea2f2f020d56e42))
+- **sch**: board E's hot-swap FET had its gate and drain on two source pins ([d6dfbc7c](https://github.com/meshsat/meshsat-fieldkit/commit/d6dfbc7cad663e055c018994ad2453efcf044681))
 - **tools**: solder paste is not copper, in the via-site test as well ([cfb8a1f0](https://github.com/meshsat/meshsat-fieldkit/commit/cfb8a1f0f212b495179580e1f9faac71becbd843))
 - **rules**: the register was counting two more finished remediations ([337ad709](https://github.com/meshsat/meshsat-fieldkit/commit/337ad70969a915ea7f5aa97daa73a02f89887369))
 - **tools**: the closer audit knows safe\_lines reads and does not repair ([6fbf3ecf](https://github.com/meshsat/meshsat-fieldkit/commit/6fbf3ecf8c979d32e33573246aa6115486d23e1f))

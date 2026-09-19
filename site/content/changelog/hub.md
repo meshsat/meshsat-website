@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 688
+  unreleased_count: 695
   unreleased_since: "2026-09-18"
   unreleased_anchor: "unreleased-main-last-change-2026-09-18"
 ---
@@ -24,6 +24,7 @@ it goes live.
 
 ### Features
 
+- **monitoring**: log-based security alerts for the Loki ruler ([f3232348](https://github.com/meshsat/meshsat-hub/commit/f3232348f280476147d38112aa5ad2c1f0a0e3c1))
 - **monitoring**: alert when a request budget refuses traffic ([c18deb7a](https://github.com/meshsat/meshsat-hub/commit/c18deb7a348badb2ab548833cba1a1e868050144))
 - **api**: request budgets on every authenticated route and the capability URLs; opaque 500s ([a5a6dc31](https://github.com/meshsat/meshsat-hub/commit/a5a6dc3192ee6fe647d9f4655b05c4ab3bfa0bb0))
 - **ci**: supply-chain gates: gitleaks, IaC scan, SBOM and cosign signing ([fca38e05](https://github.com/meshsat/meshsat-hub/commit/fca38e05effeb8780cf7ec197f492b4e56e63442))
@@ -360,6 +361,12 @@ it goes live.
 
 ### Fixes
 
+- **k8s**: let ingress-nginx reach the basemap, so the map loads and shows streets again ([24d6c481](https://github.com/meshsat/meshsat-hub/commit/24d6c4819aaf5217a50e98ce012f9a1be80a20b4))
+- **auth**: the sign-up page no longer flashes authentik's stock background ([7b747fb8](https://github.com/meshsat/meshsat-hub/commit/7b747fb87908ae98e40bc2f9541eb14ffc5f7f3e))
+- **nats**: routes speak TLS from the internal CA, second attempt after the offline reproduction ([e2745ee9](https://github.com/meshsat/meshsat-hub/commit/e2745ee95a51d21576fe1ecfb1057ff0ae2b71d3))
+- **monitoring**: NATS auth alert counts both sides of a refused connection ([bb1273e7](https://github.com/meshsat/meshsat-hub/commit/bb1273e730e8b729ced2749d370df3ad8348e2c5))
+- **nats**: routes authenticate, with the credential in the route URLs ([094f311b](https://github.com/meshsat/meshsat-hub/commit/094f311b6759aeab4d86388534c056936d1ce7c3))
+- **nats**: take route authorization out until it is reproduced offline ([e5d46798](https://github.com/meshsat/meshsat-hub/commit/e5d46798b0de654632d450cd5371977465f3352d))
 - **nats**: routes speak TLS with certificates from the cluster's internal CA ([a6998e6a](https://github.com/meshsat/meshsat-hub/commit/a6998e6a3b9bec7326d45e7364d51681819e6211))
 - **verify**: the onion probe pod satisfies the restricted profile ([43bf3d7d](https://github.com/meshsat/meshsat-hub/commit/43bf3d7d2209e904abe4ac8c521961b1a68cdf35))
 - **ci**: the IaC gate reads key names; the NATS route credential is an env reference ([f168ba9a](https://github.com/meshsat/meshsat-hub/commit/f168ba9a956c16fdcfc2df0071714d7dddcfff64))

@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 859
-  unreleased_since: "2026-09-17"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-17"
+  unreleased_count: 869
+  unreleased_since: "2026-09-18"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-18"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,12 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-17)
+## Unreleased (main, last change 2026-09-18)
 
 ### Features
 
+- **mesh**: keep the radio's plain-text console lines too ([3f5ea61b](https://github.com/meshsat/meshsat/commit/3f5ea61bb5e985685eeab19008d579b22b444519))
+- **mesh**: keep the radio's own log, reboot flag and notifications ([6fd324bc](https://github.com/meshsat/meshsat/commit/6fd324bc56dd9978cc58e0c26ca37b368f9cf835))
 - **printer**: scripts/slip-counter.sh, and zero the counters after every test ([8a653401](https://github.com/meshsat/meshsat/commit/8a6534014b5b8bf700ea9fece9f80a07f85367d6))
 - **printer**: print the whole path, not just the bearer that carried it ([2dd21f82](https://github.com/meshsat/meshsat/commit/2dd21f82afa279a8eb20550f39133fd4012c4c1b))
 - **printer**: the hat on the 666th slip, and a way to preview a slip ([693a1061](https://github.com/meshsat/meshsat/commit/693a1061e16cd0d3bd3c652bdbb840558bebbde4))
@@ -386,6 +388,14 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **timesync**: stop the 30 s time-sync beacon on LoRa when no bridge can answer it ([28db7531](https://github.com/meshsat/meshsat/commit/28db75313e37e15ac662b4be4ebde7f2c5d21d2c))
+- **spectrum**: build the official osmocom rtl-sdr driver for the V4, re-set gain after retune ([6e127b7c](https://github.com/meshsat/meshsat/commit/6e127b7c08a08aa40dc1eff738c07f232762c82b))
+- **spectrum**: give rtl\_tcp 12 s to exit on SIGTERM before killing it ([d3327915](https://github.com/meshsat/meshsat/commit/d3327915025045ab7da1d214819e461a3cd8d8f8))
+- **spectrum**: stop rtl\_tcp cleanly and never run two readers at once ([df081334](https://github.com/meshsat/meshsat/commit/df0813344832fbc8ec02531b8378f2e5e934ef5c))
+- **spectrum**: read the RTL-SDR through one async rtl\_tcp and never USB-reset it ([b2adc893](https://github.com/meshsat/meshsat/commit/b2adc8939b9aeb380cf5e88512ac2bbf52b1451f))
+- **mesh**: never ask the radio for an ack on a broadcast or on a message to itself ([eedc9635](https://github.com/meshsat/meshsat/commit/eedc96350e0e2b7fdacf36be0f770ee5df0abd5d))
+- **mesh**: strip the firmware's colour codes from console lines ([6f026c69](https://github.com/meshsat/meshsat/commit/6f026c695f06095fee561dc6cc2a2680b931afdc))
+- **oob**: the mesh role accepts the T-Echo (239a:4405) ([a040a0d2](https://github.com/meshsat/meshsat/commit/a040a0d258c518f809abe13c7b1040d210eeb96c))
 - **spectrum**: thin transition captions by pixels, not percent ([6c7d951c](https://github.com/meshsat/meshsat/commit/6c7d951c4405d7933392dd83ebeb7b81b5f9a5c5))
 - **spectrum**: the noise floor is a low quantile, not the median ([ff89161b](https://github.com/meshsat/meshsat/commit/ff89161b4b23ce61f85b1971a1414e2f8e6381ca))
 - **spectrum**: the baseline's plus-minus is the robust spread ([7d7f8104](https://github.com/meshsat/meshsat/commit/7d7f810472fa4ebd6346eaf950edaa83e3e9a0ba))
