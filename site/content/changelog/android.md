@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 86
-  latest_tag: "v2.15.1"
+  tags: 87
+  latest_tag: "v2.16.0"
   latest_tag_date: "2026-09-20"
-  latest_tag_anchor: "v2151-2026-09-20"
+  latest_tag_anchor: "v2160-2026-09-20"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -25,7 +25,13 @@ carries the same history in Keep a Changelog form.
 <!-- generated:begin -->
 ## Unreleased (main)
 
-No unreleased changes.
+No user-facing changes (1 commits of other types).
+
+## v2.16.0 (2026-09-20)
+
+### Features
+
+- **people**: swap contact cards face to face by QR code ([c09b4d65](https://github.com/meshsat/meshsat-android/commit/c09b4d65a3f3fbab1c63fdd22e11ed052e0e3500))
 
 ## v2.15.1 (2026-09-20)
 
