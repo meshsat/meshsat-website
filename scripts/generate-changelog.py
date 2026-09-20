@@ -21,6 +21,29 @@ the public GitHub mirror, because GitLab is private.
 Output is deterministic: a run with no upstream change rewrites nothing, so
 the CI job that calls it makes no commit and triggers no deploy.
 
+Two traps that follow from that, both met on 2026-09-20 tagging meshsat-hub
+v1.7.0
+----------------------------------------------------------------------------
+* **A tag on a `[skip ci]` commit runs no tag pipeline**, so the
+  `changelog:notify-website` trigger in the software repo never fires. Every
+  release tag lands on the `bump_k8s_pin` commit, whose subject begins
+  `[skip ci]`, so this is the normal case rather than an edge one. Regenerate
+  by hand afterwards (`CHANGELOG_RUN=1` on this project) or the site keeps
+  saying "Unreleased".
+* **Then the deploy has to be started by someone who can pull `$HUGO_IMAGE`.**
+  It lives in `infrastructure/nllei01/production`, and the registry pull is
+  authorised against the user who TRIGGERED the pipeline, not the job-token
+  allowlist (project 36 is on that allowlist already and it made no
+  difference). A pipeline started through the API by a group access token runs
+  as that group's bot, which has no access outside its own group, and
+  `build:site` fails with "pull access denied". A push, or a schedule, runs as
+  the owner and works. So: after a hand regeneration, push something to main
+  rather than triggering a deploy through the API.
+
+Because a second regeneration of already-committed content rewrites nothing,
+an undeployed changelog does not heal itself on the nightly: it reports
+"unchanged" and starts no deploy. The page stays stale until a deploy runs.
+
 House rules enforced here
 -------------------------
 * Zero em or en dashes in the output (the site gate rejects them): " - " and
