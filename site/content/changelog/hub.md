@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 709
+  unreleased_count: 711
   unreleased_since: "2026-09-20"
   unreleased_anchor: "unreleased-main-last-change-2026-09-20"
 ---
@@ -366,6 +366,8 @@ it goes live.
 
 ### Fixes
 
+- **web**: 404 unknown paths and serve a real robots.txt ([c6adbfeb](https://github.com/meshsat/meshsat-hub/commit/c6adbfebe791b48416570a0eff5338112be6de14))
+- **web**: house style in the Hub's own copy ([9d4cb829](https://github.com/meshsat/meshsat-hub/commit/9d4cb829da4108378b740b7c1e2881f438976d38))
 - **auth**: pin the MeshSat brand to dark, so the CAPTCHA is not a white slab ([fbb987c5](https://github.com/meshsat/meshsat-hub/commit/fbb987c5458d45af2eebb7892e29ee27feb1b474))
 - **k8s**: stop the relay's own probes knocking on NATS and stunnel ([0aa7b05f](https://github.com/meshsat/meshsat-hub/commit/0aa7b05fea919a6df985e91dac434b811ced1908))
 - **k8s**: the onion-heartbeat policy is a real rule now, not an empty list ([27e21108](https://github.com/meshsat/meshsat-hub/commit/27e21108f552e662ebd031197a7b268af3e6d756))
