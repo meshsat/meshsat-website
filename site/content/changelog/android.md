@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 92
-  latest_tag: "v2.17.2"
+  tags: 94
+  latest_tag: "v2.18.1"
   latest_tag_date: "2026-09-20"
-  latest_tag_anchor: "v2172-2026-09-20"
+  latest_tag_anchor: "v2181-2026-09-20"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,18 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.1 (2026-09-20)
+
+### Fixes
+
+- **hub**: hold back the satellite channel values ([f8fde1ac](https://github.com/meshsat/meshsat-android/commit/f8fde1acb0f5afcee19ba2e936b5d2b23f94384d))
+
+## v2.18.0 (2026-09-20)
+
+### Fixes
+
+- **hub**: tell the Hub which link a forwarded message arrived on ([a33b7947](https://github.com/meshsat/meshsat-android/commit/a33b794724ac41a41c90810d24e86085b9b38084))
 
 ## v2.17.2 (2026-09-20)
 
