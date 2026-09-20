@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 1
-  unreleased_since: "2026-09-20"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-20"
+  unreleased_count: 5
+  unreleased_since: "2026-09-21"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
 
 Generated from the commit history of
@@ -20,11 +20,18 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-20)
+## Unreleased (main, last change 2026-09-21)
 
 ### Features
 
+- **routing**: relay a satellite message to another modem byte for byte ([ea7038c8](https://github.com/meshsat/meshsat-hub/commit/ea7038c86f8de69f9ad36988b4acb50151b460cd))
 - **bridges**: the command page names the bearer a command went out on ([ea4b3c7a](https://github.com/meshsat/meshsat-hub/commit/ea4b3c7a6a89d556ba2d280a6f8be8a146ecd583))
+
+### Fixes
+
+- **satellite**: every IMT message is its own message, not a repeat of the first ([bdd2a8a1](https://github.com/meshsat/meshsat-hub/commit/bdd2a8a1ee31018e1c90aa7ddc148ad6a746fe89))
+- **k8s**: the modem-to-thing map comes from the secret store, for both replicas ([4748207f](https://github.com/meshsat/meshsat-hub/commit/4748207f24a324f8d910d7f985a3ff96bad9e160))
+- **satellite**: a whole message is no longer parked as half of a two-part one ([d7a165ff](https://github.com/meshsat/meshsat-hub/commit/d7a165ff772fe3f0705fa548242ba09e618decd1))
 
 ## v1.7.0 (2026-09-20)
 
