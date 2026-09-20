@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  unreleased_count: 1
+  unreleased_since: "2026-09-20"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-20"
 ---
 
 Generated from the commit history of
@@ -20,9 +20,11 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-09-20)
 
-No unreleased changes.
+### Features
+
+- **bridges**: the command page names the bearer a command went out on ([ea4b3c7a](https://github.com/meshsat/meshsat-hub/commit/ea4b3c7a6a89d556ba2d280a6f8be8a146ecd583))
 
 ## v1.7.0 (2026-09-20)
 
