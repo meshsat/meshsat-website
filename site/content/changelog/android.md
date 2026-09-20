@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 84
-  latest_tag: "v2.14.9"
+  tags: 85
+  latest_tag: "v2.15.0"
   latest_tag_date: "2026-09-20"
-  latest_tag_anchor: "v2149-2026-09-20"
+  latest_tag_anchor: "v2150-2026-09-20"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -25,7 +25,15 @@ carries the same history in Keep a Changelog form.
 <!-- generated:begin -->
 ## Unreleased (main)
 
-No unreleased changes.
+No user-facing changes (1 commits of other types).
+
+## v2.15.0 (2026-09-20)
+
+### Fixes
+
+- **hub**: show the Hub link the phone really uses, and let a rule reach it ([218be4b9](https://github.com/meshsat/meshsat-android/commit/218be4b93229fdca0b73f2c2aacd0b20cedd6a38))
+- **hemb**: put the compact header on the Bridge's bits ([3675b48e](https://github.com/meshsat/meshsat-android/commit/3675b48e986a4b656cb82b97ff243147067f3fea))
+- **ui**: About said the 9603 talks over HC-05, which it has not since 2.9.0 ([d49ba755](https://github.com/meshsat/meshsat-android/commit/d49ba7553bc5ffe395352c0a87b787f185e8fd1e))
 
 ## v2.14.9 (2026-09-20)
 
