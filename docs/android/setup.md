@@ -13,7 +13,11 @@ Setup: node, satellite, Hub and SMS, each with where it stands.
 
 ## Install
 
-1. Download the APK from the [latest release](https://github.com/meshsat/meshsat-android/releases/latest).
+1. Download the APK for your phone from the
+   [latest release](https://github.com/meshsat/meshsat-android/releases/latest). There is one per
+   processor: take **arm64-v8a** unless you know otherwise, since nearly every phone since 2016 is
+   that. **armeabi-v7a** is for older 32-bit phones, **x86** and **x86_64** for emulators, and
+   **universal** works on all of them at about 20 MB more.
 2. Let your browser or file manager install unknown apps. Android asks the first time.
 3. Open the APK and tap **Install**. Play Protect may warn about an unknown developer, because the
    app is not on the Play Store: tap **More details**, then **Install anyway**.
