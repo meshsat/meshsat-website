@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 96
-  latest_tag: "v2.18.3"
+  tags: 97
+  latest_tag: "v2.18.4"
   latest_tag_date: "2026-09-20"
-  latest_tag_anchor: "v2183-2026-09-20"
+  latest_tag_anchor: "v2184-2026-09-20"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.4 (2026-09-20)
+
+### Fixes
+
+- **ui**: the node banner said "No your MeshSat node", and lied about since when ([c4c55ea5](https://github.com/meshsat/meshsat-android/commit/c4c55ea5094825d1084ae0dffaff6612a38368cc))
 
 ## v2.18.3 (2026-09-20)
 
