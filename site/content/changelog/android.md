@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 83
-  latest_tag: "v2.14.8"
+  tags: 84
+  latest_tag: "v2.14.9"
   latest_tag_date: "2026-09-20"
-  latest_tag_anchor: "v2148-2026-09-20"
+  latest_tag_anchor: "v2149-2026-09-20"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -25,7 +25,14 @@ carries the same history in Keep a Changelog form.
 <!-- generated:begin -->
 ## Unreleased (main)
 
-No user-facing changes (1 commits of other types).
+No unreleased changes.
+
+## v2.14.9 (2026-09-20)
+
+### Fixes
+
+- **iridium**: tell a failed write apart from a modem handover ([2cd59518](https://github.com/meshsat/meshsat-android/commit/2cd595185954ce9a4292237c213ccf8102d4136a))
+- **iridium**: notice when the node's modem stops taking writes ([dd24f070](https://github.com/meshsat/meshsat-android/commit/dd24f0701ca5b8533de7511226a5daecabb9df35))
 
 ## v2.14.8 (2026-09-20)
 

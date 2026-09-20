@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 703
+  unreleased_count: 709
   unreleased_since: "2026-09-20"
   unreleased_anchor: "unreleased-main-last-change-2026-09-20"
 ---
@@ -24,6 +24,8 @@ it goes live.
 
 ### Features
 
+- **web**: the dashboard opens the live event socket it never used ([9401e509](https://github.com/meshsat/meshsat-hub/commit/9401e509225f16442143eb4064eee62e986f4df8))
+- **edge**: a statuscsp phase, so status.meshsat.net has a Content-Security-Policy ([49e2cad5](https://github.com/meshsat/meshsat-hub/commit/49e2cad54ca77157fe9851d2c138482bb16f9229))
 - **verify**: arm the nightly browser check ([3626e7a9](https://github.com/meshsat/meshsat-hub/commit/3626e7a93c10111e1a1260bab478b9b656150dbf))
 - **verify**: a real browser checks the sign-up flow and the SPA every night ([3b0c1b9b](https://github.com/meshsat/meshsat-hub/commit/3b0c1b9b4432d891ac4c2eb3169ec43406b484f0))
 - **bridge**: the Hub tells a bridge when it has an MO from one of its modems ([a9d5df02](https://github.com/meshsat/meshsat-hub/commit/a9d5df02d21e29f102d9bb901d4b1afc290ec448))
@@ -364,6 +366,10 @@ it goes live.
 
 ### Fixes
 
+- **auth**: pin the MeshSat brand to dark, so the CAPTCHA is not a white slab ([fbb987c5](https://github.com/meshsat/meshsat-hub/commit/fbb987c5458d45af2eebb7892e29ee27feb1b474))
+- **k8s**: stop the relay's own probes knocking on NATS and stunnel ([0aa7b05f](https://github.com/meshsat/meshsat-hub/commit/0aa7b05fea919a6df985e91dac434b811ced1908))
+- **k8s**: the onion-heartbeat policy is a real rule now, not an empty list ([27e21108](https://github.com/meshsat/meshsat-hub/commit/27e21108f552e662ebd031197a7b268af3e6d756))
+- **rockblock**: verify a Ground Control signature on every path, not just the platform one ([69e3915f](https://github.com/meshsat/meshsat-hub/commit/69e3915f1cdd85a6e76171d5f27be007c38f9d98))
 - **verify**: name the registry pull secret on the browser job ([af5ff961](https://github.com/meshsat/meshsat-hub/commit/af5ff9613eeec5f404e28b0ab764ba64175133c5))
 - **verify**: the build's own import check was the thing that failed ([8fbd3326](https://github.com/meshsat/meshsat-hub/commit/8fbd3326621ac2e0ff8f992ec65a1fb88d42243b))
 - **verify**: install python3-venv before creating the venv ([15a67af7](https://github.com/meshsat/meshsat-hub/commit/15a67af77e7f9b29a8f8ad4019fd14ba20c85bec))
