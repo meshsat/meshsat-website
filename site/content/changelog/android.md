@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 99
-  latest_tag: "v2.18.6"
-  latest_tag_date: "2026-09-20"
-  latest_tag_anchor: "v2186-2026-09-20"
+  tags: 100
+  latest_tag: "v2.18.7"
+  latest_tag_date: "2026-09-21"
+  latest_tag_anchor: "v2187-2026-09-21"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.7 (2026-09-21)
+
+### Fixes
+
+- **rules**: the rule editor's "Hub" was a dead link, and the real one had no name ([b378913b](https://github.com/meshsat/meshsat-android/commit/b378913b7685251d6c951182f2390075da8fde19))
 
 ## v2.18.6 (2026-09-20)
 
