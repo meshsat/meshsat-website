@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 711
+  unreleased_count: 712
   unreleased_since: "2026-09-20"
   unreleased_anchor: "unreleased-main-last-change-2026-09-20"
 ---
@@ -24,6 +24,7 @@ it goes live.
 
 ### Features
 
+- **cloudloop**: the MO receipt, for the second tick on a tenant's own account ([42a13c92](https://github.com/meshsat/meshsat-hub/commit/42a13c92adba2e0f150085acefa69a2edc33c427))
 - **web**: the dashboard opens the live event socket it never used ([9401e509](https://github.com/meshsat/meshsat-hub/commit/9401e509225f16442143eb4064eee62e986f4df8))
 - **edge**: a statuscsp phase, so status.meshsat.net has a Content-Security-Policy ([49e2cad5](https://github.com/meshsat/meshsat-hub/commit/49e2cad54ca77157fe9851d2c138482bb16f9229))
 - **verify**: arm the nightly browser check ([3626e7a9](https://github.com/meshsat/meshsat-hub/commit/3626e7a93c10111e1a1260bab478b9b656150dbf))
