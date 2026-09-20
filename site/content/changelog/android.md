@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 89
-  latest_tag: "v2.16.2"
+  tags: 90
+  latest_tag: "v2.17.0"
   latest_tag_date: "2026-09-20"
-  latest_tag_anchor: "v2162-2026-09-20"
+  latest_tag_anchor: "v2170-2026-09-20"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.17.0 (2026-09-20)
+
+### Features
+
+- **ui**: say on every screen when the phone cannot reach its node ([f99a45cf](https://github.com/meshsat/meshsat-android/commit/f99a45cf5e06a0ce1c95ce7b61b9265056b1d5c1))
 
 ## v2.16.2 (2026-09-20)
 
