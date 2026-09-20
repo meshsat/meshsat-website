@@ -4,13 +4,13 @@ description: "MeshSat Hub changelog: fleet management platform releases."
 tagline: "Fleet management platform, open to sign up"
 weight: 2
 changelog:
-  tags: 0
-  latest_tag: ""
-  latest_tag_date: ""
-  latest_tag_anchor: ""
-  unreleased_count: 713
-  unreleased_since: "2026-09-20"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-20"
+  tags: 1
+  latest_tag: "v1.7.0"
+  latest_tag_date: "2026-09-20"
+  latest_tag_anchor: "v170-2026-09-20"
+  unreleased_count: 0
+  unreleased_since: ""
+  unreleased_anchor: "unreleased-main"
 ---
 
 Generated from the commit history of
@@ -20,7 +20,11 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-20)
+## Unreleased (main)
+
+No unreleased changes.
+
+## v1.7.0 (2026-09-20)
 
 ### Features
 
