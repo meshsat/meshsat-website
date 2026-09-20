@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 100
-  latest_tag: "v2.18.7"
+  tags: 101
+  latest_tag: "v2.18.8"
   latest_tag_date: "2026-09-21"
-  latest_tag_anchor: "v2187-2026-09-21"
+  latest_tag_anchor: "v2188-2026-09-21"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,16 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.8 (2026-09-21)
+
+### Features
+
+- **mesh**: apply a whole node profile in one go, and read the full node config back ([b0cf1b30](https://github.com/meshsat/meshsat-android/commit/b0cf1b3018fc677fd71f4e3027a38f766600a042))
+
+### Fixes
+
+- **ble**: switching Bluetooth off lost the node until the app was restarted ([99fcd8f1](https://github.com/meshsat/meshsat-android/commit/99fcd8f1ab73d09dce23eb1a24500be9d5ce0e79))
 
 ## v2.18.7 (2026-09-21)
 
