@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 90
-  latest_tag: "v2.17.0"
+  tags: 91
+  latest_tag: "v2.17.1"
   latest_tag_date: "2026-09-20"
-  latest_tag_anchor: "v2170-2026-09-20"
+  latest_tag_anchor: "v2171-2026-09-20"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.17.1 (2026-09-20)
+
+### Fixes
+
+- **sms**: a message that arrives by SMS now goes through the rules ([6845e11c](https://github.com/meshsat/meshsat-android/commit/6845e11cc9a5ad92b9d1a9c8c908dc04440bc715))
 
 ## v2.17.0 (2026-09-20)
 
