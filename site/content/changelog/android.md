@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 82
-  latest_tag: "v2.14.7"
+  tags: 83
+  latest_tag: "v2.14.8"
   latest_tag_date: "2026-09-20"
-  latest_tag_anchor: "v2147-2026-09-20"
+  latest_tag_anchor: "v2148-2026-09-20"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -25,7 +25,14 @@ carries the same history in Keep a Changelog form.
 <!-- generated:begin -->
 ## Unreleased (main)
 
-No unreleased changes.
+No user-facing changes (1 commits of other types).
+
+## v2.14.8 (2026-09-20)
+
+### Fixes
+
+- **iridium**: drop a satellite message from the modem once it is stored ([a03661d5](https://github.com/meshsat/meshsat-android/commit/a03661d5dbefd4485136379a8a8d283a4feddbff))
+- **hemb**: read the stream id the way the Bridge writes it, and reap on a monotonic clock ([2294acb5](https://github.com/meshsat/meshsat-android/commit/2294acb5c224805e593aaed6dd072aa61dcf27b1))
 
 ## v2.14.7 (2026-09-20)
 

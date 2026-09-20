@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 697
-  unreleased_since: "2026-09-19"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-19"
+  unreleased_count: 703
+  unreleased_since: "2026-09-20"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-20"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,12 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-19)
+## Unreleased (main, last change 2026-09-20)
 
 ### Features
 
+- **verify**: arm the nightly browser check ([3626e7a9](https://github.com/meshsat/meshsat-hub/commit/3626e7a93c10111e1a1260bab478b9b656150dbf))
+- **verify**: a real browser checks the sign-up flow and the SPA every night ([3b0c1b9b](https://github.com/meshsat/meshsat-hub/commit/3b0c1b9b4432d891ac4c2eb3169ec43406b484f0))
 - **bridge**: the Hub tells a bridge when it has an MO from one of its modems ([a9d5df02](https://github.com/meshsat/meshsat-hub/commit/a9d5df02d21e29f102d9bb901d4b1afc290ec448))
 - **monitoring**: log-based security alerts for the Loki ruler ([f3232348](https://github.com/meshsat/meshsat-hub/commit/f3232348f280476147d38112aa5ad2c1f0a0e3c1))
 - **monitoring**: alert when a request budget refuses traffic ([c18deb7a](https://github.com/meshsat/meshsat-hub/commit/c18deb7a348badb2ab548833cba1a1e868050144))
@@ -362,6 +364,10 @@ it goes live.
 
 ### Fixes
 
+- **verify**: name the registry pull secret on the browser job ([af5ff961](https://github.com/meshsat/meshsat-hub/commit/af5ff9613eeec5f404e28b0ab764ba64175133c5))
+- **verify**: the build's own import check was the thing that failed ([8fbd3326](https://github.com/meshsat/meshsat-hub/commit/8fbd3326621ac2e0ff8f992ec65a1fb88d42243b))
+- **verify**: install python3-venv before creating the venv ([15a67af7](https://github.com/meshsat/meshsat-hub/commit/15a67af77e7f9b29a8f8ad4019fd14ba20c85bec))
+- **verify**: build the browser image, because upstream's ships no playwright ([2bdbcced](https://github.com/meshsat/meshsat-hub/commit/2bdbcced09159f93f4207b2d6cb2b288e70899fa))
 - **auth**: the owner can provision a bridge by QR again ([20548d5a](https://github.com/meshsat/meshsat-hub/commit/20548d5a2cd2ec30a2f65d9e79e97009425b1380))
 - **k8s**: let ingress-nginx reach the basemap, so the map loads and shows streets again ([24d6c481](https://github.com/meshsat/meshsat-hub/commit/24d6c4819aaf5217a50e98ce012f9a1be80a20b4))
 - **auth**: the sign-up page no longer flashes authentik's stock background ([7b747fb8](https://github.com/meshsat/meshsat-hub/commit/7b747fb87908ae98e40bc2f9541eb14ffc5f7f3e))

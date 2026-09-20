@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 870
-  unreleased_since: "2026-09-19"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-19"
+  unreleased_count: 871
+  unreleased_since: "2026-09-20"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-20"
 ---
 
 Generated from the commit history of
@@ -19,7 +19,7 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-19)
+## Unreleased (main, last change 2026-09-20)
 
 ### Features
 
@@ -389,6 +389,7 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **transport**: keep every serial probe and scanner off ports that belong to another device ([5d68ce11](https://github.com/meshsat/meshsat/commit/5d68ce11928ffd2bcb2e77b2855eead07019a899))
 - **timesync**: stop the 30 s time-sync beacon on LoRa when no bridge can answer it ([28db7531](https://github.com/meshsat/meshsat/commit/28db75313e37e15ac662b4be4ebde7f2c5d21d2c))
 - **spectrum**: build the official osmocom rtl-sdr driver for the V4, re-set gain after retune ([6e127b7c](https://github.com/meshsat/meshsat/commit/6e127b7c08a08aa40dc1eff738c07f232762c82b))
 - **spectrum**: give rtl\_tcp 12 s to exit on SIGTERM before killing it ([d3327915](https://github.com/meshsat/meshsat/commit/d3327915025045ab7da1d214819e461a3cd8d8f8))
