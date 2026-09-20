@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 87
-  latest_tag: "v2.16.0"
+  tags: 89
+  latest_tag: "v2.16.2"
   latest_tag_date: "2026-09-20"
-  latest_tag_anchor: "v2160-2026-09-20"
+  latest_tag_anchor: "v2162-2026-09-20"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -25,7 +25,17 @@ carries the same history in Keep a Changelog form.
 <!-- generated:begin -->
 ## Unreleased (main)
 
+No unreleased changes.
+
+## v2.16.2 (2026-09-20)
+
 No user-facing changes (1 commits of other types).
+
+## v2.16.1 (2026-09-20)
+
+### Fixes
+
+- **people**: the Paste button broke across two lines ([2a898a11](https://github.com/meshsat/meshsat-android/commit/2a898a11508d4169246f3712eca2dfb07c4d6653))
 
 ## v2.16.0 (2026-09-20)
 
