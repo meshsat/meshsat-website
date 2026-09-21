@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 109
-  latest_tag: "v2.18.16"
+  tags: 110
+  latest_tag: "v2.18.17"
   latest_tag_date: "2026-09-21"
-  latest_tag_anchor: "v21816-2026-09-21"
+  latest_tag_anchor: "v21817-2026-09-21"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,16 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.17 (2026-09-21)
+
+### Features
+
+- **relay**: reach a kit's own API through the Hub relay from the phone, timed ([c5d8485c](https://github.com/meshsat/meshsat-android/commit/c5d8485c50d54e5970caffae289fe446a1cf0a10))
+
+### Fixes
+
+- **hub**: say why the Hub is unreachable, and connect after provisioning without a restart ([c7594cbf](https://github.com/meshsat/meshsat-android/commit/c7594cbff3b67d0fe76b1f095e9933a7ca9eaacc))
 
 ## v2.18.16 (2026-09-21)
 
