@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 874
+  unreleased_count: 875
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -389,6 +389,7 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **satellite**: the serial watchdog no longer power-cycles the 9704 in the middle of a send ([65f3ac60](https://github.com/meshsat/meshsat/commit/65f3ac6010ab22b8e701788587670e5a3111eaf4))
 - **ttc**: the booth screen names its own kit again, whatever callsign it transmits under ([eaa935d6](https://github.com/meshsat/meshsat/commit/eaa935d62b654bb7c7ae5840fec995c6b24f325b))
 - **satellite**: a relayed kit to kit message is an app message, not a Reticulum packet ([fb300376](https://github.com/meshsat/meshsat/commit/fb300376b6bfcf02f90eea009098e81447e1ebaf))
 - **satellite**: relay kit to kit over Iridium as the bare text, and stop dropping version-prefixed frames at the receive gate ([c2a01358](https://github.com/meshsat/meshsat/commit/c2a013582e369dc9dd32b745b99a6741b8959372))
