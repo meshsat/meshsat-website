@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 878
+  unreleased_count: 881
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -390,6 +390,9 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **hub**: a kit that loses the Hub says it is alive the moment the fallback arms ([2d86220a](https://github.com/meshsat/meshsat/commit/2d86220a535c275a57a163c310cad7d4180364d6))
+- **hub**: the fallback frame to the Hub names the whole bridge, not its first 16 characters ([fa58f2be](https://github.com/meshsat/meshsat/commit/fa58f2be5437786175bf76c01659268dc8801104))
+- **satellite**: a message for the 9704 waits out a sky gap instead of dying after nine minutes ([efeaca5b](https://github.com/meshsat/meshsat/commit/efeaca5bfa836b1d298ed821a9cc6e8327f601b2))
 - **hub**: the satellite fallback to the Hub uses the modem the kit carries, not only a 9603 ([e73c1257](https://github.com/meshsat/meshsat/commit/e73c1257e8c0ba5d10c74a93f1a7182ace51fbbc))
 - **satellite**: a send that runs out of time is cancelled in the modem, so a retry no longer delivers the message twice ([87fb787c](https://github.com/meshsat/meshsat/commit/87fb787c5da41965a9b663e5bd9b12f01cfa691d))
 - **satellite**: the serial watchdog no longer power-cycles the 9704 in the middle of a send ([65f3ac60](https://github.com/meshsat/meshsat/commit/65f3ac6010ab22b8e701788587670e5a3111eaf4))
