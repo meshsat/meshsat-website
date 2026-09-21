@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 889
+  unreleased_count: 890
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -23,6 +23,7 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Features
 
+- **satellite**: a quiet kit fetches the messages waiting for it at Iridium ([0ea88f00](https://github.com/meshsat/meshsat/commit/0ea88f00bcad1a8cb9fc98df20a4dda03116c626))
 - **timesync**: a slow link asks for the time less often, and Settings shows who answered ([f280c232](https://github.com/meshsat/meshsat/commit/f280c23262fe03be722c0860ac137a4751921c33))
 - **oob**: a management command carries an expiry, and a kit refuses one that arrives too late ([cd1267f5](https://github.com/meshsat/meshsat/commit/cd1267f583c68e542677a9c5cc7d541636a7137f))
 - **aprs**: the status names the cause when a PicoAPRS transmits and hears nothing ([8f34f59a](https://github.com/meshsat/meshsat/commit/8f34f59a1819a92371dd40b03666ee290d6183c7))
