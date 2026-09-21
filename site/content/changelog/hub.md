@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 11
+  unreleased_count: 17
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -32,6 +32,12 @@ it goes live.
 
 ### Fixes
 
+- **fleet**: a command reply over satellite is not announced as a broken uplink frame ([138f9264](https://github.com/meshsat/meshsat-hub/commit/138f9264bcf2c179ebe754f09aeb8b66c493332d))
+- **fleet**: a command job keeps the request's context, minus its cancellation ([0a23802d](https://github.com/meshsat/meshsat-hub/commit/0a23802d5a190994731f4d1fe19396d440199d0e))
+- **fleet**: a kit's fallback report reaches its bridge when the id arrives cut short ([9e55d9b7](https://github.com/meshsat/meshsat-hub/commit/9e55d9b7d975884e7536cc246e9b0f0742a0c4a4))
+- **fleet**: a slow command to a bridge is not sent again by a retry, and no longer needs a request held open ([0cb686b7](https://github.com/meshsat/meshsat-hub/commit/0cb686b7066a969189b01b18e1e1a14383c599a7))
+- **fleet**: the Log command names a unit, and a bad command says why ([43379cba](https://github.com/meshsat/meshsat-hub/commit/43379cba99db8618bb63f8486034c810bce746b1))
+- **settings**: a changed send limit applies on both replicas at once ([1544752a](https://github.com/meshsat/meshsat-hub/commit/1544752a937c02542b950791b9a5218e69d22db0))
 - **routing**: renaming a route no longer blanks its recipients and senders ([4052a619](https://github.com/meshsat/meshsat-hub/commit/4052a61948cb6c4dd29a0768824bf9ebcb206dbc))
 - **routing**: a satellite chat reply is not also copied by the routes ([32ad9d1b](https://github.com/meshsat/meshsat-hub/commit/32ad9d1b645dff74767596d04db06cd859271a3d))
 - **mesh**: only mesh traffic counts as a node heard on a kit's mesh ([234b3b13](https://github.com/meshsat/meshsat-hub/commit/234b3b13b0f5da1589766eeac6d0ae68c0e5e1d2))
