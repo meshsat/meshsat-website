@@ -71,6 +71,18 @@ cheaper nor shorter is ignored rather than flapping between two bearers.
 Routes expire 30 minutes after the last announce that refreshed them. Announces are capped at 2%
 of an interface's bandwidth so a busy routing table cannot crowd out traffic on a slow link.
 
+## Time sync between bridges
+
+Bridges compare clocks over the free interfaces with a 26-byte request (Reticulum packet type 0x14)
+and a reply (0x15); paid bearers never carry either. On a KISS modem the request shows up as a
+42-byte AX.25 UI frame. Where another bridge answered in the last ten minutes, a bridge asks every
+30 seconds; where none did, it sends one discovery request every `MESHSAT_TIMESYNC_DISCOVERY_MIN`
+minutes, 10 by default, so a bridge on its own stays quiet. On a slow link the period is stretched
+to keep the request within 2% of the link's airtime: set `MESHSAT_AX25_BITRATE` to the modem's bit
+rate (1200 by default), and a 149 bit/s HF mode then asks about every two minutes.
+`GET /api/timesync/peers` and Settings > Routing show the other bridges with their stratum, clock
+offset and round trip, and the request schedule of each interface.
+
 ## Links and resources
 
 A link is an encrypted session between two destinations, established with an ephemeral key

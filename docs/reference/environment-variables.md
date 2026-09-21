@@ -72,6 +72,8 @@ still be reached over SMS or APRS.
 | `MESHSAT_OOB_ENABLED` | `false` | Accept authenticated OOB commands. First-boot default, managed in the dashboard afterwards |
 | `MESHSAT_OOB_REPLY_BUDGET` | `12` | OOB replies per peer per hour |
 | `MESHSAT_OOB_HOST_SOCKET` | `/run/meshsat-oob/agent.sock` | Host agent socket, installed by `scripts/install-oob-agent.sh` |
+| `MESHSAT_OOB_REQUEST_TTL_MIN` | `15` | Minutes a command this bridge sends stays valid. A peer that receives it later, for example a satellite message held until the kit had sky, refuses it |
+| `MESHSAT_OOB_EXPIRY_SKEW_S` | `120` | Clock difference allowed when judging whether a received command has expired. Not judged at all while the kit's clock is not established |
 
 ## Hub uplink fallback
 
@@ -113,6 +115,7 @@ Both sidecars are optional. Without them SMAZ2 still works, since it is built in
 | `MESHSAT_TCP_LISTEN` | `""` | TCP listen address for RNS interop, for example `:4242` |
 | `MESHSAT_TCP_CONNECT` | `""` | Outbound TCP peer address for RNS interop |
 | `MESHSAT_ANNOUNCE_INTERVAL` | `300` | Announce broadcast interval in seconds |
+| `MESHSAT_TIMESYNC_DISCOVERY_MIN` | `10` | Minutes between time sync requests on an interface where no other bridge has answered. Where one has, the request goes every 30 s |
 | `MESHSAT_MQTT_RETICULUM_BROKER` | `""` | MQTT broker for Reticulum packets |
 | `MESHSAT_MQTT_RETICULUM_PREFIX` | `reticulum/meshsat` | MQTT topic prefix |
 
@@ -122,6 +125,7 @@ Both sidecars are optional. Without them SMAZ2 still works, since it is built in
 |----------|---------|-------------|
 | `MESHSAT_AX25_KISS_ADDR` | `""` | KISS TNC address. The bundled Direwolf binds `localhost:8001` |
 | `MESHSAT_AX25_CALLSIGN` | `""` | AX.25 source callsign, for example `MESHSAT-1` |
+| `MESHSAT_AX25_BITRATE` | `1200` | The KISS modem's bit rate. Time sync requests on AX.25 are spaced to stay within 2% of it |
 | `MESHSAT_AIOC_CAPTURE` | `94%` | Capture gain applied at every Direwolf start. Mixer scale, 94 % is -5.8 dB and 90 % is -9.6 dB. Lower it if Direwolf reports the audio input level as too high |
 | `MESHSAT_APRS_RX_WATCHDOG_MIN` | `5` | Minutes without a decoded frame, after the channel was heard within two hours, before the recovery ladder runs. A deaf receiver scores 0 for failover. 0 disables |
 
