@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 9
+  unreleased_count: 10
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -24,6 +24,7 @@ it goes live.
 
 ### Features
 
+- **settings**: a tenant may set its send limit below the default too ([8d3d44f4](https://github.com/meshsat/meshsat-hub/commit/8d3d44f4a18a57573762a309a1a0d535ca9a52e5))
 - **satchat**: a roaming satellite node and the kits' meshes text each other ([fa275d92](https://github.com/meshsat/meshsat-hub/commit/fa275d9241340ff7099122e462d0caf04d86297b))
 - **settings**: a tenant sets its own send limits ([60a6eda2](https://github.com/meshsat/meshsat-hub/commit/60a6eda2fd6e2d0a7fe54002ca14896d309a4f7a))
 - **routing**: relay a satellite message to another modem byte for byte ([ea7038c8](https://github.com/meshsat/meshsat-hub/commit/ea7038c86f8de69f9ad36988b4acb50151b460cd))
