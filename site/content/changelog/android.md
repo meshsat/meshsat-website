@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 113
-  latest_tag: "v2.18.20"
+  tags: 114
+  latest_tag: "v2.18.21"
   latest_tag_date: "2026-09-21"
-  latest_tag_anchor: "v21820-2026-09-21"
+  latest_tag_anchor: "v21821-2026-09-21"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.21 (2026-09-21)
+
+### Features
+
+- **passes**: signal vs passes like the Bridge's, on Home and the passes screen ([1347b09e](https://github.com/meshsat/meshsat-android/commit/1347b09eb5d7b3213e636b7a6297bd7452cb1898))
 
 ## v2.18.20 (2026-09-21)
 
