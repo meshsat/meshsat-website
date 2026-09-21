@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v2.18.12"
   latest_tag_date: "2026-09-21"
   latest_tag_anchor: "v21812-2026-09-21"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  unreleased_count: 2
+  unreleased_since: "2026-09-21"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,9 +23,12 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-09-21)
 
-No unreleased changes.
+### Fixes
+
+- **sos**: choosing an emergency contact went through "Contacts or Solid Explorer?" first ([efbe9b82](https://github.com/meshsat/meshsat-android/commit/efbe9b823656ba6ea48b0a0357a4d8e75e2626c1))
+- **config**: an imported config was ignored by the running gateway until it restarted ([c7da7bcf](https://github.com/meshsat/meshsat-android/commit/c7da7bcf5634ccbcd155fc5a3464c6e0185ac888))
 
 ## v2.18.12 (2026-09-21)
 
