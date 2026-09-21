@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 118
-  latest_tag: "v2.18.25"
+  tags: 119
+  latest_tag: "v2.18.26"
   latest_tag_date: "2026-09-21"
-  latest_tag_anchor: "v21825-2026-09-21"
+  latest_tag_anchor: "v21826-2026-09-21"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.26 (2026-09-21)
+
+### Features
+
+- **node**: the node's battery, voltage and time left on Home and the node screen ([5341dcba](https://github.com/meshsat/meshsat-android/commit/5341dcba36b5d30a91c9ae63197138f72f493550))
 
 ## v2.18.25 (2026-09-21)
 
