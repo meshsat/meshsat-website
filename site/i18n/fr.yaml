@@ -385,10 +385,10 @@ host_k_ops:
 host_v_ops:
   other: "à votre charge"
 hub_shot1:
-  other: "Règles de routage : un message satellite repart vers APRS, MQTT, TAK, les webhooks et les notifications, et un kit joint l'autre par SMS"
+  other: "Vue d'ensemble : les chemins que chaque kit peut emprunter en ce moment, le trafic de la dernière journée et ce qui demande votre attention (rien, ici)"
 hub_shot2:
-  other: "Des messages dans les deux sens par Iridium : une réponse tapée ici est compressée, chiffrée et mise en file pour le prochain passage satellite"
+  other: "Des messages par tous les supports : le trafic satellite d'un kit à l'autre reste chiffré de bout en bout, et une réponse part du panneau voisin"
 hub_shot3:
-  other: "Votre propre serveur TAK : les personnes que vous ajoutez voient la flotte dans ATAK, WinTAK ou iTAK"
+  other: "Le routage en clair : un message satellite repart vers un autre kit, vers APRS, MQTT et TAK, vers les webhooks et les notifications"
 hub_shots_note:
-  other: "Les mêmes écrans sur votre serveur ou sur le nôtre. Captures faites sur hub.meshsat.net le 19 septembre 2026, numéros de téléphone et IMEI floutés."
+  other: "Les mêmes écrans sur votre serveur ou sur le nôtre. Captures faites sur hub.meshsat.net le 21 septembre 2026, numéros de téléphone, IMEI et noms d'hôte des kits floutés."

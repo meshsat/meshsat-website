@@ -11,7 +11,7 @@ depending on it for something that matters, tell us: we would rather hear about 
 
 ## A TAK server of your own
 
-**TAK** in the Channels menu. Turn it on and the Hub creates an OpenTAKServer that belongs to you
+**TAK** under Delivery in the menu. Turn it on and the Hub creates an OpenTAKServer that belongs to you
 alone: its own server, its own database, its own certificate authority. Nobody else's team appears
 on your map and yours appears on nobody else's.
 
@@ -27,7 +27,7 @@ it:
 
 The first time you enable it the server takes a minute or so to come up. After that it stays.
 
-![TAK: the account's own TAK server, ready on port 8089 with one person enrolled, a form to add a person, and Enrol, QR and QR iTAK actions](/images/hub/tak.webp)
+![TAK: the account's own TAK server, ready on port 8089 with one person enrolled, a form to add a person, and Enrol, QR and QR iTAK actions](/images/hub/tak-2026-09-21.webp)
 
 ### Adding a person
 
