@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 17
+  unreleased_count: 20
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -32,6 +32,9 @@ it goes live.
 
 ### Fixes
 
+- **satellite**: announces are no longer flooded onto Iridium, and a Cloudloop refusal is not logged as sent ([fda29b95](https://github.com/meshsat/meshsat-hub/commit/fda29b95605b05ac59d2c15a422c8417676b1185))
+- **escalation**: an SOS page names the kit that raised it, and only a failed delivery is a failure ([65b27d87](https://github.com/meshsat/meshsat-hub/commit/65b27d87d168a3602b8b36840042844cd23303ea))
+- **oob**: a management command expires when the Hub stops waiting, and a late reply is reported as late ([25e0ec6f](https://github.com/meshsat/meshsat-hub/commit/25e0ec6f2566939bec3e21d35de94b9885937401))
 - **fleet**: a command reply over satellite is not announced as a broken uplink frame ([138f9264](https://github.com/meshsat/meshsat-hub/commit/138f9264bcf2c179ebe754f09aeb8b66c493332d))
 - **fleet**: a command job keeps the request's context, minus its cancellation ([0a23802d](https://github.com/meshsat/meshsat-hub/commit/0a23802d5a190994731f4d1fe19396d440199d0e))
 - **fleet**: a kit's fallback report reaches its bridge when the id arrives cut short ([9e55d9b7](https://github.com/meshsat/meshsat-hub/commit/9e55d9b7d975884e7536cc246e9b0f0742a0c4a4))
