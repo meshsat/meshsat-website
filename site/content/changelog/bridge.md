@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 894
+  unreleased_count: 899
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -393,6 +393,11 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **ttc**: the booth screen no longer zooms or scrolls under a visitor's fingers ([17f1da6d](https://github.com/meshsat/meshsat/commit/17f1da6d44fb3f975e59c5fb49015a76a32eee10))
+- **ttc**: the booth screen lights the APRS lane again now the PicoAPRS units are back in their own kits ([1b5c184b](https://github.com/meshsat/meshsat/commit/1b5c184b366a263e301a7af803ab2aa457c621eb))
+- **satellite**: the MT poll keeps watching until it can give way, and a send whose session closed fails at once ([e6705992](https://github.com/meshsat/meshsat/commit/e67059929376a472bc3c03a2b4100e6cf74a8392))
+- **satellite**: the 9704 is switched on at start as Ground Control's library does, and a real power cycle holds I\_EN low ([4e52cc14](https://github.com/meshsat/meshsat/commit/4e52cc1492d433a6eba997c5b5c38d99af65118f))
+- **satellite**: the 9704 is power-cycled, read and preempted the way Ground Control's guide says ([6004b03b](https://github.com/meshsat/meshsat/commit/6004b03bdd6a09c5cc83a3d22bdfd101a83c00a1))
 - **satellite**: the booth screen shows a satellite message as its words, not its ciphertext ([71d843d9](https://github.com/meshsat/meshsat/commit/71d843d9c1d225c089ac8526e64c77bd96dfd6bd))
 - **mesh**: a handheld's reply that repeats a text the kit just relayed goes out again ([e5df2c15](https://github.com/meshsat/meshsat/commit/e5df2c15670fc6bf663b9c65f3ee6fbea2ba44f2))
 - **sms**: an SMS typed on the dashboard goes through the delivery ledger, so the Hub can read it ([8651a2bf](https://github.com/meshsat/meshsat/commit/8651a2bf9f549eeae107df82df152983c7cbae79))
