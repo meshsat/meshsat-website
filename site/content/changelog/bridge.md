@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 885
+  unreleased_count: 887
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -392,6 +392,8 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **relay**: a client's next tunnel no longer lands in its previous one, so every request through the Hub works ([46730eb7](https://github.com/meshsat/meshsat/commit/46730eb71d8d47b2e19c1722920444d01ee0a8d1))
+- **oob**: a delayed BEARER off keeps its short reply, so APRS still shows the revert ([4c287d1f](https://github.com/meshsat/meshsat/commit/4c287d1f5ba69854711593b92940e45e30cb990d))
 - **oob**: a BEARER off for the bearer the command came in on answers before it cuts ([db4cd441](https://github.com/meshsat/meshsat/commit/db4cd4411c212482760848f2bbc38a2564559613))
 - **oob**: a mesh reset that succeeds is no longer reported as agent\_error on a slow radio ([2456670c](https://github.com/meshsat/meshsat/commit/2456670cbe4ae0916028bfce0b82db2e0394816d))
 - **hub**: a kit that loses the Hub says it is alive the moment the fallback arms ([2d86220a](https://github.com/meshsat/meshsat/commit/2d86220a535c275a57a163c310cad7d4180364d6))
