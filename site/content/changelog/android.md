@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 114
-  latest_tag: "v2.18.21"
+  tags: 116
+  latest_tag: "v2.18.23"
   latest_tag_date: "2026-09-21"
-  latest_tag_anchor: "v21821-2026-09-21"
+  latest_tag_anchor: "v21823-2026-09-21"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,19 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.23 (2026-09-21)
+
+### Fixes
+
+- **passes**: the SGP4 propagator put every satellite in the wrong place ([95f7077d](https://github.com/meshsat/meshsat-android/commit/95f7077d688070b06e2ec0a45ea1dcd0ffc679eb))
+
+## v2.18.22 (2026-09-21)
+
+### Fixes
+
+- **ui**: the signal vs passes chart replaces the Home sparkline, and the passes screen fits a small phone ([e525cea6](https://github.com/meshsat/meshsat-android/commit/e525cea69ac032b4c87806cbd251b94d8270f416))
+- **hub**: a scanned Hub QR code waits for the Hub instead of failing when its broker is not ready ([3063e26e](https://github.com/meshsat/meshsat-android/commit/3063e26ee744165e6f843359d38780da799d014f))
 
 ## v2.18.21 (2026-09-21)
 

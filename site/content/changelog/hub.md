@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 20
+  unreleased_count: 22
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -32,6 +32,8 @@ it goes live.
 
 ### Fixes
 
+- **fleet**: a satellite frame from a kit that is live over MQTT no longer replaces its MQTT report ([a9e43ea0](https://github.com/meshsat/meshsat-hub/commit/a9e43ea0b9af4034265d39ed53cb15b927dcfc3a))
+- **provisioning**: a provisioning QR is shown, and its bundle handed out, only once the broker accepts its credentials ([ec4cc1e0](https://github.com/meshsat/meshsat-hub/commit/ec4cc1e0706c802f03879003b34463bd406e6b14))
 - **satellite**: announces are no longer flooded onto Iridium, and a Cloudloop refusal is not logged as sent ([fda29b95](https://github.com/meshsat/meshsat-hub/commit/fda29b95605b05ac59d2c15a422c8417676b1185))
 - **escalation**: an SOS page names the kit that raised it, and only a failed delivery is a failure ([65b27d87](https://github.com/meshsat/meshsat-hub/commit/65b27d87d168a3602b8b36840042844cd23303ea))
 - **oob**: a management command expires when the Hub stops waiting, and a late reply is reported as late ([25e0ec6f](https://github.com/meshsat/meshsat-hub/commit/25e0ec6f2566939bec3e21d35de94b9885937401))
