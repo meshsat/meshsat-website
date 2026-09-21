@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 101
-  latest_tag: "v2.18.8"
+  tags: 102
+  latest_tag: "v2.18.9"
   latest_tag_date: "2026-09-21"
-  latest_tag_anchor: "v2188-2026-09-21"
+  latest_tag_anchor: "v2189-2026-09-21"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,13 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.9 (2026-09-21)
+
+### Fixes
+
+- **mesh**: typed mesh messages went out as coded frames no other radio could read ([6c9d435d](https://github.com/meshsat/meshsat-android/commit/6c9d435d92696326deb00f178a1354332535b26c))
+- **mesh**: a node's name announced on the air was dropped, so it stayed "Node !4370c1d8" ([cdc50593](https://github.com/meshsat/meshsat-android/commit/cdc50593dd4fdafad50909e5456c2efd8bc5f2d2))
 
 ## v2.18.8 (2026-09-21)
 
