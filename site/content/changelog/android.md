@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 116
-  latest_tag: "v2.18.23"
+  tags: 117
+  latest_tag: "v2.18.24"
   latest_tag_date: "2026-09-21"
-  latest_tag_anchor: "v21823-2026-09-21"
+  latest_tag_anchor: "v21824-2026-09-21"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.24 (2026-09-21)
+
+### Fixes
+
+- **passes**: the fallback orbit download repeated some satellites and skipped others ([0383359f](https://github.com/meshsat/meshsat-android/commit/0383359f3fa4d87905e6b2d770d3ebc5136795d5))
 
 ## v2.18.23 (2026-09-21)
 

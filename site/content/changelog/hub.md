@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 23
+  unreleased_count: 24
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -32,6 +32,7 @@ it goes live.
 
 ### Fixes
 
+- **provisioning**: a claim is not held on another replica's stale not-yet ([16421460](https://github.com/meshsat/meshsat-hub/commit/16421460c51592fb5265b085efd905316202ffde))
 - **logging**: a claim nonce is no longer written to the request log ([9213d996](https://github.com/meshsat/meshsat-hub/commit/9213d996d69a990e60e1347cd0b27005653531cc))
 - **fleet**: a satellite frame from a kit that is live over MQTT no longer replaces its MQTT report ([a9e43ea0](https://github.com/meshsat/meshsat-hub/commit/a9e43ea0b9af4034265d39ed53cb15b927dcfc3a))
 - **provisioning**: a provisioning QR is shown, and its bundle handed out, only once the broker accepts its credentials ([ec4cc1e0](https://github.com/meshsat/meshsat-hub/commit/ec4cc1e0706c802f03879003b34463bd406e6b14))
