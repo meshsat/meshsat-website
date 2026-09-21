@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 5
+  unreleased_count: 9
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -24,11 +24,15 @@ it goes live.
 
 ### Features
 
+- **satchat**: a roaming satellite node and the kits' meshes text each other ([fa275d92](https://github.com/meshsat/meshsat-hub/commit/fa275d9241340ff7099122e462d0caf04d86297b))
+- **settings**: a tenant sets its own send limits ([60a6eda2](https://github.com/meshsat/meshsat-hub/commit/60a6eda2fd6e2d0a7fe54002ca14896d309a4f7a))
 - **routing**: relay a satellite message to another modem byte for byte ([ea7038c8](https://github.com/meshsat/meshsat-hub/commit/ea7038c86f8de69f9ad36988b4acb50151b460cd))
 - **bridges**: the command page names the bearer a command went out on ([ea4b3c7a](https://github.com/meshsat/meshsat-hub/commit/ea4b3c7a6a89d556ba2d280a6f8be8a146ecd583))
 
 ### Fixes
 
+- **routing**: a satellite chat reply is not also copied by the routes ([32ad9d1b](https://github.com/meshsat/meshsat-hub/commit/32ad9d1b645dff74767596d04db06cd859271a3d))
+- **mesh**: only mesh traffic counts as a node heard on a kit's mesh ([234b3b13](https://github.com/meshsat/meshsat-hub/commit/234b3b13b0f5da1589766eeac6d0ae68c0e5e1d2))
 - **satellite**: every IMT message is its own message, not a repeat of the first ([bdd2a8a1](https://github.com/meshsat/meshsat-hub/commit/bdd2a8a1ee31018e1c90aa7ddc148ad6a746fe89))
 - **k8s**: the modem-to-thing map comes from the secret store, for both replicas ([4748207f](https://github.com/meshsat/meshsat-hub/commit/4748207f24a324f8d910d7f985a3ff96bad9e160))
 - **satellite**: a whole message is no longer parked as half of a two-part one ([d7a165ff](https://github.com/meshsat/meshsat-hub/commit/d7a165ff772fe3f0705fa548242ba09e618decd1))
