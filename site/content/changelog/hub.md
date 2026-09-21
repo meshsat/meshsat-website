@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 26
+  unreleased_count: 31
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -24,6 +24,8 @@ it goes live.
 
 ### Features
 
+- **web**: test an escalation chain from the Alerts page ([49e6c53e](https://github.com/meshsat/meshsat-hub/commit/49e6c53e3868a688d347dbe5d13f8ec36c238ef1))
+- **web**: the Hub becomes an operations console, quiet when all is well ([4143da05](https://github.com/meshsat/meshsat-hub/commit/4143da05a3ea1acf0a3c476be8244eb5541bbc5c))
 - **settings**: a tenant may set its send limit below the default too ([8d3d44f4](https://github.com/meshsat/meshsat-hub/commit/8d3d44f4a18a57573762a309a1a0d535ca9a52e5))
 - **satchat**: a roaming satellite node and the kits' meshes text each other ([fa275d92](https://github.com/meshsat/meshsat-hub/commit/fa275d9241340ff7099122e462d0caf04d86297b))
 - **settings**: a tenant sets its own send limits ([60a6eda2](https://github.com/meshsat/meshsat-hub/commit/60a6eda2fd6e2d0a7fe54002ca14896d309a4f7a))
@@ -32,6 +34,9 @@ it goes live.
 
 ### Fixes
 
+- **web**: the Reticulum topology page takes the console's quiet colours ([a6611fd3](https://github.com/meshsat/meshsat-hub/commit/a6611fd3e2a23d82aa57fe3fd9d1e966418cde4c))
+- **web**: the credit balance, the send-limit warning and the message export are back ([6aff8965](https://github.com/meshsat/meshsat-hub/commit/6aff8965db5207c4ee839b69932456dea641394a))
+- **audit**: bridge changes and bridge credentials leave an audit record ([caaa1b74](https://github.com/meshsat/meshsat-hub/commit/caaa1b74f385236abaf61d4a612093b8f17c0126))
 - **bridges**: creating a bridge with an id another tenant holds no longer rewrites that tenant's bridge ([4d63d8b2](https://github.com/meshsat/meshsat-hub/commit/4d63d8b2fab355e775becc421671c8a6123a72ec))
 - **provisioning**: a provisioning bundle is kept per tenant and goes with its bridge ([05f5adef](https://github.com/meshsat/meshsat-hub/commit/05f5adef06a42de28f0afbd2b96cd645fdf09b99))
 - **provisioning**: a claim is not held on another replica's stale not-yet ([16421460](https://github.com/meshsat/meshsat-hub/commit/16421460c51592fb5265b085efd905316202ffde))
