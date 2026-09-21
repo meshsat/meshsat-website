@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 112
-  latest_tag: "v2.18.19"
+  tags: 113
+  latest_tag: "v2.18.20"
   latest_tag_date: "2026-09-21"
-  latest_tag_anchor: "v21819-2026-09-21"
+  latest_tag_anchor: "v21820-2026-09-21"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,14 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.20 (2026-09-21)
+
+### Fixes
+
+- **ui**: the QR scanner opened sideways and full screen ([d5e15bab](https://github.com/meshsat/meshsat-android/commit/d5e15babea6e78af02cfe00790dfcd55326477ec))
+- **ui**: the Hub card said "Not set up" while the phone was connected to the Hub ([f0cc4d9b](https://github.com/meshsat/meshsat-android/commit/f0cc4d9bff438de3c642f7a4f0cdf7f1da4552b6))
+- **hub**: a failed first connect to the Hub was never tried again ([3f721862](https://github.com/meshsat/meshsat-android/commit/3f72186287d6d86e69d0a3cfc2d585512670dee1))
 
 ## v2.18.19 (2026-09-21)
 
