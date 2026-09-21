@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 876
+  unreleased_count: 878
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -23,6 +23,7 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Features
 
+- **aprs**: the status names the cause when a PicoAPRS transmits and hears nothing ([8f34f59a](https://github.com/meshsat/meshsat/commit/8f34f59a1819a92371dd40b03666ee290d6183c7))
 - **passes**: predict Iridium passes offline from elements shipped in the binary, refresh via the TLE API when Celestrak fails ([92c5a769](https://github.com/meshsat/meshsat/commit/92c5a769fd7e503b356410c65af690991222de86))
 - **mesh**: keep the radio's plain-text console lines too ([3f5ea61b](https://github.com/meshsat/meshsat/commit/3f5ea61bb5e985685eeab19008d579b22b444519))
 - **mesh**: keep the radio's own log, reboot flag and notifications ([6fd324bc](https://github.com/meshsat/meshsat/commit/6fd324bc56dd9978cc58e0c26ca37b368f9cf835))
@@ -389,6 +390,7 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **hub**: the satellite fallback to the Hub uses the modem the kit carries, not only a 9603 ([e73c1257](https://github.com/meshsat/meshsat/commit/e73c1257e8c0ba5d10c74a93f1a7182ace51fbbc))
 - **satellite**: a send that runs out of time is cancelled in the modem, so a retry no longer delivers the message twice ([87fb787c](https://github.com/meshsat/meshsat/commit/87fb787c5da41965a9b663e5bd9b12f01cfa691d))
 - **satellite**: the serial watchdog no longer power-cycles the 9704 in the middle of a send ([65f3ac60](https://github.com/meshsat/meshsat/commit/65f3ac6010ab22b8e701788587670e5a3111eaf4))
 - **ttc**: the booth screen names its own kit again, whatever callsign it transmits under ([eaa935d6](https://github.com/meshsat/meshsat/commit/eaa935d62b654bb7c7ae5840fec995c6b24f325b))

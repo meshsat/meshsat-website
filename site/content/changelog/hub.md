@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 10
+  unreleased_count: 11
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -32,6 +32,7 @@ it goes live.
 
 ### Fixes
 
+- **routing**: renaming a route no longer blanks its recipients and senders ([4052a619](https://github.com/meshsat/meshsat-hub/commit/4052a61948cb6c4dd29a0768824bf9ebcb206dbc))
 - **routing**: a satellite chat reply is not also copied by the routes ([32ad9d1b](https://github.com/meshsat/meshsat-hub/commit/32ad9d1b645dff74767596d04db06cd859271a3d))
 - **mesh**: only mesh traffic counts as a node heard on a kit's mesh ([234b3b13](https://github.com/meshsat/meshsat-hub/commit/234b3b13b0f5da1589766eeac6d0ae68c0e5e1d2))
 - **satellite**: every IMT message is its own message, not a repeat of the first ([bdd2a8a1](https://github.com/meshsat/meshsat-hub/commit/bdd2a8a1ee31018e1c90aa7ddc148ad6a746fe89))
