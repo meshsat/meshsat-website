@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 890
+  unreleased_count: 892
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -393,6 +393,8 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **sms**: an SMS typed on the dashboard goes through the delivery ledger, so the Hub can read it ([8651a2bf](https://github.com/meshsat/meshsat/commit/8651a2bf9f549eeae107df82df152983c7cbae79))
+- **satellite**: the kits know every Iridium satellite again, so no pass goes missing ([be91b2e4](https://github.com/meshsat/meshsat/commit/be91b2e4a8f6837b00952667caa3732f37bc133e))
 - **oob**: a BEARER revert survives a bridge restart, and deleting a peer no longer cancels it ([794226a0](https://github.com/meshsat/meshsat/commit/794226a018f79b8cb5be0c3e5a9f1259212102a3))
 - **aprs**: a silent TNC no longer gets its gateway restarted during the cold start ([01107bf5](https://github.com/meshsat/meshsat/commit/01107bf536cb9fb8a7cfc1536b4da5603dd9a712))
 - **relay**: a client's next tunnel no longer lands in its previous one, so every request through the Hub works ([46730eb7](https://github.com/meshsat/meshsat/commit/46730eb71d8d47b2e19c1722920444d01ee0a8d1))
