@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 24
+  unreleased_count: 26
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -32,6 +32,8 @@ it goes live.
 
 ### Fixes
 
+- **bridges**: creating a bridge with an id another tenant holds no longer rewrites that tenant's bridge ([4d63d8b2](https://github.com/meshsat/meshsat-hub/commit/4d63d8b2fab355e775becc421671c8a6123a72ec))
+- **provisioning**: a provisioning bundle is kept per tenant and goes with its bridge ([05f5adef](https://github.com/meshsat/meshsat-hub/commit/05f5adef06a42de28f0afbd2b96cd645fdf09b99))
 - **provisioning**: a claim is not held on another replica's stale not-yet ([16421460](https://github.com/meshsat/meshsat-hub/commit/16421460c51592fb5265b085efd905316202ffde))
 - **logging**: a claim nonce is no longer written to the request log ([9213d996](https://github.com/meshsat/meshsat-hub/commit/9213d996d69a990e60e1347cd0b27005653531cc))
 - **fleet**: a satellite frame from a kit that is live over MQTT no longer replaces its MQTT report ([a9e43ea0](https://github.com/meshsat/meshsat-hub/commit/a9e43ea0b9af4034265d39ed53cb15b927dcfc3a))

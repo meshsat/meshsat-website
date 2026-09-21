@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 892
+  unreleased_count: 894
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -393,6 +393,8 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **satellite**: the booth screen shows a satellite message as its words, not its ciphertext ([71d843d9](https://github.com/meshsat/meshsat/commit/71d843d9c1d225c089ac8526e64c77bd96dfd6bd))
+- **mesh**: a handheld's reply that repeats a text the kit just relayed goes out again ([e5df2c15](https://github.com/meshsat/meshsat/commit/e5df2c15670fc6bf663b9c65f3ee6fbea2ba44f2))
 - **sms**: an SMS typed on the dashboard goes through the delivery ledger, so the Hub can read it ([8651a2bf](https://github.com/meshsat/meshsat/commit/8651a2bf9f549eeae107df82df152983c7cbae79))
 - **satellite**: the kits know every Iridium satellite again, so no pass goes missing ([be91b2e4](https://github.com/meshsat/meshsat/commit/be91b2e4a8f6837b00952667caa3732f37bc133e))
 - **oob**: a BEARER revert survives a bridge restart, and deleting a peer no longer cancels it ([794226a0](https://github.com/meshsat/meshsat/commit/794226a018f79b8cb5be0c3e5a9f1259212102a3))
