@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 881
+  unreleased_count: 883
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -23,6 +23,8 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Features
 
+- **timesync**: a slow link asks for the time less often, and Settings shows who answered ([f280c232](https://github.com/meshsat/meshsat/commit/f280c23262fe03be722c0860ac137a4751921c33))
+- **oob**: a management command carries an expiry, and a kit refuses one that arrives too late ([cd1267f5](https://github.com/meshsat/meshsat/commit/cd1267f583c68e542677a9c5cc7d541636a7137f))
 - **aprs**: the status names the cause when a PicoAPRS transmits and hears nothing ([8f34f59a](https://github.com/meshsat/meshsat/commit/8f34f59a1819a92371dd40b03666ee290d6183c7))
 - **passes**: predict Iridium passes offline from elements shipped in the binary, refresh via the TLE API when Celestrak fails ([92c5a769](https://github.com/meshsat/meshsat/commit/92c5a769fd7e503b356410c65af690991222de86))
 - **mesh**: keep the radio's plain-text console lines too ([3f5ea61b](https://github.com/meshsat/meshsat/commit/3f5ea61bb5e985685eeab19008d579b22b444519))
