@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 107
-  latest_tag: "v2.18.14"
+  tags: 108
+  latest_tag: "v2.18.15"
   latest_tag_date: "2026-09-21"
-  latest_tag_anchor: "v21814-2026-09-21"
+  latest_tag_anchor: "v21815-2026-09-21"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.18.15 (2026-09-21)
+
+### Fixes
+
+- **iridium**: a long satellite message was cut into parts the Hub reads as something else ([5ea70f93](https://github.com/meshsat/meshsat-android/commit/5ea70f9357e4569a0671102047192eb522b7250a))
 
 ## v2.18.14 (2026-09-21)
 
