@@ -88,6 +88,7 @@ sending compact position, health and SOS frames instead of the full telemetry st
 | `MESHSAT_HUB_FALLBACK_POSITION_MIN` | `15` | Minutes between position frames while down |
 | `MESHSAT_HUB_FALLBACK_HEALTH_MIN` | `60` | Minutes between health frames while down |
 | `MESHSAT_HUB_FALLBACK_BEARER` | `auto` | `auto`, `satellite` or `sms`. `auto` prefers satellite only when that gateway is connected and recently active |
+| `MESHSAT_IMT_MT_POLL_MIN` | `10` | Minutes a RockBLOCK 9704 may go without a satellite session before the bridge sends a short health report over it, so messages waiting at Iridium come down. `0` turns it off |
 
 ## Hub relay
 
