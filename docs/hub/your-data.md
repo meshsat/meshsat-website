@@ -24,5 +24,5 @@ back. After the grace period it is gone and cannot be recovered.
 
 ## Audit log
 
-**Audit** shows security-relevant events as a hash chain, so an entry cannot be altered or
+**Audit log** (under Admin) shows security-relevant events as a hash chain, so an entry cannot be altered or
 removed without breaking the chain. Owners can verify the chain from the same page.

@@ -19,23 +19,24 @@ a chain up is the part only you can do.
 
 ## Building a chain
 
-Open **Escalation** and create a chain. A chain is an ordered list of tiers, and each tier has:
+Open **Alerts** and choose **New chain**. A chain is an ordered list of steps, and each step has:
 
 | Field | Meaning |
 |---|---|
-| Name | what this tier is, for example `sms_oncall` or `email_team` |
-| Targets | where to send: phone numbers, email addresses or notification URLs |
-| Wait | seconds to wait for an acknowledgement before moving to the next tier |
-| Max retries | how many delivery attempts within this tier before giving up on it |
+| Name | what this step is, for example `sms_oncall` or `email_team` |
+| Targets | where to send, comma separated: a phone number goes by SMS, an email address by email, a URL through Apprise, a single word as an ntfy topic |
+| Wait | seconds after the previous step before this one fires (the first step fires at once) |
+| Tries | how many delivery attempts within this step before moving on |
 
-The Hub works down the tiers in order. It stops as soon as somebody acknowledges. If nobody does,
-it keeps going to the end of the chain and then leaves the alert in an unacknowledged state,
-visible on the dashboard.
+The Hub works down the steps in order. It stops as soon as somebody acknowledges. If nobody does,
+it keeps going to the end of the chain and then leaves the alert unacknowledged: it stays at the
+top of the Alerts page and on the attention button at the top of every page until somebody
+acknowledges it.
 
-A chain with one tier and one phone number is a valid chain and is much better than none. Start
+A chain with one step and one phone number is a valid chain and is much better than none. Start
 there.
 
-![Escalation and alerts: no active alerts, and a chain for the field kits with three tiers, immediately, after 300 seconds and after 900 seconds, targets blurred](/images/hub/escalation.webp)
+![Alerts: nothing waiting for an acknowledgement, and the field kits' chain drawn as three numbered steps, at once, after 5 minutes and after 15 minutes, targets blurred](/images/hub/alerts-2026-09-21.webp)
 
 ## Where the messages actually go
 
@@ -48,21 +49,21 @@ reach anyone and an escalation has nowhere to go.
 
 Do not wait for a real emergency to find out whether the chain works.
 
-1. Create the chain with your own number or address in the first tier.
-2. Trigger a test alert from the **Escalation** page.
-3. Confirm it arrives, and acknowledge it.
-4. Then add the second tier and repeat, so you know the wait and the handover work.
+1. Create the chain with your own number or address in the first step.
+2. Choose **Test this chain** on its card in **Alerts**. It is a real alert on that chain.
+3. Confirm it arrives, and acknowledge it on the Alerts page.
+4. Then add the second step and repeat, so you know the wait and the handover work.
 
 A chain that has never been tested is an assumption.
 
-## The dead man's switch
+## Check-ins
 
-Separately from SOS, a device can be required to check in. If it stops, the Hub raises an alert
-on the same escalation chains. Configure it under **Deadman**. This catches the case an SOS
-button cannot: somebody who is unable to press anything.
+Separately from SOS, a device can be required to check in: a dead man's switch. If it stops, the
+Hub raises an alert on the same escalation chains. Configure it under **Check-ins**. This catches
+the case an SOS button cannot: somebody who is unable to press anything.
 
 ## Geofences
 
 Under **Geofences** you can draw an area and alert when a device enters or leaves it. Geofence
 alerts use the same escalation chains, so the contacts and timings you set up once apply to all
-three: SOS, dead man's switch and geofence.
+three: SOS, check-ins and geofences.
