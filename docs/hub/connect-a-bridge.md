@@ -4,23 +4,26 @@ A bridge reaches the Hub over MQTT on a WebSocket, and the Hub authenticates it 
 certificate rather than a password. The certificate is the identity: it is signed by the Hub's
 own bridge CA, and a bridge without one cannot connect no matter what else it presents.
 
-You do this once per bridge. It takes about two minutes.
+You do this once per bridge. It takes about two minutes. In the Hub a connected bridge is called
+a kit, and they are listed under **Kits**.
 
 ## In the Hub
 
-1. Open **Fleet** and choose **Add bridge**. Give it an ID that means something to you; it is the
-   name you will see on the map and in the message log.
-2. **Generate credentials.** The Hub creates the MQTT user for this bridge.
-3. **Issue a certificate.** You get the certificate, its private key and the CA certificate.
-   **The private key is shown once and never again.** Copy all three now.
+1. Open **Kits** and choose **Add kit**. Give it an ID that means something to you; it is the
+   name you will see on the map and in the message log, and it cannot be changed later.
+2. The new kit opens on the right. Under **Connection**, either:
+   - choose **Show setup QR** and scan the code with the kit or with the MeshSat Android app. It
+     carries the address, a broker login and the certificate, and works once. The page tells you
+     when the broker has accepted the new login, so wait for **Ready** before you scan; or
+   - for a bridge you configure by hand, choose **Issue broker login** and then **Issue
+     certificate**. You get the username and password, then the certificate, its private key and
+     the Hub's CA certificate. **The password and the private key are shown once and never
+     again.** Copy them now.
 
-The Fleet page walks these three steps in order the first time you add a bridge.
+![Kits: the list of kits on the left, each with the paths it can use, and the selected kit on the right with the state of each interface, its commands and its connection, hostnames blurred](/images/hub/kits-2026-09-21.webp)
 
-![Fleet: three bridges, a phone running MeshSat Android online and two field kits offline with their hostnames blurred, each with its version, last report and the interfaces it carries](/images/hub/fleet-hosts-blurred.webp)
-
-A phone running [MeshSat Android](/android/) joins the fleet the same way, without the copying:
-in the app, Setup > Hub > **Scan Hub Provision QR** takes the address, the credentials and the
-certificate from a QR code the Hub shows. See [Set up MeshSat Android](/android/setup#hub-optional).
+On a phone running [MeshSat Android](/android/), Setup > Hub > **Scan Hub Provision QR** is the
+QR route. See [Set up MeshSat Android](/android/setup#hub-optional).
 
 ## On the bridge
 
@@ -36,7 +39,7 @@ Put the values into the bridge's Hub Connection settings, or into its environmen
 | `MESHSAT_HUB_TLS_KEY` | path to the private key |
 | `MESHSAT_HUB_TLS_CA` | path to the CA certificate |
 
-Restart the bridge. It publishes a birth message on connect, and the Fleet page turns it online
+Restart the bridge. It publishes a birth message on connect, and **Kits** shows it connected
 within a few seconds.
 
 ::: warning Do not set the bridge CA as the system trust store
@@ -47,8 +50,9 @@ system roots with the bridge CA stops the bridge trusting the server it is talki
 
 ## Certificates expire
 
-Certificates are issued for 90 days. Reissue from the Fleet page before expiry and replace the
-files on the bridge; nothing else changes. A bridge whose certificate has expired stops
+Certificates are issued for 90 days. The kit's page shows how many days are left; choose
+**Reissue certificate** there before expiry and replace the files on the bridge; nothing else
+changes. A bridge whose certificate has expired stops
 connecting and shows offline.
 
 ## If it stays offline

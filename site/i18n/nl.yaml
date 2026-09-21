@@ -385,10 +385,10 @@ host_k_ops:
 host_v_ops:
   other: "zelf te regelen"
 hub_shot1:
-  other: "Routeringsregels: een satellietbericht gaat door naar APRS, MQTT, TAK, webhooks en meldingen, en de ene kit bereikt de andere via sms"
+  other: "Overzicht: de paden die elke kit nu kan gebruiken, het verkeer van de afgelopen dag en wat je aandacht nodig heeft (hier niets)"
 hub_shot2:
-  other: "Berichten in beide richtingen via Iridium: een antwoord dat je hier typt wordt gecomprimeerd, versleuteld en klaargezet voor de volgende satellietovergang"
+  other: "Berichten over elke drager: satellietverkeer van kit naar kit blijft end-to-end versleuteld, en een antwoord gaat weg vanuit het paneel ernaast"
 hub_shot3:
-  other: "Een eigen TAK-server: mensen die je toevoegt zien de vloot in ATAK, WinTAK of iTAK"
+  other: "Routering in gewone woorden: een satellietbericht gaat door naar een andere kit, naar APRS, MQTT en TAK, naar webhooks en naar meldingen"
 hub_shots_note:
-  other: "Dezelfde schermen op jouw server of op de onze. Vastgelegd op hub.meshsat.net op 19 september 2026, met telefoonnummers en IMEI's onscherp gemaakt."
+  other: "Dezelfde schermen op jouw server of op de onze. Vastgelegd op hub.meshsat.net op 21 september 2026, met telefoonnummers, IMEI's en hostnamen van de kits onscherp gemaakt."

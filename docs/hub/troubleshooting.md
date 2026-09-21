@@ -1,6 +1,6 @@
 # When something does not work
 
-Start with **Audit**. Every sign-in, every inbound delivery and every change is recorded there,
+Start with the **Audit log**. Every sign-in, every inbound delivery and every change is recorded there,
 so it answers the first question worth asking: did the Hub ever see this at all? If it did, the
 problem is downstream of us. If it did not, it is upstream.
 
@@ -44,7 +44,8 @@ Three things, in this order:
 2. You have a [provider account](/hub/provider-accounts) for the bearer you are sending over. The
    Hub does not sell airtime: you bring your own Cloudloop, Twilio or Rock7 credentials and your
    carrier bills you directly, so without them there is nothing to send through.
-3. There is credit on that account. The Dashboard shows the balance.
+3. There is credit on that account. The Overview shows the Iridium credit balance under the
+   traffic strip, and **Costs** shows it too.
 
 ## The Hub will not let me add another device
 

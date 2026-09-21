@@ -100,7 +100,7 @@ The Hub runs a Reticulum node reachable at `reticulum.meshsat.net:443`. It is TL
 authentication: the connection is refused without a client certificate signed by the Hub's own
 bridge certificate authority.
 
-That certificate is issued per bridge from the Hub's Fleet page, and it arrives in the same
+That certificate is issued per bridge from its page under Kits in the Hub, and it arrives in the same
 provisioning bundle as the MQTT credentials. See [connect a bridge](/hub/connect-a-bridge). RNS
 speaks plain TCP rather than TLS, so a node connecting by hand needs a local TLS wrapper presenting
 the certificate and offering a plain port for RNS to use.

@@ -1,14 +1,34 @@
 # MeshSat Hub
 
 MeshSat Hub is the hosted fleet manager at [hub.meshsat.net](https://hub.meshsat.net). One place
-to watch every bridge and device you run: a live map, the full message log, routing between
-bearers, SOS escalation and a tamper-evident audit log.
+to watch every kit and device you run: which paths each kit can use right now, a live map, the
+full message log, routing between bearers, SOS escalation and a tamper-evident audit log.
 
 You do not install it to use it. [Create an account](https://auth.meshsat.net/if/flow/meshsat-enrollment/),
 we review it before it goes live, and your first sign-in puts you on the free plan of four
 devices.
 
-![The Hub's operations dashboard: Hub OK, bridges online, devices, messages, credits and alerts, then constellations, safety and network panels and the message activity chart](/images/hub/dashboard.webp)
+![The Hub's Overview: a one-line summary of the fleet, nothing needing attention, the paths each kit can use right now (mesh, satellite, cellular, APRS, ZigBee), the traffic of the last 24 hours with the latest messages, and the devices with when each was last heard](/images/hub/overview-2026-09-21.webp)
+
+## Finding your way
+
+The menu on the left is grouped by what you are doing: **Now** (Overview, Map, Messages),
+**Fleet** (Kits, Devices, Groups, Bonding), **Safety** (Alerts, Check-ins, Geofences, Alert
+rules, Notifications), **Delivery** (Routing, Integrations, Webhooks, Email, TAK, Costs),
+**Network** and **Admin**. A kit is a connected bridge: a Pi in a case, or a phone running
+MeshSat Android.
+
+Every page carries a button at the top that says **All clear** when nothing needs you. When
+something does, it names it, most urgent first: an unacknowledged SOS or alert, a missed
+check-in, a kit that dropped off, a device at its send limit. You can acknowledge an alert from
+there without leaving the page you are on. Press <kbd>/</kbd> (or <kbd>Ctrl</kbd> <kbd>K</kbd>)
+to jump to any page, kit or device by typing part of its name or IMEI.
+
+The **Overview** draws each kit as the paths it can use right now. A solid bar is a bearer that
+is working, a half-filled one is still coming up, an outline is fitted but not working, and a dot
+means the kit has no such hardware. A device that has been quiet for hours is shown as "Heard
+3 h ago" and not as a fault: satellite devices report when they have something to say. Only a
+[check-in](/hub/sos-and-escalation#check-ins) that was asked for and missed is an alarm.
 
 ## Start here
 
@@ -87,7 +107,7 @@ The Hub routes messages through **Iridium** and **Globalstar** and picks the bac
 
 - **A REST API** with Swagger documentation, see [Hub API](/hub/api)
 - **SOS escalation chains:** notification in steps (push, SMS, email, call)
-- **Dead man's switch:** alerts when a device misses its check-in
+- **Check-ins (a dead man's switch):** alerts when a device misses its check-in
 - **Geofencing:** polygon-based alerts with escalation
 - **A TAK server per account**, or forwarding to your own TAK server
 - **APRS-IS IGate:** positions into the amateur radio network
@@ -104,7 +124,7 @@ The Hub routes messages through **Iridium** and **Globalstar** and picks the bac
 - **MPTCP concentrator** for satellite plus cellular link aggregation
 - **MSVQ-SC decoder** for messages compressed by MeshSat Android
 
-![Reticulum topology in the Hub: the Hub as a transport node, six transport interfaces (SMS, Tor, WireGuard, MQTT, TCP and Iridium) with cost, MTU and routes, and the network map](/images/hub/reticulum.webp)
+![Reticulum topology in the Hub: the Hub as a transport node, its transport interfaces (SMS, Tor, WireGuard, MQTT, TCP and Iridium) with cost, MTU and routes, and the network map](/images/hub/topology-2026-09-21.webp)
 
 ## Configuration
 
