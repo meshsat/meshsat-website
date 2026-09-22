@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 899
+  unreleased_count: 900
   unreleased_since: "2026-09-21"
   unreleased_anchor: "unreleased-main-last-change-2026-09-21"
 ---
@@ -393,6 +393,7 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **power**: a full pack resting on mains is no longer reported as draining ([b74af040](https://github.com/meshsat/meshsat/commit/b74af0404a6de488f5bafea0e384093a9f29d94d))
 - **ttc**: the booth screen no longer zooms or scrolls under a visitor's fingers ([17f1da6d](https://github.com/meshsat/meshsat/commit/17f1da6d44fb3f975e59c5fb49015a76a32eee10))
 - **ttc**: the booth screen lights the APRS lane again now the PicoAPRS units are back in their own kits ([1b5c184b](https://github.com/meshsat/meshsat/commit/1b5c184b366a263e301a7af803ab2aa457c621eb))
 - **satellite**: the MT poll keeps watching until it can give way, and a send whose session closed fails at once ([e6705992](https://github.com/meshsat/meshsat/commit/e67059929376a472bc3c03a2b4100e6cf74a8392))
