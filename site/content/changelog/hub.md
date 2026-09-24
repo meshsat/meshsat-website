@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 31
-  unreleased_since: "2026-09-21"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-21"
+  unreleased_count: 32
+  unreleased_since: "2026-09-23"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-23"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,11 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-21)
+## Unreleased (main, last change 2026-09-23)
 
 ### Features
 
+- **db**: barman backups through the crypt gateway to Hetzner \[IFRNLLEI01PRD-2850\] ([aee57ea5](https://github.com/meshsat/meshsat-hub/commit/aee57ea5219273115d90308fcb039695a2795d62))
 - **web**: test an escalation chain from the Alerts page ([49e6c53e](https://github.com/meshsat/meshsat-hub/commit/49e6c53e3868a688d347dbe5d13f8ec36c238ef1))
 - **web**: the Hub becomes an operations console, quiet when all is well ([4143da05](https://github.com/meshsat/meshsat-hub/commit/4143da05a3ea1acf0a3c476be8244eb5541bbc5c))
 - **settings**: a tenant may set its send limit below the default too ([8d3d44f4](https://github.com/meshsat/meshsat-hub/commit/8d3d44f4a18a57573762a309a1a0d535ca9a52e5))
