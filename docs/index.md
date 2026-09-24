@@ -22,6 +22,9 @@ features:
     details: The control room for every kit, phone and node you run. Live map, every message, routing and SOS escalation. Run it on your own server, or try it on ours at hub.meshsat.net.
   - title: Android
     details: An ordinary Android phone as the gateway. Paired with a MeshSat node it reaches the mesh and an Iridium modem over one Bluetooth connection, and adds SMS from its own SIM.
+  - title: iOS
+    details: The same gateway on an iPhone, a port of the Android app. Mesh and satellite through a MeshSat node over Bluetooth; text messages go through the Messages app because iOS allows nothing else. Being built, nothing to install yet.
+    link: /ios/
   - title: Node
     details: A pocket-sized box with a Meshtastic LoRa radio and a RockBLOCK Iridium modem, reached by MeshSat Android over one Bluetooth connection. A prototype, tested on the bench.
     link: /node/

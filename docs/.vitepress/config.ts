@@ -20,6 +20,7 @@ export default defineConfig({
       { text: 'Bridge', link: '/guide/getting-started' },
       { text: 'Hub', link: '/hub/' },
       { text: 'Android', link: '/android/' },
+      { text: 'iOS', link: '/ios/' },
       { text: 'Node', link: '/node/' },
       { text: 'Reference', link: '/api/' },
       { text: 'Changelog', link: 'https://meshsat.net/changelog/' },
@@ -94,6 +95,15 @@ export default defineConfig({
             { text: 'Set up', link: '/android/setup' },
             { text: 'Satellite', link: '/android/satellite' },
             { text: 'Safety', link: '/android/safety' },
+          ],
+        },
+      ],
+
+      '/ios/': [
+        {
+          text: 'iOS',
+          items: [
+            { text: 'Overview', link: '/ios/' },
           ],
         },
       ],
