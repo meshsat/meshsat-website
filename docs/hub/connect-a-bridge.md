@@ -12,9 +12,11 @@ a kit, and they are listed under **Kits**.
 1. Open **Kits** and choose **Add kit**. Give it an ID that means something to you; it is the
    name you will see on the map and in the message log, and it cannot be changed later.
 2. The new kit opens on the right. Under **Connection**, either:
-   - choose **Show setup QR** and scan the code with the kit or with the MeshSat Android app. It
-     carries the address, a broker login and the certificate, and works once. The page tells you
-     when the broker has accepted the new login, so wait for **Ready** before you scan; or
+   - choose **Show setup QR** and scan the code with the kit or with the MeshSat app on Android
+     or iOS. It carries the address, a broker login and the certificate, and works once, for 30
+     minutes. Until it is scanned the kit keeps the login it has, so showing a code to a connected
+     kit and closing it changes nothing. The scan replaces the login; the broker takes it up
+     within a minute, and the app keeps retrying by itself until it does; or
    - for a bridge you configure by hand, choose **Issue broker login** and then **Issue
      certificate**. You get the username and password, then the certificate, its private key and
      the Hub's CA certificate. **The password and the private key are shown once and never
@@ -23,7 +25,9 @@ a kit, and they are listed under **Kits**.
 ![Kits: the list of kits on the left, each with the paths it can use, and the selected kit on the right with the state of each interface, its commands and its connection, hostnames blurred](/images/hub/kits-2026-09-21.webp)
 
 On a phone running [MeshSat Android](/android/), Setup > Hub > **Scan Hub Provision QR** is the
-QR route. See [Set up MeshSat Android](/android/setup#hub-optional).
+QR route. See [Set up MeshSat Android](/android/setup#hub-optional). On an iPhone running
+[MeshSat iOS](/ios/), point the Camera app at the code: the `meshsat://` link it carries opens
+the app, which asks you to confirm before it claims the login.
 
 ## On the bridge
 
