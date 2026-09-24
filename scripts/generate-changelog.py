@@ -131,6 +131,14 @@ REPOS = [
         "tag_pattern": r"^v\d+\.\d+\.\d+$",
     },
     {
+        "key": "ios",
+        "project": 71,
+        "github": "meshsat/meshsat-ios",
+        "path": "site/content/changelog/ios.md",
+        "types": ["feat", "fix", "perf"],
+        "tag_pattern": r"^v\d+\.\d+\.\d+$",
+    },
+    {
         "key": "fieldkit",
         "project": 64,
         "github": "meshsat/meshsat-fieldkit",

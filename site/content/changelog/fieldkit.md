@@ -2,7 +2,7 @@
 title: "Field Kit"
 description: "MeshSat Field Kit changelog: the go-box hardware, the V1 kits as built and the V2 carrier PCB set."
 tagline: "Go-box hardware"
-weight: 4
+weight: 5
 changelog:
   tags: 1
   latest_tag: "revA"

@@ -68,9 +68,9 @@ done
 rm -f "$BASE"
 
 echo "=== 5. changelog tabs are generated and non-empty ==="
-# The four tabs are rewritten by scripts/generate-changelog.py; an empty
+# The five product pages are rewritten by scripts/generate-changelog.py; an empty
 # generated block (API failure, bad markers) must not reach production.
-for t in bridge hub android fieldkit; do
+for t in bridge hub android ios fieldkit; do
   f="$PUB/changelog/$t/index.html"
   if [ ! -f "$f" ]; then fail "changelog/$t/index.html missing"; continue; fi
   N=$(grep -o '<h2' "$f" | wc -l | tr -d ' ')
