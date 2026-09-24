@@ -26,8 +26,9 @@ a kit, and they are listed under **Kits**.
 
 On a phone running [MeshSat Android](/android/), Setup > Hub > **Scan Hub Provision QR** is the
 QR route. See [Set up MeshSat Android](/android/setup#hub-optional). On an iPhone running
-[MeshSat iOS](/ios/), point the Camera app at the code: the `meshsat://` link it carries opens
-the app, which asks you to confirm before it claims the login.
+[MeshSat iOS](/ios/), Setup > Hub > **Scan the Hub's QR code** does the same in the app. The
+Camera app works too: the `meshsat://` link the code carries opens MeshSat iOS, which then names
+the Hub and the kit and asks you to confirm before it claims the login.
 
 ## On the bridge
 
