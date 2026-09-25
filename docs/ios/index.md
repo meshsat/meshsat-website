@@ -29,14 +29,22 @@ sideloading and a simulator build.
   modem rings, or when you check the mailbox. Passes are predicted on the phone from orbit data
   that ships with the app.
 - **Text messages.** The app opens the Messages composer with the text ready, one message per
-  recipient. iOS does not let an app send a text by itself or read incoming texts, so replies
-  arrive in Messages, not in MeshSat.
+  recipient, in the same wire format as MeshSat Android: compressed with smaz2 or MSVQ-SC and
+  encrypted per conversation with AES-256-GCM when you set that up, so a MeshSat kit reads it.
+  iOS does not let an app send a text by itself or read incoming texts, so replies arrive in
+  Messages, not in MeshSat.
 - **Hub.** MQTT with a client certificate; the phone shows up in the Hub's fleet like a field
-  kit, reports health and positions, and takes remote commands.
-- **APRS** through a KISS TNC over TCP or directly to APRS-IS. **TAK** positions from the Hub's
-  feed on the map, receive only. **Reticulum** as a transport node between the links.
+  kit, reports health and positions, and takes remote commands: send a message, flush the queue,
+  update config, rotate keys, restart the transports. Where a field kit cannot be reached
+  directly, the app reaches it through a tunnel via the Hub.
+- **APRS** through a KISS TNC over TCP or directly to APRS-IS, with smart beaconing and
+  acknowledged messages. **TAK** positions from the Hub's feed on the map, and the phone's own
+  position and an SOS to the Hub as Cursor on Target events; there is no ATAK on iOS.
+  **Reticulum** as a transport node between the mesh, the Iridium modem, MQTT and TCP peers.
 - **Safety.** Hold the SOS button for 3 seconds and the SOS goes out on every route the phone
-  has, each retried until it is sent. A check-in timer and zones drawn on the map.
+  has, each retried until it is sent. A check-in timer that sends SOS when the phone sees no
+  activity for too long, and zones drawn on the map that record when a node enters or leaves
+  an area.
 
 ## What an iPhone cannot do
 
