@@ -59,5 +59,6 @@ phone is in.
 The [README](https://github.com/meshsat/meshsat-ios#what-works-and-what-does-not) carries the
 table, one row per capability, with the date each one was verified on a phone. Verified so far
 (25 September 2026, iPhone 11 Pro Max, T-Beam Supreme node): the Hub connection, the node link
-over Bluetooth LE, the RockBLOCK 9603 over the node's pipe, and the reconnect after a restart.
-The satellite messages themselves, the mesh message and SOS are still marked "Not built yet".
+over Bluetooth LE, the RockBLOCK 9603 over the node's pipe, the reconnect after a restart, and a
+satellite message out to the Hub (MOMSN 248 under open sky). A satellite message in, the mesh
+message and SOS are still marked "Not built yet".
