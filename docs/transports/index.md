@@ -1,6 +1,6 @@
 # Transports
 
-MeshSat runs eight transport bearers on nine Reticulum interfaces, and routes to TAK, MQTT and webhooks as destinations. Iridium counts twice, on the 9603N and the 9704. The pages below cover each one; Reticulum itself is covered under [Reticulum](/guide/features/reticulum), and direct serial needs no configuration beyond a port. Each transport handles the protocol-specific details of sending and receiving messages, while the policy engine handles routing between them.
+MeshSat runs eight transport bearers on nine Reticulum interfaces, and routes to TAK, MQTT and webhooks as destinations. Iridium counts twice, on the 9603N and the 9704. Four more interface types bring a Reticulum user's own gear in: RNode LoRa radios, UDP and AutoInterface on an IP mesh, and KISS TNCs, all added from the Routing settings without a restart; and the 10 m HF codec is a gateway of its own. The pages below cover each one; Reticulum itself is covered under [Reticulum](/guide/features/reticulum), and direct serial needs no configuration beyond a port. Each transport handles the protocol-specific details of sending and receiving messages, while the policy engine handles routing between them.
 
 ## Mesh Networks
 
@@ -30,6 +30,20 @@ MeshSat runs eight transport bearers on nine Reticulum interfaces, and routes to
 | [Webhooks](/transports/webhooks) | HTTP/HTTPS | Stable | Incoming and outgoing HTTP webhooks |
 | [APRS](/transports/aprs) | TCP (APRS-IS) | Beta | Amateur Packet Reporting System for position and telemetry |
 | [TAK](/transports/tak) | TCP/TLS | Beta | Team Awareness Kit (ATAK/WinTAK) CoT integration |
+
+## Reticulum interfaces a user brings
+
+| Interface | Connection | Status | Description |
+|-----------|-----------|--------|-------------|
+| [RNode](/transports/rnode) | Serial / USB, `tcp://`, `ble://` | Verified against `rnsd` | LoRa radios running RNode firmware, with CrossTalk's presets |
+| [IP mesh](/transports/ip-mesh) | Ethernet / HaLow | Verified against `rnsd` | UDP broadcast and AutoInterface, the Haven and OpenMANET shape |
+| [KISS TNC](/transports/kiss) | Serial or `tcp://` | Verified against `rnsd` | Raw Reticulum over a TNC, Mercury HF modem included |
+
+## Amateur HF
+
+| Transport | Interface | Status | Description |
+|-----------|-----------|--------|-------------|
+| [10 m HF shouts](/transports/hf-10m) | RTL-SDR (RX), USB audio + CAT (TX) | Codec verified, no radio yet | CrossTalk's public plaintext codec; transmit locked without a callsign |
 
 ## Transport Lifecycle
 
