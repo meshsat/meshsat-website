@@ -119,6 +119,23 @@ Both sidecars are optional. Without them SMAZ2 still works, since it is built in
 | `MESHSAT_TIMESYNC_DISCOVERY_MIN` | `10` | Minutes between time sync requests on an interface where no other bridge has answered. Where one has, the request goes every 30 s |
 | `MESHSAT_MQTT_RETICULUM_BROKER` | `""` | MQTT broker for Reticulum packets |
 | `MESHSAT_MQTT_RETICULUM_PREFIX` | `reticulum/meshsat` | MQTT topic prefix |
+| `MESHSAT_RNS_IFAC_NETNAME`, `MESHSAT_RNS_IFAC_NETKEY` | `""` | Interface access code (network name and passphrase) on the TCP interface, as in `rnsd` |
+| `MESHSAT_RNS_PATH_TTL_HOURS` | `168` | Path table lifetime, one week like upstream |
+| `MESHSAT_LXMF_ENABLED` | `true` | Run the LXMF endpoint |
+| `MESHSAT_LXMF_DISPLAY_NAME` | `MeshSat <hostname>` | Name announced with the LXMF destination |
+| `MESHSAT_LXMF_STAMP_COST` | `0` | Stamp cost demanded of senders (0 = none) |
+| `MESHSAT_LXMF_MAX_OUTBOUND_STAMP_COST` | `16` | Highest stamp cost the bridge will compute for a peer |
+| `MESHSAT_LXMF_ANNOUNCE_INTERVAL` | `1800` | LXMF announce interval in seconds |
+| `MESHSAT_RNODE_PORT` | `""` | Seeds an RNode interface once: `auto`, `usb_serial:<sn>`, a device path, `tcp://host`, `ble://name`. Settings > Routing owns it afterwards |
+| `MESHSAT_RNODE_PRESET` | `eu-868` | `us-915`, `eu-868`, `au-915`, `ism-433`; `MESHSAT_RNODE_FREQUENCY`, `_BANDWIDTH`, `_SF`, `_CR`, `_TXPOWER`, `_AIRTIME_SHORT`, `_AIRTIME_LONG` override single fields |
+| `MESHSAT_RNODE_FLOW_CONTROL`, `MESHSAT_RNODE_ID_CALLSIGN`, `MESHSAT_RNODE_ID_INTERVAL` | `false`, `""`, `600` | READY flow control and the station identification beacon |
+| `MESHSAT_UDP_LISTEN`, `MESHSAT_UDP_FORWARD`, `MESHSAT_UDP_DEVICE` | `""` | Seeds a UDP interface once; a device derives both addresses from its broadcast address |
+| `MESHSAT_AUTO_IFACE_DEVICES`, `MESHSAT_AUTO_IFACE_GROUP` | `""`, `reticulum` | Seeds an AutoInterface once on the named devices (never `wlan0`) |
+| `MESHSAT_KISS_PORT`, `MESHSAT_KISS_BAUD`, `MESHSAT_KISS_FLOW_CONTROL` | `""`, `115200`, `false` | Seeds a KISS TNC interface once; `tcp://host:8100` for a Mercury modem |
+| `MESHSAT_IMT_RNS_FRAMING` | `false` | CrossTalk's `RNSI` header on packets over Iridium IMT; the Routing settings override it live |
+| `MESHSAT_HF_RX_ENABLED`, `MESHSAT_HF_FREQ_HZ` | `false`, `28124000` | Seeds the 10 m HF gateway once; receive borrows the RTL-SDR |
+| `MESHSAT_HF_RTLTCP_PORT`, `MESHSAT_HF_RTL_GAIN_DB` | `6057`, `20` | The HF gateway's own `rtl_tcp` |
+| `MESHSAT_HF_TX_CALLSIGN`, `MESHSAT_HF_TX_AUDIO_DEVICE`, `MESHSAT_HF_TX_CAT_PORT` | `""` | HF transmit: locked without a callsign; ALSA device and CAT serial port of the radio |
 
 ## APRS and AX.25
 

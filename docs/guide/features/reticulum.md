@@ -4,8 +4,54 @@ Reticulum is a cryptographic networking stack that does not assume the internet.
 destination hash rather than address, every destination is a keypair, and it runs over anything
 that can move bytes.
 
-MeshSat implements the Reticulum wire format directly, in Go, wire compatible with the reference
-Python implementation. A standard `rnsd` node treats a MeshSat bridge as a peer.
+MeshSat implements Reticulum directly, in Go: a transport node and an LXMF endpoint, wire compatible
+with the reference Python implementation. A standard `rnsd` node treats a MeshSat bridge as a peer,
+and an LXMF client such as Sideband or CrossTalk can message it.
+
+## Verified against upstream
+
+Every claim below is a test that runs in the bridge's own suite against the upstream Python packages,
+pinned to **RNS 1.5.4** and **LXMF 1.1.0**, with the bridge in-process on one side and `rnsnode.py`
+or a stock `rnsd` on the other.
+
+| Exchange | Direction | Through a stock `rnsd` as transport |
+|---|---|---|
+| Announces, with the timestamp rule transport nodes apply | both | yes |
+| Path requests for a known and an unknown destination | both | yes |
+| Packets with proofs and receipts | both | yes |
+| Links: request, proof, RTT, keepalive, teardown, identify | both | yes |
+| Resources over a link (LXMF messages above 319 bytes) | both | yes |
+| LXMF single-packet delivery, with the delivery proof | both | yes |
+| LXMF stamps at cost 6 | both | |
+| Three nodes: A and B that never connect, the bridge between them | | |
+| RNode, UDP, AutoInterface and KISS interfaces | both | `rnsd` on the other end |
+
+Not yet exercised: a Sideband or CrossTalk client on real hardware against a kit, and any of the
+interfaces on a physical radio or TNC. The bridge's own Meshtastic and satellite bearers carry
+Reticulum too, with the mesh limited by its 230-byte frames.
+
+## Works with
+
+The reference stack: `rnsd`, NomadNet, Sideband, Columba, RatSpeak, and CrossTalk, over TCP, an IP
+mesh, an RNode or a TNC. Hardware the interfaces were written for: RNode boards (LilyGO LoRa32 and
+T-Beam, Heltec V3 and V4, RAK4631, XIAO ESP32-S3 with a Wio-SX1262, T-Echo, T-Deck, Parallel's
+prebuilt nodes), Haven 1 and 2 and any OpenMANET, MOROSX or HaLowLink mesh, a RockBLOCK 9704 running
+CrossTalk's Iridium interface (see below), and Rhizomatica's Mercury HF modem over KISS.
+
+## A client's side
+
+An `rnsd` or Sideband configuration that reaches a kit over its TCP interface:
+
+```ini
+[interfaces]
+  [[MeshSat kit]]
+    type = TCPClientInterface
+    enabled = yes
+    target_host = 192.168.1.20
+    target_port = 4242
+```
+
+On the same Ethernet segment nothing is needed beyond the client's default AutoInterface.
 
 ## Why it is here
 
@@ -42,6 +88,20 @@ Reticulum runs over any of these, and over several at once:
 | SMS | `MESHSAT_SMS_RETICULUM_PEER=+31600000000` |
 | Bluetooth LE | `MESHSAT_BLE_ADAPTER=hci0`, `MESHSAT_BLE_DEVICE_NAME` |
 | MQTT | `MESHSAT_MQTT_RETICULUM_BROKER`, `MESHSAT_MQTT_RETICULUM_TOPIC` |
+| [RNode](/transports/rnode) | Settings > Routing, or `MESHSAT_RNODE_PORT` |
+| [UDP and AutoInterface](/transports/ip-mesh) | Settings > Routing, or `MESHSAT_UDP_*`, `MESHSAT_AUTO_IFACE_*` |
+| [KISS TNC](/transports/kiss) | Settings > Routing, or `MESHSAT_KISS_PORT` |
+
+The last three are managed at runtime from Settings > Routing > Reticulum Interfaces: add, edit,
+restart and remove without a restart, with the radio's RSSI, SNR and airtime on the card.
+
+### Iridium IMT and CrossTalk
+
+CrossTalk's Iridium interface wraps every Reticulum packet on a RockBLOCK 9704 in a five-byte
+`RNSI` header. The kit's IMT interface sends bare packets by default; the checkbox under
+Settings > Routing turns the header on when the far side runs CrossTalk, and receive recognises
+either form. Two kits, or a kit and a CrossTalk node on the same Cloudloop account, exchange packets
+through the Hub's satellite relay, which forwards the bytes untouched on the topic they arrived on.
 
 Each is empty and therefore off by default. TCP uses HDLC framing, the same as the reference
 implementation's `TCPServerInterface` and `TCPClientInterface`.
@@ -83,11 +143,19 @@ rate (1200 by default), and a 149 bit/s HF mode then asks about every two minute
 `GET /api/timesync/peers` and Settings > Routing show the other bridges with their stratum, clock
 offset and round trip, and the request schedule of each interface.
 
+## LXMF
+
+The bridge is an LXMF endpoint (`lxmf.delivery`, announced with its display name). Inbound
+messages land in the inbox like any other bearer's, and `POST /api/lxmf/send` queues a message to a
+destination hash through the delivery ledger, where it retries and reports like an SMS or a
+satellite send. `GET /api/lxmf/identity` and `GET /api/lxmf/peers` show the endpoint and the LXMF
+peers heard. Stamps are honoured when a peer asks for them and never demanded by default.
+
 ## Links and resources
 
 A link is an encrypted session between two destinations, established with an ephemeral key
-exchange. `POST /api/links` opens one, `GET /api/links` lists them, `DELETE /api/links/{id}` closes
-one.
+exchange. `GET /api/rns/links` lists them, `POST /api/rns/links` opens one, and
+`DELETE /api/rns/links/{id}` closes one; `GET /api/rns/paths` is the path table.
 
 Resources are the mechanism for transferring something larger than a packet: the sender advertises,
 the receiver requests parts, and the transfer is resumable. `GET /api/resources`,
