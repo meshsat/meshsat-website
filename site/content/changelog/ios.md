@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 46
+  unreleased_count: 49
   unreleased_since: "2026-09-25"
   unreleased_anchor: "unreleased-main-last-change-2026-09-25"
 ---
@@ -25,6 +25,9 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Features
 
+- **msvqsc**: MSVQ-SC codec with the bundled model, smaz2, canned messages and the transform pipeline ([ff5bb6e8](https://github.com/meshsat/meshsat-ios/commit/ff5bb6e887298c9032dad6b7908da59284fc708d))
+- **engine**: dead man's switch, burst queue and release telemetry with crash capture ([8d50e6dd](https://github.com/meshsat/meshsat-ios/commit/8d50e6dd1122b159d539ce578539233a9eef140c))
+- **tak**: Cursor on Target events to and from the Hub, in the Bridge's wire format ([012f95a0](https://github.com/meshsat/meshsat-ios/commit/012f95a0828c4de6938481a1a40a6c5d0ffb7da2))
 - **aprs**: APRS transport over KISS or APRS-IS with smart beaconing and acked messages ([4a8ef9fa](https://github.com/meshsat/meshsat-ios/commit/4a8ef9fa5792f07f3e642275dc4697f73e8cb884))
 - **ui**: the Ham radio, TAK and Reticulum setup section ([4514255a](https://github.com/meshsat/meshsat-ios/commit/4514255a3afe5dc3d252dc73807dfc03f455d04a))
 - **ui**: Home's checklist and cards in the order set with Arrange ([2b95b392](https://github.com/meshsat/meshsat-ios/commit/2b95b392438f2f5b74beb45546f5781552ade120))
