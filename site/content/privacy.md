@@ -5,7 +5,7 @@ description: "What MeshSat collects, why, who else sees it, and how to get it ba
 
 **Last updated: September 2026**
 
-Three products, three very different answers. The Bridge and the Android app run on your hardware and send us nothing. The Hub is a service we operate, so this policy is mostly about the Hub.
+Four products, two very different answers. The Bridge and the phone apps run on your hardware and send us nothing. The Hub is a service we operate, so this policy is mostly about the Hub.
 
 <!--more-->
 
@@ -17,11 +17,22 @@ The controller for personal data held in MeshSat Hub and on meshsat.net is Elli.
 
 We use [Umami](https://umami.is/) for analytics. It is self-hosted on our own infrastructure, sets no cookies, and does not build a profile of you. Nothing is shared with anyone.
 
-## MeshSat Bridge and MeshSat Android
+## MeshSat Bridge, MeshSat Android and MeshSat iOS
 
-They run on your device, on your network. There is no telemetry and no phone home. Nothing reaches us unless you deliberately connect the Bridge to a Hub account, or configure a transport that relays through a carrier.
+They run on your own hardware. There is no account, no analytics, no advertising and no crash reporting to us: the apps never contact MeshSat. Nothing reaches us unless you deliberately connect the Bridge or an app to a Hub account, or configure a transport that relays through a carrier.
 
-If you self-host your own Hub, everything below describes data that stays on your own infrastructure, and we are not involved in it at all.
+The Android app comes in two editions. The full app, from F-Droid and GitHub, can send and receive SMS through your SIM. The Google Play edition has no SMS access at all. Apart from that, the two handle your data identically. On iPhone, the app hands a text to Apple's Messages app for you to send, and never reads your texts.
+
+**What the apps use on the phone, and why.** Bluetooth, to talk to your MeshSat node or Meshtastic radio. Location, because Android needs it to scan for Bluetooth devices, the map shows where you are, and, if you choose, your position goes out over the mesh, by satellite or to a Hub. SMS, on the full Android edition only, to send and receive through your SIM. Notifications, to show that the gateway is running and what has arrived. The Android app keeps a small log of crashes and health readings on the phone for your own troubleshooting; it never leaves the phone and can be switched off in Settings.
+
+**What leaves the phone, and to whom.**
+
+- **Map tiles** come from OpenStreetMap's tile servers when the map shows an area not stored on the phone. That server sees your network address and which tiles you asked for, under the [OpenStreetMap privacy policy](https://osmfoundation.org/wiki/Privacy_Policy). Tiles you have seen are kept for offline use, and a map pack you import needs no connection at all.
+- **Orbit data** for the satellite pass predictor comes from [CelesTrak](https://celestrak.org/) and, as a fallback, the public TLE API at tle.ivanstanojevic.me. Those requests carry the app's name and your network address, never your position.
+- **Your messages and positions** go to the carriers you configure: the Iridium network through your own RockBLOCK modem and Rock7 or Ground Control account, your mobile operator for SMS, APRS-IS if you connect to it. These are your accounts and their terms apply.
+- **A Hub**, if you connect one. Positions, telemetry and messages then go to that Hub. If it is ours, the rest of this policy applies. If you self-host, everything below describes data that stays on your own infrastructure, and we are not involved in it at all.
+
+Installing from Google Play or the App Store tells Google or Apple that you did, under their own policies; we see only the totals. Installing from F-Droid or GitHub tells nobody.
 
 ## MeshSat Hub: what we hold
 
