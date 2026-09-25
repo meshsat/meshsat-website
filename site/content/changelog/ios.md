@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 49
+  unreleased_count: 51
   unreleased_since: "2026-09-25"
   unreleased_anchor: "unreleased-main-last-change-2026-09-25"
 ---
@@ -25,6 +25,8 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Features
 
+- **background**: background windows, the Reticulum BLE peripheral, the bundle CA as broker trust root, and a build that passes App Store validation ([0bc15518](https://github.com/meshsat/meshsat-ios/commit/0bc155185d3e8d513ce7fc22ba52ad7fa3c491b2))
+- **hemb**: HeMB bonding, RLNC and Reed-Solomon in the Bridge's wire format, reassembly on the Reticulum node ([9efa2212](https://github.com/meshsat/meshsat-ios/commit/9efa2212f41d6693eeab94347b2e9eb3b3da6e36))
 - **msvqsc**: MSVQ-SC codec with the bundled model, smaz2, canned messages and the transform pipeline ([ff5bb6e8](https://github.com/meshsat/meshsat-ios/commit/ff5bb6e887298c9032dad6b7908da59284fc708d))
 - **engine**: dead man's switch, burst queue and release telemetry with crash capture ([8d50e6dd](https://github.com/meshsat/meshsat-ios/commit/8d50e6dd1122b159d539ce578539233a9eef140c))
 - **tak**: Cursor on Target events to and from the Hub, in the Bridge's wire format ([012f95a0](https://github.com/meshsat/meshsat-ios/commit/012f95a0828c4de6938481a1a40a6c5d0ffb7da2))
