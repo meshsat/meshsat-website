@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 32
-  unreleased_since: "2026-09-23"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-23"
+  unreleased_count: 33
+  unreleased_since: "2026-09-25"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-25"
 ---
 
 Generated from the commit history of
@@ -20,7 +20,7 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-23)
+## Unreleased (main, last change 2026-09-25)
 
 ### Features
 
@@ -35,6 +35,7 @@ it goes live.
 
 ### Fixes
 
+- **fleet**: a setup QR replaces the kit's login when it is scanned, not when it is shown ([d6658fa8](https://github.com/meshsat/meshsat-hub/commit/d6658fa88194f702893ca95f2366b870e8e2a147))
 - **web**: the Reticulum topology page takes the console's quiet colours ([a6611fd3](https://github.com/meshsat/meshsat-hub/commit/a6611fd3e2a23d82aa57fe3fd9d1e966418cde4c))
 - **web**: the credit balance, the send-limit warning and the message export are back ([6aff8965](https://github.com/meshsat/meshsat-hub/commit/6aff8965db5207c4ee839b69932456dea641394a))
 - **audit**: bridge changes and bridge credentials leave an audit record ([caaa1b74](https://github.com/meshsat/meshsat-hub/commit/caaa1b74f385236abaf61d4a612093b8f17c0126))
