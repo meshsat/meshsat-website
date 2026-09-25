@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 51
+  unreleased_count: 62
   unreleased_since: "2026-09-25"
   unreleased_anchor: "unreleased-main-last-change-2026-09-25"
 ---
@@ -25,6 +25,11 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Features
 
+- **fastlane**: device\_build lane, a development-signed ipa for the test phone ([fbbd0477](https://github.com/meshsat/meshsat-ios/commit/fbbd047743b00e54642a3338854a3c8fe332de23))
+- **diagnostics**: link health scores, the batch queue, the telemetry table and configuration export and import on the Diagnostics screen ([88f4124f](https://github.com/meshsat/meshsat-ios/commit/88f4124f40941a821017dffe3b4a0eb8810bf764))
+- **config**: configuration export and import in the Bridge's JSON and YAML, with the evaluator reload ([2072d023](https://github.com/meshsat/meshsat-ios/commit/2072d023192d4fe4469752b79b7a4a06751565dc))
+- **sms**: the composer carries Android's SMS wire format, compressed and encrypted per the settings and the recipient's key ([892ac473](https://github.com/meshsat/meshsat-ios/commit/892ac47334b3a1dc52bccff5d4ee47f400ca13a4))
+- **mqtt**: the device's own MQTT transport (mqtt\_0) with the Reticulum interface over it ([609df448](https://github.com/meshsat/meshsat-ios/commit/609df448ce7dadab4609058f17fbd4992c5d8616))
 - **background**: background windows, the Reticulum BLE peripheral, the bundle CA as broker trust root, and a build that passes App Store validation ([0bc15518](https://github.com/meshsat/meshsat-ios/commit/0bc155185d3e8d513ce7fc22ba52ad7fa3c491b2))
 - **hemb**: HeMB bonding, RLNC and Reed-Solomon in the Bridge's wire format, reassembly on the Reticulum node ([9efa2212](https://github.com/meshsat/meshsat-ios/commit/9efa2212f41d6693eeab94347b2e9eb3b3da6e36))
 - **msvqsc**: MSVQ-SC codec with the bundled model, smaz2, canned messages and the transform pipeline ([ff5bb6e8](https://github.com/meshsat/meshsat-ios/commit/ff5bb6e887298c9032dad6b7908da59284fc708d))
@@ -69,6 +74,12 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Fixes
 
+- **hub**: the broker is verified against the system roots again; an empty crash file is not a crash ([5abb144a](https://github.com/meshsat/meshsat-ios/commit/5abb144a9d49477d4547243a164a60199483b318))
+- **tests**: the gateway SMS test pins a wrong key as not the text, as the Kit test does ([ba7f6d65](https://github.com/meshsat/meshsat-ios/commit/ba7f6d65b079e805bc0b43ff27cbca0c7163fbf2))
+- **sms**: a wrong key is pinned as not the text, since a misread of printable ciphertext is Android's outcome too ([ad6da973](https://github.com/meshsat/meshsat-ios/commit/ad6da97373a38108933b1a0daf4ce1cf2ac06709))
+- **crypto**: AES-CBC through CommonCrypto on Apple platforms, gateway helper tests, and no APRS callsign built from nothing ([ab7e4a95](https://github.com/meshsat/meshsat-ios/commit/ab7e4a95e466ceb99aa6ad02fbc6372f5660ba12))
+- **aprs**: the corner-pegging test parks the beacon loop instead of letting it spin ([8bcd68d7](https://github.com/meshsat/meshsat-ios/commit/8bcd68d76c551b284557b2dd42dfe8740254ee1c))
+- **sms**: the receiver reports plain ASCII as smaz2, as Android does; the test expected otherwise ([576ddde3](https://github.com/meshsat/meshsat-ios/commit/576ddde3bcae16e2ad5c1d661bb952b7269607a0))
 - **mqtt**: received messages reach the app; the listener was freed and unregistered itself ([243df81d](https://github.com/meshsat/meshsat-ios/commit/243df81df4a5b0a12ee0c0317f6a612c72fcc2fc))
 - **diagnostics**: the app log at notice level and in Documents, every received message logged ([d79cd681](https://github.com/meshsat/meshsat-ios/commit/d79cd6812293de52452bc9299a735eca8b664c3c))
 - **iridium**: a probe from a detached link no longer marks the modem silent ([d9e22ce7](https://github.com/meshsat/meshsat-ios/commit/d9e22ce7ae400d505bafee53246c1be4241d3c17))
