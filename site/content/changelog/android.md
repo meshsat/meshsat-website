@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 120
-  latest_tag: "v2.19.0"
+  tags: 121
+  latest_tag: "v2.19.1"
   latest_tag_date: "2026-09-25"
-  latest_tag_anchor: "v2190-2026-09-25"
+  latest_tag_anchor: "v2191-2026-09-25"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,14 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.19.1 (2026-09-25)
+
+### Fixes
+
+- **test**: drop the Paho bug demonstration that goes either way on the CI runner ([aecba6dd](https://github.com/meshsat/meshsat-android/commit/aecba6ddc58e081fa736a9f1e86c45f1124ee966))
+- **build**: vcsInfo belongs to the release build type ([ffa6e04e](https://github.com/meshsat/meshsat-android/commit/ffa6e04eb77d915833d2e82a95e80aafd445d4bf))
+- **build**: keep the git commit out of the APK so F-Droid can reproduce it ([0e1d1b8d](https://github.com/meshsat/meshsat-android/commit/0e1d1b8d197383b0dac4068353c22126c9874c9f))
 
 ## v2.19.0 (2026-09-25)
 
