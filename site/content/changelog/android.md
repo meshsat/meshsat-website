@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 119
-  latest_tag: "v2.18.26"
-  latest_tag_date: "2026-09-21"
-  latest_tag_anchor: "v21826-2026-09-21"
+  tags: 120
+  latest_tag: "v2.19.0"
+  latest_tag_date: "2026-09-25"
+  latest_tag_anchor: "v2190-2026-09-25"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,17 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.19.0 (2026-09-25)
+
+### Features
+
+- **build**: target Android 16 (SDK 36) with AGP 8.10.1, as Google Play requires ([05a6b5c9](https://github.com/meshsat/meshsat-android/commit/05a6b5c9cad7a909d81e4a86ce9e393ea2a09f3e))
+- **play**: a Google Play edition without SMS as the play flavor; fdroid stays the full app ([ab34293e](https://github.com/meshsat/meshsat-android/commit/ab34293ea40663a0190ba415ea941cec60a53bbe))
+
+### Fixes
+
+- **test**: the Paho reconnect test waits for the next backoff step instead of assuming 3 s ([b579dc3f](https://github.com/meshsat/meshsat-android/commit/b579dc3f14b4244ebd0397555eda9f30d2941df5))
 
 ## v2.18.26 (2026-09-21)
 
