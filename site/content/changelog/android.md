@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 121
-  latest_tag: "v2.19.1"
+  tags: 122
+  latest_tag: "v2.19.2"
   latest_tag_date: "2026-09-25"
-  latest_tag_anchor: "v2191-2026-09-25"
+  latest_tag_anchor: "v2192-2026-09-25"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,17 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.19.2 (2026-09-25)
+
+### Features
+
+- **ci**: publish-play uploads each tag's Play bundle to a Console track ([434b7061](https://github.com/meshsat/meshsat-android/commit/434b7061de4020f8ef2a4f931a37b8cd16b876a3))
+
+### Fixes
+
+- **play**: screenshots at exactly 9:16, what the store listing form takes ([e51753cc](https://github.com/meshsat/meshsat-android/commit/e51753cc0d495ee91673c6e05935673f82a01a36))
+- **play**: screenshots padded to 2:1, the ratio Play accepts ([81df1db1](https://github.com/meshsat/meshsat-android/commit/81df1db1ce735db6a47e031a0663d1ce40d6a744))
 
 ## v2.19.1 (2026-09-25)
 
