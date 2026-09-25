@@ -61,4 +61,6 @@ table, one row per capability, with the date each one was verified on a phone. V
 (25 September 2026, iPhone 11 Pro Max, T-Beam Supreme node): the Hub connection, the node link
 over Bluetooth LE, the RockBLOCK 9603 over the node's pipe, the reconnect after a restart, and a
 satellite message out to the Hub (MOMSN 248 under open sky) and one in (35 bytes from Rock7,
-stored 3 s after the session). The mesh message and SOS are still marked "Not built yet".
+stored 3 s after the session), pass prediction with the network at 100 percent loss, and a
+contact card read from pasted text with its fingerprint checked, a text to everyone on the mesh,
+and the alarm test by mesh and Hub. A real SOS and its all-clear are still marked "Not built yet".
