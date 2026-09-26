@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 33
+  unreleased_count: 34
   unreleased_since: "2026-09-25"
   unreleased_anchor: "unreleased-main-last-change-2026-09-25"
 ---
@@ -24,6 +24,7 @@ it goes live.
 
 ### Features
 
+- **relay**: Reticulum packets between two RockBLOCK 9704s ride the satellite relay untouched, on the IMT topic they arrived on ([4075d02c](https://github.com/meshsat/meshsat-hub/commit/4075d02c36926b96c56e0a192c6e07fe8c1da08c))
 - **db**: barman backups through the crypt gateway to Hetzner \[IFRNLLEI01PRD-2850\] ([aee57ea5](https://github.com/meshsat/meshsat-hub/commit/aee57ea5219273115d90308fcb039695a2795d62))
 - **web**: test an escalation chain from the Alerts page ([49e6c53e](https://github.com/meshsat/meshsat-hub/commit/49e6c53e3868a688d347dbe5d13f8ec36c238ef1))
 - **web**: the Hub becomes an operations console, quiet when all is well ([4143da05](https://github.com/meshsat/meshsat-hub/commit/4143da05a3ea1acf0a3c476be8244eb5541bbc5c))

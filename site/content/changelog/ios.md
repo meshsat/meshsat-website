@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 62
+  unreleased_count: 76
   unreleased_since: "2026-09-25"
   unreleased_anchor: "unreleased-main-last-change-2026-09-25"
 ---
@@ -25,6 +25,10 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Features
 
+- **fastlane**: the App Store listing, price, countries and submission as lanes ([597861bd](https://github.com/meshsat/meshsat-ios/commit/597861bd2bcd147253cff092a278eac5257a5daa))
+- **tests**: a proof that opens the four Advanced sub-screens for the parity captures ([48bbf4c2](https://github.com/meshsat/meshsat-ios/commit/48bbf4c2618c58a8a881fd01370ef031f0beb5a4))
+- **tests**: the proving checklist runs on the phone over USB; five more rows verified ([22c306ba](https://github.com/meshsat/meshsat-ios/commit/22c306ba43a5ce33b58564b7580426eba11362a6))
+- **fastlane**: uitest\_build lane and a screen tour that runs on the phone over USB ([5bb5334b](https://github.com/meshsat/meshsat-ios/commit/5bb5334b767a3b6a2e9e536d8a2cf2ada4697868))
 - **fastlane**: device\_build lane, a development-signed ipa for the test phone ([fbbd0477](https://github.com/meshsat/meshsat-ios/commit/fbbd047743b00e54642a3338854a3c8fe332de23))
 - **diagnostics**: link health scores, the batch queue, the telemetry table and configuration export and import on the Diagnostics screen ([88f4124f](https://github.com/meshsat/meshsat-ios/commit/88f4124f40941a821017dffe3b4a0eb8810bf764))
 - **config**: configuration export and import in the Bridge's JSON and YAML, with the evaluator reload ([2072d023](https://github.com/meshsat/meshsat-ios/commit/2072d023192d4fe4469752b79b7a4a06751565dc))
@@ -74,6 +78,16 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Fixes
 
+- **fastlane**: store\_submit reuses a draft submission and shows why Apple refuses an item ([5f4b169e](https://github.com/meshsat/meshsat-ios/commit/5f4b169e4b19562b439576c0ec6e952310b80317))
+- **fastlane**: the App Review phone comes from the environment only ([94390579](https://github.com/meshsat/meshsat-ios/commit/94390579a95ba0a343fe4b13790f76d4a8e5e8f5))
+- **ui**: disabled buttons look disabled, and a certificate's expiry reads its date ([17345438](https://github.com/meshsat/meshsat-ios/commit/17345438758293ff1864a3fa571165b34a7c4fc9))
+- **hub**: a receipt that outruns the satellite session still gives the second tick ([8c6dd9b7](https://github.com/meshsat/meshsat-ios/commit/8c6dd9b794a5f18cd22f34476eede9437716af27))
+- **engine**: a cancelled pending-query is not an error ([17acb065](https://github.com/meshsat/meshsat-ios/commit/17acb06534d9edf24a8227112af81309390e9859))
+- **ci**: the simulator test lane starts from a quit, erased simulator ([ff3500b2](https://github.com/meshsat/meshsat-ios/commit/ff3500b2b151be165da5762e9e9d18ed4a119b5a))
+- **tests**: the Reticulum node tests wait up to 10 s on a loaded runner ([20047989](https://github.com/meshsat/meshsat-ios/commit/20047989babf76fe58b545b5dd49c9a44e2cd81e))
+- **ci**: the simulator test lane runs the unit tests only ([1e545fc1](https://github.com/meshsat/meshsat-ios/commit/1e545fc1c955b2e44e11681712c2a22fc5df38b1))
+- **tests**: the tour no longer expects a Diagnostics row under Setup ([54fd5125](https://github.com/meshsat/meshsat-ios/commit/54fd512505d4f03f602bdb44c294b233965364d4))
+- **ui**: the screens scroll, the map is dark, and every screen matches MeshSat Android ([214d3913](https://github.com/meshsat/meshsat-ios/commit/214d39133e3962a2a8ff284ee3a7c0e81a038657))
 - **hub**: the broker is verified against the system roots again; an empty crash file is not a crash ([5abb144a](https://github.com/meshsat/meshsat-ios/commit/5abb144a9d49477d4547243a164a60199483b318))
 - **tests**: the gateway SMS test pins a wrong key as not the text, as the Kit test does ([ba7f6d65](https://github.com/meshsat/meshsat-ios/commit/ba7f6d65b079e805bc0b43ff27cbca0c7163fbf2))
 - **sms**: a wrong key is pinned as not the text, since a misread of printable ciphertext is Android's outcome too ([ad6da973](https://github.com/meshsat/meshsat-ios/commit/ad6da97373a38108933b1a0daf4ce1cf2ac06709))
