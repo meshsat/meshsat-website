@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 900
-  unreleased_since: "2026-09-21"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-21"
+  unreleased_count: 912
+  unreleased_since: "2026-09-25"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-25"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,21 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-21)
+## Unreleased (main, last change 2026-09-25)
 
 ### Features
 
+- **hf**: hf\_0 gateway receives 10 m shouts on the borrowed RTL-SDR and transmits them only with an operator callsign ([fc73ae47](https://github.com/meshsat/meshsat/commit/fc73ae4704b6a579d48a8763fb1c2442a0416542))
+- **hf**: 2-CPFSK modem for the 10 m codec: IQ and audio modulator, decimator, offset and timing search, soft LDPC decode ([50c4ada3](https://github.com/meshsat/meshsat/commit/50c4ada347eb399c0ac0b8426815cd793a3eb1bb))
+- **hf**: the public 10 m HF codec: inner frame, LDPC(128,64) with the normative H, 16-way interleave and burst framing, byte-matched to the recipe and a NumPy reference ([9edb1518](https://github.com/meshsat/meshsat/commit/9edb1518829c1105ef73c98337df4e6c5e15e9cf))
+- **iridium**: CrossTalk-compatible RNSI framing for Reticulum packets over IMT, toggled live from Settings \> Routing ([0b77bfb3](https://github.com/meshsat/meshsat/commit/0b77bfb3cbbd7cb931ab475c549198ba846c017a))
+- **reticulum**: UDP, AutoInterface and KISS TNC interfaces, managed at runtime with RNode from Settings \> Routing, verified against rnsd ([8b7afdd9](https://github.com/meshsat/meshsat/commit/8b7afdd9719dd7ca6b0b4d691a2a656ca29e905d))
+- **rnode**: RNode over Bluetooth LE via the Nordic UART service, and a race-free radio validation ([21b6ee05](https://github.com/meshsat/meshsat/commit/21b6ee05d9022ca0c327f206baf12866e89d1573))
+- **rnode**: RNode LoRa radios as a Reticulum interface over serial and WiFi, verified against rnsd ([dd9f869b](https://github.com/meshsat/meshsat/commit/dd9f869b0c147f753a566e8b7bf2a4fcca281e87))
+- **lxmf**: LXMF endpoint with packets, links, resources and stamps, verified against Python LXMF 1.1.0 ([423546d6](https://github.com/meshsat/meshsat/commit/423546d684562a49ff3b044c0a27ddd4596376a2))
+- **rns**: the bridge runs the upstream-compatible Reticulum node on every interface ([b6415077](https://github.com/meshsat/meshsat/commit/b64150775bddfc2d53ab7655476414b7574e8bbf))
+- **rns**: Reticulum transport node, links, path requests and proofs verified against Python RNS 1.5.4 ([55ead409](https://github.com/meshsat/meshsat/commit/55ead4092801dd51b0484f224e38d6a3ddf59086))
+- **reticulum**: RNS 1.5.4 wire primitives: token, single-packet encryption, link formats, proofs, IFAC, timestamped announces ([92527da1](https://github.com/meshsat/meshsat/commit/92527da1281b9dde1dadd7599278dc3ad7489a2c))
 - **satellite**: a quiet kit fetches the messages waiting for it at Iridium ([0ea88f00](https://github.com/meshsat/meshsat/commit/0ea88f00bcad1a8cb9fc98df20a4dda03116c626))
 - **timesync**: a slow link asks for the time less often, and Settings shows who answered ([f280c232](https://github.com/meshsat/meshsat/commit/f280c23262fe03be722c0860ac137a4751921c33))
 - **oob**: a management command carries an expiry, and a kit refuses one that arrives too late ([cd1267f5](https://github.com/meshsat/meshsat/commit/cd1267f583c68e542677a9c5cc7d541636a7137f))
@@ -393,6 +404,7 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **interop**: skip the AutoInterface namespace test where no veth pair can be built ([cee01155](https://github.com/meshsat/meshsat/commit/cee01155746221f25590503daabdb3b304649b18))
 - **power**: a full pack resting on mains is no longer reported as draining ([b74af040](https://github.com/meshsat/meshsat/commit/b74af0404a6de488f5bafea0e384093a9f29d94d))
 - **ttc**: the booth screen no longer zooms or scrolls under a visitor's fingers ([17f1da6d](https://github.com/meshsat/meshsat/commit/17f1da6d44fb3f975e59c5fb49015a76a32eee10))
 - **ttc**: the booth screen lights the APRS lane again now the PicoAPRS units are back in their own kits ([1b5c184b](https://github.com/meshsat/meshsat/commit/1b5c184b366a263e301a7af803ab2aa457c621eb))

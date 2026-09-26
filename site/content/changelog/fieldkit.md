@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 1457
-  unreleased_since: "2026-09-21"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-21"
+  unreleased_count: 1460
+  unreleased_since: "2026-09-26"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-26"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,10 +28,11 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-21)
+## Unreleased (main, last change 2026-09-26)
 
 ### Features
 
+- **stackup**: board P's four-layer 2 oz and board B's eight-layer JLCPCB stackups are recorded, with the part source record ([d468613e](https://github.com/meshsat/meshsat-fieldkit/commit/d468613e0bda7936eb17b8a10d9ca5104a4cc2a7))
 - **rules**: decision 35 is ruled at the most conservative published model, in one place ([06c9eda0](https://github.com/meshsat/meshsat-fieldkit/commit/06c9eda065d96d372d81850378b725582531a5a6))
 - **rules**: a part's own operating range against the envelope, and the first one measured is outside it ([0ec34ce0](https://github.com/meshsat/meshsat-fieldkit/commit/0ec34ce04ea20bf50e9cd16941da914254dc1ffb))
 - **rules**: the adopted operating envelope becomes data, pinned to the record it quotes ([e7a13f0a](https://github.com/meshsat/meshsat-fieldkit/commit/e7a13f0a11fb434d22a8a4b0c47b5cc6b36e3abd))
@@ -587,6 +588,8 @@ appear below.
 
 ### Fixes
 
+- **tests**: the blocked-land fixture no longer overwrites the lcsc\_fill evidence rules CMP-002 and SUP-001 read ([82dd1e4d](https://github.com/meshsat/meshsat-fieldkit/commit/82dd1e4dc44efabeee1164a995cda4e866610f3d))
+- **tests**: three fixtures wrote their verdicts into the tree's own evidence and displaced PLN-001 on a host with KiCad ([2ba560ec](https://github.com/meshsat/meshsat-fieldkit/commit/2ba560ecbc4de957363cef2abe303726e7008e0e))
 - **rules**: GND-002 stops waiting on decision 29 and its four board changes become session work ([9345b62e](https://github.com/meshsat/meshsat-fieldkit/commit/9345b62ef43a016abfd8869680768e117f779863))
 - **tools**: a locked via is carried by its net's copper, not by every zone containing it ([18a7b800](https://github.com/meshsat/meshsat-fieldkit/commit/18a7b800e1fb4b77c95d99af8124fb0450ca2be1))
 - **tools**: sense\_reach with no subject wrote PASS of 0 ([b97a481e](https://github.com/meshsat/meshsat-fieldkit/commit/b97a481e275fd65f3d3509b82b851ee11a05f348))
