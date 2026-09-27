@@ -4,7 +4,7 @@
 MeshSat is a prototype in active development. Its dependability is unproven. Do not rely on it for life safety.
 :::
 
-There are two versions. v0 is the bench unit the first tests ran on. v1 is the one meant to become a product. **v1 has not been built yet:** its wiring below comes from LILYGO's schematic, and this page will change once it has run on hardware.
+There are two versions. v0 is the bench unit the first tests ran on. v1 is the one meant to become a product. v1 has run since 21 September 2026: the wiring below is what is soldered on the bench unit, by the labels printed on the board. The Peli build is not finished.
 
 ## v1: T-Beam Supreme
 
@@ -23,14 +23,16 @@ There are two versions. v0 is the bench unit the first tests ran on. v1 is the o
 
 ### Wiring
 
-Four wires between the T-Beam's header PM1 and the RockBLOCK's connector:
+Four wires between the T-Beam's long header and the RockBLOCK's connector. Use the labels printed beside the pins on the T-Beam, in the left column of the long header; the schematic's connector numbers are not on the board.
 
-| T-Beam PM1 | RockBLOCK |
+| T-Beam, printed label | RockBLOCK |
 |---|---|
-| pin 13, U0TXD (GPIO43) | pin 6, TXD (the modem's input) |
-| pin 12, U0RXD (GPIO44) | pin 1, RXD (the modem's output) |
-| pin 9, DCDC5 | pin 8, power in |
-| pin 8, GND | pin 10, GND |
+| **TXD** (GPIO43) | pin 6, TXD (the modem's input) |
+| **RXD** (GPIO44) | pin 1, RXD (the modem's output) |
+| **DC5** (the 3.7 V rail the firmware switches on) | pin 8, power in |
+| **GND** | pin 10, GND |
+
+TXD and RXD are also on the 4-pin QWIIC socket. Never use DC1 for the modem: that is the board's own 3.3 V. The 2.4 GHz antenna for Bluetooth is on the board; only the LoRa antenna is external.
 
 - **Leave RockBLOCK pins 7 (OnOff) and 9 (Li-Ion) unconnected.** A floating OnOff means on.
 - **The panel button goes across the T-Beam's power button** (SW3 on the schematic, PWR_KEY to GND). A short press turns the node on, a long press turns it off, and the RockBLOCK goes off with it.
