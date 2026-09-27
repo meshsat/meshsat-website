@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 78
-  unreleased_since: "2026-09-26"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-26"
+  unreleased_count: 81
+  unreleased_since: "2026-09-27"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-27"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -21,10 +21,12 @@ transport by transport; there is no release yet. Builds, once there are any,
 are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-26)
+## Unreleased (main, last change 2026-09-27)
 
 ### Features
 
+- **satellite**: Iridium BLE contract v2, node health card from STATS, pass windows to the node ([a08d826e](https://github.com/meshsat/meshsat-ios/commit/a08d826e16f0e646bf024f7fa359f8d5f1744600))
+- **node**: Setup \> Advanced \> Node log, the node's live log over Bluetooth ([e009ea75](https://github.com/meshsat/meshsat-ios/commit/e009ea754c71a6a63dfc280d5da8ec14b10ee709))
 - **fastlane**: store\_review\_state prints where the version stands with App Review ([41de9713](https://github.com/meshsat/meshsat-ios/commit/41de9713adb4ce54f3765f984208f202b3062268))
 - **fastlane**: App Review notes and attachment as a lane; the tour wakes and unlocks the phone ([abbf7cee](https://github.com/meshsat/meshsat-ios/commit/abbf7cee841da298c06a93cf85091d814e703286))
 - **fastlane**: the App Store listing, price, countries and submission as lanes ([597861bd](https://github.com/meshsat/meshsat-ios/commit/597861bd2bcd147253cff092a278eac5257a5daa))
@@ -80,6 +82,7 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Fixes
 
+- **satellite**: a BLE drop ends the AT command at once, no session on reconnect, the claim waits for the node ([0fb25708](https://github.com/meshsat/meshsat-ios/commit/0fb2570899871af2eb315f2eea34ee2324b9d55c))
 - **fastlane**: store\_submit reuses a draft submission and shows why Apple refuses an item ([5f4b169e](https://github.com/meshsat/meshsat-ios/commit/5f4b169e4b19562b439576c0ec6e952310b80317))
 - **fastlane**: the App Review phone comes from the environment only ([94390579](https://github.com/meshsat/meshsat-ios/commit/94390579a95ba0a343fe4b13790f76d4a8e5e8f5))
 - **ui**: disabled buttons look disabled, and a certificate's expiry reads its date ([17345438](https://github.com/meshsat/meshsat-ios/commit/17345438758293ff1864a3fa571165b34a7c4fc9))
