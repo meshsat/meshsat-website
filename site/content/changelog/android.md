@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 123
-  latest_tag: "v2.19.3"
+  tags: 124
+  latest_tag: "v2.19.4"
   latest_tag_date: "2026-09-27"
-  latest_tag_anchor: "v2193-2026-09-27"
+  latest_tag_anchor: "v2194-2026-09-27"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,13 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.19.4 (2026-09-27)
+
+### Fixes
+
+- **satellite**: re-read STATS every 10 s while the Node health card is on screen ([73454c78](https://github.com/meshsat/meshsat-android/commit/73454c786f2a45146f829c4d1101c4e9c627e391))
+- **ble**: refresh Android's cached GATT table when the node's pipe comes back without STATS ([6745298f](https://github.com/meshsat/meshsat-android/commit/6745298fe274d5a5939b2b8c4a629fcf91248605))
 
 ## v2.19.3 (2026-09-27)
 

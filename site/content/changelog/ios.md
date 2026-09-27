@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 81
+  unreleased_count: 84
   unreleased_since: "2026-09-27"
   unreleased_anchor: "unreleased-main-last-change-2026-09-27"
 ---
@@ -82,6 +82,9 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Fixes
 
+- **satellite**: the Node health card reads STATS again every 10 s, an idle node never notifies it ([c258982c](https://github.com/meshsat/meshsat-ios/commit/c258982c0f66245fed983115a4207946648c2129))
+- **ble**: say when a pipe has no STATS, a cached GATT table or older firmware ([2b8e31a1](https://github.com/meshsat/meshsat-ios/commit/2b8e31a18b0dc4792fec7847c83a1b35153e03f4))
+- **node**: the Node log hint says the node restarts once to apply the setting ([bb85f4bb](https://github.com/meshsat/meshsat-ios/commit/bb85f4bbc27681a7da3edf2ac6ea81163a176378))
 - **satellite**: a BLE drop ends the AT command at once, no session on reconnect, the claim waits for the node ([0fb25708](https://github.com/meshsat/meshsat-ios/commit/0fb2570899871af2eb315f2eea34ee2324b9d55c))
 - **fastlane**: store\_submit reuses a draft submission and shows why Apple refuses an item ([5f4b169e](https://github.com/meshsat/meshsat-ios/commit/5f4b169e4b19562b439576c0ec6e952310b80317))
 - **fastlane**: the App Review phone comes from the environment only ([94390579](https://github.com/meshsat/meshsat-ios/commit/94390579a95ba0a343fe4b13790f76d4a8e5e8f5))
