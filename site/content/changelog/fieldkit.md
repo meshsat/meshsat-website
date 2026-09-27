@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 1460
-  unreleased_since: "2026-09-26"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-26"
+  unreleased_count: 1478
+  unreleased_since: "2026-09-27"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-27"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,10 +28,15 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-26)
+## Unreleased (main, last change 2026-09-27)
 
 ### Features
 
+- **evidence**: code-bundle tool provenance, stage-specific layout-entry gates and labelled historical percentages ([dd3b9074](https://github.com/meshsat/meshsat-fieldkit/commit/dd3b9074114ce037898015c66a7f46f2f627da10))
+- **requirements**: the V2 requirements registry and its generated trace, re-read at eadbe571 with feasibility blockers and evidence classes ([9f848223](https://github.com/meshsat/meshsat-fieldkit/commit/9f848223a689bec0fc5dfaeaa6869a636319c816))
+- **review**: review packets for boards C, D, E and P at 1f614233, every change read by hand, and the qualified review routes ([ccf5808e](https://github.com/meshsat/meshsat-fieldkit/commit/ccf5808e06e9a075f11b53d76c135bddb04ad393))
+- **evidence**: every rule-board reading is classed against the current candidate, and CURRENT-EVIDENCE.md names what closes each layout-entry blocker ([26e847bc](https://github.com/meshsat/meshsat-fieldkit/commit/26e847bce50c8a29f74d42642c20cfed6f0846a4))
+- **order**: the order set is rebuilt for C24, P4 and E5 and every order note opens with its board's readiness, quarantined under owner decision 41 ([29f00554](https://github.com/meshsat/meshsat-fieldkit/commit/29f005542a268b2355d06b4cdf21e1b612a3b66e))
 - **stackup**: board P's four-layer 2 oz and board B's eight-layer JLCPCB stackups are recorded, with the part source record ([d468613e](https://github.com/meshsat/meshsat-fieldkit/commit/d468613e0bda7936eb17b8a10d9ca5104a4cc2a7))
 - **rules**: decision 35 is ruled at the most conservative published model, in one place ([06c9eda0](https://github.com/meshsat/meshsat-fieldkit/commit/06c9eda065d96d372d81850378b725582531a5a6))
 - **rules**: a part's own operating range against the envelope, and the first one measured is outside it ([0ec34ce0](https://github.com/meshsat/meshsat-fieldkit/commit/0ec34ce04ea20bf50e9cd16941da914254dc1ffb))
@@ -588,6 +593,19 @@ appear below.
 
 ### Fixes
 
+- **v2**: board E declares its raw bus from both feeds, classes every decoupling capacitor and fits the four its makers ask for, regenerated with parity ([bc0f562f](https://github.com/meshsat/meshsat-fieldkit/commit/bc0f562f7e33fd00a71df59d95bede932b637765))
+- **v2**: board D powers its transmit chain only while its EMCON gates are in range, reads the PA flange temperature, and fits the TPA6132A2's 2.2 uF ([76235aad](https://github.com/meshsat/meshsat-fieldkit/commit/76235aada51e6d3e7cd370b5e7d9d9a207642ce2))
+- **v2**: board A gates its PA and HF rails on both EMCON lines, with decision 42's decoupling and the part codes its makers list ([c0133147](https://github.com/meshsat/meshsat-fieldkit/commit/c0133147641f11acbc42ce5c39a6ceb08c1ce9b1))
+- **parts**: jlc\_certify reads the declared condition 1 mismatches, and a land identifies a row only where its words place the other part away from it ([661ca3a4](https://github.com/meshsat/meshsat-fieldkit/commit/661ca3a4e641ee5b98240ee330c2bcb38fed682b))
+- **routing**: the router watcher reads every import warning before it answers, refuses unknown ones and confirms the import against the DSN ([dabfede5](https://github.com/meshsat/meshsat-fieldkit/commit/dabfede58779bd7fc07d11e6bbad55f87581285c))
+- **v2**: boards A and B draw their ten one-way clamps with a cathode pin, and all six boards are regenerated with parity ([3a1f6576](https://github.com/meshsat/meshsat-fieldkit/commit/3a1f65767376a172847c607e858c4e66a1490005))
+- **tools**: the eight schematic-phase writers record by sha the artefact they judge, and the re-take projection sees it ([b4ee78ec](https://github.com/meshsat/meshsat-fieldkit/commit/b4ee78ecf4fa3202844eda29227e56e98d7902d2))
+- **tools**: the router's modal warning is found by its window title, because an idle JVM never reads as stalled ([d2cde4ff](https://github.com/meshsat/meshsat-fieldkit/commit/d2cde4ffeb76d9e151a74c8c76060db623e0e1e9))
+- **tools**: one-way clamps are judged by their polarity, the pack SMBus lead becomes a cross-board contract and maker-named lands join the rotation checklist ([93138ac1](https://github.com/meshsat/meshsat-fieldkit/commit/93138ac1f32373c64ad4a00e472e9ff33b9aa81e))
+- **v2**: board P's secondary over-temperature returns on its own thermistor and the battery protection packet is ready for a qualified reviewer ([d90f30e4](https://github.com/meshsat/meshsat-fieldkit/commit/d90f30e469257d3a637e9d19af8d5872225e63aa))
+- **v2**: boards A, B and D take their round-4 and round-6 circuit corrections, regenerated with parity and every difference traced ([458b2873](https://github.com/meshsat/meshsat-fieldkit/commit/458b2873e641843329eb0ece545fe7c7bfab6ea4))
+- **v2**: boards C, D, E and P take the round-4 circuit corrections, regenerated with parity and every difference traced ([faf8c981](https://github.com/meshsat/meshsat-fieldkit/commit/faf8c981c9806e3be70ed3b4d4517c718f98a16d))
+- **tools**: SCH-002 compares part values and lands, certification demands the part the row and its land name, and the box installs pdftoppm ([6104cb81](https://github.com/meshsat/meshsat-fieldkit/commit/6104cb81e02d88a6ea2cbcde52004c4b9e0264bc))
 - **tests**: the blocked-land fixture no longer overwrites the lcsc\_fill evidence rules CMP-002 and SUP-001 read ([82dd1e4d](https://github.com/meshsat/meshsat-fieldkit/commit/82dd1e4dc44efabeee1164a995cda4e866610f3d))
 - **tests**: three fixtures wrote their verdicts into the tree's own evidence and displaced PLN-001 on a host with KiCad ([2ba560ec](https://github.com/meshsat/meshsat-fieldkit/commit/2ba560ecbc4de957363cef2abe303726e7008e0e))
 - **rules**: GND-002 stops waiting on decision 29 and its four board changes become session work ([9345b62e](https://github.com/meshsat/meshsat-fieldkit/commit/9345b62ef43a016abfd8869680768e117f779863))

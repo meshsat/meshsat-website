@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 76
-  unreleased_since: "2026-09-25"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-25"
+  unreleased_count: 78
+  unreleased_since: "2026-09-26"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-26"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -21,10 +21,12 @@ transport by transport; there is no release yet. Builds, once there are any,
 are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-25)
+## Unreleased (main, last change 2026-09-26)
 
 ### Features
 
+- **fastlane**: store\_review\_state prints where the version stands with App Review ([41de9713](https://github.com/meshsat/meshsat-ios/commit/41de9713adb4ce54f3765f984208f202b3062268))
+- **fastlane**: App Review notes and attachment as a lane; the tour wakes and unlocks the phone ([abbf7cee](https://github.com/meshsat/meshsat-ios/commit/abbf7cee841da298c06a93cf85091d814e703286))
 - **fastlane**: the App Store listing, price, countries and submission as lanes ([597861bd](https://github.com/meshsat/meshsat-ios/commit/597861bd2bcd147253cff092a278eac5257a5daa))
 - **tests**: a proof that opens the four Advanced sub-screens for the parity captures ([48bbf4c2](https://github.com/meshsat/meshsat-ios/commit/48bbf4c2618c58a8a881fd01370ef031f0beb5a4))
 - **tests**: the proving checklist runs on the phone over USB; five more rows verified ([22c306ba](https://github.com/meshsat/meshsat-ios/commit/22c306ba43a5ce33b58564b7580426eba11362a6))

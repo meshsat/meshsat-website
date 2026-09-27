@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 34
-  unreleased_since: "2026-09-25"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-25"
+  unreleased_count: 41
+  unreleased_since: "2026-09-26"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-26"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,11 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-25)
+## Unreleased (main, last change 2026-09-26)
 
 ### Features
 
+- **console**: platform admin area with account requests, tenants, billing and consent-gated view-as ([6348df0a](https://github.com/meshsat/meshsat-hub/commit/6348df0a96d9dd73e9495a1d15bbe02a0e773ee7))
 - **relay**: Reticulum packets between two RockBLOCK 9704s ride the satellite relay untouched, on the IMT topic they arrived on ([4075d02c](https://github.com/meshsat/meshsat-hub/commit/4075d02c36926b96c56e0a192c6e07fe8c1da08c))
 - **db**: barman backups through the crypt gateway to Hetzner \[IFRNLLEI01PRD-2850\] ([aee57ea5](https://github.com/meshsat/meshsat-hub/commit/aee57ea5219273115d90308fcb039695a2795d62))
 - **web**: test an escalation chain from the Alerts page ([49e6c53e](https://github.com/meshsat/meshsat-hub/commit/49e6c53e3868a688d347dbe5d13f8ec36c238ef1))
@@ -36,6 +37,12 @@ it goes live.
 
 ### Fixes
 
+- **sms**: made-up numbers in the WhatsApp pool test, and the WhatsApp sender registered with the identifier gate ([a24791c5](https://github.com/meshsat/meshsat-hub/commit/a24791c5edf02010c7fa47a63d1a4bfd324895bf))
+- **whatsapp**: the WhatsApp sender is its own number, per tenant on the Twilio account and for the platform from HUB\_WHATSAPP\_FROM\_NUMBER ([160564cf](https://github.com/meshsat/meshsat-hub/commit/160564cf9b8532ba256daa75b73f35b0d89481c6))
+- **audit**: an operator action by a platform credential is attributed to the credential, not to "unknown" ([e827d0ef](https://github.com/meshsat/meshsat-hub/commit/e827d0ef2b63bf3025ae74363ba105591dd01f7f))
+- **verify**: the directory check no longer shadows the SQL row the teardown splits ([6950306e](https://github.com/meshsat/meshsat-hub/commit/6950306ed33132fd4166f6374e579d0876b81530))
+- **verify**: the journey probe grants support access with a session token, not a bare cookie jar ([1a66e92b](https://github.com/meshsat/meshsat-hub/commit/1a66e92b7df9d5de28f0826bbee7ef89ed0fbab0))
+- **auth**: a customer who typed a country name instead of an ISO code can sign in; the billing country is normalised, never guessed ([eb3447a9](https://github.com/meshsat/meshsat-hub/commit/eb3447a960f83af684860a770f4ac46e20442278))
 - **fleet**: a setup QR replaces the kit's login when it is scanned, not when it is shown ([d6658fa8](https://github.com/meshsat/meshsat-hub/commit/d6658fa88194f702893ca95f2366b870e8e2a147))
 - **web**: the Reticulum topology page takes the console's quiet colours ([a6611fd3](https://github.com/meshsat/meshsat-hub/commit/a6611fd3e2a23d82aa57fe3fd9d1e966418cde4c))
 - **web**: the credit balance, the send-limit warning and the message export are back ([6aff8965](https://github.com/meshsat/meshsat-hub/commit/6aff8965db5207c4ee839b69932456dea641394a))
