@@ -8,7 +8,7 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 1478
+  unreleased_count: 1488
   unreleased_since: "2026-09-27"
   unreleased_anchor: "unreleased-main-last-change-2026-09-27"
 ---
@@ -32,6 +32,9 @@ appear below.
 
 ### Features
 
+- **handover**: handover\_pack.py can write a snapshot as its ZIP and manifest alone, without the unzipped copy ([74c2df14](https://github.com/meshsat/meshsat-fieldkit/commit/74c2df143d60f0d5dc9e0eea00eed014f7723b5f))
+- **handover**: the snapshot packer, the schematic export driver and the pack spec, with the requirements registry's seven cited datasheets bundled ([c0e5d97c](https://github.com/meshsat/meshsat-fieldkit/commit/c0e5d97c0627b4120a11fdb67da2e45b58ca5a6c))
+- **tools**: RF-002 reads every transmitter's hardware inhibit path on the netlists, and its rule applies on every board the walk judges ([e5f2e6d3](https://github.com/meshsat/meshsat-fieldkit/commit/e5f2e6d3b3b5fb997a5f0b3b38d26b2fd5477767))
 - **evidence**: code-bundle tool provenance, stage-specific layout-entry gates and labelled historical percentages ([dd3b9074](https://github.com/meshsat/meshsat-fieldkit/commit/dd3b9074114ce037898015c66a7f46f2f627da10))
 - **requirements**: the V2 requirements registry and its generated trace, re-read at eadbe571 with feasibility blockers and evidence classes ([9f848223](https://github.com/meshsat/meshsat-fieldkit/commit/9f848223a689bec0fc5dfaeaa6869a636319c816))
 - **review**: review packets for boards C, D, E and P at 1f614233, every change read by hand, and the qualified review routes ([ccf5808e](https://github.com/meshsat/meshsat-fieldkit/commit/ccf5808e06e9a075f11b53d76c135bddb04ad393))
@@ -593,6 +596,13 @@ appear below.
 
 ### Fixes
 
+- **handover**: the snapshot's commit timeline lists every cited commit git resolves, an all-digit short id included ([38dcd764](https://github.com/meshsat/meshsat-fieldkit/commit/38dcd76442a14ef5906d0682aadb1fb8280e3185))
+- **pcb-b**: the bank fabric breaks before it makes on a locked sequence, and EMCON runs on each module's own rail and removes the 5G supply in hardware ([b76c18cb](https://github.com/meshsat/meshsat-fieldkit/commit/b76c18cbaf806a28d6c8e1a84abc46022746f2ab))
+- **battery**: the pack's charge and discharge temperature windows carry round 8's thresholds, inside the cell limits by the gauge's error budget ([73d5df1e](https://github.com/meshsat/meshsat-fieldkit/commit/73d5df1ebb2c47c0bbd5d8a6722c25856e5de283))
+- **pcb-e**: the blind-mate float clamps become one bar with twelve cavities, D-07's at X 46 among them, and the docs record board E's round 8 ([45f6d83f](https://github.com/meshsat/meshsat-fieldkit/commit/45f6d83f58ce58e1a4a25f937661416cb8591088))
+- **pcb-p**: pack headers order the JST parts the catalogues list, supply filters declare class A, FET bypass pair read from TI ([7bef62bd](https://github.com/meshsat/meshsat-fieldkit/commit/7bef62bd569dc58e5f28d39a33699688bbfe2260))
+- **pcb-c**: one-way EMCON read, hardware EMCON lamp and per-pin decoupling with the maker's clause on every entry ([9f28c238](https://github.com/meshsat/meshsat-fieldkit/commit/9f28c2385c5e1311fc31b4522206684596fe398a))
+- **tools**: PWR-001 and SI-001 are judged on the committed netlist, and PWR-001 fails closed on every supply, a lead from an eFuse included ([940cbcdf](https://github.com/meshsat/meshsat-fieldkit/commit/940cbcdfaeb25f59cccf5452e9ffa07384832b76))
 - **v2**: board E declares its raw bus from both feeds, classes every decoupling capacitor and fits the four its makers ask for, regenerated with parity ([bc0f562f](https://github.com/meshsat/meshsat-fieldkit/commit/bc0f562f7e33fd00a71df59d95bede932b637765))
 - **v2**: board D powers its transmit chain only while its EMCON gates are in range, reads the PA flange temperature, and fits the TPA6132A2's 2.2 uF ([76235aad](https://github.com/meshsat/meshsat-fieldkit/commit/76235aada51e6d3e7cd370b5e7d9d9a207642ce2))
 - **v2**: board A gates its PA and HF rails on both EMCON lines, with decision 42's decoupling and the part codes its makers list ([c0133147](https://github.com/meshsat/meshsat-fieldkit/commit/c0133147641f11acbc42ce5c39a6ceb08c1ce9b1))
