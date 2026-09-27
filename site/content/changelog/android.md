@@ -4,13 +4,13 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 122
-  latest_tag: "v2.19.2"
-  latest_tag_date: "2026-09-25"
-  latest_tag_anchor: "v2192-2026-09-25"
-  unreleased_count: 2
-  unreleased_since: "2026-09-27"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-27"
+  tags: 123
+  latest_tag: "v2.19.3"
+  latest_tag_date: "2026-09-27"
+  latest_tag_anchor: "v2193-2026-09-27"
+  unreleased_count: 0
+  unreleased_since: ""
+  unreleased_anchor: "unreleased-main"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,10 +23,15 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-27)
+## Unreleased (main)
+
+No unreleased changes.
+
+## v2.19.3 (2026-09-27)
 
 ### Features
 
+- **node**: Setup \> Advanced \> Node log, the node's live log over Bluetooth ([9b89f951](https://github.com/meshsat/meshsat-android/commit/9b89f951dcf88e540b0ea457912624e51963364b))
 - **satellite**: node health card from STATS, pass windows to the node, STATUS v2 accepted ([46029b92](https://github.com/meshsat/meshsat-android/commit/46029b92526100772b6f5efce18b7b1c0af8b588))
 
 ### Fixes
