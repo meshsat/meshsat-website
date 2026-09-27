@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v2.19.2"
   latest_tag_date: "2026-09-25"
   latest_tag_anchor: "v2192-2026-09-25"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  unreleased_count: 2
+  unreleased_since: "2026-09-27"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-27"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,9 +23,15 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-09-27)
 
-No unreleased changes.
+### Features
+
+- **satellite**: node health card from STATS, pass windows to the node, STATUS v2 accepted ([46029b92](https://github.com/meshsat/meshsat-android/commit/46029b92526100772b6f5efce18b7b1c0af8b588))
+
+### Fixes
+
+- **satellite**: a BLE drop ends the AT command at once, no session on reconnect, Reticulum ToRadio decodes ([4f84e370](https://github.com/meshsat/meshsat-android/commit/4f84e370a0c76a5d7bb33ba774e119dda5fa2c3e))
 
 ## v2.19.2 (2026-09-25)
 
