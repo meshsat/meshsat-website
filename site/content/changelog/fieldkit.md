@@ -8,7 +8,7 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 1488
+  unreleased_count: 1496
   unreleased_since: "2026-09-27"
   unreleased_anchor: "unreleased-main-last-change-2026-09-27"
 ---
@@ -32,6 +32,9 @@ appear below.
 
 ### Features
 
+- **handover**: handover\_pack.py repo builds a one-commit repository from a snapshot, its ignored netlists tracked, for the re-take route ([a54b1f4d](https://github.com/meshsat/meshsat-fieldkit/commit/a54b1f4dbae1cfee9aafd180e80114d384aefdee))
+- **case**: the case release for C1 to C6 with the QMX lid tray on sheet 14, and the mock-up's checks of the board-moving rows before the layout entry of boards A, B, E and P ([c351115d](https://github.com/meshsat/meshsat-fieldkit/commit/c351115d8c25754b46e8011240455920696b5880))
+- **tools**: retake\_schematic\_phase.py re-takes every schematic-phase reading on the committed netlists, and REGENERATE section 9 runs it in place of H1.1's words-only section ([e5fde2ed](https://github.com/meshsat/meshsat-fieldkit/commit/e5fde2edf48aff45f7a0b6b3f6149ea1ac51a20d))
 - **handover**: handover\_pack.py can write a snapshot as its ZIP and manifest alone, without the unzipped copy ([74c2df14](https://github.com/meshsat/meshsat-fieldkit/commit/74c2df143d60f0d5dc9e0eea00eed014f7723b5f))
 - **handover**: the snapshot packer, the schematic export driver and the pack spec, with the requirements registry's seven cited datasheets bundled ([c0e5d97c](https://github.com/meshsat/meshsat-fieldkit/commit/c0e5d97c0627b4120a11fdb67da2e45b58ca5a6c))
 - **tools**: RF-002 reads every transmitter's hardware inhibit path on the netlists, and its rule applies on every board the walk judges ([e5f2e6d3](https://github.com/meshsat/meshsat-fieldkit/commit/e5f2e6d3b3b5fb997a5f0b3b38d26b2fd5477767))
@@ -596,6 +599,11 @@ appear below.
 
 ### Fixes
 
+- **requirements**: REQ-044's re-take note cites its evidence for R-BAT not being engaged, so the trace page passes the claims screen ([91894cd7](https://github.com/meshsat/meshsat-fieldkit/commit/91894cd7f1966f8030c85ee7341ada1f345c4bfe))
+- **pcb-d,pcb-e**: declare the supplies PWR-001 refused, sense the tracker's current on its bottom leg, and carry VIN\_RAW across the dock on power pins with board A's half ([b7f96784](https://github.com/meshsat/meshsat-fieldkit/commit/b7f96784c22cfaca02bebf2aa0e8ba28b6f1ef02))
+- **pcb-b**: every supply of board B declared for PWR-001 from its maker's sheet, decision 42's class and basis on every decoupling entry, the TPS23861's RSENS and RDRAIN and the LG290P's V\_BCKP capacitors drawn ([caba1876](https://github.com/meshsat/meshsat-fieldkit/commit/caba1876cd80e39a31959ba89914aad8343d715d))
+- **pcb-a**: the PoE and USB-C enables get their own EN/UVLO node, the EMCON gates run behind their own eFuse, and PWR-001 reads PASS on board A ([ffca0771](https://github.com/meshsat/meshsat-fieldkit/commit/ffca0771f478622da3fcef4b1fe5136adaf12c71))
+- **tools**: RF-002 reads board C's SN74LVC1G57 lamp gate as the NOR its wiring selects, any other wiring UNDECIDED ([e2aab014](https://github.com/meshsat/meshsat-fieldkit/commit/e2aab0144b8e5894e81c36624f2aa70fa0c1e9db))
 - **handover**: the snapshot's commit timeline lists every cited commit git resolves, an all-digit short id included ([38dcd764](https://github.com/meshsat/meshsat-fieldkit/commit/38dcd76442a14ef5906d0682aadb1fb8280e3185))
 - **pcb-b**: the bank fabric breaks before it makes on a locked sequence, and EMCON runs on each module's own rail and removes the 5G supply in hardware ([b76c18cb](https://github.com/meshsat/meshsat-fieldkit/commit/b76c18cbaf806a28d6c8e1a84abc46022746f2ab))
 - **battery**: the pack's charge and discharge temperature windows carry round 8's thresholds, inside the cell limits by the gauge's error budget ([73d5df1e](https://github.com/meshsat/meshsat-fieldkit/commit/73d5df1ebb2c47c0bbd5d8a6722c25856e5de283))
