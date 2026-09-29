@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 912
-  unreleased_since: "2026-09-25"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-25"
+  unreleased_count: 922
+  unreleased_since: "2026-09-29"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-29"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,16 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-25)
+## Unreleased (main, last change 2026-09-29)
 
 ### Features
 
+- **api**: the audit log can be counted and read in pages, so a full copy can be saved ([77efe25e](https://github.com/meshsat/meshsat/commit/77efe25efe453edcd25a72d15a3f55e4c7cb860f))
+- **api**: the SOS carries the caller's words, an alarm test for the Hub, the Hub link's state, the adapter's power, a keepalive on the event stream, topology links and positions with their node ([2e8c01e4](https://github.com/meshsat/meshsat/commit/2e8c01e4864f9b405f1021b8653b132adcd6622d))
+- **mesh**: the node over Bluetooth LE, adopted from the app as on Android and iOS ([680eb66c](https://github.com/meshsat/meshsat/commit/680eb66cc1a97c236ec58ca6615678858d5cbf46))
+- **cellular**: the ModemManager modem counts as present hardware for the SMS gateway ([71e9e4f7](https://github.com/meshsat/meshsat/commit/71e9e4f7c6549baac72ac3398ae301ef4ceebce0))
+- **cellular**: SMS through ModemManager for Linux phones ([359c9bed](https://github.com/meshsat/meshsat/commit/359c9bed364404d9fba5313cd3fa4aadf3c37293))
+- **transport**: Meshtastic over TCP to a meshtasticd on the same host ([79692f8c](https://github.com/meshsat/meshsat/commit/79692f8c4f0504c940b85fc6d5197044e9f81f41))
 - **hf**: hf\_0 gateway receives 10 m shouts on the borrowed RTL-SDR and transmits them only with an operator callsign ([fc73ae47](https://github.com/meshsat/meshsat/commit/fc73ae4704b6a579d48a8763fb1c2442a0416542))
 - **hf**: 2-CPFSK modem for the 10 m codec: IQ and audio modulator, decimator, offset and timing search, soft LDPC decode ([50c4ada3](https://github.com/meshsat/meshsat/commit/50c4ada347eb399c0ac0b8426815cd793a3eb1bb))
 - **hf**: the public 10 m HF codec: inner frame, LDPC(128,64) with the normative H, 16-way interleave and burst framing, byte-matched to the recipe and a NumPy reference ([9edb1518](https://github.com/meshsat/meshsat/commit/9edb1518829c1105ef73c98337df4e6c5e15e9cf))
@@ -404,6 +410,10 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **engine**: a link set to encrypt never sends the text in the clear, and the Messaging and SMS settings can be written without wiping anything ([afe026af](https://github.com/meshsat/meshsat/commit/afe026aff4681e46f363db9ea129490f6eff320c))
+- **api**: a radio settings write reaches the node over its own settings, the node's log over Bluetooth on demand, a CA certificate keeps its facts ([c1561343](https://github.com/meshsat/meshsat/commit/c1561343dc6b918c705032b8b23cf00ab32e7190))
+- **api**: a link switched off stops what goes out by it, and the interface list shows the switch at once ([740130a2](https://github.com/meshsat/meshsat/commit/740130a2a4c2c0b5931f0f26699275020daf01fc))
+- **mesh**: a NodeInfo request carries the radio's own name instead of blanking it on the node asked ([2e2991de](https://github.com/meshsat/meshsat/commit/2e2991de5bc5b400a72f7eae0152db8f22ef10af))
 - **interop**: skip the AutoInterface namespace test where no veth pair can be built ([cee01155](https://github.com/meshsat/meshsat/commit/cee01155746221f25590503daabdb3b304649b18))
 - **power**: a full pack resting on mains is no longer reported as draining ([b74af040](https://github.com/meshsat/meshsat/commit/b74af0404a6de488f5bafea0e384093a9f29d94d))
 - **ttc**: the booth screen no longer zooms or scrolls under a visitor's fingers ([17f1da6d](https://github.com/meshsat/meshsat/commit/17f1da6d44fb3f975e59c5fb49015a76a32eee10))
