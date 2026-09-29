@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 84
-  unreleased_since: "2026-09-27"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-27"
+  unreleased_count: 85
+  unreleased_since: "2026-09-28"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-28"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -21,10 +21,11 @@ transport by transport; there is no release yet. Builds, once there are any,
 are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-27)
+## Unreleased (main, last change 2026-09-28)
 
 ### Features
 
+- **store**: store\_resubmit lane resolves the rejected item and resubmits the same submission ([b81d0a19](https://github.com/meshsat/meshsat-ios/commit/b81d0a19a6048c2b966da2f1a1bc4cdf18d86b0d))
 - **satellite**: Iridium BLE contract v2, node health card from STATS, pass windows to the node ([a08d826e](https://github.com/meshsat/meshsat-ios/commit/a08d826e16f0e646bf024f7fa359f8d5f1744600))
 - **node**: Setup \> Advanced \> Node log, the node's live log over Bluetooth ([e009ea75](https://github.com/meshsat/meshsat-ios/commit/e009ea754c71a6a63dfc280d5da8ec14b10ee709))
 - **fastlane**: store\_review\_state prints where the version stands with App Review ([41de9713](https://github.com/meshsat/meshsat-ios/commit/41de9713adb4ce54f3765f984208f202b3062268))
