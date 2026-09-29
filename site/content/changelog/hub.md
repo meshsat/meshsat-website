@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 41
-  unreleased_since: "2026-09-26"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-26"
+  unreleased_count: 42
+  unreleased_since: "2026-09-29"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-29"
 ---
 
 Generated from the commit history of
@@ -20,7 +20,7 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-26)
+## Unreleased (main, last change 2026-09-29)
 
 ### Features
 
@@ -37,6 +37,7 @@ it goes live.
 
 ### Fixes
 
+- **basemap**: the map and the audit archive go through the backup gateway, nl-s3 is retired ([4bbb3442](https://github.com/meshsat/meshsat-hub/commit/4bbb3442951280664e123eab7aaaba68e0d155de))
 - **sms**: made-up numbers in the WhatsApp pool test, and the WhatsApp sender registered with the identifier gate ([a24791c5](https://github.com/meshsat/meshsat-hub/commit/a24791c5edf02010c7fa47a63d1a4bfd324895bf))
 - **whatsapp**: the WhatsApp sender is its own number, per tenant on the Twilio account and for the platform from HUB\_WHATSAPP\_FROM\_NUMBER ([160564cf](https://github.com/meshsat/meshsat-hub/commit/160564cf9b8532ba256daa75b73f35b0d89481c6))
 - **audit**: an operator action by a platform credential is attributed to the credential, not to "unknown" ([e827d0ef](https://github.com/meshsat/meshsat-hub/commit/e827d0ef2b63bf3025ae74363ba105591dd01f7f))
