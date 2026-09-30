@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 922
-  unreleased_since: "2026-09-29"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-29"
+  unreleased_count: 932
+  unreleased_since: "2026-09-30"
+  unreleased_anchor: "unreleased-main-last-change-2026-09-30"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,19 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-29)
+## Unreleased (main, last change 2026-09-30)
 
 ### Features
 
+- **sos**: every route that is set up is a leg that waits for its link, as MeshSat Android sends an SOS ([cad98d15](https://github.com/meshsat/meshsat/commit/cad98d15e43f695b71783515c3f9d838310a12fe))
+- **transport**: the RockBLOCK on a MeshSat node, through the node's Bluetooth pipe ([ab58709a](https://github.com/meshsat/meshsat/commit/ab58709ae112b57fc3e30fb52d38cc2d55e3a4b6))
+- **sos**: the alarm test reports its position by satellite as Android does, and an SOS by satellite passes the credit budget ([427531ee](https://github.com/meshsat/meshsat/commit/427531ee160faec1b8c7fee91146dd5ab6598bfe))
+- **api**: the satellite mailbox check a person asks for, and what it found ([37fbee06](https://github.com/meshsat/meshsat/commit/37fbee06ad32712f5fd03178a490f844e22a5f8d))
+- **api**: a chat's own SMS key, and SMS that go out exactly as written ([f7eb5129](https://github.com/meshsat/meshsat/commit/f7eb5129b90ce1183261cf3a1976a46d35891213))
+- APRS-IS, a position beacon, TAK without a TAK server, and Reticulum over TCP with TLS ([7d406a6f](https://github.com/meshsat/meshsat/commit/7d406a6f7bf0c89b657eadbf3821f62ff3bdd038))
+- **api**: the Hub link's state and reason, a switch, a connection test, and Hub settings that keep the CA ([f761743c](https://github.com/meshsat/meshsat/commit/f761743c056ae17560f09edb1826ddf16aeda6c9))
+- **api**: the contact card the phones exchange, signed by the routing identity ([0db71ea2](https://github.com/meshsat/meshsat/commit/0db71ea251d142ee5fa7b672c66b7ddc7ca38256))
+- **engine**: zones alert: every mesh position is checked, and the crossings are kept and served ([31ae3941](https://github.com/meshsat/meshsat/commit/31ae394117e47c0c77eca8ae4794d1f99d0287bb))
 - **api**: the audit log can be counted and read in pages, so a full copy can be saved ([77efe25e](https://github.com/meshsat/meshsat/commit/77efe25efe453edcd25a72d15a3f55e4c7cb860f))
 - **api**: the SOS carries the caller's words, an alarm test for the Hub, the Hub link's state, the adapter's power, a keepalive on the event stream, topology links and positions with their node ([2e8c01e4](https://github.com/meshsat/meshsat/commit/2e8c01e4864f9b405f1021b8653b132adcd6622d))
 - **mesh**: the node over Bluetooth LE, adopted from the app as on Android and iOS ([680eb66c](https://github.com/meshsat/meshsat/commit/680eb66cc1a97c236ec58ca6615678858d5cbf46))
@@ -410,6 +419,7 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- a satellite message is kept until it is handed over once, and a failed send leaves nothing to send twice ([0c884a00](https://github.com/meshsat/meshsat/commit/0c884a008a6077b5bfd5b767c3f7ae5ad0001e97))
 - **engine**: a link set to encrypt never sends the text in the clear, and the Messaging and SMS settings can be written without wiping anything ([afe026af](https://github.com/meshsat/meshsat/commit/afe026aff4681e46f363db9ea129490f6eff320c))
 - **api**: a radio settings write reaches the node over its own settings, the node's log over Bluetooth on demand, a CA certificate keeps its facts ([c1561343](https://github.com/meshsat/meshsat/commit/c1561343dc6b918c705032b8b23cf00ab32e7190))
 - **api**: a link switched off stops what goes out by it, and the interface list shows the switch at once ([740130a2](https://github.com/meshsat/meshsat/commit/740130a2a4c2c0b5931f0f26699275020daf01fc))
