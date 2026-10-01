@@ -59,7 +59,7 @@ The sections below give the detail and the sources for every cell, and the last 
 
 ## Iridium
 
-**On the kit.** A RockBLOCK 9704 (Iridium IMT) in parallax, and a RockBLOCK 9603 (Iridium SBD) in tesseract until its own 9704 is fitted. A Taoglas IAA.01 puck outside the case.
+**On the kit.** A RockBLOCK 9704 (Iridium IMT) in both kits. tesseract had a RockBLOCK 9603 (Iridium SBD) until its own 9704 was fitted. A Taoglas IAA.01 puck outside the case.
 
 **Estimated range on the kit.**
 
