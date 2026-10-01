@@ -8,7 +8,7 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 1630
+  unreleased_count: 1631
   unreleased_since: "2026-09-30"
   unreleased_anchor: "unreleased-main-last-change-2026-09-30"
 ---
@@ -615,6 +615,7 @@ appear below.
 
 ### Fixes
 
+- **records**: set 18's evidence page bound: CON-010 and REQ-044 rebound to the page the Layer 3 closure set renders, the dry run's two binding warnings gone, the set's integration record ([b4b199d0](https://github.com/meshsat/meshsat-fieldkit/commit/b4b199d0ceee6d7a632b85090fbf3bf95a602758))
 - **records**: set 15's re-check answered: S-125 names the re-taken identity reading's sha and decision 59 as written by its script, the en dash escaped, README step 4 corrected, check 2 filed ([e5322674](https://github.com/meshsat/meshsat-fieldkit/commit/e53226748d882f4aa7eec35bd5e741bb18d35c6a))
 - **records**: set 15's integration check answered: the three PANJIT bindings marked held back and board C's page re-rendered (B1, B2), the minors, the set's README and index rows, checks filed ([4012429e](https://github.com/meshsat/meshsat-fieldkit/commit/4012429eabcfa16ddc26bab386018e498b6e13ea))
 - **records**: S-122 closed on set 15 by its filed check 8, CFL-016 from FAIL to PASS; CON-010 and REQ-044 rebound to the page the full render order reaches (c9b98931) ([845a4fd1](https://github.com/meshsat/meshsat-fieldkit/commit/845a4fd100c1043a000451cfa61c4519860814dd))
