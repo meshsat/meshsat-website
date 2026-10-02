@@ -272,6 +272,8 @@ term_log_label:
   other: "Installer output"
 and_apk:
   other: "Download APK"
+and_play_note:
+  other: "On Google Play the app comes without SMS, because Google's policy does not allow it there. The APK is the full app. The two cannot update each other."
 films_title:
   other: "See it working"
 films_sub:
