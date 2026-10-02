@@ -13,6 +13,7 @@ route the phone has, and each route is retried until it is sent:
 - **By satellite**, as the same SOS frame a MeshSat kit sends. The Hub raises it as an alarm.
 - **Over the mesh**, as a broadcast. Any MeshSat kit in range relays it to the Hub.
 - **By SMS** from the phone's own SIM to each emergency contact, with your position and a map link.
+  Not in the Google Play edition, which has no SMS.
 - **To the Hub over the internet**, as soon as it is connected. The Hub files it under the same
   alarm as the satellite frame, so one SOS pages once.
 

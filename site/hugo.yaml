@@ -19,6 +19,9 @@ params:
   # before it activates, which the Hub card says out loud (MESHSAT-995).
   signup_url: "https://auth.meshsat.net/if/flow/meshsat-enrollment/"
   docs_url: "https://docs.meshsat.net"
+  # The Google Play listing of MeshSat Android: the edition without SMS
+  # (MESHSAT-1340). The full app stays the APK on GitHub releases.
+  play_url: "https://play.google.com/store/apps/details?id=net.meshsat.android"
   install_url: "https://get.meshsat.net"
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false

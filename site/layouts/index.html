@@ -370,9 +370,19 @@
                 </div>
                 <div class="artifact-foot term-foot">
                     <div class="hero-actions">
+                        {{/* Google Play carries the edition without SMS; the note
+                             under the buttons says so (MESHSAT-1340). The name is
+                             a brand, the same in every language. */}}
+                        {{ with .Site.Params.play_url }}
+                        <a href="{{ . }}" class="btn btn-outline btn-icon" target="_blank" rel="noopener" data-umami-event="play-click" data-umami-event-locale="{{ $.Site.Language.Lang }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m22.018 13.298l-3.919 2.218l-3.515-3.493l3.543-3.521l3.891 2.202a1.49 1.49 0 0 1 0 2.594M1.337.924a1.5 1.5 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087zm12.207 10.065l3.258-3.238L3.45.195a1.47 1.47 0 0 0-.946-.179zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54z"/></svg>
+                            <span>Google Play</span>
+                        </a>
+                        {{ end }}
                         <a href="{{ .Site.Params.github }}-android/releases/latest" class="btn btn-outline" target="_blank" rel="noopener" data-umami-event="apk-download" data-umami-event-locale="{{ .Site.Language.Lang }}">{{ i18n "and_apk" }}</a>
                         <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "and_cta" }}</a>
                     </div>
+                    {{ if .Site.Params.play_url }}<p class="term-note">{{ i18n "and_play_note" }}</p>{{ end }}
                 </div>
             </div>
         </div>

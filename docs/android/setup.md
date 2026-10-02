@@ -13,17 +13,34 @@ Setup: node, satellite, Hub and SMS, each with where it stands.
 
 ## Install
 
+The app comes in two editions. The **full app**, SMS included, is the APK from the GitHub
+releases; F-Droid will carry the same edition once it lists the app. The **Google Play edition**
+is the same app without SMS, because Google Play does not allow SMS in an app that is not the
+phone's SMS app. It is
+[on Google Play](https://play.google.com/store/apps/details?id=net.meshsat.android) and nowhere
+else, and it can be a version behind the GitHub releases.
+
+Both are `net.meshsat.android`, but Play signs its edition with its own key, so a Play install
+and a GitHub install cannot update each other. To switch, uninstall one, install the other, and
+provision it with the Hub again.
+
+**From Google Play:** open the
+[listing](https://play.google.com/store/apps/details?id=net.meshsat.android), tap **Install**,
+and go on at step 4.
+
+**The full app, from GitHub:**
+
 1. Download the APK for your phone from the
    [latest release](https://github.com/meshsat/meshsat-android/releases/latest). There is one per
    processor: take **arm64-v8a** unless you know otherwise, since nearly every phone since 2016 is
    that. **armeabi-v7a** is for older 32-bit phones, **x86** and **x86_64** for emulators, and
    **universal** works on all of them at about 20 MB more.
 2. Let your browser or file manager install unknown apps. Android asks the first time.
-3. Open the APK and tap **Install**. Play Protect may warn about an unknown developer, because the
-   app is not on the Play Store: tap **More details**, then **Install anyway**.
+3. Open the APK and tap **Install**. Play Protect may warn about an unknown developer, because
+   this APK does not come from the Play Store: tap **More details**, then **Install anyway**.
 4. Open MeshSat. A welcome page says what each permission is for before Android asks: nearby
    devices (Bluetooth), location and notifications. Android needs location for Bluetooth scanning.
-   SMS is asked for later, in Setup > SMS.
+   SMS is asked for later, in Setup > SMS, in the full app only.
 
 Until the steps below are done, Home keeps a **Getting started** list of them, each one tap away.
 
@@ -33,7 +50,8 @@ You need Android 8.0 or later.
 Releases are built and signed in CI. Before you install an APK you can check it with
 `apksigner verify --print-certs meshsat-android-<version>-release.apk`. Every release since
 2.8.0 shows the certificate SHA-256 digest
-`8ca78b6c33bd9796bb05f40fec2a0ab801e0297e7565960d42f5e6af821c9f66`.
+`8ca78b6c33bd9796bb05f40fec2a0ab801e0297e7565960d42f5e6af821c9f66`. The Google Play edition is
+signed by Play with a different key.
 :::
 
 **Coming from 2.8 or older?** Since 2.9.0 the app is `net.meshsat.android` (it was
@@ -90,12 +108,14 @@ directly, the app reaches it through the Hub. It stays off until you enter the k
 
 ## SMS
 
-In Setup > SMS, tap **Allow SMS** and fill in the **Kit phone number**.
+In Setup > SMS, tap **Allow SMS** and fill in the **Kit phone number**. The Google Play edition
+has no SMS: Setup, Home and the SOS screen say so.
 
 ## Emergency contacts
 
 In Setup > Safety, add the people an SOS goes to by SMS, each with the country code, then tap
-**Test the alarm** to see every route work. See [Safety](/android/safety).
+**Test the alarm** to see every route work. See [Safety](/android/safety). On the Google Play
+edition an SOS goes by satellite, the mesh and the Hub, not by SMS.
 
 ## Keep it running
 

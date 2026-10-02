@@ -272,6 +272,8 @@ term_log_label:
   other: "Sortie de l'installation"
 and_apk:
   other: "Télécharger l'APK"
+and_play_note:
+  other: "Sur Google Play, l'application est proposée sans SMS, car les règles de Google ne l'y autorisent pas. L'APK est l'application complète. L'une ne peut pas mettre l'autre à jour."
 films_title:
   other: "Le voir fonctionner"
 films_sub:

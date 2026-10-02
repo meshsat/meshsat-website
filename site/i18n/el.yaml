@@ -272,6 +272,8 @@ term_log_label:
   other: "Έξοδος εγκατάστασης"
 and_apk:
   other: "Λήψη APK"
+and_play_note:
+  other: "Στο Google Play η εφαρμογή διατίθεται χωρίς SMS, επειδή η πολιτική της Google δεν το επιτρέπει εκεί. Το APK είναι η πλήρης εφαρμογή. Η μία δεν μπορεί να ενημερώσει την άλλη."
 films_title:
   other: "Δείτε το να λειτουργεί"
 films_sub:
