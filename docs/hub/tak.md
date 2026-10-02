@@ -1,13 +1,43 @@
 # TAK
 
-Your positions on ATAK, iTAK and WinTAK. You have two ways to get there: let the Hub run a TAK
-server for you, or point it at one you already run.
+Your positions on ATAK, iTAK and WinTAK, and your TAK team on the map in MeshSat Android. You have
+two ways to get there: let the Hub run a TAK server for you, or point it at one you already run.
 
 ::: warning New
 Hosted TAK landed in September 2026. It is tested against OpenTAKServer, including the parts that
 keep one customer's server away from another's, but it has little field exposure yet. If you are
 depending on it for something that matters, tell us: we would rather hear about it early.
 :::
+
+## What goes to TAK, and what comes back
+
+Whichever server you use, the Hub is the one thing that talks to it. Your kits and apps keep the
+one connection they already have, to the Hub, and need no TAK server address of their own.
+
+**Out to TAK**
+
+- Every position one of your kits, phones or devices reports to the Hub appears on your TAK server
+  as a marker.
+- MeshSat Android (2.19.6 and later) with **Enable TAK** on sends its own position once a minute,
+  an SOS, a missed check-in and its chat as TAK events. The Hub passes them on to your TAK server
+  and to your other phones running MeshSat Android. A phone that sends its own marker is not drawn
+  a second time from its position report.
+
+**Back from TAK**
+
+- The Hub reads your TAK server as well. The people connected to it appear on the map in MeshSat
+  Android (2.19.6 and later).
+
+**What the Hub does not pass on**
+
+- One TAK server's traffic to another TAK server. If you use a hosted server and your own, each
+  sees your kits and phones, and neither sees the other's users through the Hub.
+- Anything it cannot check. Every event is read and written out again before it goes on. An event
+  that is malformed, that uses XML namespaces, that is larger than 16 KiB from an app or 64 KiB
+  from a server, or that expired more than five minutes ago is dropped.
+
+The field kit and MeshSat iOS do not send their own TAK events through the Hub yet. Their
+positions reach TAK as markers, as above.
 
 ## A TAK server of your own
 
@@ -67,8 +97,8 @@ certificate on the next connection.
 
 Said plainly so you do not plan around it:
 
-- **Markers from TAK do not come back onto the MeshSat map.** Positions flow out to TAK; they do
-  not flow in. This page will say otherwise when they do.
+- **Markers from TAK do not appear on the Hub's own map.** They reach the map in MeshSat Android
+  (see [above](#what-goes-to-tak-and-what-comes-back)), not the map in the Hub console.
 - **No data packages, files or missions.** Those endpoints answer 404.
 - **Your TAK server's own data is not in your [export](/hub/your-data).** Closing your account
   destroys the server and its database along with everything else, but an export will not contain

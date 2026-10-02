@@ -51,7 +51,11 @@ is the same app without SMS; [Set up](/android/setup#install) says how the two d
   it reports health and positions and takes remote commands. When a field kit cannot be reached
   directly, the app can reach it through the Hub.
 - **APRS** through a KISS TNC over TCP (Direwolf, for example) or directly to APRS-IS.
-- **TAK.** Positions from the Hub's TAK feed appear on the map. Receive only.
+- **TAK.** What the Hub delivers of your team's TAK picture appears on the map: the phones on
+  your TAK server. With **Enable TAK** on, the phone also sends its own position (once a minute,
+  moving or not), an SOS, a missed check-in and its chat to the Hub as TAK, and the Hub passes
+  them on to your TAK server. The phone needs no TAK server address of its own. Since 2.19.6; see
+  [Hub > TAK](/hub/tak).
 - **Reticulum.** The phone runs as a Reticulum transport node and relays between the mesh, the
   Iridium modems, MQTT and TCP peers.
 - **Routing rules** (Setup > Advanced > Routing rules) decide what is forwarded between links by
