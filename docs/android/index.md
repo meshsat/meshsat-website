@@ -24,7 +24,9 @@ The phone does the thinking and the node does the radio. The app reaches both of
 radios over one Bluetooth connection, so there is no special phone to buy and nothing to wire.
 
 **Source:** [meshsat/meshsat-android](https://github.com/meshsat/meshsat-android), GPLv3.
-**Download:** the signed APK from the [latest release](https://github.com/meshsat/meshsat-android/releases/latest).
+**Download:** the signed APK from the [latest release](https://github.com/meshsat/meshsat-android/releases/latest)
+is the full app. The edition [on Google Play](https://play.google.com/store/apps/details?id=net.meshsat.android)
+is the same app without SMS; [Set up](/android/setup#install) says how the two differ.
 
 ## Start here
 
@@ -43,7 +45,8 @@ radios over one Bluetooth connection, so there is no special phone to buy and no
 - **Satellite.** Iridium SBD through the node's RockBLOCK 9603, up to 340 bytes out and 270
   bytes in. Messages wait in a queue until they go out. See [Satellite](/android/satellite).
 - **SMS** through the phone's own SIM, optionally encrypted per conversation with AES-256-GCM.
-  The carrier still sees the numbers and the time, only the text is encrypted.
+  The carrier still sees the numbers and the time, only the text is encrypted. Not in the Google
+  Play edition.
 - **Hub.** The phone joins the Hub's fleet like a field kit over MQTT with a client certificate:
   it reports health and positions and takes remote commands. When a field kit cannot be reached
   directly, the app can reach it through the Hub.
@@ -75,6 +78,7 @@ the phone keeps relaying with the screen off.
 | SOS by satellite to the Hub | The frame matches the kits' byte for byte in tests; not sent through the Hub yet, because it would page the on-call chain |
 | SOS over the mesh and to the Hub online, and Test the alarm on the phone | Not exercised yet |
 | SMS on Android 8 to 12 | Fixed in 2.13.0; verified on the Android 11 emulator |
+| SMS on the Google Play edition | Not included, by Google Play's SMS policy. Setup, Home and the SOS screen say so; an SOS goes by satellite, the mesh and the Hub |
 | A second tick when the Hub confirms a satellite message arrived | In development |
 | RockBLOCK 9704 | Not tested on hardware |
 | Deployment to a real end user | Never |

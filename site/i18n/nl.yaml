@@ -272,6 +272,8 @@ term_log_label:
   other: "Installatie-uitvoer"
 and_apk:
   other: "APK downloaden"
+and_play_note:
+  other: "Op Google Play staat de app zonder sms, omdat het beleid van Google dat daar niet toestaat. De APK is de volledige app. De twee kunnen elkaar niet bijwerken."
 films_title:
   other: "Zie het werken"
 films_sub:
