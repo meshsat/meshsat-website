@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 125
-  latest_tag: "v2.19.5"
+  tags: 126
+  latest_tag: "v2.19.6"
   latest_tag_date: "2026-10-02"
-  latest_tag_anchor: "v2195-2026-10-02"
+  latest_tag_anchor: "v2196-2026-10-02"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.19.6 (2026-10-02)
+
+### Fixes
+
+- **tak**: a phone that lies still reports its position to TAK once a minute ([78008695](https://github.com/meshsat/meshsat-android/commit/78008695743ad998cc2a49d840bc6ce7ea137cee))
 
 ## v2.19.5 (2026-10-02)
 
