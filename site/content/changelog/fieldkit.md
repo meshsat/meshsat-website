@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 1631
-  unreleased_since: "2026-09-30"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-30"
+  unreleased_count: 1642
+  unreleased_since: "2026-10-01"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-01"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,7 +28,7 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-30)
+## Unreleased (main, last change 2026-10-01)
 
 ### Features
 
@@ -615,6 +615,17 @@ appear below.
 
 ### Fixes
 
+- **records**: L3-N01, verify\_l3am.py's closing helper reads the verifier's revision return as success; a positive case and the probe's own sensitivity added, and a mutation check that a verifier accepting the stale check fails the run ([6e5a71ba](https://github.com/meshsat/meshsat-fieldkit/commit/6e5a71ba0b2fbb76ffe4491ac4372b0ce275457f))
+- **records**: r11\_dep.py compares revision A32's full hash by its recorded prefix, not git's abbreviated hash, whose length depends on the clone (its output unchanged; L4-E4's pin updated) ([3b4b92cf](https://github.com/meshsat/meshsat-fieldkit/commit/3b4b92cf3707e00806ebdfa07b86819ce77c20aa))
+- **records**: L4-E4's third round for recheck astra-check-l4e4-2: each outlet bench window's upper bound is the smaller of the fast and slow OVP minima (SLVSDG8B p.8), VBUS strictly inside, the 15 V window 12.2 to 16.2 V; the test refuses a 16.25 V excursion and accepts 16.15 V ([1352560c](https://github.com/meshsat/meshsat-fieldkit/commit/1352560c250b49245043cfd6c8bb0897e104fb5b))
+- **tests**: the supersede test reads the history its copy already holds, so it holds after the tree's own acceptance is superseded (the closing check is re-issued for the changed test file) ([8146b4cc](https://github.com/meshsat/meshsat-fieldkit/commit/8146b4cc09223c5486e7d553d8711854a3d7678c))
+- **records**: L4-E4's second round for check astra-check-l4e4-1: U3's bounds include R16's tolerance and TCR, IIN\_HOST 4.70 A (code 94, 0x5E00) chosen with R11 8 mOhm and a 0.38 mOhm tap allowance, the tolerance read not typed, the outlet's bench isolating U18's comparator; tests for the old and new bounds ([a84f4733](https://github.com/meshsat/meshsat-fieldkit/commit/a84f4733017957951f0e3b375fc5f885fede2bfb))
+- **tests**: the amendment's tests hold before and after the review findings close (copies built from the open state; the tree's own closing check never used as a fixture) ([cd231260](https://github.com/meshsat/meshsat-fieldkit/commit/cd2312604f6bb810176fc6ff7ed50281b67066b4))
+- **requirements**: the Layer 3 amendment's recheck answered: the acceptance's requirements digest defined by a principle (what states a demand or an authority is in; closure state, closure evidence, derived stage summaries and readings are out; a status projected to its normative distinction), tested on closures the registry's validator accepts; the check header compared exactly and every changed test file compared; the recheck filed ([d3e3b415](https://github.com/meshsat/meshsat-fieldkit/commit/d3e3b415a34aeaec0ae55c0fe9cf8c17cdc7a5b2))
+- **requirements**: the Layer 3 amendment's check answered: the acceptance's requirements digest binds the owner rulings, session choices, accepted exceptions and stage conditions, every registry field classified (B1); the findings close only with a new accepted check of the amendment bound to its reviewed revision, verified again at acceptance (B2); the check filed ([932e0f7f](https://github.com/meshsat/meshsat-fieldkit/commit/932e0f7f04195db3824bb44ea1cf219ff838f03d))
+- **records**: the layer 3 amendment's layer status script names the two dash characters it screens by their escapes, so no committed file of the amendment outside the filed review carries one ([29947b27](https://github.com/meshsat/meshsat-fieldkit/commit/29947b2791654f0000f66db68149e99ab91c2469))
+- **records**: O-2's bound from every enumerated LT8705A row (recheck astra-check-l4e2-2 B2): the rows read back from the sheet and classified, the setting stacked worst case and rounded down to 3.548 A, an independent check of every envelope corner from the tolerance-adjusted 16.695 V hold to 25 V that refuses above 100 W; the recheck filed ([8c1aa119](https://github.com/meshsat/meshsat-fieldkit/commit/8c1aa11986d240ece5393ac4409dbb645b3a7b10))
+- **records**: L4-E2's replay counts service from the traced load flows (check astra-check-l4e2-1 B1): a service ledger whose kit balance closes with stopped-hour sun counted once, the model's counter kept as the legacy model metric, O-2's 100 W bound derived across the loaded input voltage (B2), M1's label; the check filed ([05d2be78](https://github.com/meshsat/meshsat-fieldkit/commit/05d2be784d6aba957782dc205bc10eadefc91cee))
 - **records**: set 18's evidence page bound: CON-010 and REQ-044 rebound to the page the Layer 3 closure set renders, the dry run's two binding warnings gone, the set's integration record ([b4b199d0](https://github.com/meshsat/meshsat-fieldkit/commit/b4b199d0ceee6d7a632b85090fbf3bf95a602758))
 - **records**: set 15's re-check answered: S-125 names the re-taken identity reading's sha and decision 59 as written by its script, the en dash escaped, README step 4 corrected, check 2 filed ([e5322674](https://github.com/meshsat/meshsat-fieldkit/commit/e53226748d882f4aa7eec35bd5e741bb18d35c6a))
 - **records**: set 15's integration check answered: the three PANJIT bindings marked held back and board C's page re-rendered (B1, B2), the minors, the set's README and index rows, checks filed ([4012429e](https://github.com/meshsat/meshsat-fieldkit/commit/4012429eabcfa16ddc26bab386018e498b6e13ea))
