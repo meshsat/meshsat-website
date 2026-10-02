@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 43
-  unreleased_since: "2026-09-29"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-29"
+  unreleased_count: 50
+  unreleased_since: "2026-10-02"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-02"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,14 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-29)
+## Unreleased (main, last change 2026-10-02)
 
 ### Features
 
+- **tak**: the Hub delivers a tenant's TAK traffic to its kits and apps, and shows a tenant's clients to each other ([d5d9c14b](https://github.com/meshsat/meshsat-hub/commit/d5d9c14b58c62a50c085f91d6312cbe40ab08cd1))
+- **tak**: the stream a TAK server sends is cut into events without trusting it ([8951a77a](https://github.com/meshsat/meshsat-hub/commit/8951a77a8df0024e093d2a9cbfb1a3eec96b5a01))
+- **tak**: kits and apps can export their TAK messages to the Hub, which forwards them to the tenant's TAK servers ([178a60ac](https://github.com/meshsat/meshsat-hub/commit/178a60acce29d6ce5949a9c803c512e092930a87))
+- **tak**: a TAK message from outside the Hub is checked and re-written before the Hub passes it on ([e995ccf4](https://github.com/meshsat/meshsat-hub/commit/e995ccf4532a9a517ec5acb5055691b9b5fbe2c3))
 - **console**: platform admin area with account requests, tenants, billing and consent-gated view-as ([6348df0a](https://github.com/meshsat/meshsat-hub/commit/6348df0a96d9dd73e9495a1d15bbe02a0e773ee7))
 - **relay**: Reticulum packets between two RockBLOCK 9704s ride the satellite relay untouched, on the IMT topic they arrived on ([4075d02c](https://github.com/meshsat/meshsat-hub/commit/4075d02c36926b96c56e0a192c6e07fe8c1da08c))
 - **db**: barman backups through the crypt gateway to Hetzner \[IFRNLLEI01PRD-2850\] ([aee57ea5](https://github.com/meshsat/meshsat-hub/commit/aee57ea5219273115d90308fcb039695a2795d62))
@@ -37,6 +41,9 @@ it goes live.
 
 ### Fixes
 
+- **docker**: the Hub image takes Alpine's published security fixes at build, so an OpenSSL fix no longer blocks every deploy ([7ac306bb](https://github.com/meshsat/meshsat-hub/commit/7ac306bba9b37205d02618e10ce99ac831b6d815))
+- **tak**: an unreachable TAK server no longer stalls the message bus, and positions are not forwarded twice after a change of leader ([8e630bfe](https://github.com/meshsat/meshsat-hub/commit/8e630bfec7bfaa939c247ad018c3174b60fa5fc8))
+- **security**: a tenant's own TAK server may not be an internal address, checked on save and at connect ([0b0fa221](https://github.com/meshsat/meshsat-hub/commit/0b0fa221ecd705f42d2f3f68e45fe9c1dd415419))
 - **k8s**: restore drill passes through the backup gateway; the drill brings its own allow policy ([e98ce6b4](https://github.com/meshsat/meshsat-hub/commit/e98ce6b45b238116a6936e6f72f8787beffc96cf))
 - **basemap**: the map and the audit archive go through the backup gateway, nl-s3 is retired ([4bbb3442](https://github.com/meshsat/meshsat-hub/commit/4bbb3442951280664e123eab7aaaba68e0d155de))
 - **sms**: made-up numbers in the WhatsApp pool test, and the WhatsApp sender registered with the identifier gate ([a24791c5](https://github.com/meshsat/meshsat-hub/commit/a24791c5edf02010c7fa47a63d1a4bfd324895bf))
