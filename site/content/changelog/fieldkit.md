@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 1642
-  unreleased_since: "2026-10-01"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-01"
+  unreleased_count: 1643
+  unreleased_since: "2026-10-02"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-02"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,7 +28,7 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-01)
+## Unreleased (main, last change 2026-10-02)
 
 ### Features
 
@@ -615,6 +615,7 @@ appear below.
 
 ### Fixes
 
+- **records**: L4-E9's and L4-E11's safe-operating-area readers take either poppler SVG serialisation (a stroke style property or attribute, a space after each comma or none); both outputs unchanged byte for byte, a test pins both forms ([bab8d460](https://github.com/meshsat/meshsat-fieldkit/commit/bab8d4607115c63011b4f193fec056a05a02e693))
 - **records**: L3-N01, verify\_l3am.py's closing helper reads the verifier's revision return as success; a positive case and the probe's own sensitivity added, and a mutation check that a verifier accepting the stale check fails the run ([6e5a71ba](https://github.com/meshsat/meshsat-fieldkit/commit/6e5a71ba0b2fbb76ffe4491ac4372b0ce275457f))
 - **records**: r11\_dep.py compares revision A32's full hash by its recorded prefix, not git's abbreviated hash, whose length depends on the clone (its output unchanged; L4-E4's pin updated) ([3b4b92cf](https://github.com/meshsat/meshsat-fieldkit/commit/3b4b92cf3707e00806ebdfa07b86819ce77c20aa))
 - **records**: L4-E4's third round for recheck astra-check-l4e4-2: each outlet bench window's upper bound is the smaller of the fast and slow OVP minima (SLVSDG8B p.8), VBUS strictly inside, the 15 V window 12.2 to 16.2 V; the test refuses a 16.25 V excursion and accepts 16.15 V ([1352560c](https://github.com/meshsat/meshsat-fieldkit/commit/1352560c250b49245043cfd6c8bb0897e104fb5b))

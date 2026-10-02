@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 50
+  unreleased_count: 51
   unreleased_since: "2026-10-02"
   unreleased_anchor: "unreleased-main-last-change-2026-10-02"
 ---
@@ -41,6 +41,7 @@ it goes live.
 
 ### Fixes
 
+- **k8s**: the Hub can reach its own WireGuard manager again ([b66df421](https://github.com/meshsat/meshsat-hub/commit/b66df42185da1680c87a51226ba129f23e56f2d7))
 - **docker**: the Hub image takes Alpine's published security fixes at build, so an OpenSSL fix no longer blocks every deploy ([7ac306bb](https://github.com/meshsat/meshsat-hub/commit/7ac306bba9b37205d02618e10ce99ac831b6d815))
 - **tak**: an unreachable TAK server no longer stalls the message bus, and positions are not forwarded twice after a change of leader ([8e630bfe](https://github.com/meshsat/meshsat-hub/commit/8e630bfec7bfaa939c247ad018c3174b60fa5fc8))
 - **security**: a tenant's own TAK server may not be an internal address, checked on save and at connect ([0b0fa221](https://github.com/meshsat/meshsat-hub/commit/0b0fa221ecd705f42d2f3f68e45fe9c1dd415419))
