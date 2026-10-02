@@ -15,7 +15,7 @@ server the Hub runs for you, or your own server if you already have one.
 
 This page used to say the settings lived "under Settings alongside the other integrations", which
 described an older arrangement where one TAK connection was shared by the whole platform. That is
-gone — a shared server meant one customer's positions could reach another customer's map, which is
+gone: a shared server meant one customer's positions could reach another customer's map, which is
 not a thing to leave to configuration.
 
 ## On a bridge
@@ -29,7 +29,12 @@ what arrives to whatever is on its local mesh.
 
 ## Direction
 
-Positions flow **out** to TAK. They do not currently flow back in: markers created in TAK do not
-appear on the MeshSat map. The Hub used to poll a TAK server for markers and register them as
-devices, and that went with the shared platform connection. See [Hub → TAK](/hub/tak) for what is
-and is not wired today.
+Positions flow **out** to TAK from every kit, phone and device that reports to the Hub.
+
+Since October 2026 the Hub also reads your TAK server. The people connected to it appear on the
+map in MeshSat Android (2.19.6 and later), and with **Enable TAK** on the app sends its own
+position, an SOS, a missed check-in and its chat to TAK through the Hub. The app needs no TAK
+server address: the Hub is the one thing that talks to the server.
+
+Markers from TAK do not appear on the map in the Hub console. See [Hub → TAK](/hub/tak) for what
+is and is not wired today.
