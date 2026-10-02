@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 85
-  unreleased_since: "2026-09-28"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-28"
+  unreleased_count: 86
+  unreleased_since: "2026-10-02"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-02"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -21,7 +21,7 @@ transport by transport; there is no release yet. Builds, once there are any,
 are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-28)
+## Unreleased (main, last change 2026-10-02)
 
 ### Features
 
@@ -83,6 +83,7 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Fixes
 
+- **tak**: the phone's TAK messages reach the Hub, and it receives its own tenant's TAK traffic ([34475d59](https://github.com/meshsat/meshsat-ios/commit/34475d59c31a574fa07b8338b641cdfa5210d6e6))
 - **satellite**: the Node health card reads STATS again every 10 s, an idle node never notifies it ([c258982c](https://github.com/meshsat/meshsat-ios/commit/c258982c0f66245fed983115a4207946648c2129))
 - **ble**: say when a pipe has no STATS, a cached GATT table or older firmware ([2b8e31a1](https://github.com/meshsat/meshsat-ios/commit/2b8e31a18b0dc4792fec7847c83a1b35153e03f4))
 - **node**: the Node log hint says the node restarts once to apply the setting ([bb85f4bb](https://github.com/meshsat/meshsat-ios/commit/bb85f4bbc27681a7da3edf2ac6ea81163a176378))

@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v2.19.4"
   latest_tag_date: "2026-09-27"
   latest_tag_anchor: "v2194-2026-09-27"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  unreleased_count: 1
+  unreleased_since: "2026-10-02"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-02"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,9 +23,11 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-10-02)
 
-No user-facing changes (2 commits of other types).
+### Fixes
+
+- **tak**: the phone sends its TAK messages to the Hub, and shows what the Hub delivers back ([9b218a37](https://github.com/meshsat/meshsat-android/commit/9b218a374abbd6ebd57fb933fd5d22dce7c6d864))
 
 ## v2.19.4 (2026-09-27)
 
