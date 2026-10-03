@@ -29,7 +29,7 @@ hero_title_a:
 hero_title_b:
   other: "Jeder Weg hinaus."
 hero_sub:
-  other: "Ein Mesh, das ein Tal im Gespräch hält, ein Funknetz von Freiwilligen, ein Satellitenmodem, die Lagekarte einer Einsatzleitung: Jedes kann noch funktionieren, und keines erreicht die anderen. MeshSat ist quelloffene Software, die eine Nachricht aus dem einen nimmt und im anderen zustellt, über den Träger, der noch funktioniert, und Satellitenbytes erst ausgibt, wenn nichts Kostenloses mehr übrig ist."
+  other: "Open-Source-Software, die Nachrichten zwischen Mesh-Funkgeräten, Satellitenverbindungen und Mobilfunknetzen überträgt. Sie läuft auf einem Linux-Gateway oder Telefon und verbindet Systeme, die einander allein nicht erreichen."
 hero_status:
   other: "Hub offen. Noch keine Flotte im Einsatz, nie in einem echten Notfall verwendet."
 hero_star:
@@ -61,7 +61,7 @@ trace_foot:
 tr_title:
   other: "Jedes System hängt am selben Router"
 tr_sub:
-  other: "Jedes System ist ein Adapter hinter derselben Schnittstelle, mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette, und eine Regel kann von jedem Adapter zu jedem anderen routen. Heute laufen acht Träger auf neun Schnittstellen, weil Iridium doppelt zählt, mit dem 9603N und dem 9704. HF-Funk und DMR stehen auf der Roadmap und sind nicht gebaut. Der Status nennt, was wir tatsächlich betrieben haben, nicht was wir hoffen."
+  other: "Jedes System ist ein Adapter hinter derselben Schnittstelle, mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette, und eine Regel kann von jedem Adapter zu jedem anderen routen. Heute laufen acht Träger auf neun Schnittstellen, weil Iridium doppelt zählt, mit dem 9603N und dem 9704. HF (NVIS/ALE) und DMR stehen auf der Roadmap und sind nicht gebaut. Der Status nennt, was wir tatsächlich betrieben haben, nicht was wir hoffen."
 th_category:
   other: "Kategorie"
 th_transport:
@@ -127,7 +127,7 @@ funding_b:
 hw_title:
   other: "Worauf es läuft"
 hw_sub:
-  other: "Ein Raspberry Pi in einem wasserdichten Koffer, mit Funkgeräten an USB und GPIO. Geräte werden beim Start über USB-Kennung und Protokolltest erkannt, das Anstecken ist also die gesamte Konfiguration."
+  other: "Beginnen Sie mit einem Linux-Rechner und einem USB-Mesh-Funkgerät. Ergänzen Sie bei Bedarf Satellit, SMS oder Sensoren und richten Sie für jede Verbindung eine Route ein."
 th_part:
   other: "Komponente"
 th_role:
@@ -159,7 +159,7 @@ hw_note:
 hw_repo_a:
   other: "Die Hardware hat ein eigenes Repository, "
 hw_repo_b:
-  other: ": die beiden bisher gebauten Kits mit ihrer Bauanleitung und die V2-Trägerplatinen für einen Peli 1520 Koffer, entworfen und für die Fertigung vorbereitet, aber noch nicht gebaut."
+  other: ": Bauanleitungen für die beiden V1-Kits und der noch nicht gebaute V2-Entwurf für einen Peli-1450-Koffer. V2 wird noch technisch geprüft und ist nicht bestellfertig."
 nf_title:
   other: "Was es nicht ist"
 nf_sub:
@@ -215,7 +215,7 @@ plans_airtime:
 plans_keeps:
   other: "Ein registriertes Gerät funktioniert in jedem Tarif weiter. Ein kleinerer Tarif verhindert nur neue Registrierungen, ein SOS ist nie betroffen."
 and_p:
-  other: "Ein gewöhnliches Android-Telefon wird zum Gateway, ohne Pi. Gekoppelt mit einem MeshSat-Node im Taschenformat erreicht eine einzige Bluetooth-Verbindung sowohl das Mesh-Funkgerät als auch das Iridium-Modem, und die eigene SIM-Karte des Telefons ergänzt SMS. Satellitennachrichten warten in einer Warteschlange auf den nächsten Überflug, den das Telefon ohne Internet vorhersagt."
+  other: "Ein gewöhnliches Android-Telefon wird zum Gateway, ohne Pi. Gekoppelt mit einem MeshSat-Node im Taschenformat erreicht eine einzige Bluetooth-Verbindung sowohl das Mesh-Funkgerät als auch das Iridium-Modem, und die vollständige APK-Version ergänzt SMS über die eigene SIM-Karte des Telefons. Satellitennachrichten warten in einer Warteschlange auf den nächsten Überflug, den das Telefon ohne Internet vorhersagt."
 and_cta:
   other: "Android-Quellcode"
 cta_title:
@@ -317,7 +317,7 @@ is_to:
 join1_h:
   other: "Zwei Teams in zwei Meshes, kein Internet"
 join1_s:
-  other: "Am 12. September 2026 von Kit zu Kit über APRS und danach über SMS betrieben. Es ist das zweite Video unten."
+  other: "Am 12. September 2026 von Kit zu Kit über APRS und danach über SMS getestet. Siehe den Film über die Feldkits oben."
 join2_h:
   other: "Ein Tal ohne Empfang, ein Büro weit weg"
 join2_s:
@@ -394,3 +394,33 @@ hub_shot3:
   other: "Routing in klaren Worten: Eine Satellitennachricht geht weiter an ein anderes Kit, an APRS, MQTT und TAK, an Webhooks und an Benachrichtigungen"
 hub_shots_note:
   other: "Dieselben Bildschirme auf Ihrem Server oder auf unserem. Aufgenommen auf hub.meshsat.net am 21. September 2026, Telefonnummern, IMEIs und Hostnamen der Kits unkenntlich gemacht."
+
+copy:
+  other: "Kopieren"
+
+copied:
+  other: "Kopiert"
+
+main_navigation:
+  other: "Hauptnavigation"
+
+home_label:
+  other: "MeshSat-Startseite"
+
+start_label:
+  other: "Einstieg wählen"
+
+start_bridge:
+  other: "Linux + USB-Funkgerät"
+
+start_android:
+  other: "Telefon + Bluetooth-Funkgerät"
+
+start_hub:
+  other: "Geräte verwalten"
+
+start_demo:
+  other: "Vorführung am Prüfstand ansehen"
+
+hw_start:
+  other: "Mindestausstattung, Erweiterungen und Bauanleitungen"

@@ -6,15 +6,21 @@ MeshSat Bridge is a multi-transport gateway that routes messages across mesh, sa
 
 MeshSat connects heterogeneous communication systems through a unified routing layer. Plug in a Meshtastic radio and an Iridium modem, define routing rules, and messages flow between them automatically.
 
-**Three products, one ecosystem:**
+For prerequisites across all products, see [Choose your setup](/start).
+
+**Choose a starting point:**
 
 | Product | Description | Deployment |
 |---------|-------------|------------|
 | **Bridge** | Standalone gateway on a Pi/SBC | Docker Compose, self-hosted |
-| **Hub** | Multi-tenant fleet management | Hosted at [hub.meshsat.net](https://hub.meshsat.net), [create an account](https://auth.meshsat.net/if/flow/meshsat-enrollment/) |
-| **Android** | Mobile gateway app | Google Play (coming soon) |
+| **Hub** | Multi-tenant fleet management | [Self-hosted](/hub/self-hosting) or [hosted accounts, reviewed before activation](/hub/accounts) |
+| **Android** | Mobile gateway app | [Google Play without SMS, or the full APK](/android/setup#install) |
+| **iOS** | iPhone gateway app | [App Store submission waiting for review; source builds](/ios/) |
+| **Linux** | Native phone app and the Bridge | [Debian packages and hardware limits](/linux/) |
+| **Node** | Pocket mesh radio and satellite modem for the phone apps | [Prototype hardware and firmware](/node/) |
 
-These pages cover all three. The Bridge sections are the largest because it is the oldest and the most hands-on; if you are here for the hosted Hub, start at [Accounts and plans](/hub/accounts).
+This guide covers the Bridge. For the Hub, start at [Accounts and plans](/hub/accounts) or
+[Self-hosting](/hub/self-hosting). For a phone gateway, start with the Android or iOS pages above.
 
 ## Quick Install
 

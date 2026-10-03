@@ -15,8 +15,10 @@ GET    /api/access-rules/{id}/stats      how often this rule has fired
 
 ## Order is the behaviour
 
-Rules are evaluated in priority order and the first match decides. `reorder` is therefore not a
-cosmetic endpoint: moving a drop rule above a forward rule changes what the bridge does. Read the
+Rules are evaluated in priority order. A matching `forward` or `log` rule continues evaluation;
+a matching `drop` stops it and discards the forwarding matches collected for that evaluation.
+Without a matching drop, multiple forward rules can fan out to several destinations.
+`reorder` changes evaluation order and which matches are recorded before a drop. Read the
 list back after reordering and confirm it is what you meant.
 
 ## stats before you delete

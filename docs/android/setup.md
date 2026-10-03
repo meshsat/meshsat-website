@@ -34,7 +34,8 @@ and go on at step 4.
    [latest release](https://github.com/meshsat/meshsat-android/releases/latest). There is one per
    processor: take **arm64-v8a** unless you know otherwise, since nearly every phone since 2016 is
    that. **armeabi-v7a** is for older 32-bit phones, **x86** and **x86_64** for emulators, and
-   **universal** works on all of them at about 20 MB more.
+   **universal** works on all of them. Download sizes vary by release; the universal APK is larger
+   because it includes every supported processor.
 2. Let your browser or file manager install unknown apps. Android asks the first time.
 3. Open the APK and tap **Install**. Play Protect may warn about an unknown developer, because
    this APK does not come from the Play Store: tap **More details**, then **Install anyway**.

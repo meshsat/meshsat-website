@@ -13,12 +13,12 @@ not. Attaching the pipeline to the interface and the direction is what lets thos
 
 ## Order matters, and it is enforced
 
-Transforms are applied in the order they are listed, and the reverse order on the way back. Get
-that wrong and a message is undecodable at the far end: compressing after encrypting produces
-noise that does not compress, and decrypting before decompressing produces nothing at all.
+Configure the outbound chain to **compress, then encrypt**. The receiving chain must undo those
+operations in reverse: **decrypt, then decompress**, using the matching key and compression
+dictionary. Trying to decompress ciphertext will not recover the original message.
 
-The rule is compress first, then encrypt. Compression finds structure; encryption destroys it by
-design.
+Compression needs structure in the input; encryption removes that structure. Both ends need
+compatible transform settings, not just the same transport.
 
 ## Compression
 

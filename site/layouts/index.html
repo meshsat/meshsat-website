@@ -16,25 +16,13 @@
 
         <p class="hero-status"><span class="dot"></span> {{ i18n "hero_status" }}</p>
 
-        <div class="trace" tabindex="0" role="img" aria-label="{{ i18n "trace_alt" }}">
-            <div class="trace-head"><span>{{ i18n "trace_title" }}</span><span>{{ i18n "trace_bridge" }}</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.118</span><span class="trace-if">mesh_0</span><span class="trace-dir">RX</span><span class="trace-msg">{{ i18n "t1" }}</span><span class="trace-state"></span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.140</span><span class="trace-if">router</span><span class="trace-dir">&middot;&middot;</span><span class="trace-msg">{{ i18n "t2" }}</span><span class="trace-state"></span></div>
-            <div class="trace-row is-fail"><span class="trace-t">09:14:02.191</span><span class="trace-if">iridium_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t3" }}</span><span class="trace-state fail">FAILED</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.204</span><span class="trace-if">cellular_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t4" }}</span><span class="trace-state ok">DELIVERED</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.209</span><span class="trace-if">tak_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t5" }}</span><span class="trace-state ok">DELIVERED</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.318</span><span class="trace-if">mqtt_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t6" }}</span><span class="trace-state ok">DELIVERED</span></div>
-            <p class="trace-foot">{{ i18n "trace_foot" }}</p>
-        </div>
-
         <div class="hero-install">
-            <div class="code-block code-block-inline">
-                <pre class="code-block-body" tabindex="0" role="group" aria-label="{{ i18n "install_cmd_label" }}"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
-                <button class="copy-btn" onclick="copyCode(this)" data-umami-event="install-copy" data-umami-event-where="hero" data-umami-event-locale="{{ .Site.Language.Lang }}">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                    <span class="copy-text">Copy</span>
-                </button>
-            </div>
+            <nav class="hero-paths" aria-label="{{ i18n "start_label" }}">
+                <a href="{{ .Site.Params.docs_url }}/guide/quick-start"><strong>Bridge</strong><span>{{ i18n "start_bridge" }}</span></a>
+                <a href="{{ .Site.Params.docs_url }}/android/setup"><strong>Android</strong><span>{{ i18n "start_android" }}</span></a>
+                <a href="#hub"><strong>Hub</strong><span>{{ i18n "start_hub" }}</span></a>
+            </nav>
+            <a class="hero-demo" href="#video">{{ i18n "start_demo" }} <span aria-hidden="true">↓</span></a>
             <p class="hero-repo">
                 <a href="{{ .Site.Params.github }}" class="gh-star-btn" target="_blank" rel="noopener" data-umami-event="star-click" data-umami-event-locale="{{ .Site.Language.Lang }}">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.573C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -53,6 +41,50 @@
                     <span class="visitors-count" data-visitor-count></span>
                 </span>
             </p>
+        </div>
+        <div class="trace" tabindex="0" role="img" aria-label="{{ i18n "trace_alt" }}">
+            <div class="trace-head"><span>{{ i18n "trace_title" }}</span><span>{{ i18n "trace_bridge" }}</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.118</span><span class="trace-if">mesh_0</span><span class="trace-dir">RX</span><span class="trace-msg">{{ i18n "t1" }}</span><span class="trace-state"></span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.140</span><span class="trace-if">router</span><span class="trace-dir">&middot;&middot;</span><span class="trace-msg">{{ i18n "t2" }}</span><span class="trace-state"></span></div>
+            <div class="trace-row is-fail"><span class="trace-t">09:14:02.191</span><span class="trace-if">iridium_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t3" }}</span><span class="trace-state fail">FAILED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.204</span><span class="trace-if">cellular_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t4" }}</span><span class="trace-state ok">DELIVERED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.209</span><span class="trace-if">tak_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t5" }}</span><span class="trace-state ok">DELIVERED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.318</span><span class="trace-if">mqtt_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t6" }}</span><span class="trace-state ok">DELIVERED</span></div>
+            <p class="trace-foot">{{ i18n "trace_foot" }}</p>
+        </div>
+
+    </div>
+</section>
+
+{{/* 6. FILMS (MESHSAT-1096). Two recordings side by side in the bench's
+     head-bar chrome. Each poster is a click-to-play facade: nothing loads from
+     YouTube until a press, then playVideo() in main.js opens the shared modal. */}}
+{{ $films := slice
+    (dict "id" "Q-JKNwWlzpE" "name" "MeshSat-intro.mp4" "time" "2:02" "poster" "/images/video-poster.jpg" "play" "video_play" "cap" "video_sub")
+    (dict "id" "-yTImop3Qk8" "name" "MeshSat-field-kits.mp4" "time" "3:04" "poster" "/images/video-poster-fieldkits.jpg" "play" "film_kits_play" "cap" "film_kits_cap")
+}}
+<section id="video" class="section films-section">
+    <div class="container">
+        <div class="section-head">
+            <h2 class="section-title">{{ i18n "films_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "films_sub" }} {{ i18n "films_consent" }}</p>
+        </div>
+
+        <div class="films-grid">
+            {{ range $films }}
+            <figure class="video-frame">
+                <div class="video-head"><span>{{ .name }}</span><span>{{ .time }}</span></div>
+                <div class="video-media">
+                    <button type="button" class="video-play" onclick="playVideo(this)" data-umami-event="video-play" data-umami-event-film="{{ .id }}" data-umami-event-locale="{{ $.Site.Language.Lang }}" data-embed="https://www.youtube-nocookie.com/embed/{{ .id }}?autoplay=1&amp;rel=0" data-name="{{ .name }}" data-time="{{ .time }}" aria-label="{{ i18n .play }}">
+                        <img src="{{ .poster }}" alt="" width="1280" height="720" loading="lazy">
+                        <span class="video-play-glyph" aria-hidden="true">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        </span>
+                    </button>
+                </div>
+                <figcaption class="video-foot">{{ i18n .cap }} <a href="https://www.youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">{{ i18n "video_watch" }}</a></figcaption>
+            </figure>
+            {{ end }}
         </div>
     </div>
 </section>
@@ -139,7 +171,7 @@
         <figure class="fabric" aria-labelledby="fabric-cap">
             <ul class="fabric-row fabric-top">
                 {{ range $bearers }}<li class="fabric-node"><code>{{ .id }}</code><span>{{ .name }}</span></li>{{ end }}
-                {{ range (slice "HF" "DMR") }}<li class="fabric-node is-future"><span>{{ . }}</span><em>{{ i18n "fab_future" }}</em></li>{{ end }}
+                {{ range (slice "HF (NVIS/ALE)" "DMR") }}<li class="fabric-node is-future"><span>{{ . }}</span><em>{{ i18n "fab_future" }}</em></li>{{ end }}
             </ul>
             <p class="fabric-bus"><code>router</code><span>{{ i18n "fab_bus" }}</span></p>
             <ul class="fabric-row fabric-bottom">
@@ -210,12 +242,14 @@
             <p class="section-subtitle">{{ i18n "hw_sub" }}</p>
         </div>
 
+        <p class="hardware-start"><a href="{{ .Site.Params.docs_url }}/guide/hardware">{{ i18n "hw_start" }} <span aria-hidden="true">→</span></a></p>
+
         <div class="table-wrap" tabindex="0" role="region" aria-label="{{ i18n "table_hardware_label" }}">
             <table class="data-table">
                 <thead><tr><th>{{ i18n "th_part" }}</th><th>{{ i18n "th_role" }}</th></tr></thead>
                 <tbody>
                     <tr><td><strong>Raspberry Pi 5</strong> (8 GB)</td><td>{{ i18n "hw1" }}</td></tr>
-                    <tr><td><strong>Heltec LoRa V4</strong> or <strong>XIAO ESP32-S3</strong></td><td>{{ i18n "hw2" }}</td></tr>
+                    <tr><td><strong>LILYGO T-Echo</strong> / <strong>Heltec LoRa V4</strong></td><td>{{ i18n "hw2" }}</td></tr>
                     <tr><td><strong>RockBLOCK 9603</strong> or <strong>9704</strong></td><td>{{ i18n "hw3" }}</td></tr>
                     <tr><td><strong>LILYGO T-Call A7670E</strong></td><td>{{ i18n "hw4" }}</td></tr>
                     <tr><td><strong>CC2652P dongle</strong></td><td>{{ i18n "hw5" }}</td></tr>
@@ -278,39 +312,6 @@
     </div>
 </section>
 
-{{/* 6. FILMS (MESHSAT-1096). Two recordings side by side in the bench's
-     head-bar chrome. Each poster is a click-to-play facade: nothing loads from
-     YouTube until a press, then playVideo() in main.js opens the shared modal. */}}
-{{ $films := slice
-    (dict "id" "Q-JKNwWlzpE" "name" "MeshSat-intro.mp4" "time" "2:02" "poster" "/images/video-poster.jpg" "play" "video_play" "cap" "video_sub")
-    (dict "id" "-yTImop3Qk8" "name" "MeshSat-field-kits.mp4" "time" "3:04" "poster" "/images/video-poster-fieldkits.jpg" "play" "film_kits_play" "cap" "film_kits_cap")
-}}
-<section id="video" class="section films-section">
-    <div class="container">
-        <div class="section-head">
-            <h2 class="section-title">{{ i18n "films_title" }}</h2>
-            <p class="section-subtitle">{{ i18n "films_sub" }} {{ i18n "films_consent" }}</p>
-        </div>
-
-        <div class="films-grid">
-            {{ range $films }}
-            <figure class="video-frame">
-                <div class="video-head"><span>{{ .name }}</span><span>{{ .time }}</span></div>
-                <div class="video-media">
-                    <button type="button" class="video-play" onclick="playVideo(this)" data-umami-event="video-play" data-umami-event-film="{{ .id }}" data-umami-event-locale="{{ $.Site.Language.Lang }}" data-embed="https://www.youtube-nocookie.com/embed/{{ .id }}?autoplay=1&amp;rel=0" data-name="{{ .name }}" data-time="{{ .time }}" aria-label="{{ i18n .play }}">
-                        <img src="{{ .poster }}" alt="" width="1280" height="720" loading="lazy">
-                        <span class="video-play-glyph" aria-hidden="true">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                        </span>
-                    </button>
-                </div>
-                <figcaption class="video-foot">{{ i18n .cap }} <a href="https://www.youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">{{ i18n "video_watch" }}</a></figcaption>
-            </figure>
-            {{ end }}
-        </div>
-    </div>
-</section>
-
 {{/* 7. TRY IT: the closing workbench. It opens the self-serve half of the
      page (the Hub follows), so it holds the two things a reader can start on
      alone: the Bridge's installer and the phone. Every terminal line below is
@@ -327,9 +328,9 @@
                 <div class="term-body">
                     <div class="code-block code-block-inline term-cmd">
                         <pre class="code-block-body" tabindex="0" role="group" aria-label="{{ i18n "install_cmd_label" }}"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
-                        <button class="copy-btn" onclick="copyCode(this)" data-umami-event="install-copy" data-umami-event-where="bench" data-umami-event-locale="{{ .Site.Language.Lang }}">
+                        <button class="copy-btn" onclick="copyCode(this)" data-copied="{{ i18n "copied" }}" data-umami-event="install-copy" data-umami-event-where="bench" data-umami-event-locale="{{ .Site.Language.Lang }}">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                            <span class="copy-text">Copy</span>
+                            <span class="copy-text">{{ i18n "copy" }}</span>
                         </button>
                     </div>
                     <pre class="term-log" tabindex="0" role="region" aria-label="{{ i18n "term_log_label" }}"><span class="ok">[OK]</span>    Running as root
