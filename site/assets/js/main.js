@@ -111,8 +111,10 @@ function copyCode(btn) {
     navigator.clipboard.writeText(code).then(function() {
         var text = btn.querySelector('.copy-text');
         if (!text) return;
-        text.textContent = 'Copied';
-        setTimeout(function() { text.textContent = 'Copy'; }, 2000);
+        var original = text.dataset.original || text.textContent;
+        text.dataset.original = original;
+        text.textContent = btn.dataset.copied || 'Copied';
+        setTimeout(function() { text.textContent = original; }, 2000);
     });
 }
 

@@ -29,7 +29,7 @@ hero_title_a:
 hero_title_b:
   other: "Every way out."
 hero_sub:
-  other: "A mesh that keeps one valley talking, a volunteer radio net, a satellite modem, a command post's map: each can still work, and none can reach the others. MeshSat is open source software that takes a message off one and delivers it into another by whatever bearer is still alive, spending satellite bytes only when nothing free is left."
+  other: "Open source software that carries messages between mesh radios, satellite links and mobile networks. Run it on a Linux gateway or a phone, and connect systems that cannot reach each other on their own."
 hero_status:
   other: "Hub open. No fleet running on it yet, never used in a real emergency."
 hero_star:
@@ -61,7 +61,7 @@ trace_foot:
 tr_title:
   other: "Every system plugs into the same router"
 tr_sub:
-  other: "Each one is an adapter behind the same interface, with its own MTU, cost model and transform pipeline, and a rule can route from any adapter to any other. Eight bearers run on nine interfaces today, because Iridium counts twice, on the 9603N and the 9704. HF radio and DMR are on the roadmap and not built. Status says what we have actually run, not what we hope."
+  other: "Each one is an adapter behind the same interface, with its own MTU, cost model and transform pipeline, and a rule can route from any adapter to any other. Eight bearers run on nine interfaces today, because Iridium counts twice, on the 9603N and the 9704. HF (NVIS/ALE) and DMR are on the roadmap and not built. Status says what we have actually run, not what we hope."
 th_category:
   other: "Category"
 th_transport:
@@ -127,7 +127,7 @@ funding_b:
 hw_title:
   other: "What it runs on"
 hw_sub:
-  other: "A Raspberry Pi in a waterproof case with radios on USB and GPIO. Devices are identified at startup by USB ID and protocol probe, so plugging one in is the whole configuration step."
+  other: "Start with a Linux host and one USB mesh radio. Add satellite, SMS or sensors when you need them; configure a route for each link."
 th_part:
   other: "Part"
 th_role:
@@ -159,7 +159,7 @@ hw_note:
 hw_repo_a:
   other: "The hardware has its own repository, "
 hw_repo_b:
-  other: ": the two kits built so far with their build guide, and the V2 carrier boards for a Peli 1520 case, designed and prepared for fabrication but not built yet."
+  other: ": build guides for the two V1 kits, and the unbuilt V2 design for a Peli 1450 case. V2 is still under engineering review, not ready to order."
 nf_title:
   other: "What it is not"
 nf_sub:
@@ -215,7 +215,7 @@ plans_airtime:
 plans_keeps:
   other: "A device you have registered keeps working on any plan. A smaller plan only stops you adding more, and an SOS is never affected."
 and_p:
-  other: "An ordinary Android phone becomes the gateway, with no Pi. Paired with a pocket MeshSat node, one Bluetooth link reaches both the mesh radio and the Iridium modem, and the phone's own SIM adds SMS. Satellite messages wait in a queue for the next pass, which the phone predicts with no internet."
+  other: "An ordinary Android phone becomes the gateway, with no Pi. Paired with a pocket MeshSat node, one Bluetooth link reaches both the mesh radio and the Iridium modem, and the full APK edition adds SMS through the phone's own SIM. Satellite messages wait in a queue for the next pass, which the phone predicts with no internet."
 and_cta:
   other: "Android source"
 cta_title:
@@ -317,7 +317,7 @@ is_to:
 join1_h:
   other: "Two teams on two meshes, no internet"
 join1_s:
-  other: "Run kit to kit on 12 September 2026 over APRS, then over SMS. It is the second film below."
+  other: "Run kit to kit on 12 September 2026 over APRS, then over SMS. See the field-kit film above."
 join2_h:
   other: "A valley with no signal, an office far away"
 join2_s:
@@ -394,3 +394,33 @@ hub_shot3:
   other: "Routing in plain words: a satellite message goes on to another kit, to APRS, MQTT and TAK, to webhooks and to notifications"
 hub_shots_note:
   other: "The same screens on your server or on ours. Captured on hub.meshsat.net on 21 September 2026, with phone numbers, IMEIs and kit hostnames blurred."
+
+copy:
+  other: "Copy"
+
+copied:
+  other: "Copied"
+
+main_navigation:
+  other: "Main navigation"
+
+home_label:
+  other: "MeshSat home"
+
+start_label:
+  other: "Choose your starting point"
+
+start_bridge:
+  other: "Linux + USB radio"
+
+start_android:
+  other: "Phone + Bluetooth radio"
+
+start_hub:
+  other: "Manage your devices"
+
+start_demo:
+  other: "Watch the bench demonstration"
+
+hw_start:
+  other: "Minimum setup, optional additions and build guides"

@@ -29,7 +29,7 @@ hero_title_a:
 hero_title_b:
   other: "Elke weg naar buiten."
 hero_sub:
-  other: "Een mesh die één dal met zichzelf laat praten, een radionet van vrijwilligers, een satellietmodem, de kaart van een commandopost: elk werkt misschien nog, en geen ervan bereikt de andere. MeshSat is open source software die een bericht van het ene haalt en in het andere aflevert via welke drager dan ook die nog werkt, en pas satellietbytes uitgeeft als er niets gratis meer over is."
+  other: "Opensourcesoftware die berichten tussen meshradio’s, satellietverbindingen en mobiele netwerken doorgeeft. Draai het op een Linux-gateway of telefoon en verbind systemen die elkaar zelf niet kunnen bereiken."
 hero_status:
   other: "Hub open. Nog geen vloot actief, nooit gebruikt bij een echt noodgeval."
 hero_star:
@@ -61,7 +61,7 @@ trace_foot:
 tr_title:
   other: "Elk systeem sluit aan op dezelfde router"
 tr_sub:
-  other: "Elk systeem is een adapter achter dezelfde interface, met een eigen MTU, kostenmodel en transformatieketen, en een regel kan van elke adapter naar elke andere routeren. Vandaag draaien acht dragers op negen interfaces, omdat Iridium twee keer telt, op de 9603N en de 9704. HF-radio en DMR staan op de roadmap en zijn niet gebouwd. De status zegt wat we werkelijk hebben gedraaid, niet wat we hopen."
+  other: "Elk systeem is een adapter achter dezelfde interface, met een eigen MTU, kostenmodel en transformatieketen, en een regel kan van elke adapter naar elke andere routeren. Vandaag draaien acht dragers op negen interfaces, omdat Iridium twee keer telt, op de 9603N en de 9704. HF (NVIS/ALE) en DMR staan op de roadmap en zijn niet gebouwd. De status zegt wat we werkelijk hebben gedraaid, niet wat we hopen."
 th_category:
   other: "Categorie"
 th_transport:
@@ -127,7 +127,7 @@ funding_b:
 hw_title:
   other: "Waar het op draait"
 hw_sub:
-  other: "Een Raspberry Pi in een waterdichte koffer met radio's op USB en GPIO. Apparaten worden bij het opstarten herkend aan hun USB-id en een protocoltest, dus aansluiten is de hele configuratie."
+  other: "Begin met een Linux-computer en één USB-meshradio. Voeg satelliet, sms of sensoren toe wanneer nodig en stel voor elke verbinding een route in."
 th_part:
   other: "Onderdeel"
 th_role:
@@ -159,7 +159,7 @@ hw_note:
 hw_repo_a:
   other: "De hardware heeft een eigen repository, "
 hw_repo_b:
-  other: ": de twee tot nu toe gebouwde kits met hun bouwhandleiding, en de V2-dragerprinten voor een Peli 1520-koffer, ontworpen en klaar voor fabricage maar nog niet gebouwd."
+  other: ": bouwhandleidingen voor de twee V1-kits en het nog niet gebouwde V2-ontwerp voor een Peli 1450-koffer. V2 wordt nog technisch beoordeeld en is niet klaar om te bestellen."
 nf_title:
   other: "Wat het niet is"
 nf_sub:
@@ -215,7 +215,7 @@ plans_airtime:
 plans_keeps:
   other: "Een geregistreerd apparaat blijft werken op elk abonnement. Een kleiner abonnement stopt alleen het toevoegen van nieuwe, en een SOS wordt nooit geraakt."
 and_p:
-  other: "Een gewone Android-telefoon wordt de gateway, zonder Pi. Gekoppeld aan een MeshSat-node op zakformaat bereikt één Bluetooth-verbinding zowel de meshradio als het Iridium-modem, en de eigen simkaart van de telefoon voegt sms toe. Satellietberichten wachten in een wachtrij op de volgende overgang, die de telefoon zonder internet voorspelt."
+  other: "Een gewone Android-telefoon wordt de gateway, zonder Pi. Gekoppeld aan een MeshSat-node op zakformaat bereikt één Bluetooth-verbinding zowel de meshradio als het Iridium-modem, en de volledige APK-versie voegt sms toe via de eigen simkaart van de telefoon. Satellietberichten wachten in een wachtrij op de volgende overgang, die de telefoon zonder internet voorspelt."
 and_cta:
   other: "Android-broncode"
 cta_title:
@@ -317,7 +317,7 @@ is_to:
 join1_h:
   other: "Twee teams op twee meshes, geen internet"
 join1_s:
-  other: "Op 12 september 2026 van kit naar kit gedraaid via APRS en daarna via sms. Het is de tweede video hieronder."
+  other: "Op 12 september 2026 van kit naar kit getest via APRS en daarna via sms. Zie de film over de veldkits hierboven."
 join2_h:
   other: "Een dal zonder bereik, een kantoor ver weg"
 join2_s:
@@ -394,3 +394,33 @@ hub_shot3:
   other: "Routering in gewone woorden: een satellietbericht gaat door naar een andere kit, naar APRS, MQTT en TAK, naar webhooks en naar meldingen"
 hub_shots_note:
   other: "Dezelfde schermen op jouw server of op de onze. Vastgelegd op hub.meshsat.net op 21 september 2026, met telefoonnummers, IMEI's en hostnamen van de kits onscherp gemaakt."
+
+copy:
+  other: "Kopiëren"
+
+copied:
+  other: "Gekopieerd"
+
+main_navigation:
+  other: "Hoofdnavigatie"
+
+home_label:
+  other: "MeshSat-startpagina"
+
+start_label:
+  other: "Kies je startpunt"
+
+start_bridge:
+  other: "Linux + USB-radio"
+
+start_android:
+  other: "Telefoon + Bluetooth-radio"
+
+start_hub:
+  other: "Beheer je apparaten"
+
+start_demo:
+  other: "Bekijk de demonstratie op de werkbank"
+
+hw_start:
+  other: "Minimale opstelling, uitbreidingen en bouwhandleidingen"

@@ -29,7 +29,7 @@ hero_title_a:
 hero_title_b:
   other: "Toutes les sorties."
 hero_sub:
-  other: "Un maillage qui fait parler une vallée, un réseau radio de bénévoles, un modem satellite, la carte d'un poste de commandement : chacun peut encore fonctionner, et aucun n'atteint les autres. MeshSat est un logiciel libre qui prend un message sur l'un et le livre dans un autre par le porteur encore vivant, en ne dépensant des octets satellite que lorsqu'il ne reste plus rien de gratuit."
+  other: "Un logiciel open source qui transmet des messages entre radios mesh, liaisons satellite et réseaux mobiles. Sur une passerelle Linux ou un téléphone, il relie des systèmes qui ne peuvent pas communiquer seuls entre eux."
 hero_status:
   other: "Hub ouvert. Aucune flotte en service, jamais utilisé lors d'une vraie urgence."
 hero_star:
@@ -61,7 +61,7 @@ trace_foot:
 tr_title:
   other: "Chaque système se branche sur le même routeur"
 tr_sub:
-  other: "Chaque système est un adaptateur derrière une même interface, avec sa propre MTU, son modèle de coût et sa chaîne de transformation, et une règle peut router de n'importe quel adaptateur vers n'importe quel autre. Aujourd'hui, huit porteurs tournent sur neuf interfaces, car Iridium compte deux fois, sur le 9603N et le 9704. La radio HF et le DMR figurent sur la feuille de route et ne sont pas construits. Le statut indique ce que nous avons réellement fait tourner, pas ce que nous espérons."
+  other: "Chaque système est un adaptateur derrière une même interface, avec sa propre MTU, son modèle de coût et sa chaîne de transformation, et une règle peut router de n'importe quel adaptateur vers n'importe quel autre. Aujourd'hui, huit porteurs tournent sur neuf interfaces, car Iridium compte deux fois, sur le 9603N et le 9704. La HF (NVIS/ALE) et le DMR figurent sur la feuille de route et ne sont pas construits. Le statut indique ce que nous avons réellement fait tourner, pas ce que nous espérons."
 th_category:
   other: "Catégorie"
 th_transport:
@@ -127,7 +127,7 @@ funding_b:
 hw_title:
   other: "Ce sur quoi il tourne"
 hw_sub:
-  other: "Un Raspberry Pi dans une valise étanche, avec des radios sur USB et GPIO. Les appareils sont identifiés au démarrage par leur identifiant USB et une sonde de protocole : les brancher constitue toute la configuration."
+  other: "Commencez avec un ordinateur Linux et une radio mesh USB. Ajoutez le satellite, les SMS ou des capteurs selon vos besoins, puis configurez une route pour chaque liaison."
 th_part:
   other: "Élément"
 th_role:
@@ -159,7 +159,7 @@ hw_note:
 hw_repo_a:
   other: "Le matériel a son propre dépôt, "
 hw_repo_b:
-  other: " : les deux kits construits à ce jour avec leur guide de montage, et les cartes porteuses V2 pour une valise Peli 1520, conçues et prêtes pour la fabrication mais pas encore construites."
+  other: ": les guides de montage des deux kits V1 et le projet V2, non construit, pour une valise Peli 1450. V2 reste en revue technique et ne peut pas encore être commandé."
 nf_title:
   other: "Ce que ce n'est pas"
 nf_sub:
@@ -215,7 +215,7 @@ plans_airtime:
 plans_keeps:
   other: "Un appareil déjà enregistré continue de fonctionner sur toutes les formules. Une formule plus petite empêche seulement d'en ajouter, et un SOS n'est jamais affecté."
 and_p:
-  other: "Un téléphone Android ordinaire devient la passerelle, sans Pi. Associé à un nœud MeshSat de poche, il atteint la radio mesh et le modem Iridium par une seule liaison Bluetooth, et sa propre carte SIM ajoute le SMS. Les messages satellite attendent dans une file le prochain passage, que le téléphone prédit sans internet."
+  other: "Un téléphone Android ordinaire devient la passerelle, sans Pi. Associé à un nœud MeshSat de poche, il atteint la radio mesh et le modem Iridium par une seule liaison Bluetooth, et la version APK complète ajoute les SMS via la carte SIM du téléphone. Les messages satellite attendent dans une file le prochain passage, que le téléphone prédit sans internet."
 and_cta:
   other: "Code source Android"
 cta_title:
@@ -317,7 +317,7 @@ is_to:
 join1_h:
   other: "Deux équipes sur deux maillages, sans internet"
 join1_s:
-  other: "Testé de kit à kit le 12 septembre 2026 par APRS, puis par SMS. C'est la deuxième vidéo ci-dessous."
+  other: "Testé entre deux kits le 12 septembre 2026 par APRS, puis par SMS. Voir le film sur les kits de terrain ci-dessus."
 join2_h:
   other: "Une vallée sans réseau, un bureau au loin"
 join2_s:
@@ -394,3 +394,33 @@ hub_shot3:
   other: "Le routage en clair : un message satellite repart vers un autre kit, vers APRS, MQTT et TAK, vers les webhooks et les notifications"
 hub_shots_note:
   other: "Les mêmes écrans sur votre serveur ou sur le nôtre. Captures faites sur hub.meshsat.net le 21 septembre 2026, numéros de téléphone, IMEI et noms d'hôte des kits floutés."
+
+copy:
+  other: "Copier"
+
+copied:
+  other: "Copié"
+
+main_navigation:
+  other: "Navigation principale"
+
+home_label:
+  other: "Accueil MeshSat"
+
+start_label:
+  other: "Choisir un point de départ"
+
+start_bridge:
+  other: "Linux + radio USB"
+
+start_android:
+  other: "Téléphone + radio Bluetooth"
+
+start_hub:
+  other: "Gérer vos appareils"
+
+start_demo:
+  other: "Voir la démonstration sur banc"
+
+hw_start:
+  other: "Équipement minimal, extensions et guides de montage"

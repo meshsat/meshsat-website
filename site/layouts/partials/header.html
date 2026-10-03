@@ -1,7 +1,7 @@
 <header class="site-header">
     <a href="#main-content" class="skip-link">{{ i18n "skip_link" }}</a>
-    <nav class="container" role="navigation" aria-label="Main navigation">
-        <a href="/" class="logo" aria-label="MeshSat Home">
+    <nav class="container" role="navigation" aria-label="{{ i18n "main_navigation" }}">
+        <a href="{{ .Site.Home.RelPermalink }}" class="logo" aria-label="{{ i18n "home_label" }}">
             <img src="/images/meshsat-mark-dark.png" alt="" width="54" height="32" class="logo-mark logo-mark-dark">
             <img src="/images/meshsat-mark-light.png" alt="" width="54" height="32" class="logo-mark logo-mark-light">
             <span class="logo-text"><span class="logo-mesh">Mesh</span><span class="logo-sat">Sat</span></span>
@@ -9,8 +9,11 @@
 
         <ul class="nav-links" id="nav-links">
             {{ range .Site.Menus.main }}
+            {{ $href := .URL }}
+            {{ if hasPrefix $href "/#" }}{{ $href = printf "%s%s" $.Site.Home.RelPermalink (strings.TrimPrefix "/" $href) }}{{ end }}
+            {{ if eq .Identifier "security" }}{{ with $.Site.GetPage "/security" }}{{ $href = .RelPermalink }}{{ end }}{{ end }}
             <li>
-                <a href="{{ .URL }}"{{ if .Params.external }} target="_blank" rel="noopener"{{ end }}{{ if .Params.highlight }} class="nav-hub-btn"{{ end }}>
+                <a href="{{ $href }}"{{ if .Params.external }} target="_blank" rel="noopener"{{ end }}{{ if .Params.highlight }} class="nav-hub-btn"{{ end }}>
                     {{ i18n (printf "nav_%s" .Identifier) }}{{ if and .Params.external (not .Params.highlight) }} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>{{ end }}
                 </a>
             </li>
@@ -25,7 +28,10 @@
                 </button>
                 <ul class="lang-menu">
                     {{ range .Site.Home.AllTranslations }}
-                    <li><a href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}"{{ if eq .Language.Lang $.Site.Language.Lang }} aria-current="true"{{ end }}>{{ .Language.LanguageName }}</a></li>
+                    {{ $destination := .RelPermalink }}
+                    {{ $lang := .Language.Lang }}
+                    {{ range $.AllTranslations }}{{ if eq .Language.Lang $lang }}{{ $destination = .RelPermalink }}{{ end }}{{ end }}
+                    <li><a href="{{ $destination }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}"{{ if eq .Language.Lang $.Site.Language.Lang }} aria-current="true"{{ end }}>{{ .Language.LanguageName }}</a></li>
                     {{ end }}
                 </ul>
             </div>

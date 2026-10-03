@@ -2,7 +2,8 @@
 
 MeshSat Android turns an ordinary Android phone into a MeshSat gateway. Paired with a
 [MeshSat node](/node/), a pocket-sized box with a Meshtastic LoRa radio and a RockBLOCK 9603
-Iridium modem, one phone sends and receives over the mesh, by satellite and by SMS. It reports to
+Iridium modem, one phone sends and receives over the mesh and by satellite. The full APK edition also sends and receives SMS;
+the Google Play edition has no SMS. It reports to
 the [MeshSat Hub](/hub/) whenever there is any link to it, and it keeps working when the mobile
 network and the internet are gone.
 
@@ -77,15 +78,18 @@ the phone keeps relaying with the screen off.
 | Reconnecting to the node after an app restart | Verified 19 September 2026 |
 | Pass prediction with no internet | Verified 19 September 2026 |
 | The phone connected to the Hub as a bridge | Verified 19 September 2026 |
-| Recovery when the node drops out mid-session | Not exercised yet |
+| Recovery when the node drops out mid-session | Verified 20 September 2026: after a node restart, the phone marked the link down and reclaimed the modem in 8 seconds |
 | SOS: hold to send, SMS to an emergency contact, cancel, and the cancellation after it | Verified 19 September 2026 on the Android 11 emulator (2.13.0) |
 | SOS by satellite to the Hub | The frame matches the kits' byte for byte in tests; not sent through the Hub yet, because it would page the on-call chain |
 | SOS over the mesh and to the Hub online, and Test the alarm on the phone | Not exercised yet |
 | SMS on Android 8 to 12 | Fixed in 2.13.0; verified on the Android 11 emulator |
 | SMS on the Google Play edition | Not included, by Google Play's SMS policy. Setup, Home and the SOS screen say so; an SOS goes by satellite, the mesh and the Hub |
-| A second tick when the Hub confirms a satellite message arrived | In development |
+| Starting after a phone restart (option) | Verified on the Android 11 emulator |
+| A second tick when the Hub confirms a satellite message arrived | Verified 20 September 2026 on four messages, with receipts back within seconds |
+| Contact cards swapped by QR code | Shown, read and stored on one phone; not yet swapped between two phones |
 | RockBLOCK 9704 | Not tested on hardware |
 | Deployment to a real end user | Never |
+| Use in an actual emergency | Never |
 
 ## Hardware
 

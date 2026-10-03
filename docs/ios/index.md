@@ -9,16 +9,23 @@ It is the iOS counterpart of [MeshSat Android](/android/): the same screens, the
 the same wire formats, built from the Android app's code. Where iOS does not allow something
 Android does, this page says so.
 
-::: danger Being built
-MeshSat iOS is being built, screen by screen and transport by transport, and there is nothing
-to install yet. Like the Android app it is a prototype: it has never been deployed to a real
+::: danger Prototype
+MeshSat iOS has been exercised on an iPhone. Its App Store submission is **Waiting for Review**
+(as of 3 October 2026); it is not yet available from the App Store. It is a
+prototype under active development: it has never been deployed to a real
 user and has never been used in an actual emergency. Do not rely on it when lives are at risk.
 :::
 
 **Source:** [meshsat/meshsat-ios](https://github.com/meshsat/meshsat-ios), GPLv3.
-**Download:** none yet. Releases, once there are any, appear on the
-[releases page](https://github.com/meshsat/meshsat-ios/releases) as an unsigned build for
-sideloading and a simulator build.
+**App Store submission:** Waiting for Review, as of 3 October 2026. A submitted build is not
+yet an approved public listing.
+
+**Download:** the public [releases page](https://github.com/meshsat/meshsat-ios/releases) had
+no published builds when checked on 3 October 2026. Developers can
+[build from source](https://github.com/meshsat/meshsat-ios#build-from-source) on a Mac with
+Xcode; the app requires iOS 17 or later.
+
+Do not treat a successful source build or a tested capability as an available store release.
 
 ## What it is built to do
 
@@ -50,9 +57,8 @@ sideloading and a simulator build.
 
 Two things the Android app does that iOS does not allow: the RockBLOCK 9704 over an HC-05
 Bluetooth serial adapter (there is no Bluetooth Classic serial for apps), and running as a
-gateway with the screen off without limits. iOS keeps the app alive for Bluetooth events from the
-node and, when you allow it, for location updates; the Gateway card in Setup says which mode the
-phone is in.
+gateway with the screen off without limits. Background operation is still listed as not built
+in the project's evidence table; do not assume that relaying continues after leaving the app.
 
 ## What works, and what does not
 
@@ -63,4 +69,6 @@ over Bluetooth LE, the RockBLOCK 9603 over the node's pipe, the reconnect after 
 satellite message out to the Hub (MOMSN 248 under open sky) and one in (35 bytes from Rock7,
 stored 3 s after the session), pass prediction with the network at 100 percent loss, and a
 contact card read from pasted text with its fingerprint checked, a text to everyone on the mesh,
-and the alarm test by mesh and Hub. A real SOS and its all-clear are still marked "Not built yet".
+and the alarm test by mesh and Hub. A real SOS, its text composers and all-clear have not been
+exercised. SOS by satellite and keeping the gateway alive in the background remain listed as
+not built in the evidence table.

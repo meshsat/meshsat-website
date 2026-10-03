@@ -24,36 +24,41 @@ The dashboard shows the status of all configured transports and recent message a
 
 Plug a Meshtastic radio (T-Echo, Heltec V3, etc.) into a USB port on your device. MeshSat will auto-detect the serial port and begin receiving mesh messages.
 
-You can verify the connection via the API:
+Run the following commands on the Linux machine running the Bridge. They use `curl` and `jq`;
+if you run them from another machine, replace `localhost` with the Bridge's IP address.
+
+You can verify the mesh connection via the API:
 
 ```bash
-curl -s http://localhost:6050/api/transports | jq .
+curl -fsS http://localhost:6050/api/status | jq .
 ```
 
-You should see your Meshtastic transport listed with status `connected`.
+Look for `"connected": true`. If the radio is disconnected, check its USB connection and the
+[troubleshooting guide](/guide/troubleshooting).
 
 ## 4. Send a Test Message
 
-Send a test message through the API to verify routing is working:
+Send a test message through the mesh radio. Have a second Meshtastic device on the same
+channel ready to confirm reception:
 
 ```bash
-curl -X POST http://localhost:6050/api/messages \
+curl -fsS -X POST http://localhost:6050/api/messages/send \
   -H "Content-Type: application/json" \
-  -d '{
-    "transport": "meshtastic",
-    "destination": "^all",
-    "payload": "Hello from MeshSat!"
-  }'
+  -d '{"text":"Hello from MeshSat!","channel":0}'
 ```
 
-The message will be transmitted over your Meshtastic radio to all nodes in range.
+With no `gateway` or `to` specified, this sends to everyone on mesh channel 0. A successful API
+response means the Bridge handed the message to the radio; check that it arrives on your second
+device. This confirms the mesh send path. To test forwarding between transports, configure
+[access rules](/guide/features/access-rules), send an incoming mesh message, and check the
+chosen destination. Routes to satellite or SMS can spend airtime.
 
 ## 5. View Message History
 
 Check that the message was recorded:
 
 ```bash
-curl -s http://localhost:6050/api/messages?limit=10 | jq .
+curl -fsS 'http://localhost:6050/api/messages?limit=10' | jq .
 ```
 
 ## Next Steps

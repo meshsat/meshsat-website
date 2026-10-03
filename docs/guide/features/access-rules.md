@@ -60,7 +60,7 @@ contact with auto-forwarding on, so the group tracks the contact list rather tha
 | Action | Effect |
 |---|---|
 | `forward` | queue a copy for `forward_to`, then keep evaluating |
-| `drop` | stop immediately; nothing is forwarded, later rules never run |
+| `drop` | stop immediately and discard collected forwarding matches; later rules never run |
 | `log` | record the match and keep evaluating |
 
 `forward` does not stop evaluation, so two matching forward rules produce two copies on two

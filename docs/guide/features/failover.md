@@ -63,14 +63,19 @@ They solve different problems and both exist.
 | | Failover group | Bond group |
 |---|---|---|
 | Bearers used | one at a time | several at once |
-| Chooses by | priority order | cost and capacity |
+| Chooses by | priority order | free first, configured MTU, then paid cost |
 | Purpose | keep working when a bearer fails | push one message through several weak bearers |
 | Configured at | `/api/failover-groups` | `/api/bond-groups` |
 
-A bond group splits a message into coded symbols and spreads them across its members, so a payload
-too large or a link too lossy for any single bearer still gets through. Members are sorted free
-first by capacity, then paid by cost, so the cheap bearers carry as much as they can before an
-Iridium frame is spent.
+A bond group encodes a message as source and repair symbols for its member bearers. The current
+allocator sorts free bearers by configured MTU, not measured bandwidth. While a free bearer is
+available, the largest-MTU free bearer gets all source symbols and paid bearers get none. Other
+free members may carry repair symbols. Only a group with no free bearer allocates source symbols
+to a paid member, choosing by cost.
+
+There is no capacity model yet. Capacity-aware paid activation remains specification work, and
+bonding over a paid satellite link has not been validated. See the
+[Bridge evidence table](https://github.com/meshsat/meshsat#what-is-proven-and-what-is-not).
 
 The per bearer maximum the allocator plans against:
 

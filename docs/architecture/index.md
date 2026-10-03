@@ -89,7 +89,7 @@ Pi UART GPIO -------->-|  DirectIMTTransport (RockBLOCK 9704)         |->  SSE E
                        |  SigningService (Ed25519 hash chain)         |
                        |  CredentialManager (certs, expiry, mTLS)     |
                        |  Delivery Ledger (SQLite tracking)           |
-                       |  SQLite DB (schema v53)                      |
+                       |  SQLite DB (versioned schema)                      |
                        -----------------------------------------------
 ```
 
@@ -119,7 +119,10 @@ See [Pass Scheduler](/architecture/pass-scheduler) for configuration and schedul
 
 ### Dead Letter Queue
 
-When a message fails to send (transport disconnected, satellite not visible, rate limit exceeded), it enters the Dead Letter Queue (DLQ). The DLQ retries delivery with exponential backoff and a configurable TTL. Messages that exceed their TTL are logged and discarded.
+Failed deliveries can enter the Dead Letter Queue (DLQ) for scheduled retries. Entries that
+reach their retry limit remain visible with their last error instead of being silently deleted.
+The delivery ledger and pass scheduler handle other waiting states; a message waiting for its
+link is not necessarily a dead-letter entry.
 
 See [Dead Letter Queue](/architecture/dead-letter-queue) for retry configuration and monitoring.
 
@@ -134,7 +137,7 @@ The REST API on port 6050 provides endpoints for:
 - Querying message history
 - Managing transport configuration
 - Monitoring system health and metrics
-- WebSocket streaming for real-time updates
+- Server-Sent Events at `/api/events` for real-time updates
 
 See [API Reference](/api/) for the full endpoint documentation.
 
