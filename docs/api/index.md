@@ -17,14 +17,15 @@ Interactive API docs: `http://<your-ip>:6050/swagger/index.html`
 | Method | Path | Description |
 |--------|------|-------------|
 | `GET` | `/api/messages` | List messages |
-| `POST` | `/api/messages` | Send a message |
+| `POST` | `/api/messages/send` | Send a message |
 | `GET` | `/api/interfaces` | List interfaces |
 | `GET` | `/api/interfaces/health` | Health scores |
-| `GET` | `/api/rules` | List access rules |
+| `GET` | `/api/access-rules` | List access rules |
 | `GET` | `/api/config/export` | Export config as YAML |
 | `POST` | `/api/config/import` | Import config |
 | `GET` | `/api/deliveries` | List deliveries |
 | `GET` | `/api/topology` | Mesh topology |
 | `GET` | `/api/iridium/modem` | Modem status |
 | `GET/POST` | `/api/deadman` | Dead man's switch |
-| `GET/POST/DELETE` | `/api/geofences` | Geofence management |
+| `GET/POST` | `/api/geofences` | List or create geofences |
+| `DELETE` | `/api/geofences/{id}` | Delete one geofence |

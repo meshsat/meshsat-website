@@ -14,6 +14,9 @@
 curl -fsSL https://get.meshsat.net | sudo bash
 ```
 
+The script installs into `/meshsat`. After it finishes, follow the
+[quick start](/guide/quick-start) to connect a radio and verify a message.
+
 ## Manual Setup
 
 ```bash
@@ -65,6 +68,13 @@ docker compose up -d
 
 ## Update
 
+Use the directory containing your Compose file. The quick installer uses `/meshsat`; the
+manual example above uses `/opt/meshsat`.
+
 ```bash
-cd /opt/meshsat && docker compose pull && docker compose up -d
+cd /meshsat
+sudo docker compose pull
+sudo docker compose up -d
 ```
+
+For a manual install, use `cd /opt/meshsat` instead.

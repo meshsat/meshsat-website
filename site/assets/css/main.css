@@ -4331,3 +4331,33 @@ main { flex: 1 0 auto; }
    ink, so it follows the hover colour and forced-colors with the label. */
 .btn-icon { gap: 0.5rem; }
 .btn-icon svg { flex-shrink: 0; }
+
+/* First steps stay ahead of the routing trace on small screens. */
+.hero-paths {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+.hero-paths a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.65rem;
+    min-height: 44px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-secondary);
+    color: var(--color-text);
+    text-decoration: none;
+}
+.hero-paths a:hover { border-color: var(--color-primary); }
+.hero-paths strong { color: var(--color-primary); font-size: 1rem; }
+.hero-paths span { font-size: 0.8rem; line-height: 1.45; }
+.hero-demo { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; margin-block: 0.35rem; }
+.hardware-start { margin: 0 0 var(--space-md); }
+@media (max-width: 480px) {
+    .hero-paths { grid-template-columns: minmax(0, 1fr); }
+    .hero-paths a { flex-direction: row; align-items: baseline; gap: 0.75rem; }
+    .hero-paths strong { flex: 0 0 4.5rem; }
+    .hero-paths span { min-width: 0; }
+}

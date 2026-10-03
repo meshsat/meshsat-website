@@ -17,10 +17,14 @@ export default defineConfig({
   themeConfig: {
     logo: { light: '/logo-light.png', dark: '/logo-dark.png', alt: '' },
     nav: [
+      { text: 'Start here', link: '/start' },
       { text: 'Bridge', link: '/guide/getting-started' },
       { text: 'Hub', link: '/hub/' },
-      { text: 'Android', link: '/android/' },
-      { text: 'iOS', link: '/ios/' },
+      { text: 'Apps', items: [
+        { text: 'Android', link: '/android/' },
+        { text: 'iOS', link: '/ios/' },
+        { text: 'Linux', link: '/linux/' },
+      ] },
       { text: 'Node', link: '/node/' },
       { text: 'Reference', link: '/api/' },
       { text: 'Changelog', link: 'https://meshsat.net/changelog/' },
@@ -28,6 +32,19 @@ export default defineConfig({
     ],
 
     sidebar: {
+      '/start': [{ text: 'Start here', items: [
+        { text: 'Choose your setup', link: '/start' },
+        { text: 'Project sources', link: '/projects' },
+      ] }],
+      '/projects': [{ text: 'Start here', items: [
+        { text: 'Choose your setup', link: '/start' },
+        { text: 'Project sources', link: '/projects' },
+      ] }],
+      '/linux/': [{ text: 'Linux', items: [
+        { text: 'Setup and limits', link: '/linux/' },
+        { text: 'Choose your setup', link: '/start' },
+        { text: 'Project sources', link: '/projects' },
+      ] }],
       '/guide/': [
         {
           text: 'Bridge',

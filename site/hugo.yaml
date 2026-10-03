@@ -39,22 +39,22 @@ languages:
     languageName: "Nederlands"
     languageCode: "nl-NL"
     weight: 2
-    title: "MeshSat"
+    title: "MeshSat: mensen verbonden houden wanneer het netwerk uitvalt"
   de:
     languageName: "Deutsch"
     languageCode: "de-DE"
     weight: 3
-    title: "MeshSat"
+    title: "MeshSat: Menschen verbinden, wenn das Netz ausfällt"
   fr:
     languageName: "Français"
     languageCode: "fr-FR"
     weight: 4
-    title: "MeshSat"
+    title: "MeshSat : garder le contact quand le réseau tombe"
   el:
     languageName: "Ελληνικά"
     languageCode: "el-GR"
     weight: 5
-    title: "MeshSat"
+    title: "MeshSat: κρατά τους ανθρώπους συνδεδεμένους όταν το δίκτυο πέφτει"
 
 menu:
   main:

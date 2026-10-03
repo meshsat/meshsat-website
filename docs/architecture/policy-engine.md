@@ -11,7 +11,7 @@ priority order.
 | `interface_id` | which interface this rule belongs to |
 | `direction` | ingress or egress; a rule applies to one, never both |
 | `priority` | lower numbers are evaluated first, default 100 |
-| `action` | `forward` or drop |
+| `action` | `forward`, `drop` or `log` |
 | `forward_to` | the destination interface when forwarding |
 | `filters` | what the message must match |
 | `schedule_type` | when the rule is in force at all |
@@ -33,9 +33,9 @@ satellite link that costs money per message.
 
 ## Scheduling
 
-A rule can be limited to a time window. The obvious use is expensive bearers: forward telemetry
-over satellite during working hours and hold it otherwise, without disabling the rule by hand
-twice a day.
+A rule can be limited to a time window. Outside that window, it does not match. This does not
+automatically queue a message for the next window: other matching rules and the ingress default
+still determine what happens. Use the delivery and scheduling controls when a message must wait.
 
 ## Rate limits
 

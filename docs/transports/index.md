@@ -2,34 +2,38 @@
 
 MeshSat runs eight transport bearers on nine Reticulum interfaces, and routes to TAK, MQTT and webhooks as destinations. Iridium counts twice, on the 9603N and the 9704. Four more interface types bring a Reticulum user's own gear in: RNode LoRa radios, UDP and AutoInterface on an IP mesh, and KISS TNCs, all added from the Routing settings without a restart; and the 10 m HF codec is a gateway of its own. The pages below cover each one; Reticulum itself is covered under [Reticulum](/guide/features/reticulum), and direct serial needs no configuration beyond a port. Each transport handles the protocol-specific details of sending and receiving messages, while the policy engine handles routing between them.
 
+These labels record the tests performed, not production readiness. MeshSat has never been
+used in a real emergency. For Reticulum interfaces, tests against `rnsd` do not establish
+compatibility with physical radios or every third-party client.
+
 ## Mesh Networks
 
 | Transport | Interface | Status | Description |
 |-----------|-----------|--------|-------------|
-| [Meshtastic](/transports/meshtastic) | Serial / USB | Stable | LoRa mesh radios (T-Echo, Heltec, RAK, etc.) |
-| [ZigBee](/transports/zigbee) | Serial / USB | Beta | IEEE 802.15.4 mesh via ZigBee coordinator dongles |
+| [Meshtastic](/transports/meshtastic) | Serial / USB | Field tested | LoRa mesh radios (T-Echo, Heltec, RAK, etc.) |
+| [ZigBee](/transports/zigbee) | Serial / USB | Little field exposure | IEEE 802.15.4 mesh via ZigBee coordinator dongles |
 
 ## Satellite
 
 | Transport | Interface | Status | Description |
 |-----------|-----------|--------|-------------|
-| [Iridium SBD](/transports/iridium-sbd) | Serial | Stable | Short Burst Data via RockBLOCK 9603N |
-| [Iridium IMT](/transports/iridium-imt) | Serial | Beta | Internet Modem Transceiver via RockBLOCK 9704 |
+| [Iridium SBD](/transports/iridium-sbd) | Serial | Field tested | Short Burst Data via RockBLOCK 9603N |
+| [Iridium IMT](/transports/iridium-imt) | Serial | Verified over satellite | Internet Modem Transceiver via RockBLOCK 9704 |
 
 ## Cellular
 
 | Transport | Interface | Status | Description |
 |-----------|-----------|--------|-------------|
-| [Cellular](/transports/cellular) | Serial / USB | Stable | SMS and data via USB cellular modems (Huawei E220, etc.) |
+| [Cellular](/transports/cellular) | Serial / USB | Field tested | SMS and data via USB cellular modems (Huawei E220, etc.) |
 
 ## IP Networks
 
 | Transport | Interface | Status | Description |
 |-----------|-----------|--------|-------------|
-| [MQTT](/transports/mqtt) | TCP/TLS | Stable | Publish/subscribe messaging over MQTT brokers |
-| [Webhooks](/transports/webhooks) | HTTP/HTTPS | Stable | Incoming and outgoing HTTP webhooks |
-| [APRS](/transports/aprs) | TCP (APRS-IS) | Beta | Amateur Packet Reporting System for position and telemetry |
-| [TAK](/transports/tak) | TCP/TLS | Beta | Team Awareness Kit (ATAK/WinTAK) CoT integration |
+| [MQTT](/transports/mqtt) | TCP/TLS | Field tested | Publish/subscribe messaging over MQTT brokers |
+| [Webhooks](/transports/webhooks) | HTTP/HTTPS | Field tested | Incoming and outgoing HTTP webhooks |
+| [APRS](/transports/aprs) | KISS TNC / APRS-IS | Field tested | Amateur Packet Reporting System for position and telemetry |
+| [TAK](/transports/tak) | TCP/TLS | Field tested | Team Awareness Kit (ATAK/WinTAK) CoT integration |
 
 ## Reticulum interfaces a user brings
 

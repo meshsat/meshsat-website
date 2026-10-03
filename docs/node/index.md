@@ -4,11 +4,15 @@
 MeshSat is a prototype in active development. Its dependability is unproven. Do not rely on it for life safety.
 :::
 
-The MeshSat node is a pocket-sized box with two radios in it: a Meshtastic LoRa radio and a RockBLOCK 9603 Iridium satellite modem. A phone running [MeshSat Android](/android/) connects to it once over Bluetooth and gets both. The mesh comes through the normal Meshtastic service, and the satellite modem through a second MeshSat service on the same connection.
+The MeshSat node is a pocket-sized box with two radios in it: a Meshtastic LoRa radio and a RockBLOCK 9603 Iridium satellite modem. A phone running [MeshSat Android](/android/) or [MeshSat iOS](/ios/) connects to it once over Bluetooth and gets both. The mesh comes through the normal Meshtastic service, and the satellite modem through a second MeshSat service on the same connection.
 
 ![An open Peli case on a garden ledge, holding a RockBLOCK 9603, an ESP32-S3 LoRa board and a power bank](/images/node/node-v0-open.webp)
 
-The app does the routing, the queueing and the credit accounting, so the node itself stays simple. While the app is connected, the modem is the app's. Routing on the node itself, for when no phone is around, comes next.
+While the app owns the modem, the app handles routing, queueing and credit accounting.
+Without a phone, the node can route its configured Iridium mesh channel over satellite: that
+path was proven in a garden on 27 September 2026. The modem has one owner at a time; see
+[how ownership changes](/node/iridium-ble#owning-the-modem). The phone does not automatically
+inherit that channel's routing rules when it takes over.
 
 ## How it fits together
 
