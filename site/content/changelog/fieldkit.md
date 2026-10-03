@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 1643
-  unreleased_since: "2026-10-02"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-02"
+  unreleased_count: 1648
+  unreleased_since: "2026-10-03"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-03"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,7 +28,7 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-02)
+## Unreleased (main, last change 2026-10-03)
 
 ### Features
 
@@ -615,6 +615,11 @@ appear below.
 
 ### Fixes
 
+- **records**: L4-E11's fan rail capacitors renumbered C142 to C148 after L4-E7's round 2 port bank took C131 to C136 (every board E draft composed in L4-E9's change-list order, d8dec31's cin included; the test now reads new names and duplicate part calls, and passes with the integration's solar guard; the cin and input-limit C65 collision noted for the coordinator) ([1080e085](https://github.com/meshsat/meshsat-fieldkit/commit/1080e085911647b312d9ecea58538311e6300cfb))
+- **records**: L4-E11's residue after the coordinator's check of a1d15601 (the opening summary, 17a's pin and source lines and the charger draft's comment restated to 17a's terms: the 566 A an extrapolation and a test target, the start into a short not bounded by printed data, its 1.5 s a timeout; the line citations re-pointed; a test that the withdrawn phrases appear only in withdrawal sentences) ([73d68c8c](https://github.com/meshsat/meshsat-fieldkit/commit/73d68c8cd945b83afaba4988b9f877f0b1e8a6c9))
+- **records**: L4-F04's escalation rule corrected after Astra's recheck of set 27 (a DEMONSTRATED CONFLICT needs the measured failure of every arrangement the design admits or a bound, one arrangement's failed test is its own; L4-E12 17.9 and L4-E9's page, OW-1 and OW-10 reworded) and the e-paper soak set to the claimed +70 C at the glass for E5's 6 h and E3-O's 4 h behind the window with uncertainty and recovery criteria (R-185) ([20188e03](https://github.com/meshsat/meshsat-fieldkit/commit/20188e034f2054dc60e0ab3d57c05c295cac08c3))
+- **records**: L4-E11 after Astra's recheck of set 27 (the fan rail's parts renumbered to U22, R103 to R109 and C135 to C141 after every board E draft composed in L4-E9's order, now a test; L4-F03 restated: the 566 A a resistive extrapolation and a test target, the start into a short not bounded by printed data, no retry duty claimed, E11-38 extended to the complete histories, the pin excursions, the wiring's and copper's integrity and the contact body at or under 85 C; 16d's superseded sentence marked historical; the fan rail's window 11.512 to 12.431 V with the 1 percent divider) ([b929d8be](https://github.com/meshsat/meshsat-fieldkit/commit/b929d8be4f8387c8613f23c8b54ab7883b988a82))
+- **records**: L4-E11's U42 ILIM resistor renamed R228 after L4-E8's bank took R221 to R226 (L6P-F01; every board A draft under records/l4e4 to l4e11 applied to a copy, the designators each adds pairwise disjoint, now a test) and the BQ25730's LCSC stock 0 noted as a procurement fact (L6P-F05) ([787e7b15](https://github.com/meshsat/meshsat-fieldkit/commit/787e7b15cf0f5d3df2f1a38108dbaab3843e6919))
 - **records**: L4-E9's and L4-E11's safe-operating-area readers take either poppler SVG serialisation (a stroke style property or attribute, a space after each comma or none); both outputs unchanged byte for byte, a test pins both forms ([bab8d460](https://github.com/meshsat/meshsat-fieldkit/commit/bab8d4607115c63011b4f193fec056a05a02e693))
 - **records**: L3-N01, verify\_l3am.py's closing helper reads the verifier's revision return as success; a positive case and the probe's own sensitivity added, and a mutation check that a verifier accepting the stale check fails the run ([6e5a71ba](https://github.com/meshsat/meshsat-fieldkit/commit/6e5a71ba0b2fbb76ffe4491ac4372b0ce275457f))
 - **records**: r11\_dep.py compares revision A32's full hash by its recorded prefix, not git's abbreviated hash, whose length depends on the clone (its output unchanged; L4-E4's pin updated) ([3b4b92cf](https://github.com/meshsat/meshsat-fieldkit/commit/3b4b92cf3707e00806ebdfa07b86819ce77c20aa))
