@@ -5,7 +5,7 @@
 Internet Modem Transceiver on a RockBLOCK 9704. The newer Iridium bearer: far larger messages
 than SBD, over the JSPR protocol rather than AT commands.
 
-| | |
+| Limit | Value |
 |---|---|
 | Maximum message | 100 KB, against 340 bytes on SBD |
 | Serial | 230400 baud, JSPR |
