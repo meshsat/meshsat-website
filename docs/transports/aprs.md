@@ -1,5 +1,7 @@
 # APRS
 
+<ChannelStatus code="live">Working on hardware: both kits carry a VHF APRS radio on 144.800 MHz.</ChannelStatus>
+
 Automatic Packet Reporting System, over APRS-IS. Position and telemetry reporting into the
 amateur radio network.
 

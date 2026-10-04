@@ -1,5 +1,7 @@
 # Iridium SBD
 
+<ChannelStatus code="code">Worked on hardware in a kit until 1 October 2026, when the last 9603N in a kit made way for a 9704. A MeshSat node carries the same kind of modem, and that path is live.</ChannelStatus>
+
 Short Burst Data over an Iridium 9603N modem, usually a RockBLOCK. This is the bearer that works
 when nothing else does, and the one that costs real money per message.
 

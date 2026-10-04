@@ -1,5 +1,7 @@
 # 10 m HF shouts
 
+<ChannelStatus code="code">The codec is verified against a reference. No real shout has been received or sent.</ChannelStatus>
+
 CrossTalk's amateur HF hop carries a short plaintext message over a licensed 10 m station when there
 is no other Reticulum path. Its codec is public, and the bridge implements it: receive on the kit's
 RTL-SDR, and transmit through a USB-audio radio only when an operator callsign is configured.

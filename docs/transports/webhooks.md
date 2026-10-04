@@ -1,5 +1,7 @@
 # Webhooks
 
+<ChannelStatus code="code">This code is for the Bridge: we have no record of a Bridge webhook running on a kit. The Hub's webhooks are a Hub feature.</ChannelStatus>
+
 Outbound HTTP callbacks. When a message matches a routing rule with a webhook destination, the
 Hub or the bridge POSTs it to a URL you own.
 
