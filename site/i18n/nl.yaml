@@ -61,39 +61,59 @@ trace_foot:
 tr_title:
   other: "Elk systeem sluit aan op dezelfde router"
 tr_sub:
-  other: "Elk systeem is een adapter achter dezelfde interface, met een eigen MTU, kostenmodel en transformatieketen, en een regel kan van elke adapter naar elke andere routeren. Vandaag draaien acht dragers op negen interfaces, omdat Iridium twee keer telt, op de 9603N en de 9704. HF (NVIS/ALE) en DMR staan op de roadmap en zijn niet gebouwd. De status zegt wat we werkelijk hebben gedraaid, niet wat we hopen."
+  other: "Elk systeem is een adapter achter dezelfde interface, met een eigen MTU, kostenmodel en transformatieketen, en een regel kan van elke adapter naar elke andere routeren. De code bij elk kanaal zegt waar het werkelijk staat, niet wat we hopen: alleen LIVE draait vandaag op onze hardware."
 th_category:
   other: "Categorie"
-th_transport:
-  other: "Transport"
-th_status:
-  other: "Status"
-cat_mesh:
-  other: "Mesh"
+th_channels:
+  other: "Kanalen"
 cat_sat:
   other: "Satelliet"
-cat_cell:
-  other: "Mobiel"
-cat_wireless:
-  other: "Draadloos"
+cat_radio:
+  other: "Radio"
+cat_wired:
+  other: "Bekabeld"
+cat_short:
+  other: "Korte afstand"
 cat_ip:
-  other: "IP / Netwerk"
-cat_routing:
-  other: "Routering"
-st_field:
-  other: "In het veld getest"
-st_sat:
-  other: "Via satelliet bevestigd"
-st_little:
-  other: "Weinig veldervaring"
-st_rns:
-  other: "Werkt samen met Python RNS"
-tx_cell:
-  other: "Sms en data (A7670E)"
-tx_aprs:
-  other: "APRS (meegeleverde Direwolf, KISS)"
-tx_rns:
-  other: "Reticulum TCP (HDLC-frames)"
+  other: "IP en Hub"
+cat_rx:
+  other: "Alleen ontvangst"
+ch_node:
+  other: "Iridium via een MeshSat-node"
+ch_cell:
+  other: "Mobiel: sms en data"
+ch_hf10:
+  other: "10 m HF-gateway"
+ch_hfdata:
+  other: "HF-data"
+ch_2g:
+  other: "Eigen 2G-cel"
+ch_fiber:
+  other: "Glasvezel"
+ch_copper:
+  other: "Koper, één aderpaar"
+ch_rnode:
+  other: "RNode- en KISS-radio's"
+ch_hub:
+  other: "Hub-verbinding"
+ch_jam:
+  other: "Stoorbewaking"
+ch_cb:
+  other: "Cell broadcast-meldingen"
+ch_time:
+  other: "DCF77-tijdsignaal"
+lg_label:
+  other: "Wat de statuscodes betekenen"
+lg_live:
+  other: "draait vandaag op onze prototypehardware"
+lg_code:
+  other: "in de Bridge, draait niet op een kit"
+lg_bench:
+  other: "op onze werkbank, nog niet in een kit"
+lg_soon:
+  other: "onderweg naar de werkbank, nog niets getest"
+lg_plan:
+  other: "gepland, nog niets gekocht"
 tr_note_a:
   other: "Bundeling over meerdere dragers via een betaalde satellietverbinding is nog niet gevalideerd, en de stoordetectie heeft alleen nog omgevingsruis gezien."
 tr_note_link:
@@ -257,7 +277,7 @@ f_copy:
 install_cmd_label:
   other: "Installatiecommando, scrollbaar"
 table_transports_label:
-  other: "Tabel met transportdragers, scrollbaar"
+  other: "Tabel met kanalen, scrollbaar"
 table_hardware_label:
   other: "Hardwaretabel, scrollbaar"
 video_sub:
@@ -360,10 +380,8 @@ shot_next:
   other: "Volgende schermafbeelding"
 fab_bus:
   other: "regels, transformatieketens, failover-volgorde, kosten"
-fab_future:
-  other: "niet gebouwd"
 fab_cap:
-  other: "Dragers boven, integraties onder, één router ertussen: een regel kan van elke adapter naar elke andere routeren. Gestippeld staat op de roadmap en is niet gebouwd."
+  other: "Dragers boven, integraties onder, één router ertussen: een regel kan van elke adapter naar elke andere routeren. Gestippeld komt binnenkort: de hardware is onderweg naar de werkbank."
 host_lead:
   other: "De controlekamer voor elke kit, telefoon en zaknode die je gebruikt: één kaart, elk bericht, de routes tussen netwerken, en wie er gebeld wordt als iemand op SOS drukt. De kits hebben hem nooit nodig om een bericht door te geven. De code is in beide gevallen dezelfde; wat verschilt is wie hem draait en hoeveel apparaten je kunt registreren."
 host_k_devices:

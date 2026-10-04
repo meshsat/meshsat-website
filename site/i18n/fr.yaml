@@ -61,39 +61,59 @@ trace_foot:
 tr_title:
   other: "Chaque système se branche sur le même routeur"
 tr_sub:
-  other: "Chaque système est un adaptateur derrière une même interface, avec sa propre MTU, son modèle de coût et sa chaîne de transformation, et une règle peut router de n'importe quel adaptateur vers n'importe quel autre. Aujourd'hui, huit porteurs tournent sur neuf interfaces, car Iridium compte deux fois, sur le 9603N et le 9704. La HF (NVIS/ALE) et le DMR figurent sur la feuille de route et ne sont pas construits. Le statut indique ce que nous avons réellement fait tourner, pas ce que nous espérons."
+  other: "Chaque système est un adaptateur derrière une même interface, avec sa propre MTU, son modèle de coût et sa chaîne de transformation, et une règle peut router de n'importe quel adaptateur vers n'importe quel autre. Le code de chaque canal dit où il en est réellement, pas ce que nous espérons : seul LIVE tourne aujourd'hui sur notre matériel."
 th_category:
   other: "Catégorie"
-th_transport:
-  other: "Transport"
-th_status:
-  other: "Statut"
-cat_mesh:
-  other: "Maillage"
+th_channels:
+  other: "Canaux"
 cat_sat:
   other: "Satellite"
-cat_cell:
-  other: "Cellulaire"
-cat_wireless:
-  other: "Sans fil"
+cat_radio:
+  other: "Radio"
+cat_wired:
+  other: "Filaire"
+cat_short:
+  other: "Courte portée"
 cat_ip:
-  other: "IP / Réseau"
-cat_routing:
-  other: "Routage"
-st_field:
-  other: "Testé sur le terrain"
-st_sat:
-  other: "Confirmé par satellite"
-st_little:
-  other: "Peu d'usage sur le terrain"
-st_rns:
-  other: "Interopère avec Python RNS"
-tx_cell:
-  other: "SMS et données (A7670E)"
-tx_aprs:
-  other: "APRS (Direwolf inclus, KISS)"
-tx_rns:
-  other: "Reticulum TCP (trames HDLC)"
+  other: "IP et Hub"
+cat_rx:
+  other: "Réception seule"
+ch_node:
+  other: "Iridium via un nœud MeshSat"
+ch_cell:
+  other: "Mobile : SMS et données"
+ch_hf10:
+  other: "Passerelle HF 10 m"
+ch_hfdata:
+  other: "Données HF"
+ch_2g:
+  other: "Propre cellule 2G"
+ch_fiber:
+  other: "Fibre optique"
+ch_copper:
+  other: "Cuivre, une seule paire"
+ch_rnode:
+  other: "Radios RNode et KISS"
+ch_hub:
+  other: "Liaison Hub"
+ch_jam:
+  other: "Veille de brouillage"
+ch_cb:
+  other: "Alertes par diffusion cellulaire"
+ch_time:
+  other: "Signal horaire DCF77"
+lg_label:
+  other: "Ce que signifient les codes de statut"
+lg_live:
+  other: "tourne aujourd'hui sur notre matériel prototype"
+lg_code:
+  other: "dans le Bridge, ne tourne sur aucun kit"
+lg_bench:
+  other: "sur notre établi, pas encore dans un kit"
+lg_soon:
+  other: "en route vers l'établi, rien de testé"
+lg_plan:
+  other: "prévu, rien d'acheté"
 tr_note_a:
   other: "L'agrégation de plusieurs porteurs sur une liaison satellite payante n'est pas encore validée, et le détecteur de brouillage n'a vu que du bruit ambiant."
 tr_note_link:
@@ -257,7 +277,7 @@ f_copy:
 install_cmd_label:
   other: "Commande d'installation, défilable"
 table_transports_label:
-  other: "Tableau des porteurs, défilable"
+  other: "Tableau des canaux, défilable"
 table_hardware_label:
   other: "Tableau du matériel, défilable"
 video_sub:
@@ -360,10 +380,8 @@ shot_next:
   other: "Capture suivante"
 fab_bus:
   other: "règles, chaînes de transformation, ordre de bascule, coût"
-fab_future:
-  other: "pas construit"
 fab_cap:
-  other: "Les porteurs en haut, les intégrations en bas, un seul routeur entre eux : une règle peut router de n'importe quel adaptateur vers n'importe quel autre. En pointillés : sur la feuille de route, pas construit."
+  other: "Les porteurs en haut, les intégrations en bas, un seul routeur entre eux : une règle peut router de n'importe quel adaptateur vers n'importe quel autre. En pointillés : bientôt, le matériel est en route vers l'établi."
 host_lead:
   other: "La salle de contrôle de chaque kit, téléphone et nœud de poche que vous exploitez : une carte, chaque message, les routes entre les réseaux, et qui est appelé quand quelqu'un appuie sur SOS. Les kits n'en ont jamais besoin pour faire passer un message. Le code est le même dans les deux cas ; ce qui change, c'est qui le fait tourner et combien d'appareils vous pouvez enregistrer."
 host_k_devices:
