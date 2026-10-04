@@ -1,5 +1,7 @@
 # RNode
 
+<ChannelStatus code="code">Verified against rnsd in software. No RNode radio is fitted in a kit.</ChannelStatus>
+
 An RNode is a LoRa radio running the Reticulum project's [RNode firmware](https://github.com/markqvist/RNode_Firmware)
 or the community edition. It speaks Reticulum natively, so the bridge drives it as one of its own
 interfaces, beside the Meshtastic radio, not through it. Any board the firmware supports works:

@@ -140,20 +140,63 @@ export default defineConfig({
         {
           text: 'Transports',
           items: [
-            { text: 'Overview', link: '/transports/' },
-            { text: 'Meshtastic', link: '/transports/meshtastic' },
-            { text: 'Iridium SBD', link: '/transports/iridium-sbd' },
+            { text: 'Overview and status codes', link: '/transports/' },
+          ],
+        },
+        {
+          text: 'Satellite',
+          items: [
             { text: 'Iridium IMT', link: '/transports/iridium-imt' },
-            { text: 'Cellular', link: '/transports/cellular' },
-            { text: 'ZigBee', link: '/transports/zigbee' },
-            { text: 'MQTT', link: '/transports/mqtt' },
-            { text: 'Webhooks', link: '/transports/webhooks' },
+            { text: 'Iridium through a node', link: '/transports/iridium-node' },
+            { text: 'Iridium SBD', link: '/transports/iridium-sbd' },
+          ],
+        },
+        {
+          text: 'Radio',
+          items: [
+            { text: 'Meshtastic', link: '/transports/meshtastic' },
             { text: 'APRS', link: '/transports/aprs' },
-            { text: 'TAK', link: '/transports/tak' },
-            { text: 'RNode', link: '/transports/rnode' },
-            { text: 'IP mesh: UDP and AutoInterface', link: '/transports/ip-mesh' },
-            { text: 'KISS TNC', link: '/transports/kiss' },
+            { text: 'Cellular', link: '/transports/cellular' },
+            { text: 'WiFi', link: '/transports/wifi' },
             { text: '10 m HF shouts', link: '/transports/hf-10m' },
+            { text: 'HF data', link: '/transports/hf-data' },
+            { text: 'TETRA Direct Mode', link: '/transports/tetra' },
+            { text: 'Wi-Fi HaLow', link: '/transports/halow' },
+            { text: 'Own 2G cell', link: '/transports/gsm-cell' },
+          ],
+        },
+        {
+          text: 'Wired',
+          items: [
+            { text: 'Fiber', link: '/transports/fiber' },
+            { text: 'Single-pair copper', link: '/transports/single-pair-ethernet' },
+          ],
+        },
+        {
+          text: 'Short range',
+          items: [
+            { text: 'ZigBee', link: '/transports/zigbee' },
+            { text: 'Bluetooth LE', link: '/transports/ble' },
+            { text: 'RNode', link: '/transports/rnode' },
+            { text: 'KISS TNC', link: '/transports/kiss' },
+          ],
+        },
+        {
+          text: 'IP and Hub',
+          items: [
+            { text: 'Hub link', link: '/transports/hub-link' },
+            { text: 'MQTT', link: '/transports/mqtt' },
+            { text: 'TAK', link: '/transports/tak' },
+            { text: 'Webhooks', link: '/transports/webhooks' },
+            { text: 'IP mesh: UDP and AutoInterface', link: '/transports/ip-mesh' },
+          ],
+        },
+        {
+          text: 'Receive only',
+          items: [
+            { text: 'Jamming watch', link: '/transports/jamming-watch' },
+            { text: 'Cell broadcast alerts', link: '/transports/cell-broadcast' },
+            { text: 'DCF77 time signal', link: '/transports/dcf77' },
           ],
         },
       ],

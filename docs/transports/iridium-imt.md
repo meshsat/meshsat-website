@@ -1,5 +1,7 @@
 # Iridium IMT
 
+<ChannelStatus code="live">Verified over a real satellite link in March 2026. Both kits carry a RockBLOCK 9704.</ChannelStatus>
+
 Internet Modem Transceiver on a RockBLOCK 9704. The newer Iridium bearer: far larger messages
 than SBD, over the JSPR protocol rather than AT commands.
 

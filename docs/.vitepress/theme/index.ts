@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import { h, defineComponent, onMounted } from 'vue'
 import type { EnhanceAppContext } from 'vitepress'
+import ChannelStatus from './ChannelStatus.vue'
 import './custom.css'
 
 // The default home layout renders no <main>, leaving the hero and feature grid
@@ -31,7 +32,9 @@ const Layout = defineComponent({
 export default {
   extends: DefaultTheme,
   Layout,
-  enhanceApp({ router }: EnhanceAppContext) {
+  enhanceApp({ app, router }: EnhanceAppContext) {
+    // Opens every /transports/ page with its status code (MESHSAT-1498).
+    app.component('ChannelStatus', ChannelStatus)
     if (typeof window !== 'undefined') {
       router.onAfterRouteChanged = () => scheduleLandmark()
     }

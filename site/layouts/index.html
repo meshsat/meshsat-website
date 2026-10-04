@@ -187,8 +187,8 @@
              height. The codes are English
              tokens in every language, like RX and TX in the trace; the legend
              under the table is translated. "k" is a translated name, "n" a
-             proper noun, "s" the docs page under /transports/ (a channel
-             without one is plain text). A status is a fact about the kits
+             proper noun, "s" the docs page under /transports/ and "u" a docs
+             path elsewhere. A status is a fact about the kits
              and nodes: change it here and on the channel's docs page
              together. */}}
         {{ $codes := dict
@@ -202,7 +202,7 @@
             (dict "cat" "cat_sat" "groups" (slice
                 (dict "code" "live" "items" (slice
                     (dict "n" "Iridium IMT (9704)" "s" "iridium-imt")
-                    (dict "k" "ch_node")))
+                    (dict "k" "ch_node" "s" "iridium-node")))
                 (dict "code" "code" "items" (slice
                     (dict "n" "Iridium SBD (9603N)" "s" "iridium-sbd")))))
             (dict "cat" "cat_radio" "groups" (slice
@@ -210,39 +210,39 @@
                     (dict "n" "Meshtastic LoRa" "s" "meshtastic")
                     (dict "n" "APRS" "s" "aprs")
                     (dict "k" "ch_cell" "s" "cellular")
-                    (dict "n" "WiFi")))
+                    (dict "n" "WiFi" "s" "wifi")))
                 (dict "code" "code" "items" (slice
                     (dict "k" "ch_hf10" "s" "hf-10m")))
                 (dict "code" "soon" "items" (slice
-                    (dict "k" "ch_hfdata")
-                    (dict "n" "TETRA Direct Mode")
-                    (dict "n" "Wi-Fi HaLow")
-                    (dict "k" "ch_2g")))))
+                    (dict "k" "ch_hfdata" "s" "hf-data")
+                    (dict "n" "TETRA Direct Mode" "s" "tetra")
+                    (dict "n" "Wi-Fi HaLow" "s" "halow")
+                    (dict "k" "ch_2g" "s" "gsm-cell")))))
             (dict "cat" "cat_wired" "groups" (slice
                 (dict "code" "soon" "items" (slice
-                    (dict "k" "ch_fiber")))
+                    (dict "k" "ch_fiber" "s" "fiber")))
                 (dict "code" "plan" "items" (slice
-                    (dict "k" "ch_copper")))))
+                    (dict "k" "ch_copper" "s" "single-pair-ethernet")))))
             (dict "cat" "cat_short" "groups" (slice
                 (dict "code" "code" "items" (slice
                     (dict "n" "ZigBee" "s" "zigbee")
-                    (dict "n" "Bluetooth LE")
+                    (dict "n" "Bluetooth LE" "s" "ble")
                     (dict "k" "ch_rnode" "s" "rnode")))))
             (dict "cat" "cat_ip" "groups" (slice
                 (dict "code" "live" "items" (slice
-                    (dict "k" "ch_hub")
+                    (dict "k" "ch_hub" "s" "hub-link")
                     (dict "n" "MQTT" "s" "mqtt")
                     (dict "n" "TAK" "s" "tak")
-                    (dict "n" "Reticulum")))
+                    (dict "n" "Reticulum" "u" "/guide/features/reticulum")))
                 (dict "code" "code" "items" (slice
                     (dict "n" "Webhooks" "s" "webhooks")))))
             (dict "cat" "cat_rx" "groups" (slice
                 (dict "code" "live" "items" (slice
-                    (dict "k" "ch_jam")))
+                    (dict "k" "ch_jam" "s" "jamming-watch")))
                 (dict "code" "code" "items" (slice
-                    (dict "k" "ch_cb")))
+                    (dict "k" "ch_cb" "s" "cell-broadcast")))
                 (dict "code" "bench" "items" (slice
-                    (dict "k" "ch_time")))))
+                    (dict "k" "ch_time" "s" "dcf77")))))
         }}
         <div class="table-wrap" tabindex="0" role="region" aria-label="{{ i18n "table_transports_label" }}">
             <table class="data-table chan-table">
@@ -255,7 +255,8 @@
                         {{- range .groups }}{{ $c := index $codes .code }}
                         <span class="chan-group"><span class="badge badge-token {{ $c.class }}">{{ $c.label }}</span>&nbsp;<span class="chan-names">
                             {{- range $i, $it := .items }}{{ if $i }}, {{ end }}{{ $name := $it.n }}{{ with $it.k }}{{ $name = i18n . }}{{ end }}
-                            {{- with $it.s }}<a href="{{ $.Site.Params.docs_url }}/transports/{{ . }}">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}
+                            {{- $href := "" }}{{ with $it.s }}{{ $href = printf "%s/transports/%s" $.Site.Params.docs_url . }}{{ end }}{{ with $it.u }}{{ $href = printf "%s%s" $.Site.Params.docs_url . }}{{ end }}
+                            {{- with $href }}<a href="{{ . }}">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}
                             {{- end }}</span></span>
                         {{- end }}
                     </td></tr>

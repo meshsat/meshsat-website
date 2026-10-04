@@ -6,7 +6,7 @@ We have not measured the range of any radio on this page. MeshSat is a prototype
 Every distance below is an estimate: the manufacturer's own published figure, a record someone else set with different equipment, a figure from Wikipedia, or our own calculation with the textbook models described at the bottom of this page. None of it is measured by us yet.
 :::
 
-This page lists every radio in the two V1 field kits, tesseract and parallax, as fitted on 14 September 2026, with the antenna it uses and how far it should reach. The last column asks the fun question: how far with a bigger external antenna, within the rules?
+This page lists every radio in the two V1 field kits, tesseract and parallax, as fitted on 4 October 2026, with the antenna it uses and how far it should reach. The last column asks the fun question: how far with a bigger external antenna, within the rules?
 
 Each estimate says where it comes from: **(maker)**, **(record)**, **(Wikipedia)** or **(calculated)**. When we measure real ranges, they go on this page, the disappointing ones included.
 
@@ -18,7 +18,7 @@ Each estimate says where it comes from: **(maker)**, **(record)**, **(Wikipedia)
 | APRS, 144.800 MHz | Nagoya NA-771 whip, 2.15 dBi | About 7 km to a handheld, 28 km to a digipeater on a 30 m mast (calculated) | 2 m base collinear on a 10 m mast: about 18 km to a handheld, 36 km to a digipeater (calculated). Through the digipeater network and the internet: worldwide. The ISS digipeater: up to about 2,300 km (calculated) |
 | Iridium satellite | Taoglas IAA.01 puck | 781 km to a satellite overhead, up to about 3,250 km to one on the horizon (calculated). Anywhere on Earth with a clear view of the sky (maker) | Same 781 to 3,250 km: a bigger antenna does not reach further (calculated) |
 | Cellular, LTE and 2G | LTE stubby | Up to about 28 km to a 30 m phone mast in line of sight (calculated). LTE: 5 km optimal, 30 km reasonable; 2G: 35 km maximum (Wikipedia) | 11 dBi directional antenna on a 10 m pole: up to about 36 km to a 30 m mast (calculated). LTE cells: up to 100 km; 2G still 35 km (Wikipedia) |
-| ZigBee, 2.4 GHz | SONOFF antenna | 135 m in free line of sight (maker) | Still about 135 m per hop: the legal limit caps what the coordinator may send. Each extra ZigBee router adds another hop of up to 135 m (maker) |
+| ZigBee, 2.4 GHz (not fitted since 20 September 2026) | SONOFF antenna | 135 m in free line of sight (maker) | Still about 135 m per hop: the legal limit caps what the coordinator may send. Each extra ZigBee router adds another hop of up to 135 m (maker) |
 | WiFi, kit to kit | Two external antennas | About 1.5 km between the kits at 2.4 GHz (calculated) | Two 30 dBi dishes on 10 m masts at 5 GHz: about 26 km (calculated). MikroTik: up to 30 km in ideal conditions for its 27 dBi grid radio (maker) |
 | WiFi and Bluetooth on the Raspberry Pi 5 | Internal, inside the case | WiFi: about 20 m indoors, up to 150 m outdoors. Bluetooth 5 LE: up to 240 m (Wikipedia) | USB Bluetooth adapter with long range: 1,300 m measured by Nordic on development boards (maker); over 4,500 m claimed for the Fanstel BU840XE (maker) |
 | GPS, receive only | u-blox 7 puck on the lid | About 20,200 km to a satellite overhead, up to about 25,800 km near the horizon (calculated) | Same distances: an active antenna helps under partial cover, not with distance (calculated) |
@@ -88,7 +88,7 @@ The sections below give the detail and the sources for every cell, and the last 
 
 ## ZigBee
 
-**On the kit.** A SONOFF Zigbee 3.0 USB Dongle Plus (Texas Instruments CC2652P) with its antenna outside the case on a bulkhead.
+**On the kit.** Not fitted today. Until 20 September 2026 the kits carried a SONOFF Zigbee 3.0 USB Dongle Plus (Texas Instruments CC2652P) with its antenna outside the case on a bulkhead. The Bridge still supports it, and the figures below are for that dongle; see [ZigBee](/transports/zigbee).
 
 **Estimated range on the kit.** 135 m. SONOFF: "135 m in free line of sight", with "max 20dB + antenna gain 2dB" ([SONOFF](https://dongle.sonoff.tech/guide/zbdongle-p/hardware_specification-2/)).
 
