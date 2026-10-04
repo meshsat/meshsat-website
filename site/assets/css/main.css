@@ -4361,3 +4361,83 @@ main { flex: 1 0 auto; }
     .hero-paths strong { flex: 0 0 4.5rem; }
     .hero-paths span { min-width: 0; }
 }
+
+/* ---------- Channel status codes (MESHSAT-1498) ----------
+   Five codes say where a channel stands: LIVE, CODE, BENCH, COMING SOON,
+   FUTURE PLAN. They are machine tokens like the trace's RX and DELIVERED, so
+   they are set in mono and stay English in every language. Colour follows the
+   state rule: green only for what runs on the kits, amber for hardware on the
+   bench, and the three that are not hardware-proven carry no colour at all,
+   only an outline (solid: the code exists; dashed and dotted: it does not run
+   anywhere yet). The neutral inks are the body and muted tokens, which pass
+   AA on the page ground in both themes; these pills have no tint to composite. */
+.badge-token {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+.badge-code { background: transparent; color: var(--color-text); border-color: var(--color-border-light); }
+.badge-soon { background: transparent; color: var(--color-text-muted); border: 1px dashed currentColor; }
+.badge-plan { background: transparent; color: var(--color-text-muted); border: 1px dotted currentColor; }
+
+/* The channel table: one row per category, the codes running inline ahead of
+   their names, which is the shortest form at every width. From 700px a code
+   and its names stay together when the line breaks; on a phone they flow as
+   text, and a no-break space keeps a code on the line of its first name. The row header is a th for assistive technology and looks like the
+   old category cell. */
+.chan-table tbody th {
+    background: none;
+    font-weight: inherit;
+    white-space: normal;
+    border-bottom: 1px solid var(--color-border);
+}
+.chan-table tbody tr:last-child th { border-bottom: none; }
+.chan-table tbody th,
+.chan-table td { vertical-align: baseline; line-height: 1.75; }
+.chan-group:not(:last-child) { margin-inline-end: 0.9rem; }
+.chan-names a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-decoration-color: var(--color-text-muted);
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: from-font;
+}
+.chan-names a:hover { color: var(--color-primary); text-decoration-color: currentColor; }
+@media (min-width: 700px) {
+    .chan-table tbody th { width: 11rem; }
+    .chan-group { display: inline-block; }
+}
+/* On a phone the column heads cost a row and say nothing the row headers do
+   not; they stay in the accessibility tree and leave the layout. */
+@media (max-width: 640px) {
+    .data-table.chan-table { min-width: 0; }
+    .chan-table tbody th { width: 5.5rem; }
+    .chan-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+}
+
+.chan-legend {
+    list-style: none;
+    margin: var(--space-md) 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem var(--space-lg);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+.chan-legend li { white-space: normal; }
+@media (max-width: 640px) {
+    .chan-legend { display: block; line-height: 1.75; }
+    .chan-legend li { display: inline; margin-inline-end: 0.9rem; }
+}
