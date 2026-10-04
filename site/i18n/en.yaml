@@ -61,39 +61,59 @@ trace_foot:
 tr_title:
   other: "Every system plugs into the same router"
 tr_sub:
-  other: "Each one is an adapter behind the same interface, with its own MTU, cost model and transform pipeline, and a rule can route from any adapter to any other. Eight bearers run on nine interfaces today, because Iridium counts twice, on the 9603N and the 9704. HF (NVIS/ALE) and DMR are on the roadmap and not built. Status says what we have actually run, not what we hope."
+  other: "Each one is an adapter behind the same interface, with its own MTU, cost model and transform pipeline, and a rule can route from any adapter to any other. The code on each channel says where it really stands, not what we hope: only LIVE runs on our hardware today."
 th_category:
   other: "Category"
-th_transport:
-  other: "Transport"
-th_status:
-  other: "Status"
-cat_mesh:
-  other: "Mesh"
+th_channels:
+  other: "Channels"
 cat_sat:
   other: "Satellite"
-cat_cell:
-  other: "Cellular"
-cat_wireless:
-  other: "Wireless"
+cat_radio:
+  other: "Radio"
+cat_wired:
+  other: "Wired"
+cat_short:
+  other: "Short range"
 cat_ip:
-  other: "IP / Network"
-cat_routing:
-  other: "Routing"
-st_field:
-  other: "Field tested"
-st_sat:
-  other: "Verified over satellite"
-st_little:
-  other: "Little field exposure"
-st_rns:
-  other: "Interoperates with Python RNS"
-tx_cell:
-  other: "SMS and data (A7670E)"
-tx_aprs:
-  other: "APRS (bundled Direwolf, KISS)"
-tx_rns:
-  other: "Reticulum TCP (HDLC framed)"
+  other: "IP and Hub"
+cat_rx:
+  other: "Receive only"
+ch_node:
+  other: "Iridium through a MeshSat node"
+ch_cell:
+  other: "Cellular SMS and data"
+ch_hf10:
+  other: "10 m HF gateway"
+ch_hfdata:
+  other: "HF data"
+ch_2g:
+  other: "Own 2G cell"
+ch_fiber:
+  other: "Fiber"
+ch_copper:
+  other: "Single-pair copper"
+ch_rnode:
+  other: "RNode and KISS radios"
+ch_hub:
+  other: "Hub link"
+ch_jam:
+  other: "Jamming watch"
+ch_cb:
+  other: "Cell broadcast alerts"
+ch_time:
+  other: "DCF77 time signal"
+lg_label:
+  other: "What the status codes mean"
+lg_live:
+  other: "runs on our prototype hardware today"
+lg_code:
+  other: "in the Bridge, not running on a kit"
+lg_bench:
+  other: "on our bench, not in a kit yet"
+lg_soon:
+  other: "on its way to the bench, nothing tested"
+lg_plan:
+  other: "planned, nothing bought"
 tr_note_a:
   other: "Multi-bearer bonding over a paid satellite link is not validated yet, and the jamming detector has only ever seen ambient noise."
 tr_note_link:
@@ -257,7 +277,7 @@ f_copy:
 install_cmd_label:
   other: "Install command, scrollable"
 table_transports_label:
-  other: "Transport bearers table, scrollable"
+  other: "Channels table, scrollable"
 table_hardware_label:
   other: "Hardware table, scrollable"
 video_sub:
@@ -360,10 +380,8 @@ shot_next:
   other: "Next screenshot"
 fab_bus:
   other: "rules, transform chains, failover order, cost"
-fab_future:
-  other: "not built"
 fab_cap:
-  other: "Bearers above, integrations below, one router between them: a rule can route from any adapter to any other. Dashed is on the roadmap and not built."
+  other: "Bearers above, integrations below, one router between them: a rule can route from any adapter to any other. Dashed is coming soon: the hardware is on its way to the bench."
 host_lead:
   other: "The control room for every kit, phone and pocket node you run: one map, every message, the routes between networks, and who gets called when someone presses SOS. The kits never need it to pass a message. The code is the same either way; what changes is who runs it and how many devices you can register."
 host_k_devices:

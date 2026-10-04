@@ -61,39 +61,59 @@ trace_foot:
 tr_title:
   other: "Jedes System hängt am selben Router"
 tr_sub:
-  other: "Jedes System ist ein Adapter hinter derselben Schnittstelle, mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette, und eine Regel kann von jedem Adapter zu jedem anderen routen. Heute laufen acht Träger auf neun Schnittstellen, weil Iridium doppelt zählt, mit dem 9603N und dem 9704. HF (NVIS/ALE) und DMR stehen auf der Roadmap und sind nicht gebaut. Der Status nennt, was wir tatsächlich betrieben haben, nicht was wir hoffen."
+  other: "Jedes System ist ein Adapter hinter derselben Schnittstelle, mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette, und eine Regel kann von jedem Adapter zu jedem anderen routen. Der Code an jedem Kanal sagt, wo er wirklich steht, nicht was wir hoffen: Nur LIVE läuft heute auf unserer Hardware."
 th_category:
   other: "Kategorie"
-th_transport:
-  other: "Übertragungsweg"
-th_status:
-  other: "Status"
-cat_mesh:
-  other: "Mesh"
+th_channels:
+  other: "Kanäle"
 cat_sat:
   other: "Satellit"
-cat_cell:
-  other: "Mobilfunk"
-cat_wireless:
+cat_radio:
   other: "Funk"
+cat_wired:
+  other: "Kabel"
+cat_short:
+  other: "Kurzstrecke"
 cat_ip:
-  other: "IP / Netzwerk"
-cat_routing:
-  other: "Routing"
-st_field:
-  other: "Im Feld erprobt"
-st_sat:
-  other: "Über Satellit bestätigt"
-st_little:
-  other: "Wenig Felderfahrung"
-st_rns:
-  other: "Arbeitet mit Python RNS zusammen"
-tx_cell:
-  other: "SMS und Daten (A7670E)"
-tx_aprs:
-  other: "APRS (mitgeliefertes Direwolf, KISS)"
-tx_rns:
-  other: "Reticulum TCP (HDLC-Rahmen)"
+  other: "IP und Hub"
+cat_rx:
+  other: "Nur Empfang"
+ch_node:
+  other: "Iridium über MeshSat-Knoten"
+ch_cell:
+  other: "Mobilfunk: SMS und Daten"
+ch_hf10:
+  other: "10-m-HF-Gateway"
+ch_hfdata:
+  other: "HF-Daten"
+ch_2g:
+  other: "Eigene 2G-Zelle"
+ch_fiber:
+  other: "Glasfaser"
+ch_copper:
+  other: "Kupfer, ein Adernpaar"
+ch_rnode:
+  other: "RNode- und KISS-Funkgeräte"
+ch_hub:
+  other: "Hub-Verbindung"
+ch_jam:
+  other: "Störüberwachung"
+ch_cb:
+  other: "Cell-Broadcast-Warnungen"
+ch_time:
+  other: "DCF77-Zeitsignal"
+lg_label:
+  other: "Was die Statuscodes bedeuten"
+lg_live:
+  other: "läuft heute auf unserer Prototyp-Hardware"
+lg_code:
+  other: "in der Bridge, auf keinem Kit"
+lg_bench:
+  other: "auf unserer Werkbank, in keinem Kit"
+lg_soon:
+  other: "unterwegs zur Werkbank, nichts getestet"
+lg_plan:
+  other: "geplant, nichts gekauft"
 tr_note_a:
   other: "Die Bündelung mehrerer Träger über eine kostenpflichtige Satellitenstrecke ist noch nicht validiert, und die Störerkennung hat bisher nur Umgebungsrauschen gesehen."
 tr_note_link:
@@ -257,7 +277,7 @@ f_copy:
 install_cmd_label:
   other: "Installationsbefehl, scrollbar"
 table_transports_label:
-  other: "Tabelle der Übertragungsträger, scrollbar"
+  other: "Tabelle der Kanäle, scrollbar"
 table_hardware_label:
   other: "Hardware-Tabelle, scrollbar"
 video_sub:
@@ -360,10 +380,8 @@ shot_next:
   other: "Nächster Screenshot"
 fab_bus:
   other: "Regeln, Transformationsketten, Failover-Reihenfolge, Kosten"
-fab_future:
-  other: "nicht gebaut"
 fab_cap:
-  other: "Träger oben, Integrationen unten, ein Router dazwischen: Eine Regel kann von jedem Adapter zu jedem anderen routen. Gestrichelt steht auf der Roadmap und ist nicht gebaut."
+  other: "Träger oben, Integrationen unten, ein Router dazwischen: Eine Regel kann von jedem Adapter zu jedem anderen routen. Gestrichelt kommt bald: Die Hardware ist unterwegs zur Werkbank."
 host_lead:
   other: "Die Leitstelle für jedes Kit, jedes Telefon und jeden Taschen-Node, den Sie betreiben: eine Karte, jede Nachricht, die Routen zwischen Netzen und wer angerufen wird, wenn jemand SOS drückt. Die Kits brauchen ihn nie, um eine Nachricht weiterzugeben. Der Code ist in beiden Fällen derselbe; es ändert sich nur, wer ihn betreibt und wie viele Geräte Sie registrieren können."
 host_k_devices:

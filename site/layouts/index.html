@@ -150,11 +150,12 @@
         </div>
 
         {{/* The layer between networks (MESHSAT-1096 review 2). Every adapter
-             hangs off one router: bearers above, integrations below, the
-             roadmap dashed. Real interface IDs from the Bridge's code (the
-             trace's own vocabulary); HF and DMR have no ID because they do not
-             exist yet. The stubs and bus are drawn in CSS; a screen reader gets
-             two plain lists and the caption. */}}
+             hangs off one router: bearers above, integrations below, what is
+             coming dashed. Real interface IDs from the Bridge's code (the
+             trace's own vocabulary); HF data and TETRA have no ID because
+             their hardware is not on the bench yet (MESHSAT-1498). The stubs
+             and bus are drawn in CSS; a screen reader gets two plain lists and
+             the caption. */}}
         {{ $bearers := slice
             (dict "id" "mesh_0" "name" "Meshtastic")
             (dict "id" "aprs_0" "name" "APRS")
@@ -171,7 +172,7 @@
         <figure class="fabric" aria-labelledby="fabric-cap">
             <ul class="fabric-row fabric-top">
                 {{ range $bearers }}<li class="fabric-node"><code>{{ .id }}</code><span>{{ .name }}</span></li>{{ end }}
-                {{ range (slice "HF (NVIS/ALE)" "DMR") }}<li class="fabric-node is-future"><span>{{ . }}</span><em>{{ i18n "fab_future" }}</em></li>{{ end }}
+                {{ range (slice (i18n "ch_hfdata") "TETRA") }}<li class="fabric-node is-future"><span>{{ . }}</span><em>COMING SOON</em></li>{{ end }}
             </ul>
             <p class="fabric-bus"><code>router</code><span>{{ i18n "fab_bus" }}</span></p>
             <ul class="fabric-row fabric-bottom">
@@ -180,25 +181,93 @@
             <figcaption id="fabric-cap">{{ i18n "fab_cap" }}</figcaption>
         </figure>
 
+        {{/* Every channel of the V1 kits with its status code (MESHSAT-1498).
+             Six category rows instead of one row per transport, the codes
+             running inline, so the table holds twice the channels in less
+             height. The codes are English
+             tokens in every language, like RX and TX in the trace; the legend
+             under the table is translated. "k" is a translated name, "n" a
+             proper noun, "s" the docs page under /transports/ (a channel
+             without one is plain text). A status is a fact about the kits
+             and nodes: change it here and on the channel's docs page
+             together. */}}
+        {{ $codes := dict
+            "live"  (dict "label" "LIVE" "class" "badge-stable")
+            "code"  (dict "label" "CODE" "class" "badge-code")
+            "bench" (dict "label" "BENCH" "class" "badge-beta")
+            "soon"  (dict "label" "COMING SOON" "class" "badge-soon")
+            "plan"  (dict "label" "FUTURE PLAN" "class" "badge-plan")
+        }}
+        {{ $channels := slice
+            (dict "cat" "cat_sat" "groups" (slice
+                (dict "code" "live" "items" (slice
+                    (dict "n" "Iridium IMT (9704)" "s" "iridium-imt")
+                    (dict "k" "ch_node")))
+                (dict "code" "code" "items" (slice
+                    (dict "n" "Iridium SBD (9603N)" "s" "iridium-sbd")))))
+            (dict "cat" "cat_radio" "groups" (slice
+                (dict "code" "live" "items" (slice
+                    (dict "n" "Meshtastic LoRa" "s" "meshtastic")
+                    (dict "n" "APRS" "s" "aprs")
+                    (dict "k" "ch_cell" "s" "cellular")
+                    (dict "n" "WiFi")))
+                (dict "code" "code" "items" (slice
+                    (dict "k" "ch_hf10" "s" "hf-10m")))
+                (dict "code" "soon" "items" (slice
+                    (dict "k" "ch_hfdata")
+                    (dict "n" "TETRA Direct Mode")
+                    (dict "n" "Wi-Fi HaLow")
+                    (dict "k" "ch_2g")))))
+            (dict "cat" "cat_wired" "groups" (slice
+                (dict "code" "soon" "items" (slice
+                    (dict "k" "ch_fiber")))
+                (dict "code" "plan" "items" (slice
+                    (dict "k" "ch_copper")))))
+            (dict "cat" "cat_short" "groups" (slice
+                (dict "code" "code" "items" (slice
+                    (dict "n" "ZigBee" "s" "zigbee")
+                    (dict "n" "Bluetooth LE")
+                    (dict "k" "ch_rnode" "s" "rnode")))))
+            (dict "cat" "cat_ip" "groups" (slice
+                (dict "code" "live" "items" (slice
+                    (dict "k" "ch_hub")
+                    (dict "n" "MQTT" "s" "mqtt")
+                    (dict "n" "TAK" "s" "tak")
+                    (dict "n" "Reticulum")))
+                (dict "code" "code" "items" (slice
+                    (dict "n" "Webhooks" "s" "webhooks")))))
+            (dict "cat" "cat_rx" "groups" (slice
+                (dict "code" "live" "items" (slice
+                    (dict "k" "ch_jam")))
+                (dict "code" "code" "items" (slice
+                    (dict "k" "ch_cb")))
+                (dict "code" "bench" "items" (slice
+                    (dict "k" "ch_time")))))
+        }}
         <div class="table-wrap" tabindex="0" role="region" aria-label="{{ i18n "table_transports_label" }}">
-            <table class="data-table">
+            <table class="data-table chan-table">
                 <thead>
-                    <tr><th>{{ i18n "th_category" }}</th><th>{{ i18n "th_transport" }}</th><th>{{ i18n "th_status" }}</th></tr>
+                    <tr><th scope="col">{{ i18n "th_category" }}</th><th scope="col">{{ i18n "th_channels" }}</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><span class="category-label">{{ i18n "cat_mesh" }}</span></td><td>Meshtastic LoRa</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
-                    <tr><td rowspan="2"><span class="category-label">{{ i18n "cat_sat" }}</span></td><td>Iridium SBD 9603N</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
-                    <tr><td>Iridium IMT 9704</td><td><span class="badge badge-stable">{{ i18n "st_sat" }}</span></td></tr>
-                    <tr><td><span class="category-label">{{ i18n "cat_cell" }}</span></td><td>{{ i18n "tx_cell" }}</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
-                    <tr><td><span class="category-label">{{ i18n "cat_wireless" }}</span></td><td>ZigBee 3.0 (CC2652P)</td><td><span class="badge badge-beta">{{ i18n "st_little" }}</span></td></tr>
-                    <tr><td rowspan="4"><span class="category-label">{{ i18n "cat_ip" }}</span></td><td>MQTT</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
-                    <tr><td>Webhooks</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
-                    <tr><td>{{ i18n "tx_aprs" }}</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
-                    <tr><td>TAK / Cursor-on-Target</td><td><span class="badge badge-stable">{{ i18n "st_field" }}</span></td></tr>
-                    <tr><td><span class="category-label">{{ i18n "cat_routing" }}</span></td><td>{{ i18n "tx_rns" }}</td><td><span class="badge badge-stable">{{ i18n "st_rns" }}</span></td></tr>
+                    {{- range $channels }}
+                    <tr><th scope="row"><span class="category-label">{{ i18n .cat }}</span></th><td>
+                        {{- range .groups }}{{ $c := index $codes .code }}
+                        <span class="chan-group"><span class="badge badge-token {{ $c.class }}">{{ $c.label }}</span>&nbsp;<span class="chan-names">
+                            {{- range $i, $it := .items }}{{ if $i }}, {{ end }}{{ $name := $it.n }}{{ with $it.k }}{{ $name = i18n . }}{{ end }}
+                            {{- with $it.s }}<a href="{{ $.Site.Params.docs_url }}/transports/{{ . }}">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}
+                            {{- end }}</span></span>
+                        {{- end }}
+                    </td></tr>
+                    {{- end }}
                 </tbody>
             </table>
         </div>
+        <ul class="chan-legend" aria-label="{{ i18n "lg_label" }}">
+            {{- range (slice "live" "code" "bench" "soon" "plan") }}{{ $c := index $codes . }}
+            <li><span class="badge badge-token {{ $c.class }}">{{ $c.label }}</span>&nbsp;{{ i18n (printf "lg_%s" .) }}</li>
+            {{- end }}
+        </ul>
         <p class="table-note">{{ i18n "tr_note_a" }} <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">{{ i18n "tr_note_link" }}</a> {{ i18n "tr_note_b" }}</p>
     </div>
 </section>
