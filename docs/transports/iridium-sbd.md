@@ -7,7 +7,7 @@ when nothing else does, and the one that costs real money per message.
 
 ## The constraint that shapes everything
 
-| | |
+| Limit | Value |
 |---|---|
 | Maximum message out (MO) | 340 bytes |
 | Maximum message in (MT) | 270 bytes |
