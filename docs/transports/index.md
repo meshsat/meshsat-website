@@ -4,10 +4,9 @@ Every channel a MeshSat kit or node can pass a message over, and where each one 
 Each has its own page, and every page opens with the same status code you see here and on
 [meshsat.net](https://meshsat.net/#transports).
 
-The Bridge itself runs eight transport bearers, reachable across thirteen Reticulum interface
-types, and routes to TAK, MQTT and webhooks as destinations. Reticulum is not a channel: it is
-the encrypted routing that runs over the channels below, and it has its own page under
-[Reticulum](/guide/features/reticulum).
+Reticulum is not a channel: it is the encrypted routing that runs over the channels below, and
+it has its own page under [Reticulum](/guide/features/reticulum). The same table is in the
+[Bridge's README](https://github.com/meshsat/meshsat#what-it-bridges).
 
 ## Status codes {#status-codes}
 
