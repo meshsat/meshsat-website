@@ -1,5 +1,7 @@
 # IP mesh: UDP and AutoInterface
 
+<ChannelStatus code="code">Verified against rnsd in software. Not run on a kit's network: Reticulum over TCP is the IP path that is live.</ChannelStatus>
+
 Any IP network carries Reticulum, and the bridge speaks the two interface types the reference
 implementation uses for a LAN or a mesh: `UDPInterface` and `AutoInterface`. That covers a plain
 Ethernet segment, a Wi-Fi HaLow mesh such as a Haven node, MOROSX or HaLowLink radios running

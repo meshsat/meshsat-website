@@ -1,5 +1,7 @@
 # KISS TNC
 
+<ChannelStatus code="code">Verified against rnsd in software. No TNC or HF modem is connected to a kit.</ChannelStatus>
+
 Raw Reticulum packets over a KISS TNC, the reference implementation's `KISSInterface`. Unlike the
 [APRS](/transports/aprs) path, nothing is wrapped in AX.25: the TNC receives the packet as the frame.
 Any hardware TNC fits, serial or over TCP, and so does Rhizomatica's Mercury HF modem, which listens
