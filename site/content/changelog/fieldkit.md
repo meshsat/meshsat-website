@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 1648
-  unreleased_since: "2026-10-03"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-03"
+  unreleased_count: 1662
+  unreleased_since: "2026-10-04"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-04"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,10 +28,17 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-03)
+## Unreleased (main, last change 2026-10-04)
 
 ### Features
 
+- **tools**: candidate\_guard.py refuses a release candidate before any suite runs when a frozen input changed after the freeze, a tracked file differs from the commit, an output no longer binds to the tree or required evidence is missing or changed; its regressions on a throwaway repository ([b78742ea](https://github.com/meshsat/meshsat-fieldkit/commit/b78742ead2f2e932cfd6c3ff095fb3578b4a59f1))
+- **firmware**: the panel's TX lamp follows the dimmer in every lighting position, board D's expander starts at its designed power-up levels, and two lost compute modules raise MASTER WARN ([698b1e66](https://github.com/meshsat/meshsat-fieldkit/commit/698b1e663cc66f3071ab2a613abbfba62be9a4a9))
+- **firmware**: the panel firmware's slot-cut alarm uses timer alarm 1, clear of the pico-sdk default alarm pool, and its README rows follow the code ([42c27369](https://github.com/meshsat/meshsat-fieldkit/commit/42c273693b18e1b7856ffdfbd88cd5d48b3922d2))
+- **firmware**: the panel firmware reads board B's TMP117 and board C's VEML7700 off the kit bus and retries an absent secure element ([1c76d911](https://github.com/meshsat/meshsat-fieldkit/commit/1c76d9113008aaff98d29138ec09f5520438f1bf))
+- **firmware**: the panel firmware raises no slot while ZEROIZE is armed or wiping or a hot stop acts, and counts a switch closed at power-up from boot ([8b329983](https://github.com/meshsat/meshsat-fieldkit/commit/8b329983a9dc3ac1758e258dc73a37d75dae1584))
+- **firmware**: the panel firmware never reads its own PI\_SHDN\_REQ pull as a MAIN tap, treats a silent kit bus as the hot-stop detector lost, and drops each slot as it stops ([f6c66f62](https://github.com/meshsat/meshsat-fieldkit/commit/f6c66f62554a3685da0fd73386b6bde3e618c1d5))
+- **firmware**: panel controller firmware for board C, a portable core with its hardware layer, pico-sdk port and 47 host tests ([c50302d6](https://github.com/meshsat/meshsat-fieldkit/commit/c50302d6ff46208f7f596484793c7995b76c661a))
 - **parts**: the DECODED binding, a maker's ordering-code table decoding the part number field by field against the selection, 23 of board C's selections decoded, and the decision drafted for the registry ([ebe2a084](https://github.com/meshsat/meshsat-fieldkit/commit/ebe2a0845884e1b8d16cc29351efb3e05b28ed45))
 - **parts**: board C's 87 part selections checked by rule D-2, a bound document must print the part number on its cited page, with the tool's tests and the integrator's apply script ([b0a2b61c](https://github.com/meshsat/meshsat-fieldkit/commit/b0a2b61cb54d8df684bc2593f398e0f9085f29af))
 - **case**: Option A(i) lid pack: the arrangement counts' sensitivity to the module's inferred allowances (A 35, B 56, C 58 at both ends) ([f2432732](https://github.com/meshsat/meshsat-fieldkit/commit/f2432732c9676a3b2c8b59af9bb726142270165d))
@@ -615,7 +622,14 @@ appear below.
 
 ### Fixes
 
+- **records**: L4-E9's page counts row in the output's form after R-197's closure (a state printed only while its count is not zero), the one test the box suite failed on 3b9aa97d (records/int28b/apply\_close\_r197\_fix.py) ([81daf860](https://github.com/meshsat/meshsat-fieldkit/commit/81daf8601635afb00d882ba09a45f26cccdc1c2c))
+- **records**: L4-E7's panel-lead guard leaves a filed external review unread only while ARCHIVED-REVIEWS.yaml lists its path and its sha256 still matches (a changed or unlisted file is read whatever its name); L4-RC01's same-cell counterexample and the designation's cases as scratch-tree tests through main(); the release candidate review filed as received; the output regenerated identical, the results cache rekeyed ([8259c26e](https://github.com/meshsat/meshsat-fieldkit/commit/8259c26e784e977e45b57a02d9d26ad9812a5d81))
+- **l7pwr**: the fans' budget restated on L4-E11 section 18's drafted rails (set 28 F-14): VSYS\_E's and +12V\_FAN's loads parsed from apply\_gen\_sch\_e\_aux.py with ast, L4-E11's 18a and 18b figures and record l8r2's cooler step-up read, the converters' losses counted; VSYS\_E 1.3208 A at full speed as declared, the hold's fans 7.15 W, every moved figure listed against round 1; D-18 and the T-H1 bill hold ([72939ebe](https://github.com/meshsat/meshsat-fieldkit/commit/72939ebefad9150d94e765cadd2889faaa28d7ca))
+- **records**: L4-E7's panel-lead guard keeps its citations out of the output and the results cache's KEY: the KEY's scan term is the input (and the IEC check) only, the output prints the input and one fixed sentence, the citations go to stderr; the guard runs at every run before the cache is read and still refuses a differing length; the tests use scratch trees only ([e6961b05](https://github.com/meshsat/meshsat-fieldkit/commit/e6961b052f2bb4b825244148f1a06e62409ea8ea))
+- **records**: L4-E7's panel-lead guard restated on the derivation's input: each length stated beside a solar or panel lead in v2's documents is parsed as a number with its unit and compared with a1solar's LEAD\_M (5 m, read with ast); an equal value is a consistent citation, a differing one refuses naming the file and both values; the sentence allowlist removed ([154e44b6](https://github.com/meshsat/meshsat-fieldkit/commit/154e44b67cd006d60b15f3d9ff4925774782b7a0))
+- **records**: l8r2's board A branch to board D renamed +3V3\_A2D (board D already names its own rail +3V3\_D8) and the coolers' nets renamed CFANs\_\* (board E already carries FAN1/2\_PWM, \_SW, \_TACH), through the drafts, the netlist check and its fixtures, the page's contract texts and the output; a test that every new net is new on every board; R-176's Q12 at 63 A by L4-E7 noted ([2ef3b943](https://github.com/meshsat/meshsat-fieldkit/commit/2ef3b943dcba711451fad4bc482fa5bff85f04b1))
 - **records**: L4-E11's fan rail capacitors renumbered C142 to C148 after L4-E7's round 2 port bank took C131 to C136 (every board E draft composed in L4-E9's change-list order, d8dec31's cin included; the test now reads new names and duplicate part calls, and passes with the integration's solar guard; the cin and input-limit C65 collision noted for the coordinator) ([1080e085](https://github.com/meshsat/meshsat-fieldkit/commit/1080e085911647b312d9ecea58538311e6300cfb))
+- **tools**: lcsc\_fill.py's table fills only codes that meet the identity tool's requirements (eleven lines to the l6r2 selections, two X5R lines declared under rule C-D3b) and a property test runs its choice for every BOM line of the six boards through those requirements ([23ebead1](https://github.com/meshsat/meshsat-fieldkit/commit/23ebead174f7df085cd2bee34d20753d9cee8a01))
 - **records**: L4-E11's residue after the coordinator's check of a1d15601 (the opening summary, 17a's pin and source lines and the charger draft's comment restated to 17a's terms: the 566 A an extrapolation and a test target, the start into a short not bounded by printed data, its 1.5 s a timeout; the line citations re-pointed; a test that the withdrawn phrases appear only in withdrawal sentences) ([73d68c8c](https://github.com/meshsat/meshsat-fieldkit/commit/73d68c8cd945b83afaba4988b9f877f0b1e8a6c9))
 - **records**: L4-F04's escalation rule corrected after Astra's recheck of set 27 (a DEMONSTRATED CONFLICT needs the measured failure of every arrangement the design admits or a bound, one arrangement's failed test is its own; L4-E12 17.9 and L4-E9's page, OW-1 and OW-10 reworded) and the e-paper soak set to the claimed +70 C at the glass for E5's 6 h and E3-O's 4 h behind the window with uncertainty and recovery criteria (R-185) ([20188e03](https://github.com/meshsat/meshsat-fieldkit/commit/20188e034f2054dc60e0ab3d57c05c295cac08c3))
 - **records**: L4-E11 after Astra's recheck of set 27 (the fan rail's parts renumbered to U22, R103 to R109 and C135 to C141 after every board E draft composed in L4-E9's order, now a test; L4-F03 restated: the 566 A a resistive extrapolation and a test target, the start into a short not bounded by printed data, no retry duty claimed, E11-38 extended to the complete histories, the pin excursions, the wiring's and copper's integrity and the contact body at or under 85 C; 16d's superseded sentence marked historical; the fan rail's window 11.512 to 12.431 V with the 1 percent divider) ([b929d8be](https://github.com/meshsat/meshsat-fieldkit/commit/b929d8be4f8387c8613f23c8b54ab7883b988a82))
