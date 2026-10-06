@@ -8,9 +8,9 @@ changelog:
   latest_tag: "revA"
   latest_tag_date: "2026-09-03"
   latest_tag_anchor: "reva-2026-09-03"
-  unreleased_count: 1670
-  unreleased_since: "2026-10-04"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-04"
+  unreleased_count: 1671
+  unreleased_since: "2026-10-06"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-06"
 ---
 
 Generated from the commit history of the hardware repository
@@ -28,10 +28,11 @@ its assets track the last of those updates; the tag itself points at the
 appear below.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-04)
+## Unreleased (main, last change 2026-10-06)
 
 ### Features
 
+- **compact**: the compact kit as a top-level folder: the version table for v0, v1 and v2, and the v2 printed-enclosure design package meshsat-enclosure v0.6 (T-Beam Supreme over a RockBLOCK 9704-SMA, OpenSCAD, cleared by its own audit response for prototype printing only; nothing printed or fitted) ([989b30f3](https://github.com/meshsat/meshsat-fieldkit/commit/989b30f35220b87352ae598fab1d4dce70b4e293))
 - **tools**: candidate\_guard.py refuses a release candidate before any suite runs when a frozen input changed after the freeze, a tracked file differs from the commit, an output no longer binds to the tree or required evidence is missing or changed; its regressions on a throwaway repository ([b78742ea](https://github.com/meshsat/meshsat-fieldkit/commit/b78742ead2f2e932cfd6c3ff095fb3578b4a59f1))
 - **firmware**: the panel power-cycles a compute module lost while running once, as at start-up, then leaves it off until the operator acts, and keeps that state across a controller reset ([ff29ab1e](https://github.com/meshsat/meshsat-fieldkit/commit/ff29ab1e17c251a11661aaa606037d943f4c082d))
 - **firmware**: the panel's TX lamp follows the dimmer in every lighting position, board D's expander starts at its designed power-up levels, and two lost compute modules raise MASTER WARN ([698b1e66](https://github.com/meshsat/meshsat-fieldkit/commit/698b1e663cc66f3071ab2a613abbfba62be9a4a9))
