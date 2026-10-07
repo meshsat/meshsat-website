@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 86
-  unreleased_since: "2026-10-02"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-02"
+  unreleased_count: 89
+  unreleased_since: "2026-10-06"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-06"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -21,7 +21,7 @@ transport by transport; there is no release yet. Builds, once there are any,
 are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-02)
+## Unreleased (main, last change 2026-10-06)
 
 ### Features
 
@@ -83,6 +83,9 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Fixes
 
+- **ble**: a link restored by iOS is picked up on poweredOn instead of staying on Connecting ([bd212df0](https://github.com/meshsat/meshsat-ios/commit/bd212df084738c82c67d7fc709d1a0ec4e7bc179))
+- **background**: no location background mode, significant-change updates in the background ([999ea521](https://github.com/meshsat/meshsat-ios/commit/999ea5219109d88421a697dc52faacae19d6a9f5))
+- **setup**: the node page asks for Bluetooth with Continue and offers Settings when denied ([283ef5d9](https://github.com/meshsat/meshsat-ios/commit/283ef5d9629f7fc95486b3c19368636919a6108e))
 - **tak**: the phone's TAK messages reach the Hub, and it receives its own tenant's TAK traffic ([34475d59](https://github.com/meshsat/meshsat-ios/commit/34475d59c31a574fa07b8338b641cdfa5210d6e6))
 - **satellite**: the Node health card reads STATS again every 10 s, an idle node never notifies it ([c258982c](https://github.com/meshsat/meshsat-ios/commit/c258982c0f66245fed983115a4207946648c2129))
 - **ble**: say when a pipe has no STATS, a cached GATT table or older firmware ([2b8e31a1](https://github.com/meshsat/meshsat-ios/commit/2b8e31a18b0dc4792fec7847c83a1b35153e03f4))
