@@ -8,6 +8,19 @@ export default defineConfig({
 
   sitemap: { hostname: 'https://docs.meshsat.net' },
 
+  // Every page answers at /page AND /page.html (nginx resolves $uri.html), and
+  // READMEs link the short form while the docs link .html. With no canonical,
+  // Google saw two copies and filed them as "Duplicate without user-selected
+  // canonical" (MESHSAT-1183, validation failed Oct 2026). The canonical is the
+  // form the sitemap and internal links use: page.html, and dir/ for index.md.
+  transformPageData(pageData) {
+    const canonical = `https://docs.meshsat.net/${pageData.relativePath}`
+      .replace(/index\.md$/, '')
+      .replace(/\.md$/, '.html')
+    pageData.frontmatter.head ??= []
+    pageData.frontmatter.head.push(['link', { rel: 'canonical', href: canonical }])
+  },
+
   head: [
     ['meta', { name: 'theme-color', content: '#040406' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
