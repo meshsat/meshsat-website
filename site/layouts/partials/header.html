@@ -30,7 +30,9 @@
                     {{ range .Site.Home.AllTranslations }}
                     {{ $destination := .RelPermalink }}
                     {{ $lang := .Language.Lang }}
-                    {{ range $.AllTranslations }}{{ if eq .Language.Lang $lang }}{{ $destination = .RelPermalink }}{{ end }}{{ end }}
+                    {{/* Not on the 404 page: its translations are /nl/404.html etc., which only
+                         ever answer as Soft 404s (MESHSAT-1184). There each language links home. */}}
+                    {{ if ne $.Kind "404" }}{{ range $.AllTranslations }}{{ if eq .Language.Lang $lang }}{{ $destination = .RelPermalink }}{{ end }}{{ end }}{{ end }}
                     <li><a href="{{ $destination }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}"{{ if eq .Language.Lang $.Site.Language.Lang }} aria-current="true"{{ end }}>{{ .Language.LanguageName }}</a></li>
                     {{ end }}
                 </ul>
