@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 130
-  latest_tag: "v2.19.10"
+  tags: 131
+  latest_tag: "v2.19.11"
   latest_tag_date: "2026-10-08"
-  latest_tag_anchor: "v21910-2026-10-08"
+  latest_tag_anchor: "v21911-2026-10-08"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,13 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.19.11 (2026-10-08)
+
+### Fixes
+
+- **iridium**: messages for the satellite go out through the node's 9704 when it carries one ([f86b99b6](https://github.com/meshsat/meshsat-android/commit/f86b99b6ebd3d25631551493ed5ebc652911ff29))
+- **iridium**: a 9704 send that sees no satellite is cancelled in the modem before it is retried ([31966bcd](https://github.com/meshsat/meshsat-android/commit/31966bcd712add5755aed81e22e505175128fc0a))
 
 ## v2.19.10 (2026-10-08)
 
