@@ -87,7 +87,8 @@ the phone keeps relaying with the screen off.
 | Starting after a phone restart (option) | Verified on the Android 11 emulator |
 | A second tick when the Hub confirms a satellite message arrived | Verified 20 September 2026 on four messages, with receipts back within seconds |
 | Contact cards swapped by QR code | Shown, read and stored on one phone; not yet swapped between two phones |
-| RockBLOCK 9704 | Not tested on hardware |
+| RockBLOCK 9704 behind a MeshSat node | Bench, 8 October 2026, on a T-Beam Supreme with a 9704: the app picked the 9704 from the node's own word, brought it up in under 2 seconds, had it back by itself 65 seconds after the node restarted, and handed it a message, which it cancelled cleanly when no satellite was in view. No message through a satellite yet |
+| RockBLOCK 9704 over an HC-05/06 adapter | Not tested on hardware |
 | Deployment to a real end user | Never |
 | Use in an actual emergency | Never |
 
@@ -98,10 +99,12 @@ the phone keeps relaying with the screen off.
 | Phone | Android 8.0 or later; tested on a Google Pixel 9a | | Main test phone |
 | MeshSat node | v0: XIAO ESP32-S3, Wio-SX1262, RockBLOCK 9603 | Bluetooth LE | Tested, mesh and satellite |
 | MeshSat node | v1: LILYGO T-Beam Supreme, RockBLOCK 9603 | Bluetooth LE | Being built |
+| MeshSat node | compact v2 prototype: LILYGO T-Beam Supreme, RockBLOCK 9704 | Bluetooth LE | Bench tested, no satellite message yet |
 | Meshtastic radio | Any Meshtastic device, for example a T-Echo, T-Deck or Heltec LoRa V4 | Bluetooth LE | Should work, mesh only |
 | Satellite | RockBLOCK 9704 | HC-05/06 Bluetooth serial | Not tested |
 | APRS | Any KISS TNC reachable over TCP | KISS over TCP | Should work |
 
 Before 2.9 the app reached a RockBLOCK 9603 through an HC-05 Bluetooth serial adapter. Since
-2.9.0 the 9603 goes through the node, and an HC-05 or HC-06 adapter is used only for the
-RockBLOCK 9704, which is not tested on hardware yet.
+2.9.0 the 9603 goes through the node. Since 2.19.9 the node can carry a RockBLOCK 9704 instead,
+and the app follows what the node says it has. A 9704 on an HC-05 or HC-06 adapter is still not
+tested on hardware.
