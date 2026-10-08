@@ -62,6 +62,7 @@ How to put one together, wire it and flash it: [Build a node](/node/build).
 | A second device pairing without the phone losing its bond | Bench, 2 October 2026, a phone and a laptop: the phone reconnected without pairing again. Not tried with three devices |
 | The node recovering when its Bluetooth stops advertising | Bench, 2 October 2026, with advertising stopped on purpose: started again within a minute, and the node rebooted itself when that did not help |
 | The node saying why it last went down | Bench, 2 October 2026: a flash, a restart and a watchdog reboot each read back at the next start. Low battery, a switch-off, a crash and a brownout were not provoked |
+| A RockBLOCK 9704 behind the node's pipe (the compact v2 firmware build) | Bench, 8 October 2026, from a laptop through the pipe: the modem answered its JSPR protocol, took its SIM and API version, registered as active, and accepted a text with its payload. Not transmitted yet: no sky at the desk. It ran from the T-Beam's switched 3.7 V rail for 1 h 48 min on a full cell with no USB, and dropped out on a cell at 3.67 V; the firmware now switches that rail off itself under 3.7 V on the cell and back on above 3.8 V, thresholds still provisional |
 | Battery life | **Not measured** |
 | Range, weather, long-term reliability | **Not tested** |
 | Deployment to a real end user | **Never** |
