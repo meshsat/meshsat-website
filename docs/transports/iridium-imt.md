@@ -10,6 +10,14 @@ than SBD, over the JSPR protocol rather than AT commands.
 | Maximum message | 100 KB, against 340 bytes on SBD |
 | Serial | 230400 baud, JSPR |
 
+## On a MeshSat node
+
+A MeshSat node can carry a RockBLOCK 9704 instead of a 9603; this is the compact v2 prototype.
+With no phone connected, the node sends its satellite channel over IMT topic 244 itself. With a
+phone connected, MeshSat Android drives the same modem through the node's Bluetooth link and
+picks the 9704 driver from what the node reports. Both work on the bench since 8 October 2026;
+no message from a node has gone through a satellite yet. Details on the [node page](/node/).
+
 ## The thing that will catch you out
 
 **The 9704 has no onboard message caching.** Mobile-terminated messages must be polled frequently

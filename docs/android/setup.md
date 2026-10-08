@@ -85,9 +85,16 @@ the node is connected. Setup > Satellite shows the modem, its signal, and two bu
 Signal** and **Check Mailbox**. Each satellite session costs a credit, so read
 [Satellite](/android/satellite) before you press them often.
 
-The RockBLOCK 9704 is reached through an HC-05 or HC-06 Bluetooth serial adapter paired in
-Android's Bluetooth settings first. That code is in the app, but it has not been tested on
-hardware.
+A MeshSat node can carry a RockBLOCK 9704 instead of a 9603. The node says which one it has,
+and with **Modem on the node** on Auto, the default, the app picks the matching driver; the
+card shows what the node says. Choose 9603 or 9704 only to override it. With a 9704, a message
+that sees no satellite within 150 seconds is cancelled in the modem and tried again later, so
+the modem never holds it twice. This was tested on the bench on 8 October 2026; no message has
+gone through a satellite yet.
+
+A RockBLOCK 9704 on its own is reached through an HC-05 or HC-06 Bluetooth serial adapter
+paired in Android's Bluetooth settings first. That code is in the app, but it has not been
+tested on hardware.
 
 ## Hub (optional)
 
