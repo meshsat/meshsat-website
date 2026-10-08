@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 131
-  latest_tag: "v2.19.11"
+  tags: 132
+  latest_tag: "v2.19.12"
   latest_tag_date: "2026-10-08"
-  latest_tag_anchor: "v21911-2026-10-08"
+  latest_tag_anchor: "v21912-2026-10-08"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.19.12 (2026-10-08)
+
+### Fixes
+
+- **iridium**: a 9704 message that fails leaves the link's state alone ([2d57d048](https://github.com/meshsat/meshsat-android/commit/2d57d0486bf19ad204d749e75389a70d7474f01a))
 
 ## v2.19.11 (2026-10-08)
 
