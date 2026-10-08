@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v2.19.7"
   latest_tag_date: "2026-10-03"
   latest_tag_anchor: "v2197-2026-10-03"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  unreleased_count: 1
+  unreleased_since: "2026-10-08"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-08"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,9 +23,11 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-10-08)
 
-No user-facing changes (2 commits of other types).
+### Features
+
+- **iridium**: the 9704 driver runs over the MeshSat node's pipe; Settings says which modem the node carries ([e7775cc7](https://github.com/meshsat/meshsat-android/commit/e7775cc794fea3c2810c751df0eea3b7eda5f1a6))
 
 ## v2.19.7 (2026-10-03)
 
