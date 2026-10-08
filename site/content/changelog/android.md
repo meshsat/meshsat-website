@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 128
-  latest_tag: "v2.19.8"
+  tags: 129
+  latest_tag: "v2.19.9"
   latest_tag_date: "2026-10-08"
-  latest_tag_anchor: "v2198-2026-10-08"
+  latest_tag_anchor: "v2199-2026-10-08"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.19.9 (2026-10-08)
+
+### Features
+
+- **iridium**: the node says which modem it carries; the app follows it ([8d6e7320](https://github.com/meshsat/meshsat-android/commit/8d6e73201241db75bf55774163c26e738b952a4e))
 
 ## v2.19.8 (2026-10-08)
 
