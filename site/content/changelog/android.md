@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 132
-  latest_tag: "v2.19.12"
+  tags: 133
+  latest_tag: "v2.19.13"
   latest_tag_date: "2026-10-08"
-  latest_tag_anchor: "v21912-2026-10-08"
+  latest_tag_anchor: "v21913-2026-10-08"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,12 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.19.13 (2026-10-08)
+
+### Fixes
+
+- **api**: the local API answers only adb and the app itself ([1ca2ec88](https://github.com/meshsat/meshsat-android/commit/1ca2ec886a211552b33a115073a37708755e6a8e))
 
 ## v2.19.12 (2026-10-08)
 
