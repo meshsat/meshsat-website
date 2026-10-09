@@ -1,6 +1,6 @@
 # Single-pair copper
 
-<ChannelStatus code="future-plan">Nothing is bought. This page describes a plan.</ChannelStatus>
+<ChannelStatus code="coming-soon">Two adapters are on their way to the bench. Nothing has been tested.</ChannelStatus>
 
 10BASE-T1L is Ethernet over a single twisted pair: 10 Mbit/s over up to 1,000 m of cable (IEEE
 802.3cg). Like [fiber](/transports/fiber) it has no radio in it, so it cannot be jammed or
@@ -13,9 +13,13 @@ harder.
 
 It carries IP, so Reticulum runs over it with no new code in the Bridge.
 
-## What we plan to test, and how
+## The hardware
 
-Nothing is ordered, and the adapters are not chosen. The plan, once they are:
+- Two USB adapters for 10BASE-T1L. Each one shows up in Linux as an ordinary USB network device,
+  handled by the kernel's standard driver for that class.
+- The cable described below.
+
+## What we plan to test, and how
 
 1. Check that the kit's kernel already has the adapter's driver. A kit's kernel is never changed
    for this: without the driver, the adapter stays a bench tool.
