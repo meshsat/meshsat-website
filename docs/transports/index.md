@@ -53,7 +53,7 @@ compatibility with physical radios or every third-party client.
 | Channel | Status | Proven so far |
 |---|---|---|
 | [Fiber](/transports/fiber) | <ChannelStatus code="coming-soon" inline /> | Nothing |
-| [Single-pair copper](/transports/single-pair-ethernet) | <ChannelStatus code="future-plan" inline /> | Nothing |
+| [Single-pair copper](/transports/single-pair-ethernet) | <ChannelStatus code="coming-soon" inline /> | Nothing |
 
 ## Short range
 
