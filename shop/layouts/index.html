@@ -95,8 +95,15 @@
                         <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="you@example.org" inputmode="email">
                         <button type="submit" class="btn btn-primary" data-umami-event="notify-signup">Notify me</button>
                     </div>
+                    {{/* ALTCHA: listmonk's self-hosted proof-of-work check. The widget script and
+                         the challenge both come from list.meshsat.net (ours, no third party); the
+                         solution travels in the form's `altcha` field and listmonk verifies it.
+                         Solves itself when the e-mail field is focused; nothing to click. */}}
+                    <altcha-widget challengeurl="https://list.meshsat.net/api/public/captcha/altcha" auto="onfocus" hidelogo hidefooter></altcha-widget>
+                    <noscript><p class="offer-small">The check needs JavaScript. Without it, write to <a href="mailto:{{ $p.support_email }}">{{ $p.support_email }}</a>.</p></noscript>
                     <p class="offer-small">One mail to confirm your address, then news about pre-orders only. Unsubscribe in every mail. <a href="/privacy/">Privacy notice</a>.</p>
                 </form>
+                <script type="module" src="https://list.meshsat.net/public/static/altcha.umd.js" async defer></script>
                 {{ else }}
                 <p class="notify-label">Notify me when pre-orders open</p>
                 <a href="mailto:{{ $p.support_email }}?subject=MeshSat%20Compact%20v2%3A%20notify%20me%20when%20pre-orders%20open" class="btn btn-primary btn-block" data-umami-event="notify-mail">Notify me by e-mail</a>
