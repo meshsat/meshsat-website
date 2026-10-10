@@ -20,4 +20,4 @@ resources:
 
 images:
   - name: ghcr.io/meshsat/meshsat-shop-site
-    digest: sha256:0000000000000000000000000000000000000000000000000000000000000000  # placeholder until the first main pipeline pins a build
+    digest: sha256:02ca799a4487b5f01ecdbd861ff080288e6eedd6e95e1d4fdfefcf5daacb3789  # main d6b1062f (2026-10-10)
