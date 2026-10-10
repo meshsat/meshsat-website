@@ -268,6 +268,106 @@ docker:install:
 # -----------------------------------------------------------------------------
 # DEPLOY — Trigger AWX deployment
 # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# shop.meshsat.net on the notrf01 cluster (MESHSAT-1521): the built shop site on
+# nginx-unprivileged, pushed to the private ghcr.io/meshsat registry, scanned,
+# and its digest pinned into k8s/kustomization.yaml for Argo CD.
+# -----------------------------------------------------------------------------
+package:shop-site:
+  stage: docker
+  image: docker:28
+  tags: [docker]
+  needs:
+    - job: build:shop
+      artifacts: true
+    - job: verify:site
+  before_script:
+    - echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+  script:
+    - docker build -f Dockerfile.shop -t ghcr.io/meshsat/meshsat-shop-site:${CI_COMMIT_SHORT_SHA} -t ghcr.io/meshsat/meshsat-shop-site:latest .
+    - docker push ghcr.io/meshsat/meshsat-shop-site:${CI_COMMIT_SHORT_SHA}
+    - docker push ghcr.io/meshsat/meshsat-shop-site:latest
+    - docker inspect --format='{{index .RepoDigests 0}}' ghcr.io/meshsat/meshsat-shop-site:${CI_COMMIT_SHORT_SHA} > shop-site-digest.txt
+    - cat shop-site-digest.txt
+  artifacts:
+    paths: [shop-site-digest.txt]
+    expire_in: 1 week
+  rules: !reference [.rules-main-deploy, rules]
+
+trivy:shop-site:
+  stage: deploy
+  image:
+    name: aquasec/trivy:0.65.0
+    entrypoint: [""]
+  tags: [docker]
+  needs:
+    - job: package:shop-site
+      artifacts: true
+  variables:
+    TRIVY_USERNAME: "$GHCR_USER"
+    TRIVY_PASSWORD: "$GHCR_TOKEN"
+  script:
+    - trivy image --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed "$(cat shop-site-digest.txt)"
+  rules: !reference [.rules-main-deploy, rules]
+
+# GitOps deploy of the cluster copy: writes the digest into k8s/kustomization.yaml;
+# Argo CD rolls it out. Needs the file variable K8S_PIN_SSH_KEY (deploy key 11).
+bump_k8s_pin:
+  stage: deploy
+  interruptible: false
+  resource_group: k8s-pin-bump
+  image: docker:28
+  tags: [docker]
+  cache: []
+  variables:
+    GIT_STRATEGY: none
+    PIN_REMOTE: "git@nllei01gitlab01.nuclearlighters.net:products/meshsat/meshsat-website.git"
+    SHOP_SITE_IMAGE: "ghcr.io/meshsat/meshsat-shop-site"
+  needs:
+    - job: trivy:shop-site
+      artifacts: false
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: never
+    - if: $CI_COMMIT_BRANCH == "main"
+      exists:
+        - k8s/kustomization.yaml
+  retry:
+    max: 1
+    when: [runner_system_failure]
+  before_script:
+    - apk add --no-cache bash git openssh-client python3
+    - docker info >/dev/null 2>&1 || { echo "FATAL - host docker.sock not reachable"; exit 1; }
+    - echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+  script:
+    - |
+      bash -euo pipefail -c '
+      [ -n "${K8S_PIN_SSH_KEY:-}" ] || { echo "FATAL - K8S_PIN_SSH_KEY file variable not set on this project"; exit 1; }
+      install -m 600 "$K8S_PIN_SSH_KEY" /tmp/pin_key
+      export GIT_SSH_COMMAND="ssh -i /tmp/pin_key -o StrictHostKeyChecking=accept-new"
+      git clone --depth 200 --branch main "$PIN_REMOTE" /tmp/pin-repo
+      cd /tmp/pin-repo
+      git config user.name "k8s-pin-bump"
+      git config user.email "k8s-pin-bump@nuclearlighters.net"
+      pinned=$(git log -100 --pretty=%b -- k8s/kustomization.yaml \
+               | sed -n "s|^Source: .*@\([0-9a-f]\{40\}\).*|\1|p" | sed -n 1p)
+      if [ -n "$pinned" ] && [ "$pinned" != "$CI_COMMIT_SHA" ] \
+         && git cat-file -e "${pinned}^{commit}" 2>/dev/null \
+         && git merge-base --is-ancestor "$CI_COMMIT_SHA" "$pinned"; then
+        echo "refusing to pin $CI_COMMIT_SHORT_SHA: it is an ancestor of the already-pinned $pinned"
+        exit 0
+      fi
+      digest=$(docker buildx imagetools inspect "$SHOP_SITE_IMAGE:$CI_COMMIT_SHORT_SHA" --format "{{json .Manifest}}" \
+               | python3 -c "import json,sys; print(json.load(sys.stdin)[\"digest\"])")
+      rc=0
+      python3 k8s/scripts/bump-pin.py k8s/kustomization.yaml "$SHOP_SITE_IMAGE" "$digest" "main $CI_COMMIT_SHORT_SHA ($(date -u +%Y-%m-%d))" || rc=$?
+      if [ "$rc" = "3" ]; then echo "already pinned"; exit 0; fi
+      [ "$rc" = "0" ] || exit "$rc"
+      git add k8s/kustomization.yaml
+      git commit -m "chore(k8s): pin meshsat-shop-site ${CI_COMMIT_SHORT_SHA} [skip ci]" -m "Source: ${CI_PROJECT_URL}/-/commit/${CI_COMMIT_SHA}@${CI_COMMIT_SHA}"
+      git push origin HEAD:main
+      '
+
 deploy:
   stage: deploy
   image: $HUGO_IMAGE
