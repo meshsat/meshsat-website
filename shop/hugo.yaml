@@ -1,0 +1,103 @@
+# shop.meshsat.net: MeshSat Compact v2 (MSC-2). A second Hugo site in this repo,
+# served by the meshsat-website nginx image as a second server block
+# (MESHSAT-1517). One page, one switch: `ordering` below.
+baseURL: "https://shop.meshsat.net/"
+title: "MeshSat Compact v2"
+languageCode: "en"
+defaultContentLanguage: en
+enableRobotsTXT: true
+disableKinds:
+  - taxonomy
+  - term
+  - RSS
+
+params:
+  description: "MeshSat Compact v2 (MSC-2): a Meshtastic-compatible LoRa radio and an Iridium satellite modem in one sealed case. One satellite gateway for the whole team. Built to order in Leiden."
+  # off: the public page collects e-mail sign-ups only; no checkout URL is
+  # rendered anywhere (verify-site.sh checks the built HTML). on: the Buy
+  # button and the online withdrawal function appear. Owner's switch.
+  ordering: "off"
+  launch_price: "EUR 1.111"
+  later_price: "EUR 1.800"
+  vat_note: "incl. 21 % VAT"
+  ship_window: "December 2026 to January 2027"
+  # listmonk public form (MESHSAT-1519). Empty until the list exists: the page
+  # then offers support@ instead of a form that would post nowhere.
+  list_form_url: ""
+  list_uuid: ""
+  # Kickstarter: empty = no link. Set the pre-launch page to show "Follow on
+  # Kickstarter" beside the e-mail form; kickstarter_live flips the wording to
+  # "Back us on Kickstarter". Never a pledge amount here.
+  kickstarter_url: ""
+  kickstarter_live: false
+  # Rendered only when ordering is on (MESHSAT-1518 builds these on the Hub).
+  checkout_url: "https://hub.meshsat.net/shop/msc-2"
+  withdraw_url: "https://hub.meshsat.net/shop/withdraw"
+  conformity_url: "https://docs.meshsat.net/conformity/msc-2/"
+  node_docs_url: "https://docs.meshsat.net/node/"
+  intro_film: "Q-JKNwWlzpE"
+  intro_film_time: "2:02"
+  support_email: "support@meshsat.net"
+  site_url: "https://meshsat.net"
+  docs_url: "https://docs.meshsat.net"
+  github: "https://github.com/meshsat"
+
+# Fonts and the brand marks come from the main site: one copy in git, mounted
+# into this build (Hugo allows a source outside the project). Nothing else of
+# site/static is included.
+module:
+  mounts:
+    - source: content
+      target: content
+    - source: layouts
+      target: layouts
+    - source: assets
+      target: assets
+    - source: static
+      target: static
+    - source: ../site/static/fonts
+      target: static/fonts
+    - source: ../site/static/images
+      target: static/images
+      includeFiles:
+        - "/meshsat-mark-dark.png"
+        - "/meshsat-mark-light.png"
+        - "/og-image.jpg"
+        - "/video-poster.jpg"
+    - source: ../site/static
+      target: static
+      includeFiles:
+        - "/favicon.svg"
+        - "/apple-touch-icon.png"
+        - "/.well-known/security.txt"
+
+menu:
+  main:
+    - name: "Conformity"
+      url: "https://docs.meshsat.net/conformity/msc-2/"
+      weight: 1
+      params:
+        external: true
+    - name: "Docs"
+      url: "https://docs.meshsat.net/node/"
+      weight: 2
+      params:
+        external: true
+    - name: "meshsat.net"
+      url: "https://meshsat.net"
+      weight: 3
+      params:
+        external: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+minify:
+  disableHTML: false
+  minifyOutput: true
+  tdewolff:
+    html:
+      keepComments: true
+      keepWhitespace: false
