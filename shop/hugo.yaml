@@ -31,8 +31,8 @@ params:
   kickstarter_url: ""
   kickstarter_live: false
   # Rendered only when ordering is on (MESHSAT-1518 builds these on the Hub).
-  checkout_url: "https://hub.meshsat.net/shop/msc-2"
-  withdraw_url: "https://hub.meshsat.net/shop/withdraw"
+  checkout_url: "https://order.meshsat.net/shop/MSC-2"
+  withdraw_url: "https://order.meshsat.net/shop/withdraw"
   conformity_url: "https://docs.meshsat.net/conformity/msc-2/"
   node_docs_url: "https://docs.meshsat.net/node/"
   intro_film: "Q-JKNwWlzpE"
