@@ -23,8 +23,8 @@ params:
   ship_window: "December 2026 to January 2027"
   # listmonk public form (MESHSAT-1519). Empty until the list exists: the page
   # then offers support@ instead of a form that would post nowhere.
-  list_form_url: ""
-  list_uuid: ""
+  list_form_url: "https://list.meshsat.net/subscription/form"
+  list_uuid: "92bb345f-c9ec-4b5e-91e2-ad24d5277227"
   # Kickstarter: empty = no link. Set the pre-launch page to show "Follow on
   # Kickstarter" beside the e-mail form; kickstarter_live flips the wording to
   # "Back us on Kickstarter". Never a pledge amount here.
