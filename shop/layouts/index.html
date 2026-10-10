@@ -82,8 +82,21 @@
                 <p class="offer-later">{{ $p.later_price }} after launch</p>
                 <p class="offer-ship">Expected to ship {{ $p.ship_window }}. EU countries only.</p>
                 {{ if $ordering }}
-                <a href="{{ $p.checkout_url }}" class="btn btn-primary btn-block" data-umami-event="buy-click">Order a MeshSat Compact v2</a>
-                <p class="offer-small">You pay on hub.meshsat.net, our order system, through Stripe. A pre-order takes a deposit of at most half the price; the rest is invoiced before dispatch. <a href="/terms/">Terms of sale</a> and <a href="/withdrawal/">right of withdrawal</a>.</p>
+                {{/* The destination first: shipping is priced live for that country on the
+                     order page (order.meshsat.net asks the carrier what the parcel costs today),
+                     and the address form there accepts only that country. */}}
+                {{ $countries := slice (dict "cc" "AT" "name" "Austria") (dict "cc" "BE" "name" "Belgium") (dict "cc" "BG" "name" "Bulgaria") (dict "cc" "HR" "name" "Croatia") (dict "cc" "CY" "name" "Cyprus") (dict "cc" "CZ" "name" "Czechia") (dict "cc" "DK" "name" "Denmark") (dict "cc" "EE" "name" "Estonia") (dict "cc" "FI" "name" "Finland") (dict "cc" "FR" "name" "France") (dict "cc" "DE" "name" "Germany") (dict "cc" "GR" "name" "Greece") (dict "cc" "HU" "name" "Hungary") (dict "cc" "IE" "name" "Ireland") (dict "cc" "IT" "name" "Italy") (dict "cc" "LV" "name" "Latvia") (dict "cc" "LT" "name" "Lithuania") (dict "cc" "LU" "name" "Luxembourg") (dict "cc" "MT" "name" "Malta") (dict "cc" "NL" "name" "Netherlands") (dict "cc" "PL" "name" "Poland") (dict "cc" "PT" "name" "Portugal") (dict "cc" "RO" "name" "Romania") (dict "cc" "SK" "name" "Slovakia") (dict "cc" "SI" "name" "Slovenia") (dict "cc" "ES" "name" "Spain") (dict "cc" "SE" "name" "Sweden") }}
+                <form class="notify order-form" method="get" action="{{ $p.checkout_url }}">
+                    <label for="ship-to" class="notify-label">Ship to</label>
+                    <div class="notify-row">
+                        <select id="ship-to" name="to" required>
+                            <option value="">Choose a country</option>
+                            {{ range sort $countries "name" }}<option value="{{ .cc }}">{{ .name }}</option>{{ end }}
+                        </select>
+                        <button type="submit" class="btn btn-primary" data-umami-event="buy-click">Order a MeshSat Compact v2</button>
+                    </div>
+                </form>
+                <p class="offer-small">You pay on order.meshsat.net, our order system, through Stripe. Shipping is priced for your country on the order page, insured and signed for. A pre-order takes a deposit of at most half the price; the rest is invoiced before dispatch. <a href="/terms/">Terms of sale</a> and <a href="/withdrawal/">right of withdrawal</a>.</p>
                 {{ else }}
                 {{ if $p.list_form_url }}
                 <form class="notify" method="post" action="{{ $p.list_form_url }}">
