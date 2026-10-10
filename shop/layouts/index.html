@@ -88,6 +88,8 @@
                 {{ if $p.list_form_url }}
                 <form class="notify" method="post" action="{{ $p.list_form_url }}">
                     <input type="hidden" name="l" value="{{ $p.list_uuid }}">
+                    {{/* listmonk's honeypot: a bot that fills every field is refused. Stays empty. */}}
+                    <input type="text" name="nonce" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="nonce">
                     <label for="notify-email" class="notify-label">Notify me when pre-orders open</label>
                     <div class="notify-row">
                         <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="you@example.org" inputmode="email">
