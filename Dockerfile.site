@@ -2,4 +2,7 @@ ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 
 COPY site/public/ /usr/share/nginx/html/
+# shop.meshsat.net: a second Hugo site served by a second server block of the
+# same nginx (MESHSAT-1517). Fonts and marks are mounted into its build.
+COPY shop/public/ /usr/share/nginx/html-shop/
 COPY nginx-site.conf /etc/nginx/nginx.conf

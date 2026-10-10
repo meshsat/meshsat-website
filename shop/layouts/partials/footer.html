@@ -1,0 +1,42 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo">
+                    <img src="/images/meshsat-mark-dark.png" alt="" width="47" height="28" class="logo-mark logo-mark-dark">
+                    <img src="/images/meshsat-mark-light.png" alt="" width="47" height="28" class="logo-mark logo-mark-light">
+                    <span class="logo-text"><span class="logo-mesh">Mesh</span><span class="logo-sat">Sat</span></span>
+                </a>
+                <p>Keeping people connected when the network is not.</p>
+                {{/* The seller's identity, on every page (BW 6:230m; the web shop's legal block, MESHSAT-1517). */}}
+                <address class="footer-identity">
+                    Elli.Z.G., trading as MeshSat<br>
+                    Floresstraat 17, 2315 HP Leiden, the Netherlands<br>
+                    KvK 99812584 &middot; VAT NL005411721B30<br>
+                    <a href="mailto:{{ .Site.Params.support_email }}">{{ .Site.Params.support_email }}</a>
+                </address>
+            </div>
+            <div class="footer-col">
+                <p class="footer-heading">Buying</p>
+                <ul>
+                    <li><a href="/terms/">Terms of sale</a></li>
+                    <li><a href="/withdrawal/">Right of withdrawal</a></li>
+                    <li><a href="/privacy/">Privacy notice</a></li>
+                    <li><a href="/legal/">Seller identity</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <p class="footer-heading">The project</p>
+                <ul>
+                    <li><a href="{{ .Site.Params.site_url }}" target="_blank" rel="noopener">meshsat.net</a></li>
+                    <li><a href="{{ .Site.Params.node_docs_url }}" target="_blank" rel="noopener">Node documentation</a></li>
+                    <li><a href="{{ .Site.Params.conformity_url }}" target="_blank" rel="noopener">Conformity documents</a></li>
+                    <li><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Source on GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {{ now.Year }} <a href="https://portfolio.ellizg.com/" target="_blank" rel="noopener">Elli</a> &amp; <a href="https://kyriakos.papadopoulos.tech/" target="_blank" rel="noopener">Kyriakos</a>. MeshSat is a prototype and not an emergency service. Meshtastic and Iridium are named only to identify compatible products.</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="section error-page">
+    <div class="container error-content">
+        <p class="error-code">404</p>
+        <h1 class="error-title">Signal lost</h1>
+        <p class="error-detail">That page does not exist, or it has moved.</p>
+        <p class="error-log" role="img" aria-label="Routing log: no route to this page, delivery failed."><span class="trace-if">router</span><span>no route to this page</span><span class="trace-state fail">FAILED</span></p>
+        <div class="actions">
+            <a href="/" class="btn btn-primary">MeshSat Compact v2</a>
+            <a href="{{ .Site.Params.site_url }}" class="btn btn-outline">meshsat.net</a>
+        </div>
+    </div>
+</section>
+{{ end }}

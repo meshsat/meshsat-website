@@ -6,9 +6,12 @@
 # language/viewport combinations while nothing tested whether its own
 # instructions work, or whether its claims still match the README.
 #
-# Usage: scripts/verify-site.sh [built-site-dir]   (default: site/public)
+# Usage: scripts/verify-site.sh [built-site-dir] [built-shop-dir]
+#        (defaults: site/public and shop/public; the shop checks run only when
+#        that directory exists)
 set -uo pipefail
 PUB="${1:-site/public}"
+SHOP="${2:-shop/public}"
 FAIL=0
 fail() { echo "  [FAIL] $*"; FAIL=1; }
 pass() { echo "  [ok]   $*"; }
@@ -76,6 +79,37 @@ for t in bridge hub android ios fieldkit; do
   N=$(grep -o '<h2' "$f" | wc -l | tr -d ' ')
   if [ "$N" -ge 1 ]; then pass "changelog/$t: $N section heading(s)"; else fail "changelog/$t: no section headings"; fi
 done
+
+echo "=== 6. shop.meshsat.net: dashes, status vocabulary, and no checkout while ordering is off ==="
+# The shop is built from shop/ (MESHSAT-1517). With `ordering: "off"` in
+# shop/hugo.yaml no checkout URL may reach the public page: the owner's
+# switch is the only way ordering opens, and this is the check that it held.
+if [ -d "$SHOP" ]; then
+  for f in "$SHOP/index.html" "$SHOP"/*/index.html "$SHOP/404.html"; do
+    [ -f "$f" ] || continue
+    N=$( { grep -o -e '—' -e '–' "$f" || true; } | wc -l | tr -d ' ' )
+    if [ "$N" -eq 0 ]; then pass "no em/en dashes in shop/${f#$SHOP/}"
+    else fail "$N em/en dash(es) in shop/${f#$SHOP/}"; fi
+  done
+  N=$(grep -o '>Stable<' "$SHOP/index.html" 2>/dev/null | wc -l | tr -d ' ')
+  [ "$N" -eq 0 ] && pass "shop: no 'Stable' badges" || fail "shop: $N 'Stable' badge(s)"
+  if grep -q 'ordering: "off"' shop/hugo.yaml 2>/dev/null; then
+    if grep -rq 'hub.meshsat.net/shop' "$SHOP" --include='*.html'; then
+      fail "shop: ordering is off but a checkout URL is in the built HTML"
+    else
+      pass "shop: ordering is off and no checkout URL is reachable"
+    fi
+  else
+    pass "shop: ordering is on (owner's switch)"
+  fi
+  if grep -rqi 'registered trademark\|®' "$SHOP" --include='*.html'; then
+    fail "shop: a registered-trademark claim (BOIP 1556109 is under examination)"
+  else
+    pass "shop: no registered-trademark claim"
+  fi
+else
+  pass "no shop build to check ($SHOP missing)"
+fi
 
 echo
 if [ "$FAIL" -eq 0 ]; then echo "verify-site: PASSED"; else echo "verify-site: FAILED"; fi

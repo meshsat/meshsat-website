@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{- $p := .Site.Params -}}
+<section class="section page-content">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.updated }}<p class="page-updated">Last updated: {{ . }}</p>{{ end }}
+        {{ .Content }}
+        <h2 id="withdraw">Withdraw from contract here</h2>
+        {{ if eq $p.ordering "on" }}
+        <p>Fill in the form; you confirm on the next page. We acknowledge receipt by e-mail with the date and time, and the refund follows the rules above.</p>
+        <form class="withdraw-form" method="post" action="{{ $p.withdraw_url }}">
+            <label for="w-name">Your name</label>
+            <input type="text" id="w-name" name="name" required autocomplete="name">
+            <label for="w-order">Order or invoice number</label>
+            <input type="text" id="w-order" name="order" required placeholder="MSH2026-0002">
+            <label for="w-email">E-mail address</label>
+            <input type="email" id="w-email" name="email" required autocomplete="email">
+            <label for="w-reason">Reason (optional)</label>
+            <textarea id="w-reason" name="reason" rows="3"></textarea>
+            <button type="submit" class="btn btn-primary">Withdraw from contract here</button>
+        </form>
+        <p lang="nl"><strong>Hier de overeenkomst herroepen:</strong> vul het formulier in en bevestig op de volgende pagina. U ontvangt een ontvangstbevestiging per e-mail met datum en tijd.</p>
+        {{ else }}
+        <p>Ordering is not open yet, so there is nothing to withdraw from. The online withdrawal function appears here, labelled "Withdraw from contract here", from the day ordering opens, and stays available during the whole withdrawal period.</p>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
