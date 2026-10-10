@@ -228,8 +228,6 @@ docker:site:
   needs:
     - job: build:site
       artifacts: true
-    - job: build:shop
-      artifacts: true
     - job: verify:site
   rules: !reference [.rules-main-deploy, rules]
 
