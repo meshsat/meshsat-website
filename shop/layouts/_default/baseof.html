@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+   MeshSat Compact v2 (MSC-2). shop.meshsat.net
+   Keeping people connected when the network is not. https://meshsat.net
+-->
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    {{/* The 404 page is the body of every 404 and names no URL of its own (MESHSAT-1184). */}}
+    {{ if eq .Kind "404" }}<meta name="robots" content="noindex">
+    {{ else }}<link rel="canonical" href="{{ .Permalink }}">
+    {{ end }}
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}: one satellite gateway for the whole team{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+    {{ if ne .Kind "404" }}<meta property="og:url" content="{{ .Permalink }}">{{ end }}
+    <meta property="og:site_name" content="MeshSat">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="{{ "/images/og-image.jpg" | absURL }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@meshsat">
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+    <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="twitter:image" content="{{ "/images/og-image.jpg" | absURL }}">
+    <title>{{ if .IsHome }}{{ .Site.Title }}: one satellite gateway for the whole team{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <script>
+        (function() {
+            var stored = null;
+            try { stored = localStorage.getItem('meshsat-theme'); } catch (e) {}
+            if (stored) {
+                document.documentElement.setAttribute('data-theme', stored);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/ibm-plex-mono-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+    {{ $css := resources.Get "css/shop.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ partial "analytics.html" . }}
+    {{ if .IsHome }}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "MeshSat Compact v2 (MSC-2)",
+        "description": {{ .Site.Params.description }},
+        "brand": { "@type": "Brand", "name": "MeshSat" },
+        "manufacturer": { "@type": "Organization", "name": "Elli.Z.G., trading as MeshSat", "url": "https://meshsat.net" },
+        "url": "https://shop.meshsat.net/",
+        "image": {{ "/images/msc2-render-assembled-v0-6.webp" | absURL }}
+    }
+    </script>
+    {{ end }}
+    {{ block "head" . }}{{ end }}
+</head>
+<body>
+    {{ partial "header.html" . }}
+    <main id="main-content">
+        {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    {{ $js := resources.Get "js/shop.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}"></script>
+</body>
+</html>

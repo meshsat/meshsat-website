@@ -145,6 +145,21 @@ build:site:
     expire_in: 1 hour
   rules: !reference [.rules-main-deploy, rules]
 
+# shop.meshsat.net: the second Hugo site in shop/, served by the site image's
+# second server block (MESHSAT-1517). Fonts and marks are mounted from site/.
+build:shop:
+  stage: build
+  image: $HUGO_IMAGE
+  tags: [docker]
+  script:
+    - cd shop
+    - hugo --minify --gc --environment production
+  artifacts:
+    paths:
+      - shop/public/
+    expire_in: 1 hour
+  rules: !reference [.rules-main-deploy, rules]
+
 build:docs:
   stage: build
   image: $NODE_IMAGE
@@ -170,9 +185,11 @@ verify:site:
   image: $HUGO_IMAGE
   tags: [docker]
   script:
-    - ./scripts/verify-site.sh site/public
+    - ./scripts/verify-site.sh site/public shop/public
   needs:
     - job: build:site
+      artifacts: true
+    - job: build:shop
       artifacts: true
   rules: !reference [.rules-main-deploy, rules]
 
@@ -210,6 +227,8 @@ docker:site:
     - rm -rf public/
   needs:
     - job: build:site
+      artifacts: true
+    - job: build:shop
       artifacts: true
     - job: verify:site
   rules: !reference [.rules-main-deploy, rules]

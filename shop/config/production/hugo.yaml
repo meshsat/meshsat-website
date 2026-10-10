@@ -1,0 +1,6 @@
+# Umami, self-hosted. The meshsat.net website id until the shop has its own
+# (MESHSAT-1517: ask the Umami admin for a "shop.meshsat.net" website and put
+# its id here, so the campaign traffic is its own number).
+params:
+  umami_website_id: "8870aeb6-415e-4d44-a07d-95aae5f5a696"
+  umami_url: "https://analytics.cubeos.app"

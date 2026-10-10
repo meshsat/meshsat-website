@@ -1,0 +1,129 @@
+{{ define "main" }}
+{{- $p := .Site.Params -}}
+{{- $ordering := eq $p.ordering "on" -}}
+{{/* The product page: a spec sheet, not a product card. Prose left, the readout
+     right in the site's artifact chrome. The action block is the one loud
+     element and composes from the params: e-mail sign-up (always), the
+     Kickstarter link when set, Buy only with ordering on (MESHSAT-1517). */}}
+<section class="section product">
+    <div class="container product-grid">
+        <div class="product-head">
+            <p class="status-pill"><span class="dot" aria-hidden="true"></span>Pilot unit, built to order. Prototype design.</p>
+            <h1 class="product-title">A Meshtastic-compatible LoRa radio and an Iridium satellite modem in one sealed case.</h1>
+            <p class="product-lead">One satellite gateway for the whole team.</p>
+
+            <figure class="render">
+                <img src="/images/msc2-render-assembled-v0-6.webp" alt="Design render of the MeshSat Compact v2: an orange rectangular case with a satellite antenna and a LoRa antenna on one end" width="1006" height="638" fetchpriority="high">
+                <figcaption>Design render of the enclosure, version 0.6. The first printed cases are being made in Leiden; a photograph replaces this render when a unit exists.</figcaption>
+            </figure>
+        </div>
+
+        <div class="product-copy">
+            <div class="prose">
+                <h2>What it does</h2>
+                <p>Compact v2 puts a Meshtastic-compatible LoRa radio and a RockBLOCK 9704 Iridium satellite modem in one sealed, 3D-printed case. It is designed as the satellite gateway for a team: every Meshtastic-compatible radio in LoRa range reaches the Iridium network through this one box, so the team buys one gateway and pays one airtime line instead of a satellite messenger and a plan for every person.</p>
+                <p>A phone with the MeshSat app for Android or iOS connects to the unit over Bluetooth and gets both radios. Without a phone, the unit routes its satellite channel on its own: a text typed on any radio in the mesh goes out over Iridium, and the reply comes back the same way.</p>
+                <p>Messages up to 100 kB travel over Iridium IMT. The quick-message button on the panel sends a preset message to a preset contact. There is no rescue service behind it.</p>
+
+                <h2>What has been tested, and what has not</h2>
+                <p>The design is a prototype. The node firmware with the RockBLOCK 9704 has been tested on the bench: the modem answers, registers and accepts a text, and the node routes a text from the mesh into the modem with no phone involved. No satellite message has been sent from a compact v2 yet. The earlier node, with a RockBLOCK 9603, has sent and received satellite messages from a garden. Range, battery life and the water rating of the case are not measured. The full record is the proven table in the <a href="{{ $p.node_docs_url }}" target="_blank" rel="noopener">node documentation</a>; this page says no more than it does.</p>
+
+                <h2>What it is not</h2>
+                <p>MeshSat is not an emergency service and the unit is not a distress device. Do not rely on it to call for help. Message delivery is best effort: mesh radio and satellite links fail for reasons nobody controls, and nobody is watching on your behalf. Every satellite session is billed by the airtime provider, even one that only checks for new messages.</p>
+
+                <h2 id="box">What is in the box</h2>
+                <ul>
+                    <li>The unit: a LILYGO T-Beam Supreme over a Ground Control RockBLOCK 9704-SMA in the printed ASA case, with the display window, the quick-message button, two antenna sockets and a sealed USB-C socket</li>
+                    <li>The helical Iridium antenna and the 868 MHz LoRa antenna</li>
+                    <li>One 18650 Li-ion cell, 3.400 mAh</li>
+                    <li>The instructions and safety leaflet and the EU declaration of conformity, in print</li>
+                </ul>
+                <figure class="render render-exploded">
+                    <img src="/images/msc2-render-exploded-v0-6.webp" alt="Exploded design render of the MeshSat Compact v2: lid, radio board, separator, modem, body and carry plate, with a ruler and a 2 euro coin for scale" width="1034" height="1277" loading="lazy">
+                    <figcaption>Exploded render of the same design: lid, radio, separator, modem, body, carry plate. Ruler in millimetres, 2 euro coin for scale.</figcaption>
+                </figure>
+
+                <h2>What you need besides the box</h2>
+                <ul>
+                    <li>An Iridium IMT line for the modem, rented from Ground Control and billed by them. One line serves the whole team.</li>
+                    <li>A Meshtastic-compatible LoRa radio for each person who sends from the mesh. Any will do; the unit itself is one.</li>
+                    <li>The MeshSat app for Android or iOS, if you want to use the unit from a phone. The app is free and open source.</li>
+                </ul>
+
+                <h2 id="ships">How it ships</h2>
+                <p>Built to order in Leiden, the Netherlands, and shipped to addresses in the European Union only. Expected shipping window: {{ $p.ship_window }}.{{ if $ordering }} Shipping cost and delivery time per country are shown below, before you order.{{ end }}</p>
+                <p>Every unit ships with its EU declaration of conformity and its instructions and safety leaflet. Both are published, every edition, at <a href="{{ $p.conformity_url }}" target="_blank" rel="noopener">docs.meshsat.net/conformity/msc-2/</a>, the address printed on the unit's label.</p>
+
+                <h2>Open source</h2>
+                <p>The firmware, the enclosure and the apps are open source: GPL-3.0 for the software, CERN-OHL-S-2.0 for the hardware. Everything is on <a href="{{ $p.github }}" target="_blank" rel="noopener">github.com/meshsat</a>. You can build one yourself; buying one assembled pays for the build, the testing and the documents.</p>
+            </div>
+        </div>
+
+        <aside class="product-side">
+            <div class="artifact readout-card">
+                <div class="artifact-head"><span>MSC-2</span><span>MeshSat Compact v2</span></div>
+                <dl class="readout">
+                    <div><dt>Model</dt><dd>MSC-2</dd></div>
+                    <div><dt>Mesh</dt><dd>Meshtastic-compatible LoRa, 868 MHz</dd></div>
+                    <div><dt>Satellite</dt><dd>Iridium IMT, RockBLOCK 9704</dd></div>
+                    <div><dt>Phone</dt><dd>Bluetooth, MeshSat app</dd></div>
+                    <div><dt>Battery</dt><dd>one 18650 cell, 3.400 mAh</dd></div>
+                    <div><dt>Charging</dt><dd>USB-C, 5 V 1 A</dd></div>
+                    <div><dt>Size</dt><dd>146 x 63 x 63 mm</dd></div>
+                    <div><dt>Case</dt><dd>3D-printed ASA, O-ring sealed</dd></div>
+                    <div><dt>Airtime</dt><dd>one Iridium line per team</dd></div>
+                    <div><dt>Licence</dt><dd>GPL-3.0, CERN-OHL-S-2.0</dd></div>
+                    <div><dt>Status</dt><dd>pilot unit, built to order</dd></div>
+                </dl>
+            </div>
+
+            <div class="offer" id="offer">
+                <p class="offer-price"><span class="offer-label">Launch price</span><span class="offer-amount">{{ $p.launch_price }}</span><span class="offer-note">{{ $p.vat_note }}</span></p>
+                <p class="offer-later">{{ $p.later_price }} after launch</p>
+                <p class="offer-ship">Expected to ship {{ $p.ship_window }}. EU countries only.</p>
+                {{ if $ordering }}
+                <a href="{{ $p.checkout_url }}" class="btn btn-primary btn-block" data-umami-event="buy-click">Order a MeshSat Compact v2</a>
+                <p class="offer-small">You pay on hub.meshsat.net, our order system, through Stripe. A pre-order takes a deposit of at most half the price; the rest is invoiced before dispatch. <a href="/terms/">Terms of sale</a> and <a href="/withdrawal/">right of withdrawal</a>.</p>
+                {{ else }}
+                {{ if $p.list_form_url }}
+                <form class="notify" method="post" action="{{ $p.list_form_url }}">
+                    <input type="hidden" name="l" value="{{ $p.list_uuid }}">
+                    <label for="notify-email" class="notify-label">Notify me when pre-orders open</label>
+                    <div class="notify-row">
+                        <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="you@example.org" inputmode="email">
+                        <button type="submit" class="btn btn-primary" data-umami-event="notify-signup">Notify me</button>
+                    </div>
+                    <p class="offer-small">One mail to confirm your address, then news about pre-orders only. Unsubscribe in every mail. <a href="/privacy/">Privacy notice</a>.</p>
+                </form>
+                {{ else }}
+                <p class="notify-label">Notify me when pre-orders open</p>
+                <a href="mailto:{{ $p.support_email }}?subject=MeshSat%20Compact%20v2%3A%20notify%20me%20when%20pre-orders%20open" class="btn btn-primary btn-block" data-umami-event="notify-mail">Notify me by e-mail</a>
+                <p class="offer-small">We answer from {{ $p.support_email }} and write once when pre-orders open. <a href="/privacy/">Privacy notice</a>.</p>
+                {{ end }}
+                {{ end }}
+                {{ with $p.kickstarter_url }}
+                <a href="{{ . }}" class="btn btn-outline btn-block" target="_blank" rel="noopener" data-umami-event="kickstarter-click">{{ if $p.kickstarter_live }}Back us on Kickstarter{{ else }}Follow on Kickstarter{{ end }}</a>
+                {{ end }}
+            </div>
+
+            <figure class="video-frame">
+                <div class="video-head"><span>MeshSat-intro.mp4</span><span>{{ $p.intro_film_time }}</span></div>
+                <div class="video-media">
+                    <button type="button" class="video-play" onclick="playVideo(this)" data-umami-event="video-play" data-umami-event-film="{{ $p.intro_film }}" data-embed="https://www.youtube-nocookie.com/embed/{{ $p.intro_film }}?autoplay=1&amp;rel=0" data-name="MeshSat-intro.mp4" data-time="{{ $p.intro_film_time }}" aria-label="Play the MeshSat introduction film">
+                        <img src="/images/video-poster.jpg" alt="" width="1280" height="720" loading="lazy">
+                        <span class="video-play-glyph" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+                    </button>
+                </div>
+                <figcaption class="video-foot">What MeshSat does, in two minutes. Nothing loads from YouTube until you press play. <a href="https://www.youtube.com/watch?v={{ $p.intro_film }}" target="_blank" rel="noopener">Watch on YouTube</a></figcaption>
+            </figure>
+        </aside>
+    </div>
+</section>
+
+<dialog class="shot-dialog video-dialog" id="video-dialog" aria-labelledby="video-dialog-name">
+    <div class="shot-frame">
+        <div class="shot-head"><span id="video-dialog-name"></span><span class="shot-time" id="video-dialog-time"></span><button type="button" class="shot-close" onclick="this.closest('dialog').close()" aria-label="Close">&#10005;</button></div>
+        <div class="video-media" id="video-dialog-media"></div>
+    </div>
+</dialog>
+{{ end }}
