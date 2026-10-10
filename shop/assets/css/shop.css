@@ -211,6 +211,8 @@ p, li, dd, figcaption { text-wrap: pretty; }
 .notify-row { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
 .notify-row input { flex: 1 1 12rem; min-width: 0; }
 .notify .nonce { position: absolute; left: -10000px; width: 1px; height: 1px; opacity: 0; }
+/* The ALTCHA widget, in the offer's own tokens. */
+altcha-widget { display: block; --altcha-color-base: var(--color-bg); --altcha-color-border: var(--color-border-light); --altcha-color-text: var(--color-text); --altcha-color-border-focus: var(--color-primary); --altcha-border-width: 1px; --altcha-border-radius: 5px; --altcha-max-width: 100%; font-size: 0.875rem; }
 input[type="email"], input[type="text"], textarea {
     font: inherit; font-size: 1rem; color: var(--color-text); background: var(--color-bg);
     border: 1px solid var(--color-border-light); border-radius: var(--radius-md);
