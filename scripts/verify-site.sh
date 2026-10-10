@@ -94,7 +94,7 @@ if [ -d "$SHOP" ]; then
   N=$(grep -o '>Stable<' "$SHOP/index.html" 2>/dev/null | wc -l | tr -d ' ')
   [ "$N" -eq 0 ] && pass "shop: no 'Stable' badges" || fail "shop: $N 'Stable' badge(s)"
   if grep -q 'ordering: "off"' shop/hugo.yaml 2>/dev/null; then
-    if grep -rq 'hub.meshsat.net/shop' "$SHOP" --include='*.html'; then
+    if grep -rq 'order.meshsat.net/shop' "$SHOP" --include='*.html'; then
       fail "shop: ordering is off but a checkout URL is in the built HTML"
     else
       pass "shop: ordering is off and no checkout URL is reachable"
