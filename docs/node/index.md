@@ -74,6 +74,10 @@ The satellite results come from a garden with a limited view of the sky. There t
 
 The RockBLOCK needs an active Ground Control line rental and message credits. Every satellite session is billed, even one that only checks for new messages and sends nothing.
 
+## Conformity documents
+
+The compact v2 (model MSC-2) ships with an instructions and safety leaflet and an EU declaration of conformity. Both are published, every edition, at [docs.meshsat.net/conformity/msc-2/](/conformity/msc-2/), the address printed on each unit's label.
+
 ## Source
 
 - [meshsat/meshsat-esp32](https://github.com/meshsat/meshsat-esp32): hardware versions, wiring, bench tools, and every hardware fact with its source

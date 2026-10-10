@@ -145,6 +145,21 @@ export default defineConfig({
             { text: 'Overview', link: '/node/' },
             { text: 'Build a node', link: '/node/build' },
             { text: 'Iridium Bluetooth service', link: '/node/iridium-ble' },
+            { text: 'Compact v2 conformity', link: '/conformity/msc-2/' },
+          ],
+        },
+      ],
+
+      // The conformity page is the QR target printed on every MSC-2 label
+      // (MESHSAT-1508): its URL never moves. It shares the Node sidebar.
+      '/conformity/': [
+        {
+          text: 'Node',
+          items: [
+            { text: 'Overview', link: '/node/' },
+            { text: 'Build a node', link: '/node/build' },
+            { text: 'Iridium Bluetooth service', link: '/node/iridium-ble' },
+            { text: 'Compact v2 conformity', link: '/conformity/msc-2/' },
           ],
         },
       ],
