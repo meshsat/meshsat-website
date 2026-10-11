@@ -236,7 +236,7 @@ input:focus, textarea:focus, select:focus { border-color: var(--color-primary); 
 .st { font-weight: 600; color: var(--color-text); white-space: nowrap; }
 .st::before { content: ""; display: inline-block; width: 0.5em; height: 0.5em; border-radius: 50%; margin: 0 0.45em 0.1em 0.35em; background: var(--color-text-muted); }
 .st-ok::before { background: var(--color-success); }
-.st-pending::before { background: var(--color-warning); }
+.st-next::before { background: var(--color-text-muted); }
 .status-strip .st::before { margin-left: 0.5em; }
 
 /* ---------- Why one gateway ---------- */
