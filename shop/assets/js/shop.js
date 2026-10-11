@@ -279,6 +279,59 @@
         filmDialog.querySelectorAll('[data-close-dialog]').forEach(function (b) { b.addEventListener('click', function () { filmDialog.close(); }); });
     }
 
+    // The screenshot viewer: every thumbnail in a [data-shots] group opens one dialog; the
+    // buttons, the arrow keys (Home and End too) and a swipe step through that group, wrapping
+    // at the ends; Escape, the close button or the backdrop close it and focus returns to the
+    // thumbnail that opened it. Without JavaScript the links open the file itself.
+    var shotDialog = document.getElementById('shot-dialog');
+    if (shotDialog && typeof shotDialog.showModal === 'function') {
+        var shotImage = document.getElementById('shot-image');
+        var shotGroup = [];
+        var shotIndex = 0;
+        var shotOpener = null;
+        function showShot(index) {
+            var n = shotGroup.length;
+            if (!n) return;
+            shotIndex = (index % n + n) % n;
+            var link = shotGroup[shotIndex];
+            var thumb = link.querySelector('img');
+            if (thumb) { shotImage.width = Number(thumb.getAttribute('width')); shotImage.height = Number(thumb.getAttribute('height')); shotImage.alt = thumb.alt; }
+            shotImage.src = link.getAttribute('href');
+            setText('shot-title', link.getAttribute('data-shot-caption') || '');
+            setText('shot-counter', (shotIndex + 1) + ' / ' + n);
+            shotDialog.querySelectorAll('[data-shot-step]').forEach(function (b) { b.hidden = n < 2; });
+        }
+        document.querySelectorAll('[data-shots] a[data-shot]').forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                shotOpener = link;
+                shotGroup = Array.prototype.slice.call(link.closest('[data-shots]').querySelectorAll('a[data-shot]'));
+                showShot(shotGroup.indexOf(link));
+                shotDialog.showModal();
+                var next = shotDialog.querySelector('[data-shot-step="1"]');
+                (next && !next.hidden ? next : shotDialog.querySelector('[data-close-dialog]')).focus();
+            });
+        });
+        shotDialog.querySelectorAll('[data-shot-step]').forEach(function (b) { b.addEventListener('click', function () { showShot(shotIndex + Number(b.getAttribute('data-shot-step'))); }); });
+        shotDialog.querySelectorAll('[data-close-dialog]').forEach(function (b) { b.addEventListener('click', function () { shotDialog.close(); }); });
+        shotDialog.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowRight') { event.preventDefault(); showShot(shotIndex + 1); }
+            else if (event.key === 'ArrowLeft') { event.preventDefault(); showShot(shotIndex - 1); }
+            else if (event.key === 'Home') { event.preventDefault(); showShot(0); }
+            else if (event.key === 'End') { event.preventDefault(); showShot(shotGroup.length - 1); }
+        });
+        var touchStartX = null;
+        shotDialog.addEventListener('touchstart', function (event) { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
+        shotDialog.addEventListener('touchend', function (event) {
+            if (touchStartX === null) return;
+            var dx = event.changedTouches[0].clientX - touchStartX;
+            touchStartX = null;
+            if (Math.abs(dx) > 40) showShot(shotIndex + (dx < 0 ? 1 : -1));
+        }, { passive: true });
+        shotDialog.addEventListener('click', function (event) { if (event.target === shotDialog) shotDialog.close(); });
+        shotDialog.addEventListener('close', function () { shotImage.removeAttribute('src'); if (shotOpener) shotOpener.focus(); });
+    }
+
     // The sign-up form: feedback in place (the brief's table), then the real submission to the
     // service, which answers with its own pages. The Turnstile token is required when the widget
     // is on the page; a press before it exists holds the form and sends it when it arrives.
