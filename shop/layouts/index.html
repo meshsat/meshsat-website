@@ -124,8 +124,11 @@
         <section class="app-experience" aria-labelledby="app-experience-title">
             <div class="app-experience-copy"><p class="section-index">The MeshSat apps</p><h3 id="app-experience-title">The controls.<br>The conversation.<br>The next pass.</h3><p>Your phone gives you a place to write, follow message status and see predicted satellite passes. The satellite hardware stays in the node.</p><ul class="app-benefits"><li><strong>Connect your node</strong><span>Pair over Bluetooth and see the connection state.</span></li><li><strong>Follow each message</strong><span>Distinguish waiting, sent and failed. Sent does not mean read.</span></li><li><strong>Plan around the sky</strong><span>View predicted passes. A prediction is not a delivery guarantee.</span></li></ul><a class="text-link" href="{{ $p.android_satellite_url }}" target="_blank" rel="noopener">Explore the satellite workflow</a></div>
             <div class="app-screens">
+                <div class="app-screen-row">
+                <figure><a href="{{ $p.docs_url }}/images/android/home.webp" target="_blank" rel="noopener" aria-label="Open the full Android Home screenshot"><img src="/images/android-home-540.webp" width="540" height="868" alt="MeshSat Android Home screen: messages can go out by satellite, mesh, SMS and the Hub, with three messages on their way by satellite." loading="lazy" decoding="async"></a><figcaption>The Home screen</figcaption></figure>
                 <figure><a href="{{ $p.docs_url }}/images/android/node.webp" target="_blank" rel="noopener" aria-label="Open the full Android Bluetooth connection screenshot"><img src="/images/android-node-540.webp" width="540" height="1212" alt="MeshSat Android node screen showing a connected Bluetooth link." loading="lazy" decoding="async"></a><figcaption>Connect the node</figcaption></figure>
                 <figure><a href="{{ $p.docs_url }}/images/android/passes.webp" target="_blank" rel="noopener" aria-label="Open the full Android satellite passes screenshot"><img src="/images/android-passes-540.webp" width="540" height="1212" alt="MeshSat Android satellite passes screen with a predicted pass and a day-view chart." loading="lazy" decoding="async"></a><figcaption>Check the passes</figcaption></figure>
+                </div>
                 <p class="app-screen-credit">Actual Android documentation screens. Example readings from earlier development, not a live MSC-2 connection or an iOS screenshot.</p>
             </div>
         </section>
@@ -247,10 +250,6 @@
                 <div><dt>Software</dt><dd>GPL-3.0</dd></div>
                 <div><dt>Hardware</dt><dd>CERN-OHL-S-2.0</dd></div>
             </dl>
-            <div class="render-pair">
-                <figure><img src="/images/msc2-render-assembled-v0-6.webp" width="1006" height="638" loading="lazy" decoding="async" alt="Design render of the v0.6 enclosure, assembled, with both antennas fitted."><figcaption>Design render of the v0.6 enclosure, assembled.</figcaption></figure>
-                <figure><img src="/images/msc2-render-exploded-v0-6.webp" width="1034" height="1277" loading="lazy" decoding="async" alt="Design render of the v0.6 enclosure, exploded: lid, radio board, separator, modem, body and carry plate, with a ruler in millimetres and a 2 euro coin for scale."><figcaption>Exploded from the rear, ruler in millimetres, 2 euro coin for scale. Concept illustrations; the enclosure has not been built yet.</figcaption></figure>
-            </div>
         </details>
     </div>
 </section>
