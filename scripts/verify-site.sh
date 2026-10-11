@@ -6,12 +6,10 @@
 # language/viewport combinations while nothing tested whether its own
 # instructions work, or whether its claims still match the README.
 #
-# Usage: scripts/verify-site.sh [built-site-dir] [built-shop-dir]
-#        (defaults: site/public and shop/public; the shop checks run only when
-#        that directory exists)
+# Usage: scripts/verify-site.sh [built-site-dir]   (default: site/public)
+#        The shop's checks moved with the shop into meshsat-shop (MESHSAT-1523).
 set -uo pipefail
 PUB="${1:-site/public}"
-SHOP="${2:-shop/public}"
 FAIL=0
 fail() { echo "  [FAIL] $*"; FAIL=1; }
 pass() { echo "  [ok]   $*"; }
@@ -79,95 +77,6 @@ for t in bridge hub android ios fieldkit; do
   N=$(grep -o '<h2' "$f" | wc -l | tr -d ' ')
   if [ "$N" -ge 1 ]; then pass "changelog/$t: $N section heading(s)"; else fail "changelog/$t: no section headings"; fi
 done
-
-echo "=== 6. shop.meshsat.net: dashes, status vocabulary, and no checkout while ordering is off ==="
-# The shop is built from shop/ (MESHSAT-1517). With `ordering: "off"` in
-# shop/hugo.yaml no checkout URL may reach the public page: the owner's
-# switch is the only way ordering opens, and this is the check that it held.
-if [ -d "$SHOP" ]; then
-  for f in "$SHOP/index.html" "$SHOP"/*/index.html "$SHOP/404.html"; do
-    [ -f "$f" ] || continue
-    N=$( { grep -o -e '—' -e '–' "$f" || true; } | wc -l | tr -d ' ' )
-    if [ "$N" -eq 0 ]; then pass "no em/en dashes in shop/${f#$SHOP/}"
-    else fail "$N em/en dash(es) in shop/${f#$SHOP/}"; fi
-  done
-  N=$(grep -o '>Stable<' "$SHOP/index.html" 2>/dev/null | wc -l | tr -d ' ')
-  [ "$N" -eq 0 ] && pass "shop: no 'Stable' badges" || fail "shop: $N 'Stable' badge(s)"
-  if grep -q 'ordering: "off"' shop/hugo.yaml 2>/dev/null; then
-    if grep -rq 'order.meshsat.net/shop' "$SHOP" --include='*.html'; then
-      fail "shop: ordering is off but a checkout URL is in the built HTML"
-    else
-      pass "shop: ordering is off and no checkout URL is reachable"
-    fi
-  else
-    pass "shop: ordering is on (owner's switch)"
-  fi
-  # The sign-up check is one of two, chosen by turnstile_site_key in shop/hugo.yaml:
-  # Turnstile (Cloudflare's script on the page) or ALTCHA (listmonk's). Never both,
-  # never neither, and the form posts to the matching endpoint.
-  if grep -q 'turnstile_site_key: ""' shop/hugo.yaml 2>/dev/null; then
-    if grep -q 'challenges.cloudflare.com' "$SHOP/index.html" 2>/dev/null; then
-      fail "shop: no Turnstile site key, but Cloudflare's script is on the page"
-    elif grep -q 'altcha-widget' "$SHOP/index.html" 2>/dev/null; then
-      pass "shop: sign-up check is ALTCHA (no Turnstile site key)"
-    else
-      fail "shop: the sign-up form has no bot check at all"
-    fi
-  else
-    if grep -q 'challenges.cloudflare.com' "$SHOP/index.html" 2>/dev/null && grep -q 'order.meshsat.net/notify' "$SHOP/index.html" 2>/dev/null && ! grep -q 'altcha-widget' "$SHOP/index.html" 2>/dev/null; then
-      pass "shop: sign-up check is Turnstile, posting to order.meshsat.net/notify"
-    else
-      fail "shop: Turnstile site key set, but the page lacks the widget, posts elsewhere, or still carries ALTCHA"
-    fi
-  fi
-  if grep -rqi 'registered trademark\|®' "$SHOP" --include='*.html'; then
-    fail "shop: a registered-trademark claim (BOIP 1556109 is under examination)"
-  else
-    pass "shop: no registered-trademark claim"
-  fi
-else
-  pass "no shop build to check ($SHOP missing)"
-fi
-
-echo "=== 7. shop: the named comparison is published only by its switch and its review record ==="
-# The ACR Bivy Stick MESH comparison is off by default (the owner's corrective
-# brief of 11 Oct 2026). Off: no competitor name, comparison section or savings
-# claim may be in any built file. On: shop/data/comparison.yaml must exist with
-# an approved review. scripts/verify-comparison-gate.sh tests the template's
-# own refusals; this checks the output that ships.
-if [ -d "$SHOP" ]; then
-  if grep -q 'comparison_published: "on"' shop/hugo.yaml 2>/dev/null; then
-    if [ -f shop/data/comparison.yaml ] && grep -q '^  status: approved' shop/data/comparison.yaml; then
-      pass "shop: comparison is on with an approved review record"
-    else
-      fail "shop: comparison_published is on but shop/data/comparison.yaml is missing or not approved"
-    fi
-  else
-    # The one allowed mention is the neutral reference card (name, the
-    # manufacturer's own links, no price, limit or subscription count), which
-    # sits between the competitor-reference markers; it is cut out before the
-    # scan, so anything else that names the product or restates a claim fails.
-    SCAN=$(mktemp -d)
-    find "$SHOP" -type f \( -name '*.html' -o -name '*.js' -o -name '*.json' -o -name '*.xml' -o -name '*.svg' -o -name '*.txt' \) | while read -r f; do
-      t="$SCAN/$(echo "${f#$SHOP/}" | tr '/' '_')"
-      sed 's/<!-- competitor-reference:begin -->.*<!-- competitor-reference:end -->//' "$f" > "$t"
-    done
-    for word in 'Bivy' 'ACR Electronics' 'acrartex' 'team-setup-comparison' 'cost-chart' 'cheaper' 'stops at 10 devices' '275,99' '14,99' 'Global Rescue'; do
-      if grep -rq -- "$word" "$SCAN"; then
-        fail "shop: comparison is off but '$word' is in the built output outside the reference card"
-      else
-        pass "shop: no '$word' outside the reference card"
-      fi
-    done
-    rm -rf "$SCAN"
-    N=$(grep -o 'competitor-reference:begin' "$SHOP/index.html" 2>/dev/null | wc -l | tr -d ' ')
-    [ "$N" -le 1 ] && pass "shop: at most one reference card ($N)" || fail "shop: $N reference cards; one is the rule"
-  fi
-  # The shop publishes pages, styles, scripts and images: no document is
-  # downloadable from it, so no unreviewed brief, mock or brochure can ship.
-  N=$(find "$SHOP" -type f \( -iname '*.pdf' -o -iname '*.zip' -o -iname '*.docx' -o -iname '*.md' -o -iname '*.csv' -o -iname '*.yaml' -o -iname '*.yml' \) | wc -l | tr -d ' ')
-  [ "$N" -eq 0 ] && pass "shop: no downloadable documents in the build" || fail "shop: $N downloadable document(s) in the build"
-fi
 
 echo
 if [ "$FAIL" -eq 0 ]; then echo "verify-site: PASSED"; else echo "verify-site: FAILED"; fi

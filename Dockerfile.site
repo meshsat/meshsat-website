@@ -2,6 +2,7 @@ ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 
 COPY site/public/ /usr/share/nginx/html/
-# shop.meshsat.net left this image on 11 Oct 2026 (MESHSAT-1521): it is served
-# from the notrf01 cluster by Dockerfile.shop; the DMZ serves meshsat.net only.
+# shop.meshsat.net left this image on 11 Oct 2026 (MESHSAT-1521) and this repo on
+# the same day (MESHSAT-1523): it is built and served from meshsat-shop. The DMZ
+# serves meshsat.net only.
 COPY nginx-site.conf /etc/nginx/nginx.conf
