@@ -157,7 +157,7 @@ p, li, dd, figcaption, summary { text-wrap: pretty; }
 
 /* ---------- The hero: always dark, the illustration's floor is the page's ---------- */
 .hero, [data-theme="light"] .hero {
-    --color-bg: #0C0908; --color-bg-secondary: #1A1714; --color-bg-card: #211D19;
+    --color-bg: #110E0C; --color-bg-secondary: #1A1714; --color-bg-card: #211D19;
     --color-text: #F2EDE6; --color-text-muted: #B3A697; --color-primary: #F25C05; --color-primary-hover: #FF7A2E;
     --color-border: #332A24; --color-border-light: #4A3F36; --color-success: #4FB477; --color-warning: #E0A030;
     background: var(--color-bg); color: var(--color-text);
@@ -172,6 +172,9 @@ p, li, dd, figcaption, summary { text-wrap: pretty; }
     display: flex; flex-direction: column; justify-content: space-between;
     background-image: radial-gradient(ellipse 55% 65% at 74% 52%, rgba(128, 72, 28, 0.28), transparent 68%);
 }
+/* Inside the flex-column hero an auto-margin container shrinks to its content;
+   both containers (the grid and the strip) must keep the full width. */
+.hero > .container { width: 100%; }
 .hero-grid {
     position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); align-items: center;
     grid-template-areas: "copy" "figure"; padding-top: var(--space-2xl); padding-bottom: var(--space-lg);
@@ -186,8 +189,8 @@ p, li, dd, figcaption, summary { text-wrap: pretty; }
     .hero-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy"; padding-top: var(--space-2xl); padding-bottom: var(--space-xl); flex: 1 0 auto; }
     .hero-figure { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: min(58vw, 940px); margin: 0; z-index: 0; }
     .hero-figure img {
-        -webkit-mask-image: radial-gradient(ellipse 74% 78% at 52% 50%, #000 58%, transparent 100%);
-        mask-image: radial-gradient(ellipse 74% 78% at 52% 50%, #000 58%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse 72% 76% at 52% 50%, #000 46%, transparent 96%);
+        mask-image: radial-gradient(ellipse 72% 76% at 52% 50%, #000 46%, transparent 96%);
     }
     .hero-figure figcaption { position: absolute; right: var(--space-lg); bottom: -1.5rem; padding: 0; white-space: nowrap; }
 }
