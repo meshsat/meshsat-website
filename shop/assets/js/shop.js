@@ -29,6 +29,7 @@
             sitekey: mount.getAttribute('data-sitekey'),
             theme: light ? 'light' : 'dark',
             size: 'flexible',
+            appearance: 'interaction-only',
             action: 'notify',
             callback: function(t) { token = t; var f = form(); if (pending && f) { pending = false; f.submit(); } },
             'expired-callback': function() { token = ''; },
