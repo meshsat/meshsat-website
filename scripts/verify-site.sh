@@ -143,13 +143,25 @@ if [ -d "$SHOP" ]; then
       fail "shop: comparison_published is on but shop/data/comparison.yaml is missing or not approved"
     fi
   else
-    for word in 'Bivy' 'ACR Electronics' 'acrartex' 'team-setup-comparison' 'cost-chart' 'cheaper' 'stops at 10 devices'; do
-      if grep -rq -- "$word" "$SHOP" --include='*.html' --include='*.js' --include='*.json' --include='*.xml' --include='*.svg' --include='*.txt'; then
-        fail "shop: comparison is off but '$word' is in the built output"
+    # The one allowed mention is the neutral reference card (name, the
+    # manufacturer's own links, no price, limit or subscription count), which
+    # sits between the competitor-reference markers; it is cut out before the
+    # scan, so anything else that names the product or restates a claim fails.
+    SCAN=$(mktemp -d)
+    find "$SHOP" -type f \( -name '*.html' -o -name '*.js' -o -name '*.json' -o -name '*.xml' -o -name '*.svg' -o -name '*.txt' \) | while read -r f; do
+      t="$SCAN/$(echo "${f#$SHOP/}" | tr '/' '_')"
+      sed 's/<!-- competitor-reference:begin -->.*<!-- competitor-reference:end -->//' "$f" > "$t"
+    done
+    for word in 'Bivy' 'ACR Electronics' 'acrartex' 'team-setup-comparison' 'cost-chart' 'cheaper' 'stops at 10 devices' '275,99' '14,99' 'Global Rescue'; do
+      if grep -rq -- "$word" "$SCAN"; then
+        fail "shop: comparison is off but '$word' is in the built output outside the reference card"
       else
-        pass "shop: no '$word' in the built output"
+        pass "shop: no '$word' outside the reference card"
       fi
     done
+    rm -rf "$SCAN"
+    N=$(grep -o 'competitor-reference:begin' "$SHOP/index.html" 2>/dev/null | wc -l | tr -d ' ')
+    [ "$N" -le 1 ] && pass "shop: at most one reference card ($N)" || fail "shop: $N reference cards; one is the rule"
   fi
   # The shop publishes pages, styles, scripts and images: no document is
   # downloadable from it, so no unreviewed brief, mock or brochure can ship.
