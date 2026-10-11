@@ -145,6 +145,20 @@ build:site:
     expire_in: 1 hour
   rules: !reference [.rules-main-deploy, rules]
 
+build:docs:
+  stage: build
+  image: $NODE_IMAGE
+  tags: [docker]
+  script:
+    - cd docs
+    - npm ci
+    - npx vitepress build
+  artifacts:
+    paths:
+      - docs/.vitepress/dist/
+    expire_in: 1 hour
+  rules: !reference [.rules-main-deploy, rules]
+
 verify:site:
   stage: build
   image: $HUGO_IMAGE
