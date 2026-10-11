@@ -88,8 +88,8 @@
     <div class="container">
         <ul class="status-strip" aria-label="Development status">
             <li>Bench routing <strong class="st st-ok">tested</strong></li>
-            <li>MSC-2 satellite test <strong class="st st-pending">pending</strong></li>
-            <li>Range and battery life <strong class="st st-none">not measured</strong></li>
+            <li>First satellite pass <strong class="st st-next">next</strong></li>
+            <li>Range and battery life <strong class="st st-next">on the pilot unit</strong></li>
             <li class="status-note">Prototype. Not an emergency service.</li>
         </ul>
     </div>
@@ -101,7 +101,7 @@
             <h2 class="h-display">A shared link for the team.</h2>
             <p class="section-lead">The idea: local mesh radios, one satellite gateway, one airtime line.</p>
             <p>MSC-2 combines a LILYGO T-Beam Supreme and a RockBLOCK 9704-SMA in one compact enclosure. The goal: the team keeps its own LoRa radios and shares one satellite gateway and one airtime subscription, instead of carrying a satellite messenger and a plan for every person.</p>
-            <p>A phone with the MeshSat app for Android or iOS connects over Bluetooth and reaches both radios. Without a phone, the gateway is designed to forward selected messages from the mesh into the modem on its own. That path has been tested on the bench; the satellite leg from a complete MSC-2 has not.</p>
+            <p>A phone with the MeshSat app for Android or iOS connects over Bluetooth and reaches both radios. Without a phone, the gateway is designed to forward selected messages from the mesh into the modem on its own. That path has been tested on the bench; the satellite leg from the complete unit is the next test.</p>
         </div>
         {{ with $p.why_image }}
         <figure class="why-figure">
@@ -120,7 +120,7 @@
             <li><span class="step-n" aria-hidden="true">2</span><h3>Pass it through MSC-2</h3><p>The gateway is designed to forward selected messages through its Iridium modem.</p></li>
             <li><span class="step-n" aria-hidden="true">3</span><h3>Bring the reply back</h3><p>The intended return path carries replies back to the local mesh.</p></li>
         </ol>
-        <p class="section-note">This is the intended end-to-end workflow. The complete satellite path of MSC-2 still needs validation. Operation depends on configuration, an active airtime service, and usable radio and satellite links.</p>
+        <p class="section-note">This is the intended end-to-end workflow; the first satellite pass from the pilot unit is the next test. Operation depends on configuration, an active airtime service, and usable radio and satellite links.</p>
     </div>
 </section>
 
@@ -176,16 +176,16 @@
 <section class="section progress" id="build-progress">
     <div class="container">
         <h2 class="h-display">See exactly where development stands.</h2>
-        <p class="section-lead">What the MSC-2 design has done so far, and what it has not. The evidence, with dates and hardware versions, is in the <a href="{{ $p.node_docs_url }}" target="_blank" rel="noopener">node test record</a>.</p>
+        <p class="section-lead">What the MSC-2 design has done so far, and what comes next. The evidence, with dates and hardware versions, is in the <a href="{{ $p.node_docs_url }}" target="_blank" rel="noopener">node test record</a>.</p>
         <table class="progress-table">
             <thead><tr><th scope="col">Item</th><th scope="col">Status</th></tr></thead>
             <tbody>
                 <tr><td>RockBLOCK 9704 communication and message acceptance</td><td><span class="st st-ok">Tested on the bench</span> 8 October 2026: the modem answered, registered and accepted a text</td></tr>
                 <tr><td>Routing a mesh message into the modem without a phone</td><td><span class="st st-ok">Tested on the bench</span> 8 October 2026</td></tr>
-                <tr><td>Sending and receiving satellite messages from a complete MSC-2</td><td><span class="st st-pending">Not yet demonstrated</span></td></tr>
+                <tr><td>Sending and receiving satellite messages from a complete MSC-2</td><td><span class="st st-next">Next</span> the first satellite pass from the pilot unit, once its printed case is ready (the first cases are being made in Leiden)</td></tr>
                 <tr><td>The earlier node with a RockBLOCK 9603</td><td><span class="st st-ok">Satellite messages sent and received</span> from a garden, 27 September 2026; a different hardware version</td></tr>
-                <tr><td>MSC-2 radio range and battery life</td><td><span class="st st-none">Not measured</span></td></tr>
-                <tr><td>Enclosure water resistance</td><td><span class="st st-none">Not validated</span></td></tr>
+                <tr><td>MSC-2 radio range and battery life</td><td><span class="st st-next">Planned</span> measured on the pilot unit; no figure is claimed before that</td></tr>
+                <tr><td>Enclosure water resistance</td><td><span class="st st-next">Planned</span> tested on the pilot unit; no rating is claimed before that</td></tr>
             </tbody>
         </table>
         <p class="important"><strong>Important:</strong> MSC-2 is a prototype, not an emergency service or a distress device. Do not rely on it to summon help. Message delivery is not guaranteed, and no monitoring or rescue service is included.</p>
@@ -274,15 +274,15 @@
             </details>
             <details>
                 <summary>Can it operate without a phone?</summary>
-                <p>Phone-free forwarding from the mesh into the RockBLOCK 9704 has been tested on the bench, per the current MSC-2 test record. Satellite operation from a complete MSC-2 still needs validation.</p>
+                <p>Phone-free forwarding from the mesh into the RockBLOCK 9704 has been tested on the bench, per the current MSC-2 test record. The first satellite pass from the complete unit is the next test.</p>
             </details>
             <details>
                 <summary>Is the enclosure waterproof?</summary>
-                <p>The design uses sealing features, but the assembled enclosure's water resistance has not been validated. No tested water-resistance rating is claimed.</p>
+                <p>The design is sealed with an O-ring and sealed sockets; the assembled enclosure's water resistance is tested on the pilot unit, and no rating is claimed before that.</p>
             </details>
             <details>
                 <summary>How long does the battery last?</summary>
-                <p>Battery life has not yet been measured on MSC-2. A battery-capacity figure alone does not establish runtime.</p>
+                <p>Battery life is measured on the pilot unit; a cell's capacity alone does not establish runtime, so no figure is claimed before that.</p>
             </details>
             <details>
                 <summary>Is it suitable as an emergency beacon?</summary>
