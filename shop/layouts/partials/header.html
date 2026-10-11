@@ -11,6 +11,13 @@
             {{ range .Site.Menus.main }}
             <li><a href="{{ .URL }}"{{ if .Params.external }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}{{ if .Params.external }} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>{{ end }}</a></li>
             {{ end }}
+            {{/* The one call to action, by the ordering switch (owner, 11 Oct 2026): it leads
+                 to the e-mail field, or to the country select once ordering is open. */}}
+            {{ if eq .Site.Params.ordering "on" }}
+            <li class="nav-cta-item"><a href="/#ship-to" class="btn btn-outline nav-cta" data-jump="ship-to" data-umami-event="buy-jump">Pre-order MSC-2</a></li>
+            {{ else }}
+            <li class="nav-cta-item"><a href="/#notify-email" class="btn btn-outline nav-cta" data-jump="notify-email" data-umami-event="notify-jump">Notify me at launch</a></li>
+            {{ end }}
         </ul>
         <div class="nav-actions">
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle light and dark theme">
