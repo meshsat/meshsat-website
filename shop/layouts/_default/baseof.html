@@ -39,7 +39,7 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="preload" href="/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/ibm-plex-mono-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
     {{ $css := resources.Get "css/shop.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
     {{ partial "analytics.html" . }}
@@ -53,7 +53,7 @@
         "brand": { "@type": "Brand", "name": "MeshSat" },
         "manufacturer": { "@type": "Organization", "name": "Elli.Z.G., trading as MeshSat", "url": "https://meshsat.net" },
         "url": "https://shop.meshsat.net/",
-        "image": {{ "/images/msc2-render-assembled-v0-6.webp" | absURL }}
+        "image": {{ "/images/msc2-concept-exploded-v2.webp" | absURL }}
     }
     </script>
     {{ end }}
@@ -61,11 +61,16 @@
 </head>
 <body>
     {{ partial "header.html" . }}
-    <main id="main-content">
+    <main id="main">
         {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }}
     {{ $js := resources.Get "js/shop.js" | minify | fingerprint }}
-    <script src="{{ $js.RelPermalink }}"></script>
+    <script src="{{ $js.RelPermalink }}" defer></script>
+    {{/* Turnstile's API after the page script, both deferred: deferred scripts run in document
+         order, so the onload callback the API asks for exists before it looks (MESHSAT-1519). */}}
+    {{ if and .IsHome (ne .Site.Params.ordering "on") .Site.Params.turnstile_site_key }}
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=meshsatTurnstile&amp;render=explicit" defer></script>
+    {{ end }}
 </body>
 </html>

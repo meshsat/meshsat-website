@@ -1,32 +1,27 @@
+{{- $ordering := eq .Site.Params.ordering "on" -}}
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
-    <a href="#main-content" class="skip-link">Skip to content</a>
-    <nav class="container" aria-label="Main navigation">
-        <a href="/" class="logo" aria-label="MeshSat Compact v2, home">
-            <img src="/images/meshsat-mark-dark.png" alt="" width="54" height="32" class="logo-mark logo-mark-dark">
-            <img src="/images/meshsat-mark-light.png" alt="" width="54" height="32" class="logo-mark logo-mark-light">
-            <span class="logo-text"><span class="logo-mesh">Mesh</span><span class="logo-sat">Sat</span></span>
-            <span class="logo-sub">Compact v2</span>
+    <div class="wrap header-inner">
+        <a class="brand" href="/" aria-label="MeshSat Compact v2, home">
+            <img src="/images/meshsat-mark-dark.png" width="54" height="32" alt="">
+            <span>Mesh<span class="brand-accent">Sat</span></span>
+            <span class="brand-model">Compact v2</span>
         </a>
-        <ul class="nav-links" id="nav-links">
-            {{ range .Site.Menus.main }}
-            <li><a href="{{ .URL }}"{{ if .Params.external }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}{{ if .Params.external }} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>{{ end }}</a></li>
-            {{ end }}
-            {{/* The one call to action, by the ordering switch (owner, 11 Oct 2026): it leads
-                 to the e-mail field, or to the country select once ordering is open. */}}
-            {{ if eq .Site.Params.ordering "on" }}
-            <li class="nav-cta-item"><a href="/#ship-to" class="btn btn-outline nav-cta" data-jump="ship-to" data-umami-event="buy-jump">Pre-order MSC-2</a></li>
+        <nav aria-label="Main navigation" id="main-nav">
+            {{ range .Site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+        </nav>
+        <div class="header-actions">
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+                <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.4A8.6 8.6 0 0 1 9.6 4 8.7 8.7 0 1 0 20 14.4Z"/></svg>
+                <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+            </button>
+            {{/* The one call to action, by the ordering switch: the e-mail field, or the country select once ordering is open. */}}
+            {{ if $ordering }}
+            <a href="/#offer" class="button button-outline header-cta" data-primary-jump data-umami-event="buy-jump">Pre-order MSC-2</a>
             {{ else }}
-            <li class="nav-cta-item"><a href="/#notify-email" class="btn btn-outline nav-cta" data-jump="notify-email" data-umami-event="notify-jump">Notify me at launch</a></li>
+            <a href="/#offer" class="button button-outline header-cta" data-primary-jump data-umami-event="notify-jump">Notify me at launch</a>
             {{ end }}
-        </ul>
-        <div class="nav-actions">
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle light and dark theme">
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            </button>
-            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-                <span></span><span></span><span></span>
-            </button>
+            <button class="menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation"><span></span><span></span></button>
         </div>
-    </nav>
+    </div>
 </header>
