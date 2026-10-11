@@ -32,6 +32,14 @@ params:
   # key is public by design; the secret is in OpenBao for the service.
   turnstile_site_key: ""
   notify_url: "https://order.meshsat.net/notify"
+  # A second illustration for the "why one gateway" section, only when it shows a
+  # properly assembled device (owner, 11 Oct 2026). Empty = the slot collapses.
+  why_image: ""
+  why_image_caption: ""
+  # External references the copy cites (the brief of 11 Oct 2026).
+  airtime_url: "https://www.groundcontrol.com/products/iridium-messaging-transport-imt-pricing/"
+  channels_url: "https://meshtastic.org/docs/configuration/radio/channels/"
+  apps_url: "https://docs.meshsat.net/android/"
   # Kickstarter: empty = no link. Set the pre-launch page to show "Follow on
   # Kickstarter" beside the e-mail form; kickstarter_live flips the wording to
   # "Back us on Kickstarter". Never a pledge amount here.
@@ -78,23 +86,22 @@ module:
         - "/apple-touch-icon.png"
         - "/.well-known/security.txt"
 
+# In-page sections (the brief of 11 Oct 2026); Conformity, Docs and meshsat.net
+# are in the footer. The call to action after them follows the ordering switch.
 menu:
   main:
-    - name: "Conformity"
-      url: "https://docs.meshsat.net/conformity/msc-2/"
+    - name: "How it works"
+      url: "/#how-it-works"
       weight: 1
-      params:
-        external: true
-    - name: "Docs"
-      url: "https://docs.meshsat.net/node/"
+    - name: "The hardware"
+      url: "/#the-hardware"
       weight: 2
-      params:
-        external: true
-    - name: "meshsat.net"
-      url: "https://meshsat.net"
+    - name: "Build progress"
+      url: "/#build-progress"
       weight: 3
-      params:
-        external: true
+    - name: "FAQ"
+      url: "/#faq"
+      weight: 4
 
 markup:
   goldmark:

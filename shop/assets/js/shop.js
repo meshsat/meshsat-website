@@ -47,6 +47,20 @@
     });
 })();
 
+// The one call to action, wherever it stands (nav, closing ask): scroll to the
+// field or the country select and focus it. The anchor works without script.
+document.addEventListener('click', function(e) {
+    var t = e.target.closest ? e.target.closest('[data-jump]') : null;
+    if (!t) return;
+    var el = document.getElementById(t.getAttribute('data-jump'));
+    if (!el) return;
+    e.preventDefault();
+    el.scrollIntoView({ block: 'center' });
+    el.focus({ preventScroll: true });
+    var navLinks = document.querySelector('.nav-links');
+    if (navLinks && navLinks.classList.contains('active')) navLinks.classList.remove('active');
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     var menuToggle = document.querySelector('.menu-toggle');
     var navLinks = document.querySelector('.nav-links');
