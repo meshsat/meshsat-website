@@ -52,10 +52,18 @@ params:
   node_docs_url: "https://docs.meshsat.net/node/"
   intro_film: "Q-JKNwWlzpE"
   intro_film_time: "2:02"
-  support_email: "support@meshsat.net"
+  support_email: "hello@meshsat.net"
   site_url: "https://meshsat.net"
   docs_url: "https://docs.meshsat.net"
   github: "https://github.com/meshsat"
+  # The social accounts, as on meshsat.net (rules/footer-brand-social.md), same order.
+  x_url: "https://x.com/meshsat"
+  linkedin_url: "https://www.linkedin.com/company/meshsat/"
+  matrix_url: "https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net"
+  matrix_alias: "#meshsat:matrix.nuclearlighters.net"
+  reddit_url: "https://www.reddit.com/r/meshsat/"
+  youtube_url: "https://www.youtube.com/@MeshSat"
+  facebook_url: "https://www.facebook.com/meshsat"
 
 # Fonts and the brand marks come from the main site: one copy in git, mounted
 # into this build (Hugo allows a source outside the project). Nothing else of

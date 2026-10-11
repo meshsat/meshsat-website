@@ -330,6 +330,10 @@ td { color: var(--muted); }
 .footer-top p { font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
 .footer-top .seller { font-style: normal; font-size: 12px; line-height: 1.7; color: #B0A593; }
 .footer-top .seller a { color: inherit; }
+.footer-social { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 18px; }
+.footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--dark-line); border-radius: 5px; color: #BFB4A3; }
+.footer-social a:hover, .footer-social a:focus-visible { color: #FF914B; border-color: #FF914B; }
+.footer-social svg { display: block; }
 .footer-top h2 { font-size: 13px; letter-spacing: 0; color: #F5F0E7; margin: 4px 0 17px; font-weight: 500; }
 .footer-top > div > a:not(.brand) { display: block; text-decoration: none; font-size: 13px; padding: 4px 0; min-height: 28px; }
 .footer-top a:hover { color: #FF914B; }
@@ -493,7 +497,11 @@ dialog > p a { color: var(--accent); }
     .closing { padding-block: 46px; } .closing-inner { display: block; } .closing h2 { font-size: 42px; } .closing p:not(.section-index) { font-size: 16px; margin-top: 20px; }
     .closing-action { margin-top: 26px; gap: 14px; } .closing-action .button { width: 100%; min-height: 52px; font-size: 16px; } .closing-action > span { font-size: 12px; }
     .site-footer { padding-top: 35px; } .footer-top { grid-template-columns: 1fr 1fr; gap: 27px 20px; padding-bottom: 30px; } .footer-top > div:first-child { grid-column: 1 / -1; }
-    .footer-brand { margin-bottom: 13px; } .footer-top p { font-size: 13px; margin-bottom: 10px; } .footer-top .seller { font-size: 12px; } .footer-top h2 { font-size: 13px; margin-bottom: 11px; }
+    .footer-brand { margin-bottom: 13px; } .footer-top p { font-size: 13px; margin-bottom: 10px; } .footer-top .seller { font-size: 12px; } .footer-social { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 18px; }
+.footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--dark-line); border-radius: 5px; color: #BFB4A3; }
+.footer-social a:hover, .footer-social a:focus-visible { color: #FF914B; border-color: #FF914B; }
+.footer-social svg { display: block; }
+.footer-top h2 { font-size: 13px; margin-bottom: 11px; }
     .footer-top > div > a:not(.brand) { font-size: 12px; min-height: 32px; } .footer-bottom { display: block; font-size: 12px; padding-block: 17px; } .footer-bottom p + p { margin-top: 8px; }
     dialog { padding: 22px; } .dialog-head h2 { font-size: 24px; } .film-dialog { padding: 16px; } .film-dialog .dialog-head h2 { font-size: 22px; }
     .page-content { padding-block: 48px; }
