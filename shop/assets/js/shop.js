@@ -1,4 +1,5 @@
-// shop.meshsat.net: theme toggle, menu, the film facade. No third-party script.
+// shop.meshsat.net: theme toggle, menu, the film facade, and the Turnstile
+// widget on the sign-up form (the one third-party script, the owner's choice).
 (function() {
     var KEY = 'meshsat-theme';
     document.addEventListener('DOMContentLoaded', function() {
@@ -8,7 +9,41 @@
             var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', next);
             try { localStorage.setItem(KEY, next); } catch (e) {}
+            if (window.meshsatTurnstile) window.meshsatTurnstile();
         });
+    });
+})();
+
+// Cloudflare Turnstile, rendered explicitly so it follows the page's theme
+// (the toggle re-renders it; a solved widget simply solves again). Called by
+// the api.js onload callback; a no-op until the script and the mount exist.
+(function() {
+    var widget = null, token = '', pending = false;
+    function form() { var m = document.querySelector('.turnstile'); return m ? m.closest('form') : null; }
+    window.meshsatTurnstile = function() {
+        var mount = document.querySelector('.turnstile');
+        if (!mount || !window.turnstile) return;
+        if (widget !== null) { try { window.turnstile.remove(widget); } catch (e) {} widget = null; mount.innerHTML = ''; token = ''; }
+        var light = document.documentElement.getAttribute('data-theme') === 'light';
+        widget = window.turnstile.render(mount, {
+            sitekey: mount.getAttribute('data-sitekey'),
+            theme: light ? 'light' : 'dark',
+            size: 'flexible',
+            action: 'notify',
+            callback: function(t) { token = t; var f = form(); if (pending && f) { pending = false; f.submit(); } },
+            'expired-callback': function() { token = ''; },
+            'error-callback': function() { token = ''; return true; }
+        });
+    };
+    // Pressed before the check finished: hold the form and send it the moment
+    // the token arrives, so nobody is told "the check did not pass" for being quick.
+    document.addEventListener('submit', function(e) {
+        var f = form();
+        if (!f || e.target !== f || token || !window.turnstile || widget === null) return;
+        e.preventDefault();
+        pending = true;
+        var mount = document.querySelector('.turnstile');
+        if (mount && mount.scrollIntoView) mount.scrollIntoView({ block: 'center' });
     });
 })();
 
