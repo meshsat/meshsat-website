@@ -52,6 +52,21 @@ params:
   airtime_url: "https://www.groundcontrol.com/products/iridium-messaging-transport-imt-pricing/"
   channels_url: "https://meshtastic.org/docs/configuration/radio/channels/"
   apps_url: "https://docs.meshsat.net/android/"
+  # The apps (the R4 brief of 11 Oct 2026): where each edition is and what its
+  # documentation supports; apps_checked_on is the date the cards were last
+  # checked against docs.meshsat.net and the store.
+  play_url: "https://play.google.com/store/apps/details?id=net.meshsat.android"
+  android_setup_url: "https://docs.meshsat.net/android/setup.html"
+  android_satellite_url: "https://docs.meshsat.net/android/satellite.html"
+  ios_docs_url: "https://docs.meshsat.net/ios/"
+  apps_checked_on: "11 October 2026"
+  # The neutral reference card in the calculator names the ACR Bivy Stick MESH
+  # and links the manufacturer's own pages; it carries no price, limit or
+  # subscription count. It sits between the competitor-reference markers that
+  # verify-site.sh section 7 strips before scanning for competitor claims.
+  bivy_product_url: "https://bivystick.com/bivy-stick-mesh/"
+  bivy_plans_url: "https://bivystick.com/plans/"
+  competitor_checked_on: "11 October 2026"
   # Kickstarter: empty = no link. Set the pre-launch page to show "Follow on
   # Kickstarter" beside the e-mail form; kickstarter_live flips the wording to
   # "Back us on Kickstarter". Never a pledge amount here.
@@ -121,8 +136,8 @@ menu:
     - name: "Build progress"
       url: "/#progress"
       weight: 3
-    - name: "Questions"
-      url: "/#questions"
+    - name: "Calculator"
+      url: "/#team-value"
       weight: 4
 
 markup:
