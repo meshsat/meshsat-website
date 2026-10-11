@@ -440,6 +440,19 @@ dialog > p a { color: var(--accent); }
 #video-mount { aspect-ratio: 16 / 9; background: #14120F; margin-bottom: 16px; }
 #video-mount iframe { width: 100%; height: 100%; border: 0; }
 
+/* The screenshot viewer: one dialog for the app screens, stepped by buttons, arrow keys or a swipe */
+.shot-dialog { max-width: min(560px, calc(100vw - 24px)); padding: 16px 18px 18px; }
+.shot-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.shot-head p { display: flex; align-items: baseline; gap: 14px; font-size: 16px; font-weight: 500; color: var(--ink); max-width: none; }
+.shot-counter { font-family: var(--font-mono); font-size: 12px; color: var(--muted); font-weight: 400; }
+.shot-head button { background: transparent; border: 1px solid var(--line); border-radius: 50%; width: 40px; height: 40px; line-height: 1; font-size: 25px; padding: 0; flex-shrink: 0; }
+.shot-stage { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: 10px; }
+.shot-stage img { width: auto; max-width: 100%; height: auto; max-height: min(72vh, 820px); margin-inline: auto; border-radius: 14px; background: #050505; }
+.shot-nav { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--ink); }
+.shot-nav svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.shot-nav:hover { border-color: var(--accent); color: var(--accent); }
+.shot-note { font-size: 13px; color: var(--muted); margin-top: 12px; line-height: 1.5; }
+
 /* ---------- Content pages (terms, withdrawal, privacy, legal, thanks) and the 404 ---------- */
 .page-content { padding-block: 72px; }
 .page-content h1 { font-size: clamp(32px, 3.2vw, 44px); letter-spacing: -0.035em; margin-bottom: 20px; }
@@ -583,6 +596,7 @@ dialog > p a { color: var(--accent); }
 .footer-top h2 { font-size: 13px; margin-bottom: 11px; }
     .footer-top > div > a:not(.brand) { font-size: 12px; min-height: 32px; } .footer-bottom { display: block; font-size: 12px; padding-block: 17px; } .footer-bottom p + p { margin-top: 8px; }
     dialog { padding: 22px; } .dialog-head h2 { font-size: 24px; } .film-dialog { padding: 16px; } .film-dialog .dialog-head h2 { font-size: 22px; }
+    .shot-dialog { padding: 12px; } .shot-stage { grid-template-columns: 40px minmax(0, 1fr) 40px; gap: 6px; } .shot-nav { width: 40px; height: 40px; } .shot-stage img { max-height: 68vh; } .shot-head p { font-size: 15px; gap: 10px; }
     .page-content { padding-block: 48px; }
     .journey-mode-bar { display: block; } .journey-mode-bar > p { margin-bottom: 10px; }
     .journey-modes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .journey-modes button { padding: 10px 7px; min-height: 58px; font-size: 13px; }
