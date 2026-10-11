@@ -9,7 +9,7 @@ layout: "withdrawal"
 
 You may withdraw from this contract within 14 days without giving any reason. The withdrawal period expires 14 days after the day on which you, or a third party other than the carrier that you named, take physical possession of the unit.
 
-To exercise the right, tell us, Elli.Z.G., trading as MeshSat, Floresstraat 17, 2315 HP Leiden, the Netherlands, [support@meshsat.net](mailto:support@meshsat.net), of your decision by an unequivocal statement: an e-mail, a letter, the model form below, or the online withdrawal function at the end of this page. To meet the deadline it is enough that you send your statement before the period expires.
+To exercise the right, tell us, Elli.Z.G., trading as MeshSat, Floresstraat 17, 2315 HP Leiden, the Netherlands, [hello@meshsat.net](mailto:hello@meshsat.net), of your decision by an unequivocal statement: an e-mail, a letter, the model form below, or the online withdrawal function at the end of this page. To meet the deadline it is enough that you send your statement before the period expires.
 
 ## What happens then
 
@@ -22,7 +22,7 @@ Send the unit back to the address above without undue delay and in any event no 
 Copy the text below into an e-mail or a letter if you want to use it. Using it is not required.
 
 <div class="model-form">
-<p>To Elli.Z.G., trading as MeshSat, Floresstraat 17, 2315 HP Leiden, the Netherlands, support@meshsat.net:</p>
+<p>To Elli.Z.G., trading as MeshSat, Floresstraat 17, 2315 HP Leiden, the Netherlands, hello@meshsat.net:</p>
 <p>I/We hereby give notice that I/we withdraw from my/our contract of sale of the following goods: MeshSat Compact v2, serial number ..........</p>
 <p>Ordered on .......... / received on ..........</p>
 <p>Name of consumer(s): ..........</p>
@@ -36,7 +36,7 @@ Copy the text below into an e-mail or a letter if you want to use it. Using it i
 U kunt de overeenkomst binnen 14 dagen na ontvangst zonder opgave van redenen herroepen. Stuur ons een ondubbelzinnige verklaring per e-mail of brief, gebruik het modelformulier hieronder, of de herroepingsfunctie onderaan deze pagina. De kosten van het terugsturen zijn voor u; wij betalen binnen 14 dagen terug.
 
 <div class="model-form" lang="nl">
-<p>Aan Elli.Z.G., handelend onder de naam MeshSat, Floresstraat 17, 2315 HP Leiden, support@meshsat.net:</p>
+<p>Aan Elli.Z.G., handelend onder de naam MeshSat, Floresstraat 17, 2315 HP Leiden, hello@meshsat.net:</p>
 <p>Ik/Wij deel/delen u hierbij mede dat ik/wij onze overeenkomst betreffende de verkoop van de volgende goederen herroep/herroepen: MeshSat Compact v2, serienummer ..........</p>
 <p>Besteld op .......... / ontvangen op ..........</p>
 <p>Naam consument(en): ..........</p>

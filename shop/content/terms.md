@@ -8,7 +8,7 @@ These terms apply to every order of a MeshSat Compact v2 placed on this site. Or
 
 ## Who you buy from
 
-Elli.Z.G., trading as MeshSat, a sole proprietorship under Dutch law, Floresstraat 17, 2315 HP Leiden, the Netherlands, Chamber of Commerce 99812584, VAT NL005411721B30, [support@meshsat.net](mailto:support@meshsat.net). The full identity block is on the [seller identity](/legal/) page.
+Elli.Z.G., trading as MeshSat, a sole proprietorship under Dutch law, Floresstraat 17, 2315 HP Leiden, the Netherlands, Chamber of Commerce 99812584, VAT NL005411721B30, [hello@meshsat.net](mailto:hello@meshsat.net). The full identity block is on the [seller identity](/legal/) page.
 
 ## What you buy
 
@@ -36,7 +36,7 @@ As a consumer you may withdraw from the purchase within 14 days of receiving the
 
 ## Legal guarantee
 
-A unit must be as described and work as described. If it does not, you have the rights the law gives consumers in your country of residence, which in the European Union last at least two years from delivery: repair, replacement, a price reduction or a refund. In the Netherlands the guarantee lasts as long as can reasonably be expected of the product. Write to [support@meshsat.net](mailto:support@meshsat.net) with the serial number and what happened; we arrange the return. Damage from use outside the leaflet's instructions, from a cell other than the specified one, or from opening the sealed case without need is not covered.
+A unit must be as described and work as described. If it does not, you have the rights the law gives consumers in your country of residence, which in the European Union last at least two years from delivery: repair, replacement, a price reduction or a refund. In the Netherlands the guarantee lasts as long as can reasonably be expected of the product. Write to [hello@meshsat.net](mailto:hello@meshsat.net) with the serial number and what happened; we arrange the return. Damage from use outside the leaflet's instructions, from a cell other than the specified one, or from opening the sealed case without need is not covered.
 
 ## What the unit is not
 
@@ -48,7 +48,7 @@ The unit runs open-source software under the GNU General Public License version 
 
 ## Complaints
 
-Write to [support@meshsat.net](mailto:support@meshsat.net). We answer within five working days and try to settle the matter with you. You keep the right to take a dispute to the court of your place of residence.
+Write to [hello@meshsat.net](mailto:hello@meshsat.net). We answer within five working days and try to settle the matter with you. You keep the right to take a dispute to the court of your place of residence.
 
 ## Law
 

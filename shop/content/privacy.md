@@ -8,7 +8,7 @@ This notice covers shop.meshsat.net: the mailing list, orders once ordering open
 
 ## Who is responsible
 
-Elli.Z.G., trading as MeshSat, Floresstraat 17, 2315 HP Leiden, the Netherlands, Chamber of Commerce 99812584. Contact: [support@meshsat.net](mailto:support@meshsat.net).
+Elli.Z.G., trading as MeshSat, Floresstraat 17, 2315 HP Leiden, the Netherlands, Chamber of Commerce 99812584. Contact: [hello@meshsat.net](mailto:hello@meshsat.net).
 
 ## The mailing list
 
@@ -26,7 +26,7 @@ The online withdrawal function stores your name, the order or invoice number, yo
 
 ## Support e-mail
 
-Mail to support@meshsat.net is kept as long as the matter is open and for the time the law requires afterwards. It stays on our own mail server.
+Mail to hello@meshsat.net is kept as long as the matter is open and for the time the law requires afterwards. It stays on our own mail server.
 
 ## Analytics
 
@@ -34,7 +34,7 @@ We use Umami, self-hosted on our own infrastructure. It sets no cookies and buil
 
 ## Your rights
 
-You may ask what we hold about you, have it corrected or deleted, object to its use, or receive it in a portable form, by writing to [support@meshsat.net](mailto:support@meshsat.net). We answer within a month. Invoices stay for the seven years the tax law requires even when you ask for deletion. You may complain to the Dutch data protection authority, the Autoriteit Persoonsgegevens.
+You may ask what we hold about you, have it corrected or deleted, object to its use, or receive it in a portable form, by writing to [hello@meshsat.net](mailto:hello@meshsat.net). We answer within a month. Invoices stay for the seven years the tax law requires even when you ask for deletion. You may complain to the Dutch data protection authority, the Autoriteit Persoonsgegevens.
 
 ## Changes
 
