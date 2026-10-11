@@ -31,7 +31,23 @@
                 <p class="offer-small">You pay on order.meshsat.net, our order system, by card, iDEAL, Bancontact, PayPal or Link. Shipping for your country is priced on the order page, insured and signed for. A pre-order takes a deposit of at most half the price; the rest is invoiced before dispatch. <a href="/terms/">Terms of sale</a>, <a href="/withdrawal/">right of withdrawal</a>.</p>
             </form>
             {{ else }}
-            {{ if $p.list_form_url }}
+            {{ if $p.turnstile_site_key }}
+            {{/* Cloudflare Turnstile (owner's choice, 11 Oct 2026): the token goes with the
+                 address to order.meshsat.net, which verifies it and subscribes the address
+                 through listmonk. Rendered by shop.js in the page's theme. */}}
+            <form class="notify" method="post" action="{{ $p.notify_url }}">
+                <input type="text" name="nonce" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="nonce">
+                <label for="notify-email" class="notify-label">Notify me when pre-orders open</label>
+                <div class="notify-row">
+                    <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="you@example.org" inputmode="email">
+                    <button type="submit" class="btn btn-primary" data-umami-event="notify-signup">Notify me</button>
+                </div>
+                <div class="turnstile" data-sitekey="{{ $p.turnstile_site_key }}"></div>
+                <noscript><p class="offer-small">The check needs JavaScript. Without it, write to <a href="mailto:{{ $p.support_email }}">{{ $p.support_email }}</a>.</p></noscript>
+                <p class="offer-small">One mail to confirm your address, then news about pre-orders only. Unsubscribe in every mail. <a href="/privacy/">Privacy notice</a>.</p>
+            </form>
+            <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=meshsatTurnstile&amp;render=explicit" async defer></script>
+            {{ else if $p.list_form_url }}
             <form class="notify" method="post" action="{{ $p.list_form_url }}">
                 <input type="hidden" name="l" value="{{ $p.list_uuid }}">
                 {{/* listmonk's honeypot: a bot that fills every field is refused. Stays empty. */}}
