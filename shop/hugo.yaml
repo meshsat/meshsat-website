@@ -30,7 +30,7 @@ params:
   # token with the widget's secret and subscribes through listmonk in the
   # cluster); empty, the form posts to listmonk directly with ALTCHA. The site
   # key is public by design; the secret is in OpenBao for the service.
-  turnstile_site_key: ""
+  turnstile_site_key: "0x4AAAAAAFTgclBWnGTRJVoq"
   notify_url: "https://order.meshsat.net/notify"
   # A second illustration for the "why one gateway" section, only when it shows a
   # properly assembled device (owner, 11 Oct 2026). Empty = the slot collapses.
