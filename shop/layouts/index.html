@@ -2,139 +2,213 @@
 {{- $p := .Site.Params -}}
 {{- $ordering := eq $p.ordering "on" -}}
 {{- $countries := slice (dict "cc" "AT" "name" "Austria") (dict "cc" "BE" "name" "Belgium") (dict "cc" "BG" "name" "Bulgaria") (dict "cc" "HR" "name" "Croatia") (dict "cc" "CY" "name" "Cyprus") (dict "cc" "CZ" "name" "Czechia") (dict "cc" "DK" "name" "Denmark") (dict "cc" "EE" "name" "Estonia") (dict "cc" "FI" "name" "Finland") (dict "cc" "FR" "name" "France") (dict "cc" "DE" "name" "Germany") (dict "cc" "GR" "name" "Greece") (dict "cc" "HU" "name" "Hungary") (dict "cc" "IE" "name" "Ireland") (dict "cc" "IT" "name" "Italy") (dict "cc" "LV" "name" "Latvia") (dict "cc" "LT" "name" "Lithuania") (dict "cc" "LU" "name" "Luxembourg") (dict "cc" "MT" "name" "Malta") (dict "cc" "NL" "name" "Netherlands") (dict "cc" "PL" "name" "Poland") (dict "cc" "PT" "name" "Portugal") (dict "cc" "RO" "name" "Romania") (dict "cc" "SK" "name" "Slovakia") (dict "cc" "SI" "name" "Slovenia") (dict "cc" "ES" "name" "Spain") (dict "cc" "SE" "name" "Sweden") -}}
-{{/* The offer is the hero (MESHSAT-1517, redesign of 11 Oct 2026): pill, headline,
-     lead, then the price and the one action in the first viewport on every device;
-     the render beside it. With ordering off the action is the e-mail sign-up into
-     our own list (listmonk, ALTCHA); with ordering on it is the destination and the
-     Order button, straight to order.meshsat.net. Everything below is the proof. */}}
-<section class="hero">
+{{- $cta := cond $ordering "Pre-order MSC-2" "Notify me at launch" -}}
+{{- $jump := cond $ordering "ship-to" "notify-email" -}}
+{{- $jumpEvent := cond $ordering "buy-jump" "notify-jump" -}}
+{{/* The page follows the owner's brief of 11 Oct 2026 (MESHSAT-1517): benefit, explanation,
+     evidence, practical details, one action. Every call to action follows the ordering
+     switch: off = the e-mail field and "Notify me at launch"; on = the destination country
+     and "Pre-order MSC-2", straight to order.meshsat.net. The hero is always dark. */}}
+<section class="hero" id="top">
     <div class="container hero-grid">
-        <div class="hero-head">
-            <p class="status-pill"><span class="dot" aria-hidden="true"></span>Pilot unit, built to order. Prototype design.</p>
-            <h1 class="product-title">A Meshtastic-compatible LoRa radio and an Iridium satellite modem in one sealed case.</h1>
-            <p class="product-lead">One satellite gateway for the whole team. Every radio in LoRa range reaches the Iridium network through this one box.</p>
+        <div class="hero-copy">
+            <p class="model-line">MeshSat Compact v2 <span class="model-sep" aria-hidden="true">/</span> MSC-2</p>
+            <h1 class="hero-title">One gateway.<br>Your whole team.</h1>
+            <p class="hero-lead">Designed to give your team's Meshtastic mesh one shared Iridium satellite connection.</p>
+            <p class="status-pill"><span class="dot" aria-hidden="true"></span>{{ if $ordering }}Prototype in development. Built to order.{{ else }}Prototype in development. Pre-orders are not open yet.{{ end }}</p>
+
+            <div class="offer" id="offer">
+                <p class="offer-price">
+                    <span class="offer-label">{{ if $ordering }}Launch price{{ else }}Planned launch price{{ end }}</span>
+                    <span class="offer-amount">{{ $p.launch_price }}</span>
+                    <span class="offer-note">{{ $p.vat_note }}, airtime extra</span>
+                </p>
+                {{ if $ordering }}
+                <form class="notify order-form" method="get" action="{{ $p.checkout_url }}">
+                    <label for="ship-to" class="notify-label">Ship to</label>
+                    <div class="notify-row">
+                        <select id="ship-to" name="to" required>
+                            <option value="">Choose a country</option>
+                            {{ range sort $countries "name" }}<option value="{{ .cc }}">{{ .name }}</option>{{ end }}
+                        </select>
+                        <button type="submit" class="btn btn-primary" data-umami-event="buy-click">{{ $cta }}</button>
+                    </div>
+                    <p class="offer-small">You pay on order.meshsat.net, our order system, by card, iDEAL, Bancontact, PayPal or Link. A pre-order takes a deposit of at most half the price; the rest is invoiced before dispatch. <a href="/terms/">Terms of sale</a>, <a href="/withdrawal/">right of withdrawal</a>.</p>
+                </form>
+                {{ else if $p.turnstile_site_key }}
+                {{/* Cloudflare Turnstile (owner's choice, 11 Oct 2026): the token goes with the
+                     address to order.meshsat.net, which verifies it and subscribes the address
+                     through listmonk. Rendered by shop.js in the page's theme. */}}
+                <form class="notify" method="post" action="{{ $p.notify_url }}">
+                    <input type="text" name="nonce" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="nonce">
+                    <label for="notify-email" class="notify-label">Your e-mail address</label>
+                    <div class="notify-row">
+                        <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="you@example.org" inputmode="email">
+                        <button type="submit" class="btn btn-primary" data-umami-event="notify-signup">{{ $cta }}</button>
+                    </div>
+                    <div class="turnstile" data-sitekey="{{ $p.turnstile_site_key }}"></div>
+                    <noscript><p class="offer-small">The check needs JavaScript. Without it, write to <a href="mailto:{{ $p.support_email }}">{{ $p.support_email }}</a>.</p></noscript>
+                    <p class="offer-small">One confirmation mail, then one pre-order alert. No payment today. Unsubscribe at any time. <a href="/privacy/">Privacy notice</a>.</p>
+                </form>
+                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=meshsatTurnstile&amp;render=explicit" async defer></script>
+                {{ else if $p.list_form_url }}
+                <form class="notify" method="post" action="{{ $p.list_form_url }}">
+                    <input type="hidden" name="l" value="{{ $p.list_uuid }}">
+                    {{/* listmonk's honeypot: a bot that fills every field is refused. Stays empty. */}}
+                    <input type="text" name="nonce" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="nonce">
+                    <label for="notify-email" class="notify-label">Your e-mail address</label>
+                    <div class="notify-row">
+                        <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="you@example.org" inputmode="email">
+                        <button type="submit" class="btn btn-primary" data-umami-event="notify-signup">{{ $cta }}</button>
+                    </div>
+                    {{/* ALTCHA: listmonk's self-hosted proof-of-work check, solved when the field is
+                         focused; the script and the challenge come from list.meshsat.net (ours). */}}
+                    <altcha-widget challengeurl="https://list.meshsat.net/api/public/captcha/altcha" auto="onfocus" hidelogo hidefooter></altcha-widget>
+                    <noscript><p class="offer-small">The check needs JavaScript. Without it, write to <a href="mailto:{{ $p.support_email }}">{{ $p.support_email }}</a>.</p></noscript>
+                    <p class="offer-small">One confirmation mail, then one pre-order alert. No payment today. Unsubscribe at any time. <a href="/privacy/">Privacy notice</a>.</p>
+                </form>
+                <script type="module" src="https://list.meshsat.net/public/static/altcha.umd.js" async defer></script>
+                {{ else }}
+                <p class="notify-label">Notify me at launch</p>
+                <a href="mailto:{{ $p.support_email }}?subject=MeshSat%20Compact%20v2%3A%20notify%20me%20when%20pre-orders%20open" class="btn btn-primary btn-block" data-umami-event="notify-mail">Notify me by e-mail</a>
+                <p class="offer-small">We answer from {{ $p.support_email }} and write once when pre-orders open. <a href="/privacy/">Privacy notice</a>.</p>
+                {{ end }}
+                {{ with $p.kickstarter_url }}
+                <a href="{{ . }}" class="btn btn-outline" target="_blank" rel="noopener" data-umami-event="kickstarter-click">{{ if $p.kickstarter_live }}Back us on Kickstarter{{ else }}Follow on Kickstarter{{ end }}</a>
+                {{ end }}
+                <p class="offer-ship">Expected shipping: {{ $p.ship_window }}. EU addresses only.{{ if $ordering }} Shipping cost and delivery time for your country are shown on the order page, before you pay.{{ end }}</p>
+            </div>
         </div>
 
-        <div class="offer" id="offer">
-            <p class="offer-price"><span class="offer-label">Launch price</span><span class="offer-amount">{{ $p.launch_price }}</span><span class="offer-note">{{ $p.vat_note }}</span></p>
-            <p class="offer-terms"><span>{{ $p.later_price }} after launch</span><span>Ships {{ $p.ship_window }}</span><span>EU countries only</span></p>
-            {{ if $ordering }}
-            <form class="notify order-form" method="get" action="{{ $p.checkout_url }}">
-                <label for="ship-to" class="notify-label">Order a MeshSat Compact v2</label>
-                <div class="notify-row">
-                    <select id="ship-to" name="to" required aria-label="Ship to">
-                        <option value="">Ship to: choose a country</option>
-                        {{ range sort $countries "name" }}<option value="{{ .cc }}">{{ .name }}</option>{{ end }}
-                    </select>
-                    <button type="submit" class="btn btn-primary" data-umami-event="buy-click">Order</button>
-                </div>
-                <p class="offer-small">You pay on order.meshsat.net, our order system, by card, iDEAL, Bancontact, PayPal or Link. Shipping for your country is priced on the order page, insured and signed for. A pre-order takes a deposit of at most half the price; the rest is invoiced before dispatch. <a href="/terms/">Terms of sale</a>, <a href="/withdrawal/">right of withdrawal</a>.</p>
-            </form>
-            {{ else }}
-            {{ if $p.turnstile_site_key }}
-            {{/* Cloudflare Turnstile (owner's choice, 11 Oct 2026): the token goes with the
-                 address to order.meshsat.net, which verifies it and subscribes the address
-                 through listmonk. Rendered by shop.js in the page's theme. */}}
-            <form class="notify" method="post" action="{{ $p.notify_url }}">
-                <input type="text" name="nonce" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="nonce">
-                <label for="notify-email" class="notify-label">Notify me when pre-orders open</label>
-                <div class="notify-row">
-                    <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="you@example.org" inputmode="email">
-                    <button type="submit" class="btn btn-primary" data-umami-event="notify-signup">Notify me</button>
-                </div>
-                <div class="turnstile" data-sitekey="{{ $p.turnstile_site_key }}"></div>
-                <noscript><p class="offer-small">The check needs JavaScript. Without it, write to <a href="mailto:{{ $p.support_email }}">{{ $p.support_email }}</a>.</p></noscript>
-                <p class="offer-small">One mail to confirm your address, then news about pre-orders only. Unsubscribe in every mail. <a href="/privacy/">Privacy notice</a>.</p>
-            </form>
-            <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=meshsatTurnstile&amp;render=explicit" async defer></script>
-            {{ else if $p.list_form_url }}
-            <form class="notify" method="post" action="{{ $p.list_form_url }}">
-                <input type="hidden" name="l" value="{{ $p.list_uuid }}">
-                {{/* listmonk's honeypot: a bot that fills every field is refused. Stays empty. */}}
-                <input type="text" name="nonce" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="nonce">
-                <label for="notify-email" class="notify-label">Notify me when pre-orders open</label>
-                <div class="notify-row">
-                    <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="you@example.org" inputmode="email">
-                    <button type="submit" class="btn btn-primary" data-umami-event="notify-signup">Notify me</button>
-                </div>
-                {{/* ALTCHA: listmonk's self-hosted proof-of-work check, solved when the field is
-                     focused; the script and the challenge come from list.meshsat.net (ours). */}}
-                <altcha-widget challengeurl="https://list.meshsat.net/api/public/captcha/altcha" auto="onfocus" hidelogo hidefooter></altcha-widget>
-                <noscript><p class="offer-small">The check needs JavaScript. Without it, write to <a href="mailto:{{ $p.support_email }}">{{ $p.support_email }}</a>.</p></noscript>
-                <p class="offer-small">One mail to confirm your address, then news about pre-orders only. Unsubscribe in every mail. <a href="/privacy/">Privacy notice</a>.</p>
-            </form>
-            <script type="module" src="https://list.meshsat.net/public/static/altcha.umd.js" async defer></script>
-            {{ else }}
-            <p class="notify-label">Notify me when pre-orders open</p>
-            <a href="mailto:{{ $p.support_email }}?subject=MeshSat%20Compact%20v2%3A%20notify%20me%20when%20pre-orders%20open" class="btn btn-primary btn-block" data-umami-event="notify-mail">Notify me by e-mail</a>
-            <p class="offer-small">We answer from {{ $p.support_email }} and write once when pre-orders open. <a href="/privacy/">Privacy notice</a>.</p>
-            {{ end }}
-            {{ end }}
-            {{ with $p.kickstarter_url }}
-            <a href="{{ . }}" class="btn btn-outline btn-block" target="_blank" rel="noopener" data-umami-event="kickstarter-click">{{ if $p.kickstarter_live }}Back us on Kickstarter{{ else }}Follow on Kickstarter{{ end }}</a>
-            {{ end }}
-        </div>
-
-        <figure class="render hero-render">
-            <img src="/images/msc2-render-assembled-v0-6.webp" alt="Design render of the MeshSat Compact v2: an orange rectangular case with a satellite antenna and a LoRa antenna on one end" width="1006" height="638" fetchpriority="high">
-            <figcaption>Design render of the enclosure, version 0.6. The first printed cases are being made in Leiden; a photograph replaces this render when a unit exists.</figcaption>
+        <figure class="hero-figure">
+            <img src="/images/msc2-concept-exploded-v1.webp" srcset="/images/msc2-concept-exploded-v1-s.webp 768w, /images/msc2-concept-exploded-v1.webp 1536w" sizes="(min-width: 960px) 46vw, 100vw" width="1536" height="1024" fetchpriority="high" alt="Concept illustration of the MeshSat Compact v2 taken apart: the orange lid with its display window, the LILYGO T-Beam Supreme board, the battery cradle with its cell, the RockBLOCK 9704 modem inside the orange body, the red quick-message button between the two antenna sockets, and the label on the side">
+            <figcaption>MSC-2 concept visualization. Internal parts shown separated, some wiring omitted for clarity. Final details may change.</figcaption>
         </figure>
+    </div>
+    <div class="container">
+        <ul class="status-strip" aria-label="Development status">
+            <li>Bench routing <strong class="st st-ok">tested</strong></li>
+            <li>MSC-2 satellite test <strong class="st st-pending">pending</strong></li>
+            <li>Range and battery life <strong class="st st-none">not measured</strong></li>
+            <li class="status-note">Prototype. Not an emergency service.</li>
+        </ul>
     </div>
 </section>
 
-<section class="facts" aria-label="Key facts">
+<section class="section why" id="why">
+    <div class="container why-grid">
+        <div class="why-copy prose">
+            <h2 class="h-display">A shared link for the team.</h2>
+            <p class="section-lead">The idea: local mesh radios, one satellite gateway, one airtime line.</p>
+            <p>MSC-2 combines a LILYGO T-Beam Supreme and a RockBLOCK 9704-SMA in one compact enclosure. The goal: the team keeps its own LoRa radios and shares one satellite gateway and one airtime subscription, instead of carrying a satellite messenger and a plan for every person.</p>
+            <p>A phone with the MeshSat app for Android or iOS connects over Bluetooth and reaches both radios. Without a phone, the gateway is designed to forward selected messages from the mesh into the modem on its own. That path has been tested on the bench; the satellite leg from a complete MSC-2 has not.</p>
+        </div>
+        {{ with $p.why_image }}
+        <figure class="why-figure">
+            <img src="{{ . }}" alt="{{ $p.why_image_alt }}" loading="lazy">
+            {{ with $p.why_image_caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+        </figure>
+        {{ end }}
+    </div>
+</section>
+
+<section class="section how" id="how-it-works">
     <div class="container">
+        <h2 class="h-display">Local radios. One shared satellite link.</h2>
+        <ol class="steps">
+            <li><span class="step-n" aria-hidden="true">1</span><h3>Send from the mesh</h3><p>A team member sends a message from a compatible radio on the configured Meshtastic channel.</p></li>
+            <li><span class="step-n" aria-hidden="true">2</span><h3>Pass it through MSC-2</h3><p>The gateway is designed to forward selected messages through its Iridium modem.</p></li>
+            <li><span class="step-n" aria-hidden="true">3</span><h3>Bring the reply back</h3><p>The intended return path carries replies back to the local mesh.</p></li>
+        </ol>
+        <p class="section-note">This is the intended end-to-end workflow. The complete satellite path of MSC-2 still needs validation. Operation depends on configuration, an active airtime service, and usable radio and satellite links.</p>
+    </div>
+</section>
+
+<section class="section hardware" id="the-hardware">
+    <div class="container">
+        <h2 class="h-display">Two radios, brought together.</h2>
+        <ul class="parts">
+            <li class="part">
+                <figure class="part-photo">
+                    <img src="/images/tbeam-supreme-lilygo-1.webp" width="953" height="752" loading="lazy" alt="LILYGO T-Beam Supreme board with its small display and a LoRa antenna">
+                    <figcaption>Photo: LILYGO</figcaption>
+                </figure>
+                <div class="part-text">
+                    <h3>LILYGO T-Beam Supreme</h3>
+                    <p>The Meshtastic-compatible LoRa side of the design: the 868 MHz radio, the display, GPS and the Bluetooth link to a phone.</p>
+                </div>
+            </li>
+            <li class="part">
+                <figure class="part-photo">
+                    <img src="/images/rockblock-9704-sma-front.webp" width="1024" height="731" loading="lazy" alt="RockBLOCK 9704-SMA board with the Iridium 9704 modem and its antenna socket">
+                    <figcaption>Photo: Ground Control</figcaption>
+                </figure>
+                <div class="part-text">
+                    <h3>RockBLOCK 9704-SMA</h3>
+                    <p>The Iridium IMT satellite side: the modem that carries messages to and from the Iridium network, on an airtime line rented from Ground Control. The IMT service carries messages up to 100 kB (Ground Control's figure); what each MSC-2 path supports is being measured.</p>
+                </div>
+            </li>
+            <li class="part part-plain">
+                <div class="part-text">
+                    <h3>One 18650 cell</h3>
+                    <p>A planned 3.400 mAh Li-ion cell in the cradle between the two boards, charged over USB-C at 5 V and 1 A.</p>
+                </div>
+            </li>
+            <li class="part part-plain">
+                <div class="part-text">
+                    <h3>The orange ASA enclosure</h3>
+                    <p>A 3D-printed case, approximately 146 x 63 x 63 mm for body and lid, with a display window, two antenna sockets, a sealed USB-C socket and the quick-message button. The button is intended to send a preset message to a preset contact. It is not a monitored distress button.</p>
+                </div>
+            </li>
+        </ul>
         <dl class="facts-strip">
             <div><dt>Model</dt><dd>MSC-2</dd></div>
             <div><dt>Mesh</dt><dd>Meshtastic-compatible LoRa, 868 MHz</dd></div>
-            <div><dt>Satellite</dt><dd>Iridium IMT, RockBLOCK 9704</dd></div>
-            <div><dt>Phone</dt><dd>Bluetooth, MeshSat app</dd></div>
-            <div><dt>Power</dt><dd>one 18650 cell, 3.400 mAh, USB-C 5 V 1 A</dd></div>
-            <div><dt>Case</dt><dd>146 x 63 x 63 mm, 3D-printed ASA, O-ring sealed</dd></div>
-            <div><dt>Licence</dt><dd>GPL-3.0, CERN-OHL-S-2.0</dd></div>
+            <div><dt>Satellite</dt><dd>Iridium IMT, RockBLOCK 9704-SMA</dd></div>
+            <div><dt>Phone</dt><dd>Bluetooth, MeshSat app for Android and iOS</dd></div>
+            <div><dt>Power</dt><dd>one 18650 cell, 3.400 mAh; USB-C 5 V 1 A</dd></div>
+            <div><dt>Case</dt><dd>approx. 146 x 63 x 63 mm, 3D-printed ASA, O-ring sealed</dd></div>
+            <div><dt>Licences</dt><dd>GPL-3.0 software, CERN-OHL-S-2.0 hardware</dd></div>
         </dl>
     </div>
 </section>
 
-<section class="section proof">
+<section class="section progress" id="build-progress">
     <div class="container">
-        <div class="columns prose">
-            <div>
-                <h2>What it does</h2>
-                <p>Compact v2 puts a Meshtastic-compatible LoRa radio and a RockBLOCK 9704 Iridium satellite modem in one sealed, 3D-printed case. Every Meshtastic-compatible radio in LoRa range reaches the Iridium network through this one box: the team buys one gateway and pays one airtime line instead of a satellite messenger and a plan for every person.</p>
-                <p>A phone with the MeshSat app for Android or iOS connects over Bluetooth and gets both radios. Without a phone, the unit routes its satellite channel on its own: a text typed on any radio in the mesh goes out over Iridium, and the reply comes back the same way. Messages up to 100 kB travel over Iridium IMT. The quick-message button on the panel sends a preset message to a preset contact.</p>
-            </div>
-            <div>
-                <h2>What has been tested, and what has not</h2>
-                <p>The design is a prototype. The node firmware with the RockBLOCK 9704 has been tested on the bench: the modem answers, registers and accepts a text, and the node routes a text from the mesh into the modem with no phone involved. No satellite message has been sent from a compact v2 yet. The earlier node, with a RockBLOCK 9603, has sent and received satellite messages from a garden. Range, battery life and the water rating of the case are not measured. The full record is the proven table in the <a href="{{ $p.node_docs_url }}" target="_blank" rel="noopener">node documentation</a>; this page says no more than it does.</p>
-            </div>
-            <div>
-                <h2>What it is not</h2>
-                <p>MeshSat is not an emergency service and the unit is not a distress device. Do not rely on it to call for help. Message delivery is best effort: mesh radio and satellite links fail for reasons nobody controls, and nobody is watching on your behalf. Every satellite session is billed by the airtime provider, even one that only checks for new messages. There is no rescue service behind the quick-message button.</p>
-            </div>
-        </div>
+        <h2 class="h-display">See exactly where development stands.</h2>
+        <p class="section-lead">What the MSC-2 design has done so far, and what it has not. The evidence, with dates and hardware versions, is in the <a href="{{ $p.node_docs_url }}" target="_blank" rel="noopener">node test record</a>.</p>
+        <table class="progress-table">
+            <thead><tr><th scope="col">Item</th><th scope="col">Status</th></tr></thead>
+            <tbody>
+                <tr><td>RockBLOCK 9704 communication and message acceptance</td><td><span class="st st-ok">Tested on the bench</span> 8 October 2026: the modem answered, registered and accepted a text</td></tr>
+                <tr><td>Routing a mesh message into the modem without a phone</td><td><span class="st st-ok">Tested on the bench</span> 8 October 2026</td></tr>
+                <tr><td>Sending and receiving satellite messages from a complete MSC-2</td><td><span class="st st-pending">Not yet demonstrated</span></td></tr>
+                <tr><td>The earlier node with a RockBLOCK 9603</td><td><span class="st st-ok">Satellite messages sent and received</span> from a garden, 27 September 2026; a different hardware version</td></tr>
+                <tr><td>MSC-2 radio range and battery life</td><td><span class="st st-none">Not measured</span></td></tr>
+                <tr><td>Enclosure water resistance</td><td><span class="st st-none">Not validated</span></td></tr>
+            </tbody>
+        </table>
+        <p class="important"><strong>Important:</strong> MSC-2 is a prototype, not an emergency service or a distress device. Do not rely on it to summon help. Message delivery is not guaranteed, and no monitoring or rescue service is included.</p>
     </div>
 </section>
 
-<section class="section box">
-    <div class="container box-grid prose">
-        <figure class="render render-exploded">
-            <img src="/images/msc2-render-exploded-v0-6.webp" alt="Exploded design render of the MeshSat Compact v2: lid, radio board, separator, modem, body and carry plate, with a ruler and a 2 euro coin for scale" width="1034" height="1277" loading="lazy">
-            <figcaption>Exploded render of the same design: lid, radio, separator, modem, body, carry plate. Ruler in millimetres, 2 euro coin for scale.</figcaption>
-        </figure>
+<section class="section box" id="box">
+    <div class="container columns-2 prose">
         <div>
-            <h2 id="box">What is in the box</h2>
+            <h2>What the package is planned to include</h2>
             <ul>
-                <li>The unit: a LILYGO T-Beam Supreme over a Ground Control RockBLOCK 9704-SMA in the printed ASA case, with the display window, the quick-message button, two antenna sockets and a sealed USB-C socket</li>
-                <li>The helical Iridium antenna and the 868 MHz LoRa antenna</li>
-                <li>One 18650 Li-ion cell, 3.400 mAh</li>
+                <li>One assembled MSC-2: the LILYGO T-Beam Supreme and the RockBLOCK 9704-SMA in the printed ASA case, with the display window, the quick-message button, two antenna sockets and a sealed USB-C socket</li>
+                <li>One helical Iridium antenna and one 868 MHz LoRa antenna</li>
+                <li>One 3.400 mAh 18650 Li-ion cell</li>
                 <li>The instructions and safety leaflet and the EU declaration of conformity, in print</li>
             </ul>
-            <h2>What you need besides the box</h2>
+        </div>
+        <div>
+            <h2>What you need separately</h2>
             <ul>
-                <li>An Iridium IMT line for the modem, rented from Ground Control and billed by them. One line serves the whole team.</li>
-                <li>A Meshtastic-compatible LoRa radio for each person who sends from the mesh. Any will do; the unit itself is one.</li>
-                <li>The MeshSat app for Android or iOS, if you want to use the unit from a phone. The app is free and open source.</li>
+                <li><strong>Satellite airtime.</strong> Purchased separately from Ground Control. An active IMT service is required, and access fees and usage charges depend on your plan. Check the <a href="{{ $p.airtime_url }}" target="_blank" rel="noopener">current provider terms</a> before ordering. One line serves the whole team.</li>
+                <li><strong>Mesh radios.</strong> A compatible radio for each person who sends from the mesh, with <a href="{{ $p.channels_url }}" target="_blank" rel="noopener">matching radio and channel settings</a>. The unit itself is one.</li>
+                <li><strong>A phone, if you want one.</strong> The MeshSat app for Android or iOS, free and open source; the <a href="{{ $p.apps_url }}" target="_blank" rel="noopener">app documentation</a> lists the supported platforms and what works with MSC-2 at launch.</li>
             </ul>
         </div>
     </div>
@@ -143,16 +217,16 @@
 <section class="section terms-band">
     <div class="container columns prose">
         <div>
-            <h2 id="ships">How it ships</h2>
-            <p>Built to order in Leiden, the Netherlands, and shipped to addresses in the European Union only, insured and signed for. Expected shipping window: {{ $p.ship_window }}.{{ if $ordering }} Shipping cost and delivery time for your country are shown on the order page, before you pay.{{ end }}</p>
+            <h2 id="ships">Built to order in Leiden</h2>
+            <p>MSC-2 is planned to be assembled in Leiden, the Netherlands, and shipped to EU addresses with insured, signed-for delivery. The current expected shipping window is {{ $p.ship_window }}. Delivery timing and shipping charges are shown when ordering{{ if $ordering }}, on the order page before you pay{{ else }} opens{{ end }}.</p>
+        </div>
+        <div>
+            <h2>Open source</h2>
+            <p>The software and the enclosure files are published, so you can inspect the design, follow development and build your own unit. Software: GPL-3.0. Hardware: CERN-OHL-S-2.0. Everything is on <a href="{{ $p.github }}" target="_blank" rel="noopener">github.com/meshsat</a>. Buying an assembled unit pays for the assembly, the testing and the documents.</p>
         </div>
         <div>
             <h2>Conformity</h2>
             <p>Every unit ships with its EU declaration of conformity and its instructions and safety leaflet. Both are published, every edition, at <a href="{{ $p.conformity_url }}" target="_blank" rel="noopener">docs.meshsat.net/conformity/msc-2/</a>, the address printed on the unit's label.</p>
-        </div>
-        <div>
-            <h2>Open source</h2>
-            <p>The firmware, the enclosure and the apps are open source: GPL-3.0 for the software, CERN-OHL-S-2.0 for the hardware. Everything is on <a href="{{ $p.github }}" target="_blank" rel="noopener">github.com/meshsat</a>. You can build one yourself; buying one assembled pays for the build, the testing and the documents.</p>
         </div>
     </div>
 </section>
@@ -167,18 +241,53 @@
                     <span class="video-play-glyph" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
                 </button>
             </div>
-            <figcaption class="video-foot">What MeshSat does, in two minutes. Nothing loads from YouTube until you press play. <a href="https://www.youtube.com/watch?v={{ $p.intro_film }}" target="_blank" rel="noopener">Watch on YouTube</a></figcaption>
+            <figcaption class="video-foot">Meet the MeshSat project in two minutes. This film shows the wider project; it is not evidence that MSC-2 has completed satellite testing. Nothing loads from YouTube until you press play. <a href="https://www.youtube.com/watch?v={{ $p.intro_film }}" target="_blank" rel="noopener">Watch on YouTube</a></figcaption>
         </figure>
         <div class="ask">
             {{ if $ordering }}
-            <p class="ask-title">{{ $p.launch_price }} {{ $p.vat_note }}, shipped {{ $p.ship_window }}.</p>
-            <p class="ask-text">Choose your country at the top of the page and pay in a minute; the invoice and the shipping confirmation follow by e-mail.</p>
-            <button type="button" class="btn btn-primary" onclick="document.getElementById('ship-to').scrollIntoView({block:'center'});document.getElementById('ship-to').focus()">Order a MeshSat Compact v2</button>
+            <p class="ask-title">Order a MeshSat Compact v2.</p>
+            <p class="ask-text">{{ $p.launch_price }} {{ $p.vat_note }}, airtime extra, shipped {{ $p.ship_window }}. Choose your country at the top of the page and pay on order.meshsat.net; the invoice and the shipping confirmation follow by e-mail.</p>
             {{ else }}
-            <p class="ask-title">Pre-orders open soon, at {{ $p.launch_price }} {{ $p.vat_note }}.</p>
-            <p class="ask-text">Leave your address and we write once when they do. Nothing else, no list sold, unsubscribe in every mail.</p>
-            <button type="button" class="btn btn-primary" onclick="document.getElementById('notify-email').scrollIntoView({block:'center'});document.getElementById('notify-email').focus()" data-umami-event="notify-jump">Notify me when pre-orders open</button>
+            <p class="ask-title">Know when pre-orders open.</p>
+            <p class="ask-text">Confirm your e-mail address and receive the pre-order opening alert. Planned launch price {{ $p.launch_price }} {{ $p.vat_note }}, satellite airtime extra. No payment today. Unsubscribe at any time.</p>
             {{ end }}
+            <a href="#{{ $jump }}" class="btn btn-primary" data-jump="{{ $jump }}" data-umami-event="{{ $jumpEvent }}">{{ $cta }}</a>
+        </div>
+    </div>
+</section>
+
+<section class="section faq" id="faq">
+    <div class="container">
+        <h2 class="h-display">Questions</h2>
+        <div class="faq-list">
+            <details>
+                <summary>Can I buy one now?</summary>
+                {{ if $ordering }}<p>Yes. Choose your country at the top of the page; you pay on order.meshsat.net, our order system. A pre-order takes a deposit of at most half the price; the rest is invoiced before dispatch.</p>{{ else }}<p>Pre-orders are not open yet. Join the launch list to receive a mail when ordering becomes available. Signing up does not place an order or reserve a unit.</p>{{ end }}
+            </details>
+            <details>
+                <summary>Does the price include satellite service?</summary>
+                <p>No. Ground Control IMT airtime is purchased separately. Check the <a href="{{ $p.airtime_url }}" target="_blank" rel="noopener">provider's current plans</a> for access fees and usage charges.</p>
+            </details>
+            <details>
+                <summary>Will it work with my Meshtastic radio?</summary>
+                <p>Your radio needs compatible hardware and firmware and <a href="{{ $p.channels_url }}" target="_blank" rel="noopener">matching radio and channel settings</a>. The <a href="{{ $p.node_docs_url }}" target="_blank" rel="noopener">node documentation</a> lists the devices tested so far; not every Meshtastic device has been tested.</p>
+            </details>
+            <details>
+                <summary>Can it operate without a phone?</summary>
+                <p>Phone-free forwarding from the mesh into the RockBLOCK 9704 has been tested on the bench, per the current MSC-2 test record. Satellite operation from a complete MSC-2 still needs validation.</p>
+            </details>
+            <details>
+                <summary>Is the enclosure waterproof?</summary>
+                <p>The design uses sealing features, but the assembled enclosure's water resistance has not been validated. No tested water-resistance rating is claimed.</p>
+            </details>
+            <details>
+                <summary>How long does the battery last?</summary>
+                <p>Battery life has not yet been measured on MSC-2. A battery-capacity figure alone does not establish runtime.</p>
+            </details>
+            <details>
+                <summary>Is it suitable as an emergency beacon?</summary>
+                <p>No. MSC-2 is a prototype messaging gateway. It does not include a monitored emergency response or rescue service.</p>
+            </details>
         </div>
     </div>
 </section>
