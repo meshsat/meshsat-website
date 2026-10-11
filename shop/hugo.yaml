@@ -94,13 +94,13 @@ menu:
       url: "/#how-it-works"
       weight: 1
     - name: "The hardware"
-      url: "/#the-hardware"
+      url: "/#hardware"
       weight: 2
     - name: "Build progress"
-      url: "/#build-progress"
+      url: "/#progress"
       weight: 3
-    - name: "FAQ"
-      url: "/#faq"
+    - name: "Questions"
+      url: "/#questions"
       weight: 4
 
 markup:
