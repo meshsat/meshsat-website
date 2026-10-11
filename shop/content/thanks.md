@@ -3,7 +3,7 @@ title: "Thank you"
 description: "What happens after you order a MeshSat Compact v2."
 ---
 
-Your order is placed. Within a few minutes you receive an e-mail from billing@meshsat.net with your receipt as a PDF; if it does not arrive, look in the spam folder and then write to [support@meshsat.net](mailto:support@meshsat.net).
+Your order is placed. Within a few minutes you receive an e-mail from billing@meshsat.net with your receipt as a PDF; if it does not arrive, look in the spam folder and then write to [hello@meshsat.net](mailto:hello@meshsat.net).
 
 ## What happens next
 
