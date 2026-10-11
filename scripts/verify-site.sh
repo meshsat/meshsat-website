@@ -102,6 +102,24 @@ if [ -d "$SHOP" ]; then
   else
     pass "shop: ordering is on (owner's switch)"
   fi
+  # The sign-up check is one of two, chosen by turnstile_site_key in shop/hugo.yaml:
+  # Turnstile (Cloudflare's script on the page) or ALTCHA (listmonk's). Never both,
+  # never neither, and the form posts to the matching endpoint.
+  if grep -q 'turnstile_site_key: ""' shop/hugo.yaml 2>/dev/null; then
+    if grep -q 'challenges.cloudflare.com' "$SHOP/index.html" 2>/dev/null; then
+      fail "shop: no Turnstile site key, but Cloudflare's script is on the page"
+    elif grep -q 'altcha-widget' "$SHOP/index.html" 2>/dev/null; then
+      pass "shop: sign-up check is ALTCHA (no Turnstile site key)"
+    else
+      fail "shop: the sign-up form has no bot check at all"
+    fi
+  else
+    if grep -q 'challenges.cloudflare.com' "$SHOP/index.html" 2>/dev/null && grep -q 'order.meshsat.net/notify' "$SHOP/index.html" 2>/dev/null && ! grep -q 'altcha-widget' "$SHOP/index.html" 2>/dev/null; then
+      pass "shop: sign-up check is Turnstile, posting to order.meshsat.net/notify"
+    else
+      fail "shop: Turnstile site key set, but the page lacks the widget, posts elsewhere, or still carries ALTCHA"
+    fi
+  fi
   if grep -rqi 'registered trademark\|®' "$SHOP" --include='*.html'; then
     fail "shop: a registered-trademark claim (BOIP 1556109 is under examination)"
   else
