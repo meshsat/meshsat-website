@@ -1,0 +1,70 @@
+{{/* The named comparison (ACR Bivy Stick MESH): off by default, rendered only from a reviewed
+     record. All three must hold (the owner's corrective brief of 11 Oct 2026, MESHSAT-1517):
+     comparison_published is "on" in shop/hugo.yaml; shop/data/comparison.yaml exists with
+     review.status "approved" naming the content and inputs versions it approved; the review has
+     not passed review.valid_until. Only rows and scenarios with status "verified" render. Every
+     name, figure and sentence comes from the record; this template holds none. A failing record
+     renders nothing and prints a warning in the build log; it never enables the section by itself. */}}
+{{- $p := .Site.Params -}}
+{{- $on := eq $p.comparison_published "on" -}}
+{{- $cmp := .Site.Data.comparison -}}
+{{- $why := "" -}}
+{{- if $on -}}
+    {{- if not $cmp -}}{{- $why = "shop/data/comparison.yaml is missing" -}}
+    {{- else -}}
+        {{- $r := $cmp.review -}}
+        {{- if not $r -}}{{- $why = "the record has no review block" -}}
+        {{- else if ne (print $r.status) "approved" -}}{{- $why = printf "review.status is %q, not approved" (print $r.status) -}}
+        {{- else if not $r.reviewed_on -}}{{- $why = "review.reviewed_on is empty" -}}
+        {{- else if or (not $cmp.content_version) (ne (print $r.approved_content_version) (print $cmp.content_version)) -}}{{- $why = "review.approved_content_version does not match content_version" -}}
+        {{- else if or (not $cmp.inputs_version) (ne (print $r.approved_inputs_version) (print $cmp.inputs_version)) -}}{{- $why = "review.approved_inputs_version does not match inputs_version" -}}
+        {{- else if not $r.valid_until -}}{{- $why = "review.valid_until is empty" -}}
+        {{- else if not ((time.AsTime $r.valid_until).After now) -}}{{- $why = printf "the review expired on %s" (print $r.valid_until) -}}
+        {{- else if or (not $cmp.competitor) (not $cmp.baseline_eur) (not $cmp.intro) (not $cmp.basis) (not $cmp.checked_on) (not $cmp.differences) (not $cmp.attribution) -}}{{- $why = "competitor, baseline_eur, intro, basis, checked_on, differences or attribution is empty" -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- $rows := slice -}}
+{{- $scenarios := slice -}}
+{{- if and $on (not $why) -}}
+    {{- range $cmp.rows -}}{{- if eq (print .status) "verified" -}}{{- $rows = $rows | append . -}}{{- end -}}{{- end -}}
+    {{- range $cmp.scenarios -}}{{- if eq (print .status) "verified" -}}{{- $scenarios = $scenarios | append . -}}{{- end -}}{{- end -}}
+    {{- if not $rows -}}{{- $why = "no row has status verified" -}}{{- end -}}
+{{- end -}}
+{{- if and $on $why -}}
+    {{- warnf "shop: comparison_published is on but nothing is published: %s" $why -}}
+{{- end -}}
+{{- if and $on (not $why) }}
+<section class="compare section" id="team-setup-comparison" aria-labelledby="compare-title">
+    <div class="wrap">
+        <div class="section-heading">
+            <div><p class="section-index">Team setup comparison</p><h2 id="compare-title">MeshSat Compact v2 and<br>the {{ $cmp.competitor }}.</h2></div>
+            <p class="section-intro">{{ $cmp.intro }}</p>
+        </div>
+        <div class="table-wrap">
+            <table class="compare-table">
+                <caption>Checked on {{ $cmp.checked_on }}. {{ $cmp.basis }}</caption>
+                <thead><tr><th scope="col"><span class="visually-hidden">Item</span></th><th scope="col">MeshSat Compact v2</th><th scope="col">{{ $cmp.competitor }}</th></tr></thead>
+                <tbody>
+                {{- range $rows }}{{ $row := . }}
+                    <tr><th scope="row">{{ $row.label }}</th><td>{{ $row.ours }}</td><td>{{ $row.theirs }}{{ with $row.source }} <a href="{{ . }}" target="_blank" rel="noopener">{{ $row.source_label | default "Source" }}</a>{{ end }}</td></tr>
+                {{- end }}
+                </tbody>
+            </table>
+        </div>
+        {{- with $scenarios }}
+        <div class="compare-scenarios">
+            <h3>Cost by scenario</h3>
+            <p class="compare-lead">MeshSat's figures use the planned regular price of {{ $cmp.baseline_eur }}, not the launch offer. Each scenario states what it counts and what it leaves out.</p>
+            <ul>
+            {{- range . }}
+                <li><strong>{{ .label }}</strong><span>MeshSat {{ .ours }}; {{ $cmp.competitor }} {{ .theirs }}.</span><em>{{ if eq (print .outcome) "less" }}MeshSat costs less in this scenario.{{ else if eq (print .outcome) "more" }}MeshSat costs more in this scenario.{{ else }}The two cost about the same in this scenario.{{ end }}</em></li>
+            {{- end }}
+            </ul>
+        </div>
+        {{- end }}
+        <p class="compare-differences">{{ $cmp.differences }}</p>
+        <p class="compare-note">{{ $cmp.attribution }}</p>
+    </div>
+</section>
+{{- end }}
