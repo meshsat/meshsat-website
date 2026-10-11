@@ -163,37 +163,49 @@ p, li, dd, figcaption, summary { text-wrap: pretty; }
     background: var(--color-bg); color: var(--color-text);
 }
 .hero .btn-primary, .hero .btn-primary:hover { color: #14120F; }
-.hero { padding: var(--space-2xl) 0 0; }
+/* The hero fills the first screen (the mock of 11 Oct 2026): the copy on the
+   left, the illustration large on the right and bleeding past the edge, the
+   status strip along the bottom. A warm glow behind the image, as in the mock. */
+.hero {
+    position: relative; overflow: hidden; padding: 0;
+    min-height: calc(100vh - 64px); min-height: calc(100svh - 64px);
+    display: flex; flex-direction: column; justify-content: space-between;
+    background-image: radial-gradient(ellipse 55% 65% at 74% 52%, rgba(128, 72, 28, 0.28), transparent 68%);
+}
 .hero-grid {
-    display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); align-items: center;
-    grid-template-areas: "copy" "figure";
+    position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); align-items: center;
+    grid-template-areas: "copy" "figure"; padding-top: var(--space-2xl); padding-bottom: var(--space-lg);
 }
-.hero-copy { grid-area: copy; min-width: 0; }
-.hero-figure { grid-area: figure; margin: 0; min-width: 0; }
+.hero-copy { grid-area: copy; min-width: 0; max-width: 42rem; position: relative; z-index: 1; }
+.hero-figure { grid-area: figure; margin: 0 calc(-1 * var(--space-md)); min-width: 0; position: relative; }
+.hero-figure img { display: block; width: 100%; height: auto; }
+.hero-figure figcaption { font-family: var(--font-mono); font-size: 0.8125rem; line-height: 1.5; color: var(--color-text-muted); padding: var(--space-xs) var(--space-md) 0; text-align: right; }
 @media (min-width: 960px) {
-    .hero { padding-top: var(--space-3xl); }
-    .hero-grid { grid-template-columns: minmax(0, 12fr) minmax(0, 9fr); gap: var(--space-3xl); grid-template-areas: "copy figure"; }
+    /* The illustration leaves the grid: anchored to the right edge of the screen,
+       centred on the hero's height, about 58 % of the width, under the copy. */
+    .hero-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy"; padding-top: var(--space-2xl); padding-bottom: var(--space-xl); flex: 1 0 auto; }
+    .hero-figure { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: min(58vw, 940px); margin: 0; z-index: 0; }
+    .hero-figure img {
+        -webkit-mask-image: radial-gradient(ellipse 74% 78% at 52% 50%, #000 58%, transparent 100%);
+        mask-image: radial-gradient(ellipse 74% 78% at 52% 50%, #000 58%, transparent 100%);
+    }
+    .hero-figure figcaption { position: absolute; right: var(--space-lg); bottom: -1.5rem; padding: 0; white-space: nowrap; }
 }
-.model-line { font-family: var(--font-mono); font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-lg); }
-.model-sep { color: var(--color-primary); padding: 0 0.3em; }
-.hero-title { font-size: clamp(2.25rem, 10vw, 4.5rem); line-height: 1; letter-spacing: -0.035em; margin-bottom: var(--space-lg); max-width: 16ch; }
-.hero-lead { font-size: 1.25rem; line-height: 1.45; color: var(--color-text); max-width: 34ch; margin-bottom: var(--space-lg); }
+.model-line { font-family: var(--font-mono); font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-md); }
+.model-sep { color: var(--color-text-muted); padding: 0 0.3em; }
+.hero-title { font-size: clamp(2.5rem, 6.6vw, 6rem); line-height: 0.96; letter-spacing: -0.035em; margin-bottom: var(--space-md); text-wrap: initial; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35); }
+.hero-lead { font-size: 1.25rem; line-height: 1.45; color: var(--color-text); max-width: 40ch; margin-bottom: var(--space-md); }
 .status-pill {
     display: inline-flex; align-items: center; gap: 0.55em;
     font-size: 0.9375rem; font-weight: 500; color: var(--color-primary);
     border: 1px solid var(--color-primary); border-radius: var(--radius-md);
-    padding: 0.35em 0.9em; margin-bottom: var(--space-xl);
+    padding: 0.35em 0.9em; margin-bottom: var(--space-md);
 }
 .status-pill .dot { width: .5em; height: .5em; border-radius: 50%; background: currentColor; flex: none; }
-.hero-figure img {
-    display: block; width: 100%; height: auto;
-    -webkit-mask-image: radial-gradient(ellipse 74% 74% at 50% 50%, #000 52%, transparent 100%);
-    mask-image: radial-gradient(ellipse 74% 74% at 50% 50%, #000 52%, transparent 100%);
-}
-.hero-figure figcaption { font-family: var(--font-mono); font-size: 0.8125rem; line-height: 1.5; color: var(--color-text-muted); max-width: 52ch; margin: var(--space-sm) auto 0; text-align: center; }
 
 /* The offer inside the hero: no card, the price and the one action. */
-.offer { display: flex; flex-direction: column; gap: var(--space-md); max-width: 36rem; }
+.offer { display: flex; flex-direction: column; gap: var(--space-sm); max-width: 36rem; }
+.offer .notify { margin-top: var(--space-xs); }
 .offer-price { display: grid; grid-template-columns: auto 1fr; column-gap: 0.75em; align-items: baseline; }
 .offer-label { grid-column: 1 / -1; font-family: var(--font-mono); font-size: 0.875rem; letter-spacing: 0.04em; color: var(--color-text-muted); }
 .offer-amount { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; letter-spacing: -0.03em; color: var(--color-text); line-height: 1.05; }
@@ -209,8 +221,9 @@ p, li, dd, figcaption, summary { text-wrap: pretty; }
 .notify-row input,
 .notify-row select { flex: 1 1 13rem; min-width: 0; }
 .notify .nonce { position: absolute; left: -10000px; width: 1px; height: 1px; opacity: 0; }
-/* The Turnstile mount: the widget's own height, reserved so nothing jumps. */
-.turnstile { min-height: 65px; }
+/* The Turnstile mount: interaction-only, so nothing shows unless Cloudflare
+   needs a click (owner, 11 Oct 2026); no height reserved. */
+.turnstile:empty { display: none; }
 .turnstile iframe { display: block; max-width: 100%; }
 /* The ALTCHA widget, in the hero's tokens. */
 altcha-widget { display: block; --altcha-color-base: var(--color-bg); --altcha-color-border: var(--color-border-light); --altcha-color-text: var(--color-text); --altcha-color-border-focus: var(--color-primary); --altcha-border-width: 1px; --altcha-border-radius: 5px; --altcha-max-width: 100%; font-size: 0.9375rem; }
@@ -225,7 +238,7 @@ input:focus, textarea:focus, select:focus { border-color: var(--color-primary); 
 
 /* The status strip at the foot of the hero: four facts on one hairline. */
 .status-strip {
-    list-style: none; margin: var(--space-2xl) 0 0; padding: var(--space-md) 0;
+    list-style: none; margin: var(--space-lg) 0 0; padding: var(--space-md) 0;
     border-top: 1px solid var(--color-border);
     display: flex; flex-wrap: wrap; gap: var(--space-sm) 0;
     font-size: 0.9375rem; color: var(--color-text-muted);
@@ -267,13 +280,14 @@ input:focus, textarea:focus, select:focus { border-color: var(--color-primary); 
 .steps p { color: var(--color-text-muted); max-width: 32ch; }
 
 /* ---------- The hardware ---------- */
-.parts { list-style: none; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); margin: var(--space-xl) 0; }
-@media (min-width: 768px) { .parts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2xl); } }
-.part { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-md); border-top: 1px solid var(--color-border); padding-top: var(--space-lg); min-width: 0; }
-@media (min-width: 480px) { .part:not(.part-plain) { grid-template-columns: 11rem minmax(0, 1fr); align-items: start; } }
+.parts { list-style: none; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-2xl); margin: var(--space-xl) 0; }
+@media (min-width: 768px) { .parts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2xl) var(--space-3xl); } }
+.part { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-md); min-width: 0; align-content: start; }
+.part-plain { border-top: 1px solid var(--color-border); padding-top: var(--space-lg); }
+/* The two boards: large, on the same white plate, the maker credited under each. */
 .part-photo { margin: 0; }
-.part-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: #FFFFFF; border-radius: var(--radius-md); padding: 0.5rem; }
-.part-photo figcaption { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--color-text-muted); margin-top: var(--space-xs); }
+.part-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: #FFFFFF; border-radius: var(--radius-lg); padding: 2rem; }
+.part-photo figcaption { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--color-text-muted); margin-top: var(--space-sm); text-align: right; }
 .part h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: var(--space-xs); }
 .part p { color: var(--color-text-muted); max-width: 44ch; }
 
@@ -425,7 +439,8 @@ input:focus, textarea:focus, select:focus { border-color: var(--color-primary); 
     .container { padding: 0 var(--space-md); }
     .logo-sub { display: none; }
     .section { padding: var(--space-2xl) 0; }
-    .hero { padding-top: var(--space-xl); }
+    .hero { min-height: 0; }
+    .hero-grid { padding-top: var(--space-xl); }
     .hero-title { margin-bottom: var(--space-md); }
     .hero-lead { font-size: 1.125rem; margin-bottom: var(--space-md); }
     .status-pill { margin-bottom: var(--space-lg); font-size: 0.875rem; }

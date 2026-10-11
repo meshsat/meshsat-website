@@ -17,8 +17,8 @@ params:
   # rendered anywhere (verify-site.sh checks the built HTML). on: the Buy
   # button and the online withdrawal function appear. Owner's switch.
   ordering: "off"
-  launch_price: "EUR 1.111"
-  later_price: "EUR 1.800"
+  launch_price: "€1.111"
+  later_price: "€1.800"
   vat_note: "incl. 21 % VAT"
   ship_window: "December 2026 to January 2027"
   # listmonk public form (MESHSAT-1519). Empty until the list exists: the page
