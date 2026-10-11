@@ -13,7 +13,7 @@
     <div class="container hero-grid">
         <div class="hero-copy">
             <p class="model-line">MeshSat Compact v2 <span class="model-sep" aria-hidden="true">/</span> MSC-2</p>
-            <h1 class="hero-title">One gateway.<br>Your whole team.</h1>
+            <h1 class="hero-title">One gateway.<br>Your whole<br>team.</h1>
             <p class="hero-lead">Designed to give your team's Meshtastic mesh one shared Iridium satellite connection.</p>
             <p class="status-pill"><span class="dot" aria-hidden="true"></span>{{ if $ordering }}Prototype in development. Built to order.{{ else }}Prototype in development. Pre-orders are not open yet.{{ end }}</p>
 
@@ -41,9 +41,9 @@
                      through listmonk. Rendered by shop.js in the page's theme. */}}
                 <form class="notify" method="post" action="{{ $p.notify_url }}">
                     <input type="text" name="nonce" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="nonce">
-                    <label for="notify-email" class="notify-label">Your e-mail address</label>
+                    <label for="notify-email" class="visually-hidden">Your e-mail address</label>
                     <div class="notify-row">
-                        <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="you@example.org" inputmode="email">
+                        <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="Your e-mail address" inputmode="email">
                         <button type="submit" class="btn btn-primary" data-umami-event="notify-signup">{{ $cta }}</button>
                     </div>
                     <div class="turnstile" data-sitekey="{{ $p.turnstile_site_key }}"></div>
@@ -56,9 +56,9 @@
                     <input type="hidden" name="l" value="{{ $p.list_uuid }}">
                     {{/* listmonk's honeypot: a bot that fills every field is refused. Stays empty. */}}
                     <input type="text" name="nonce" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="nonce">
-                    <label for="notify-email" class="notify-label">Your e-mail address</label>
+                    <label for="notify-email" class="visually-hidden">Your e-mail address</label>
                     <div class="notify-row">
-                        <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="you@example.org" inputmode="email">
+                        <input type="email" id="notify-email" name="email" required autocomplete="email" placeholder="Your e-mail address" inputmode="email">
                         <button type="submit" class="btn btn-primary" data-umami-event="notify-signup">{{ $cta }}</button>
                     </div>
                     {{/* ALTCHA: listmonk's self-hosted proof-of-work check, solved when the field is
@@ -82,7 +82,7 @@
 
         <figure class="hero-figure">
             <img src="/images/msc2-concept-exploded-v1.webp" srcset="/images/msc2-concept-exploded-v1-s.webp 768w, /images/msc2-concept-exploded-v1.webp 1536w" sizes="(min-width: 960px) 46vw, 100vw" width="1536" height="1024" fetchpriority="high" alt="Concept illustration of the MeshSat Compact v2 taken apart: the orange lid with its display window, the LILYGO T-Beam Supreme board, the battery cradle with its cell, the RockBLOCK 9704 modem inside the orange body, the red quick-message button between the two antenna sockets, and the label on the side">
-            <figcaption>MSC-2 concept visualization. Internal parts shown separated, some wiring omitted for clarity. Final details may change.</figcaption>
+            <figcaption>MSC-2 concept visualization, parts shown separated. Final details may change.</figcaption>
         </figure>
     </div>
     <div class="container">
@@ -135,12 +135,12 @@
                 </figure>
                 <div class="part-text">
                     <h3>LILYGO T-Beam Supreme</h3>
-                    <p>The Meshtastic-compatible LoRa side of the design: the 868 MHz radio, the display, GPS and the Bluetooth link to a phone.</p>
+                    <p>The Meshtastic-compatible LoRa side of the design: the 868 MHz radio, the display, GPS and the Bluetooth link to a phone. Its three buttons sit on the side of the unit.</p>
                 </div>
             </li>
             <li class="part">
                 <figure class="part-photo">
-                    <img src="/images/rockblock-9704-sma-front.webp" width="1024" height="731" loading="lazy" alt="RockBLOCK 9704-SMA board with the Iridium 9704 modem and its antenna socket">
+                    <img src="/images/rockblock-9704-sma-front.webp" width="1024" height="584" loading="lazy" alt="RockBLOCK 9704-SMA board with the Iridium 9704 modem and its antenna socket">
                     <figcaption>Photo: Ground Control</figcaption>
                 </figure>
                 <div class="part-text">
