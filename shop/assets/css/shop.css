@@ -106,7 +106,13 @@ p, li, dd, figcaption, summary { text-wrap: pretty; }
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border);
 }
-[data-theme="light"] .site-header { background: rgba(255, 255, 255, 0.95); }
+/* The header is dark in both themes, as the mock: it sits on the dark hero. */
+[data-theme="light"] .site-header {
+    --color-bg: #110E0C; --color-text: #F2EDE6; --color-text-muted: #A79B8B; --color-primary: #F25C05; --color-primary-hover: #FF7A2E;
+    --color-border: #2E2822; --color-border-light: #423A31;
+}
+.site-header .logo-mark-light { display: none; }
+.site-header .logo-mark-dark { display: block; }
 .site-header nav { display: flex; justify-content: space-between; align-items: center; height: 64px; gap: var(--space-md); }
 .logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--color-text); font-weight: 600; min-width: 0; }
 .logo-text { font-family: var(--font-mono); font-size: 1.2rem; font-weight: 600; letter-spacing: -0.02em; }
@@ -177,20 +183,24 @@ p, li, dd, figcaption, summary { text-wrap: pretty; }
 .hero > .container { width: 100%; }
 .hero-grid {
     position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); align-items: center;
-    grid-template-areas: "copy" "figure"; padding-top: var(--space-2xl); padding-bottom: var(--space-lg);
+    padding-top: var(--space-2xl); padding-bottom: var(--space-lg);
 }
-.hero-copy { grid-area: copy; min-width: 0; max-width: 42rem; position: relative; z-index: 1; }
-.hero-figure { grid-area: figure; margin: 0 calc(-1 * var(--space-md)); min-width: 0; position: relative; }
+.hero-copy { min-width: 0; max-width: 42rem; }
+/* Phone and tablet: the illustration follows the copy, edge to edge, then the strip. */
+.hero-figure { margin: 0; min-width: 0; position: relative; }
 .hero-figure img { display: block; width: 100%; height: auto; }
-.hero-figure figcaption { font-family: var(--font-mono); font-size: 0.8125rem; line-height: 1.5; color: var(--color-text-muted); padding: var(--space-xs) var(--space-md) 0; text-align: right; }
+.hero-figure figcaption { font-family: var(--font-mono); font-size: 0.8125rem; line-height: 1.5; color: var(--color-text-muted); padding: var(--space-xs) var(--space-lg) 0; text-align: right; }
 @media (min-width: 960px) {
-    /* The illustration leaves the grid: anchored to the right edge of the screen,
-       centred on the hero's height, about 58 % of the width, under the copy. */
-    .hero-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy"; padding-top: var(--space-2xl); padding-bottom: var(--space-xl); flex: 1 0 auto; }
-    .hero-figure { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: min(58vw, 940px); margin: 0; z-index: 0; }
+    /* Desktop, as the mock: the copy in the left column, the illustration anchored to
+       the right edge of the screen at 48 % of its width, beside the text, never under it. */
+    .hero-grid { padding-top: var(--space-3xl); padding-bottom: var(--space-xl); flex: 1 0 auto; }
+    .hero-copy { max-width: min(42rem, 50vw - 3rem); }
+    .hero-figure { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 48vw; max-width: none; margin: 0; z-index: 0; }
     .hero-figure img {
-        -webkit-mask-image: radial-gradient(ellipse 72% 76% at 52% 50%, #000 46%, transparent 96%);
-        mask-image: radial-gradient(ellipse 72% 76% at 52% 50%, #000 46%, transparent 96%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 100%), linear-gradient(to bottom, transparent 0, #000 10%, #000 90%, transparent 100%);
+        -webkit-mask-composite: source-in;
+        mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 100%), linear-gradient(to bottom, transparent 0, #000 10%, #000 90%, transparent 100%);
+        mask-composite: intersect;
     }
     .hero-figure figcaption { position: absolute; right: var(--space-lg); bottom: -1.5rem; padding: 0; white-space: nowrap; }
 }
