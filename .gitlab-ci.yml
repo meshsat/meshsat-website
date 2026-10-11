@@ -186,6 +186,7 @@ verify:site:
   tags: [docker]
   script:
     - ./scripts/verify-site.sh site/public shop/public
+    - ./scripts/verify-comparison-gate.sh
   needs:
     - job: build:site
       artifacts: true

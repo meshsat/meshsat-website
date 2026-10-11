@@ -129,6 +129,34 @@ else
   pass "no shop build to check ($SHOP missing)"
 fi
 
+echo "=== 7. shop: the named comparison is published only by its switch and its review record ==="
+# The ACR Bivy Stick MESH comparison is off by default (the owner's corrective
+# brief of 11 Oct 2026). Off: no competitor name, comparison section or savings
+# claim may be in any built file. On: shop/data/comparison.yaml must exist with
+# an approved review. scripts/verify-comparison-gate.sh tests the template's
+# own refusals; this checks the output that ships.
+if [ -d "$SHOP" ]; then
+  if grep -q 'comparison_published: "on"' shop/hugo.yaml 2>/dev/null; then
+    if [ -f shop/data/comparison.yaml ] && grep -q '^  status: approved' shop/data/comparison.yaml; then
+      pass "shop: comparison is on with an approved review record"
+    else
+      fail "shop: comparison_published is on but shop/data/comparison.yaml is missing or not approved"
+    fi
+  else
+    for word in 'Bivy' 'ACR Electronics' 'acrartex' 'team-setup-comparison' 'cost-chart' 'cheaper' 'stops at 10 devices'; do
+      if grep -rq -- "$word" "$SHOP" --include='*.html' --include='*.js' --include='*.json' --include='*.xml' --include='*.svg' --include='*.txt'; then
+        fail "shop: comparison is off but '$word' is in the built output"
+      else
+        pass "shop: no '$word' in the built output"
+      fi
+    done
+  fi
+  # The shop publishes pages, styles, scripts and images: no document is
+  # downloadable from it, so no unreviewed brief, mock or brochure can ship.
+  N=$(find "$SHOP" -type f \( -iname '*.pdf' -o -iname '*.zip' -o -iname '*.docx' -o -iname '*.md' -o -iname '*.csv' -o -iname '*.yaml' -o -iname '*.yml' \) | wc -l | tr -d ' ')
+  [ "$N" -eq 0 ] && pass "shop: no downloadable documents in the build" || fail "shop: $N downloadable document(s) in the build"
+fi
+
 echo
 if [ "$FAIL" -eq 0 ]; then echo "verify-site: PASSED"; else echo "verify-site: FAILED"; fi
 exit $FAIL
