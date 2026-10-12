@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 51
-  unreleased_since: "2026-10-02"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-02"
+  unreleased_count: 52
+  unreleased_since: "2026-10-11"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-11"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,11 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-02)
+## Unreleased (main, last change 2026-10-11)
 
 ### Features
 
+- **auth**: a read-only platform key for the directory reads ([65fb84e0](https://github.com/meshsat/meshsat-hub/commit/65fb84e027894dd79ea7e34b17b9a2bd47a33ca3))
 - **tak**: the Hub delivers a tenant's TAK traffic to its kits and apps, and shows a tenant's clients to each other ([d5d9c14b](https://github.com/meshsat/meshsat-hub/commit/d5d9c14b58c62a50c085f91d6312cbe40ab08cd1))
 - **tak**: the stream a TAK server sends is cut into events without trusting it ([8951a77a](https://github.com/meshsat/meshsat-hub/commit/8951a77a8df0024e093d2a9cbfb1a3eec96b5a01))
 - **tak**: kits and apps can export their TAK messages to the Hub, which forwards them to the tenant's TAK servers ([178a60ac](https://github.com/meshsat/meshsat-hub/commit/178a60acce29d6ce5949a9c803c512e092930a87))
