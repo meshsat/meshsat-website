@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 55
-  unreleased_since: "2026-10-12"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-12"
+  unreleased_count: 61
+  unreleased_since: "2026-10-13"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-13"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,14 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-12)
+## Unreleased (main, last change 2026-10-13)
 
 ### Features
 
+- **lxmf**: the Reticulum page in the console (address with copy and QR, inbox, send, peers) and the public listener's edge path ([1565ffb9](https://github.com/meshsat/meshsat-hub/commit/1565ffb99041434ab8f757c08107585051a4a276))
+- **lxmf**: every tenant gets an LXMF address on the Hub's Reticulum node, with an inbox, a proven outbox and stamps, verified against Python LXMF 1.2.0 ([51243755](https://github.com/meshsat/meshsat-hub/commit/51243755effa70a472a25dcfd4cbd1f8c0e6cc2d))
+- **rns**: one upstream-compatible Reticulum node on the leader, in front of the legacy layer, with persisted paths and a Python interop suite ([f439bbde](https://github.com/meshsat/meshsat-hub/commit/f439bbde13da31d2166e3728ebf6237f394459ea))
+- **rns**: port the Bridge's upstream-compatible Reticulum wire, node, msgpack and LXMF packages, golden vectors pinned to Python RNS 1.5.5 and LXMF 1.2.0 ([db0abda7](https://github.com/meshsat/meshsat-hub/commit/db0abda73fb1eb392dc61750ada6be28b43fab70))
 - **federation**: two MeshSat Hubs relay satellite messages to each other's kits after exchanging certificates ([1906e6fe](https://github.com/meshsat/meshsat-hub/commit/1906e6fe834960cc348e73ecb83b8aca8f11d078))
 - **admin**: platform-read views of a tenant's registered devices and bridges ([2944445a](https://github.com/meshsat/meshsat-hub/commit/2944445abb2fc8318e8bf12147e0d8b6780f3fed))
 - **auth**: a read-only platform key for the directory reads ([65fb84e0](https://github.com/meshsat/meshsat-hub/commit/65fb84e027894dd79ea7e34b17b9a2bd47a33ca3))
@@ -44,6 +48,8 @@ it goes live.
 
 ### Fixes
 
+- **ots**: lift urllib3 to 2.8.0 and virtualenv past 21.7.13, the floors trivy:ots asks for ([2a80cffb](https://github.com/meshsat/meshsat-hub/commit/2a80cffbdacad9fc968932fcb2486b0d56e56d88))
+- **rns**: the lint, gitleaks and interop-harness fixes pipeline 59198 asked for, plus the LXMF inbox store and provider row P3 builds on ([7748795d](https://github.com/meshsat/meshsat-hub/commit/7748795d15504731c5f5ce2accc79635232cfcf2))
 - **auth**: serve the link-preview image and home-screen icon to visitors who are not signed in ([dfaa0340](https://github.com/meshsat/meshsat-hub/commit/dfaa03409f7f6e253da072d544a581bdbc293b09))
 - **k8s**: the Hub can reach its own WireGuard manager again ([b66df421](https://github.com/meshsat/meshsat-hub/commit/b66df42185da1680c87a51226ba129f23e56f2d7))
 - **docker**: the Hub image takes Alpine's published security fixes at build, so an OpenSSL fix no longer blocks every deploy ([7ac306bb](https://github.com/meshsat/meshsat-hub/commit/7ac306bba9b37205d02618e10ce99ac831b6d815))
