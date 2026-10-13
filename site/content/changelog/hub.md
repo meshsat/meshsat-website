@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 52
-  unreleased_since: "2026-10-11"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-11"
+  unreleased_count: 55
+  unreleased_since: "2026-10-12"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-12"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,12 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-11)
+## Unreleased (main, last change 2026-10-12)
 
 ### Features
 
+- **federation**: two MeshSat Hubs relay satellite messages to each other's kits after exchanging certificates ([1906e6fe](https://github.com/meshsat/meshsat-hub/commit/1906e6fe834960cc348e73ecb83b8aca8f11d078))
+- **admin**: platform-read views of a tenant's registered devices and bridges ([2944445a](https://github.com/meshsat/meshsat-hub/commit/2944445abb2fc8318e8bf12147e0d8b6780f3fed))
 - **auth**: a read-only platform key for the directory reads ([65fb84e0](https://github.com/meshsat/meshsat-hub/commit/65fb84e027894dd79ea7e34b17b9a2bd47a33ca3))
 - **tak**: the Hub delivers a tenant's TAK traffic to its kits and apps, and shows a tenant's clients to each other ([d5d9c14b](https://github.com/meshsat/meshsat-hub/commit/d5d9c14b58c62a50c085f91d6312cbe40ab08cd1))
 - **tak**: the stream a TAK server sends is cut into events without trusting it ([8951a77a](https://github.com/meshsat/meshsat-hub/commit/8951a77a8df0024e093d2a9cbfb1a3eec96b5a01))
@@ -42,6 +44,7 @@ it goes live.
 
 ### Fixes
 
+- **auth**: serve the link-preview image and home-screen icon to visitors who are not signed in ([dfaa0340](https://github.com/meshsat/meshsat-hub/commit/dfaa03409f7f6e253da072d544a581bdbc293b09))
 - **k8s**: the Hub can reach its own WireGuard manager again ([b66df421](https://github.com/meshsat/meshsat-hub/commit/b66df42185da1680c87a51226ba129f23e56f2d7))
 - **docker**: the Hub image takes Alpine's published security fixes at build, so an OpenSSL fix no longer blocks every deploy ([7ac306bb](https://github.com/meshsat/meshsat-hub/commit/7ac306bba9b37205d02618e10ce99ac831b6d815))
 - **tak**: an unreachable TAK server no longer stalls the message bus, and positions are not forwarded twice after a change of leader ([8e630bfe](https://github.com/meshsat/meshsat-hub/commit/8e630bfec7bfaa939c247ad018c3174b60fa5fc8))
