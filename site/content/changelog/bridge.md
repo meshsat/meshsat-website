@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 932
-  unreleased_since: "2026-09-30"
-  unreleased_anchor: "unreleased-main-last-change-2026-09-30"
+  unreleased_count: 940
+  unreleased_since: "2026-10-13"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-13"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,14 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-09-30)
+## Unreleased (main, last change 2026-10-13)
 
 ### Features
 
+- **lxmf**: access rules carry messages between LXMF and the satellite, so a Sideband user and a MeshSat app can talk across Iridium ([bfd4aec5](https://github.com/meshsat/meshsat/commit/bfd4aec575bff092f2a949a619a8f14edb745431))
+- **printer**: a slip when a Reticulum message crosses the satellite link ([7beae6fc](https://github.com/meshsat/meshsat/commit/7beae6fce73801405748cb1b601df4c10f6a5909))
+- **rns**: a satellite link can count as several hops, so Reticulum clients wait for its round trip ([71b7988c](https://github.com/meshsat/meshsat/commit/71b7988c6310a1e0e15a0e767c3835d343410ec3))
+- **rns**: a satellite or SMS link can carry Reticulum announces for a short list of addresses ([4fca7271](https://github.com/meshsat/meshsat/commit/4fca72713b1473d05754a61ec2f7a4e20bb937bb))
 - **sos**: every route that is set up is a leg that waits for its link, as MeshSat Android sends an SOS ([cad98d15](https://github.com/meshsat/meshsat/commit/cad98d15e43f695b71783515c3f9d838310a12fe))
 - **transport**: the RockBLOCK on a MeshSat node, through the node's Bluetooth pipe ([ab58709a](https://github.com/meshsat/meshsat/commit/ab58709ae112b57fc3e30fb52d38cc2d55e3a4b6))
 - **sos**: the alarm test reports its position by satellite as Android does, and an SOS by satellite passes the credit budget ([427531ee](https://github.com/meshsat/meshsat/commit/427531ee160faec1b8c7fee91146dd5ab6598bfe))
@@ -419,6 +423,10 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **rns**: a neighbour across a satellite link that counts extra hops is reached directly, not dropped as transport traffic ([f68edfd5](https://github.com/meshsat/meshsat/commit/f68edfd560edf00edf751284c913bd6e6b955662))
+- **lxmf**: the bridge sends direct across the satellite and waits for the round trip ([5ba13d37](https://github.com/meshsat/meshsat/commit/5ba13d3757b7b94743a7700173692cde04c5292e))
+- **iridium**: Reticulum packets go to the satellite in order and are retried, not dropped after 30 s ([95af75c8](https://github.com/meshsat/meshsat/commit/95af75c8562c2f70f80f79f44aee6979b0158dc4))
+- **tak**: the TAK export reaches the Hub, and the bridge shows what the Hub delivers back ([723e89be](https://github.com/meshsat/meshsat/commit/723e89be5253dddf97947ead69804d3b70e0d880))
 - a satellite message is kept until it is handed over once, and a failed send leaves nothing to send twice ([0c884a00](https://github.com/meshsat/meshsat/commit/0c884a008a6077b5bfd5b767c3f7ae5ad0001e97))
 - **engine**: a link set to encrypt never sends the text in the clear, and the Messaging and SMS settings can be written without wiping anything ([afe026af](https://github.com/meshsat/meshsat/commit/afe026aff4681e46f363db9ea129490f6eff320c))
 - **api**: a radio settings write reaches the node over its own settings, the node's log over Bluetooth on demand, a CA certificate keeps its facts ([c1561343](https://github.com/meshsat/meshsat/commit/c1561343dc6b918c705032b8b23cf00ab32e7190))
