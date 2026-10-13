@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v2.19.13"
   latest_tag_date: "2026-10-08"
   latest_tag_anchor: "v21913-2026-10-08"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  unreleased_count: 9
+  unreleased_since: "2026-10-13"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-13"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,9 +23,22 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-10-13)
 
-No unreleased changes.
+### Features
+
+- **api**: Reticulum link settings through the local API ([6b748b4e](https://github.com/meshsat/meshsat-android/commit/6b748b4e7ebf7d06c73b1238860fdc8ccbc73e24))
+- **rns**: the phone listens for Reticulum peers on this WiFi over TCP ([24fda1e1](https://github.com/meshsat/meshsat-android/commit/24fda1e11404a977696ab0d37b27ad0cf1ea5689))
+- **ui**: Reticulum conversations: an LXMF address to copy, a name, Announce now, Direct or Auto on send, delivery marks ([dc45f094](https://github.com/meshsat/meshsat-android/commit/dc45f0940a88f776a956c1e7c69dc3c5f2bb9975))
+- **rns**: the node and LXMF run in the app, with the 9704 as a paid Reticulum link ([71ddab14](https://github.com/meshsat/meshsat-android/commit/71ddab148573db8c5348ed49e9b74e3072483f82))
+- **lxmf**: LXMF messages, verified against Python LXMF 1.2.0 ([68babf76](https://github.com/meshsat/meshsat-android/commit/68babf765b731ec396db57238892af7d70862e25))
+- **rns**: the Reticulum node: paths, transport, links, proofs and resources, verified against Python RNS 1.5.5 ([d52394e7](https://github.com/meshsat/meshsat-android/commit/d52394e7499209a19b3991e37bc9a6ba1cd5d424))
+- **rns**: the upstream Reticulum wire format, verified against Python RNS 1.5.5 ([d5335eee](https://github.com/meshsat/meshsat-android/commit/d5335eee51d79d64187c4a6f1f4f28ef29eb6858))
+
+### Fixes
+
+- **rns**: a neighbour heard across the satellite gets HEADER\_1 packets, whatever its extra hops ([7a7479e3](https://github.com/meshsat/meshsat-android/commit/7a7479e3b5671d43a16cc3d78d621d28c6e5eea4))
+- **rns**: one interface instance per transport, started and wired for receive ([34ab915d](https://github.com/meshsat/meshsat-android/commit/34ab915dbd24c16aad704572dc61a23c04ad2625))
 
 ## v2.19.13 (2026-10-08)
 
