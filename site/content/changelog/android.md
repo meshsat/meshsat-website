@@ -4,13 +4,13 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 133
-  latest_tag: "v2.19.13"
-  latest_tag_date: "2026-10-08"
-  latest_tag_anchor: "v21913-2026-10-08"
-  unreleased_count: 9
-  unreleased_since: "2026-10-13"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-13"
+  tags: 134
+  latest_tag: "v2.20.0"
+  latest_tag_date: "2026-10-13"
+  latest_tag_anchor: "v2200-2026-10-13"
+  unreleased_count: 0
+  unreleased_since: ""
+  unreleased_anchor: "unreleased-main"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,7 +23,11 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-13)
+## Unreleased (main)
+
+No unreleased changes.
+
+## v2.20.0 (2026-10-13)
 
 ### Features
 
