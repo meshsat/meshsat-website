@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 134
-  latest_tag: "v2.20.0"
+  tags: 135
+  latest_tag: "v2.21.0"
   latest_tag_date: "2026-10-13"
-  latest_tag_anchor: "v2200-2026-10-13"
+  latest_tag_anchor: "v2210-2026-10-13"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -26,6 +26,14 @@ carries the same history in Keep a Changelog form.
 ## Unreleased (main)
 
 No unreleased changes.
+
+## v2.21.0 (2026-10-13)
+
+### Features
+
+- **rns**: an RNode on USB OTG or Bluetooth LE puts the phone on a LoRa mesh ([de53f279](https://github.com/meshsat/meshsat-android/commit/de53f2798fab886a074b9020e7a2914571dec5d2))
+- **rns**: AutoInterface, so Sideband and rnsd on the same WiFi find the phone by themselves ([263fda2e](https://github.com/meshsat/meshsat-android/commit/263fda2e2a35e9f05f4295c78d06a235df63a186))
+- **lxmf**: messages through a propagation node, syncing from one, and all four send methods ([61d6eb55](https://github.com/meshsat/meshsat-android/commit/61d6eb5576273e1b12483b76e62b5afea4ccffa6))
 
 ## v2.20.0 (2026-10-13)
 
