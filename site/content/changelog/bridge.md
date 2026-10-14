@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 940
+  unreleased_count: 944
   unreleased_since: "2026-10-13"
   unreleased_anchor: "unreleased-main-last-change-2026-10-13"
 ---
@@ -23,6 +23,9 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Features
 
+- **cell**: the cell runs inside the Bridge: plug the Pluto into a kit and the 2G cell comes up by itself, radio keyed with the TX log written first ([32931c75](https://github.com/meshsat/meshsat/commit/32931c7553f15bde483f94b3505b94efe0567733))
+- **cell**: a Pluto on a kit's USB port is adopted as the cell's SDR: the host starts the core, the Bridge binds, the operator keys the radio with a logged purpose ([bf2b344e](https://github.com/meshsat/meshsat/commit/bf2b344e7f108ccb43038e96524d878c6da94c53))
+- **cell**: a phone on the MeshSat 2G cell texts the kit and gets its reply, over SMPP into the delivery ledger ([4aa36153](https://github.com/meshsat/meshsat/commit/4aa3615310fa4a32c54c0b04906a6c1b5ed61edf))
 - **lxmf**: access rules carry messages between LXMF and the satellite, so a Sideband user and a MeshSat app can talk across Iridium ([bfd4aec5](https://github.com/meshsat/meshsat/commit/bfd4aec575bff092f2a949a619a8f14edb745431))
 - **printer**: a slip when a Reticulum message crosses the satellite link ([7beae6fc](https://github.com/meshsat/meshsat/commit/7beae6fce73801405748cb1b601df4c10f6a5909))
 - **rns**: a satellite link can count as several hops, so Reticulum clients wait for its round trip ([71b7988c](https://github.com/meshsat/meshsat/commit/71b7988c6310a1e0e15a0e767c3835d343410ec3))
@@ -423,6 +426,7 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **reticulum**: a TCP peer that opens a frame and never closes it can no longer grow the reader's buffer without bound ([224a22f8](https://github.com/meshsat/meshsat/commit/224a22f874a64ede6fb91e6dcedd3c21e54a06f5))
 - **rns**: a neighbour across a satellite link that counts extra hops is reached directly, not dropped as transport traffic ([f68edfd5](https://github.com/meshsat/meshsat/commit/f68edfd560edf00edf751284c913bd6e6b955662))
 - **lxmf**: the bridge sends direct across the satellite and waits for the round trip ([5ba13d37](https://github.com/meshsat/meshsat/commit/5ba13d3757b7b94743a7700173692cde04c5292e))
 - **iridium**: Reticulum packets go to the satellite in order and are retried, not dropped after 30 s ([95af75c8](https://github.com/meshsat/meshsat/commit/95af75c8562c2f70f80f79f44aee6979b0158dc4))

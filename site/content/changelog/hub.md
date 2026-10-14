@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 61
+  unreleased_count: 64
   unreleased_since: "2026-10-13"
   unreleased_anchor: "unreleased-main-last-change-2026-10-13"
 ---
@@ -24,6 +24,8 @@ it goes live.
 
 ### Features
 
+- **lxmf**: the Reticulum page tells a tenant where a client connects, from HUB\_RNS\_PUBLIC\_ENDPOINT ([45808e39](https://github.com/meshsat/meshsat-hub/commit/45808e399d2326443bc6d8d9875925b64f859f8f))
+- **lxmf**: every tenant address runs an LXMF propagation node that holds messages for offline clients, on RNS link requests added to the node ([d060eb30](https://github.com/meshsat/meshsat-hub/commit/d060eb3057c05afe56b0291d50f73d7ac407dc31))
 - **lxmf**: the Reticulum page in the console (address with copy and QR, inbox, send, peers) and the public listener's edge path ([1565ffb9](https://github.com/meshsat/meshsat-hub/commit/1565ffb99041434ab8f757c08107585051a4a276))
 - **lxmf**: every tenant gets an LXMF address on the Hub's Reticulum node, with an inbox, a proven outbox and stamps, verified against Python LXMF 1.2.0 ([51243755](https://github.com/meshsat/meshsat-hub/commit/51243755effa70a472a25dcfd4cbd1f8c0e6cc2d))
 - **rns**: one upstream-compatible Reticulum node on the leader, in front of the legacy layer, with persisted paths and a Python interop suite ([f439bbde](https://github.com/meshsat/meshsat-hub/commit/f439bbde13da31d2166e3728ebf6237f394459ea))
@@ -48,6 +50,7 @@ it goes live.
 
 ### Fixes
 
+- **authentik**: the sign-up notification rule fires once per enrolment, from one policy that cannot throw ([bc2bed61](https://github.com/meshsat/meshsat-hub/commit/bc2bed610b9c2883bd7db8893dea90f9218e6295))
 - **ots**: lift urllib3 to 2.8.0 and virtualenv past 21.7.13, the floors trivy:ots asks for ([2a80cffb](https://github.com/meshsat/meshsat-hub/commit/2a80cffbdacad9fc968932fcb2486b0d56e56d88))
 - **rns**: the lint, gitleaks and interop-harness fixes pipeline 59198 asked for, plus the LXMF inbox store and provider row P3 builds on ([7748795d](https://github.com/meshsat/meshsat-hub/commit/7748795d15504731c5f5ce2accc79635232cfcf2))
 - **auth**: serve the link-preview image and home-screen icon to visitors who are not signed in ([dfaa0340](https://github.com/meshsat/meshsat-hub/commit/dfaa03409f7f6e253da072d544a581bdbc293b09))
