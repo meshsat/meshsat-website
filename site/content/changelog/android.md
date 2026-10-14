@@ -25,7 +25,7 @@ carries the same history in Keep a Changelog form.
 <!-- generated:begin -->
 ## Unreleased (main)
 
-No unreleased changes.
+No user-facing changes (1 commits of other types).
 
 ## v2.21.0 (2026-10-13)
 
