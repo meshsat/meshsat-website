@@ -381,7 +381,7 @@ shot_next:
 fab_bus:
   other: "Regeln, Transformationsketten, Failover-Reihenfolge, Kosten"
 fab_cap:
-  other: "Träger oben, Integrationen unten, ein Router dazwischen: Eine Regel kann von jedem Adapter zu jedem anderen routen. Gestrichelt kommt bald: Die Hardware ist unterwegs zur Werkbank."
+  other: "Träger oben, Integrationen unten, ein Router dazwischen: Eine Regel kann von jedem Adapter zu jedem anderen routen. Gestrichelt heißt: noch kein Code in der Bridge; das Etikett sagt, wo die Hardware steht."
 host_lead:
   other: "Die Leitstelle für jedes Kit, jedes Telefon und jeden Taschen-Node, den Sie betreiben: eine Karte, jede Nachricht, die Routen zwischen Netzen und wer angerufen wird, wenn jemand SOS drückt. Die Kits brauchen ihn nie, um eine Nachricht weiterzugeben. Der Code ist in beiden Fällen derselbe; es ändert sich nur, wer ihn betreibt und wie viele Geräte Sie registrieren können."
 host_k_devices:
