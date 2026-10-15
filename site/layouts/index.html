@@ -153,7 +153,8 @@
              hangs off one router: bearers above, integrations below, what is
              coming dashed. Real interface IDs from the Bridge's code (the
              trace's own vocabulary); HF data and TETRA have no ID because
-             their hardware is not on the bench yet (MESHSAT-1498). The stubs
+             the Bridge has no code for them (MESHSAT-1498; TETRA's two radios
+             are on the bench since 15 Oct 2026, HF data's are not). The stubs
              and bus are drawn in CSS; a screen reader gets two plain lists and
              the caption. */}}
         {{ $bearers := slice
@@ -172,7 +173,8 @@
         <figure class="fabric" aria-labelledby="fabric-cap">
             <ul class="fabric-row fabric-top">
                 {{ range $bearers }}<li class="fabric-node"><code>{{ .id }}</code><span>{{ .name }}</span></li>{{ end }}
-                {{ range (slice (i18n "ch_hfdata") "TETRA") }}<li class="fabric-node is-future"><span>{{ . }}</span><em>COMING SOON</em></li>{{ end }}
+                <li class="fabric-node is-future"><span>{{ i18n "ch_hfdata" }}</span><em>COMING SOON</em></li>
+                <li class="fabric-node is-future"><span>TETRA</span><em>BENCH</em></li>
             </ul>
             <p class="fabric-bus"><code>router</code><span>{{ i18n "fab_bus" }}</span></p>
             <ul class="fabric-row fabric-bottom">
@@ -213,9 +215,10 @@
                     (dict "n" "WiFi" "s" "wifi")))
                 (dict "code" "code" "items" (slice
                     (dict "k" "ch_hf10" "s" "hf-10m")))
+                (dict "code" "bench" "items" (slice
+                    (dict "n" "TETRA Direct Mode" "s" "tetra")))
                 (dict "code" "soon" "items" (slice
                     (dict "k" "ch_hfdata" "s" "hf-data")
-                    (dict "n" "TETRA Direct Mode" "s" "tetra")
                     (dict "n" "Wi-Fi HaLow" "s" "halow")
                     (dict "k" "ch_2g" "s" "gsm-cell")))))
             (dict "cat" "cat_wired" "groups" (slice

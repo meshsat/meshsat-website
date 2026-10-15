@@ -43,8 +43,8 @@ compatibility with physical radios or every third-party client.
 | [Cellular](/transports/cellular) | <ChannelStatus code="live" inline /> | SMS in both directions, working on hardware |
 | [WiFi](/transports/wifi) | <ChannelStatus code="live" inline /> | Each kit's uplink. The kit-to-kit link was proven once and is switched off |
 | [10 m HF shouts](/transports/hf-10m) | <ChannelStatus code="code" inline /> | Codec verified against a reference, no radio yet |
+| [TETRA Direct Mode](/transports/tetra) | <ChannelStatus code="bench" inline /> | Nothing. Two radios on the bench, not switched on yet; no code in the Bridge |
 | [HF data](/transports/hf-data) | <ChannelStatus code="coming-soon" inline /> | Nothing on a radio |
-| [TETRA Direct Mode](/transports/tetra) | <ChannelStatus code="coming-soon" inline /> | Nothing. No code in the Bridge |
 | [Wi-Fi HaLow](/transports/halow) | <ChannelStatus code="coming-soon" inline /> | Nothing on a HaLow radio |
 | [Own 2G cell](/transports/gsm-cell) | <ChannelStatus code="coming-soon" inline /> | Nothing. No code in the Bridge |
 
