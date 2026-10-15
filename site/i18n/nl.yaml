@@ -381,7 +381,7 @@ shot_next:
 fab_bus:
   other: "regels, transformatieketens, failover-volgorde, kosten"
 fab_cap:
-  other: "Dragers boven, integraties onder, één router ertussen: een regel kan van elke adapter naar elke andere routeren. Gestippeld komt binnenkort: de hardware is onderweg naar de werkbank."
+  other: "Dragers boven, integraties onder, één router ertussen: een regel kan van elke adapter naar elke andere routeren. Gestippeld betekent: nog geen code in de Bridge; het label zegt waar de hardware staat."
 host_lead:
   other: "De controlekamer voor elke kit, telefoon en zaknode die je gebruikt: één kaart, elk bericht, de routes tussen netwerken, en wie er gebeld wordt als iemand op SOS drukt. De kits hebben hem nooit nodig om een bericht door te geven. De code is in beide gevallen dezelfde; wat verschilt is wie hem draait en hoeveel apparaten je kunt registreren."
 host_k_devices:

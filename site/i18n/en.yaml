@@ -381,7 +381,7 @@ shot_next:
 fab_bus:
   other: "rules, transform chains, failover order, cost"
 fab_cap:
-  other: "Bearers above, integrations below, one router between them: a rule can route from any adapter to any other. Dashed is coming soon: the hardware is on its way to the bench."
+  other: "Bearers above, integrations below, one router between them: a rule can route from any adapter to any other. Dashed means no code in the Bridge yet; the label says where the hardware is."
 host_lead:
   other: "The control room for every kit, phone and pocket node you run: one map, every message, the routes between networks, and who gets called when someone presses SOS. The kits never need it to pass a message. The code is the same either way; what changes is who runs it and how many devices you can register."
 host_k_devices:

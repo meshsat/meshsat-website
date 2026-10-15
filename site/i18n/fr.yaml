@@ -381,7 +381,7 @@ shot_next:
 fab_bus:
   other: "règles, chaînes de transformation, ordre de bascule, coût"
 fab_cap:
-  other: "Les porteurs en haut, les intégrations en bas, un seul routeur entre eux : une règle peut router de n'importe quel adaptateur vers n'importe quel autre. En pointillés : bientôt, le matériel est en route vers l'établi."
+  other: "Les porteurs en haut, les intégrations en bas, un seul routeur entre eux : une règle peut router de n'importe quel adaptateur vers n'importe quel autre. En pointillés : pas encore de code dans le Bridge ; l'étiquette indique où en est le matériel."
 host_lead:
   other: "La salle de contrôle de chaque kit, téléphone et nœud de poche que vous exploitez : une carte, chaque message, les routes entre les réseaux, et qui est appelé quand quelqu'un appuie sur SOS. Les kits n'en ont jamais besoin pour faire passer un message. Le code est le même dans les deux cas ; ce qui change, c'est qui le fait tourner et combien d'appareils vous pouvez enregistrer."
 host_k_devices:
