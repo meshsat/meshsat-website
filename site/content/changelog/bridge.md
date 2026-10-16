@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 944
-  unreleased_since: "2026-10-13"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-13"
+  unreleased_count: 949
+  unreleased_since: "2026-10-16"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-16"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,11 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-13)
+## Unreleased (main, last change 2026-10-16)
 
 ### Features
 
+- **hemb**: HeMB bonding is experimental and off unless MESHSAT\_HEMB\_EXPERIMENTAL=true ([2e174953](https://github.com/meshsat/meshsat/commit/2e174953cd9eddb4a34fe94b2d288158b6871f58))
 - **cell**: the cell runs inside the Bridge: plug the Pluto into a kit and the 2G cell comes up by itself, radio keyed with the TX log written first ([32931c75](https://github.com/meshsat/meshsat/commit/32931c7553f15bde483f94b3505b94efe0567733))
 - **cell**: a Pluto on a kit's USB port is adopted as the cell's SDR: the host starts the core, the Bridge binds, the operator keys the radio with a logged purpose ([bf2b344e](https://github.com/meshsat/meshsat/commit/bf2b344e7f108ccb43038e96524d878c6da94c53))
 - **cell**: a phone on the MeshSat 2G cell texts the kit and gets its reply, over SMPP into the delivery ledger ([4aa36153](https://github.com/meshsat/meshsat/commit/4aa3615310fa4a32c54c0b04906a6c1b5ed61edf))
@@ -426,6 +427,10 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **sms**: an encrypted SMS too long for one text is refused instead of arriving cut and unreadable ([af678a30](https://github.com/meshsat/meshsat/commit/af678a30e75cf4f862ea504a5a486f7c3b2b32b0))
+- **mqtt**: a message sent while MQTT is disconnected waits for a retry instead of showing delivered ([2b9aeb89](https://github.com/meshsat/meshsat/commit/2b9aeb89c9bb2862ee9f38d516fe777faf5e07d1))
+- **contacts**: a message to a contact goes to that contact on every route, not to the gateway's default number ([0a039286](https://github.com/meshsat/meshsat/commit/0a0392865d0b99b9ce03fa3d2718d9952f80400a))
+- **sos**: a restart no longer gives up the legs of an SOS that is still on ([db094466](https://github.com/meshsat/meshsat/commit/db094466002292b5ffe0b4832a99cacbc1b75a9f))
 - **reticulum**: a TCP peer that opens a frame and never closes it can no longer grow the reader's buffer without bound ([224a22f8](https://github.com/meshsat/meshsat/commit/224a22f874a64ede6fb91e6dcedd3c21e54a06f5))
 - **rns**: a neighbour across a satellite link that counts extra hops is reached directly, not dropped as transport traffic ([f68edfd5](https://github.com/meshsat/meshsat/commit/f68edfd560edf00edf751284c913bd6e6b955662))
 - **lxmf**: the bridge sends direct across the satellite and waits for the round trip ([5ba13d37](https://github.com/meshsat/meshsat/commit/5ba13d3757b7b94743a7700173692cde04c5292e))
