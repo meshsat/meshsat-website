@@ -71,10 +71,10 @@ less meshsat-install.sh
 sudo bash meshsat-install.sh</code></pre></div>
 </div>
 
-Το τρέχον script είναι έκδοση `1.2.0` και το SHA-256 του είναι:
+Το τρέχον script είναι έκδοση `1.3.0` και το SHA-256 του είναι:
 
 <div class="code-block">
-<div class="code-block-body"><pre tabindex="0" role="region" aria-label="Άθροισμα ελέγχου SHA-256 του script εγκατάστασης"><code>89f039b25e2b7f23620a6f339681886fb8f1da70a82dc2a8484b590b52cad97f  meshsat-install.sh</code></pre></div>
+<div class="code-block-body"><pre tabindex="0" role="region" aria-label="Άθροισμα ελέγχου SHA-256 του script εγκατάστασης"><code>e62dfeff9e26e92d842ba2b6114a5e32bdedd308b79e5c1311aafaa29df16041  meshsat-install.sh</code></pre></div>
 </div>
 
 Το script είναι ανοιχτό σε όλους, στο
