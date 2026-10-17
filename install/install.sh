@@ -8,7 +8,7 @@
 
 set -euo pipefail
 
-MESHSAT_INSTALLER_VERSION="1.1.0"
+MESHSAT_INSTALLER_VERSION="1.2.0"
 MESHSAT_IMAGE="ghcr.io/meshsat/meshsat:latest"
 MESHSAT_PORT="${MESHSAT_PORT:-6050}"
 MESHSAT_DIR="/meshsat"
@@ -30,6 +30,24 @@ log_error()   { printf "${RED}[ERROR]${NC} %s\n" "$*" >&2; }
 log_fatal()   { log_error "$@"; exit 1; }
 log_step()    { printf "\n${BOLD}── %s${NC}\n" "$*"; }
 
+# Prints a line every 15 s until stop_heartbeat, for steps that stay silent
+# for minutes: Docker's own installer sends every apt step to /dev/null, and on
+# a Raspberry Pi 4 with an SD card that looked like a hang. [MESHSAT-1587]
+HEARTBEAT_PID=""
+start_heartbeat() {
+    local what="$1"
+    ( s=0; while sleep 15; do s=$((s + 15)); log_info "${what}, ${s} s so far"; done ) &
+    HEARTBEAT_PID=$!
+}
+stop_heartbeat() {
+    if [ -n "$HEARTBEAT_PID" ]; then
+        kill "$HEARTBEAT_PID" 2>/dev/null || true
+        wait "$HEARTBEAT_PID" 2>/dev/null || true
+        HEARTBEAT_PID=""
+    fi
+}
+trap stop_heartbeat EXIT
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # Pre-flight checks
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -44,6 +62,12 @@ preflight_root() {
 preflight_arch() {
     local arch
     arch=$(uname -m)
+    # Raspberry Pi OS 32-bit boots a 64-bit kernel on a Pi 4 or 5, so uname
+    # says aarch64 while every program, Docker included, is 32-bit, and the
+    # image has no 32-bit build. Stop before Docker goes in. [MESHSAT-1587]
+    if [ "$(getconf LONG_BIT 2>/dev/null || echo 64)" = "32" ]; then
+        log_fatal "This is a 32-bit operating system ($arch kernel). Install a 64-bit one, such as Raspberry Pi OS (64-bit) or Ubuntu Server 24.04, and run the installer again."
+    fi
     case "$arch" in
         x86_64|amd64)   log_ok "Architecture: x86_64" ;;
         aarch64|arm64)   log_ok "Architecture: aarch64" ;;
@@ -54,7 +78,10 @@ preflight_arch() {
 preflight_docker() {
     if ! command -v docker &>/dev/null; then
         log_info "Docker not found — installing via get.docker.com..."
+        log_info "This takes several minutes on a Raspberry Pi and Docker's installer prints little while it works."
+        start_heartbeat "Still installing Docker"
         curl -fsSL https://get.docker.com | sh
+        stop_heartbeat
         systemctl enable --now docker
         log_ok "Docker installed"
     else
@@ -70,10 +97,12 @@ preflight_docker() {
         log_ok "Compose found: $(docker-compose --version 2>/dev/null)"
     else
         log_info "Docker Compose not found — installing plugin..."
+        start_heartbeat "Still installing Docker Compose"
         apt-get update -qq && apt-get install -y -qq docker-compose-plugin 2>/dev/null \
             || yum install -y docker-compose-plugin 2>/dev/null \
             || dnf install -y docker-compose-plugin 2>/dev/null \
             || log_fatal "Could not install Docker Compose. Install manually: https://docs.docker.com/compose/install/"
+        stop_heartbeat
         COMPOSE_CMD="docker compose"
         log_ok "Docker Compose plugin installed"
     fi

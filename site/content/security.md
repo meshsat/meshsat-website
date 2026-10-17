@@ -71,10 +71,10 @@ less meshsat-install.sh
 sudo bash meshsat-install.sh</code></pre></div>
 </div>
 
-The current installer is version `1.1.0` and its SHA-256 is:
+The current installer is version `1.2.0` and its SHA-256 is:
 
 <div class="code-block">
-<div class="code-block-body"><pre tabindex="0" role="region" aria-label="Installer SHA-256 checksum"><code>005edea4423fa0cac5e2ceea03e57c2e8f0aabeafc52f499960757a4ff91bafe  meshsat-install.sh</code></pre></div>
+<div class="code-block-body"><pre tabindex="0" role="region" aria-label="Installer SHA-256 checksum"><code>89f039b25e2b7f23620a6f339681886fb8f1da70a82dc2a8484b590b52cad97f  meshsat-install.sh</code></pre></div>
 </div>
 
 The script itself is in the open at
