@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 949
-  unreleased_since: "2026-10-16"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-16"
+  unreleased_count: 963
+  unreleased_since: "2026-10-17"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-17"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,15 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-16)
+## Unreleased (main, last change 2026-10-17)
 
 ### Features
 
+- **delivery**: paid intent routes are priced, reserved against the cap and charged; SMS joins delivery intents ([14c6bbd1](https://github.com/meshsat/meshsat/commit/14c6bbd15ce8efebddab4b3a60df86767fca5416))
+- **delivery**: APRS joins delivery intents: our own message id on every frame, an ack from the addressed station confirms it ([4a0e9b85](https://github.com/meshsat/meshsat/commit/4a0e9b858cea7576289b061b0f06dc4751f841f8))
+- **delivery**: an LXMF proof that arrives after the send gave up, or after a restart, still confirms the intent ([6307bb4e](https://github.com/meshsat/meshsat/commit/6307bb4ec6e5e7c3c0250fb2598126065b1822f6))
+- **delivery**: unsupported send strategies are refused, seeded defaults become ALL\_BEARERS, Hub policy pushes apply or refuse each row ([e2cacd2d](https://github.com/meshsat/meshsat/commit/e2cacd2d16dc5020e11d147937b56ebbe23c0b78))
+- **delivery**: contact sends can become delivery intents with ordered fallback, receipts and restart recovery, off unless MESHSAT\_DELIVERY\_INTENTS=true ([2a916881](https://github.com/meshsat/meshsat/commit/2a91688135f61e536935a1979b54ce43c8cdd197))
 - **hemb**: HeMB bonding is experimental and off unless MESHSAT\_HEMB\_EXPERIMENTAL=true ([2e174953](https://github.com/meshsat/meshsat/commit/2e174953cd9eddb4a34fe94b2d288158b6871f58))
 - **cell**: the cell runs inside the Bridge: plug the Pluto into a kit and the 2G cell comes up by itself, radio keyed with the TX log written first ([32931c75](https://github.com/meshsat/meshsat/commit/32931c7553f15bde483f94b3505b94efe0567733))
 - **cell**: a Pluto on a kit's USB port is adopted as the cell's SDR: the host starts the core, the Bridge binds, the operator keys the radio with a logged purpose ([bf2b344e](https://github.com/meshsat/meshsat/commit/bf2b344e7f108ccb43038e96524d878c6da94c53))
@@ -427,6 +432,15 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **delivery**: an intent SMS goes only once its bundle share is stored, every count change is one transaction, a failed read refuses instead of allowing, and a top-up keeps a running send's share ([4d486ede](https://github.com/meshsat/meshsat/commit/4d486ede8f9ca48071c0f17e6a602f88914bb9cf))
+- **delivery**: the SMS bundle is checked and settled on the modem's serial loop, a send without +CMGS stays unconfirmed, and the counter is set before anything can send ([b3ef1ca0](https://github.com/meshsat/meshsat/commit/b3ef1ca04fe2888113f5b656c99973987da68ff4))
+- **delivery**: an SMS that may still go is unknown, only +CMGS is acceptance, tariffs are EUR and bounded, the minimum is charged, the modem is held to IRA and GSM 7-bit ([7d9dac4a](https://github.com/meshsat/meshsat/commit/7d9dac4a443c2c2b9e59afa61ea83b109bafe24c))
+- **delivery**: an APRS ack is a station ack, matched against the kept send after a restart and only from the addressed station; a write that started is unknown ([ec83832c](https://github.com/meshsat/meshsat/commit/ec83832c04dd367366d62eefa61d64c5b883542f))
+- **delivery**: an LXMF proof's hash is stored before the packet is written, and the listener is up before the node takes any packet ([290f5ef6](https://github.com/meshsat/meshsat/commit/290f5ef69a75aecfb19e35b6f5eeaeceb9bc7d30))
+- **delivery**: a raw send with an unsupported strategy is refused, Hub directory pushes with contact metadata verify ([a5cee29d](https://github.com/meshsat/meshsat/commit/a5cee29d38a7cfcfadf809df10bad5ca3b65dc25))
+- **delivery**: an intent's mesh send needs a radio that takes the packet id before sending, so a reused id cannot confirm the wrong message ([ae501c74](https://github.com/meshsat/meshsat/commit/ae501c7414a5e7584b8520f8671d33dd15a90d58))
+- **delivery**: queued intents from before the fix stay off paid links, receipts stored before it are applied, a reused packet id confirms nothing ([bb358423](https://github.com/meshsat/meshsat/commit/bb358423f79b66c57b4b4b7562d13dd5e0459ce6))
+- **delivery**: intent sends stay off paid links end to end, mesh and late receipts are no longer lost, each LXMF intent is its own message ([a08ecd24](https://github.com/meshsat/meshsat/commit/a08ecd24c9cae6fceb77176bfecb410272495dde))
 - **sms**: an encrypted SMS too long for one text is refused instead of arriving cut and unreadable ([af678a30](https://github.com/meshsat/meshsat/commit/af678a30e75cf4f862ea504a5a486f7c3b2b32b0))
 - **mqtt**: a message sent while MQTT is disconnected waits for a retry instead of showing delivered ([2b9aeb89](https://github.com/meshsat/meshsat/commit/2b9aeb89c9bb2862ee9f38d516fe777faf5e07d1))
 - **contacts**: a message to a contact goes to that contact on every route, not to the gateway's default number ([0a039286](https://github.com/meshsat/meshsat/commit/0a0392865d0b99b9ce03fa3d2718d9952f80400a))
