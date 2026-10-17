@@ -152,11 +152,11 @@
         {{/* The layer between networks (MESHSAT-1096 review 2). Every adapter
              hangs off one router: bearers above, integrations below, what is
              coming dashed. Real interface IDs from the Bridge's code (the
-             trace's own vocabulary); HF data and TETRA have no ID because
-             the Bridge has no code for them (MESHSAT-1498; TETRA's two radios
-             are on the bench since 15 Oct 2026, HF data's are not). The stubs
-             and bus are drawn in CSS; a screen reader gets two plain lists and
-             the caption. */}}
+             trace's own vocabulary); HF data has no ID because the Bridge has
+             no code for it (MESHSAT-1498). TETRA got its link, tetra_0, and
+             went LIVE on 17 Oct 2026 (MESHSAT-1588), so the node count stays 8.
+             The stubs and bus are drawn in CSS; a screen reader gets two plain
+             lists and the caption. */}}
         {{ $bearers := slice
             (dict "id" "mesh_0" "name" "Meshtastic")
             (dict "id" "aprs_0" "name" "APRS")
@@ -164,6 +164,7 @@
             (dict "id" "iridium_0" "name" "Iridium")
             (dict "id" "zigbee_0" "name" "ZigBee")
             (dict "id" "tcp_0" "name" "Reticulum")
+            (dict "id" "tetra_0" "name" "TETRA")
         }}
         {{ $integrations := slice
             (dict "id" "tak_0" "name" "TAK")
@@ -174,7 +175,6 @@
             <ul class="fabric-row fabric-top">
                 {{ range $bearers }}<li class="fabric-node"><code>{{ .id }}</code><span>{{ .name }}</span></li>{{ end }}
                 <li class="fabric-node is-future"><span>{{ i18n "ch_hfdata" }}</span><em>COMING SOON</em></li>
-                <li class="fabric-node is-future"><span>TETRA</span><em>BENCH</em></li>
             </ul>
             <p class="fabric-bus"><code>router</code><span>{{ i18n "fab_bus" }}</span></p>
             <ul class="fabric-row fabric-bottom">
@@ -212,11 +212,10 @@
                     (dict "n" "Meshtastic LoRa" "s" "meshtastic")
                     (dict "n" "APRS" "s" "aprs")
                     (dict "k" "ch_cell" "s" "cellular")
-                    (dict "n" "WiFi" "s" "wifi")))
+                    (dict "n" "WiFi" "s" "wifi")
+                    (dict "n" "TETRA Direct Mode" "s" "tetra")))
                 (dict "code" "code" "items" (slice
                     (dict "k" "ch_hf10" "s" "hf-10m")))
-                (dict "code" "bench" "items" (slice
-                    (dict "n" "TETRA Direct Mode" "s" "tetra")))
                 (dict "code" "soon" "items" (slice
                     (dict "k" "ch_hfdata" "s" "hf-data")
                     (dict "n" "Wi-Fi HaLow" "s" "halow")
