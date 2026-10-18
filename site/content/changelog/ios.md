@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 89
-  unreleased_since: "2026-10-06"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-06"
+  unreleased_count: 90
+  unreleased_since: "2026-10-18"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-18"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -21,7 +21,7 @@ transport by transport; there is no release yet. Builds, once there are any,
 are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-06)
+## Unreleased (main, last change 2026-10-18)
 
 ### Features
 
@@ -83,6 +83,7 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Fixes
 
+- **delivery**: each channel's pending acks time out on its own timeout, a mesh broadcast no longer waits for an ack, a late ack is kept, and the dedup window applies and survives a restart's hash ([6e5f0ef3](https://github.com/meshsat/meshsat-ios/commit/6e5f0ef38a5a374c1e3102f311f5e93d0d7728ab))
 - **ble**: a link restored by iOS is picked up on poweredOn instead of staying on Connecting ([c704cce4](https://github.com/meshsat/meshsat-ios/commit/c704cce4cd1921c812aac6eaed625d51eb051a4a))
 - **background**: no location background mode, significant-change updates in the background ([5ef26ab5](https://github.com/meshsat/meshsat-ios/commit/5ef26ab563170f3702337bc6c5c84b9b5b24591c))
 - **setup**: the node page asks for Bluetooth with Continue and offers Settings when denied ([3b76f265](https://github.com/meshsat/meshsat-ios/commit/3b76f265ece35211a5d98088f4523f00ce47cedc))

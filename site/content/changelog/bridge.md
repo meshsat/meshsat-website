@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 999
+  unreleased_count: 1003
   unreleased_since: "2026-10-18"
   unreleased_anchor: "unreleased-main-last-change-2026-10-18"
 ---
@@ -442,6 +442,10 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **hub**: a Hub send\_text run again after a restart answers the delivery it queued first, a command that changes something is not run without the command log, and a refusal never replaces a finished command's reply ([02f36d50](https://github.com/meshsat/meshsat/commit/02f36d50eb2beffb84246132cba241d51a572d2c))
+- **hub**: a Hub command an earlier process claimed and never finished runs after a restart, and a request id reused with other arguments is refused ([c0298698](https://github.com/meshsat/meshsat/commit/c02986983d272c0d438e2719aa8c10f17f21c88f))
+- **hub**: a Hub command the broker delivers twice runs once, and the MQTT gateway no longer drops other nodes' messages after a direct send ([dfb4e391](https://github.com/meshsat/meshsat/commit/dfb4e391d9ce3d91495c35433678adf932771f48))
+- **tetra**: a send that failed before its SDS reached the radio is not sent, and no acknowledgement in hand makes it delivered ([5d222775](https://github.com/meshsat/meshsat/commit/5d222775f81e0a46bfbe746a67ea85b5077d7a5c))
 - **tetra**: a MeshSat Bridge's acknowledgement that came before the radio reported the send failed counts as delivered, the radio's report kept ([c591fb28](https://github.com/meshsat/meshsat/commit/c591fb2868b6adea6e350dad2fd2446e6207a5b7))
 - **tetra**: the radio's error code is kept beside its not-sent report every time, and the mailbox check's test waits for its finished event ([69ad4632](https://github.com/meshsat/meshsat/commit/69ad463268e4d36222eb49d987bdc92a85d81a4a))
 - **delivery**: a Bridge acknowledges a TETRA text only once it took it in, and a TETRA or cell send that may have reached the recipient shows as may have been sent ([e1afd21d](https://github.com/meshsat/meshsat/commit/e1afd21d5686ccb81edb9684fa5a338ed7a4555b))
