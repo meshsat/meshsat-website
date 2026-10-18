@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 963
-  unreleased_since: "2026-10-17"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-17"
+  unreleased_count: 996
+  unreleased_since: "2026-10-18"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-18"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,20 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-17)
+## Unreleased (main, last change 2026-10-18)
 
 ### Features
 
+- **delivery**: a text by TETRA that a MeshSat Bridge on the group acknowledges shows as acked by a station, and one nobody acknowledged as may have been sent ([214e060b](https://github.com/meshsat/meshsat/commit/214e060bf8390b228a704d610555da6cd1450024))
+- **tetra**: MeshSat Bridges on a TETRA group confirm each text they receive, so a text lost in a collision both radios missed is sent again ([df734510](https://github.com/meshsat/meshsat/commit/df734510caf651eae551c4307b84f6a46fe7b3e9))
+- **delivery**: a message can go by TETRA to a talk group, by the MeshSat 2G cell to a phone on it with the handset's receipt, and by ZigBee to one device ([627732b4](https://github.com/meshsat/meshsat/commit/627732b4585ad2156a0169c8df830bb3e9a478e8))
+- **web**: the dashboard follows the hardware: a widget hides when its device is unplugged, a device plugged in for the first time brings its widget, the person can remove and add widgets, and TETRA has a card ([082a596a](https://github.com/meshsat/meshsat/commit/082a596a981b6168521beeefdcd95e1ac43549fb))
+- **web**: Settings has a TETRA tab with the radio, its settings and a test send, and the README lists TETRA Direct Mode as LIVE ([246bb80a](https://github.com/meshsat/meshsat/commit/246bb80a058af448cb8fe4289186daac49266bff))
+- **delivery**: a message can go by Iridium SBD on a 9603, one session each, read as taken, not sent or may have been sent from the modem's own status ([042214b1](https://github.com/meshsat/meshsat/commit/042214b17a614ef3d3b4476a30408bffdd435855))
+- **tetra**: a Motorola TETRA radio on a kit's USB carries texts as SDS, radio to radio in Direct Mode, through the delivery ledger and the access rules ([f6e8c3b1](https://github.com/meshsat/meshsat/commit/f6e8c3b1ea1b6dedf543593d0ec08417802f10ba))
+- **delivery**: the status card updates as soon as the bridge writes about its message, and a closed card still shows a late answer ([bec7a869](https://github.com/meshsat/meshsat/commit/bec7a869f77525dc6b25812dbc4befd1a567d3bf))
+- **delivery**: the compose screen sends to directory contacts and shows each message's delivery status as the bridge knows it ([92769370](https://github.com/meshsat/meshsat/commit/927693703b7fcb941bec26c9c6efec90f151a8f0))
+- **delivery**: the RockBLOCK 9704 is a delivery-intent route, one MO at a time, with each final status read for what it means ([c671d794](https://github.com/meshsat/meshsat/commit/c671d7942b9297804e0195e7ba076fe40cc25d36))
 - **delivery**: paid intent routes are priced, reserved against the cap and charged; SMS joins delivery intents ([14c6bbd1](https://github.com/meshsat/meshsat/commit/14c6bbd15ce8efebddab4b3a60df86767fca5416))
 - **delivery**: APRS joins delivery intents: our own message id on every frame, an ack from the addressed station confirms it ([4a0e9b85](https://github.com/meshsat/meshsat/commit/4a0e9b858cea7576289b061b0f06dc4751f841f8))
 - **delivery**: an LXMF proof that arrives after the send gave up, or after a restart, still confirms the intent ([6307bb4e](https://github.com/meshsat/meshsat/commit/6307bb4ec6e5e7c3c0250fb2598126065b1822f6))
@@ -432,6 +442,29 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **tetra**: a Bridge that knows no MeshSat peer on the group says hello again every 5 minutes, so two kits that start in the same second still find each other ([6688bee3](https://github.com/meshsat/meshsat/commit/6688bee3d57eebec90aa5511868875cdd0bc077b))
+- **delivery**: only refusals the radio's firmware gives before anything goes on air mark a mesh send not sent, and one that arrives after the message closed corrects its status ([0497ba91](https://github.com/meshsat/meshsat/commit/0497ba916bcb00239df49bd694f6feb03e773440))
+- **tetra**: a command ends on the reader the moment its final line arrives, so a send's late radio error right after its OK is read as late and not swallowed ([df686d25](https://github.com/meshsat/meshsat/commit/df686d25a00843dd8ece37c9a835e0a72b7f6e6e))
+- **tetra**: an SDS the radio takes and then reports not sent, as in a collision when both kits send at once, is a failed delivery that is retried, not a delivered one ([6612d3fc](https://github.com/meshsat/meshsat/commit/6612d3fc012b77844ddd122410bb06ac060116d0))
+- **delivery**: a mesh message our own radio refuses to send is not sent, so the next route takes over and the status no longer says it was accepted ([25715804](https://github.com/meshsat/meshsat/commit/25715804d37e0cf093e1878abc882f9671e88347))
+- **web**: a widget's arrival ring is the brand's Sand, and Customize's Remove sits on the card's edge instead of over its status ([2934bcd6](https://github.com/meshsat/meshsat/commit/2934bcd671f8e84fccc9f1e6d963448732fedd9c))
+- **web**: a USB radio's widget follows the Bridge's device scan, so it goes the moment the radio is unplugged and comes back within seconds, with detection polled every 5 s ([9a991441](https://github.com/meshsat/meshsat/commit/9a99144192a5e38b76840026cccbe4afadb0a3e5))
+- **tetra**: an SDS-TL report's message reference is read from the byte that holds it, and its delivery status is kept ([a33c9ab8](https://github.com/meshsat/meshsat/commit/a33c9ab8ed0a5415149bd1ac1d4ccecbe0e426b0))
+- **relay**: a custody offer is taken and acknowledged only when the mesh sends its text whole, and an offer repeated after a lost acknowledgement is acknowledged again, not queued twice ([0f757c87](https://github.com/meshsat/meshsat/commit/0f757c87ea6a2d5e96523e4ad529aeb482810ef1))
+- **delivery**: a closed status card checks again once a minute and retries a failed read, and reads again whenever its event stream opens, so a lost update shows within a minute ([0f1807e9](https://github.com/meshsat/meshsat/commit/0f1807e92607974dc7bdde08be2d11316ebd5877))
+- **tetra**: one SDS carries 126 characters, not the 144 the radio advertises, because the radio adds its own identity inside the limit, and a text it calls too long is refused for good ([b46c187b](https://github.com/meshsat/meshsat/commit/b46c187b42e87dc712c3da508c14f84cbac57313))
+- **tetra**: the radio's port opens without touching modem lines its driver does not have, and a first open that fails is retried in the background ([b1670659](https://github.com/meshsat/meshsat/commit/b1670659552d7d7c2c6c89a34d7e309f430ed290))
+- **relay**: a relay too long for its bearer goes as one message, not as numbered fragments nothing joins, and a custody payload is taken only where it will be sent ([b833dd9c](https://github.com/meshsat/meshsat/commit/b833dd9c0da82a0c39c4c65d1422436e6044c708))
+- **devices**: a Motorola TETRA radio on USB is claimed by its id and no longer taken for an Iridium 9603 because it answers AT ([3e3222f1](https://github.com/meshsat/meshsat/commit/3e3222f10935fcba7db09e3e8f7a15fc0635bf31))
+- **aprs**: a message the full receive queue refused is not remembered or acked, so the sender's next copy is taken; a copy of a taken message is still acked ([0d750081](https://github.com/meshsat/meshsat/commit/0d7500811045bdb6ac50da02b03bb6ec7f18dde7))
+- **aprs**: a message the sender transmits again because our ack was late is acked again and taken once, not stored twice ([8ebfaa1b](https://github.com/meshsat/meshsat/commit/8ebfaa1bfea5716d3246b86c608b4a08d0b8b2c0))
+- **delivery**: a send the bridge took under a key is answered for what it was after delivery intents are turned off, and a partial send reports the address it could not queue beside the one it did ([851c3607](https://github.com/meshsat/meshsat/commit/851c360701298ff5647e65bae41f1c2f0b522355))
+- **delivery**: a retried send keeps its key with delivery intents off, a refusal after an unanswered send keeps the retry key, a slow status read never overwrites a newer one, and a 9704 cancel names its send by a token that is never reused ([5bef3521](https://github.com/meshsat/meshsat/commit/5bef35214132e2a6e80cbb9d0073841a68e926d9))
+- **delivery**: compose keeps a send's retry key until the bridge's answer is definitive, shows only the picked contact's history, names each message's recipient, follows a closed message while it settles, and no longer offers team sends ([ed8dbaae](https://github.com/meshsat/meshsat/commit/ed8dbaae1633fdcb4c850c1da4bd058f0b70d609))
+- **delivery**: every 9704 MO frame is bound to its own message, a cancel names the exact send, a cancelled caller sends nothing, and only documented statuses release an MO as not sent ([1a02dd6f](https://github.com/meshsat/meshsat/commit/1a02dd6f30469c89a5a02a9b6c2f553c09c7a258))
+- **delivery**: a route retired by its queue allowance is shown as not sent in time, not as offline ([eaa2d07f](https://github.com/meshsat/meshsat/commit/eaa2d07fd1d97a349338c24e719017be935834e9))
+- **delivery**: the SMS bundle's end is kept to the whole second, and the dashboard says when it is unknown ([26462160](https://github.com/meshsat/meshsat/commit/26462160096f78477b2dd8776edc8999e9479ca2))
+- **delivery**: a returned SMS share is always committed, and the prepaid bundle has a recorded end after which intent SMS are refused ([0705cec1](https://github.com/meshsat/meshsat/commit/0705cec15de270b25fd615c578264e1fa8bbdeb7))
 - **delivery**: an intent SMS goes only once its bundle share is stored, every count change is one transaction, a failed read refuses instead of allowing, and a top-up keeps a running send's share ([4d486ede](https://github.com/meshsat/meshsat/commit/4d486ede8f9ca48071c0f17e6a602f88914bb9cf))
 - **delivery**: the SMS bundle is checked and settled on the modem's serial loop, a send without +CMGS stays unconfirmed, and the counter is set before anything can send ([b3ef1ca0](https://github.com/meshsat/meshsat/commit/b3ef1ca04fe2888113f5b656c99973987da68ff4))
 - **delivery**: an SMS that may still go is unknown, only +CMGS is acceptance, tariffs are EUR and bounded, the minimum is charged, the modem is held to IRA and GSM 7-bit ([7d9dac4a](https://github.com/meshsat/meshsat/commit/7d9dac4a443c2c2b9e59afa61ea83b109bafe24c))
