@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v2.21.0"
   latest_tag_date: "2026-10-13"
   latest_tag_anchor: "v2210-2026-10-13"
-  unreleased_count: 2
+  unreleased_count: 3
   unreleased_since: "2026-10-18"
   unreleased_anchor: "unreleased-main-last-change-2026-10-18"
 ---
@@ -27,6 +27,7 @@ carries the same history in Keep a Changelog form.
 
 ### Fixes
 
+- **sms**: a delivery report and the outcome it leads to are saved together, a failure never takes back a delivered SMS, and a send's part count is fixed before it goes out ([b90c94e9](https://github.com/meshsat/meshsat-android/commit/b90c94e9893ee9713ee5a0556261d711756de491))
 - **sms**: a long SMS shows delivered only once every part is, and a CDMA delivery report is read as one ([0b144032](https://github.com/meshsat/meshsat-android/commit/0b144032124a317e7844fbf219f362c311f798af))
 - **delivery**: each channel's pending acks time out on its own timeout, a mesh broadcast no longer waits for an ack, only an SMS the phone confirmed shows delivered, and a late ack is kept ([534224b1](https://github.com/meshsat/meshsat-android/commit/534224b12dfc07a4feaa1932a070e4d8385dcc3b))
 
