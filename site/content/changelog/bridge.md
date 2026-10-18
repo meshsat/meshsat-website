@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1003
+  unreleased_count: 1004
   unreleased_since: "2026-10-18"
   unreleased_anchor: "unreleased-main-last-change-2026-10-18"
 ---
@@ -442,6 +442,7 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **hub**: a Hub command that ran without its claim no longer stores its reply under another request's claim ([6de41f32](https://github.com/meshsat/meshsat/commit/6de41f327598770080531dc54cf75cf976035c2b))
 - **hub**: a Hub send\_text run again after a restart answers the delivery it queued first, a command that changes something is not run without the command log, and a refusal never replaces a finished command's reply ([02f36d50](https://github.com/meshsat/meshsat/commit/02f36d50eb2beffb84246132cba241d51a572d2c))
 - **hub**: a Hub command an earlier process claimed and never finished runs after a restart, and a request id reused with other arguments is refused ([c0298698](https://github.com/meshsat/meshsat/commit/c02986983d272c0d438e2719aa8c10f17f21c88f))
 - **hub**: a Hub command the broker delivers twice runs once, and the MQTT gateway no longer drops other nodes' messages after a direct send ([dfb4e391](https://github.com/meshsat/meshsat/commit/dfb4e391d9ce3d91495c35433678adf932771f48))
