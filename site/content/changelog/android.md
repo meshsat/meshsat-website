@@ -25,269 +25,269 @@ carries the same history in Keep a Changelog form.
 <!-- generated:begin -->
 ## Unreleased (main)
 
-No user-facing changes (1 commits of other types).
+No user-facing changes (2 commits of other types).
 
 ## v2.21.0 (2026-10-13)
 
 ### Features
 
-- **rns**: an RNode on USB OTG or Bluetooth LE puts the phone on a LoRa mesh ([de53f279](https://github.com/meshsat/meshsat-android/commit/de53f2798fab886a074b9020e7a2914571dec5d2))
-- **rns**: AutoInterface, so Sideband and rnsd on the same WiFi find the phone by themselves ([263fda2e](https://github.com/meshsat/meshsat-android/commit/263fda2e2a35e9f05f4295c78d06a235df63a186))
-- **lxmf**: messages through a propagation node, syncing from one, and all four send methods ([61d6eb55](https://github.com/meshsat/meshsat-android/commit/61d6eb5576273e1b12483b76e62b5afea4ccffa6))
+- **rns**: an RNode on USB OTG or Bluetooth LE puts the phone on a LoRa mesh ([8a315885](https://github.com/meshsat/meshsat-android/commit/8a315885ada0757f2b35794182ea588a0b1a7eac))
+- **rns**: AutoInterface, so Sideband and rnsd on the same WiFi find the phone by themselves ([771f6d71](https://github.com/meshsat/meshsat-android/commit/771f6d71b152a1d1a0969245469a66cd429103e8))
+- **lxmf**: messages through a propagation node, syncing from one, and all four send methods ([5977ed6c](https://github.com/meshsat/meshsat-android/commit/5977ed6ceb030d1b74dcebd4ad90a87d6759cd62))
 
 ## v2.20.0 (2026-10-13)
 
 ### Features
 
-- **api**: Reticulum link settings through the local API ([6b748b4e](https://github.com/meshsat/meshsat-android/commit/6b748b4e7ebf7d06c73b1238860fdc8ccbc73e24))
-- **rns**: the phone listens for Reticulum peers on this WiFi over TCP ([24fda1e1](https://github.com/meshsat/meshsat-android/commit/24fda1e11404a977696ab0d37b27ad0cf1ea5689))
-- **ui**: Reticulum conversations: an LXMF address to copy, a name, Announce now, Direct or Auto on send, delivery marks ([dc45f094](https://github.com/meshsat/meshsat-android/commit/dc45f0940a88f776a956c1e7c69dc3c5f2bb9975))
-- **rns**: the node and LXMF run in the app, with the 9704 as a paid Reticulum link ([71ddab14](https://github.com/meshsat/meshsat-android/commit/71ddab148573db8c5348ed49e9b74e3072483f82))
-- **lxmf**: LXMF messages, verified against Python LXMF 1.2.0 ([68babf76](https://github.com/meshsat/meshsat-android/commit/68babf765b731ec396db57238892af7d70862e25))
-- **rns**: the Reticulum node: paths, transport, links, proofs and resources, verified against Python RNS 1.5.5 ([d52394e7](https://github.com/meshsat/meshsat-android/commit/d52394e7499209a19b3991e37bc9a6ba1cd5d424))
-- **rns**: the upstream Reticulum wire format, verified against Python RNS 1.5.5 ([d5335eee](https://github.com/meshsat/meshsat-android/commit/d5335eee51d79d64187c4a6f1f4f28ef29eb6858))
+- **api**: Reticulum link settings through the local API ([55497fd2](https://github.com/meshsat/meshsat-android/commit/55497fd2c41223d7eb6bdd233c8be199ede4ab06))
+- **rns**: the phone listens for Reticulum peers on this WiFi over TCP ([6f82efe9](https://github.com/meshsat/meshsat-android/commit/6f82efe943c65318b8aff0db9609f166dadf8f68))
+- **ui**: Reticulum conversations: an LXMF address to copy, a name, Announce now, Direct or Auto on send, delivery marks ([167aff09](https://github.com/meshsat/meshsat-android/commit/167aff09f9240d15fd1f97f97f0a7c5203834e48))
+- **rns**: the node and LXMF run in the app, with the 9704 as a paid Reticulum link ([e2540c34](https://github.com/meshsat/meshsat-android/commit/e2540c340f59338fa9907bdb0d10e80ab45ee5bd))
+- **lxmf**: LXMF messages, verified against Python LXMF 1.2.0 ([7b5e13ac](https://github.com/meshsat/meshsat-android/commit/7b5e13ace68d2efcc0f5446570374a1d3d47d2e1))
+- **rns**: the Reticulum node: paths, transport, links, proofs and resources, verified against Python RNS 1.5.5 ([bd960ede](https://github.com/meshsat/meshsat-android/commit/bd960ede945f84eef35394d5ee08515ea03b37f6))
+- **rns**: the upstream Reticulum wire format, verified against Python RNS 1.5.5 ([4b846426](https://github.com/meshsat/meshsat-android/commit/4b846426b59b11db2cc70f336ae8494881de6046))
 
 ### Fixes
 
-- **rns**: a neighbour heard across the satellite gets HEADER\_1 packets, whatever its extra hops ([7a7479e3](https://github.com/meshsat/meshsat-android/commit/7a7479e3b5671d43a16cc3d78d621d28c6e5eea4))
-- **rns**: one interface instance per transport, started and wired for receive ([34ab915d](https://github.com/meshsat/meshsat-android/commit/34ab915dbd24c16aad704572dc61a23c04ad2625))
+- **rns**: a neighbour heard across the satellite gets HEADER\_1 packets, whatever its extra hops ([35d03f2e](https://github.com/meshsat/meshsat-android/commit/35d03f2e07813cdc11cef11aba8a6d603bbea663))
+- **rns**: one interface instance per transport, started and wired for receive ([860aa04f](https://github.com/meshsat/meshsat-android/commit/860aa04f3d8e42b606999096c8fe3b883ad6c445))
 
 ## v2.19.13 (2026-10-08)
 
 ### Fixes
 
-- **api**: the local API answers only adb and the app itself ([1ca2ec88](https://github.com/meshsat/meshsat-android/commit/1ca2ec886a211552b33a115073a37708755e6a8e))
+- **api**: the local API answers only adb and the app itself ([dff3da70](https://github.com/meshsat/meshsat-android/commit/dff3da70f80a69aa945dd811e7b3679c6abb15dc))
 
 ## v2.19.12 (2026-10-08)
 
 ### Fixes
 
-- **iridium**: a 9704 message that fails leaves the link's state alone ([2d57d048](https://github.com/meshsat/meshsat-android/commit/2d57d0486bf19ad204d749e75389a70d7474f01a))
+- **iridium**: a 9704 message that fails leaves the link's state alone ([f58bde99](https://github.com/meshsat/meshsat-android/commit/f58bde994f42f13a9d3370e5c15ec502b181bc8e))
 
 ## v2.19.11 (2026-10-08)
 
 ### Fixes
 
-- **iridium**: messages for the satellite go out through the node's 9704 when it carries one ([f86b99b6](https://github.com/meshsat/meshsat-android/commit/f86b99b6ebd3d25631551493ed5ebc652911ff29))
-- **iridium**: a 9704 send that sees no satellite is cancelled in the modem before it is retried ([31966bcd](https://github.com/meshsat/meshsat-android/commit/31966bcd712add5755aed81e22e505175128fc0a))
+- **iridium**: messages for the satellite go out through the node's 9704 when it carries one ([141d7087](https://github.com/meshsat/meshsat-android/commit/141d7087d229092e62a1b41d1105cb3610a4922e))
+- **iridium**: a 9704 send that sees no satellite is cancelled in the modem before it is retried ([39c66d11](https://github.com/meshsat/meshsat-android/commit/39c66d1181fea32aacc73bb01ef93ef9421af5e2))
 
 ## v2.19.10 (2026-10-08)
 
 ### Fixes
 
-- **iridium**: a 9704 behind the node's pipe tries its start again until it answers ([64f96dcf](https://github.com/meshsat/meshsat-android/commit/64f96dcf2e40c3e7c76e30f322528bf3368be796))
+- **iridium**: a 9704 behind the node's pipe tries its start again until it answers ([306fcdca](https://github.com/meshsat/meshsat-android/commit/306fcdcabafcda8888cc65a5fba40e5869e5e5b5))
 
 ## v2.19.9 (2026-10-08)
 
 ### Features
 
-- **iridium**: the node says which modem it carries; the app follows it ([8d6e7320](https://github.com/meshsat/meshsat-android/commit/8d6e73201241db75bf55774163c26e738b952a4e))
+- **iridium**: the node says which modem it carries; the app follows it ([4da8b990](https://github.com/meshsat/meshsat-android/commit/4da8b99095e8c566a7c5c365c218c1985578530e))
 
 ## v2.19.8 (2026-10-08)
 
 ### Features
 
-- **iridium**: the 9704 driver runs over the MeshSat node's pipe; Settings says which modem the node carries ([e7775cc7](https://github.com/meshsat/meshsat-android/commit/e7775cc794fea3c2810c751df0eea3b7eda5f1a6))
+- **iridium**: the 9704 driver runs over the MeshSat node's pipe; Settings says which modem the node carries ([0ae49684](https://github.com/meshsat/meshsat-android/commit/0ae49684a592eea666e10bfe3756f32ea81f87d6))
 
 ## v2.19.7 (2026-10-03)
 
 ### Fixes
 
-- **security**: no backups of the app's data, and release builds speak TLS only ([5ffc69f1](https://github.com/meshsat/meshsat-android/commit/5ffc69f1a732498b9797a55b8ffc85181509e347))
+- **security**: no backups of the app's data, and release builds speak TLS only ([713490dc](https://github.com/meshsat/meshsat-android/commit/713490dc8a7c5fe03c2e5aaddef090e4d788f2ac))
 
 ## v2.19.6 (2026-10-02)
 
 ### Fixes
 
-- **tak**: a phone that lies still reports its position to TAK once a minute ([78008695](https://github.com/meshsat/meshsat-android/commit/78008695743ad998cc2a49d840bc6ce7ea137cee))
+- **tak**: a phone that lies still reports its position to TAK once a minute ([41da6a3e](https://github.com/meshsat/meshsat-android/commit/41da6a3e85b6a0acfdfbed0a9ed53c7b979dd781))
 
 ## v2.19.5 (2026-10-02)
 
 ### Fixes
 
-- **tak**: the phone sends its TAK messages to the Hub, and shows what the Hub delivers back ([9b218a37](https://github.com/meshsat/meshsat-android/commit/9b218a374abbd6ebd57fb933fd5d22dce7c6d864))
+- **tak**: the phone sends its TAK messages to the Hub, and shows what the Hub delivers back ([f115c83a](https://github.com/meshsat/meshsat-android/commit/f115c83a854b74550032528f48ce2bbea3642bcb))
 
 ## v2.19.4 (2026-09-27)
 
 ### Fixes
 
-- **satellite**: re-read STATS every 10 s while the Node health card is on screen ([73454c78](https://github.com/meshsat/meshsat-android/commit/73454c786f2a45146f829c4d1101c4e9c627e391))
-- **ble**: refresh Android's cached GATT table when the node's pipe comes back without STATS ([6745298f](https://github.com/meshsat/meshsat-android/commit/6745298fe274d5a5939b2b8c4a629fcf91248605))
+- **satellite**: re-read STATS every 10 s while the Node health card is on screen ([b037f3c3](https://github.com/meshsat/meshsat-android/commit/b037f3c3a93d1baf2b3fdfb37f2905c186b6d145))
+- **ble**: refresh Android's cached GATT table when the node's pipe comes back without STATS ([8280ef20](https://github.com/meshsat/meshsat-android/commit/8280ef209dc5da361b42f69e02a18a45bd5ea369))
 
 ## v2.19.3 (2026-09-27)
 
 ### Features
 
-- **node**: Setup \> Advanced \> Node log, the node's live log over Bluetooth ([9b89f951](https://github.com/meshsat/meshsat-android/commit/9b89f951dcf88e540b0ea457912624e51963364b))
-- **satellite**: node health card from STATS, pass windows to the node, STATUS v2 accepted ([46029b92](https://github.com/meshsat/meshsat-android/commit/46029b92526100772b6f5efce18b7b1c0af8b588))
+- **node**: Setup \> Advanced \> Node log, the node's live log over Bluetooth ([06560a31](https://github.com/meshsat/meshsat-android/commit/06560a319e2ef92a7b913884258f41d781a8e60e))
+- **satellite**: node health card from STATS, pass windows to the node, STATUS v2 accepted ([53643634](https://github.com/meshsat/meshsat-android/commit/53643634e73e1b26672c3fc7a80480fb986cb138))
 
 ### Fixes
 
-- **satellite**: a BLE drop ends the AT command at once, no session on reconnect, Reticulum ToRadio decodes ([4f84e370](https://github.com/meshsat/meshsat-android/commit/4f84e370a0c76a5d7bb33ba774e119dda5fa2c3e))
+- **satellite**: a BLE drop ends the AT command at once, no session on reconnect, Reticulum ToRadio decodes ([b456e1af](https://github.com/meshsat/meshsat-android/commit/b456e1af89b0fc70ad4582da7e0795dcdcf2f847))
 
 ## v2.19.2 (2026-09-25)
 
 ### Features
 
-- **ci**: publish-play uploads each tag's Play bundle to a Console track ([434b7061](https://github.com/meshsat/meshsat-android/commit/434b7061de4020f8ef2a4f931a37b8cd16b876a3))
+- **ci**: publish-play uploads each tag's Play bundle to a Console track ([c928b4df](https://github.com/meshsat/meshsat-android/commit/c928b4dfa347f23c32d5f858b24f24de00a5abda))
 
 ### Fixes
 
-- **play**: screenshots at exactly 9:16, what the store listing form takes ([e51753cc](https://github.com/meshsat/meshsat-android/commit/e51753cc0d495ee91673c6e05935673f82a01a36))
-- **play**: screenshots padded to 2:1, the ratio Play accepts ([81df1db1](https://github.com/meshsat/meshsat-android/commit/81df1db1ce735db6a47e031a0663d1ce40d6a744))
+- **play**: screenshots at exactly 9:16, what the store listing form takes ([fb1c20a4](https://github.com/meshsat/meshsat-android/commit/fb1c20a459a099fb96f76ebed38dbcdc7e806e05))
+- **play**: screenshots padded to 2:1, the ratio Play accepts ([8687316f](https://github.com/meshsat/meshsat-android/commit/8687316f6fd1e0654d5919ec7973a6aae9b8d5be))
 
 ## v2.19.1 (2026-09-25)
 
 ### Fixes
 
-- **test**: drop the Paho bug demonstration that goes either way on the CI runner ([aecba6dd](https://github.com/meshsat/meshsat-android/commit/aecba6ddc58e081fa736a9f1e86c45f1124ee966))
-- **build**: vcsInfo belongs to the release build type ([ffa6e04e](https://github.com/meshsat/meshsat-android/commit/ffa6e04eb77d915833d2e82a95e80aafd445d4bf))
-- **build**: keep the git commit out of the APK so F-Droid can reproduce it ([0e1d1b8d](https://github.com/meshsat/meshsat-android/commit/0e1d1b8d197383b0dac4068353c22126c9874c9f))
+- **test**: drop the Paho bug demonstration that goes either way on the CI runner ([1254ccc7](https://github.com/meshsat/meshsat-android/commit/1254ccc79eb60bc0525f9db6b31d30fec23eaaf2))
+- **build**: vcsInfo belongs to the release build type ([bac24329](https://github.com/meshsat/meshsat-android/commit/bac24329eb57167c8feaea9b960f98701050409b))
+- **build**: keep the git commit out of the APK so F-Droid can reproduce it ([5c85f341](https://github.com/meshsat/meshsat-android/commit/5c85f34131d775117d65315c6b6cd39c61139bef))
 
 ## v2.19.0 (2026-09-25)
 
 ### Features
 
-- **build**: target Android 16 (SDK 36) with AGP 8.10.1, as Google Play requires ([05a6b5c9](https://github.com/meshsat/meshsat-android/commit/05a6b5c9cad7a909d81e4a86ce9e393ea2a09f3e))
-- **play**: a Google Play edition without SMS as the play flavor; fdroid stays the full app ([ab34293e](https://github.com/meshsat/meshsat-android/commit/ab34293ea40663a0190ba415ea941cec60a53bbe))
+- **build**: target Android 16 (SDK 36) with AGP 8.10.1, as Google Play requires ([541c7ae1](https://github.com/meshsat/meshsat-android/commit/541c7ae19764353f148dfc7fee1461f287e8050b))
+- **play**: a Google Play edition without SMS as the play flavor; fdroid stays the full app ([7abd12bd](https://github.com/meshsat/meshsat-android/commit/7abd12bda4500f180575837ce6e7221389e3cafe))
 
 ### Fixes
 
-- **test**: the Paho reconnect test waits for the next backoff step instead of assuming 3 s ([b579dc3f](https://github.com/meshsat/meshsat-android/commit/b579dc3f14b4244ebd0397555eda9f30d2941df5))
+- **test**: the Paho reconnect test waits for the next backoff step instead of assuming 3 s ([d310ab95](https://github.com/meshsat/meshsat-android/commit/d310ab9550e1fc5cc160670c32b67363399e6ea3))
 
 ## v2.18.26 (2026-09-21)
 
 ### Features
 
-- **node**: the node's battery, voltage and time left on Home and the node screen ([5341dcba](https://github.com/meshsat/meshsat-android/commit/5341dcba36b5d30a91c9ae63197138f72f493550))
+- **node**: the node's battery, voltage and time left on Home and the node screen ([63bbd4e7](https://github.com/meshsat/meshsat-android/commit/63bbd4e7cca1ddc4bc28339b94162d31012d32db))
 
 ## v2.18.25 (2026-09-21)
 
 ### Fixes
 
-- **hub**: the wait for the Hub's settings shows on screen and carries on when you leave it ([19ace90c](https://github.com/meshsat/meshsat-android/commit/19ace90cd74d01376994960d398617c572c31802))
-- **hub**: a stopped gateway left its old Hub connection retrying under the same client id ([f4eb7f87](https://github.com/meshsat/meshsat-android/commit/f4eb7f87e808fabe8110669a070e4834e3f40b22))
+- **hub**: the wait for the Hub's settings shows on screen and carries on when you leave it ([6711d1b7](https://github.com/meshsat/meshsat-android/commit/6711d1b73703f5f99cfaf330e85a95cb08b0dd2f))
+- **hub**: a stopped gateway left its old Hub connection retrying under the same client id ([ab8d596e](https://github.com/meshsat/meshsat-android/commit/ab8d596e907b55d1a4520c6a4ccf744186af8fa5))
 
 ## v2.18.24 (2026-09-21)
 
 ### Fixes
 
-- **passes**: the fallback orbit download repeated some satellites and skipped others ([0383359f](https://github.com/meshsat/meshsat-android/commit/0383359f3fa4d87905e6b2d770d3ebc5136795d5))
+- **passes**: the fallback orbit download repeated some satellites and skipped others ([82f7b9f4](https://github.com/meshsat/meshsat-android/commit/82f7b9f495cf58411f2d47e11dab8deb3d3447e5))
 
 ## v2.18.23 (2026-09-21)
 
 ### Fixes
 
-- **passes**: the SGP4 propagator put every satellite in the wrong place ([95f7077d](https://github.com/meshsat/meshsat-android/commit/95f7077d688070b06e2ec0a45ea1dcd0ffc679eb))
+- **passes**: the SGP4 propagator put every satellite in the wrong place ([35b0bba2](https://github.com/meshsat/meshsat-android/commit/35b0bba2bdce380442d612c70c3346ffb584ee97))
 
 ## v2.18.22 (2026-09-21)
 
 ### Fixes
 
-- **ui**: the signal vs passes chart replaces the Home sparkline, and the passes screen fits a small phone ([e525cea6](https://github.com/meshsat/meshsat-android/commit/e525cea69ac032b4c87806cbd251b94d8270f416))
-- **hub**: a scanned Hub QR code waits for the Hub instead of failing when its broker is not ready ([3063e26e](https://github.com/meshsat/meshsat-android/commit/3063e26ee744165e6f843359d38780da799d014f))
+- **ui**: the signal vs passes chart replaces the Home sparkline, and the passes screen fits a small phone ([17f9f8c5](https://github.com/meshsat/meshsat-android/commit/17f9f8c5415e03961d4696e394e9389662c34e8e))
+- **hub**: a scanned Hub QR code waits for the Hub instead of failing when its broker is not ready ([24a94fea](https://github.com/meshsat/meshsat-android/commit/24a94feafa6ae81e776d3ef1719d252c44920d76))
 
 ## v2.18.21 (2026-09-21)
 
 ### Features
 
-- **passes**: signal vs passes like the Bridge's, on Home and the passes screen ([1347b09e](https://github.com/meshsat/meshsat-android/commit/1347b09eb5d7b3213e636b7a6297bd7452cb1898))
+- **passes**: signal vs passes like the Bridge's, on Home and the passes screen ([2fff4f86](https://github.com/meshsat/meshsat-android/commit/2fff4f8692c315c88de04c2faba815573bd03ee1))
 
 ## v2.18.20 (2026-09-21)
 
 ### Fixes
 
-- **ui**: the QR scanner opened sideways and full screen ([d5e15bab](https://github.com/meshsat/meshsat-android/commit/d5e15babea6e78af02cfe00790dfcd55326477ec))
-- **ui**: the Hub card said "Not set up" while the phone was connected to the Hub ([f0cc4d9b](https://github.com/meshsat/meshsat-android/commit/f0cc4d9bff438de3c642f7a4f0cdf7f1da4552b6))
-- **hub**: a failed first connect to the Hub was never tried again ([3f721862](https://github.com/meshsat/meshsat-android/commit/3f72186287d6d86e69d0a3cfc2d585512670dee1))
+- **ui**: the QR scanner opened sideways and full screen ([d4407734](https://github.com/meshsat/meshsat-android/commit/d4407734f87877d3ab41da43f2bab7772567ad68))
+- **ui**: the Hub card said "Not set up" while the phone was connected to the Hub ([78f09bb6](https://github.com/meshsat/meshsat-android/commit/78f09bb6e72b7e48424ad837243528fd058ded79))
+- **hub**: a failed first connect to the Hub was never tried again ([43dedcc5](https://github.com/meshsat/meshsat-android/commit/43dedcc526ef5d301bb84320376e882610785c4a))
 
 ## v2.18.19 (2026-09-21)
 
 ### Fixes
 
-- **relay**: every other request to a kit through the Hub relay failed ([db7f04b5](https://github.com/meshsat/meshsat-android/commit/db7f04b5b3db61649b2f83d1311095b5491135a2))
+- **relay**: every other request to a kit through the Hub relay failed ([f495f24f](https://github.com/meshsat/meshsat-android/commit/f495f24f5a45fc7f7bef2dfd0eb1b06a946f4f8f))
 
 ## v2.18.18 (2026-09-21)
 
 ### Fixes
 
-- **relay**: a request to a kit through the Hub relay was refused on every phone ([6075be60](https://github.com/meshsat/meshsat-android/commit/6075be60d964a46a5e092630dc98e1da9116bfcc))
+- **relay**: a request to a kit through the Hub relay was refused on every phone ([03afba53](https://github.com/meshsat/meshsat-android/commit/03afba53821d3f0d1ca657a32f2dba9391c1504b))
 
 ## v2.18.17 (2026-09-21)
 
 ### Features
 
-- **relay**: reach a kit's own API through the Hub relay from the phone, timed ([c5d8485c](https://github.com/meshsat/meshsat-android/commit/c5d8485c50d54e5970caffae289fe446a1cf0a10))
+- **relay**: reach a kit's own API through the Hub relay from the phone, timed ([ad75d16d](https://github.com/meshsat/meshsat-android/commit/ad75d16d218aaab18da078fd2520bde647d3351c))
 
 ### Fixes
 
-- **hub**: say why the Hub is unreachable, and connect after provisioning without a restart ([c7594cbf](https://github.com/meshsat/meshsat-android/commit/c7594cbff3b67d0fe76b1f095e9933a7ca9eaacc))
+- **hub**: say why the Hub is unreachable, and connect after provisioning without a restart ([4d09771b](https://github.com/meshsat/meshsat-android/commit/4d09771b9a104d0eba2a4569812ab32e04c4fa8a))
 
 ## v2.18.16 (2026-09-21)
 
 ### Fixes
 
-- **sms**: "Allow SMS" did nothing when Android refused without asking ([3ca6afd9](https://github.com/meshsat/meshsat-android/commit/3ca6afd9c3d2ed3d49371d089347491622c66f28))
+- **sms**: "Allow SMS" did nothing when Android refused without asking ([f80a0c30](https://github.com/meshsat/meshsat-android/commit/f80a0c30037376728d57c857bd6934ed6a26ec4d))
 
 ## v2.18.15 (2026-09-21)
 
 ### Fixes
 
-- **iridium**: a long satellite message was cut into parts the Hub reads as something else ([5ea70f93](https://github.com/meshsat/meshsat-android/commit/5ea70f9357e4569a0671102047192eb522b7250a))
+- **iridium**: a long satellite message was cut into parts the Hub reads as something else ([72693c87](https://github.com/meshsat/meshsat-android/commit/72693c876ba92fcb7070e027525dcd33a7bb5d95))
 
 ## v2.18.14 (2026-09-21)
 
 ### Fixes
 
-- **sos**: the contact picker still asked which app to use ([957e7fbf](https://github.com/meshsat/meshsat-android/commit/957e7fbfd68946c53b04f384b7b038e59572ef1e))
+- **sos**: the contact picker still asked which app to use ([c1341d6b](https://github.com/meshsat/meshsat-android/commit/c1341d6b8b22683c1825221cbf63a5020e9ed572))
 
 ## v2.18.13 (2026-09-21)
 
 ### Fixes
 
-- **sos**: choosing an emergency contact went through "Contacts or Solid Explorer?" first ([efbe9b82](https://github.com/meshsat/meshsat-android/commit/efbe9b823656ba6ea48b0a0357a4d8e75e2626c1))
-- **config**: an imported config was ignored by the running gateway until it restarted ([c7da7bcf](https://github.com/meshsat/meshsat-android/commit/c7da7bcf5634ccbcd155fc5a3464c6e0185ac888))
+- **sos**: choosing an emergency contact went through "Contacts or Solid Explorer?" first ([09eb47e3](https://github.com/meshsat/meshsat-android/commit/09eb47e33cf4ab1ce037f9d64bddb74197d3bd85))
+- **config**: an imported config was ignored by the running gateway until it restarted ([6ab744a3](https://github.com/meshsat/meshsat-android/commit/6ab744a33997cd6927778d4517c4755f336a0cba))
 
 ## v2.18.12 (2026-09-21)
 
 ### Features
 
-- **sos**: choose emergency contacts from the phone's contacts instead of typing the number ([1b4de5a3](https://github.com/meshsat/meshsat-android/commit/1b4de5a35c43da2573adfe04d83a849543fb878d))
+- **sos**: choose emergency contacts from the phone's contacts instead of typing the number ([2b1bf27b](https://github.com/meshsat/meshsat-android/commit/2b1bf27b12e7d0ab6af5991f2a12ea966817cfb4))
 
 ## v2.18.11 (2026-09-21)
 
 ### Fixes
 
-- **hub**: a message passed on to the Hub is filed under who sent it, not under the satellite modem ([93793679](https://github.com/meshsat/meshsat-android/commit/93793679dd655bcd330627ecf418c954dbefbebf))
+- **hub**: a message passed on to the Hub is filed under who sent it, not under the satellite modem ([3902589a](https://github.com/meshsat/meshsat-android/commit/3902589a1ce974e84cfeac96e11fd3e6659fd135))
 
 ## v2.18.10 (2026-09-21)
 
 ### Fixes
 
-- **ui**: with Bluetooth off, the banner said "Cannot reach your MeshSat node" instead of saying so ([0fcfe79a](https://github.com/meshsat/meshsat-android/commit/0fcfe79acfb7d754835b6907ca5fb4abd2c8edeb))
+- **ui**: with Bluetooth off, the banner said "Cannot reach your MeshSat node" instead of saying so ([5956f659](https://github.com/meshsat/meshsat-android/commit/5956f659ac9c8c9384c8eade21c6002c7ac32249))
 
 ## v2.18.9 (2026-09-21)
 
 ### Fixes
 
-- **mesh**: typed mesh messages went out as coded frames no other radio could read ([6c9d435d](https://github.com/meshsat/meshsat-android/commit/6c9d435d92696326deb00f178a1354332535b26c))
-- **mesh**: a node's name announced on the air was dropped, so it stayed "Node !4370c1d8" ([cdc50593](https://github.com/meshsat/meshsat-android/commit/cdc50593dd4fdafad50909e5456c2efd8bc5f2d2))
+- **mesh**: typed mesh messages went out as coded frames no other radio could read ([30bfd782](https://github.com/meshsat/meshsat-android/commit/30bfd78235dd54dd43b0b86c68d2db34daa921c3))
+- **mesh**: a node's name announced on the air was dropped, so it stayed "Node !4370c1d8" ([92b7ea9a](https://github.com/meshsat/meshsat-android/commit/92b7ea9a8c9f89d1d5e857e57fa6b30e50fe9ba4))
 
 ## v2.18.8 (2026-09-21)
 
 ### Features
 
-- **mesh**: apply a whole node profile in one go, and read the full node config back ([b0cf1b30](https://github.com/meshsat/meshsat-android/commit/b0cf1b3018fc677fd71f4e3027a38f766600a042))
+- **mesh**: apply a whole node profile in one go, and read the full node config back ([bb75214f](https://github.com/meshsat/meshsat-android/commit/bb75214f4615153f2d7bd2a1a59ab4770ad3456d))
 
 ### Fixes
 
-- **ble**: switching Bluetooth off lost the node until the app was restarted ([99fcd8f1](https://github.com/meshsat/meshsat-android/commit/99fcd8f1ab73d09dce23eb1a24500be9d5ce0e79))
+- **ble**: switching Bluetooth off lost the node until the app was restarted ([41fac937](https://github.com/meshsat/meshsat-android/commit/41fac937acd02c7cb86e455798bae138e48880f1))
 
 ## v2.18.7 (2026-09-21)
 
 ### Fixes
 
-- **rules**: the rule editor's "Hub" was a dead link, and the real one had no name ([b378913b](https://github.com/meshsat/meshsat-android/commit/b378913b7685251d6c951182f2390075da8fde19))
+- **rules**: the rule editor's "Hub" was a dead link, and the real one had no name ([9f5f8324](https://github.com/meshsat/meshsat-android/commit/9f5f8324fd1386141e12a883df580a0c4ccd19eb))
 
 ## v2.18.6 (2026-09-20)
 
@@ -297,13 +297,13 @@ No user-facing changes (0 commits of other types).
 
 ### Features
 
-- **rules**: say so when a rule sends the Hub a second copy of a satellite message ([82428081](https://github.com/meshsat/meshsat-android/commit/824280815f5aa863b86b9231290f908eb3e730b3))
+- **rules**: say so when a rule sends the Hub a second copy of a satellite message ([7b684610](https://github.com/meshsat/meshsat-android/commit/7b684610e157840e9e63bed3f6e54b30e76efbe7))
 
 ## v2.18.4 (2026-09-20)
 
 ### Fixes
 
-- **ui**: the node banner said "No your MeshSat node", and lied about since when ([c4c55ea5](https://github.com/meshsat/meshsat-android/commit/c4c55ea5094825d1084ae0dffaff6612a38368cc))
+- **ui**: the node banner said "No your MeshSat node", and lied about since when ([7874d1eb](https://github.com/meshsat/meshsat-android/commit/7874d1eb747d7d235beaf4fa674599a6e54f2c00))
 
 ## v2.18.3 (2026-09-20)
 
@@ -313,37 +313,37 @@ No user-facing changes (1 commits of other types).
 
 ### Fixes
 
-- **hub**: send the satellite channel values after all ([6e96ebf2](https://github.com/meshsat/meshsat-android/commit/6e96ebf2780c34569e4f41e9074486177db43232))
+- **hub**: send the satellite channel values after all ([38260976](https://github.com/meshsat/meshsat-android/commit/3826097613b1046458fcfdd937d1219baf06147f))
 
 ## v2.18.1 (2026-09-20)
 
 ### Fixes
 
-- **hub**: hold back the satellite channel values ([f8fde1ac](https://github.com/meshsat/meshsat-android/commit/f8fde1acb0f5afcee19ba2e936b5d2b23f94384d))
+- **hub**: hold back the satellite channel values ([8d9ef7e6](https://github.com/meshsat/meshsat-android/commit/8d9ef7e6033d96d43ebfae9a1eaf236b03265052))
 
 ## v2.18.0 (2026-09-20)
 
 ### Fixes
 
-- **hub**: tell the Hub which link a forwarded message arrived on ([a33b7947](https://github.com/meshsat/meshsat-android/commit/a33b794724ac41a41c90810d24e86085b9b38084))
+- **hub**: tell the Hub which link a forwarded message arrived on ([a8271424](https://github.com/meshsat/meshsat-android/commit/a8271424fba7a8f5433b6ff64f976b34300e9b88))
 
 ## v2.17.2 (2026-09-20)
 
 ### Fixes
 
-- **sms**: stop claiming SMS is not allowed, and name the fallback number honestly ([56a042dd](https://github.com/meshsat/meshsat-android/commit/56a042ddde4e4fd0d87751cecea1097ecde745f6))
+- **sms**: stop claiming SMS is not allowed, and name the fallback number honestly ([b74fe0b7](https://github.com/meshsat/meshsat-android/commit/b74fe0b74f6aaef29478c672303341aaf0fbd6f8))
 
 ## v2.17.1 (2026-09-20)
 
 ### Fixes
 
-- **sms**: a message that arrives by SMS now goes through the rules ([6845e11c](https://github.com/meshsat/meshsat-android/commit/6845e11cc9a5ad92b9d1a9c8c908dc04440bc715))
+- **sms**: a message that arrives by SMS now goes through the rules ([a7781675](https://github.com/meshsat/meshsat-android/commit/a778167536fbc33326e06a7769858ecfaa3714ce))
 
 ## v2.17.0 (2026-09-20)
 
 ### Features
 
-- **ui**: say on every screen when the phone cannot reach its node ([f99a45cf](https://github.com/meshsat/meshsat-android/commit/f99a45cf5e06a0ce1c95ce7b61b9265056b1d5c1))
+- **ui**: say on every screen when the phone cannot reach its node ([08a5a205](https://github.com/meshsat/meshsat-android/commit/08a5a2055897bd87d0e6835220c1ffc85fb43fc4))
 
 ## v2.16.2 (2026-09-20)
 
@@ -353,41 +353,41 @@ No user-facing changes (1 commits of other types).
 
 ### Fixes
 
-- **people**: the Paste button broke across two lines ([2a898a11](https://github.com/meshsat/meshsat-android/commit/2a898a11508d4169246f3712eca2dfb07c4d6653))
+- **people**: the Paste button broke across two lines ([870cded8](https://github.com/meshsat/meshsat-android/commit/870cded85bbbd9c83c0a77c63a864af4235a81b5))
 
 ## v2.16.0 (2026-09-20)
 
 ### Features
 
-- **people**: swap contact cards face to face by QR code ([c09b4d65](https://github.com/meshsat/meshsat-android/commit/c09b4d65a3f3fbab1c63fdd22e11ed052e0e3500))
+- **people**: swap contact cards face to face by QR code ([c80afb88](https://github.com/meshsat/meshsat-android/commit/c80afb88980705dec950021d294c9cc2abbdbcf1))
 
 ## v2.15.1 (2026-09-20)
 
 ### Fixes
 
-- **hub**: follow the Hub client from where it is made ([2c8f748a](https://github.com/meshsat/meshsat-android/commit/2c8f748a44a41b5379dac86e972a2f02aabdb13c))
+- **hub**: follow the Hub client from where it is made ([9ec6e887](https://github.com/meshsat/meshsat-android/commit/9ec6e887975eab82986734fe49898834b9083d34))
 
 ## v2.15.0 (2026-09-20)
 
 ### Fixes
 
-- **hub**: show the Hub link the phone really uses, and let a rule reach it ([218be4b9](https://github.com/meshsat/meshsat-android/commit/218be4b93229fdca0b73f2c2aacd0b20cedd6a38))
-- **hemb**: put the compact header on the Bridge's bits ([3675b48e](https://github.com/meshsat/meshsat-android/commit/3675b48e986a4b656cb82b97ff243147067f3fea))
-- **ui**: About said the 9603 talks over HC-05, which it has not since 2.9.0 ([d49ba755](https://github.com/meshsat/meshsat-android/commit/d49ba7553bc5ffe395352c0a87b787f185e8fd1e))
+- **hub**: show the Hub link the phone really uses, and let a rule reach it ([42d9d3ec](https://github.com/meshsat/meshsat-android/commit/42d9d3ece311f8b75c989ad1bd3a2d35c1443f99))
+- **hemb**: put the compact header on the Bridge's bits ([87b32c5f](https://github.com/meshsat/meshsat-android/commit/87b32c5f0a9329e5bb5087e5a3cb497edf53177b))
+- **ui**: About said the 9603 talks over HC-05, which it has not since 2.9.0 ([094dc131](https://github.com/meshsat/meshsat-android/commit/094dc1311284db53bae698ce7c68d63b43918731))
 
 ## v2.14.9 (2026-09-20)
 
 ### Fixes
 
-- **iridium**: tell a failed write apart from a modem handover ([2cd59518](https://github.com/meshsat/meshsat-android/commit/2cd595185954ce9a4292237c213ccf8102d4136a))
-- **iridium**: notice when the node's modem stops taking writes ([dd24f070](https://github.com/meshsat/meshsat-android/commit/dd24f0701ca5b8533de7511226a5daecabb9df35))
+- **iridium**: tell a failed write apart from a modem handover ([c9b6a95b](https://github.com/meshsat/meshsat-android/commit/c9b6a95bd0c04c6646904998450a6b7ccff4c68e))
+- **iridium**: notice when the node's modem stops taking writes ([23a48b1e](https://github.com/meshsat/meshsat-android/commit/23a48b1ec9f50a0e56a5926236aba5d8ff51a49b))
 
 ## v2.14.8 (2026-09-20)
 
 ### Fixes
 
-- **iridium**: drop a satellite message from the modem once it is stored ([a03661d5](https://github.com/meshsat/meshsat-android/commit/a03661d5dbefd4485136379a8a8d283a4feddbff))
-- **hemb**: read the stream id the way the Bridge writes it, and reap on a monotonic clock ([2294acb5](https://github.com/meshsat/meshsat-android/commit/2294acb5c224805e593aaed6dd072aa61dcf27b1))
+- **iridium**: drop a satellite message from the modem once it is stored ([6f45f147](https://github.com/meshsat/meshsat-android/commit/6f45f147a92d673de3c5738d65d83ef1de2de540))
+- **hemb**: read the stream id the way the Bridge writes it, and reap on a monotonic clock ([fd899aae](https://github.com/meshsat/meshsat-android/commit/fd899aae3deef011bc59faf7e74f233a9ccec902))
 
 ## v2.14.7 (2026-09-20)
 
@@ -401,13 +401,13 @@ No user-facing changes (1 commits of other types).
 
 ### Fixes
 
-- **iridium**: the satellite signal is what the modem can actually hear ([32a126a3](https://github.com/meshsat/meshsat-android/commit/32a126a3a687de42a7040594f20426626dfacf33))
+- **iridium**: the satellite signal is what the modem can actually hear ([bd6626e2](https://github.com/meshsat/meshsat-android/commit/bd6626e27bdaed2e52e4cbcd32465b45dfd54507))
 
 ## v2.14.4 (2026-09-19)
 
 ### Fixes
 
-- **iridium**: a satellite message is sent once, and goes as soon as the modem sees a satellite ([cbb35982](https://github.com/meshsat/meshsat-android/commit/cbb35982313c6f7faa93bc70d22371b8e4331d64))
+- **iridium**: a satellite message is sent once, and goes as soon as the modem sees a satellite ([a526f641](https://github.com/meshsat/meshsat-android/commit/a526f641b57b24afab77ee452a395d0d5ce704f0))
 
 ## v2.14.3 (2026-09-19)
 
@@ -417,598 +417,598 @@ No user-facing changes (1 commits of other types).
 
 ### Fixes
 
-- **map**: the map is dark like the rest of the app ([9b87c0f5](https://github.com/meshsat/meshsat-android/commit/9b87c0f5fded1b4b644fc1982a4edfe534ed9e7f))
+- **map**: the map is dark like the rest of the app ([bb60a741](https://github.com/meshsat/meshsat-android/commit/bb60a741aeb8bb588d24f1721b829f04abe02de4))
 
 ## v2.14.1 (2026-09-19)
 
 ### Features
 
-- **ui**: the mesh and satellite icons come from the MeshSat mark ([1b3d5902](https://github.com/meshsat/meshsat-android/commit/1b3d590203670e891e4d05b51f7137745d0a62cf))
+- **ui**: the mesh and satellite icons come from the MeshSat mark ([1b06750b](https://github.com/meshsat/meshsat-android/commit/1b06750b8d1326321258f00001f0cd2d3c03d1ec))
 
 ## v2.14.0 (2026-09-19)
 
 ### Features
 
-- **messages**: a second tick when the Hub has a satellite message or the carrier delivered an SMS ([2be5b38e](https://github.com/meshsat/meshsat-android/commit/2be5b38e0da4dd855663b6d37800fea1388c060a))
+- **messages**: a second tick when the Hub has a satellite message or the carrier delivered an SMS ([ecd76fae](https://github.com/meshsat/meshsat-android/commit/ecd76faeadaf37207974c4d6d08756026713e724))
 
 ## v2.13.1 (2026-09-19)
 
 ### Fixes
 
-- **messages**: a conversation's preview is its newest message, not its oldest ([e653d069](https://github.com/meshsat/meshsat-android/commit/e653d0691b67b4b920ea5f9fa1f23f62620a1439))
+- **messages**: a conversation's preview is its newest message, not its oldest ([3b891c38](https://github.com/meshsat/meshsat-android/commit/3b891c38c7d5b06d4f5f92ebf92d692a0abe0621))
 
 ## v2.13.0 (2026-09-19)
 
 ### Features
 
-- **service**: an option to start the gateway after a phone restart ([401c5003](https://github.com/meshsat/meshsat-android/commit/401c5003f89fe767d413b34b4ae3536f787cb44f))
-- **ui**: a welcome that says what each permission is for, a getting-started list, and a red night mode ([e6f4595f](https://github.com/meshsat/meshsat-android/commit/e6f4595f3744d6d23543bbef61e3f56e7bcc9d7e))
-- **sos**: hold to send, emergency contacts, every route retried until you cancel, and a real alarm test ([2ff3df77](https://github.com/meshsat/meshsat-android/commit/2ff3df77f962dbcc4332cd198a4ff89a67e5f0a1))
+- **service**: an option to start the gateway after a phone restart ([ed73b1c6](https://github.com/meshsat/meshsat-android/commit/ed73b1c6e5b78148b4248ef0128adcdcd64dbf7c))
+- **ui**: a welcome that says what each permission is for, a getting-started list, and a red night mode ([f408854b](https://github.com/meshsat/meshsat-android/commit/f408854b73e9e886e17fbac2044eb55d4e625f57))
+- **sos**: hold to send, emergency contacts, every route retried until you cancel, and a real alarm test ([757cf79b](https://github.com/meshsat/meshsat-android/commit/757cf79b9bcf4d17724ebb72e4b7c053f8348585))
 
 ### Fixes
 
-- **ui**: the Hub page starts from its QR code, and dead or misleading controls work or are gone ([e48618b6](https://github.com/meshsat/meshsat-android/commit/e48618b6400118a2e255670960abf9063b7a9d08))
-- **ui**: no crash when the radios appear while a screen is open ([0787b587](https://github.com/meshsat/meshsat-android/commit/0787b587ad25c3d6b5e57042c0d217236f522579))
-- **sms**: SMS works on phones with Android 8 to 12 ([75cdff2f](https://github.com/meshsat/meshsat-android/commit/75cdff2f3123eec753f19e0fbfae2f8817369f07))
+- **ui**: the Hub page starts from its QR code, and dead or misleading controls work or are gone ([05ded118](https://github.com/meshsat/meshsat-android/commit/05ded1188245aa3b106a6ed56367b41dba54b944))
+- **ui**: no crash when the radios appear while a screen is open ([f1cafa89](https://github.com/meshsat/meshsat-android/commit/f1cafa892b3625d6b00afdcb8f0f53048d01e57f))
+- **sms**: SMS works on phones with Android 8 to 12 ([0e878be7](https://github.com/meshsat/meshsat-android/commit/0e878be761c4d9f0d6dc78cd883a0863d8f687ef))
 
 ## v2.12.0 (2026-09-19)
 
 ### Features
 
-- **people**: message a node or find it on the map from People; the offline map opens where it has detail ([bdfeb9cc](https://github.com/meshsat/meshsat-android/commit/bdfeb9cc94d39cc741823e40bd5bfc6d8ea33580))
-- **messages**: conversations are with someone, mesh replies reach them, and a new message asks who it is for ([c969402a](https://github.com/meshsat/meshsat-android/commit/c969402a3a289d1ed1512889c4f1c3ff4dbfb679))
+- **people**: message a node or find it on the map from People; the offline map opens where it has detail ([1bc7e521](https://github.com/meshsat/meshsat-android/commit/1bc7e5218837f83abed41b0be5e3bc933dc0d73e))
+- **messages**: conversations are with someone, mesh replies reach them, and a new message asks who it is for ([373241d2](https://github.com/meshsat/meshsat-android/commit/373241d24324898e652ad7ae7402c7f788d899c4))
 
 ### Fixes
 
-- **iridium**: a message that arrives during any satellite session is stored at once ([f943b168](https://github.com/meshsat/meshsat-android/commit/f943b16858cb6eb70b80edf434cecca308a37e77))
-- **map**: the map works off-grid, keeps its space and its zoom, and zones are placed on it ([7b2e159e](https://github.com/meshsat/meshsat-android/commit/7b2e159e3f36d73c18771b8ea6ffdab15885418b))
-- **mesh**: a real mesh topology, correct signal readings, node details, and radio settings that never send what was not read ([2213b095](https://github.com/meshsat/meshsat-android/commit/2213b095f3f2e5e31b71e4b8b9fcebec4d6b6d9f))
-- **ui**: routing rules, the message queue, links and the audit log speak plainly and keep what you set ([a3e31d21](https://github.com/meshsat/meshsat-android/commit/a3e31d21da9e4c3d9b56b85d19965df7ddc62481))
+- **iridium**: a message that arrives during any satellite session is stored at once ([05bcdff6](https://github.com/meshsat/meshsat-android/commit/05bcdff632018b09b4a2237231b346635542060c))
+- **map**: the map works off-grid, keeps its space and its zoom, and zones are placed on it ([95b7eb2e](https://github.com/meshsat/meshsat-android/commit/95b7eb2e507c32bcfbefe8fa57c2d840ba19324e))
+- **mesh**: a real mesh topology, correct signal readings, node details, and radio settings that never send what was not read ([d02d999d](https://github.com/meshsat/meshsat-android/commit/d02d999d45a54e7592cf05c6e1c29c59790e2ad2))
+- **ui**: routing rules, the message queue, links and the audit log speak plainly and keep what you set ([5b1ce69e](https://github.com/meshsat/meshsat-android/commit/5b1ce69e96deb82788e58e851118268ffc8a305b))
 
 ## v2.11.1 (2026-09-19)
 
 ### Fixes
 
-- **iridium**: the satellite queue sends in order, waits out the modem's pause, and says when a message may have arrived ([01137172](https://github.com/meshsat/meshsat-android/commit/01137172553c54078fac683113d7914aa11504e3))
+- **iridium**: the satellite queue sends in order, waits out the modem's pause, and says when a message may have arrived ([2d28bc54](https://github.com/meshsat/meshsat-android/commit/2d28bc54fd732c4ac9e41ad83fbb3106dacd8bea))
 
 ## v2.11.0 (2026-09-19)
 
 ### Features
 
-- **ui**: Home shows how a message can get out, and Setup replaces the long Settings scroll ([7532e5eb](https://github.com/meshsat/meshsat-android/commit/7532e5eb0fc8fed9edcc7feb80ebf3e9486dd384))
+- **ui**: Home shows how a message can get out, and Setup replaces the long Settings scroll ([6e80b82d](https://github.com/meshsat/meshsat-android/commit/6e80b82d1359b1cbdb0e08dda6d0281d4f4b6716))
 
 ## v2.10.0 (2026-09-19)
 
 ### Features
 
-- **ui**: the MeshSat brand throughout the app: Space Black, Signal Orange, IBM Plex and the approved mark ([69e213b8](https://github.com/meshsat/meshsat-android/commit/69e213b84bd11f42c1b5a725ebbb7a1a26ef2c32))
+- **ui**: the MeshSat brand throughout the app: Space Black, Signal Orange, IBM Plex and the approved mark ([4fe382dd](https://github.com/meshsat/meshsat-android/commit/4fe382dd94110a089abd8acd774169b78c7c21a9))
 
 ## v2.9.11 (2026-09-19)
 
 ### Fixes
 
-- **iridium**: the satellite icon actually shows in the status bar ([751b16e2](https://github.com/meshsat/meshsat-android/commit/751b16e22bd4a7628918a0c99ab405e228de2ebd))
+- **iridium**: the satellite icon actually shows in the status bar ([f6e5410d](https://github.com/meshsat/meshsat-android/commit/f6e5410d8815778fe4810fbe8283e81cac18a593))
 
 ## v2.9.10 (2026-09-19)
 
 ### Features
 
-- **ble**: reconnect to the MeshSat node and take its modem by itself ([74c5f100](https://github.com/meshsat/meshsat-android/commit/74c5f10053e8849d53a03089530df2a73e8dab13))
+- **ble**: reconnect to the MeshSat node and take its modem by itself ([8e944e21](https://github.com/meshsat/meshsat-android/commit/8e944e2119d4a52f8210169791c2ca66b70226f6))
 
 ## v2.9.9 (2026-09-19)
 
 ### Fixes
 
-- **iridium**: a modem notice no longer stalls the satellite queue ([069d7215](https://github.com/meshsat/meshsat-android/commit/069d7215a1ca377f3d682ed593aa7a18a0de9edb))
+- **iridium**: a modem notice no longer stalls the satellite queue ([535380b2](https://github.com/meshsat/meshsat-android/commit/535380b2a3c2214e5be31fceefafd0c2b4571f21))
 
 ## v2.9.8 (2026-09-19)
 
 ### Fixes
 
-- **iridium**: wait for the node's modem to answer before probing it ([04bbcfad](https://github.com/meshsat/meshsat-android/commit/04bbcfaddcfb0e1326d08919ba80b05109cecd1f))
+- **iridium**: wait for the node's modem to answer before probing it ([6a001616](https://github.com/meshsat/meshsat-android/commit/6a00161622edf10ddd18dc51891e3b244e17ce5f))
 
 ## v2.9.7 (2026-09-19)
 
 ### Fixes
 
-- **messages**: the message box stays above the keyboard, and sent messages show a delivery mark ([3667a275](https://github.com/meshsat/meshsat-android/commit/3667a275eb64fa60d53a8e09f66d7ee1f549da48))
+- **messages**: the message box stays above the keyboard, and sent messages show a delivery mark ([aeafb65c](https://github.com/meshsat/meshsat-android/commit/aeafb65ce35afaf40ab8031dd228927e0c8a7107))
 
 ## v2.9.6 (2026-09-19)
 
 ### Features
 
-- **passes**: refresh Iridium elements from the TLE API when Celestrak cannot be reached ([66416594](https://github.com/meshsat/meshsat-android/commit/664165940e013ec72268eeec9a26b8a5cf7a4658))
+- **passes**: refresh Iridium elements from the TLE API when Celestrak cannot be reached ([a4a67179](https://github.com/meshsat/meshsat-android/commit/a4a67179d1a6ab30bfe9a753f6ccbc45a18eea26))
 
 ## v2.9.5 (2026-09-19)
 
 ### Fixes
 
-- **iridium**: a satellite message is queued and retried, never dropped ([0206aa7b](https://github.com/meshsat/meshsat-android/commit/0206aa7b8ad784f257816c97f0e8e00b8fbbcb95))
+- **iridium**: a satellite message is queued and retried, never dropped ([cebc96aa](https://github.com/meshsat/meshsat-android/commit/cebc96aa32895a94e14f18e0c226e500f82d32bd))
 
 ## v2.9.4 (2026-09-19)
 
 ### Features
 
-- **iridium**: a satellite icon with the signal bars in the status bar ([3f29c99a](https://github.com/meshsat/meshsat-android/commit/3f29c99a5a0374ec9610738060fa6995c79252af))
-- **passes**: predict Iridium passes fully offline, from elements shipped in the app ([f2445dee](https://github.com/meshsat/meshsat-android/commit/f2445dee6c875bdbaca74098f6d6432c4b4c8952))
+- **iridium**: a satellite icon with the signal bars in the status bar ([52b92a7b](https://github.com/meshsat/meshsat-android/commit/52b92a7b3e160571dc134bb892caf96a52f07bd9))
+- **passes**: predict Iridium passes fully offline, from elements shipped in the app ([302d9834](https://github.com/meshsat/meshsat-android/commit/302d9834b396ba5f56ca2df98fce565a19f093b6))
 
 ## v2.9.3 (2026-09-19)
 
 ### Features
 
-- **messages**: New message sends over the satellite or the mesh from an empty inbox ([74bff754](https://github.com/meshsat/meshsat-android/commit/74bff7540e5667eb950502bcfaf744c8bfa0e265))
+- **messages**: New message sends over the satellite or the mesh from an empty inbox ([2f24a340](https://github.com/meshsat/meshsat-android/commit/2f24a340c16e81b8dbd28c7b16310bb17da38501))
 
 ## v2.9.2 (2026-09-19)
 
 ### Features
 
-- **iridium**: Check Mailbox asks the satellite for waiting messages on request ([0d0f7758](https://github.com/meshsat/meshsat-android/commit/0d0f775845790aca1ca8ad4cf42c469bbf088a85))
+- **iridium**: Check Mailbox asks the satellite for waiting messages on request ([f4a79a6c](https://github.com/meshsat/meshsat-android/commit/f4a79a6cb1f034b1ec230de3b71392858260d3dc))
 
 ## v2.9.1 (2026-09-19)
 
 ### Fixes
 
-- **mesh**: keep protobuf field names in release builds, so the Meshtastic sync runs ([f38b1480](https://github.com/meshsat/meshsat-android/commit/f38b1480b766246aea68c4078f907865ecbddb2d))
+- **mesh**: keep protobuf field names in release builds, so the Meshtastic sync runs ([b541caae](https://github.com/meshsat/meshsat-android/commit/b541caae9df42450d28c2290e382d2df5a76f380))
 
 ## v2.9.0 (2026-09-19)
 
 ### Features
 
-- **iridium**: the RockBLOCK 9603 runs through the MeshSat node's BLE pipe, replacing HC-05 ([36742452](https://github.com/meshsat/meshsat-android/commit/36742452819d1dccf03e9dc79ec18faa38c34b2b))
-- **app**: the app is now net.meshsat.android ([66620b9a](https://github.com/meshsat/meshsat-android/commit/66620b9a27c7f2573e541de3e9a8b9e35cf21074))
+- **iridium**: the RockBLOCK 9603 runs through the MeshSat node's BLE pipe, replacing HC-05 ([1cb42786](https://github.com/meshsat/meshsat-android/commit/1cb42786f287944a3bf811ca67663b6bd9594013))
+- **app**: the app is now net.meshsat.android ([ff684488](https://github.com/meshsat/meshsat-android/commit/ff6844880b761d846ab51b951eb97bf4f9b8f33a))
 
 ### Fixes
 
-- **mesh**: talk to real Meshtastic firmware over BLE ([8492b286](https://github.com/meshsat/meshsat-android/commit/8492b286337ce92f0fe89efbbeb436ad12329053))
+- **mesh**: talk to real Meshtastic firmware over BLE ([c86c0552](https://github.com/meshsat/meshsat-android/commit/c86c0552479df5600e378d8d7231795e83b04972))
 
 ## v2.8.7 (2026-09-19)
 
 ### Features
 
-- **provision**: open meshsat://provision links, showing the Hub before anything is fetched ([0efc1ebe](https://github.com/meshsat/meshsat-android/commit/0efc1ebe617e1196383e073021b800b3fbd0be19))
-- **hub**: relay client, a tunnel through the Hub to reach a kit behind NAT ([6966896f](https://github.com/meshsat/meshsat-android/commit/6966896f8f8eecd1ae7b8c04f6110ac602b6ebdf))
-- **sdd-tier6**: customer-facing CHANGELOG.md generated from git history ([e0ae89b1](https://github.com/meshsat/meshsat-android/commit/e0ae89b18a0e1ff22bf5055fd4a94ae126c2490b))
-- **sdd-tier5**: per-tag release notes generated from outcomes ([4f3f1be4](https://github.com/meshsat/meshsat-android/commit/4f3f1be415cb2d007bddc55863c5c758a1e9f727))
-- **sdd-tier4**: CI gate + retrospective outcomes ([186bdc5a](https://github.com/meshsat/meshsat-android/commit/186bdc5af255127e02c128fc0f19c879caab8898))
-- **sdd-tier3**: acceptance test mappings + worker dispatch packets ([6322f726](https://github.com/meshsat/meshsat-android/commit/6322f72640a13cfd91e9e2a490a90285938acca4))
-- **sdd-tier2**: observability blocks on every task ([ce49aa92](https://github.com/meshsat/meshsat-android/commit/ce49aa92ac04445e5a950c0cc66b8e2d5cb7eb00))
+- **provision**: open meshsat://provision links, showing the Hub before anything is fetched ([b32ee019](https://github.com/meshsat/meshsat-android/commit/b32ee019c7ffbbdf66f820c33798fbe74e17c962))
+- **hub**: relay client, a tunnel through the Hub to reach a kit behind NAT ([204d92e8](https://github.com/meshsat/meshsat-android/commit/204d92e889345b697ca95094f97dbc130d7766dd))
+- **sdd-tier6**: customer-facing CHANGELOG.md generated from git history ([0d27a5ec](https://github.com/meshsat/meshsat-android/commit/0d27a5ec7285d512d82169fff44a22a516879e53))
+- **sdd-tier5**: per-tag release notes generated from outcomes ([d262d7e0](https://github.com/meshsat/meshsat-android/commit/d262d7e0e1bcf8eb46d873f6047e1d0e7c92a5de))
+- **sdd-tier4**: CI gate + retrospective outcomes ([7f22a811](https://github.com/meshsat/meshsat-android/commit/7f22a811cc6c7385b9a3272715b7ea15978eb83e))
+- **sdd-tier3**: acceptance test mappings + worker dispatch packets ([188d2c51](https://github.com/meshsat/meshsat-android/commit/188d2c51b0aff59d23ed7a2a8b7e907d6cf90f70))
+- **sdd-tier2**: observability blocks on every task ([2ce17568](https://github.com/meshsat/meshsat-android/commit/2ce175680d74a4b2c67287afa60610372fc648ac))
 
 ### Fixes
 
-- **hub**: subscribe and announce again after a reconnect, and report modem IMEIs in the birth ([f19ff18d](https://github.com/meshsat/meshsat-android/commit/f19ff18d0fdced40d2641695a30f098c7c8f5dbc))
-- **hub**: keep the MQTT client in release builds so the app reaches the Hub again ([5d157a1b](https://github.com/meshsat/meshsat-android/commit/5d157a1b084b517e4123d108644ed6abd81b3bcb))
-- **hub**: force TLS SNI on Hub MQTT sockets ([355bc027](https://github.com/meshsat/meshsat-android/commit/355bc0271e23fcd72b11670a6093a10000d4d5d2))
-- **sdd**: recount metrics, drop Astrocast, pin the SDD validator ([76ad448d](https://github.com/meshsat/meshsat-android/commit/76ad448d60ac675083e21af3ecaf070010f4a8db))
-- **license**: align all licence statements to GPLv3 and add NOTICE ([c933cdd3](https://github.com/meshsat/meshsat-android/commit/c933cdd334f3bd581d3a3666638e3a61809acb67))
+- **hub**: subscribe and announce again after a reconnect, and report modem IMEIs in the birth ([018eb795](https://github.com/meshsat/meshsat-android/commit/018eb79569b4c5193a58b52a82509471daf1a406))
+- **hub**: keep the MQTT client in release builds so the app reaches the Hub again ([4c3518eb](https://github.com/meshsat/meshsat-android/commit/4c3518eb50f55cf2641ed19ff5fd3bbd882ca607))
+- **hub**: force TLS SNI on Hub MQTT sockets ([088c6d7b](https://github.com/meshsat/meshsat-android/commit/088c6d7bc7b535798439913c5056d425f6340f57))
+- **sdd**: recount metrics, drop Astrocast, pin the SDD validator ([a395ea4b](https://github.com/meshsat/meshsat-android/commit/a395ea4b40e78ab03f5bc8f6974035cd3edbb179))
+- **license**: align all licence statements to GPLv3 and add NOTICE ([7ce6351b](https://github.com/meshsat/meshsat-android/commit/7ce6351bba51d42cefb5f92425af0f0539f1596f))
 
 ## v2.8.6 (2026-04-05)
 
 ### Features
 
-- **telemetry**: local release telemetry ring buffer ([b56a6856](https://github.com/meshsat/meshsat-android/commit/b56a685684a88a779dea41252bb314f9c8862f8d))
+- **telemetry**: local release telemetry ring buffer ([f6db9324](https://github.com/meshsat/meshsat-android/commit/f6db9324bd43be1596cbd571fe4cb22c6b3e7eae))
 
 ## v2.8.5 (2026-04-05)
 
 ### Features
 
-- **crypto**: TOFU key pinning in KeyBundleImporter + bundle v2 ([7bfce9d4](https://github.com/meshsat/meshsat-android/commit/7bfce9d46e1c7e3839d71a2a8959ed19fbf15d00))
+- **crypto**: TOFU key pinning in KeyBundleImporter + bundle v2 ([f1ea6960](https://github.com/meshsat/meshsat-android/commit/f1ea6960ea734f6ea2a086c12880e5cb2303c535))
 
 ## v2.8.4 (2026-04-05)
 
 ### Fixes
 
-- **transport**: gate all I/O on connection state, silence disconnected-state spam ([2d70a61e](https://github.com/meshsat/meshsat-android/commit/2d70a61ecdf9217d12e5fc91b9add36ae58bbb3d))
+- **transport**: gate all I/O on connection state, silence disconnected-state spam ([6ae63557](https://github.com/meshsat/meshsat-android/commit/6ae635570472e9c525c53ca2ec8bedc5b04d0832))
 
 ## v2.8.3 (2026-04-05)
 
 ### Fixes
 
-- **sat**: correct ms/sec unit mismatch in PassScheduler OOM ([2191f7b9](https://github.com/meshsat/meshsat-android/commit/2191f7b9f9c9494c8031b3ea700587c85ba84288))
-- **satellite**: cache pass predictions to prevent OOM in PassScheduler ([c0036113](https://github.com/meshsat/meshsat-android/commit/c00361131dbc7af5599a9f22a126bf4565df90b5))
+- **sat**: correct ms/sec unit mismatch in PassScheduler OOM ([07f405aa](https://github.com/meshsat/meshsat-android/commit/07f405aa991ff2760a07e7456df1a7c0c723f8b8))
+- **satellite**: cache pass predictions to prevent OOM in PassScheduler ([165dc7ec](https://github.com/meshsat/meshsat-android/commit/165dc7ece15e515a6271e430212e118c533b3ce6))
 
 ## v2.8.2 (2026-04-05)
 
 ### Fixes
 
-- **crypto**: move BouncyCastle to end of JCA provider chain ([d0ed2571](https://github.com/meshsat/meshsat-android/commit/d0ed2571e0b9dfd30830cff9f75853f535504960))
+- **crypto**: move BouncyCastle to end of JCA provider chain ([4ece0ea1](https://github.com/meshsat/meshsat-android/commit/4ece0ea1b8c141cef80640ca8fc2145f6e8f03e5))
 
 ## v2.8.1 (2026-04-05)
 
 ### Fixes
 
-- **proguard**: add osmdroid keep rules to prevent white map tiles on release ([300dc605](https://github.com/meshsat/meshsat-android/commit/300dc605cf460a259452d854d0cc71256227b960))
+- **proguard**: add osmdroid keep rules to prevent white map tiles on release ([e31a8a46](https://github.com/meshsat/meshsat-android/commit/e31a8a46111e2f0fef6b7d0f3d278bad7b9f3556))
 
 ## v2.8.0 (2026-04-05)
 
 ### Features
 
-- **ci**: add release signing with OpenBao + Play Store AAB ([fc2d4201](https://github.com/meshsat/meshsat-android/commit/fc2d42012d3b6a16035e3c65f896e85102463eae))
+- **ci**: add release signing with OpenBao + Play Store AAB ([32f3652c](https://github.com/meshsat/meshsat-android/commit/32f3652cf311c5236e9ed466acfe33a376a6666c))
 
 ### Fixes
 
-- **proguard**: add dontwarn rules for Tink compile-time annotations ([04d58c5d](https://github.com/meshsat/meshsat-android/commit/04d58c5d38e7f42a70a23a52c7545f76737957e6))
+- **proguard**: add dontwarn rules for Tink compile-time annotations ([ad4499dd](https://github.com/meshsat/meshsat-android/commit/ad4499dde36301bcad8c738dfc4bec10082a992a))
 
 ## v2.7.0 (2026-04-04)
 
 ### Features
 
-- **tak**: receive TAK positions from Hub broadcast + settings API ([e28c3c44](https://github.com/meshsat/meshsat-android/commit/e28c3c44e9e2810f5abc0b99f00565f546f2a831))
-- **map**: TAK/CoT-compliant Canvas markers: diamond, square, emergency ([67679b84](https://github.com/meshsat/meshsat-android/commit/67679b841aa08ff59012e579d980005b262fd8b4))
-- **tak**: protobuf v1 + waypoint builder + enriched position ([5060c443](https://github.com/meshsat/meshsat-android/commit/5060c44360a603c0cb57bb3770d341227ad3c4ce))
-- **tak**: add TAK Settings section with enable/callsign/output toggles ([98b8644c](https://github.com/meshsat/meshsat-android/commit/98b8644cf49cd936c692884aa8f1e3eea0483bd5))
-- **sms**: auto-forward + /api/sms/auto-forward endpoint ([e7f30778](https://github.com/meshsat/meshsat-android/commit/e7f307783d788cae4dc47a45b4b2fbc64647dd24))
-- **api**: add /api/sms/send to Android LocalApiServer ([421629ff](https://github.com/meshsat/meshsat-android/commit/421629fff088a01c65c101d3ba45e5f2854b90b2))
-- **sms**: Android outbound SMAZ2 compress + wildcard key encrypt ([6e5dfed9](https://github.com/meshsat/meshsat-android/commit/6e5dfed9fb2b9fb0037963e8c4b837b8824a325c))
-- **codec**: port SMAZ2 compressor/decompressor to Kotlin ([9c256f61](https://github.com/meshsat/meshsat-android/commit/9c256f61e14f05856efebf51aa61b37f8337d505))
+- **tak**: receive TAK positions from Hub broadcast + settings API ([b64ab9a2](https://github.com/meshsat/meshsat-android/commit/b64ab9a2e36497e7b8091839d37a4636445790a0))
+- **map**: TAK/CoT-compliant Canvas markers: diamond, square, emergency ([d286d672](https://github.com/meshsat/meshsat-android/commit/d286d67228d3f8b4fa75c8c4cda1cd3265e21d7d))
+- **tak**: protobuf v1 + waypoint builder + enriched position ([8c400ff4](https://github.com/meshsat/meshsat-android/commit/8c400ff4d65fbf10a434ece476a27dc3a2f72c16))
+- **tak**: add TAK Settings section with enable/callsign/output toggles ([e122a0ac](https://github.com/meshsat/meshsat-android/commit/e122a0acc112907d33f5476705a35159bed023c9))
+- **sms**: auto-forward + /api/sms/auto-forward endpoint ([c3425937](https://github.com/meshsat/meshsat-android/commit/c3425937d53e10d24ae07fbc032f3cc88a48b948))
+- **api**: add /api/sms/send to Android LocalApiServer ([296cf1b6](https://github.com/meshsat/meshsat-android/commit/296cf1b6febb39bb97306094536efd47104dd054))
+- **sms**: Android outbound SMAZ2 compress + wildcard key encrypt ([6d638416](https://github.com/meshsat/meshsat-android/commit/6d638416c84a4d315ce691ae7368b4e6971f4b9e))
+- **codec**: port SMAZ2 compressor/decompressor to Kotlin ([f426352d](https://github.com/meshsat/meshsat-android/commit/f426352df954017d11fb75bd1da4982837b1721d))
 
 ### Fixes
 
-- **map**: replace zoomToBoundingBox with direct center+zoom ([7718d820](https://github.com/meshsat/meshsat-android/commit/7718d8207200ada56ac7e08682801fe962c29b61))
-- **map**: debounce Room position Flow to prevent ANR from marker burst ([1fceda50](https://github.com/meshsat/meshsat-android/commit/1fceda50360ab44cc5d013cc05e338a061d5de24))
-- **map**: prevent ANR from repeated zoomToBoundingBox on marker updates ([e9f7ed47](https://github.com/meshsat/meshsat-android/commit/e9f7ed47080e869434b8014c6530b07e2dc118de))
-- **mqtt**: subscribe to TAK broadcast topic for fleet-wide positions ([7557d701](https://github.com/meshsat/meshsat-android/commit/7557d701ab87c0ab311772cff753dd939ca15d80))
-- **tak**: use CotPrecision camelCase field names (altSrc, geoPointSrc) ([5b467aaf](https://github.com/meshsat/meshsat-android/commit/5b467aaffd4db4673baba1baf66b49e08aed4e71))
-- **tak**: use explicit getters for PrecisionLocation proto fields ([028059ea](https://github.com/meshsat/meshsat-android/commit/028059ea6a3a6e407082f74b3da1a711cc89f14d))
-- **tak**: use java\_package imports for proto-generated classes ([7635e8c3](https://github.com/meshsat/meshsat-android/commit/7635e8c38a01ba74857f91f1c0b3d558f4b92253))
-- **tak**: correct protobuf class names for java\_multiple\_files + proto3 ([4a0e7f3c](https://github.com/meshsat/meshsat-android/commit/4a0e7f3c18725d423ccdd4494a9187334224263d))
-- **tak**: use explicit hasXxx() checks in protoToCotEvent ([4e9f3873](https://github.com/meshsat/meshsat-android/commit/4e9f38736f4a589cf87b65537d6467d1013eb573))
-- **sms**: show SmsReceiver-decrypted text in Messages UI ([9585794c](https://github.com/meshsat/meshsat-android/commit/9585794c49811f0e989e60bf39cc3c43a70b7f01))
-- **sms**: fall back to Hub wildcard key (sms:\*) for SMS decryption ([a142d46c](https://github.com/meshsat/meshsat-android/commit/a142d46c050ca8c65282bbf44113a4fccf492b07))
-- **hemb**: synchronize RLNC decoder to prevent concurrent ArrayIndexOutOfBounds ([03a93c0b](https://github.com/meshsat/meshsat-android/commit/03a93c0ba654a9e1371e2375d05d23808b4cde4d))
-- **hemb**: wire HeMB inbound detection on Android RnsTransportNode ([0a1d499e](https://github.com/meshsat/meshsat-android/commit/0a1d499ea449f394817afe004a47ef532ae3c863))
+- **map**: replace zoomToBoundingBox with direct center+zoom ([9122bad8](https://github.com/meshsat/meshsat-android/commit/9122bad8256ee5b38a285a4a7af51903f8744033))
+- **map**: debounce Room position Flow to prevent ANR from marker burst ([5be19540](https://github.com/meshsat/meshsat-android/commit/5be195407f0feac0a5e60dc49cd2d870744cfc84))
+- **map**: prevent ANR from repeated zoomToBoundingBox on marker updates ([67b563a8](https://github.com/meshsat/meshsat-android/commit/67b563a83d44f169ee645131afde5d3245221038))
+- **mqtt**: subscribe to TAK broadcast topic for fleet-wide positions ([a3a9cb0d](https://github.com/meshsat/meshsat-android/commit/a3a9cb0d8b3b4b9b7eb05962b3e62e4ea338edde))
+- **tak**: use CotPrecision camelCase field names (altSrc, geoPointSrc) ([7e6dc96f](https://github.com/meshsat/meshsat-android/commit/7e6dc96fb238554621f79dc6fd42677764cc8928))
+- **tak**: use explicit getters for PrecisionLocation proto fields ([dfe31b7d](https://github.com/meshsat/meshsat-android/commit/dfe31b7d18a1f9c95c614f1746661084b4648672))
+- **tak**: use java\_package imports for proto-generated classes ([d1d66756](https://github.com/meshsat/meshsat-android/commit/d1d6675687eae26c3558c5b79449832fa8c7b081))
+- **tak**: correct protobuf class names for java\_multiple\_files + proto3 ([c2c928e8](https://github.com/meshsat/meshsat-android/commit/c2c928e883b3fea3272be5ae0cba13531b82707c))
+- **tak**: use explicit hasXxx() checks in protoToCotEvent ([67855d65](https://github.com/meshsat/meshsat-android/commit/67855d65a113b17197df34f91f710f6cbc47dcad))
+- **sms**: show SmsReceiver-decrypted text in Messages UI ([7f96ca55](https://github.com/meshsat/meshsat-android/commit/7f96ca55ce826514fd4dea38ff92bb0e9fe4afa4))
+- **sms**: fall back to Hub wildcard key (sms:\*) for SMS decryption ([5bdd2203](https://github.com/meshsat/meshsat-android/commit/5bdd2203e9efc227c23d098d914796f49ca3ce60))
+- **hemb**: synchronize RLNC decoder to prevent concurrent ArrayIndexOutOfBounds ([5c77d3b8](https://github.com/meshsat/meshsat-android/commit/5c77d3b8905a6675cb2f6da9977a4577ea04137c))
+- **hemb**: wire HeMB inbound detection on Android RnsTransportNode ([9ea3c81b](https://github.com/meshsat/meshsat-android/commit/9ea3c81bab9c67e2636bfed2768af59537c7b89d))
 
 ## v2.6.1 (2026-03-31)
 
 ### Fixes
 
-- **hemb**: backport 2 HeMB bug fixes from bridge E2E integration ([e2022e13](https://github.com/meshsat/meshsat-android/commit/e2022e13dcd42ab2c7b95a48fe6fefbfa732e6b4))
+- **hemb**: backport 2 HeMB bug fixes from bridge E2E integration ([6282976b](https://github.com/meshsat/meshsat-android/commit/6282976b63e182e83cd262513e86216e422d3d59))
 
 ## v2.6.0 (2026-03-29)
 
 ### Features
 
-- **hemb**: port HeMB bearer bonding protocol to Android ([b752c2da](https://github.com/meshsat/meshsat-android/commit/b752c2dab395dd2e9b4f7a0ae30918f3f5018730))
+- **hemb**: port HeMB bearer bonding protocol to Android ([f83a402c](https://github.com/meshsat/meshsat-android/commit/f83a402c58744c3e4aa7e19a37535c161c877057))
 
 ## v2.5.0 (2026-03-29)
 
 ### Features
 
-- **reticulum**: TLS+mTLS for TCP interface, BouncyCastle for Android 16 ([39c80ae2](https://github.com/meshsat/meshsat-android/commit/39c80ae20155760df8436877f5035f0e26232cff))
+- **reticulum**: TLS+mTLS for TCP interface, BouncyCastle for Android 16 ([4bd91ac6](https://github.com/meshsat/meshsat-android/commit/4bd91ac6f0a1c4a28a8569e94f99d13e1aa36fd2))
 
 ## v2.4.1 (2026-03-29)
 
 ### Fixes
 
-- **hub**: ping button uses HubReporter client, not MqttTransport ([3ba47c1a](https://github.com/meshsat/meshsat-android/commit/3ba47c1aee3999b50e29f19a0f218291884de63a))
+- **hub**: ping button uses HubReporter client, not MqttTransport ([f38fb17d](https://github.com/meshsat/meshsat-android/commit/f38fb17d42f326a9a20084e0b0e7e37a107e82ce))
 
 ## v2.4.0 (2026-03-29)
 
 ### Fixes
 
-- **mqtt**: mTLS trust store must include system CAs alongside custom CA ([17a2a855](https://github.com/meshsat/meshsat-android/commit/17a2a855917486877cf5239e2f39253d16e9d30a))
+- **mqtt**: mTLS trust store must include system CAs alongside custom CA ([ad7068af](https://github.com/meshsat/meshsat-android/commit/ad7068af1d800dd4d9524b541bbb337ae0d0b2db))
 
 ## v2.3.1 (2026-03-29)
 
 ### Features
 
-- **hub**: ECDSA-P256 signed birth messages for Hub verification ([424ec3b9](https://github.com/meshsat/meshsat-android/commit/424ec3b991dce3dceec61a979c34b52b262e8742))
+- **hub**: ECDSA-P256 signed birth messages for Hub verification ([1dfa61b6](https://github.com/meshsat/meshsat-android/commit/1dfa61b6bbe4a2c60eb6e18b779735cdbe479d95))
 
 ## v2.3.0 (2026-03-29)
 
 ### Features
 
-- **hub**: health LED, ping button, QR auto-populate fix ([aef67178](https://github.com/meshsat/meshsat-android/commit/aef671783c6bdde4a7cdb679f976eea2b7410814))
+- **hub**: health LED, ping button, QR auto-populate fix ([78a61af2](https://github.com/meshsat/meshsat-android/commit/78a61af2f4f3015a30b2537c3f0088943801a85d))
 
 ## v2.2.2 (2026-03-28)
 
 ### Fixes
 
-- **provision**: support both inline and nonce QR formats ([29326ea9](https://github.com/meshsat/meshsat-android/commit/29326ea9b07349771d6d8c5bcc163eb3ec43532c))
+- **provision**: support both inline and nonce QR formats ([1419425d](https://github.com/meshsat/meshsat-android/commit/1419425dd8c208d51a6b1addf7300baef4abcd56))
 
 ## v2.2.1 (2026-03-28)
 
 ### Features
 
-- **provision**: two-step QR provisioning (nonce URL + HTTPS claim) ([e1cd3ad6](https://github.com/meshsat/meshsat-android/commit/e1cd3ad6c13b01257b5db9ebc1d278ac3972663e))
+- **provision**: two-step QR provisioning (nonce URL + HTTPS claim) ([b397165d](https://github.com/meshsat/meshsat-android/commit/b397165dae49b9cf5b067d4d18062b53f10cc864))
 
 ## v2.2.0 (2026-03-28)
 
 ### Features
 
-- **provision**: QR code Hub provisioning with mTLS auto-config ([8b175baa](https://github.com/meshsat/meshsat-android/commit/8b175baa280d3de3e3749d06ed75d05551f15ba1))
+- **provision**: QR code Hub provisioning with mTLS auto-config ([c2c049aa](https://github.com/meshsat/meshsat-android/commit/c2c049aaa38cba22c87117f439fc28b92d7ae247))
 
 ## v2.1.0 (2026-03-28)
 
 ### Features
 
-- **reticulum**: wire MQTT Reticulum interface for Hub interop ([b401254d](https://github.com/meshsat/meshsat-android/commit/b401254daffd90b711ad246f94f0669fb3613448))
+- **reticulum**: wire MQTT Reticulum interface for Hub interop ([42e6fba0](https://github.com/meshsat/meshsat-android/commit/42e6fba0da60c2f013dd930e376898fcef0b9f5e))
 
 ## v2.0.1 (2026-03-28)
 
 ### Features
 
-- **timesync**: add Cellular NITZ as stratum 0 time source ([005c1731](https://github.com/meshsat/meshsat-android/commit/005c1731490a4ccb97267d9accd6021f6fe2848b))
+- **timesync**: add Cellular NITZ as stratum 0 time source ([475b3d92](https://github.com/meshsat/meshsat-android/commit/475b3d926e13a258b1f0f245bd90c7dc5dab7095))
 
 ### Fixes
 
-- **protocol**: paid interface filter + bridge-compatible wire formats ([31b05a97](https://github.com/meshsat/meshsat-android/commit/31b05a971b06997778f4b45e91b98b99bfa27242))
+- **protocol**: paid interface filter + bridge-compatible wire formats ([192824e7](https://github.com/meshsat/meshsat-android/commit/192824e7f857206a5502b99b876296634f8de6fa))
 
 ## v2.0.0 (2026-03-28)
 
 ### Features
 
-- **protocol**: DTN + FEC + Time Sync + RLNC protocol enhancements ([b3e14bac](https://github.com/meshsat/meshsat-android/commit/b3e14bac5dc2ee57fce348f166f829471d5e7f15))
+- **protocol**: DTN + FEC + Time Sync + RLNC protocol enhancements ([6961c7ca](https://github.com/meshsat/meshsat-android/commit/6961c7ca835e24729693e84397c121c5858be892))
 
 ## v1.9.1 (2026-03-28)
 
 ### Fixes
 
-- **map**: use online OSM tiles: MBTiles offline never rendered ([413f904f](https://github.com/meshsat/meshsat-android/commit/413f904faeed2acd7a79b28db6d6461c5823cdd1))
+- **map**: use online OSM tiles: MBTiles offline never rendered ([8d75d804](https://github.com/meshsat/meshsat-android/commit/8d75d8047d6c9d2e6e70fc5140caa19e5a0f6b9a))
 
 ## v1.9.0 (2026-03-28)
 
 ### Fixes
 
-- **map**: use osmdroid auto-detect for MBTiles + MapScreen outside NavHost ([197fa660](https://github.com/meshsat/meshsat-android/commit/197fa6601f9b6bbe20d0fb21250c3fdc6c56bc91))
+- **map**: use osmdroid auto-detect for MBTiles + MapScreen outside NavHost ([24ec8ded](https://github.com/meshsat/meshsat-android/commit/24ec8dede4a6b12ea1ae26c4bf46cf905bd39919))
 
 ## v1.8.5 (2026-03-28)
 
 ### Fixes
 
-- **map**: move MapScreen outside NavHost to prevent view detachment ([44724ebe](https://github.com/meshsat/meshsat-android/commit/44724ebea93afa744197c9cd814e86f0c58e506e))
+- **map**: move MapScreen outside NavHost to prevent view detachment ([62f7468b](https://github.com/meshsat/meshsat-android/commit/62f7468babb7e3af768ed8e7876963d1f15f82fa))
 
 ## v1.8.4 (2026-03-27)
 
 ### Fixes
 
-- **map**: restart tile provider threads after view re-attach ([995666ab](https://github.com/meshsat/meshsat-android/commit/995666abbb6b3db5d761c25ee0d8467c7c4ee8c2))
+- **map**: restart tile provider threads after view re-attach ([86fbc747](https://github.com/meshsat/meshsat-android/commit/86fbc7478ae8dbbc4d565e0a00d94c10a65d1c76))
 
 ## v1.8.3 (2026-03-27)
 
 ### Fixes
 
-- **map**: singleton MapView to survive Compose NavHost tab switches ([8e99535f](https://github.com/meshsat/meshsat-android/commit/8e99535f90c8299a42360f1fcdabcdee7beef252))
+- **map**: singleton MapView to survive Compose NavHost tab switches ([56932e21](https://github.com/meshsat/meshsat-android/commit/56932e21a780d009072250eda642111699f21c1b))
 
 ## v1.8.2 (2026-03-27)
 
 ### Fixes
 
-- **map**: proper osmdroid lifecycle management for tile persistence ([891b7a4e](https://github.com/meshsat/meshsat-android/commit/891b7a4e4f44ba4713103fbfb035c384bb02e42a))
+- **map**: proper osmdroid lifecycle management for tile persistence ([f7334de1](https://github.com/meshsat/meshsat-android/commit/f7334de1e2319d6fbf78215994fb2ce639252dbd))
 
 ## v1.8.1 (2026-03-27)
 
 ### Fixes
 
-- **map**: tile provider persistence and dark mode color inversion ([885900ba](https://github.com/meshsat/meshsat-android/commit/885900ba651563b602aaff968cc88517c8625e84))
+- **map**: tile provider persistence and dark mode color inversion ([11a5f174](https://github.com/meshsat/meshsat-android/commit/11a5f17499d681bbe820a1179decf40654b315a6))
 
 ## v1.8.0 (2026-03-27)
 
 ### Features
 
-- **map**: replace Leaflet/WebView with osmdroid native map rendering ([a76504fa](https://github.com/meshsat/meshsat-android/commit/a76504fa1c4f0423ead3401059b95a6b6b167688))
+- **map**: replace Leaflet/WebView with osmdroid native map rendering ([ac4f5e02](https://github.com/meshsat/meshsat-android/commit/ac4f5e024ea208940a9bc5bac977ec39b545d7ef))
 
 ## v1.7.1 (2026-03-27)
 
 ### Features
 
-- **map**: vector tile rendering, offline-first, bundled world map ([812c516e](https://github.com/meshsat/meshsat-android/commit/812c516e5a33e688b12836bc3482ae2fe718547d))
+- **map**: vector tile rendering, offline-first, bundled world map ([d5a8dd4d](https://github.com/meshsat/meshsat-android/commit/d5a8dd4d1f135009ccf1abcf004d99ec643c9264))
 
 ## v1.7.0 (2026-03-27)
 
 ### Features
 
-- **map**: vector tile rendering with dark/light themes and offline-first default ([b5eda0ad](https://github.com/meshsat/meshsat-android/commit/b5eda0adbf550b724fd7417cf0a20aaa7268659a))
+- **map**: vector tile rendering with dark/light themes and offline-first default ([c8cc0d15](https://github.com/meshsat/meshsat-android/commit/c8cc0d1547bf35480f03f104ad5825ac82ecd804))
 
 ## v1.6.0 (2026-03-27)
 
 ### Features
 
-- **map**: offline MBTiles map tile support ([db278060](https://github.com/meshsat/meshsat-android/commit/db2780608690587379e5e9d884e615cbd87446e7))
+- **map**: offline MBTiles map tile support ([2237f093](https://github.com/meshsat/meshsat-android/commit/2237f0935a98486f6fb0e034a8176b3ac07d0829))
 
 ## v1.5.5 (2026-03-27)
 
 ### Fixes
 
-- **crypto**: nuclear reset for corrupted EncryptedSharedPreferences ([9ebbb7b5](https://github.com/meshsat/meshsat-android/commit/9ebbb7b51a1e14d1bbe535c60551463b5ea47ad5))
+- **crypto**: nuclear reset for corrupted EncryptedSharedPreferences ([6e083d76](https://github.com/meshsat/meshsat-android/commit/6e083d764eed5cf4561ab6d3c7600436e6b29299))
 
 ## v1.5.4 (2026-03-27)
 
 ### Fixes
 
-- **map**: load tiles via WebViewAssetLoader instead of file:// origin ([a66a2078](https://github.com/meshsat/meshsat-android/commit/a66a2078e1adbba9118be04f23683db701bf0dc4))
+- **map**: load tiles via WebViewAssetLoader instead of file:// origin ([5705155b](https://github.com/meshsat/meshsat-android/commit/5705155b782b2c311e1eaf98d3667c1e339add4b))
 
 ## v1.5.3 (2026-03-27)
 
 ### Fixes
 
-- **crypto**: handle corrupted EncryptedSharedPreferences on startup ([7c0bf59b](https://github.com/meshsat/meshsat-android/commit/7c0bf59b910dcf3d6ba34e321390427e068d0653))
+- **crypto**: handle corrupted EncryptedSharedPreferences on startup ([ca71986d](https://github.com/meshsat/meshsat-android/commit/ca71986d8fb151f34a7a4d9785cafa703dae55b4))
 
 ## v1.5.2 (2026-03-27)
 
 ### Fixes
 
-- **service**: foreground service crash on Android 14+ when BT permission denied ([aff681f2](https://github.com/meshsat/meshsat-android/commit/aff681f2e5644a8c930a6c7e44fa0df7f1749640))
+- **service**: foreground service crash on Android 14+ when BT permission denied ([b30a5ea0](https://github.com/meshsat/meshsat-android/commit/b30a5ea0873ca4a5f0a804a54f49bc0a8ffafd70))
 
 ## v1.5.1 (2026-03-27)
 
 ### Features
 
-- **ui**: dashboard widget reorder dialog with persistent order ([73cc818c](https://github.com/meshsat/meshsat-android/commit/73cc818c70ff644250d9e6b24a25b66ee4d671b5))
+- **ui**: dashboard widget reorder dialog with persistent order ([a7e0e131](https://github.com/meshsat/meshsat-android/commit/a7e0e1312ad99f6af6bdc073e9e43750ab23c2b8))
 
 ## v1.5.0 (2026-03-27)
 
 ### Features
 
-- **engine**: Iridium credit tracking and gauge visualization ([655c7fd0](https://github.com/meshsat/meshsat-android/commit/655c7fd05658d0ad9ef1c49967349bff0c4a6abc))
-- **ui**: Reticulum widget and dashboard enhancements ([fa736a0c](https://github.com/meshsat/meshsat-android/commit/fa736a0c59fc737bba451933edcee9f0af1f31a3))
-- **ui**: credential management screen with PEM import ([34944471](https://github.com/meshsat/meshsat-android/commit/34944471ccef30b3ff3b0c5a2e207f5a1fa348b3))
-- **service**: wire pass scheduler, mTLS, registry, and TCP peers ([d66735ea](https://github.com/meshsat/meshsat-android/commit/d66735ea3e6a0f67a44e9b3696fc38393d7b427e))
-- **settings**: announce interval and routing config UI ([3a9fb369](https://github.com/meshsat/meshsat-android/commit/3a9fb3690f9c4f26197d1b2277d5dbfbab7e5a6b))
-- **config**: YAML config export/import matching Bridge format ([2965d991](https://github.com/meshsat/meshsat-android/commit/2965d9911c486e382adfe7d3e0baf257f822773e))
-- **reticulum**: TCP multi-peer management with Room DB ([590ccb24](https://github.com/meshsat/meshsat-android/commit/590ccb249b23c1754f2840717a82c6859a085055))
-- **service**: multi-instance transport registry ([8a1e5875](https://github.com/meshsat/meshsat-android/commit/8a1e5875d6d717ce7dea59f02df11d9334867015))
-- **hub**: mTLS client certificate support for Hub MQTT/NATS ([01b555bb](https://github.com/meshsat/meshsat-android/commit/01b555bb7d44ee38c86fdef93b44a459c7a32a42))
-- **satellite**: pass-aware scheduling: 4-mode transport polling ([9e4c1b08](https://github.com/meshsat/meshsat-android/commit/9e4c1b086b46ba9046688dd45218568e8cdcd572))
-- **api**: add service restart API and UI button ([ac51ef32](https://github.com/meshsat/meshsat-android/commit/ac51ef3254682bb04bf54166e5eea5bf1978839b))
-- **hub**: implement send\_mt, flush\_burst, config\_update, reboot commands ([241b8522](https://github.com/meshsat/meshsat-android/commit/241b85221d1d3a8fd0db623237f0ccfcd3efeb62))
-- **ble**: preserve OTA-learned node identity on config download merge ([35edb689](https://github.com/meshsat/meshsat-android/commit/35edb689bbcc9d11755c5534554d9dc7d42933ec))
-- **credentials**: credential import via Hub sync + QR bundles ([a00b58e0](https://github.com/meshsat/meshsat-android/commit/a00b58e0ea4336365fd8d3a3bc5ac09a81635386))
+- **engine**: Iridium credit tracking and gauge visualization ([6b29b551](https://github.com/meshsat/meshsat-android/commit/6b29b551fa163a8aadba561b1b76e38de5047caf))
+- **ui**: Reticulum widget and dashboard enhancements ([1352ccba](https://github.com/meshsat/meshsat-android/commit/1352ccba3c0bf4e51e568dfa817bdfb64ea9b9eb))
+- **ui**: credential management screen with PEM import ([913581ec](https://github.com/meshsat/meshsat-android/commit/913581ec28bf9abcf6f9e3015849918b9ba49fbb))
+- **service**: wire pass scheduler, mTLS, registry, and TCP peers ([d8dd26d0](https://github.com/meshsat/meshsat-android/commit/d8dd26d0f3ccd5b8ed738acf733ac23864e175f4))
+- **settings**: announce interval and routing config UI ([32bb6677](https://github.com/meshsat/meshsat-android/commit/32bb6677a3385f67c82caeaa6ed9a864d5e4e1ae))
+- **config**: YAML config export/import matching Bridge format ([16a735ba](https://github.com/meshsat/meshsat-android/commit/16a735baad1f819f4fb9efde8e542cc93fc7af3e))
+- **reticulum**: TCP multi-peer management with Room DB ([ad000fec](https://github.com/meshsat/meshsat-android/commit/ad000fec1deddaa12a80d7e1133cf13b7d5c945a))
+- **service**: multi-instance transport registry ([ace56e41](https://github.com/meshsat/meshsat-android/commit/ace56e419662cac99284350366b51689fb612a44))
+- **hub**: mTLS client certificate support for Hub MQTT/NATS ([4beeec04](https://github.com/meshsat/meshsat-android/commit/4beeec044840747408102fcf7fdb6a7d272a5380))
+- **satellite**: pass-aware scheduling: 4-mode transport polling ([69f89cae](https://github.com/meshsat/meshsat-android/commit/69f89cae0cfbc8c36d91b7198eef4de0d1a7817b))
+- **api**: add service restart API and UI button ([3ea511d2](https://github.com/meshsat/meshsat-android/commit/3ea511d218d1ae6cd076c66f6b5f8d4f8fc7cdf5))
+- **hub**: implement send\_mt, flush\_burst, config\_update, reboot commands ([732dead6](https://github.com/meshsat/meshsat-android/commit/732dead6a74a0a628ad2685d70042c57d3e644fc))
+- **ble**: preserve OTA-learned node identity on config download merge ([ed0f1aac](https://github.com/meshsat/meshsat-android/commit/ed0f1aac4b5ff5963a3f1e1a657a5a0c2b590bea))
+- **credentials**: credential import via Hub sync + QR bundles ([e6cc52ad](https://github.com/meshsat/meshsat-android/commit/e6cc52ada08920454bb35c90ea309cdc46991866))
 
 ## v1.4.0 (2026-03-23)
 
 ### Features
 
-- **reticulum**: add TCP\_HDLC encapsulation enum for stock RNS wire compat ([216fee10](https://github.com/meshsat/meshsat-android/commit/216fee109a4b158a3552c15a1a7d3b71a7239855))
-- **hub**: HubReporter: bridge-to-hub uplink protocol for Android ([81f6cafa](https://github.com/meshsat/meshsat-android/commit/81f6cafad592176e689c8e46e2625a96db42fe01))
-- **astrocast**: add RnsAstrocastInterface + GatewayService integration ([2e234c9f](https://github.com/meshsat/meshsat-android/commit/2e234c9fd29e029cab14b42624a7b239279bb430))
-- **reticulum**: add TCP, BLE peripheral, Tor, and WireGuard interfaces ([dc52780b](https://github.com/meshsat/meshsat-android/commit/dc52780b0ccbdf00cc913bbbbc8b6835347cb0b6))
-- **service**: wire RnsTransportNode into GatewayService lifecycle ([be291f9d](https://github.com/meshsat/meshsat-android/commit/be291f9dadfe84aa9461a51ef5e3a73c03e50efc))
-- **reticulum**: add RnsIridium9704Interface for Reticulum over IMT ([a023cf27](https://github.com/meshsat/meshsat-android/commit/a023cf27e4c28b95c6dab21f45684178e8d90785))
-- **reticulum**: add Transport Node with forwarding table and packet relay ([dbd8c26d](https://github.com/meshsat/meshsat-android/commit/dbd8c26d465f6bca3b8ad1414e84365aa74f52be))
-- **service**: integrate Iridium 9704 transport into GatewayService ([0a6c622a](https://github.com/meshsat/meshsat-android/commit/0a6c622aa01ae2b9fad0a67eda92c576ee003fc4))
-- **bt**: add RockBLOCK 9704 IMT transport via Bluetooth SPP ([cfb61904](https://github.com/meshsat/meshsat-android/commit/cfb619045bf875a8fd7d16104ecd6ae5bed5fa68))
-- **ui**: add Meshtastic radio config tab with all settings ([7a0ed6d0](https://github.com/meshsat/meshsat-android/commit/7a0ed6d08d81e38534a79251b33c0a858e1bf26d))
-- **ble**: adopt official Meshtastic protobuf bindings ([ba6ebfc9](https://github.com/meshsat/meshsat-android/commit/ba6ebfc9623ce2f746900dac70db46f7a838b77f))
+- **reticulum**: add TCP\_HDLC encapsulation enum for stock RNS wire compat ([757aac7b](https://github.com/meshsat/meshsat-android/commit/757aac7b21b3035d7847716635f717d241bf3882))
+- **hub**: HubReporter: bridge-to-hub uplink protocol for Android ([5368bfb3](https://github.com/meshsat/meshsat-android/commit/5368bfb37d00eedd4b556af039d5b854813bbaa4))
+- **astrocast**: add RnsAstrocastInterface + GatewayService integration ([a3cf8abe](https://github.com/meshsat/meshsat-android/commit/a3cf8abeb903436bdc0e3e58cfc269af6493692c))
+- **reticulum**: add TCP, BLE peripheral, Tor, and WireGuard interfaces ([e33ad781](https://github.com/meshsat/meshsat-android/commit/e33ad781b5c27366ebac21f47c3490c483f03267))
+- **service**: wire RnsTransportNode into GatewayService lifecycle ([dc529803](https://github.com/meshsat/meshsat-android/commit/dc52980383e81dc008c579638fd02697abd97cb1))
+- **reticulum**: add RnsIridium9704Interface for Reticulum over IMT ([13e6b72b](https://github.com/meshsat/meshsat-android/commit/13e6b72be08202fc7ce3b8ae3e3c366b4dd4bbc7))
+- **reticulum**: add Transport Node with forwarding table and packet relay ([c92dbcdf](https://github.com/meshsat/meshsat-android/commit/c92dbcdf0cf4fa12e8cfeb15ca811669e12aba80))
+- **service**: integrate Iridium 9704 transport into GatewayService ([e7bd29f3](https://github.com/meshsat/meshsat-android/commit/e7bd29f34754cb997cb8eb8f7da85df2716f36c5))
+- **bt**: add RockBLOCK 9704 IMT transport via Bluetooth SPP ([5dd7fbc7](https://github.com/meshsat/meshsat-android/commit/5dd7fbc7b08d83c5148f30e1081d4548327031fd))
+- **ui**: add Meshtastic radio config tab with all settings ([8bc2f4e7](https://github.com/meshsat/meshsat-android/commit/8bc2f4e7d3fe9702d619bd3a99b0845d5db47a04))
+- **ble**: adopt official Meshtastic protobuf bindings ([d724e4ef](https://github.com/meshsat/meshsat-android/commit/d724e4ef3abd4cd1aabfde84476e0b4989ce5078))
 
 ## v1.3.4 (2026-03-20)
 
 ### Fixes
 
-- start service after permissions + bundle Leaflet locally ([003d70c8](https://github.com/meshsat/meshsat-android/commit/003d70c8262d21b01570c424baf37b5a16598223))
+- start service after permissions + bundle Leaflet locally ([a75e5653](https://github.com/meshsat/meshsat-android/commit/a75e5653cc2d37389dc15c0aacfd695b112dd973))
 
 ## v1.3.3 (2026-03-20)
 
 ### Fixes
 
-- crash on start + map always visible ([cf1b4174](https://github.com/meshsat/meshsat-android/commit/cf1b41741364e6362cb7713155496bd07ebfc4a7))
+- crash on start + map always visible ([aaa30ab1](https://github.com/meshsat/meshsat-android/commit/aaa30ab1d6aa12f3869366baed40bd7a67c43e6b))
 
 ## v1.3.2 (2026-03-20)
 
 ### Fixes
 
-- crash after 1min + no cell tower location ([a20e2e7f](https://github.com/meshsat/meshsat-android/commit/a20e2e7fec8948ae1fefbbbeac0bc8a884e2d3e3))
+- crash after 1min + no cell tower location ([b284a7ac](https://github.com/meshsat/meshsat-android/commit/b284a7ac484f40c9f45e07cb8c965ff4ddc352d7))
 
 ## v1.3.1 (2026-03-20)
 
 ### Fixes
 
-- **ui**: maps not loading: WebView needs non-null base URL for external resources ([8b2b3257](https://github.com/meshsat/meshsat-android/commit/8b2b3257976cbc85469e0966a10e4f6228fb9da0))
+- **ui**: maps not loading: WebView needs non-null base URL for external resources ([7336a0ae](https://github.com/meshsat/meshsat-android/commit/7336a0ae8d8a93d58dbcdbfb9d44e1dea004259f))
 
 ## v1.3.0 (2026-03-20)
 
 ### Features
 
-- **astrocast**: add message fragmentation support: parity with Bridge ([26c88002](https://github.com/meshsat/meshsat-android/commit/26c880022509f2f57dc45d228705deb7337fa0b2))
-- **aprs**: wire directed messaging with ACK/REJ into GatewayService ([7cd9eb9f](https://github.com/meshsat/meshsat-android/commit/7cd9eb9f2db443786268e4ce3fa825795568d4af))
-- **aprs**: directed messaging with ACK/REJ tracking ([f880ff8e](https://github.com/meshsat/meshsat-android/commit/f880ff8e579dafbac8751fb7627c1fdd29f434f5))
-- **aprs**: add smart position beaconing with corner pegging ([d79a010b](https://github.com/meshsat/meshsat-android/commit/d79a010bbfea9b56abaad8ec84db4fa5a23379ac))
-- **aprs**: add smart position beaconing with corner pegging ([fe093482](https://github.com/meshsat/meshsat-android/commit/fe0934821911a505f5016021c040fcdf1d879b3d))
-- **aprs**: APRS-IS direct connect: standalone APRS station without APRSDroid ([5dee4142](https://github.com/meshsat/meshsat-android/commit/5dee4142f7afb1080f6907cbacadf88e2b67acf1))
-- **astrocast**: Astronode S serial protocol driver + SPP transport ([15c12e32](https://github.com/meshsat/meshsat-android/commit/15c12e32d5e4d9dcf06f56ac45d65675ea1a44c4))
-- **security**: hardware-backed Android Keystore for all crypto keys ([de9b043a](https://github.com/meshsat/meshsat-android/commit/de9b043ac0e07054019ceb03da09ffb3ac58de6d))
-- **tak**: CoT v2.0 generation + ATAK integration + inbound CoT parsing ([5d441c3b](https://github.com/meshsat/meshsat-android/commit/5d441c3bcf69b9dc5cef8f7fde89bfe5cd3407c6))
-- **crypto**: QR code key sync with Hub, AES-GCM wire format tests ([1666cf20](https://github.com/meshsat/meshsat-android/commit/1666cf204883369eb69821977cd78f3a71ec6816))
-- **compress**: per-channel compression toggle: disable MSVQ-SC for Iridium ([f7d51bfd](https://github.com/meshsat/meshsat-android/commit/f7d51bfdc533149f72f63b0172482128c8b584ba))
-- **sms**: bidirectional SMS relay between Android and Hub via MQTT ([6e5d6251](https://github.com/meshsat/meshsat-android/commit/6e5d62514470d204095149301d1ad774df724975))
-- **reticulum**: path discovery with cost-aware routing, reliable resource transfer ([ed9792fb](https://github.com/meshsat/meshsat-android/commit/ed9792fbba81f1c52e8365a8198258136f37ec6b))
-- **reticulum**: 5 transport interfaces: BLE, SMS, Iridium, APRS, MQTT ([f37804be](https://github.com/meshsat/meshsat-android/commit/f37804be23f707f38c2eafe9325a5e37ec3d6712))
-- **reticulum**: Meshtastic BLE interface adapter for Reticulum packets ([c1590152](https://github.com/meshsat/meshsat-android/commit/c15901521c19b98bd287bdb9a2515b888c0b0f40))
-- **reticulum**: ECDH link handshake with HKDF key derivation ([95e07865](https://github.com/meshsat/meshsat-android/commit/95e07865e1979dc26dff5d9544b136293be6d9b2))
-- **reticulum**: wire-compatible announce with 64-byte public\_key field ([2c2f4219](https://github.com/meshsat/meshsat-android/commit/2c2f4219a3b619e18a14afde75a8cb6391b1e2c7))
-- **reticulum**: wire-compatible packet format, destination hash, announce data ([36dcb8d3](https://github.com/meshsat/meshsat-android/commit/36dcb8d39d762b9b9d696223d23c3e29ada4f723))
-- **compat**: protocol version byte, SBD fragmentation, cert pinning, APRS UI ([e74457db](https://github.com/meshsat/meshsat-android/commit/e74457db501ba3cc9d1a9008d66894e637b69f24))
-- **aprs**: Android APRS adapter: KISS codec, AX.25, APRS encode/decode ([609d0525](https://github.com/meshsat/meshsat-android/commit/609d052520dc25dc9114c33e85ab1a4615349007))
-- **mqtt**: Android MQTT client for Hub connectivity ([244ba2d4](https://github.com/meshsat/meshsat-android/commit/244ba2d42c63f2372d7349b2fc60b2dc831f6207))
+- **astrocast**: add message fragmentation support: parity with Bridge ([6ecfeda3](https://github.com/meshsat/meshsat-android/commit/6ecfeda3320f9fa87578cd63af93872ccbaf25b7))
+- **aprs**: wire directed messaging with ACK/REJ into GatewayService ([3ba23ac1](https://github.com/meshsat/meshsat-android/commit/3ba23ac1001ac15a597dc84f8402bcca97c937e6))
+- **aprs**: directed messaging with ACK/REJ tracking ([3d636466](https://github.com/meshsat/meshsat-android/commit/3d63646697f34918cbbe5fc686be92612535a223))
+- **aprs**: add smart position beaconing with corner pegging ([20c90736](https://github.com/meshsat/meshsat-android/commit/20c90736b04a4bc69db5fae02195bb47db0b7151))
+- **aprs**: add smart position beaconing with corner pegging ([d55919ac](https://github.com/meshsat/meshsat-android/commit/d55919ac620742d06cde99aeb2491f20ab6cc3c2))
+- **aprs**: APRS-IS direct connect: standalone APRS station without APRSDroid ([b3abe9c5](https://github.com/meshsat/meshsat-android/commit/b3abe9c5b345850b2962c94d25069d1a7fa76f40))
+- **astrocast**: Astronode S serial protocol driver + SPP transport ([b2afce6d](https://github.com/meshsat/meshsat-android/commit/b2afce6d2cfc02ee37865161f6a66416f08565a3))
+- **security**: hardware-backed Android Keystore for all crypto keys ([dfadad3e](https://github.com/meshsat/meshsat-android/commit/dfadad3eb5e6af3b2b5b4821936d66e43f89dd95))
+- **tak**: CoT v2.0 generation + ATAK integration + inbound CoT parsing ([ca141565](https://github.com/meshsat/meshsat-android/commit/ca141565c833001155bd9ff3d4d7717e3e882373))
+- **crypto**: QR code key sync with Hub, AES-GCM wire format tests ([df1dcffa](https://github.com/meshsat/meshsat-android/commit/df1dcffa80e05905ca52bd7ce98acac00b8a67dc))
+- **compress**: per-channel compression toggle: disable MSVQ-SC for Iridium ([89f8b47f](https://github.com/meshsat/meshsat-android/commit/89f8b47f988cdfc45cfa57a5bc4d096b0871fb8a))
+- **sms**: bidirectional SMS relay between Android and Hub via MQTT ([8b6529f8](https://github.com/meshsat/meshsat-android/commit/8b6529f8eb9fb155d5a6fa2256d3d597a7bb9ad6))
+- **reticulum**: path discovery with cost-aware routing, reliable resource transfer ([dd9e4061](https://github.com/meshsat/meshsat-android/commit/dd9e406134d637b060a9e56d4ae5ec38bf0e9907))
+- **reticulum**: 5 transport interfaces: BLE, SMS, Iridium, APRS, MQTT ([92616794](https://github.com/meshsat/meshsat-android/commit/926167947df4aa256d3fb285c246d183dec9c402))
+- **reticulum**: Meshtastic BLE interface adapter for Reticulum packets ([e67bd36b](https://github.com/meshsat/meshsat-android/commit/e67bd36b1f038dcdc2ffe6dbb74e9c7694d7ffc2))
+- **reticulum**: ECDH link handshake with HKDF key derivation ([d80cfa06](https://github.com/meshsat/meshsat-android/commit/d80cfa06c30c8eb213ed9de3f07fd14814abe5f8))
+- **reticulum**: wire-compatible announce with 64-byte public\_key field ([5f92f05f](https://github.com/meshsat/meshsat-android/commit/5f92f05f80d8ec264c5a3fc4398d05e55b1f5f1f))
+- **reticulum**: wire-compatible packet format, destination hash, announce data ([b19f3f83](https://github.com/meshsat/meshsat-android/commit/b19f3f83ba461de497481cfdcee9b6c1325b5087))
+- **compat**: protocol version byte, SBD fragmentation, cert pinning, APRS UI ([64fb7e55](https://github.com/meshsat/meshsat-android/commit/64fb7e55ebe7f1b8a43a9059318828e9ed17152b))
+- **aprs**: Android APRS adapter: KISS codec, AX.25, APRS encode/decode ([2f75599b](https://github.com/meshsat/meshsat-android/commit/2f75599bb74db7c9a690956249367197facff511))
+- **mqtt**: Android MQTT client for Hub connectivity ([c6b19978](https://github.com/meshsat/meshsat-android/commit/c6b199788709606e42d7a0ee18181825fdae9f2d))
 
 ### Fixes
 
-- **astrocast**: align CRC byte order with Go bridge + cross-impl test vectors ([9d750be1](https://github.com/meshsat/meshsat-android/commit/9d750be106670cc6ed2b18896ff1b51602829b1c))
+- **astrocast**: align CRC byte order with Go bridge + cross-impl test vectors ([436bd137](https://github.com/meshsat/meshsat-android/commit/436bd137d2171d396232a5851b0b9d048a7332c6))
 
 ## v1.2.1 (2026-03-16)
 
 ### Fixes
 
-- lazy SMS permission request with banner in Messages screen ([e85149b0](https://github.com/meshsat/meshsat-android/commit/e85149b029b65a18b8d10cc6f5148dfaedcb9f44))
+- lazy SMS permission request with banner in Messages screen ([96ba9a07](https://github.com/meshsat/meshsat-android/commit/96ba9a07807b378ba8420f29d381a3dd78f998cc))
 
 ## v1.2.0 (2026-03-16)
 
 ### Features
 
-- Peers screen, message tabs, map layers, status bar, topology stats, interface tabs ([31a82de2](https://github.com/meshsat/meshsat-android/commit/31a82de29db4b14b2c3fed73c73e13b157871ddc))
-- dashboard overhaul + pass elevation chart ([649d43fa](https://github.com/meshsat/meshsat-android/commit/649d43fa288ff4fb6cf59a2dfc66a3254f85cd20))
+- Peers screen, message tabs, map layers, status bar, topology stats, interface tabs ([7168493e](https://github.com/meshsat/meshsat-android/commit/7168493ed11ea0c184852247ce0d9f6bf25538f0))
+- dashboard overhaul + pass elevation chart ([75779b13](https://github.com/meshsat/meshsat-android/commit/75779b13113b00ffd515398f5b33abaa9bf66e04))
 
 ## v1.1.1 (2026-03-16)
 
 ### Fixes
 
-- maps tiles, SMS permissions, navigation redesign ([e04b0574](https://github.com/meshsat/meshsat-android/commit/e04b0574009c4266efb44021f11b0e0fa2e27208))
+- maps tiles, SMS permissions, navigation redesign ([ff9a7de5](https://github.com/meshsat/meshsat-android/commit/ff9a7de59bd487df95139a87b6ade69e84246b7d))
 
 ## v1.1.0 (2026-03-16)
 
 ### Features
 
-- **ui**: Phase J satellite pass predictor ([d3ad450d](https://github.com/meshsat/meshsat-android/commit/d3ad450da3456f05f8ff761739c674ee07b3ac26))
-- **ui**: add radio config + device admin screen ([dc3745d1](https://github.com/meshsat/meshsat-android/commit/dc3745d16ba524a6d53d686c7414c311aec1dc23))
-- **ui**: Phase I interface management screen ([092265a1](https://github.com/meshsat/meshsat-android/commit/092265a1bf00aab995d7e6d2a21aa948633446ae))
-- **ui**: Phase H bridge rules management UI ([25df6bda](https://github.com/meshsat/meshsat-android/commit/25df6bda24a028be58a22766d0253a3362dfab27))
+- **ui**: Phase J satellite pass predictor ([ab942598](https://github.com/meshsat/meshsat-android/commit/ab942598ebe173f60e9bfda8cd3914ee6e8c8361))
+- **ui**: add radio config + device admin screen ([64ec5534](https://github.com/meshsat/meshsat-android/commit/64ec5534cb3897aa6254991ddd105075b3fc36e9))
+- **ui**: Phase I interface management screen ([76462997](https://github.com/meshsat/meshsat-android/commit/76462997a0f2da074b2d2ad56284c29737ffeb9e))
+- **ui**: Phase H bridge rules management UI ([53296e93](https://github.com/meshsat/meshsat-android/commit/53296e9321b0d7b11558f1ed7ae3c84c43977241))
 
 ### Fixes
 
-- audit log screen (Android), battery/lifecycle, dynamic interfaces, reboot confirm ([5319f20a](https://github.com/meshsat/meshsat-android/commit/5319f20a1011f58799df7cbb72cc063e0948a800))
+- audit log screen (Android), battery/lifecycle, dynamic interfaces, reboot confirm ([8410f45f](https://github.com/meshsat/meshsat-android/commit/8410f45f4faaa1f713443b204f3b95f8d08c0547))
 
 ## v1.0.2 (2026-03-16)
 
 ### Fixes
 
-- maps grey square, invasive SMS perms, add dark/light theme toggle ([3e679878](https://github.com/meshsat/meshsat-android/commit/3e679878e7e8b7fc2910d4ac3e387845c0d09feb))
+- maps grey square, invasive SMS perms, add dark/light theme toggle ([ae8e42d6](https://github.com/meshsat/meshsat-android/commit/ae8e42d64c72e8560ddc10e34cbbf0007b9d366c))
 
 ## v1.0.1 (2026-03-16)
 
 ### Fixes
 
-- crash on service creation: defensive startForeground + try/catch init ([76ef385b](https://github.com/meshsat/meshsat-android/commit/76ef385b3d0454044a7c0b9ed0c6b92f1b97db33))
+- crash on service creation: defensive startForeground + try/catch init ([237fe72c](https://github.com/meshsat/meshsat-android/commit/237fe72c36913ac751c9313ddb46ac33414de517))
 
 ## v1.0.0 (2026-03-16)
 
 ### Features
 
-- close MESHSAT-57 parity gaps: dedup wiring, telemetry, UI fixes, 59 unit tests ([3606ebc2](https://github.com/meshsat/meshsat-android/commit/3606ebc2c19192538d7201cabd825e9d1495d121))
-- **ui**: Phase G UI parity: settings, topology, deliveries, geofence ([64a31b7f](https://github.com/meshsat/meshsat-android/commit/64a31b7fa70bcf49b176abf9699929f0d6fc4b17))
-- **api**: Phase F config, signing, and local REST API ([c68b8c92](https://github.com/meshsat/meshsat-android/commit/c68b8c92b1dbddfef70ac18776744c5ce3a9f58a))
-- **routing**: Phase E routing layer: identity, announce, link manager ([8a0454b5](https://github.com/meshsat/meshsat-android/commit/8a0454b5f4dd7627c8bc9844f7b4ced533a9415e))
-- **engine**: Phase D field intelligence: deadman, geofence, health, codecs, burst ([c0b93c88](https://github.com/meshsat/meshsat-android/commit/c0b93c880749bb1435a99bab1f427c46a0d783be))
-- **transport**: Phase C transport hardening: state machine, store-forward, QoS ([6e2743a7](https://github.com/meshsat/meshsat-android/commit/6e2743a7f35eb1dd26c9f48fbdabbc9718ae52aa))
-- **routing**: port Go gateway routing to Kotlin: Phase B ([93ccf790](https://github.com/meshsat/meshsat-android/commit/93ccf79056897e3799528651f66b59271f41b00e))
-- **android**: add core infrastructure: channel registry, dedup, rate limiter, transform pipeline ([ab9679b4](https://github.com/meshsat/meshsat-android/commit/ab9679b4707bdba7e985911ba4b8e4ece7ffc1c2))
-- **android**: add MSVQ-SC compression settings UI ([78e77489](https://github.com/meshsat/meshsat-android/commit/78e774891b93eac2c23203947fe6bc6759bac8a8))
-- **android**: MSVQ-SC lossy semantic compression for SMS ([36812fa1](https://github.com/meshsat/meshsat-android/commit/36812fa1647b75989235f2d045e7fd5c1931913c))
+- close MESHSAT-57 parity gaps: dedup wiring, telemetry, UI fixes, 59 unit tests ([dfa02167](https://github.com/meshsat/meshsat-android/commit/dfa02167f664b25479b0263ebd5f10a6f5bba4f0))
+- **ui**: Phase G UI parity: settings, topology, deliveries, geofence ([edd2e247](https://github.com/meshsat/meshsat-android/commit/edd2e247e86a34bbf4bf0e50f27372081cbb5753))
+- **api**: Phase F config, signing, and local REST API ([50279374](https://github.com/meshsat/meshsat-android/commit/502793746da776b1c2b1ab1df2817903c557b2ad))
+- **routing**: Phase E routing layer: identity, announce, link manager ([f4ba2fbc](https://github.com/meshsat/meshsat-android/commit/f4ba2fbc2df0d1d3da5ed70bb5b41e751c370e9b))
+- **engine**: Phase D field intelligence: deadman, geofence, health, codecs, burst ([a7f3e57a](https://github.com/meshsat/meshsat-android/commit/a7f3e57a9ea528425e435c9f7eb66bf0917ee42d))
+- **transport**: Phase C transport hardening: state machine, store-forward, QoS ([3f6f8b85](https://github.com/meshsat/meshsat-android/commit/3f6f8b859f60bd8be0f60c9892e8a9a9649899de))
+- **routing**: port Go gateway routing to Kotlin: Phase B ([9686718d](https://github.com/meshsat/meshsat-android/commit/9686718d4da3dabf3e23c2fdff4f32ca7e07f452))
+- **android**: add core infrastructure: channel registry, dedup, rate limiter, transform pipeline ([c3616257](https://github.com/meshsat/meshsat-android/commit/c3616257db2fdf0470c72df247de3dd8d5989cb1))
+- **android**: add MSVQ-SC compression settings UI ([ed0c47fb](https://github.com/meshsat/meshsat-android/commit/ed0c47fb278fa6f096f73d3a1fc0ccfaf72cbb22))
+- **android**: MSVQ-SC lossy semantic compression for SMS ([92439b5c](https://github.com/meshsat/meshsat-android/commit/92439b5c0fb893cf559ba4ffd442454992dfb8e7))
 
 ### Fixes
 
-- **android**: audit fixes: ProGuard rules, tensor leak, thread safety, NaN guard ([678b44f1](https://github.com/meshsat/meshsat-android/commit/678b44f104d3064d68a835b8fa1ec7279d99ac1d))
-- **ci**: use bash to run gradlew (chmod fails on read-only checkout) ([c41dfdae](https://github.com/meshsat/meshsat-android/commit/c41dfdae516de8acb0df9c92b4cba4263c2bebe9))
+- **android**: audit fixes: ProGuard rules, tensor leak, thread safety, NaN guard ([5f82f507](https://github.com/meshsat/meshsat-android/commit/5f82f507de105886328a69db5decd519815ec20e))
+- **ci**: use bash to run gradlew (chmod fails on read-only checkout) ([e9f184fb](https://github.com/meshsat/meshsat-android/commit/e9f184fb2056a14ed8b1d6e16a3175c5a080f284))
 
 ## v0.3.0 (2026-03-11)
 
 ### Features
 
-- **android**: chat replies, per-conv encryption, GPS map, device info, notifications ([2dd4db66](https://github.com/meshsat/meshsat-android/commit/2dd4db66f217943d198987af49414db86704af67))
+- **android**: chat replies, per-conv encryption, GPS map, device info, notifications ([16ed3456](https://github.com/meshsat/meshsat-android/commit/16ed3456437adccd3ded6dca6f41cb2ceb491818))
 
 ### Fixes
 
-- **android**: SMS detection, per-conversation keys, signal graphs ([265f512f](https://github.com/meshsat/meshsat-android/commit/265f512fd3dcc3f6f6b70151669e4234d3b45dbb))
+- **android**: SMS detection, per-conversation keys, signal graphs ([8428e112](https://github.com/meshsat/meshsat-android/commit/8428e11271e91205568bd3b332706e38c36a8618))
 
 ## v0.2.0 (2026-03-11)
 
 ### Features
 
-- **android**: conversations, map, SOS, signal graphs, bug fixes ([117f4316](https://github.com/meshsat/meshsat-android/commit/117f4316ee4cb556b0bae586756e95d03f2d55e7))
-- **sms**: register as default SMS app candidate for GrapheneOS ([000e5005](https://github.com/meshsat/meshsat-android/commit/000e500590440cd7c837413f18b633b9e1b740d8))
+- **android**: conversations, map, SOS, signal graphs, bug fixes ([a8478141](https://github.com/meshsat/meshsat-android/commit/a8478141ca0a9e742db662b201f183e79d21d207))
+- **sms**: register as default SMS app candidate for GrapheneOS ([9017d0eb](https://github.com/meshsat/meshsat-android/commit/9017d0eb7ec91425c7fb035276ec3b5aafaef3b1))
 
 ### Fixes
 
-- **android**: keep Rules tab, move Crypto to Settings, remove duplicate screens ([64999dfd](https://github.com/meshsat/meshsat-android/commit/64999dfd0a9ef43cd84dcd0d172fa122deb65f92))
-- **android**: BLE scan, SMS decrypt logging, message UX improvements ([de2bccf9](https://github.com/meshsat/meshsat-android/commit/de2bccf9cfd144d2b87b1952bab9bb932799bc32))
+- **android**: keep Rules tab, move Crypto to Settings, remove duplicate screens ([6160ac9b](https://github.com/meshsat/meshsat-android/commit/6160ac9b93024ff047db53fbd3dc31c2a5e78cf8))
+- **android**: BLE scan, SMS decrypt logging, message UX improvements ([3f6a5a3b](https://github.com/meshsat/meshsat-android/commit/3f6a5a3b875c3b24bdf4f904a6a49845d3317853))
 
 ## v0.1.1 (2026-03-11)
 
@@ -1018,13 +1018,13 @@ Same sources as v0.1.0.
 
 ### Features
 
-- persist rules to Room, message search, signal polling, About screen, key sharing ([f20a655b](https://github.com/meshsat/meshsat-android/commit/f20a655b7d47b1c1cb0648579b619ce9db297a25))
-- rules UI, Iridium message flow, mesh send, app icon, ProGuard ([ac12f0a7](https://github.com/meshsat/meshsat-android/commit/ac12f0a769016ced26cb7f355b08df9e073d3a38))
-- add BLE, SPP, rules engine, and wire transports into gateway service ([7ff43392](https://github.com/meshsat/meshsat-android/commit/7ff433921758368504ba1b8406e6cc4b1fae2333))
-- initial Android app with SMS decrypt and MeshSat-dark UI ([946fb0a9](https://github.com/meshsat/meshsat-android/commit/946fb0a94569626ad2c62394b9f6d11cd5853f7d))
+- persist rules to Room, message search, signal polling, About screen, key sharing ([d7caac63](https://github.com/meshsat/meshsat-android/commit/d7caac63570391776a6c08a69c83ba8ad50672a9))
+- rules UI, Iridium message flow, mesh send, app icon, ProGuard ([647f5ca7](https://github.com/meshsat/meshsat-android/commit/647f5ca7028b0a5832eb4f3ec899ae1bfcba4e23))
+- add BLE, SPP, rules engine, and wire transports into gateway service ([5095378e](https://github.com/meshsat/meshsat-android/commit/5095378eeed2699f7df5a64fae7a3d11f9dc644e))
+- initial Android app with SMS decrypt and MeshSat-dark UI ([f9631fb4](https://github.com/meshsat/meshsat-android/commit/f9631fb440ca185a97438c6eb864dbaf8fa8a4de))
 
 ### Fixes
 
-- increase Gradle heap for 8GB LXC, build passes ([f00156cf](https://github.com/meshsat/meshsat-android/commit/f00156cf14d197b53e80c2f89d3c8c0d5509dd7c))
-- build config: Gradle wrapper, AndroidX, BuildConfig, memory tuning ([048113db](https://github.com/meshsat/meshsat-android/commit/048113dbc47adef98be997b471723e8b2cbd64ea))
+- increase Gradle heap for 8GB LXC, build passes ([adcc5519](https://github.com/meshsat/meshsat-android/commit/adcc5519fa54284d0155be40d042c13358a0a2ad))
+- build config: Gradle wrapper, AndroidX, BuildConfig, memory tuning ([92fdac5e](https://github.com/meshsat/meshsat-android/commit/92fdac5e082238394d9efccaa9d0d1bd6bceaf27))
 <!-- generated:end -->
