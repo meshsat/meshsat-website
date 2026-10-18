@@ -452,11 +452,18 @@ img {
 [data-theme="light"] .gh-star-btn { background: rgba(255, 255, 255, 0.8); }
 .gh-star-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
 .gh-star-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     font-family: var(--font-mono);
     font-size: 0.8rem;
     padding-left: 0.6rem;
     border-left: 1px solid var(--color-border);
 }
+/* The star is an SVG, not U+2605: the Plex subsets we ship are Latin only, so a
+   text star fell back to the visitor's fonts and rendered as an empty box where
+   none of them had it (owner's laptop, 19 Oct 2026). */
+.gh-star-count svg { flex: none; }
 .gh-star-count[hidden] { display: none; }
 
 /* The visitor chip sits BESIDE the star button, not inside it: the count is not
@@ -3530,11 +3537,17 @@ img {
     font-family: var(--font-mono); font-size: 0.75rem;
     color: var(--color-text-muted); border-bottom: 1px solid var(--color-border);
 }
+/* Close, previous and next draw SVG icons, not U+2715/2190/2192, for the same
+   reason as the star: no glyph for them in the Latin subsets we ship. */
 .shot-close {
+    display: inline-flex; align-items: center; justify-content: center;
     flex: none; min-width: 28px; min-height: 28px; cursor: pointer;
     background: none; border: 1px solid var(--color-border);
     border-radius: var(--radius-sm); color: var(--color-text-muted);
 }
+/* main.js hides previous/next for a set of one with the hidden attribute, which
+   the display rule above would otherwise defeat. */
+.shot-close[hidden] { display: none; }
 .shot-close:hover, .shot-close:focus-visible { color: var(--color-primary); border-color: var(--color-primary); }
 .shot-frame img { display: block; width: 100%; height: auto; max-height: 82vh; object-fit: contain; background: #000; }
 @media (forced-colors: active) { .shot-frame { border: 1px solid CanvasText; } }
