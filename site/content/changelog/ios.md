@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 90
-  unreleased_since: "2026-10-18"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-18"
+  unreleased_count: 94
+  unreleased_since: "2026-10-19"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-19"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -21,10 +21,11 @@ transport by transport; there is no release yet. Builds, once there are any,
 are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-18)
+## Unreleased (main, last change 2026-10-19)
 
 ### Features
 
+- **hub**: the MQTT transport and Reticulum over it use the tenant's topic root, and a root that is not meshsat or meshsat/\<tenant\> is refused ([ead59f55](https://github.com/meshsat/meshsat-ios/commit/ead59f55dd2fbfae58ecf172c7820e79bc46e53b))
 - **store**: store\_resubmit lane resolves the rejected item and resubmits the same submission ([10530e44](https://github.com/meshsat/meshsat-ios/commit/10530e447d6462c602f31a63ee6271b2d44d433d))
 - **satellite**: Iridium BLE contract v2, node health card from STATS, pass windows to the node ([241755fd](https://github.com/meshsat/meshsat-ios/commit/241755fd2483bacda65b300e39a0eeacc6526c1a))
 - **node**: Setup \> Advanced \> Node log, the node's live log over Bluetooth ([087f163d](https://github.com/meshsat/meshsat-ios/commit/087f163d2bbe0d033da58f1b0ef74bb2b1bd4ecf))
@@ -83,6 +84,9 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Fixes
 
+- **mqtt**: a broker drop right after the connect brings the MQTT transport back instead of leaving it connected on a dead session ([7a95d811](https://github.com/meshsat/meshsat-ios/commit/7a95d811762f1bbad55bc3430f7ecbc9bfc37df7))
+- **iridium**: a satellite send that ends uncertain no longer takes back "The Hub has it" from an earlier session's receipt ([c891e136](https://github.com/meshsat/meshsat-ios/commit/c891e13603e9f8eaab630bff716581276acd98d2))
+- **delivery**: a confirmation that lands while a send is out is never undone by the worker, and a confirmed delivery is never sent again ([e6068935](https://github.com/meshsat/meshsat-ios/commit/e606893575b00ff2a3a0a354d7a4fc34bf0851d1))
 - **delivery**: each channel's pending acks time out on its own timeout, a mesh broadcast no longer waits for an ack, a late ack is kept, and the dedup window applies and survives a restart's hash ([6e5f0ef3](https://github.com/meshsat/meshsat-ios/commit/6e5f0ef38a5a374c1e3102f311f5e93d0d7728ab))
 - **ble**: a link restored by iOS is picked up on poweredOn instead of staying on Connecting ([c704cce4](https://github.com/meshsat/meshsat-ios/commit/c704cce4cd1921c812aac6eaed625d51eb051a4a))
 - **background**: no location background mode, significant-change updates in the background ([5ef26ab5](https://github.com/meshsat/meshsat-ios/commit/5ef26ab563170f3702337bc6c5c84b9b5b24591c))

@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 65
-  unreleased_since: "2026-10-18"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-18"
+  unreleased_count: 66
+  unreleased_since: "2026-10-19"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-19"
 ---
 
 Generated from the commit history of
@@ -20,7 +20,7 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-18)
+## Unreleased (main, last change 2026-10-19)
 
 ### Features
 
@@ -50,6 +50,7 @@ it goes live.
 
 ### Fixes
 
+- **nats**: a bridge or a phone can no longer publish its own msg/in or msg/status, which only the Hub may ([c5b1b101](https://github.com/meshsat/meshsat-hub/commit/c5b1b1016b1ad9e9d8e82b97e30a191971b02c7e))
 - **routing**: a Bridge's mesh text on any channel is routed and stored, and one SOS raises one alert whatever bearer carried it ([9566a375](https://github.com/meshsat/meshsat-hub/commit/9566a3752cd27d7d309a8fe794da62b1b3e8b06e))
 - **authentik**: the sign-up notification rule fires once per enrolment, from one policy that cannot throw ([9954d552](https://github.com/meshsat/meshsat-hub/commit/9954d5526d76f1e006ac4b2ee5fd2bebff2c49ab))
 - **ots**: lift urllib3 to 2.8.0 and virtualenv past 21.7.13, the floors trivy:ots asks for ([649881fe](https://github.com/meshsat/meshsat-hub/commit/649881fe25104984f622dd0311ccd89145ce9adf))
