@@ -411,7 +411,7 @@ hub_shot2:
 hub_shot3:
   other: "Routering in gewone woorden: een satellietbericht gaat door naar een andere kit, naar APRS, MQTT en TAK, naar webhooks en naar meldingen"
 hub_shots_note:
-  other: "Dezelfde schermen op jouw server of op de onze. Vastgelegd op hub.meshsat.net op 21 september 2026, met telefoonnummers, IMEI's en hostnamen van de kits onscherp gemaakt."
+  other: "Dezelfde schermen op jouw server of op de onze. Vastgelegd op hub.meshsat.net op 21 september 2026, met telefoonnummers, IMEI's en hostnamen van de kits onscherp gemaakt."
 
 copy:
   other: "Kopiëren"

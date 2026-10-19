@@ -411,7 +411,7 @@ hub_shot2:
 hub_shot3:
   other: "Routing in plain words: a satellite message goes on to another kit, to APRS, MQTT and TAK, to webhooks and to notifications"
 hub_shots_note:
-  other: "The same screens on your server or on ours. Captured on hub.meshsat.net on 21 September 2026, with phone numbers, IMEIs and kit hostnames blurred."
+  other: "The same screens on your server or on ours. Captured on hub.meshsat.net on 21 September 2026, with phone numbers, IMEIs and kit hostnames blurred."
 
 copy:
   other: "Copy"

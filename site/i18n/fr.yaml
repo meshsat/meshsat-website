@@ -411,7 +411,7 @@ hub_shot2:
 hub_shot3:
   other: "Le routage en clair : un message satellite repart vers un autre kit, vers APRS, MQTT et TAK, vers les webhooks et les notifications"
 hub_shots_note:
-  other: "Les mêmes écrans sur votre serveur ou sur le nôtre. Captures faites sur hub.meshsat.net le 21 septembre 2026, numéros de téléphone, IMEI et noms d'hôte des kits floutés."
+  other: "Les mêmes écrans sur votre serveur ou sur le nôtre. Captures faites sur hub.meshsat.net le 21 septembre 2026, numéros de téléphone, IMEI et noms d'hôte des kits floutés."
 
 copy:
   other: "Copier"
