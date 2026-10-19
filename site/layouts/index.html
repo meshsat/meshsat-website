@@ -11,7 +11,10 @@
     <div class="hero-overlay"></div>
     <div class="container hero-content">
         <p class="hero-label">{{ i18n "hero_eyebrow" }}</p>
-        <h1 class="hero-title">{{ i18n "hero_title_a" }}<br><span class="highlight">{{ i18n "hero_title_b" }}</span></h1>
+        {{- /* A second line of three words or fewer cannot split without leaving one word alone, so it is
+     sized to fit its column instead (MESHSAT-1596): the CSS reads the longest line's length. */}}
+        {{- $hta := i18n "hero_title_a" }}{{ $htb := i18n "hero_title_b" }}
+        <h1 class="hero-title"{{ if le (len (split $htb " ")) 3 }} style="--hl-chars: {{ math.Max (strings.RuneCount $hta) (strings.RuneCount $htb) }}"{{ end }}><span class="hero-title-fit">{{ $hta }}<br><span class="highlight">{{ $htb }}</span></span></h1>
         <p class="hero-subtitle">{{ i18n "hero_sub" }}</p>
 
         <p class="hero-status"><span class="dot"></span> {{ i18n "hero_status" }}</p>
@@ -48,7 +51,7 @@
             <div class="trace-row"><span class="trace-t">09:14:02.140</span><span class="trace-if">router</span><span class="trace-dir">&middot;&middot;</span><span class="trace-msg">{{ i18n "t2" }}</span><span class="trace-state"></span></div>
             <div class="trace-row is-fail"><span class="trace-t">09:14:02.191</span><span class="trace-if">iridium_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t3" }}</span><span class="trace-state fail">FAILED</span></div>
             <div class="trace-row"><span class="trace-t">09:14:02.204</span><span class="trace-if">cellular_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t4" }}</span><span class="trace-state ok">DELIVERED</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.209</span><span class="trace-if">tak_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t5" }}</span><span class="trace-state ok">DELIVERED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.209</span><span class="trace-if">tak_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ replace (i18n "t5") "Cursor-on-Target" "<span class=\"trace-term\">Cursor-on-Target</span>" | safeHTML }}</span><span class="trace-state ok">DELIVERED</span></div>
             <div class="trace-row"><span class="trace-t">09:14:02.318</span><span class="trace-if">mqtt_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t6" }}</span><span class="trace-state ok">DELIVERED</span></div>
             <p class="trace-foot">{{ i18n "trace_foot" }}</p>
         </div>

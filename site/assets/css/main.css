@@ -1,20 +1,31 @@
 /* ==========================================================================
    MeshSat — Main Stylesheet
-   Color scheme: Teal primary, dark-first with light mode toggle
+   Color scheme: rescue-orange primary, dark-first with light mode toggle
    Based on MuleCube design system
    ========================================================================== */
 
-/* ---------- Fonts: self-hosted IBM Plex, latin subset (MESHSAT-950) ----------
-   Files under site/static/fonts/ (from @fontsource, OFL). Served with CORS so
-   auth.meshsat.net can load them too. */
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2'); }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-500-normal.woff2') format('woff2'); }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2'); }
-@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-700-normal.woff2') format('woff2'); }
-@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2'); }
-@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2'); }
-@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-600-normal.woff2') format('woff2'); }
-@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-700-normal.woff2') format('woff2'); }
+/* ---------- Fonts: self-hosted IBM Plex, Latin and Greek subsets (MESHSAT-950) ----------
+   Files under site/static/fonts/ (from @fontsource 5.2.7, OFL). Served with CORS so
+   auth.meshsat.net can load them too. Plex Mono has no Greek, so Greek in the mono
+   and display text takes Plex Sans Greek; until 19 Oct 2026 /el/ fell back to
+   whatever the visitor's system had (MESHSAT-1596). Anything outside these ranges
+   (stars, crosses, side arrows) still falls back: draw UI symbols as SVG. */
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-700-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-600-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-700-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-400-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-500-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-600-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-700-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-400-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-500-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-600-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-700-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
 
 /* ---------- CSS Variables ---------- */
 :root {
@@ -307,13 +318,13 @@ img {
 .btn-primary {
     background: var(--color-primary);
     color: #000;
-    box-shadow: 0 0 20px rgba(45, 212, 191, 0.25);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
 .btn-primary:hover {
     background: var(--color-primary-hover);
     color: #000;
-    box-shadow: 0 0 30px rgba(45, 212, 191, 0.4);
+    box-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 40%, transparent);
     transform: translateY(-1px);
 }
 
@@ -566,7 +577,7 @@ img {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: var(--space-lg);
-    box-shadow: 0 4px 20px rgba(45, 212, 191, 0.3);
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--color-primary) 30%, transparent);
 }
 
 .step-card h3 {
@@ -820,7 +831,7 @@ img {
 
 .transport-table tr:hover,
 .comparison-table tr:hover {
-    background: rgba(45, 212, 191, 0.03);
+    background: color-mix(in srgb, var(--color-primary) 3%, transparent);
 }
 
 /* ---------- Comparison ---------- */
@@ -1623,7 +1634,7 @@ img {
 }
 
 .data-table tr:hover {
-    background: rgba(45, 212, 191, 0.03);
+    background: color-mix(in srgb, var(--color-primary) 3%, transparent);
 }
 
 /* Badges */
@@ -1781,7 +1792,7 @@ img {
     transform: translate(-50%, -50%);
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(45, 212, 191, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 6%, transparent) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -1878,15 +1889,15 @@ img {
     height: 180px;
     border-radius: 50%;
     border: 2px solid var(--color-primary);
-    background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, rgba(45, 212, 191, 0.05) 60%, transparent 100%);
+    background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 15%, transparent) 0%, color-mix(in srgb, var(--color-primary) 5%, transparent) 60%, transparent 100%);
     text-align: center;
-    box-shadow: 0 0 40px rgba(45, 212, 191, 0.2), 0 0 80px rgba(45, 212, 191, 0.08);
+    box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 20%, transparent), 0 0 80px color-mix(in srgb, var(--color-primary) 8%, transparent);
     animation: gateway-pulse 4s ease-in-out infinite;
 }
 
 @keyframes gateway-pulse {
-    0%, 100% { box-shadow: 0 0 40px rgba(45, 212, 191, 0.2), 0 0 80px rgba(45, 212, 191, 0.08); }
-    50% { box-shadow: 0 0 50px rgba(45, 212, 191, 0.3), 0 0 100px rgba(45, 212, 191, 0.12); }
+    0%, 100% { box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 20%, transparent), 0 0 80px color-mix(in srgb, var(--color-primary) 8%, transparent); }
+    50% { box-shadow: 0 0 50px color-mix(in srgb, var(--color-primary) 30%, transparent), 0 0 100px color-mix(in srgb, var(--color-primary) 12%, transparent); }
 }
 
 .diagram-gateway-label {
@@ -2033,7 +2044,7 @@ img {
 
 .cost-meshsat {
     border-color: var(--color-primary);
-    box-shadow: 0 0 30px rgba(45, 212, 191, 0.15), 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 15%, transparent), 0 8px 32px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
@@ -4454,3 +4465,155 @@ main { flex: 1 0 auto; }
     .chan-legend { display: block; line-height: 1.75; }
     .chan-legend li { display: inline; margin-inline-end: 0.9rem; }
 }
+
+/* ---------- Visual audit fixes (MESHSAT-1596, 19 Oct 2026) ----------
+   Found by a Playwright pass over production at 320 to 1440 px in both themes.
+   Appended last so they settle the cascade. */
+
+/* Header: the text links sat 5px above the logo, the Hub button and the
+   toggles. The list stretched its items to the button's height and an inline
+   link sits at the top of its item. The phone menu is a column: leave it. */
+@media (min-width: 769px) {
+    .nav-links { align-items: center; }
+}
+/* The page you are on, for menu links that are pages rather than anchors. */
+.nav-links a[aria-current="page"] { color: var(--color-primary); }
+
+/* Light theme: the translucent header let the screenshots and headings behind
+   it show through as grey shapes under the nav. */
+[data-theme="light"] .site-header { background: var(--color-bg-secondary); }
+
+/* Hero below 1100px: a centred 46rem column started 120 to 144px in from the
+   header and every section head at tablet widths, and the old 768px rule
+   centred the paths, the film link and the chips inside it, 72px right of the
+   headline. Range the whole hero on the page gutter; the lead keeps its own
+   measure. */
+@media (max-width: 1099px) {
+    .hero-content { max-width: 1200px; }
+}
+.hero-subtitle,
+.hero-install { margin-inline: 0; }
+
+/* The headline's second line balances on its own. As an inline span after a
+   <br> it was not balanced, and nl left one word on a third line. A line of
+   three words cannot balance without leaving one alone (de "hinaus.", fr
+   "sorties.", en "out." at 320px), so index.html passes the longest line's
+   length as --hl-chars and the headline shrinks just enough for it to fit:
+   Plex Mono advances 0.6em a character, 0.56em with the -0.04em tracking.
+   Where it already fits, min() keeps the size it had. */
+.hero-title .highlight { display: block; text-wrap: balance; }
+.hero-title { container-type: inline-size; }
+.hero-title-fit { display: block; }
+.hero-title[style*="--hl-chars"] .hero-title-fit {
+    font-size: min(1em, calc(100cqi / (var(--hl-chars) * 0.56 + 0.3)));
+    letter-spacing: -0.04em;
+}
+
+/* Balanced lines left the right half of the pill empty wherever the box is
+   wider than the text; pretty fills the first line and still keeps the last
+   word company. */
+.hero-status { text-wrap: pretty; }
+
+/* A protocol name never breaks at its own hyphen ("Cursor-" / "on-Target"). */
+.trace-term { white-space: nowrap; }
+
+/* Channel table from 700px: a code group is an inline-block, whose baseline
+   is its LAST line, so a row header sat on the second line of a wrapped
+   group ("Radio" at 768px). Top-align the group so the first line leads. */
+@media (min-width: 700px) {
+    .chan-group { vertical-align: top; }
+}
+
+/* Phone legend: one code per line. Run as text, each description wrapped and
+   the next code landed after a lone word ("today", "kit", "yet"). The spacing
+   around it is trimmed so the section stays the height it was (en, de, fr
+   +7px, nl and el -16px at 390). */
+@media (max-width: 640px) {
+    .chan-legend {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.1rem;
+        line-height: 1.5;
+        margin-top: var(--space-sm);
+    }
+    .chan-legend li { display: block; margin: 0; }
+    .chan-legend + .table-note { margin-top: 0.75rem; }
+}
+
+/* Try it on a phone: the command was cut mid-URL ("https://get.ı") beside the
+   Copy button, with nothing to say it scrolls. A command you pipe into sudo is
+   read in full: Copy moves above it and it wraps. The log stays one line per
+   entry (wrapping it cost 40px a phone) and scrolls, and now says so: a shade
+   on the right edge while there is more to the right. The shade is scrolling
+   shadow (background-attachment scroll) under a cover that travels with the
+   content (local) and hides it at the end. */
+@media (max-width: 560px) {
+    .term-cmd { flex-wrap: wrap; row-gap: var(--space-sm); }
+    .term-cmd .copy-btn { order: -1; margin-left: auto; }
+    .term-cmd .code-block-body { flex: 1 1 100%; overflow-x: visible; }
+    .term-cmd code { white-space: pre-wrap; }
+    .install-hero .code-block-body,
+    .install-hero .code-block-body code { white-space: pre-wrap; overflow-wrap: break-word; }
+    .term-log {
+        background:
+            linear-gradient(to left, var(--color-bg-card) 50%, transparent) right center / 2rem 100% no-repeat local,
+            linear-gradient(to left, color-mix(in srgb, var(--color-text) 22%, transparent), transparent) right center / 1rem 100% no-repeat scroll;
+        background-color: var(--color-bg-card);
+    }
+}
+
+/* Try it from 960px: the two cards side by side on the shared rails, as from
+   1100px, in equal columns. In one column the Android card ran 976px wide at
+   1024 with a 160px phone screen beside four lines of text: about 250px empty
+   under the text. The terminal column is narrower here, so its command goes
+   under Copy as on a phone. */
+@media (min-width: 960px) and (max-width: 1099px) {
+    .bench {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto 1fr auto;
+        align-items: stretch;
+    }
+    .bench > .artifact {
+        display: grid;
+        grid-row: span 3;
+        grid-template-rows: subgrid;
+        row-gap: 0;
+    }
+    .term-cmd { flex-wrap: wrap; row-gap: var(--space-sm); }
+    .term-cmd .copy-btn { order: -1; margin-left: auto; }
+    .term-cmd .code-block-body { flex: 1 1 100%; }
+}
+/* Below that, in one column (700 to 959px): the text spans the card and the
+   screen and its caption sit in a row under it, instead of the screen standing
+   beside a short paragraph with the space under the text left empty. */
+@media (min-width: 700px) and (max-width: 959px) {
+    .and-body { grid-template-columns: minmax(0, 1fr); }
+    .and-shot {
+        max-width: none;
+        display: grid;
+        grid-template-columns: 10rem minmax(0, 32ch);
+        column-gap: var(--space-lg);
+        align-items: end;
+    }
+    .and-shot figcaption { margin-top: 0; }
+}
+
+/* Footer: SUPPORTED BY sat on the logos' baseline, 8px below BUILT WITH and
+   under the logos' centre line. And where the two halves do not fit side by
+   side (below about 1100px in English, at 1440px in Dutch), the grid broke the
+   BUILT WITH list instead ("Docker" alone on a second line): as a wrapping
+   row, SUPPORTED BY moves to its own line whole. */
+.colophon-sidn { align-items: center; }
+.colophon-inner { display: flex; flex-wrap: wrap; justify-content: space-between; }
+
+/* Content-page tables on a phone: a link or code without a break point (the
+   Matrix room on /security/) made the table wider than its box and clipped
+   the cells at the right edge. */
+.data-table td a,
+.data-table td code { overflow-wrap: anywhere; }
+/* Content pages: a table's bottom margin sat inside its bordered scroll box,
+   an empty band under the last row, and the paragraph after the box touched
+   it (/security/). The margin belongs outside the box. */
+.page-content .table-wrap > table { margin-bottom: 0; }
+.page-content .table-wrap { margin-bottom: var(--space-lg); }
