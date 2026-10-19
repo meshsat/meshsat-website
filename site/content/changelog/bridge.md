@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1004
-  unreleased_since: "2026-10-18"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-18"
+  unreleased_count: 1006
+  unreleased_since: "2026-10-19"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-19"
 ---
 
 Generated from the commit history of
@@ -19,12 +19,13 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-18)
+## Unreleased (main, last change 2026-10-19)
 
 ### Features
 
-- **delivery**: a text by TETRA that a MeshSat Bridge on the group acknowledges shows as acked by a station, and one nobody acknowledged as may have been sent ([38f2e171](https://github.com/meshsat/meshsat/commit/38f2e17117424fde803ecb0187e3ca52ed315a9a))
-- **tetra**: MeshSat Bridges on a TETRA group confirm each text they receive, so a text lost in a collision both radios missed is sent again ([3726350e](https://github.com/meshsat/meshsat/commit/3726350eac06de2d742fda1853d1fdbe7abe2318))
+- **hub**: a Bridge in an organisation's tenant publishes and subscribes under that tenant's topic root ([3b305817](https://github.com/meshsat/meshsat/commit/3b305817783e6a60fa4f86fea8e9a9e7512c179a))
+- **delivery**: a text by TETRA that a MeshSat Bridge on the group acknowledges shows as acked by a station, and one nobody acknowledged as may have been sent ([3d21a68e](https://github.com/meshsat/meshsat/commit/3d21a68ee67e7cf46e191192362325147d1db966))
+- **tetra**: MeshSat Bridges on a TETRA group confirm each text they receive, so a text lost in a collision both radios missed is sent again ([6aba9c83](https://github.com/meshsat/meshsat/commit/6aba9c83b2e0b7c5c1d0ace4eb18746adc914fe3))
 - **delivery**: a message can go by TETRA to a talk group, by the MeshSat 2G cell to a phone on it with the handset's receipt, and by ZigBee to one device ([790df436](https://github.com/meshsat/meshsat/commit/790df4362d6a864960d8beee71c7293076980926))
 - **web**: the dashboard follows the hardware: a widget hides when its device is unplugged, a device plugged in for the first time brings its widget, the person can remove and add widgets, and TETRA has a card ([9f28239f](https://github.com/meshsat/meshsat/commit/9f28239f6b52329b6dfb83a59d9df2688ebecfa8))
 - **web**: Settings has a TETRA tab with the radio, its settings and a test send, and the README lists TETRA Direct Mode as LIVE ([d03d8314](https://github.com/meshsat/meshsat/commit/d03d8314f81163472385fb598914e10a4d5dd804))
@@ -442,16 +443,17 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
-- **hub**: a Hub command that ran without its claim no longer stores its reply under another request's claim ([6de41f32](https://github.com/meshsat/meshsat/commit/6de41f327598770080531dc54cf75cf976035c2b))
-- **hub**: a Hub send\_text run again after a restart answers the delivery it queued first, a command that changes something is not run without the command log, and a refusal never replaces a finished command's reply ([02f36d50](https://github.com/meshsat/meshsat/commit/02f36d50eb2beffb84246132cba241d51a572d2c))
-- **hub**: a Hub command an earlier process claimed and never finished runs after a restart, and a request id reused with other arguments is refused ([c0298698](https://github.com/meshsat/meshsat/commit/c02986983d272c0d438e2719aa8c10f17f21c88f))
-- **hub**: a Hub command the broker delivers twice runs once, and the MQTT gateway no longer drops other nodes' messages after a direct send ([dfb4e391](https://github.com/meshsat/meshsat/commit/dfb4e391d9ce3d91495c35433678adf932771f48))
-- **tetra**: a send that failed before its SDS reached the radio is not sent, and no acknowledgement in hand makes it delivered ([5d222775](https://github.com/meshsat/meshsat/commit/5d222775f81e0a46bfbe746a67ea85b5077d7a5c))
-- **tetra**: a MeshSat Bridge's acknowledgement that came before the radio reported the send failed counts as delivered, the radio's report kept ([c591fb28](https://github.com/meshsat/meshsat/commit/c591fb2868b6adea6e350dad2fd2446e6207a5b7))
-- **tetra**: the radio's error code is kept beside its not-sent report every time, and the mailbox check's test waits for its finished event ([69ad4632](https://github.com/meshsat/meshsat/commit/69ad463268e4d36222eb49d987bdc92a85d81a4a))
-- **delivery**: a Bridge acknowledges a TETRA text only once it took it in, and a TETRA or cell send that may have reached the recipient shows as may have been sent ([e1afd21d](https://github.com/meshsat/meshsat/commit/e1afd21d5686ccb81edb9684fa5a338ed7a4555b))
-- **tetra**: a Bridge that knows no MeshSat peer on the group says hello again every 5 minutes, so two kits that start in the same second still find each other ([f575f9c1](https://github.com/meshsat/meshsat/commit/f575f9c153e43fedd41a6453e3fc8f2bc8dbb299))
-- **delivery**: only refusals the radio's firmware gives before anything goes on air mark a mesh send not sent, and one that arrives after the message closed corrects its status ([b8dc7b4c](https://github.com/meshsat/meshsat/commit/b8dc7b4cac9684179b54d8bcf8bedda206c47f56))
+- **hub**: a blank topic root saved in the Hub settings returns the Bridge to the platform tenant, whatever MESHSAT\_HUB\_TOPIC\_PREFIX says ([8b06e7ca](https://github.com/meshsat/meshsat/commit/8b06e7ca8be942facd917103ca10af823bab0dea))
+- **hub**: a Hub command that ran without its claim no longer stores its reply under another request's claim ([88826a95](https://github.com/meshsat/meshsat/commit/88826a9583e5a413e135ff574cd35fe9a7e90924))
+- **hub**: a Hub send\_text run again after a restart answers the delivery it queued first, a command that changes something is not run without the command log, and a refusal never replaces a finished command's reply ([9d703ced](https://github.com/meshsat/meshsat/commit/9d703cedb9def776799ed0fb54287581cd0de533))
+- **hub**: a Hub command an earlier process claimed and never finished runs after a restart, and a request id reused with other arguments is refused ([91096cfb](https://github.com/meshsat/meshsat/commit/91096cfb05120f8ccf97773be13117569a6ef2b7))
+- **hub**: a Hub command the broker delivers twice runs once, and the MQTT gateway no longer drops other nodes' messages after a direct send ([790ec987](https://github.com/meshsat/meshsat/commit/790ec9872aa3f013b04cdd93bfe38f8f781c9ae6))
+- **tetra**: a send that failed before its SDS reached the radio is not sent, and no acknowledgement in hand makes it delivered ([856e123c](https://github.com/meshsat/meshsat/commit/856e123ce62f9abf08765529f1d25ad82f312017))
+- **tetra**: a MeshSat Bridge's acknowledgement that came before the radio reported the send failed counts as delivered, the radio's report kept ([c491c811](https://github.com/meshsat/meshsat/commit/c491c81173de060d213b5e36a1ead6478199766a))
+- **tetra**: the radio's error code is kept beside its not-sent report every time, and the mailbox check's test waits for its finished event ([cab021e3](https://github.com/meshsat/meshsat/commit/cab021e37b3e85168d2b92fd7cfbb55e09a363f8))
+- **delivery**: a Bridge acknowledges a TETRA text only once it took it in, and a TETRA or cell send that may have reached the recipient shows as may have been sent ([19a55a08](https://github.com/meshsat/meshsat/commit/19a55a0847e0b3573eab366fc4587c358dd8f60b))
+- **tetra**: a Bridge that knows no MeshSat peer on the group says hello again every 5 minutes, so two kits that start in the same second still find each other ([e8065f53](https://github.com/meshsat/meshsat/commit/e8065f53c9c24427be6d32a05e4833f82cf86065))
+- **delivery**: only refusals the radio's firmware gives before anything goes on air mark a mesh send not sent, and one that arrives after the message closed corrects its status ([febcbad4](https://github.com/meshsat/meshsat/commit/febcbad4675a493749d5bc8ce718606c03f93ded))
 - **tetra**: a command ends on the reader the moment its final line arrives, so a send's late radio error right after its OK is read as late and not swallowed ([b1767b42](https://github.com/meshsat/meshsat/commit/b1767b422fe72b13c36b7c0cec0001f82e82e784))
 - **tetra**: an SDS the radio takes and then reports not sent, as in a collision when both kits send at once, is a failed delivery that is retried, not a delivered one ([023280f7](https://github.com/meshsat/meshsat/commit/023280f728a6afc4c4f012580f0f86844cc125ce))
 - **delivery**: a mesh message our own radio refuses to send is not sent, so the next route takes over and the status no longer says it was accepted ([972104ec](https://github.com/meshsat/meshsat/commit/972104ec0186576dd51db056b665856454fa6289))

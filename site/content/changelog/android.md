@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v2.21.0"
   latest_tag_date: "2026-10-13"
   latest_tag_anchor: "v2210-2026-10-13"
-  unreleased_count: 3
-  unreleased_since: "2026-10-18"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-18"
+  unreleased_count: 7
+  unreleased_since: "2026-10-19"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-19"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,10 +23,17 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-18)
+## Unreleased (main, last change 2026-10-19)
+
+### Features
+
+- **hub**: a phone provisioned into an organisation's tenant publishes and subscribes under that tenant's topic root ([e5af6337](https://github.com/meshsat/meshsat-android/commit/e5af6337e683579c321d238ea5462541f1c8dbf9))
 
 ### Fixes
 
+- **reticulum**: Reticulum over the Hub's MQTT publishes under the tenant's topic root too ([3f94112e](https://github.com/meshsat/meshsat-android/commit/3f94112eca4e34685470eefea53aeeca81c41034))
+- **iridium**: a satellite send that ends uncertain no longer takes back "The Hub has it" from an earlier session's receipt ([28fb5279](https://github.com/meshsat/meshsat-android/commit/28fb527940e45ce820ffb33c59f641e1a1cbc16c))
+- **delivery**: a delivery report that lands while a send is out is never undone by the worker, and a confirmed delivery is never sent again ([89abb0b0](https://github.com/meshsat/meshsat-android/commit/89abb0b0664bc035a63d9daee313c678eb0b2e87))
 - **sms**: a delivery report and the outcome it leads to are saved together, a failure never takes back a delivered SMS, and a send's part count is fixed before it goes out ([b90c94e9](https://github.com/meshsat/meshsat-android/commit/b90c94e9893ee9713ee5a0556261d711756de491))
 - **sms**: a long SMS shows delivered only once every part is, and a CDMA delivery report is read as one ([0b144032](https://github.com/meshsat/meshsat-android/commit/0b144032124a317e7844fbf219f362c311f798af))
 - **delivery**: each channel's pending acks time out on its own timeout, a mesh broadcast no longer waits for an ack, only an SMS the phone confirmed shows delivered, and a late ack is kept ([534224b1](https://github.com/meshsat/meshsat-android/commit/534224b12dfc07a4feaa1932a070e4d8385dcc3b))
