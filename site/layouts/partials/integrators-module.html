@@ -1,5 +1,5 @@
 {{/* Original neutral artwork. No vendor photograph, logo, PCB layout or CAD is reproduced. */}}
-<svg class="ig-module-art" viewBox="0 0 240 200" role="img" aria-label="{{ .name }}: original MeshSat neutral illustration, not a product photograph">
+<svg class="ig-module-art" viewBox="0 0 240 200" role="img" aria-label="{{ .name }}: {{ i18n "ig_art_alt" }}">
   {{ $w := .width }}{{ $h := .height }}{{ $x := div (sub 240 $w) 2 }}{{ $y := div (sub 192 $h) 2 }}
   <g transform="translate({{ $x }} {{ $y }})" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
     <path class="ig-art-side" d="M0 {{ $h }} l12 10 h{{ $w }} V10 L{{ $w }} 0 v{{ $h }} Z"/>

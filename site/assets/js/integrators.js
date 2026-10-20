@@ -2,7 +2,8 @@
     'use strict';
     const root = document.querySelector('[data-configurator]');
     if (!root) return;
-    const radios = JSON.parse(document.getElementById('ig-radio-data').textContent);
+    const { radios, copy } = JSON.parse(document.getElementById('ig-radio-data').textContent);
+    const fill = (template, values) => template.replace(/\{(\w+)\}/g, (_, key) => values[key]);
     const first = document.getElementById('ig-radio-one');
     const second = document.getElementById('ig-radio-two');
     const contact = document.getElementById('ig-contact');
@@ -20,21 +21,26 @@
         const name = 'MSC-3' + selected.map(radio => radio.code).join('');
         document.getElementById('ig-model').textContent = name;
         document.getElementById('ig-bridges').textContent = selected.length === 2
-            ? `Intended bridge: ${selected[0].name} and ${selected[1].name} to each other, and both to Iridium. Return messages follow the same paths where message formats and routing policy permit.`
-            : `Intended bridge: ${selected[0].name} to Iridium and back, where message formats and routing policy permit.`;
+            ? fill(copy.bridgeTwo, { first: selected[0].name, second: selected[1].name })
+            : fill(copy.bridgeOne, { first: selected[0].name });
         document.getElementById('ig-radio-limits').replaceChildren(...selected.map(radio => {
             const item = document.createElement('li');
             const title = document.createElement('strong');
             title.append(radio.name + ' ', status());
             const modules = document.createElement('span');
-            modules.textContent = radio.modules + ': under evaluation.';
+            modules.textContent = radio.modules + ': ' + copy.evaluation + '.';
             const limit = document.createElement('p');
             limit.textContent = radio.limit;
             item.append(title, modules, limit);
             return item;
         }));
-        const subject = name + ' integration discussion';
-        const body = `${name} / FUTURE PLAN\nLocal radios: ${selected.map(radio => radio.name).join(' + ')}\nAlways fitted: Iridium / RockBLOCK 9704 (module under evaluation)\n\nRadio models and message types:\nDeployment country and site:\nIntegration endpoint:\n`;
+        document.getElementById('ig-route-local').replaceChildren(...selected.map(radio => {
+            const node = document.createElement('span');
+            node.textContent = radio.name;
+            return node;
+        }));
+        const subject = name + ' ' + copy.subject;
+        const body = name + ' / FUTURE PLAN\n' + fill(copy.body, { radios: selected.map(radio => radio.name).join(' + ') });
         contact.href = `mailto:${contact.dataset.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
     first.addEventListener('change', update);

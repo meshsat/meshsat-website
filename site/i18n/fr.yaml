@@ -444,4 +444,740 @@ hw_start:
   other: "Équipement minimal, extensions et guides de montage"
 
 msc3_integrators:
-  other: "MSC-3 pour les intégrateurs (anglais)"
+  other: "MSC-3 pour les intégrateurs"
+
+# MSC-3 integrators: UI, technical copy and public component specifications.
+ig_status_label:
+  other: "État du développement"
+
+ig_notice:
+  other: "Des appareils conceptuels au stade de la recherche et du développement, testés par notre équipe."
+
+ig_notice_detail:
+  other: "Toutes les variantes MSC-3 sont des concepts. Les modules sont en cours d'évaluation."
+
+ig_eyebrow:
+  other: "SÉRIE MSC-3 / DOSSIER D'INTÉGRATION"
+
+ig_lead:
+  other: "Un concept de passerelle de poche pour les radios d'une équipe, avec Iridium pour les textes, les états et les positions."
+
+ig_intro:
+  other: "Une plateforme. Une ou deux radios locales. Iridium dans chaque variante."
+
+ig_explore:
+  other: "Explorer une configuration"
+
+ig_matrix_link:
+  other: "Consulter la matrice des capacités"
+
+ig_scope:
+  other: "Périmètre de R&D, pas une spécification d'appareil validée. Aucune variante MSC-3 n'a jamais été déployée auprès d'un utilisateur réel. Ce n'est pas un service d'urgence ni un remplacement du 112."
+
+ig_arch_alt:
+  other: "Architecture conceptuelle. Les radios de l'équipe se connectent par un ou deux modules radio locaux à MeshSat Bridge sur un Raspberry Pi Zero 2 W. Le Bridge assure le routage entre les radios locales et un modem RockBLOCK 9704 utilisant Iridium IMT. Les messages satellitaires atteignent le système de l'intégrateur. Une batterie alimente la passerelle. Tous les chemins nécessitent une validation."
+
+ig_team:
+  other: "Radios de l'équipe"
+
+ig_direct:
+  other: "Mode direct / liaison locale"
+
+ig_concept:
+  other: "MSC-3 / CONCEPT"
+
+ig_slot_one:
+  other: "Emplacement radio 01"
+
+ig_slot_two:
+  other: "Emplacement radio 02"
+
+ig_optional:
+  other: "facultatif"
+
+ig_routing:
+  other: "Routage / file de messages / suivi de remise"
+
+ig_imt:
+  other: "Iridium IMT / toujours intégré"
+
+ig_rugged:
+  other: "Concept de boîtier robuste"
+
+ig_battery:
+  other: "Batterie"
+
+ig_satellite_link:
+  other: "Liaison satellitaire Iridium"
+
+ig_backend:
+  other: "Système de l'intégrateur / Hub auto-hébergé"
+
+ig_arch_caption:
+  other: "Architecture conceptuelle. Chemins de messages bidirectionnels ; l'intégration physique et l'interopérabilité restent en cours d'évaluation."
+
+ig_nav:
+  other: "Sections du dossier d'intégration"
+
+ig_nav_platform:
+  other: "Plateforme"
+
+ig_nav_capabilities:
+  other: "Capacités"
+
+ig_nav_configure:
+  other: "Configurer"
+
+ig_nav_modules:
+  other: "Modules"
+
+ig_nav_cases:
+  other: "Usages"
+
+ig_platform_eyebrow:
+  other: "01 / PLATEFORME COMMUNE"
+
+ig_platform_title:
+  other: "Une plateforme, différentes radios locales"
+
+ig_platform_intro:
+  other: "Les lettres après MSC-3 désignent les radios locales intégrées au concept. Iridium est toujours inclus et n'a pas besoin de lettre."
+
+ig_platform_caption:
+  other: "Concept de plateforme MSC-3 et limites de validation"
+
+ig_compute:
+  other: "Calculateur"
+
+ig_compute_value:
+  other: "Raspberry Pi Zero 2 W exécutant MeshSat Bridge."
+
+ig_compute_limit:
+  other: "La charge de calcul et l'intégration des périphériques doivent être validées pour chaque configuration."
+
+ig_satellite:
+  other: "Satellite"
+
+ig_satellite_value:
+  other: "Ground Control RockBLOCK 9704 utilisant Iridium IMT."
+
+ig_satellite_limit:
+  other: "Transport de messages. Aucun service vocal ou haut débit sur ce chemin."
+
+ig_local_radios:
+  other: "Radios locales"
+
+ig_local_value:
+  other: "Un ou deux emplacements de modules radio ; T, D, L, A, H ou G."
+
+ig_local_limit:
+  other: "Chaque combinaison nécessite un travail sur l'intégration mécanique, l'isolation des antennes et la coordination des émissions."
+
+ig_enclosure:
+  other: "Boîtier / alimentation"
+
+ig_enclosure_value:
+  other: "Boîtier de poche robuste et batterie."
+
+ig_enclosure_limit:
+  other: "Les dimensions, la masse, l'autonomie, l'indice de protection et la conception de la recharge ne sont pas vérifiés."
+
+ig_display:
+  other: "Afficheur d'état"
+
+ig_display_value:
+  other: "Petit afficheur à papier électronique couleur compatible avec le Raspberry Pi, en cours d'évaluation."
+
+ig_display_limit:
+  other: "La dalle, le pilote, l'interface, la consommation et l'intégration mécanique nécessitent une validation."
+
+ig_routing_label:
+  other: "Routage des messages"
+
+ig_routing_value:
+  other: "De radio locale à radio locale et de radio locale à Iridium, dans les deux sens."
+
+ig_routing_limit:
+  other: "Seuls les types de messages pris en charge peuvent emprunter une route. La conversion des protocoles et les limites de chiffrement nécessitent une validation."
+
+ig_integration_status:
+  other: "État de l'intégration"
+
+ig_every_variant:
+  other: "Toutes les variantes MSC-3."
+
+ig_integration_limit:
+  other: "Les spécifications des modules ne démontrent ni certification de l'appareil, ni homologation pour un parc radio, ni performances de bout en bout."
+
+ig_capabilities_eyebrow:
+  other: "02 / MATRICE DES CAPACITÉS"
+
+ig_capabilities_title:
+  other: "Interfaces locales, chemin satellitaire commun"
+
+ig_capabilities_intro:
+  other: "Chemins de messages envisagés pour l'évaluation. Chaque concept à une radio inclut Iridium ; un concept à deux radios relie aussi les radios locales entre elles."
+
+ig_scroll:
+  other: "Sur un petit écran, faites défiler le tableau horizontalement pour lire les limites."
+
+ig_matrix_label:
+  other: "Matrice des capacités MSC-3"
+
+ig_matrix_caption:
+  other: "Toutes les variantes : FUTURE PLAN. Tous les modules cités : en cours d'évaluation."
+
+ig_variant:
+  other: "Variante"
+
+ig_radio:
+  other: "Radio locale"
+
+ig_messages:
+  other: "Messages envisagés"
+
+ig_limits:
+  other: "Limites à résoudre"
+
+ig_config_eyebrow:
+  other: "03 / CONFIGURATEUR RADIO"
+
+ig_config_title:
+  other: "Explorer une combinaison radio"
+
+ig_config_intro:
+  other: "Choisissez une ou deux radios locales. Il s'agit d'un concept d'intégration ; cela ne confirme ni que la combinaison tient dans le boîtier, ni qu'elle fonctionne avec un parc radio particulier."
+
+ig_slots:
+  other: "Emplacements des radios locales"
+
+ig_none:
+  other: "Aucune seconde radio"
+
+ig_always:
+  other: "Toujours intégré"
+
+ig_module_evaluation:
+  other: "Module en cours d'évaluation"
+
+ig_nojs:
+  other: "Activez JavaScript pour modifier la sélection. L'exemple MSC-3TL et la matrice complète des capacités restent lisibles sans JavaScript."
+
+ig_result:
+  other: "CONCEPT RÉSULTANT"
+
+ig_bridge_two:
+  other: "Liaison envisagée : {first} et {second} entre elles, et toutes deux vers Iridium. Les messages de retour suivent les mêmes chemins lorsque les formats et les règles de routage le permettent."
+
+ig_bridge_one:
+  other: "Liaison envisagée : {first} vers Iridium et en retour, lorsque les formats et les règles de routage le permettent."
+
+ig_under_evaluation:
+  other: "En cours d'évaluation"
+
+ig_iridium_limit:
+  other: "Iridium : module en cours d'évaluation. Nécessite une antenne agréée, un service satellitaire et une vue suffisamment dégagée du ciel. Les délais de remise et les performances MSC-3 ne sont pas vérifiés."
+
+ig_contact:
+  other: "Nous contacter"
+
+ig_mail_subject:
+  other: "échange sur l'intégration"
+
+ig_mail_body:
+  other: "Radios locales : {radios}\nToujours intégré : Iridium / RockBLOCK 9704 (module en cours d'évaluation)\n\nModèles de radios et types de messages :\nPays et site de déploiement :\nPoint d'intégration :\n"
+
+ig_modules_eyebrow:
+  other: "04 / MODULES EN COURS D'ÉVALUATION"
+
+ig_modules_title:
+  other: "Spécifications publiques, limites explicites"
+
+ig_modules_intro:
+  other: "Les données ci-dessous décrivent les composants des fabricants, pas un MSC-3 achevé. Chaque candidat est accompagné d'un lien vers sa source. Les capacités radio publiées ne déterminent pas les réglages d'exploitation autorisés."
+
+ig_art_credit:
+  other: "Illustrations : créations neutres originales de MeshSat. Formes simplifiées, non à l'échelle ; ni photographies de produits, ni schémas de circuits imprimés, ni plans d'assemblage. Les noms des fabricants identifient uniquement les composants et n'impliquent aucun partenariat ni soutien."
+
+ig_art_caption:
+  other: "Illustration neutre MeshSat"
+
+ig_art_alt:
+  other: "illustration neutre originale de MeshSat, pas une photographie du produit"
+
+ig_specs_caption:
+  other: "spécifications publiques du composant"
+
+ig_cases_eyebrow:
+  other: "05 / USAGES À ÉVALUER"
+
+ig_cases_title:
+  other: "Scénarios d'intégration"
+
+ig_cases_intro:
+  other: "Il s'agit de scénarios de recherche. Aucun déploiement chez un client, aucune compatibilité avec un parc radio ni aucune autorisation opérationnelle ne sont revendiqués."
+
+ig_case_tl_title:
+  other: "Équipes TETRA et réseau maillé bénévole"
+
+ig_case_tl_body:
+  other: "Évaluer l'échange de textes et de positions sélectionnés entre une équipe radio professionnelle et des bénévoles utilisant Meshtastic, avec Iridium pour les comptes rendus distants. Les règles de routage contrôlent les échanges entre les réseaux."
+
+ig_case_td_title:
+  other: "Équipes utilisant des systèmes radio différents"
+
+ig_case_td_body:
+  other: "Évaluer les échanges de messages entre équipes TETRA et DMR en mode direct. Les formats propres aux parcs radio, les autorisations de canaux et le traitement du chiffrement doivent d'abord être établis."
+
+ig_case_dl_title:
+  other: "Équipes DMR et capteurs locaux"
+
+ig_case_dl_body:
+  other: "Évaluer les textes DMR et les données de position prises en charge, ainsi que les comptes rendus Meshtastic sur le terrain. Tester les types de messages pouvant être convertis et transmis par le chemin satellitaire commun."
+
+ig_contact_eyebrow:
+  other: "ÉCHANGE TECHNIQUE"
+
+ig_contact_title:
+  other: "Parlons de votre radio et de votre usage."
+
+ig_contact_intro:
+  other: "Indiquez les modèles de radios, la configuration en mode direct, les types de messages, le pays de déploiement et le point d'intégration à évaluer."
+
+ig_contact_note:
+  other: "Concepts de recherche et développement. Modules en cours d'évaluation."
+
+ig_details:
+  other: "Spécifications du composant"
+
+ig_radio_key:
+  other: "Lettres des radios locales"
+
+ig_render_caption:
+  other: "Rendu conceptuel de R&D. Proposition de boîtier, pas du matériel validé."
+
+ig_render_alt:
+  other: "Concept de boîtier MSC-3T avec petit afficheur à papier électronique couleur, antenne Iridium compacte et antenne fouet TETRA"
+
+ig_exploded_alt:
+  other: "Vue éclatée du concept MSC-3T montrant afficheur, carte de calcul, modem satellitaire, module radio et batterie ; intégration mécanique non vérifiée"
+
+ig_radio_t_data:
+  other: "Textes SDS, états et rapports de position"
+
+ig_radio_t_limit:
+  other: "Canaux TETRA soumis à autorisation. L'interopérabilité des SDS, états et positions en mode direct doit être validée avec les radios de l'équipe. Le mode direct du BDM 31 3L n'est pas confirmé."
+
+ig_radio_d_data:
+  other: "Texte ; les états et positions dépendent du module et du parc radio"
+
+ig_radio_d_limit:
+  other: "Canaux DMR soumis à autorisation. Les formats de texte, protocoles de position et chiffrements varient selon le parc radio. La liste publique des commandes NiceRF ne documente aucune commande de position. L'interopérabilité des données et du chiffrement entre fabricants n'est pas vérifiée."
+
+ig_radio_l_data:
+  other: "Paquets de texte et de position Meshtastic"
+
+ig_radio_l_modules:
+  other: "Radio basée sur le Semtech SX1262"
+
+ig_radio_l_limit:
+  other: "Les limites régionales de bande, puissance d'émission et rapport cyclique s'appliquent. Un hôte Meshtastic et un micrologiciel compatible sont requis ; la puce SX1262 seule n'exécute pas Meshtastic."
+
+ig_radio_a_data:
+  other: "Textes, états et positions radioamateurs"
+
+ig_radio_a_limit:
+  other: "Radioamateur uniquement. Un opérateur titulaire d'une licence est requis. Aucun chiffrement. Pas de trafic des services publics ; les routes vers APRS doivent faire respecter cette limite."
+
+ig_radio_h_data:
+  other: "Messages applicatifs sélectionnés sur une liaison IP locale"
+
+ig_radio_h_limit:
+  other: "Les limites régionales de bande et de puissance s'appliquent. Des équipements HaLow compatibles sont requis. Le chemin satellitaire transporte des messages sélectionnés, pas une connexion IP haut débit. Le choix de la carte et l'intégration de l'hôte sont en cours d'évaluation."
+
+ig_radio_g_name:
+  other: "Cellule 2G"
+
+ig_radio_g_data:
+  other: "SMS de téléphones enregistrés sur une cellule GSM locale"
+
+ig_radio_g_modules:
+  other: "PlutoSDR avec Osmocom"
+
+ig_radio_g_limit:
+  other: "Autorisation propre à chaque site. Chaque déploiement nécessite sa propre autorisation radio. Le provisionnement des SIM, le spectre, la synchronisation, le filtrage RF et la capacité de calcul doivent être validés. Il s'agit d'une cellule locale, pas d'itinérance sur les réseaux publics."
+
+ig_tw1m_note:
+  other: "Dimensions issues de la brochure publique. La gestion des positions et l'interopérabilité avec le parc radio nécessitent une validation sur banc."
+
+ig_tw1m_sourceLabel:
+  other: "Fiche technique publique Airbus, 03/2018 (copie Senop)"
+
+ig_tw1m_fact_2_1:
+  other: "RS-232 ou USB ; commandes AT"
+
+ig_tw1m_fact_3_1:
+  other: "SDS et états en DMO ; GPS"
+
+ig_bdm31_note:
+  other: "La fiche publique ne mentionne que le TMO. La prise en charge du DMO, nécessaire au concept de radios d'équipe, n'est pas confirmée."
+
+ig_bdm31_sourceLabel:
+  other: "Fiche technique publique PMR-R & D, V1.1"
+
+ig_bdm31_fact_1_1:
+  other: "1.8 W, classe 3L"
+
+ig_bdm31_fact_2_1:
+  other: "3.7 V ; 3.0 A pendant une salve d'émission"
+
+ig_bdm31_fact_3_1:
+  other: "PEI (ETSI EN 300 392-5) ; série / RS-232"
+
+ig_mt100_note:
+  other: "La fiche mentionne DMRA AES-128/256 et ARC4. Cela ne démontre pas l'interopérabilité avec les fonctions de texte, de position ou de chiffrement d'un parc radio."
+
+ig_mt100_sourceLabel:
+  other: "Fiche technique publique Leonardo, mm08909, 09/2020"
+
+ig_mt100_fact_2_1:
+  other: "7.4 V ; jusqu'à 2 A"
+
+ig_mt100_fact_3_1:
+  other: "UART 3.3 V ; commandes AT ; IP sur DMR"
+
+ig_dmr818_note:
+  other: "Les commandes de texte sont documentées, mais pas de commande de position. La compatibilité du chiffrement et du texte avec les autres radios reste non vérifiée."
+
+ig_dmr818_sourceLabel:
+  other: "Fiche technique publique NiceRF, V1.8, 06/2026"
+
+ig_dmr818_fact_0_1:
+  other: "134-174, 320-400 ou 400-470 MHz"
+
+ig_dmr818_fact_1_1:
+  other: "2 W ; la fiche spécifie 1 W pour CE/FCC"
+
+ig_dmr818_fact_3_1:
+  other: "UART à 57 600 bauds ; commandes binaires"
+
+ig_sx1262_note:
+  other: "Un module radio, une antenne et un hôte Meshtastic sont en cours d'évaluation. Les limites de la puce n'autorisent pas à émettre avec ces réglages."
+
+ig_sx1262_sourceLabel:
+  other: "Spécifications publiques Semtech SX126x"
+
+ig_sx1262_fact_0_1:
+  other: "150-960 MHz (capacité de la puce)"
+
+ig_sx1262_fact_1_1:
+  other: "Jusqu'à +22 dBm (capacité de la puce)"
+
+ig_sx1262_fact_2_1:
+  other: "LoRa et (G)FSK"
+
+ig_picoaprs_note:
+  other: "Modèle VHF. Radioamateur uniquement, opérateur titulaire d'une licence, aucun chiffrement. Sa propre batterie est distincte du concept de batterie MSC-3."
+
+ig_picoaprs_sourceLabel:
+  other: "Manuel public V4 du fabricant, spécifications techniques, 20/11/2023"
+
+ig_picoaprs_fact_0_1:
+  other: "Environ 35 × 67 × 25 mm / 60 g"
+
+ig_picoaprs_fact_2_1:
+  other: "Maximum 1 W"
+
+ig_picoaprs_fact_3_1:
+  other: "AX.25 à 1 200 bauds ; USB KISS TNC"
+
+ig_mm6108_note:
+  other: "Un module Morse Micro et une carte porteuse restent en cours d'évaluation. La carte LILYGO T-HaLow ci-dessous utilise TX-AH ; c'est un candidat distinct."
+
+ig_mm6108_sourceLabel:
+  other: "Présentation publique du Morse Micro MM6108"
+
+ig_mm6108_fact_1_1:
+  other: "SDIO ou SPI"
+
+ig_mm6108_fact_2_1:
+  other: "Accès IP local pour le transport de messages"
+
+ig_thalow_note:
+  other: "La révision de la carte, la variante RF régionale et l'interface hôte doivent être confirmées. Aucun chipset Morse Micro n'est attribué à cette carte."
+
+ig_thalow_sourceLabel:
+  other: "Documentation matérielle publique et spécifications des modules LILYGO"
+
+ig_thalow_fact_1_1:
+  other: "Taixin TX-AH, selon la documentation LILYGO"
+
+ig_thalow_fact_2_1:
+  other: "Ethernet et contrôle par commandes AT"
+
+ig_pluto_name:
+  other: "PlutoSDR avec Osmocom"
+
+ig_pluto_family:
+  other: "G / cellule 2G"
+
+ig_pluto_note:
+  other: "Spécifications de l'Analog Devices ADALM-PLUTO. Le fonctionnement GSM avec Osmocom, le filtrage RF et le traitement sur la plateforme nécessitent une validation. Autorisation propre à chaque site."
+
+ig_pluto_sourceLabel:
+  other: "Spécifications techniques publiques de l'Analog Devices ADALM-PLUTO"
+
+ig_pluto_fact_0_1:
+  other: "325 MHz à 3.8 GHz (capacité du SDR)"
+
+ig_pluto_fact_1_1:
+  other: "Jusqu'à 20 MHz (capacité du SDR)"
+
+ig_pluto_fact_2_1:
+  other: "Un émetteur ; un récepteur"
+
+ig_rockblock_family:
+  other: "Iridium / toutes les variantes"
+
+ig_rockblock_note:
+  other: "Toujours intégré au concept MSC-3 ; l'intégration du module est en cours d'évaluation. Nécessite une antenne agréée et un service satellitaire. La limite de charge utile est une spécification du modem, pas une taille de message MSC-3 validée."
+
+ig_rockblock_sourceLabel:
+  other: "Spécifications publiques du Ground Control RockBLOCK 9704"
+
+ig_rockblock_fact_0_1:
+  other: "48 × 52 × 16 mm / moins de 35 g, hors antenne"
+
+ig_rockblock_fact_2_1:
+  other: "Jusqu'à 100 000 octets par message"
+
+ig_rockblock_fact_3_1:
+  other: "UART TTL ou série USB-C"
+
+ig_radio_t_name:
+  other: "TETRA"
+
+ig_radio_t_modules:
+  other: "Airbus TW1m; PMR-R & D BDM 31 3L"
+
+ig_radio_d_name:
+  other: "DMR"
+
+ig_radio_d_modules:
+  other: "Leonardo ECOS-D MT100-N; NiceRF DMR818S"
+
+ig_radio_l_name:
+  other: "LoRa / Meshtastic"
+
+ig_radio_a_name:
+  other: "APRS"
+
+ig_radio_a_modules:
+  other: "PicoAPRS V4"
+
+ig_radio_h_name:
+  other: "HaLow / 802.11ah"
+
+ig_radio_h_modules:
+  other: "Morse Micro MM6108; LILYGO T-HaLow / TX-AH"
+
+ig_tw1m_name:
+  other: "Airbus TW1m"
+
+ig_tw1m_family:
+  other: "T / TETRA"
+
+ig_tw1m_fact_0_0:
+  other: "Dimensions / masse"
+
+ig_tw1m_fact_0_1:
+  other: "84 × 67 × 24.7 mm / 66 g"
+
+ig_tw1m_fact_1_0:
+  other: "Bandes"
+
+ig_tw1m_fact_1_1:
+  other: "380-400 MHz; 406-430 MHz (RC-47)"
+
+ig_tw1m_fact_2_0:
+  other: "Interface de données"
+
+ig_tw1m_fact_3_0:
+  other: "Fonctions publiées"
+
+ig_bdm31_name:
+  other: "PMR-R & D BDM 31 3L"
+
+ig_bdm31_family:
+  other: "T / TETRA"
+
+ig_bdm31_fact_0_0:
+  other: "Dimensions / masse"
+
+ig_bdm31_fact_0_1:
+  other: "86 × 43 × 8 mm / 35 g"
+
+ig_bdm31_fact_1_0:
+  other: "Puissance RF"
+
+ig_bdm31_fact_2_0:
+  other: "Alimentation"
+
+ig_bdm31_fact_3_0:
+  other: "Interface de données"
+
+ig_mt100_name:
+  other: "Leonardo ECOS-D MT100-N"
+
+ig_mt100_family:
+  other: "D / DMR"
+
+ig_mt100_fact_0_0:
+  other: "Dimensions / masse"
+
+ig_mt100_fact_0_1:
+  other: "48 × 64 × 10.4 mm / 50 g"
+
+ig_mt100_fact_1_0:
+  other: "Bandes / puissance RF"
+
+ig_mt100_fact_1_1:
+  other: "136-174 MHz / 4.7 W; 400-470 MHz / 4 W"
+
+ig_mt100_fact_2_0:
+  other: "Alimentation"
+
+ig_mt100_fact_3_0:
+  other: "Interface de données"
+
+ig_dmr818_name:
+  other: "NiceRF DMR818S"
+
+ig_dmr818_family:
+  other: "D / DMR"
+
+ig_dmr818_fact_0_0:
+  other: "Options de bande"
+
+ig_dmr818_fact_1_0:
+  other: "Puissance RF"
+
+ig_dmr818_fact_2_0:
+  other: "Alimentation"
+
+ig_dmr818_fact_2_1:
+  other: "3.3-4.5 V"
+
+ig_dmr818_fact_3_0:
+  other: "Interface de données"
+
+ig_sx1262_name:
+  other: "Semtech SX1262"
+
+ig_sx1262_family:
+  other: "L / LoRa"
+
+ig_sx1262_fact_0_0:
+  other: "Plage d'accord RF"
+
+ig_sx1262_fact_1_0:
+  other: "Puissance RF"
+
+ig_sx1262_fact_2_0:
+  other: "Modulation"
+
+ig_sx1262_fact_3_0:
+  other: "Interface hôte"
+
+ig_sx1262_fact_3_1:
+  other: "SPI"
+
+ig_picoaprs_name:
+  other: "PicoAPRS V4"
+
+ig_picoaprs_family:
+  other: "A / APRS"
+
+ig_picoaprs_fact_0_0:
+  other: "Dimensions / masse"
+
+ig_picoaprs_fact_1_0:
+  other: "Bande d'émission UE"
+
+ig_picoaprs_fact_1_1:
+  other: "144-146 MHz"
+
+ig_picoaprs_fact_2_0:
+  other: "Puissance RF"
+
+ig_picoaprs_fact_3_0:
+  other: "Paquet / interface"
+
+ig_mm6108_name:
+  other: "Morse Micro MM6108"
+
+ig_mm6108_family:
+  other: "H / HaLow"
+
+ig_mm6108_fact_0_0:
+  other: "Radio"
+
+ig_mm6108_fact_0_1:
+  other: "Wi-Fi HaLow, IEEE 802.11ah"
+
+ig_mm6108_fact_1_0:
+  other: "Interface hôte"
+
+ig_mm6108_fact_2_0:
+  other: "Rôle en cours d'évaluation"
+
+ig_thalow_name:
+  other: "LILYGO T-HaLow / TX-AH"
+
+ig_thalow_family:
+  other: "H / HaLow"
+
+ig_thalow_fact_0_0:
+  other: "Radio"
+
+ig_thalow_fact_0_1:
+  other: "Wi-Fi HaLow, IEEE 802.11ah"
+
+ig_thalow_fact_1_0:
+  other: "Module radio"
+
+ig_thalow_fact_2_0:
+  other: "Intégration"
+
+ig_pluto_fact_0_0:
+  other: "Plage d'accord RF"
+
+ig_pluto_fact_1_0:
+  other: "Bande passante"
+
+ig_pluto_fact_2_0:
+  other: "Canaux RF"
+
+ig_pluto_fact_3_0:
+  other: "Interface hôte"
+
+ig_pluto_fact_3_1:
+  other: "USB 2.0; libiio"
+
+ig_rockblock_name:
+  other: "Ground Control RockBLOCK 9704"
+
+ig_rockblock_fact_0_0:
+  other: "Dimensions / masse, modèle SMA"
+
+ig_rockblock_fact_1_0:
+  other: "Service satellitaire"
+
+ig_rockblock_fact_1_1:
+  other: "Iridium Messaging Transport (IMT)"
+
+ig_rockblock_fact_2_0:
+  other: "Limite de charge utile IMT du fabricant"
+
+ig_rockblock_fact_3_0:
+  other: "Interface hôte"
