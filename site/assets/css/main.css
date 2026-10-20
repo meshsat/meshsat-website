@@ -4476,6 +4476,25 @@ main { flex: 1 0 auto; }
 @media (min-width: 769px) {
     .nav-links { align-items: center; }
 }
+/* Greek navigation needs the compact menu at tablet widths to keep the
+   longer labels clear of the logo and language/theme controls. */
+@media (min-width: 769px) and (max-width: 1099px) {
+    html[lang="el"] .menu-toggle { display: flex; }
+    html[lang="el"] .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--space-lg);
+        gap: var(--space-md);
+    }
+    html[lang="el"] .nav-links.active { display: flex; }
+}
 /* The page you are on, for menu links that are pages rather than anchors. */
 .nav-links a[aria-current="page"] { color: var(--color-primary); }
 
