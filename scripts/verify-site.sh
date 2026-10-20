@@ -39,7 +39,7 @@ echo "=== 3. house style: no em or en dashes anywhere in the built HTML ==="
 # /security/ and its four translations are standalone pages like the changelog
 # children, so they are named explicitly: the changelog tabs sat outside this
 # scan and carried em dashes for months before anyone noticed.
-for f in "$PUB/index.html" "$PUB"/nl/index.html "$PUB"/de/index.html "$PUB"/fr/index.html "$PUB"/el/index.html "$PUB"/changelog/index.html "$PUB"/changelog/*/index.html "$PUB"/security/index.html "$PUB"/??/security/index.html; do
+for f in "$PUB/index.html" "$PUB"/nl/index.html "$PUB"/de/index.html "$PUB"/fr/index.html "$PUB"/el/index.html "$PUB"/changelog/index.html "$PUB"/changelog/*/index.html "$PUB"/security/index.html "$PUB"/??/security/index.html "$PUB"/integrators/index.html; do
   [ -f "$f" ] || continue
   N=$( { grep -o -e '—' -e '–' "$f" || true; } | wc -l | tr -d ' ' )
   if [ "$N" -eq 0 ]; then pass "no em/en dashes in ${f#$PUB/}"
@@ -77,6 +77,19 @@ for t in bridge hub android ios fieldkit; do
   N=$(grep -o '<h2' "$f" | wc -l | tr -d ' ')
   if [ "$N" -ge 1 ]; then pass "changelog/$t: $N section heading(s)"; else fail "changelog/$t: no section headings"; fi
 done
+
+echo "=== 6. MSC-3 concept framing ==="
+IG="$PUB/integrators/index.html"
+if [ ! -f "$IG" ]; then
+  fail "integrators/index.html missing"
+else
+  for phrase in 'Research and development stage concept devices our team is testing.' 'FUTURE PLAN' 'Under evaluation' 'Amateur radio only.' 'No encryption.' 'Licensed per site.'; do
+    if grep -Fq "$phrase" "$IG"; then pass "integrators: $phrase"; else fail "integrators: missing $phrase"; fi
+  done
+  if grep -Eiq '\b(available|ordered|planned)\b' "$IG"; then fail "integrators: forbidden product-stage wording"; else pass "integrators: no forbidden product-stage wording"; fi
+  if grep -Eq '<link[^>]+hreflang=' "$IG"; then fail "integrators: English-only page declares hreflang"; else pass "integrators: no translated-page hreflang"; fi
+  if grep -Eq 'groundcontrol-logo|sidnfonds-woordmerk|colophon-sidn' "$IG"; then fail "integrators: support logos imply endorsement"; else pass "integrators: no support logos"; fi
+fi
 
 echo
 if [ "$FAIL" -eq 0 ]; then echo "verify-site: PASSED"; else echo "verify-site: FAILED"; fi
