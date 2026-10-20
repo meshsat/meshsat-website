@@ -444,4 +444,740 @@ hw_start:
   other: "Minimum setup, optional additions and build guides"
 
 msc3_integrators:
-  other: "MSC-3 for integrators (English)"
+  other: "MSC-3 for integrators"
+
+# MSC-3 integrators: UI, technical copy and public component specifications.
+ig_status_label:
+  other: "Development status"
+
+ig_notice:
+  other: "Research and development stage concept devices our team is testing."
+
+ig_notice_detail:
+  other: "All MSC-3 variants are concepts. Modules are under evaluation."
+
+ig_eyebrow:
+  other: "MSC-3 SERIES / INTEGRATION BRIEF"
+
+ig_lead:
+  other: "A pocket gateway concept for a team's radios, with an Iridium path for text, status and positions."
+
+ig_intro:
+  other: "One platform. One or two local radios. Iridium in every variant."
+
+ig_explore:
+  other: "Explore a configuration"
+
+ig_matrix_link:
+  other: "Read the capability matrix"
+
+ig_scope:
+  other: "R&D scope, not a validated device specification. No MSC-3 variant has been deployed to a real user. Not an emergency service."
+
+ig_arch_alt:
+  other: "Concept architecture. Team radios connect through one or two local radio modules to MeshSat Bridge on a Raspberry Pi Zero 2 W. The Bridge routes between local radios and a RockBLOCK 9704 Iridium IMT modem. Satellite messages reach an integrator's back end. A battery powers the gateway. All paths require validation."
+
+ig_team:
+  other: "Team radios"
+
+ig_direct:
+  other: "Direct mode / local link"
+
+ig_concept:
+  other: "MSC-3 / CONCEPT"
+
+ig_slot_one:
+  other: "Radio slot 01"
+
+ig_slot_two:
+  other: "Radio slot 02"
+
+ig_optional:
+  other: "optional"
+
+ig_routing:
+  other: "Routing / message queue / delivery record"
+
+ig_imt:
+  other: "Iridium IMT / always fitted"
+
+ig_rugged:
+  other: "Rugged case concept"
+
+ig_battery:
+  other: "Battery"
+
+ig_satellite_link:
+  other: "Iridium satellite link"
+
+ig_backend:
+  other: "Integrator's back end / self-hosted Hub"
+
+ig_arch_caption:
+  other: "Concept architecture. Bidirectional message paths; physical integration and interoperability remain under evaluation."
+
+ig_nav:
+  other: "Integration brief sections"
+
+ig_nav_platform:
+  other: "Platform"
+
+ig_nav_capabilities:
+  other: "Capabilities"
+
+ig_nav_configure:
+  other: "Configure"
+
+ig_nav_modules:
+  other: "Modules"
+
+ig_nav_cases:
+  other: "Use cases"
+
+ig_platform_eyebrow:
+  other: "01 / SHARED PLATFORM"
+
+ig_platform_title:
+  other: "One platform, different local radios"
+
+ig_platform_intro:
+  other: "The letters after MSC-3 identify the local radios fitted in the concept. Iridium is always included and does not need a letter."
+
+ig_platform_caption:
+  other: "MSC-3 platform concept and validation limits"
+
+ig_compute:
+  other: "Compute"
+
+ig_compute_value:
+  other: "Raspberry Pi Zero 2 W running MeshSat Bridge."
+
+ig_compute_limit:
+  other: "Processing load and peripheral integration need validation for each configuration."
+
+ig_satellite:
+  other: "Satellite"
+
+ig_satellite_value:
+  other: "Ground Control RockBLOCK 9704 using Iridium IMT."
+
+ig_satellite_limit:
+  other: "Message transport. No voice or broadband service over this path."
+
+ig_local_radios:
+  other: "Local radios"
+
+ig_local_value:
+  other: "One or two radio-module slots; T, D, L, A, H or G."
+
+ig_local_limit:
+  other: "Each pairing needs mechanical fit, antenna isolation and transmit coordination work."
+
+ig_enclosure:
+  other: "Enclosure / power"
+
+ig_enclosure_value:
+  other: "Rugged pocket case and battery."
+
+ig_enclosure_limit:
+  other: "Dimensions, mass, runtime, environmental rating and charging design are unverified."
+
+ig_display:
+  other: "Status display"
+
+ig_display_value:
+  other: "Small colour e-paper display compatible with the Raspberry Pi, under evaluation."
+
+ig_display_limit:
+  other: "Panel, driver, interface, power demand and mechanical integration require validation."
+
+ig_routing_label:
+  other: "Message routing"
+
+ig_routing_value:
+  other: "Local radio to local radio, and local radio to Iridium, in both directions."
+
+ig_routing_limit:
+  other: "Only supported message types can cross a route. Protocol conversion and encryption boundaries need validation."
+
+ig_integration_status:
+  other: "Integration status"
+
+ig_every_variant:
+  other: "Every MSC-3 variant."
+
+ig_integration_limit:
+  other: "Module specifications do not establish device certification, fleet approval or end-to-end performance."
+
+ig_capabilities_eyebrow:
+  other: "02 / CAPABILITY MATRIX"
+
+ig_capabilities_title:
+  other: "Local interfaces, shared satellite path"
+
+ig_capabilities_intro:
+  other: "Intended message paths for evaluation. Each single-radio concept below includes Iridium; a two-radio concept also bridges its local radios to each other."
+
+ig_scroll:
+  other: "On a small screen, scroll the table horizontally for the limits."
+
+ig_matrix_label:
+  other: "MSC-3 capability matrix"
+
+ig_matrix_caption:
+  other: "All variants: FUTURE PLAN. All listed modules: under evaluation."
+
+ig_variant:
+  other: "Variant"
+
+ig_radio:
+  other: "Local radio"
+
+ig_messages:
+  other: "Intended messages"
+
+ig_limits:
+  other: "Limits to resolve"
+
+ig_config_eyebrow:
+  other: "03 / RADIO CONFIGURATOR"
+
+ig_config_title:
+  other: "Explore a radio combination"
+
+ig_config_intro:
+  other: "Select one or two local radios. This describes an integration concept; it does not confirm that a pairing fits the case or works with a particular fleet."
+
+ig_slots:
+  other: "Local radio slots"
+
+ig_none:
+  other: "No second radio"
+
+ig_always:
+  other: "Always fitted"
+
+ig_module_evaluation:
+  other: "Module under evaluation"
+
+ig_nojs:
+  other: "Enable JavaScript to change the selection. The MSC-3TL example and the full capability matrix can be read without it."
+
+ig_result:
+  other: "RESULTING CONCEPT"
+
+ig_bridge_two:
+  other: "Intended bridge: {first} and {second} to each other, and both to Iridium. Return messages follow the same paths where message formats and routing policy permit."
+
+ig_bridge_one:
+  other: "Intended bridge: {first} to Iridium and back, where message formats and routing policy permit."
+
+ig_under_evaluation:
+  other: "Under evaluation"
+
+ig_iridium_limit:
+  other: "Iridium: module under evaluation. Requires an approved antenna, satellite service and a suitable view of the sky. Delivery time and MSC-3 performance are unverified."
+
+ig_contact:
+  other: "Talk to us"
+
+ig_mail_subject:
+  other: "integration discussion"
+
+ig_mail_body:
+  other: "Local radios: {radios}\nAlways fitted: Iridium / RockBLOCK 9704 (module under evaluation)\n\nRadio models and message types:\nDeployment country and site:\nIntegration endpoint:\n"
+
+ig_modules_eyebrow:
+  other: "04 / MODULES UNDER EVALUATION"
+
+ig_modules_title:
+  other: "Public specifications, explicit limits"
+
+ig_modules_intro:
+  other: "Figures below describe the makers' components, not a completed MSC-3. Source links accompany each candidate. Published radio capabilities do not establish permitted operating settings."
+
+ig_art_credit:
+  other: "Illustrations: original neutral artwork by MeshSat. Simplified forms, not to scale; not product photographs, PCB layouts or assembly drawings. Manufacturer names identify components only and imply no partnership or endorsement."
+
+ig_art_caption:
+  other: "MeshSat neutral illustration"
+
+ig_art_alt:
+  other: "original MeshSat neutral illustration, not a product photograph"
+
+ig_specs_caption:
+  other: "public component specifications"
+
+ig_cases_eyebrow:
+  other: "05 / USE CASES FOR EVALUATION"
+
+ig_cases_title:
+  other: "Integration scenarios"
+
+ig_cases_intro:
+  other: "These are research scenarios. No customer deployment, fleet compatibility or operational approval is claimed."
+
+ig_case_tl_title:
+  other: "TETRA teams and volunteer mesh"
+
+ig_case_tl_body:
+  other: "Evaluate selected text and position exchange between a professional radio team and Meshtastic volunteers, with Iridium for remote reporting. Routing policy controls what crosses the boundary."
+
+ig_case_td_title:
+  other: "Teams using different radio systems"
+
+ig_case_td_body:
+  other: "Evaluate message exchange between TETRA and DMR teams working in direct mode. Fleet-specific data formats, channel authorization and encryption handling must be established first."
+
+ig_case_dl_title:
+  other: "DMR teams and local sensors"
+
+ig_case_dl_body:
+  other: "Evaluate DMR text and supported location traffic alongside Meshtastic field reports. Test which message types can be translated and forwarded over the common satellite path."
+
+ig_contact_eyebrow:
+  other: "ENGINEERING DISCUSSION"
+
+ig_contact_title:
+  other: "Bring a radio and a use case."
+
+ig_contact_intro:
+  other: "Tell us the radio models, direct-mode configuration, message types, deployment country and integration endpoint you need to evaluate."
+
+ig_contact_note:
+  other: "Research and development concepts. Modules under evaluation."
+
+ig_details:
+  other: "Component specifications"
+
+ig_radio_key:
+  other: "Local radio designators"
+
+ig_render_caption:
+  other: "R&D concept render. Proposed enclosure, not validated hardware."
+
+ig_render_alt:
+  other: "MSC-3T enclosure concept with a small colour e-paper display, compact Iridium antenna and TETRA whip antenna"
+
+ig_exploded_alt:
+  other: "Exploded MSC-3T concept showing display, compute board, satellite modem, radio module and battery; mechanical fit is unverified"
+
+ig_radio_t_name:
+  other: "TETRA"
+
+ig_radio_t_data:
+  other: "SDS text, status and position reports"
+
+ig_radio_t_modules:
+  other: "Airbus TW1m; PMR-R & D BDM 31 3L"
+
+ig_radio_t_limit:
+  other: "Licensed TETRA channels. Direct-mode SDS, status and location interoperability need validation with the team's radios. BDM 31 3L direct mode is unconfirmed."
+
+ig_radio_d_name:
+  other: "DMR"
+
+ig_radio_d_data:
+  other: "Text; status and positions depend on the module and fleet"
+
+ig_radio_d_modules:
+  other: "Leonardo ECOS-D MT100-N; NiceRF DMR818S"
+
+ig_radio_d_limit:
+  other: "Licensed DMR channels. Text formats, location protocols and encryption vary by fleet. NiceRF's public command list does not document a location command. Cross-vendor data and encryption interoperability are unverified."
+
+ig_radio_l_name:
+  other: "LoRa / Meshtastic"
+
+ig_radio_l_data:
+  other: "Meshtastic text and position packets"
+
+ig_radio_l_modules:
+  other: "Semtech SX1262-based radio"
+
+ig_radio_l_limit:
+  other: "Regional band, transmit power and duty-cycle limits apply. A Meshtastic host and compatible firmware are required; the SX1262 chip alone does not run Meshtastic."
+
+ig_radio_a_name:
+  other: "APRS"
+
+ig_radio_a_data:
+  other: "Amateur-radio text, status and positions"
+
+ig_radio_a_modules:
+  other: "PicoAPRS V4"
+
+ig_radio_a_limit:
+  other: "Amateur radio only. A licensed operator is required. No encryption. Not for agency traffic; routes onto APRS must enforce this boundary."
+
+ig_radio_h_name:
+  other: "HaLow / 802.11ah"
+
+ig_radio_h_data:
+  other: "Selected application messages over a local IP link"
+
+ig_radio_h_modules:
+  other: "Morse Micro MM6108; LILYGO T-HaLow / TX-AH"
+
+ig_radio_h_limit:
+  other: "Regional band and power limits apply. Requires compatible HaLow peers. The satellite path carries selected messages, not a broadband IP connection. Board choice and host integration are under evaluation."
+
+ig_radio_g_name:
+  other: "2G cell"
+
+ig_radio_g_data:
+  other: "SMS from phones registered to a local GSM cell"
+
+ig_radio_g_modules:
+  other: "PlutoSDR with Osmocom"
+
+ig_radio_g_limit:
+  other: "Licensed per site. Each deployment needs its own radio authorization. SIM provisioning, spectrum, timing, RF filtering and compute capacity need validation. This is a local cell, not public-network roaming."
+
+ig_tw1m_name:
+  other: "Airbus TW1m"
+
+ig_tw1m_family:
+  other: "T / TETRA"
+
+ig_tw1m_note:
+  other: "Public brochure dimensions shown. Location handling and fleet interoperability require bench validation."
+
+ig_tw1m_sourceLabel:
+  other: "Airbus public datasheet, 03/2018 (Senop copy)"
+
+ig_tw1m_fact_0_0:
+  other: "Size / mass"
+
+ig_tw1m_fact_0_1:
+  other: "84 × 67 × 24.7 mm / 66 g"
+
+ig_tw1m_fact_1_0:
+  other: "Bands"
+
+ig_tw1m_fact_1_1:
+  other: "380-400 MHz; 406-430 MHz (RC-47)"
+
+ig_tw1m_fact_2_0:
+  other: "Data interface"
+
+ig_tw1m_fact_2_1:
+  other: "RS-232 or USB; AT commands"
+
+ig_tw1m_fact_3_0:
+  other: "Published functions"
+
+ig_tw1m_fact_3_1:
+  other: "DMO SDS and status; GPS"
+
+ig_bdm31_name:
+  other: "PMR-R & D BDM 31 3L"
+
+ig_bdm31_family:
+  other: "T / TETRA"
+
+ig_bdm31_note:
+  other: "The public datasheet lists TMO only. DMO support, required for the team-radio concept, is unconfirmed."
+
+ig_bdm31_sourceLabel:
+  other: "PMR-R & D public datasheet, V1.1"
+
+ig_bdm31_fact_0_0:
+  other: "Size / mass"
+
+ig_bdm31_fact_0_1:
+  other: "86 × 43 × 8 mm / 35 g"
+
+ig_bdm31_fact_1_0:
+  other: "RF output"
+
+ig_bdm31_fact_1_1:
+  other: "1.8 W, class 3L"
+
+ig_bdm31_fact_2_0:
+  other: "Supply"
+
+ig_bdm31_fact_2_1:
+  other: "3.7 V; 3.0 A during a TX burst"
+
+ig_bdm31_fact_3_0:
+  other: "Data interface"
+
+ig_bdm31_fact_3_1:
+  other: "PEI (ETSI EN 300 392-5); serial / RS-232"
+
+ig_mt100_name:
+  other: "Leonardo ECOS-D MT100-N"
+
+ig_mt100_family:
+  other: "D / DMR"
+
+ig_mt100_note:
+  other: "The datasheet lists DMRA AES-128/256 and ARC4. This does not establish interoperability with a fleet's text, location or encryption implementation."
+
+ig_mt100_sourceLabel:
+  other: "Leonardo public datasheet, mm08909, 09/2020"
+
+ig_mt100_fact_0_0:
+  other: "Size / mass"
+
+ig_mt100_fact_0_1:
+  other: "48 × 64 × 10.4 mm / 50 g"
+
+ig_mt100_fact_1_0:
+  other: "Bands / RF output"
+
+ig_mt100_fact_1_1:
+  other: "136-174 MHz / 4.7 W; 400-470 MHz / 4 W"
+
+ig_mt100_fact_2_0:
+  other: "Supply"
+
+ig_mt100_fact_2_1:
+  other: "7.4 V; up to 2 A"
+
+ig_mt100_fact_3_0:
+  other: "Data interface"
+
+ig_mt100_fact_3_1:
+  other: "3.3 V UART; AT commands; IP over DMR"
+
+ig_dmr818_name:
+  other: "NiceRF DMR818S"
+
+ig_dmr818_family:
+  other: "D / DMR"
+
+ig_dmr818_note:
+  other: "Text commands are documented; a location command is not. Encryption and text compatibility with other radios remain unverified."
+
+ig_dmr818_sourceLabel:
+  other: "NiceRF public datasheet, V1.8, 06/2026"
+
+ig_dmr818_fact_0_0:
+  other: "Band options"
+
+ig_dmr818_fact_0_1:
+  other: "134-174, 320-400 or 400-470 MHz"
+
+ig_dmr818_fact_1_0:
+  other: "RF output"
+
+ig_dmr818_fact_1_1:
+  other: "2 W; datasheet specifies 1 W for CE/FCC"
+
+ig_dmr818_fact_2_0:
+  other: "Supply"
+
+ig_dmr818_fact_2_1:
+  other: "3.3-4.5 V"
+
+ig_dmr818_fact_3_0:
+  other: "Data interface"
+
+ig_dmr818_fact_3_1:
+  other: "57,600 baud UART; binary commands"
+
+ig_sx1262_name:
+  other: "Semtech SX1262"
+
+ig_sx1262_family:
+  other: "L / LoRa"
+
+ig_sx1262_note:
+  other: "A radio module, antenna and Meshtastic host are under evaluation. Chip limits are not permission to transmit at those settings."
+
+ig_sx1262_sourceLabel:
+  other: "Semtech public SX126x product specifications"
+
+ig_sx1262_fact_0_0:
+  other: "RF tuning range"
+
+ig_sx1262_fact_0_1:
+  other: "150-960 MHz (chip capability)"
+
+ig_sx1262_fact_1_0:
+  other: "RF output"
+
+ig_sx1262_fact_1_1:
+  other: "Up to +22 dBm (chip capability)"
+
+ig_sx1262_fact_2_0:
+  other: "Modulation"
+
+ig_sx1262_fact_2_1:
+  other: "LoRa and (G)FSK"
+
+ig_sx1262_fact_3_0:
+  other: "Host interface"
+
+ig_sx1262_fact_3_1:
+  other: "SPI"
+
+ig_picoaprs_name:
+  other: "PicoAPRS V4"
+
+ig_picoaprs_family:
+  other: "A / APRS"
+
+ig_picoaprs_note:
+  other: "VHF model. Amateur radio only, licensed operator, no encryption. Its own battery is separate from the MSC-3 battery concept."
+
+ig_picoaprs_sourceLabel:
+  other: "Maker's public V4 manual, technical specifications, 20/11/2023"
+
+ig_picoaprs_fact_0_0:
+  other: "Size / mass"
+
+ig_picoaprs_fact_0_1:
+  other: "Approx. 35 × 67 × 25 mm / 60 g"
+
+ig_picoaprs_fact_1_0:
+  other: "EU transmit band"
+
+ig_picoaprs_fact_1_1:
+  other: "144-146 MHz"
+
+ig_picoaprs_fact_2_0:
+  other: "RF output"
+
+ig_picoaprs_fact_2_1:
+  other: "Maximum 1 W"
+
+ig_picoaprs_fact_3_0:
+  other: "Packet / interface"
+
+ig_picoaprs_fact_3_1:
+  other: "AX.25 at 1,200 baud; USB KISS TNC"
+
+ig_mm6108_name:
+  other: "Morse Micro MM6108"
+
+ig_mm6108_family:
+  other: "H / HaLow"
+
+ig_mm6108_note:
+  other: "A Morse Micro module and carrier remain under evaluation. The LILYGO T-HaLow board below uses TX-AH; it is a separate candidate."
+
+ig_mm6108_sourceLabel:
+  other: "Morse Micro public MM6108 product brief"
+
+ig_mm6108_fact_0_0:
+  other: "Radio"
+
+ig_mm6108_fact_0_1:
+  other: "Wi-Fi HaLow, IEEE 802.11ah"
+
+ig_mm6108_fact_1_0:
+  other: "Host interface"
+
+ig_mm6108_fact_1_1:
+  other: "SDIO or SPI"
+
+ig_mm6108_fact_2_0:
+  other: "Role under evaluation"
+
+ig_mm6108_fact_2_1:
+  other: "Local IP access for message transport"
+
+ig_thalow_name:
+  other: "LILYGO T-HaLow / TX-AH"
+
+ig_thalow_family:
+  other: "H / HaLow"
+
+ig_thalow_note:
+  other: "Board revision, regional RF variant and host interface need confirmation. No Morse Micro chipset is attributed to this board."
+
+ig_thalow_sourceLabel:
+  other: "LILYGO public hardware documentation and module specifications"
+
+ig_thalow_fact_0_0:
+  other: "Radio"
+
+ig_thalow_fact_0_1:
+  other: "Wi-Fi HaLow, IEEE 802.11ah"
+
+ig_thalow_fact_1_0:
+  other: "Radio module"
+
+ig_thalow_fact_1_1:
+  other: "Taixin TX-AH, per LILYGO documentation"
+
+ig_thalow_fact_2_0:
+  other: "Integration"
+
+ig_thalow_fact_2_1:
+  other: "Ethernet and AT-command control"
+
+ig_pluto_name:
+  other: "PlutoSDR with Osmocom"
+
+ig_pluto_family:
+  other: "G / 2G cell"
+
+ig_pluto_note:
+  other: "Analog Devices ADALM-PLUTO specifications. GSM operation with Osmocom, RF filtering and processing on the platform require validation. Licensed per site."
+
+ig_pluto_sourceLabel:
+  other: "Analog Devices public ADALM-PLUTO technical specifications"
+
+ig_pluto_fact_0_0:
+  other: "RF tuning range"
+
+ig_pluto_fact_0_1:
+  other: "325 MHz to 3.8 GHz (SDR capability)"
+
+ig_pluto_fact_1_0:
+  other: "Bandwidth"
+
+ig_pluto_fact_1_1:
+  other: "Up to 20 MHz (SDR capability)"
+
+ig_pluto_fact_2_0:
+  other: "RF channels"
+
+ig_pluto_fact_2_1:
+  other: "One transmitter; one receiver"
+
+ig_pluto_fact_3_0:
+  other: "Host interface"
+
+ig_pluto_fact_3_1:
+  other: "USB 2.0; libiio"
+
+ig_rockblock_name:
+  other: "Ground Control RockBLOCK 9704"
+
+ig_rockblock_family:
+  other: "Iridium / all variants"
+
+ig_rockblock_note:
+  other: "Always fitted in the MSC-3 concept; module integration is under evaluation. Requires an approved antenna and satellite service. The payload limit is a modem specification, not a validated MSC-3 payload size."
+
+ig_rockblock_sourceLabel:
+  other: "Ground Control public RockBLOCK 9704 specifications"
+
+ig_rockblock_fact_0_0:
+  other: "Size / mass, SMA model"
+
+ig_rockblock_fact_0_1:
+  other: "48 × 52 × 16 mm / less than 35 g, excluding antenna"
+
+ig_rockblock_fact_1_0:
+  other: "Satellite service"
+
+ig_rockblock_fact_1_1:
+  other: "Iridium Messaging Transport (IMT)"
+
+ig_rockblock_fact_2_0:
+  other: "Maker's IMT payload limit"
+
+ig_rockblock_fact_2_1:
+  other: "Up to 100,000 bytes per message"
+
+ig_rockblock_fact_3_0:
+  other: "Host interface"
+
+ig_rockblock_fact_3_1:
+  other: "TTL UART or USB-C serial"

@@ -444,4 +444,740 @@ hw_start:
   other: "Minimale opstelling, uitbreidingen en bouwhandleidingen"
 
 msc3_integrators:
-  other: "MSC-3 voor integrators (Engels)"
+  other: "MSC-3 voor integrators"
+
+# MSC-3 integrators: UI, technical copy and public component specifications.
+ig_status_label:
+  other: "Ontwikkelingsstatus"
+
+ig_notice:
+  other: "Conceptapparaten in de onderzoeks- en ontwikkelingsfase die ons team test."
+
+ig_notice_detail:
+  other: "Alle MSC-3-varianten zijn concepten. De modules worden geëvalueerd."
+
+ig_eyebrow:
+  other: "MSC-3-SERIE / INTEGRATIEOVERZICHT"
+
+ig_lead:
+  other: "Een concept voor een zakformaat gateway voor de radio's van een team, met Iridium voor tekst, status en posities."
+
+ig_intro:
+  other: "Eén platform. Eén of twee lokale radio's. Iridium in elke variant."
+
+ig_explore:
+  other: "Verken een configuratie"
+
+ig_matrix_link:
+  other: "Bekijk de mogelijkhedenmatrix"
+
+ig_scope:
+  other: "Onderzoek en ontwikkeling, geen gevalideerde apparaatspecificatie. Geen enkele MSC-3-variant is ooit bij een echte gebruiker ingezet. Geen noodhulpdienst en geen vervanging voor 112."
+
+ig_arch_alt:
+  other: "Conceptarchitectuur. Teamradio's verbinden via één of twee lokale radiomodules met MeshSat Bridge op een Raspberry Pi Zero 2 W. De Bridge routeert tussen de lokale radio's en een RockBLOCK 9704-modem voor Iridium IMT. Satellietberichten bereiken de backend van de integrator. Een accu voedt de gateway. Alle routes vereisen validatie."
+
+ig_team:
+  other: "Teamradio's"
+
+ig_direct:
+  other: "Directe modus / lokale verbinding"
+
+ig_concept:
+  other: "MSC-3 / CONCEPT"
+
+ig_slot_one:
+  other: "Radioslot 01"
+
+ig_slot_two:
+  other: "Radioslot 02"
+
+ig_optional:
+  other: "optioneel"
+
+ig_routing:
+  other: "Routering / berichtenwachtrij / afleverregistratie"
+
+ig_imt:
+  other: "Iridium IMT / altijd ingebouwd"
+
+ig_rugged:
+  other: "Concept voor robuuste behuizing"
+
+ig_battery:
+  other: "Accu"
+
+ig_satellite_link:
+  other: "Iridium-satellietverbinding"
+
+ig_backend:
+  other: "Backend van de integrator / zelfgehoste Hub"
+
+ig_arch_caption:
+  other: "Conceptarchitectuur. Berichtenverkeer in beide richtingen; fysieke integratie en interoperabiliteit worden nog geëvalueerd."
+
+ig_nav:
+  other: "Onderdelen van het integratieoverzicht"
+
+ig_nav_platform:
+  other: "Platform"
+
+ig_nav_capabilities:
+  other: "Mogelijkheden"
+
+ig_nav_configure:
+  other: "Configureren"
+
+ig_nav_modules:
+  other: "Modules"
+
+ig_nav_cases:
+  other: "Toepassingen"
+
+ig_platform_eyebrow:
+  other: "01 / GEMEENSCHAPPELIJK PLATFORM"
+
+ig_platform_title:
+  other: "Eén platform, verschillende lokale radio's"
+
+ig_platform_intro:
+  other: "De letters na MSC-3 geven aan welke lokale radio's in het concept zijn ingebouwd. Iridium zit er altijd in en heeft geen eigen letter nodig."
+
+ig_platform_caption:
+  other: "MSC-3-platformconcept en validatiegrenzen"
+
+ig_compute:
+  other: "Computer"
+
+ig_compute_value:
+  other: "Raspberry Pi Zero 2 W met MeshSat Bridge."
+
+ig_compute_limit:
+  other: "De verwerkingsbelasting en integratie van randapparatuur moeten per configuratie worden gevalideerd."
+
+ig_satellite:
+  other: "Satelliet"
+
+ig_satellite_value:
+  other: "Ground Control RockBLOCK 9704 met Iridium IMT."
+
+ig_satellite_limit:
+  other: "Berichtentransport. Geen spraak- of breedbanddienst via deze route."
+
+ig_local_radios:
+  other: "Lokale radio's"
+
+ig_local_value:
+  other: "Eén of twee slots voor radiomodules; T, D, L, A, H of G."
+
+ig_local_limit:
+  other: "Elke combinatie vereist onderzoek naar mechanische inbouw, antenne-isolatie en zendcoördinatie."
+
+ig_enclosure:
+  other: "Behuizing / voeding"
+
+ig_enclosure_value:
+  other: "Robuuste zakformaat behuizing en accu."
+
+ig_enclosure_limit:
+  other: "Afmetingen, massa, gebruiksduur, beschermingsgraad en laadontwerp zijn niet geverifieerd."
+
+ig_display:
+  other: "Statusscherm"
+
+ig_display_value:
+  other: "Klein kleuren-e-paperscherm dat compatibel is met de Raspberry Pi, in evaluatie."
+
+ig_display_limit:
+  other: "Paneel, driver, interface, energieverbruik en mechanische integratie moeten worden gevalideerd."
+
+ig_routing_label:
+  other: "Berichtroutering"
+
+ig_routing_value:
+  other: "Van lokale radio naar lokale radio en van lokale radio naar Iridium, in beide richtingen."
+
+ig_routing_limit:
+  other: "Alleen ondersteunde berichttypen kunnen een route passeren. Protocolconversie en versleutelingsgrenzen moeten worden gevalideerd."
+
+ig_integration_status:
+  other: "Integratiestatus"
+
+ig_every_variant:
+  other: "Elke MSC-3-variant."
+
+ig_integration_limit:
+  other: "Modulespecificaties bewijzen geen apparaatcertificering, goedkeuring voor een radiovloot of prestaties van de volledige verbinding."
+
+ig_capabilities_eyebrow:
+  other: "02 / MOGELIJKHEDENMATRIX"
+
+ig_capabilities_title:
+  other: "Lokale interfaces, gedeelde satellietroute"
+
+ig_capabilities_intro:
+  other: "Beoogde berichtroutes voor evaluatie. Elk concept met één radio bevat Iridium; een concept met twee radio's verbindt ook de lokale radio's met elkaar."
+
+ig_scroll:
+  other: "Scroll de tabel op een klein scherm horizontaal om de beperkingen te lezen."
+
+ig_matrix_label:
+  other: "MSC-3-mogelijkhedenmatrix"
+
+ig_matrix_caption:
+  other: "Alle varianten: FUTURE PLAN. Alle genoemde modules: in evaluatie."
+
+ig_variant:
+  other: "Variant"
+
+ig_radio:
+  other: "Lokale radio"
+
+ig_messages:
+  other: "Beoogde berichten"
+
+ig_limits:
+  other: "Te onderzoeken beperkingen"
+
+ig_config_eyebrow:
+  other: "03 / RADIOCONFIGURATOR"
+
+ig_config_title:
+  other: "Verken een radiocombinatie"
+
+ig_config_intro:
+  other: "Kies één of twee lokale radio's. Dit beschrijft een integratieconcept; het bevestigt niet dat een combinatie in de behuizing past of met een bepaalde radiovloot werkt."
+
+ig_slots:
+  other: "Slots voor lokale radio's"
+
+ig_none:
+  other: "Geen tweede radio"
+
+ig_always:
+  other: "Altijd ingebouwd"
+
+ig_module_evaluation:
+  other: "Module in evaluatie"
+
+ig_nojs:
+  other: "Schakel JavaScript in om de selectie te wijzigen. Het MSC-3TL-voorbeeld en de volledige mogelijkhedenmatrix zijn ook zonder JavaScript leesbaar."
+
+ig_result:
+  other: "RESULTEREND CONCEPT"
+
+ig_bridge_two:
+  other: "Beoogde verbinding: {first} en {second} met elkaar, en beide met Iridium. Retourberichten volgen dezelfde routes waar berichtformaten en routeringsbeleid dit toestaan."
+
+ig_bridge_one:
+  other: "Beoogde verbinding: {first} met Iridium en terug, waar berichtformaten en routeringsbeleid dit toestaan."
+
+ig_under_evaluation:
+  other: "In evaluatie"
+
+ig_iridium_limit:
+  other: "Iridium: module in evaluatie. Vereist een goedgekeurde antenne, satellietdienst en voldoende vrij zicht op de hemel. Aflevertijd en MSC-3-prestaties zijn niet geverifieerd."
+
+ig_contact:
+  other: "Neem contact op"
+
+ig_mail_subject:
+  other: "overleg over integratie"
+
+ig_mail_body:
+  other: "Lokale radio's: {radios}\nAltijd ingebouwd: Iridium / RockBLOCK 9704 (module in evaluatie)\n\nRadiomodellen en berichttypen:\nLand en locatie van inzet:\nIntegratie-eindpunt:\n"
+
+ig_modules_eyebrow:
+  other: "04 / MODULES IN EVALUATIE"
+
+ig_modules_title:
+  other: "Openbare specificaties, expliciete grenzen"
+
+ig_modules_intro:
+  other: "De onderstaande gegevens beschrijven componenten van de fabrikanten, geen voltooide MSC-3. Elke kandidaat heeft een bronverwijzing. Gepubliceerde radiomogelijkheden bepalen niet welke instellingen wettelijk zijn toegestaan."
+
+ig_art_credit:
+  other: "Illustraties: oorspronkelijk neutraal beeldwerk van MeshSat. Vereenvoudigde vormen, niet op schaal; geen productfoto's, printplaatontwerpen of assemblagetekeningen. Fabrikantnamen dienen uitsluitend om componenten te identificeren en impliceren geen samenwerking of goedkeuring."
+
+ig_art_caption:
+  other: "Neutrale MeshSat-illustratie"
+
+ig_art_alt:
+  other: "oorspronkelijke neutrale MeshSat-illustratie, geen productfoto"
+
+ig_specs_caption:
+  other: "openbare componentspecificaties"
+
+ig_cases_eyebrow:
+  other: "05 / TOEPASSINGEN VOOR EVALUATIE"
+
+ig_cases_title:
+  other: "Integratiescenario's"
+
+ig_cases_intro:
+  other: "Dit zijn onderzoeksscenario's. Er wordt geen inzet bij klanten, compatibiliteit met een radiovloot of operationele goedkeuring geclaimd."
+
+ig_case_tl_title:
+  other: "TETRA-teams en een vrijwilligersmesh"
+
+ig_case_tl_body:
+  other: "Evalueer de uitwisseling van geselecteerde tekst- en positiegegevens tussen een professioneel radioteam en vrijwilligers met Meshtastic, met Iridium voor rapportage op afstand. Routeringsbeleid bepaalt wat de grens mag passeren."
+
+ig_case_td_title:
+  other: "Teams met verschillende radiosystemen"
+
+ig_case_td_body:
+  other: "Evalueer berichtenuitwisseling tussen TETRA- en DMR-teams in directe modus. Vlootspecifieke gegevensformaten, kanaaltoestemming en de omgang met versleuteling moeten eerst worden vastgesteld."
+
+ig_case_dl_title:
+  other: "DMR-teams en lokale sensoren"
+
+ig_case_dl_body:
+  other: "Evalueer DMR-tekst en ondersteunde locatiegegevens naast veldrapportages via Meshtastic. Test welke berichttypen kunnen worden omgezet en doorgestuurd via de gedeelde satellietroute."
+
+ig_contact_eyebrow:
+  other: "TECHNISCH OVERLEG"
+
+ig_contact_title:
+  other: "Bespreek uw radio en toepassing."
+
+ig_contact_intro:
+  other: "Vertel ons welke radiomodellen, configuratie voor directe modus, berichttypen, land van inzet en integratie-eindpunt u wilt evalueren."
+
+ig_contact_note:
+  other: "Concepten in onderzoek en ontwikkeling. Modules in evaluatie."
+
+ig_details:
+  other: "Componentspecificaties"
+
+ig_radio_key:
+  other: "Letters voor lokale radio's"
+
+ig_render_caption:
+  other: "Conceptvisualisatie voor onderzoek en ontwikkeling. Voorgestelde behuizing, geen gevalideerde hardware."
+
+ig_render_alt:
+  other: "MSC-3T-behuizingsconcept met een klein kleuren-e-paperscherm, compacte Iridium-antenne en TETRA-sprietantenne"
+
+ig_exploded_alt:
+  other: "Explosietekening van het MSC-3T-concept met scherm, computer, satellietmodem, radiomodule en accu; mechanische inbouw is niet geverifieerd"
+
+ig_radio_t_data:
+  other: "SDS-tekst, status- en positierapportages"
+
+ig_radio_t_limit:
+  other: "Vergunde TETRA-kanalen. Interoperabiliteit van SDS, status en locatie in directe modus moet met de teamradio's worden gevalideerd. Directe modus op de BDM 31 3L is niet bevestigd."
+
+ig_radio_d_data:
+  other: "Tekst; status en posities zijn afhankelijk van module en radiovloot"
+
+ig_radio_d_limit:
+  other: "Vergunde DMR-kanalen. Tekstformaten, locatieprotocollen en versleuteling verschillen per radiovloot. De openbare commandolijst van NiceRF documenteert geen locatiecommando. Gegevensuitwisseling en versleuteling tussen fabrikanten zijn niet geverifieerd."
+
+ig_radio_l_data:
+  other: "Meshtastic-tekst- en positiepakketten"
+
+ig_radio_l_modules:
+  other: "Radio op basis van Semtech SX1262"
+
+ig_radio_l_limit:
+  other: "Regionale beperkingen voor frequentieband, zendvermogen en dutycycle gelden. Een Meshtastic-host en compatibele firmware zijn vereist; de SX1262-chip alleen draait geen Meshtastic."
+
+ig_radio_a_data:
+  other: "Tekst, status en posities voor amateurradio"
+
+ig_radio_a_limit:
+  other: "Uitsluitend amateurradio. Een bevoegde zendamateur is vereist. Geen versleuteling. Niet voor verkeer van overheidsdiensten; routes naar APRS moeten deze grens afdwingen."
+
+ig_radio_h_data:
+  other: "Geselecteerde applicatieberichten via een lokale IP-verbinding"
+
+ig_radio_h_limit:
+  other: "Regionale band- en vermogensgrenzen gelden. Vereist compatibele HaLow-apparaten. De satellietroute vervoert geselecteerde berichten, geen breedband-IP-verbinding. Bordkeuze en hostintegratie worden geëvalueerd."
+
+ig_radio_g_name:
+  other: "2G-cel"
+
+ig_radio_g_data:
+  other: "SMS van telefoons die bij een lokale GSM-cel zijn aangemeld"
+
+ig_radio_g_modules:
+  other: "PlutoSDR met Osmocom"
+
+ig_radio_g_limit:
+  other: "Vergunning per locatie. Elke inzet vereist een eigen zendmachtiging. SIM-inrichting, spectrum, timing, RF-filtering en rekencapaciteit moeten worden gevalideerd. Dit is een lokale cel, geen roaming op openbare netwerken."
+
+ig_tw1m_note:
+  other: "Afmetingen uit de openbare brochure. Locatieverwerking en interoperabiliteit met de radiovloot vereisen validatie op de testbank."
+
+ig_tw1m_sourceLabel:
+  other: "Openbaar Airbus-datablad, 03/2018 (kopie van Senop)"
+
+ig_tw1m_fact_2_1:
+  other: "RS-232 of USB; AT-commando's"
+
+ig_tw1m_fact_3_1:
+  other: "DMO SDS en status; GPS"
+
+ig_bdm31_note:
+  other: "Het openbare datablad noemt alleen TMO. DMO-ondersteuning, vereist voor het teamradioconcept, is niet bevestigd."
+
+ig_bdm31_sourceLabel:
+  other: "Openbaar PMR-R & D-datablad, V1.1"
+
+ig_bdm31_fact_1_1:
+  other: "1.8 W, klasse 3L"
+
+ig_bdm31_fact_2_1:
+  other: "3.7 V; 3.0 A tijdens een zendpuls"
+
+ig_bdm31_fact_3_1:
+  other: "PEI (ETSI EN 300 392-5); serieel / RS-232"
+
+ig_mt100_note:
+  other: "Het datablad noemt DMRA AES-128/256 en ARC4. Dit bewijst geen interoperabiliteit met de tekst-, locatie- of versleutelingsimplementatie van een radiovloot."
+
+ig_mt100_sourceLabel:
+  other: "Openbaar Leonardo-datablad, mm08909, 09/2020"
+
+ig_mt100_fact_2_1:
+  other: "7.4 V; tot 2 A"
+
+ig_mt100_fact_3_1:
+  other: "3.3 V UART; AT-commando's; IP via DMR"
+
+ig_dmr818_note:
+  other: "Tekstcommando's zijn gedocumenteerd, een locatiecommando niet. Compatibiliteit van versleuteling en tekst met andere radio's is nog niet geverifieerd."
+
+ig_dmr818_sourceLabel:
+  other: "Openbaar NiceRF-datablad, V1.8, 06/2026"
+
+ig_dmr818_fact_0_1:
+  other: "134-174, 320-400 of 400-470 MHz"
+
+ig_dmr818_fact_1_1:
+  other: "2 W; datablad specificeert 1 W voor CE/FCC"
+
+ig_dmr818_fact_3_1:
+  other: "57.600 baud UART; binaire commando's"
+
+ig_sx1262_note:
+  other: "Een radiomodule, antenne en Meshtastic-host worden geëvalueerd. Chipgrenzen geven geen toestemming om met die instellingen te zenden."
+
+ig_sx1262_sourceLabel:
+  other: "Openbare Semtech SX126x-productspecificaties"
+
+ig_sx1262_fact_0_1:
+  other: "150-960 MHz (chipmogelijkheden)"
+
+ig_sx1262_fact_1_1:
+  other: "Tot +22 dBm (chipmogelijkheden)"
+
+ig_sx1262_fact_2_1:
+  other: "LoRa en (G)FSK"
+
+ig_picoaprs_note:
+  other: "VHF-model. Uitsluitend amateurradio, bevoegde zendamateur, geen versleuteling. De eigen accu staat los van het MSC-3-accuconcept."
+
+ig_picoaprs_sourceLabel:
+  other: "Openbare V4-handleiding van de maker, technische specificaties, 20/11/2023"
+
+ig_picoaprs_fact_0_1:
+  other: "Circa 35 × 67 × 25 mm / 60 g"
+
+ig_picoaprs_fact_2_1:
+  other: "Maximaal 1 W"
+
+ig_picoaprs_fact_3_1:
+  other: "AX.25 op 1.200 baud; USB KISS TNC"
+
+ig_mm6108_note:
+  other: "Een Morse Micro-module en draagprint worden nog geëvalueerd. Het LILYGO T-HaLow-bord hieronder gebruikt TX-AH; het is een afzonderlijke kandidaat."
+
+ig_mm6108_sourceLabel:
+  other: "Openbare Morse Micro MM6108-productbeschrijving"
+
+ig_mm6108_fact_1_1:
+  other: "SDIO of SPI"
+
+ig_mm6108_fact_2_1:
+  other: "Lokale IP-toegang voor berichtentransport"
+
+ig_thalow_note:
+  other: "Bordrevisie, regionale RF-variant en hostinterface moeten worden bevestigd. Aan dit bord wordt geen Morse Micro-chipset toegeschreven."
+
+ig_thalow_sourceLabel:
+  other: "Openbare LILYGO-hardwaredocumentatie en modulespecificaties"
+
+ig_thalow_fact_1_1:
+  other: "Taixin TX-AH, volgens LILYGO-documentatie"
+
+ig_thalow_fact_2_1:
+  other: "Ethernet en aansturing met AT-commando's"
+
+ig_pluto_name:
+  other: "PlutoSDR met Osmocom"
+
+ig_pluto_family:
+  other: "G / 2G-cel"
+
+ig_pluto_note:
+  other: "Specificaties van de Analog Devices ADALM-PLUTO. GSM-gebruik met Osmocom, RF-filtering en verwerking op het platform vereisen validatie. Vergunning per locatie."
+
+ig_pluto_sourceLabel:
+  other: "Openbare technische specificaties van de Analog Devices ADALM-PLUTO"
+
+ig_pluto_fact_0_1:
+  other: "325 MHz tot 3.8 GHz (SDR-mogelijkheden)"
+
+ig_pluto_fact_1_1:
+  other: "Tot 20 MHz (SDR-mogelijkheden)"
+
+ig_pluto_fact_2_1:
+  other: "Eén zender; één ontvanger"
+
+ig_rockblock_family:
+  other: "Iridium / alle varianten"
+
+ig_rockblock_note:
+  other: "Altijd ingebouwd in het MSC-3-concept; module-integratie wordt geëvalueerd. Vereist een goedgekeurde antenne en satellietdienst. De payloadgrens is een modemspecificatie, geen gevalideerde MSC-3-berichtgrootte."
+
+ig_rockblock_sourceLabel:
+  other: "Openbare Ground Control RockBLOCK 9704-specificaties"
+
+ig_rockblock_fact_0_1:
+  other: "48 × 52 × 16 mm / minder dan 35 g, exclusief antenne"
+
+ig_rockblock_fact_2_1:
+  other: "Tot 100.000 bytes per bericht"
+
+ig_rockblock_fact_3_1:
+  other: "TTL UART of USB-C serieel"
+
+ig_radio_t_name:
+  other: "TETRA"
+
+ig_radio_t_modules:
+  other: "Airbus TW1m; PMR-R & D BDM 31 3L"
+
+ig_radio_d_name:
+  other: "DMR"
+
+ig_radio_d_modules:
+  other: "Leonardo ECOS-D MT100-N; NiceRF DMR818S"
+
+ig_radio_l_name:
+  other: "LoRa / Meshtastic"
+
+ig_radio_a_name:
+  other: "APRS"
+
+ig_radio_a_modules:
+  other: "PicoAPRS V4"
+
+ig_radio_h_name:
+  other: "HaLow / 802.11ah"
+
+ig_radio_h_modules:
+  other: "Morse Micro MM6108; LILYGO T-HaLow / TX-AH"
+
+ig_tw1m_name:
+  other: "Airbus TW1m"
+
+ig_tw1m_family:
+  other: "T / TETRA"
+
+ig_tw1m_fact_0_0:
+  other: "Afmetingen / massa"
+
+ig_tw1m_fact_0_1:
+  other: "84 × 67 × 24.7 mm / 66 g"
+
+ig_tw1m_fact_1_0:
+  other: "Banden"
+
+ig_tw1m_fact_1_1:
+  other: "380-400 MHz; 406-430 MHz (RC-47)"
+
+ig_tw1m_fact_2_0:
+  other: "Gegevensinterface"
+
+ig_tw1m_fact_3_0:
+  other: "Gepubliceerde functies"
+
+ig_bdm31_name:
+  other: "PMR-R & D BDM 31 3L"
+
+ig_bdm31_family:
+  other: "T / TETRA"
+
+ig_bdm31_fact_0_0:
+  other: "Afmetingen / massa"
+
+ig_bdm31_fact_0_1:
+  other: "86 × 43 × 8 mm / 35 g"
+
+ig_bdm31_fact_1_0:
+  other: "RF-zendvermogen"
+
+ig_bdm31_fact_2_0:
+  other: "Voeding"
+
+ig_bdm31_fact_3_0:
+  other: "Gegevensinterface"
+
+ig_mt100_name:
+  other: "Leonardo ECOS-D MT100-N"
+
+ig_mt100_family:
+  other: "D / DMR"
+
+ig_mt100_fact_0_0:
+  other: "Afmetingen / massa"
+
+ig_mt100_fact_0_1:
+  other: "48 × 64 × 10.4 mm / 50 g"
+
+ig_mt100_fact_1_0:
+  other: "Banden / RF-zendvermogen"
+
+ig_mt100_fact_1_1:
+  other: "136-174 MHz / 4.7 W; 400-470 MHz / 4 W"
+
+ig_mt100_fact_2_0:
+  other: "Voeding"
+
+ig_mt100_fact_3_0:
+  other: "Gegevensinterface"
+
+ig_dmr818_name:
+  other: "NiceRF DMR818S"
+
+ig_dmr818_family:
+  other: "D / DMR"
+
+ig_dmr818_fact_0_0:
+  other: "Bandopties"
+
+ig_dmr818_fact_1_0:
+  other: "RF-zendvermogen"
+
+ig_dmr818_fact_2_0:
+  other: "Voeding"
+
+ig_dmr818_fact_2_1:
+  other: "3.3-4.5 V"
+
+ig_dmr818_fact_3_0:
+  other: "Gegevensinterface"
+
+ig_sx1262_name:
+  other: "Semtech SX1262"
+
+ig_sx1262_family:
+  other: "L / LoRa"
+
+ig_sx1262_fact_0_0:
+  other: "RF-afstembereik"
+
+ig_sx1262_fact_1_0:
+  other: "RF-zendvermogen"
+
+ig_sx1262_fact_2_0:
+  other: "Modulatie"
+
+ig_sx1262_fact_3_0:
+  other: "Hostinterface"
+
+ig_sx1262_fact_3_1:
+  other: "SPI"
+
+ig_picoaprs_name:
+  other: "PicoAPRS V4"
+
+ig_picoaprs_family:
+  other: "A / APRS"
+
+ig_picoaprs_fact_0_0:
+  other: "Afmetingen / massa"
+
+ig_picoaprs_fact_1_0:
+  other: "EU-zendband"
+
+ig_picoaprs_fact_1_1:
+  other: "144-146 MHz"
+
+ig_picoaprs_fact_2_0:
+  other: "RF-zendvermogen"
+
+ig_picoaprs_fact_3_0:
+  other: "Pakket / interface"
+
+ig_mm6108_name:
+  other: "Morse Micro MM6108"
+
+ig_mm6108_family:
+  other: "H / HaLow"
+
+ig_mm6108_fact_0_0:
+  other: "Radio"
+
+ig_mm6108_fact_0_1:
+  other: "Wi-Fi HaLow, IEEE 802.11ah"
+
+ig_mm6108_fact_1_0:
+  other: "Hostinterface"
+
+ig_mm6108_fact_2_0:
+  other: "Rol in evaluatie"
+
+ig_thalow_name:
+  other: "LILYGO T-HaLow / TX-AH"
+
+ig_thalow_family:
+  other: "H / HaLow"
+
+ig_thalow_fact_0_0:
+  other: "Radio"
+
+ig_thalow_fact_0_1:
+  other: "Wi-Fi HaLow, IEEE 802.11ah"
+
+ig_thalow_fact_1_0:
+  other: "Radiomodule"
+
+ig_thalow_fact_2_0:
+  other: "Integratie"
+
+ig_pluto_fact_0_0:
+  other: "RF-afstembereik"
+
+ig_pluto_fact_1_0:
+  other: "Bandbreedte"
+
+ig_pluto_fact_2_0:
+  other: "RF-kanalen"
+
+ig_pluto_fact_3_0:
+  other: "Hostinterface"
+
+ig_pluto_fact_3_1:
+  other: "USB 2.0; libiio"
+
+ig_rockblock_name:
+  other: "Ground Control RockBLOCK 9704"
+
+ig_rockblock_fact_0_0:
+  other: "Afmetingen / massa, SMA-model"
+
+ig_rockblock_fact_1_0:
+  other: "Satellietdienst"
+
+ig_rockblock_fact_1_1:
+  other: "Iridium Messaging Transport (IMT)"
+
+ig_rockblock_fact_2_0:
+  other: "IMT-payloadgrens volgens de maker"
+
+ig_rockblock_fact_3_0:
+  other: "Hostinterface"

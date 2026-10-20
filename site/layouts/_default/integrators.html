@@ -5,116 +5,128 @@
 
 {{ define "main" }}
 {{ $data := .Site.Data.integrators }}
-<article class="integrators" data-release="msc3-integrators-v1">
-  <aside class="ig-notice" aria-label="Development status">
-    <div class="container"><span class="badge badge-token badge-plan">FUTURE PLAN</span><p><strong>Research and development stage concept devices our team is testing.</strong> All MSC-3 variants are concepts. Modules are under evaluation.</p></div>
+{{ $radios := slice }}
+{{ range $data.radios }}{{ $radios = $radios | append (merge . (dict "name" (i18n .name) "data" (i18n .data) "modules" (i18n .modules) "limit" (i18n .limit))) }}{{ end }}
+<article class="integrators" data-release="msc3-integrators-v2">
+  <aside class="ig-notice" aria-label="{{ i18n "ig_status_label" }}">
+    <div class="container"><span class="badge badge-token badge-plan">FUTURE PLAN</span><p><strong>{{ i18n "ig_notice" }}</strong> {{ i18n "ig_notice_detail" }}</p></div>
   </aside>
 
-  <section class="ig-hero" aria-labelledby="ig-title">
+  <section class="ig-hero{{ if .Params.hero_image }} ig-hero-with-media{{ end }}" aria-labelledby="ig-title">
     <div class="container ig-hero-grid">
       <div class="ig-intro">
-        <p class="ig-eyebrow">MSC-3 SERIES / INTEGRATION BRIEF</p>
-        <h1 id="ig-title">MeshSat for<br>integrators</h1>
-        <p class="ig-lead">A pocket gateway concept for a team's radios, with an Iridium path for text, status and positions.</p>
-        <p>One platform. One or two local radios. Iridium in every variant. Intended to serve a team in direct mode and relay supported messages between its radios and over satellite.</p>
-        <div class="ig-actions"><a class="btn btn-primary" href="#configurator">Explore a configuration</a><a href="#capabilities">Read the capability matrix</a></div>
-        <p class="ig-note">R&D scope, not a validated device specification. No MSC-3 variant has been deployed to a real user. Not an emergency service.</p>
+        <p class="ig-eyebrow">{{ i18n "ig_eyebrow" }}</p>
+        <p class="ig-series" aria-hidden="true">MSC-3</p><h1 id="ig-title">{{ .Title }}</h1>
+        <p class="ig-lead">{{ i18n "ig_lead" }}</p>
+        <p>{{ i18n "ig_intro" }}</p>
+        <div class="ig-actions"><a class="btn btn-primary" href="#configurator">{{ i18n "ig_explore" }}</a><a href="#capabilities">{{ i18n "ig_matrix_link" }}</a></div>
+        <p class="ig-note">{{ i18n "ig_scope" }}</p>
+        <nav class="ig-radio-key" aria-label="{{ i18n "ig_radio_key" }}">{{ range $radios }}<a href="#variant-{{ .code }}"><strong>{{ .code }}</strong><span>{{ .name }}</span></a>{{ end }}</nav>
       </div>
-      <figure class="ig-architecture" aria-labelledby="ig-arch-caption">
-        <div class="ig-diagram" role="img" aria-label="Concept architecture. Team radios connect through one or two local radio modules to MeshSat Bridge on a Raspberry Pi Zero 2 W. The Bridge routes between local radios and a RockBLOCK 9704 Iridium IMT modem. Satellite messages reach an integrator's back end. A battery powers the gateway. All paths require validation.">
-          <div class="ig-diagram-end">Team radios <span>Direct mode / local link</span></div>
-          <div class="ig-wire" aria-hidden="true"></div>
-          <div class="ig-enclosure">
-            <div class="ig-enclosure-label"><span>MSC-3 / CONCEPT</span><span class="badge badge-token badge-plan">FUTURE PLAN</span></div>
-            <div class="ig-slots"><span>Radio slot 01</span><span>Radio slot 02 <small>optional</small></span></div>
-            <div class="ig-wire ig-wire-pair" aria-hidden="true"></div>
-            <div class="ig-compute"><strong>MeshSat Bridge</strong><span>Raspberry Pi Zero 2 W</span><small>Routing / message queue / delivery record</small></div>
-            <div class="ig-wire" aria-hidden="true"></div>
-            <div class="ig-modem"><strong>RockBLOCK 9704</strong><span>Iridium IMT / always fitted</span></div>
-            <div class="ig-power">Rugged case concept <span>Battery</span></div>
-          </div>
-          <div class="ig-wire" aria-hidden="true"></div>
-          <div class="ig-diagram-end">Iridium satellite link <span>Integrator's back end / self-hosted Hub</span></div>
-        </div>
-        <figcaption id="ig-arch-caption">Concept architecture. Bidirectional message paths; physical integration and interoperability remain under evaluation.</figcaption>
-      </figure>
+      {{ with .Params.hero_image }}<figure class="ig-hero-media"><img src="{{ . }}" alt="{{ i18n "ig_render_alt" }}" width="1920" height="1080" fetchpriority="high"><figcaption>{{ i18n "ig_render_caption" }}</figcaption></figure>{{ end }}
     </div>
   </section>
 
-  <nav class="ig-section-nav" aria-label="Integration brief sections"><div class="container"><a href="#platform">01 Platform</a><a href="#capabilities">02 Capabilities</a><a href="#configurator">03 Configure</a><a href="#modules">04 Modules</a><a href="#use-cases">05 Use cases</a></div></nav>
+  <nav class="ig-section-nav" aria-label="{{ i18n "ig_nav" }}"><div class="container"><a href="#platform">01 {{ i18n "ig_nav_platform" }}</a><a href="#capabilities">02 {{ i18n "ig_nav_capabilities" }}</a><a href="#configurator">03 {{ i18n "ig_nav_configure" }}</a><a href="#modules">04 {{ i18n "ig_nav_modules" }}</a><a href="#use-cases">05 {{ i18n "ig_nav_cases" }}</a></div></nav>
 
   <section class="ig-section container" id="platform" aria-labelledby="platform-title">
-    <div class="ig-section-heading"><p class="ig-eyebrow">01 / SHARED PLATFORM</p><h2 id="platform-title">One platform, different local radios</h2><p>The letters after MSC-3 identify the local radios fitted in the concept. Iridium is always included and does not need a letter.</p></div>
-    <table class="ig-table ig-platform-table"><caption>MSC-3 platform concept and validation limits</caption><tbody>
-      <tr><th scope="row">Compute</th><td>Raspberry Pi Zero 2 W running MeshSat Bridge.</td><td>Processing load and peripheral integration need validation for each configuration.</td></tr>
-      <tr><th scope="row">Satellite</th><td>Ground Control RockBLOCK 9704 using Iridium IMT.</td><td>Message transport. No voice or broadband service over this path.</td></tr>
-      <tr><th scope="row">Local radios</th><td>One or two radio-module slots; T, D, L, A, H or G.</td><td>Each pairing needs mechanical fit, antenna isolation and transmit coordination work.</td></tr>
-      <tr><th scope="row">Enclosure / power</th><td>Rugged pocket case and battery.</td><td>Dimensions, mass, runtime, environmental rating and charging design are unverified.</td></tr>
-      <tr><th scope="row">Message routing</th><td>Local radio to local radio, and local radio to Iridium, in both directions.</td><td>Only supported message types can cross a route. Protocol conversion and encryption boundaries need validation.</td></tr>
-      <tr><th scope="row">Integration status</th><td><span class="badge badge-token badge-plan">FUTURE PLAN</span> Every MSC-3 variant.</td><td>Module specifications do not establish device certification, fleet approval or end-to-end performance.</td></tr>
+    <div class="ig-section-heading"><p class="ig-eyebrow">{{ i18n "ig_platform_eyebrow" }}</p><h2 id="platform-title">{{ i18n "ig_platform_title" }}</h2><p>{{ i18n "ig_platform_intro" }}</p></div>
+    <div class="ig-platform-layout">
+      <figure class="ig-architecture" aria-labelledby="ig-arch-caption">
+        <div class="ig-diagram" role="img" aria-label="{{ i18n "ig_arch_alt" }}">
+          <div class="ig-diagram-end">{{ i18n "ig_team" }} <span>{{ i18n "ig_direct" }}</span></div>
+          <div class="ig-wire" aria-hidden="true"></div>
+          <div class="ig-enclosure">
+            <div class="ig-enclosure-label"><span>{{ i18n "ig_concept" }}</span><span class="badge badge-token badge-plan">FUTURE PLAN</span></div>
+            <div class="ig-slots"><span>{{ i18n "ig_slot_one" }}</span><span>{{ i18n "ig_slot_two" }} <small>{{ i18n "ig_optional" }}</small></span></div>
+            <div class="ig-wire ig-wire-pair" aria-hidden="true"></div>
+            <div class="ig-compute"><strong>MeshSat Bridge</strong><span>Raspberry Pi Zero 2 W</span><small>{{ i18n "ig_routing" }}</small></div>
+            <div class="ig-wire" aria-hidden="true"></div>
+            <div class="ig-modem"><strong>RockBLOCK 9704</strong><span>{{ i18n "ig_imt" }}</span></div>
+            <div class="ig-display"><span>{{ i18n "ig_display" }}</span><small>{{ i18n "ig_module_evaluation" }}</small></div>
+            <div class="ig-power">{{ i18n "ig_rugged" }} <span>{{ i18n "ig_battery" }}</span></div>
+          </div>
+          <div class="ig-wire" aria-hidden="true"></div>
+          <div class="ig-diagram-end">{{ i18n "ig_satellite_link" }} <span>{{ i18n "ig_backend" }}</span></div>
+        </div>
+        <figcaption id="ig-arch-caption">{{ i18n "ig_arch_caption" }}</figcaption>
+      </figure>
+    <div class="ig-platform-specification">
+    {{ with .Params.exploded_image }}<figure class="ig-exploded"><img src="{{ . }}" alt="{{ i18n "ig_exploded_alt" }}" width="1500" height="1000" loading="lazy"><figcaption>{{ i18n "ig_render_caption" }}</figcaption></figure>{{ end }}
+    <table class="ig-table ig-platform-table"><caption>{{ i18n "ig_platform_caption" }}</caption><tbody>
+      <tr><th scope="row">{{ i18n "ig_compute" }}</th><td>{{ i18n "ig_compute_value" }}</td><td>{{ i18n "ig_compute_limit" }}</td></tr>
+      <tr><th scope="row">{{ i18n "ig_satellite" }}</th><td>{{ i18n "ig_satellite_value" }}</td><td>{{ i18n "ig_satellite_limit" }}</td></tr>
+      <tr><th scope="row">{{ i18n "ig_local_radios" }}</th><td>{{ i18n "ig_local_value" }}</td><td>{{ i18n "ig_local_limit" }}</td></tr>
+      <tr><th scope="row">{{ i18n "ig_enclosure" }}</th><td>{{ i18n "ig_enclosure_value" }}</td><td>{{ i18n "ig_enclosure_limit" }}</td></tr>
+      <tr><th scope="row">{{ i18n "ig_display" }}</th><td>{{ i18n "ig_display_value" }}</td><td>{{ i18n "ig_display_limit" }}</td></tr>
+      <tr><th scope="row">{{ i18n "ig_routing_label" }}</th><td>{{ i18n "ig_routing_value" }}</td><td>{{ i18n "ig_routing_limit" }}</td></tr>
+      <tr><th scope="row">{{ i18n "ig_integration_status" }}</th><td><span class="badge badge-token badge-plan">FUTURE PLAN</span> {{ i18n "ig_every_variant" }}</td><td>{{ i18n "ig_integration_limit" }}</td></tr>
     </tbody></table>
+    </div></div>
   </section>
 
   <section class="ig-band" id="capabilities" aria-labelledby="capabilities-title"><div class="container ig-section">
-    <div class="ig-section-heading"><p class="ig-eyebrow">02 / CAPABILITY MATRIX</p><h2 id="capabilities-title">Local interfaces, shared satellite path</h2><p>Intended message paths for evaluation. Each single-radio concept below includes Iridium; a two-radio concept also bridges its local radios to each other.</p></div>
-    <p class="ig-scroll-hint">On a small screen, scroll the table horizontally for the limits.</p>
-    <div class="ig-table-scroll" tabindex="0" role="region" aria-label="MSC-3 capability matrix">
-      <table class="ig-table ig-capabilities"><caption>All variants: FUTURE PLAN. All listed modules: under evaluation.</caption><thead><tr><th scope="col">Variant</th><th scope="col">Local radio</th><th scope="col">Intended messages</th><th scope="col">Limits to resolve</th></tr></thead><tbody>
-        {{ range $data.radios }}<tr><th scope="row"><span class="ig-model">MSC-3{{ .code }}</span><span class="badge badge-token badge-plan">FUTURE PLAN</span></th><td>{{ .name }}</td><td>{{ .data }}</td><td>{{ .limit }}</td></tr>{{ end }}
+    <div class="ig-section-heading"><p class="ig-eyebrow">{{ i18n "ig_capabilities_eyebrow" }}</p><h2 id="capabilities-title">{{ i18n "ig_capabilities_title" }}</h2><p>{{ i18n "ig_capabilities_intro" }}</p></div>
+    <p class="ig-scroll-hint">{{ i18n "ig_scroll" }}</p>
+    <div class="ig-table-scroll" tabindex="0" role="region" aria-label="{{ i18n "ig_matrix_label" }}">
+      <table class="ig-table ig-capabilities"><caption>{{ i18n "ig_matrix_caption" }}</caption><thead><tr><th scope="col">{{ i18n "ig_variant" }}</th><th scope="col">{{ i18n "ig_radio" }}</th><th scope="col">{{ i18n "ig_messages" }}</th><th scope="col">{{ i18n "ig_limits" }}</th></tr></thead><tbody>
+        {{ range $radios }}<tr id="variant-{{ .code }}"><th scope="row"><span class="ig-model">MSC-3{{ .code }}</span><span class="badge badge-token badge-plan">FUTURE PLAN</span></th><td>{{ .name }}</td><td>{{ .data }}</td><td>{{ .limit }}</td></tr>{{ end }}
       </tbody></table>
     </div>
   </div></section>
 
   <section class="ig-section container" id="configurator" aria-labelledby="configurator-title">
-    <div class="ig-section-heading"><p class="ig-eyebrow">03 / RADIO CONFIGURATOR</p><h2 id="configurator-title">Explore a radio combination</h2><p>Select one or two local radios. This describes an integration concept; it does not confirm that a pairing fits the case or works with a particular fleet.</p></div>
+    <div class="ig-section-heading"><p class="ig-eyebrow">{{ i18n "ig_config_eyebrow" }}</p><h2 id="configurator-title">{{ i18n "ig_config_title" }}</h2><p>{{ i18n "ig_config_intro" }}</p></div>
     <div class="ig-configurator" data-configurator>
       <div class="ig-config-inputs">
-        <fieldset disabled id="ig-radio-fields"><legend>Local radio slots</legend>
-          <label for="ig-radio-one">Radio slot 01</label><select id="ig-radio-one">{{ range $data.radios }}<option value="{{ .code }}">{{ .code }} / {{ .name }}</option>{{ end }}</select>
-          <label for="ig-radio-two">Radio slot 02 <span>(optional)</span></label><select id="ig-radio-two"><option value="">No second radio</option>{{ range $data.radios }}<option value="{{ .code }}"{{ if eq .code "L" }} selected{{ end }}>{{ .code }} / {{ .name }}</option>{{ end }}</select>
+        <fieldset disabled id="ig-radio-fields"><legend>{{ i18n "ig_slots" }}</legend>
+          <label for="ig-radio-one">{{ i18n "ig_slot_one" }}</label><select id="ig-radio-one">{{ range $radios }}<option value="{{ .code }}">{{ .code }} / {{ .name }}</option>{{ end }}</select>
+          <label for="ig-radio-two">{{ i18n "ig_slot_two" }} <span>({{ i18n "ig_optional" }})</span></label><select id="ig-radio-two"><option value="">{{ i18n "ig_none" }}</option>{{ range $radios }}<option value="{{ .code }}"{{ if eq .code "L" }} selected{{ end }}>{{ .code }} / {{ .name }}</option>{{ end }}</select>
         </fieldset>
-        <p class="ig-fixed-radio"><strong>Always fitted</strong>Iridium / RockBLOCK 9704<br><span>Module under evaluation</span></p>
-        <noscript><p class="ig-note">Enable JavaScript to change the selection. The MSC-3TL example and the full capability matrix can be read without it.</p></noscript>
+        <p class="ig-fixed-radio"><strong>{{ i18n "ig_always" }}</strong>Iridium / RockBLOCK 9704<br><span>{{ i18n "ig_module_evaluation" }}</span></p>
+        <noscript><p class="ig-note">{{ i18n "ig_nojs" }}</p></noscript>
       </div>
       <div class="ig-config-result">
         <div aria-live="polite" aria-atomic="true" id="ig-result">
-          <p class="ig-eyebrow">RESULTING CONCEPT</p><h3 id="ig-model">MSC-3TL</h3><p><span class="badge badge-token badge-plan">FUTURE PLAN</span></p>
-          <p id="ig-bridges">Intended bridge: TETRA and LoRa / Meshtastic to each other, and both to Iridium. Return messages follow the same paths where message formats and routing policy permit.</p>
-          <ul id="ig-radio-limits" class="ig-radio-limits">{{ range $data.radios }}{{ if in (slice "T" "L") .code }}<li><strong>{{ .name }} <span class="badge badge-token badge-plan">FUTURE PLAN</span></strong><span>{{ .modules }}: under evaluation.</span><p>{{ .limit }}</p></li>{{ end }}{{ end }}</ul>
+          <p class="ig-eyebrow">{{ i18n "ig_result" }}</p><h3 id="ig-model">MSC-3TL</h3><p><span class="badge badge-token badge-plan">FUTURE PLAN</span></p>
+          <div class="ig-route-map" aria-hidden="true"><div id="ig-route-local"><span>TETRA</span><span>LoRa / Meshtastic</span></div><svg viewBox="0 0 48 20" aria-hidden="true"><path d="M4 10h40M10 4l-6 6 6 6m28-12 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><strong>MeshSat<br>Bridge</strong><svg viewBox="0 0 48 20" aria-hidden="true"><path d="M4 10h40M10 4l-6 6 6 6m28-12 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Iridium<br>IMT</span></div>
+          <p id="ig-bridges">{{ replace (replace (i18n "ig_bridge_two") "{first}" "TETRA") "{second}" "LoRa / Meshtastic" }}</p>
+          <ul id="ig-radio-limits" class="ig-radio-limits">{{ range $radios }}{{ if in (slice "T" "L") .code }}<li><strong>{{ .name }} <span class="badge badge-token badge-plan">FUTURE PLAN</span></strong><span>{{ .modules }}: {{ i18n "ig_under_evaluation" }}.</span><p>{{ .limit }}</p></li>{{ end }}{{ end }}</ul>
         </div>
-        <p class="ig-note">Iridium: module under evaluation. Requires an approved antenna, satellite service and a suitable view of the sky. Delivery time and MSC-3 performance are unverified.</p>
-        <a id="ig-contact" class="btn btn-primary" href="mailto:{{ .Site.Params.contact_email }}?subject=MSC-3TL%20integration%20discussion" data-contact-email="{{ .Site.Params.contact_email }}">Talk to us</a>
+        <p class="ig-note">{{ i18n "ig_iridium_limit" }}</p>
+        <a id="ig-contact" class="btn btn-primary" href="mailto:{{ .Site.Params.contact_email }}?subject={{ printf "MSC-3TL %s" (i18n "ig_mail_subject") | urlquery }}" data-contact-email="{{ .Site.Params.contact_email }}">{{ i18n "ig_contact" }}</a>
       </div>
     </div>
   </section>
 
   <section class="ig-band" id="modules" aria-labelledby="modules-title"><div class="container ig-section">
-    <div class="ig-section-heading"><p class="ig-eyebrow">04 / MODULES UNDER EVALUATION</p><h2 id="modules-title">Public specifications, explicit limits</h2><p>Figures below describe the makers' components, not a completed MSC-3. Source links accompany each candidate. Published radio capabilities do not establish permitted operating settings.</p></div>
-    <p class="ig-art-credit">Illustrations: original neutral artwork by MeshSat. Simplified forms, not to scale; not product photographs, PCB layouts or assembly drawings. Manufacturer names identify components only and imply no partnership or endorsement.</p>
-    <div class="ig-modules">{{ range $data.modules }}
+    <div class="ig-section-heading"><p class="ig-eyebrow">{{ i18n "ig_modules_eyebrow" }}</p><h2 id="modules-title">{{ i18n "ig_modules_title" }}</h2><p>{{ i18n "ig_modules_intro" }}</p></div>
+    <p class="ig-art-credit">{{ i18n "ig_art_credit" }}</p>
+    <div class="ig-modules">{{ range $data.modules }}{{ $module := merge . (dict "name" (i18n .name)) }}{{ with $module }}
       <article class="ig-module" id="module-{{ .id }}" aria-labelledby="module-title-{{ .id }}">
-        <div class="ig-module-intro"><figure>{{ partial "integrators-module.html" . }}<figcaption>MeshSat neutral illustration</figcaption></figure><div><p class="ig-eyebrow">{{ .family }}</p><h3 id="module-title-{{ .id }}">{{ .name }}</h3><p class="ig-evaluation">Under evaluation</p></div></div>
-        <table class="ig-table ig-specs"><caption class="sr-only">{{ .name }} public component specifications</caption><tbody>{{ range .facts }}<tr><th scope="row">{{ index . 0 }}</th><td>{{ index . 1 }}</td></tr>{{ end }}</tbody></table>
-        <p class="ig-module-note">{{ .note }}</p><a class="ig-source" href="{{ .source }}" target="_blank" rel="noopener">{{ .sourceLabel }}</a>
+        <div class="ig-module-intro"><figure>{{ partial "integrators-module.html" . }}<figcaption>{{ i18n "ig_art_caption" }}</figcaption></figure><div><p class="ig-eyebrow">{{ i18n .family }}</p><h3 id="module-title-{{ .id }}">{{ .name }}</h3><p class="ig-evaluation">{{ i18n "ig_under_evaluation" }}</p></div></div>
+        <details class="ig-module-details"><summary>{{ i18n "ig_details" }}</summary>
+        <table class="ig-table ig-specs"><caption class="sr-only">{{ .name }} {{ i18n "ig_specs_caption" }}</caption><tbody>{{ range .facts }}<tr><th scope="row">{{ i18n (index . 0) }}</th><td>{{ i18n (index . 1) }}</td></tr>{{ end }}</tbody></table>
+        <p class="ig-module-note">{{ i18n .note }}</p><a class="ig-source" href="{{ .source }}" target="_blank" rel="noopener">{{ i18n .sourceLabel }}</a></details>
       </article>
-    {{ end }}</div>
+    {{ end }}{{ end }}</div>
   </div></section>
 
   <section class="ig-section container" id="use-cases" aria-labelledby="use-cases-title">
-    <div class="ig-section-heading"><p class="ig-eyebrow">05 / USE CASES FOR EVALUATION</p><h2 id="use-cases-title">Integration scenarios</h2><p>These are research scenarios. No customer deployment, fleet compatibility or operational approval is claimed.</p></div>
+    <div class="ig-section-heading"><p class="ig-eyebrow">{{ i18n "ig_cases_eyebrow" }}</p><h2 id="use-cases-title">{{ i18n "ig_cases_title" }}</h2><p>{{ i18n "ig_cases_intro" }}</p></div>
     <div class="ig-use-cases">
-      <article><p class="ig-use-model">MSC-3TL <span class="badge badge-token badge-plan">FUTURE PLAN</span></p><h3>TETRA teams and volunteer mesh</h3><p>Evaluate selected text and position exchange between a professional radio team and Meshtastic volunteers, with Iridium for remote reporting. Routing policy controls what crosses the boundary.</p></article>
-      <article><p class="ig-use-model">MSC-3TD <span class="badge badge-token badge-plan">FUTURE PLAN</span></p><h3>Teams using different radio systems</h3><p>Evaluate message exchange between TETRA and DMR teams working in direct mode. Fleet-specific data formats, channel authorization and encryption handling must be established first.</p></article>
-      <article><p class="ig-use-model">MSC-3DL <span class="badge badge-token badge-plan">FUTURE PLAN</span></p><h3>DMR teams and local sensors</h3><p>Evaluate DMR text and supported location traffic alongside Meshtastic field reports. Test which message types can be translated and forwarded over the common satellite path.</p></article>
+      <article><p class="ig-use-model">MSC-3TL <span class="badge badge-token badge-plan">FUTURE PLAN</span></p><h3>{{ i18n "ig_case_tl_title" }}</h3><p>{{ i18n "ig_case_tl_body" }}</p></article>
+      <article><p class="ig-use-model">MSC-3TD <span class="badge badge-token badge-plan">FUTURE PLAN</span></p><h3>{{ i18n "ig_case_td_title" }}</h3><p>{{ i18n "ig_case_td_body" }}</p></article>
+      <article><p class="ig-use-model">MSC-3DL <span class="badge badge-token badge-plan">FUTURE PLAN</span></p><h3>{{ i18n "ig_case_dl_title" }}</h3><p>{{ i18n "ig_case_dl_body" }}</p></article>
     </div>
   </section>
 
   <section class="ig-contact-band" aria-labelledby="ig-contact-title"><div class="container">
-    <div><p class="ig-eyebrow">ENGINEERING DISCUSSION</p><h2 id="ig-contact-title">Bring a radio and a use case.</h2><p>Tell us the radio models, direct-mode configuration, message types, deployment country and integration endpoint you need to evaluate.</p><p class="ig-note">MSC-3 series: <span class="badge badge-token badge-plan">FUTURE PLAN</span> Research and development concepts. Modules under evaluation.</p></div>
-    <a class="btn btn-primary" href="mailto:{{ .Site.Params.contact_email }}?subject=MSC-3%20integration%20discussion">Talk to us</a>
+    <div><p class="ig-eyebrow">{{ i18n "ig_contact_eyebrow" }}</p><h2 id="ig-contact-title">{{ i18n "ig_contact_title" }}</h2><p>{{ i18n "ig_contact_intro" }}</p><p class="ig-note">MSC-3: <span class="badge badge-token badge-plan">FUTURE PLAN</span> {{ i18n "ig_contact_note" }}</p></div>
+    <a class="btn btn-primary" href="mailto:{{ .Site.Params.contact_email }}?subject={{ printf "MSC-3 %s" (i18n "ig_mail_subject") | urlquery }}">{{ i18n "ig_contact" }}</a>
   </div></section>
 </article>
-<script type="application/json" id="ig-radio-data">{{ $data.radios | jsonify | safeJS }}</script>
+<script type="application/json" id="ig-radio-data">{{ dict "radios" $radios "copy" (dict "bridgeTwo" (i18n "ig_bridge_two") "bridgeOne" (i18n "ig_bridge_one") "evaluation" (i18n "ig_under_evaluation") "subject" (i18n "ig_mail_subject") "body" (i18n "ig_mail_body")) | jsonify | safeJS }}</script>
 {{ end }}
 
 {{ define "scripts" }}

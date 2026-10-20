@@ -39,7 +39,7 @@ echo "=== 3. house style: no em or en dashes anywhere in the built HTML ==="
 # /security/ and its four translations are standalone pages like the changelog
 # children, so they are named explicitly: the changelog tabs sat outside this
 # scan and carried em dashes for months before anyone noticed.
-for f in "$PUB/index.html" "$PUB"/nl/index.html "$PUB"/de/index.html "$PUB"/fr/index.html "$PUB"/el/index.html "$PUB"/changelog/index.html "$PUB"/changelog/*/index.html "$PUB"/security/index.html "$PUB"/??/security/index.html "$PUB"/integrators/index.html; do
+for f in "$PUB/index.html" "$PUB"/nl/index.html "$PUB"/de/index.html "$PUB"/fr/index.html "$PUB"/el/index.html "$PUB"/changelog/index.html "$PUB"/changelog/*/index.html "$PUB"/security/index.html "$PUB"/??/security/index.html "$PUB"/integrators/index.html "$PUB"/??/integrators/index.html; do
   [ -f "$f" ] || continue
   N=$( { grep -o -e '—' -e '–' "$f" || true; } | wc -l | tr -d ' ' )
   if [ "$N" -eq 0 ]; then pass "no em/en dashes in ${f#$PUB/}"
@@ -78,18 +78,33 @@ for t in bridge hub android ios fieldkit; do
   if [ "$N" -ge 1 ]; then pass "changelog/$t: $N section heading(s)"; else fail "changelog/$t: no section headings"; fi
 done
 
-echo "=== 6. MSC-3 concept framing ==="
-IG="$PUB/integrators/index.html"
-if [ ! -f "$IG" ]; then
-  fail "integrators/index.html missing"
-else
-  for phrase in 'Research and development stage concept devices our team is testing.' 'FUTURE PLAN' 'Under evaluation' 'Amateur radio only.' 'No encryption.' 'Licensed per site.'; do
-    if grep -Fq "$phrase" "$IG"; then pass "integrators: $phrase"; else fail "integrators: missing $phrase"; fi
+echo "=== 6. MSC-3 translated concept framing ==="
+for lang in en nl de fr el; do
+  prefix="$lang/"; [ "$lang" = en ] && prefix=""
+  IG="$PUB/${prefix}integrators/index.html"
+  if [ ! -f "$IG" ]; then fail "${prefix}integrators/index.html missing"; continue; fi
+  case "$lang" in
+    en) notice='Research and development stage concept devices our team is testing.'; evaluation='Under evaluation'; amateur='Amateur radio only.'; encryption='No encryption.'; license='Licensed per site.' ;;
+    nl) notice='Conceptapparaten in de onderzoeks- en ontwikkelingsfase die ons team test.'; evaluation='In evaluatie'; amateur='Uitsluitend amateurradio.'; encryption='Geen versleuteling.'; license='Vergunning per locatie.' ;;
+    de) notice='Konzeptgeräte in der Forschungs- und Entwicklungsphase, die unser Team testet.'; evaluation='In Evaluierung'; amateur='Nur Amateurfunk.'; encryption='Keine Verschlüsselung.'; license='Standortbezogene Lizenz erforderlich.' ;;
+    fr) notice='Des appareils conceptuels au stade de la recherche et du développement, testés par notre équipe.'; evaluation="En cours d'évaluation"; amateur='Radioamateur uniquement.'; encryption='Aucun chiffrement.'; license='Autorisation propre à chaque site.' ;;
+    el) notice='Πρόκειται για συσκευές σε στάδιο έρευνας και ανάπτυξης'; evaluation='Υπό αξιολόγηση'; amateur='Μόνο για ραδιοερασιτεχνική χρήση.'; encryption='Χωρίς κρυπτογράφηση.'; license='Αδειοδότηση ανά τοποθεσία.' ;;
+  esac
+  for phrase in "$notice" 'FUTURE PLAN' "$evaluation" "$amateur" "$encryption" "$license"; do
+    if ! grep -Fq "$phrase" "$IG"; then fail "$lang integrators: missing $phrase"; fi
   done
-  if grep -Eiq '\b(available|ordered|planned)\b' "$IG"; then fail "integrators: forbidden product-stage wording"; else pass "integrators: no forbidden product-stage wording"; fi
-  if grep -Eq '<link[^>]+hreflang=' "$IG"; then fail "integrators: English-only page declares hreflang"; else pass "integrators: no translated-page hreflang"; fi
-  if grep -Eq 'groundcontrol-logo|sidnfonds-woordmerk|colophon-sidn' "$IG"; then fail "integrators: support logos imply endorsement"; else pass "integrators: no support logos"; fi
-fi
+  if grep -Eiq '\b(available|ordered|planned)\b' "$IG"; then fail "$lang integrators: forbidden product-stage wording"; fi
+  for alternate in en nl de fr el x-default; do
+    alt_prefix="$alternate/"
+    case "$alternate" in en|x-default) alt_prefix="" ;; esac
+    if ! grep -Eq "<link[^>]+hreflang=[\"]?$alternate[\"]? href=[\"]?https://meshsat.net/${alt_prefix}integrators/" "$IG"; then
+      fail "$lang integrators: missing $alternate alternate"
+    fi
+  done
+  if grep -Eq 'groundcontrol-logo|sidnfonds-woordmerk|colophon-sidn' "$IG"; then fail "$lang integrators: support logos imply endorsement"; fi
+  if grep -Eq '\big_[a-z0-9_]+\b' "$IG"; then fail "$lang integrators: unresolved translation key"; fi
+  pass "$lang integrators: translated framing and alternate-page checks completed"
+done
 
 echo
 if [ "$FAIL" -eq 0 ]; then echo "verify-site: PASSED"; else echo "verify-site: FAILED"; fi
