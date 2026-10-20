@@ -1201,10 +1201,10 @@ ig_detail_caption:
   other: "Étude de l’afficheur et des commandes. L’écran illustre des informations d’état."
 
 ig_hand_alt:
-  other: "Concept de boîtier MSC-3T tenu par un modèle simplifié de main gantée, avec deux antennes visibles"
+  other: "Concept de boîtier MSC-3T tenu dans une main gantée, avec deux antennes visibles"
 
 ig_hand_caption:
-  other: "Étude de prise en main avec un modèle de main simplifié. Taille et préhension non validées."
+  other: "Étude de prise en main avec une main gantée. Taille et préhension non validées."
 
 ig_field_alt:
   other: "Concept MSC-3T à côté d’une radio portable générique sur une mallette de transport dans une scène extérieure de synthèse"

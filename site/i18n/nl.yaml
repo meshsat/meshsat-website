@@ -1201,10 +1201,10 @@ ig_detail_caption:
   other: "Studie van scherm en bediening. Het scherm illustreert statusinformatie."
 
 ig_hand_alt:
-  other: "MSC-3T-behuizingsconcept in een vereenvoudigd model van een gehandschoende hand, met twee zichtbare antennes"
+  other: "MSC-3T-behuizingsconcept in een gehandschoende hand, met twee zichtbare antennes"
 
 ig_hand_caption:
-  other: "Studie met een vereenvoudigd handmodel. Afmetingen en grip zijn niet gevalideerd."
+  other: "Studie met een gehandschoende hand. Afmetingen en grip zijn niet gevalideerd."
 
 ig_field_alt:
   other: "MSC-3T-concept naast een generieke portofoon op een transportkoffer in een gerenderde buitenscène"
