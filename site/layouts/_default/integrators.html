@@ -7,23 +7,26 @@
 {{ $data := .Site.Data.integrators }}
 {{ $radios := slice }}
 {{ range $data.radios }}{{ $radios = $radios | append (merge . (dict "name" (i18n .name) "data" (i18n .data) "modules" (i18n .modules) "limit" (i18n .limit))) }}{{ end }}
-<article class="integrators" data-release="msc3-integrators-v3">
+<article class="integrators" data-release="msc3-integrators-images-v1" data-shots>
   <aside class="ig-notice" aria-label="{{ i18n "ig_status_label" }}">
     <div class="container"><span class="badge badge-token badge-plan">FUTURE PLAN</span><p><strong>{{ i18n "ig_notice" }}</strong> {{ i18n "ig_notice_detail" }}</p></div>
   </aside>
 
   <section class="ig-hero{{ if .Params.hero_image }} ig-hero-with-media{{ end }}" aria-labelledby="ig-title">
+    <div class="ig-hero-stage">
+      {{ with .Params.hero_image }}<div class="ig-hero-media"><img src="{{ . }}" alt="{{ i18n "ig_render_alt" }}" aria-describedby="ig-hero-credit" width="1672" height="941" fetchpriority="high"></div>{{ end }}
     <div class="container ig-hero-grid">
       <div class="ig-intro">
         <p class="ig-eyebrow">{{ i18n "ig_eyebrow" }}</p>
         <p class="ig-series" aria-hidden="true">MSC-3</p><h1 id="ig-title">{{ .Title }}</h1>
         <p class="ig-lead">{{ i18n "ig_lead" }}</p>
-        <p>{{ i18n "ig_intro" }}</p>
         <div class="ig-actions"><a class="btn btn-primary" href="#configurator">{{ i18n "ig_explore" }}</a><a href="#capabilities">{{ i18n "ig_matrix_link" }}</a></div>
-        <p class="ig-note">{{ i18n "ig_scope" }}</p>
-        <nav class="ig-radio-key" aria-label="{{ i18n "ig_radio_key" }}">{{ range $radios }}<a href="#variant-{{ .code }}"><strong>{{ .code }}</strong><span>{{ .name }}</span></a>{{ end }}</nav>
       </div>
-      {{ with .Params.hero_image }}<figure class="ig-hero-media"><img src="{{ . }}" alt="{{ i18n "ig_render_alt" }}" width="1920" height="1080" fetchpriority="high"><figcaption>{{ i18n "ig_render_caption" }}</figcaption></figure>{{ end }}
+    </div></div>
+    <div class="container ig-hero-foot">
+      <p class="ig-render-credit" id="ig-hero-credit"><strong>MSC-3T / FUTURE PLAN.</strong> {{ i18n "ig_render_caption" }}</p>
+      <div class="ig-scope"><p>{{ i18n "ig_intro" }}</p><p class="ig-note">{{ i18n "ig_scope" }}</p></div>
+      <nav class="ig-radio-key" aria-label="{{ i18n "ig_radio_key" }}">{{ range $radios }}<a href="#variant-{{ .code }}"><strong>{{ .code }}</strong><span>{{ .name }}</span></a>{{ end }}</nav>
     </div>
   </section>
 
@@ -52,7 +55,6 @@
         <figcaption id="ig-arch-caption">{{ i18n "ig_arch_caption" }}</figcaption>
       </figure>
     <div class="ig-platform-specification">
-    {{ with .Params.exploded_image }}<figure class="ig-exploded"><img src="{{ . }}" alt="{{ i18n "ig_exploded_alt" }}" width="1500" height="1000" loading="lazy"><figcaption>{{ i18n "ig_render_caption" }}</figcaption></figure>{{ end }}
     <table class="ig-table ig-platform-table"><caption>{{ i18n "ig_platform_caption" }}</caption><tbody>
       <tr><th scope="row">{{ i18n "ig_compute" }}</th><td>{{ i18n "ig_compute_value" }}</td><td>{{ i18n "ig_compute_limit" }}</td></tr>
       <tr><th scope="row">{{ i18n "ig_satellite" }}</th><td>{{ i18n "ig_satellite_value" }}</td><td>{{ i18n "ig_satellite_limit" }}</td></tr>
@@ -63,6 +65,13 @@
       <tr><th scope="row">{{ i18n "ig_integration_status" }}</th><td><span class="badge badge-token badge-plan">FUTURE PLAN</span> {{ i18n "ig_every_variant" }}</td><td>{{ i18n "ig_integration_limit" }}</td></tr>
     </tbody></table>
     </div></div>
+    <div class="ig-enclosure-study">
+      <div class="ig-section-heading"><p class="ig-eyebrow">{{ i18n "ig_study_eyebrow" }}</p><h3>{{ i18n "ig_study_title" }}</h3><p>{{ i18n "ig_study_intro" }}</p></div>
+      <div class="ig-study-views">
+        {{ partial "integrators-image.html" (merge $data.imagery.detail (dict "class" "ig-detail-view")) }}
+        {{ partial "integrators-image.html" (merge $data.imagery.hand (dict "class" "ig-hand-view")) }}
+      </div>
+    </div>
   </section>
 
   <section class="ig-band" id="capabilities" aria-labelledby="capabilities-title"><div class="container ig-section">
@@ -114,11 +123,13 @@
 
   <section class="ig-section container" id="use-cases" aria-labelledby="use-cases-title">
     <div class="ig-section-heading"><p class="ig-eyebrow">{{ i18n "ig_cases_eyebrow" }}</p><h2 id="use-cases-title">{{ i18n "ig_cases_title" }}</h2><p>{{ i18n "ig_cases_intro" }}</p></div>
+    <div class="ig-use-layout">
+    {{ partial "integrators-image.html" (merge $data.imagery.field (dict "class" "ig-field-view")) }}
     <div class="ig-use-cases">
       <article><p class="ig-use-model">MSC-3TL <span class="badge badge-token badge-plan">FUTURE PLAN</span></p><h3>{{ i18n "ig_case_tl_title" }}</h3><p>{{ i18n "ig_case_tl_body" }}</p></article>
       <article><p class="ig-use-model">MSC-3TD <span class="badge badge-token badge-plan">FUTURE PLAN</span></p><h3>{{ i18n "ig_case_td_title" }}</h3><p>{{ i18n "ig_case_td_body" }}</p></article>
       <article><p class="ig-use-model">MSC-3DL <span class="badge badge-token badge-plan">FUTURE PLAN</span></p><h3>{{ i18n "ig_case_dl_title" }}</h3><p>{{ i18n "ig_case_dl_body" }}</p></article>
-    </div>
+    </div></div>
   </section>
 
   <section class="ig-contact-band" aria-labelledby="ig-contact-title"><div class="container">
@@ -126,6 +137,7 @@
     <a class="btn btn-primary" href="mailto:{{ .Site.Params.contact_email }}?subject={{ printf "MSC-3 %s" (i18n "ig_mail_subject") | urlquery }}">{{ i18n "ig_contact" }}</a>
   </div></section>
 </article>
+{{ partial "integrators-lightbox.html" . }}
 <script type="application/json" id="ig-radio-data">{{ dict "radios" $radios "copy" (dict "bridgeTwo" (i18n "ig_bridge_two") "bridgeOne" (i18n "ig_bridge_one") "evaluation" (i18n "ig_under_evaluation") "subject" (i18n "ig_mail_subject") "body" (i18n "ig_mail_body")) | jsonify | safeJS }}</script>
 {{ end }}
 

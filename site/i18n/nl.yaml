@@ -754,7 +754,7 @@ ig_radio_key:
   other: "Letters voor lokale radio's"
 
 ig_render_caption:
-  other: "Conceptvisualisatie voor onderzoek en ontwikkeling. Voorgestelde behuizing, geen gevalideerde hardware."
+  other: "Conceptvisualisatie voor onderzoek en ontwikkeling door MeshSat. Behuizing, hardware en RF-integratie zijn nog niet geverifieerd."
 
 ig_render_alt:
   other: "MSC-3T-behuizingsconcept met een klein kleuren-e-paperscherm, compacte Iridium-antenne en TETRA-sprietantenne"
@@ -1181,3 +1181,33 @@ ig_rockblock_fact_2_0:
 
 ig_rockblock_fact_3_0:
   other: "Hostinterface"
+
+ig_enlarge:
+  other: "Conceptafbeelding vergroten"
+
+ig_study_eyebrow:
+  other: "MSC-3T / BEHUIZINGSSTUDIE"
+
+ig_study_title:
+  other: "Scherm, bediening en gebruik in de hand"
+
+ig_study_intro:
+  other: "Een klein kleuren-e-paperscherm dat compatibel is met de Raspberry Pi wordt geëvalueerd. Deze beelden verkennen de behuizing en bediening; ergonomie en antenneplaatsing moeten nog worden getest."
+
+ig_detail_alt:
+  other: "Detail van het MSC-3T-concept met e-paperscherm, twee knoppen aan de voorkant en de behuizingsafdichting"
+
+ig_detail_caption:
+  other: "Studie van scherm en bediening. Het scherm illustreert statusinformatie."
+
+ig_hand_alt:
+  other: "MSC-3T-behuizingsconcept in een vereenvoudigd model van een gehandschoende hand, met twee zichtbare antennes"
+
+ig_hand_caption:
+  other: "Studie met een vereenvoudigd handmodel. Afmetingen en grip zijn niet gevalideerd."
+
+ig_field_alt:
+  other: "MSC-3T-concept naast een generieke portofoon op een transportkoffer in een gerenderde buitenscène"
+
+ig_field_caption:
+  other: "Illustratie van een teamopstelling in directe modus. Een gesimuleerde scène, geen veldtest."
