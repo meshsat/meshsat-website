@@ -7,7 +7,7 @@
 {{ $data := .Site.Data.integrators }}
 {{ $radios := slice }}
 {{ range $data.radios }}{{ $radios = $radios | append (merge . (dict "name" (i18n .name) "data" (i18n .data) "modules" (i18n .modules) "limit" (i18n .limit))) }}{{ end }}
-<article class="integrators" data-release="msc3-integrators-v2">
+<article class="integrators" data-release="msc3-integrators-v3">
   <aside class="ig-notice" aria-label="{{ i18n "ig_status_label" }}">
     <div class="container"><span class="badge badge-token badge-plan">FUTURE PLAN</span><p><strong>{{ i18n "ig_notice" }}</strong> {{ i18n "ig_notice_detail" }}</p></div>
   </aside>
