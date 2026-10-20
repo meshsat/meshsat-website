@@ -43,8 +43,8 @@
 .ig-wire-pair { width: 52%; border-right: 1px dashed var(--color-text-muted); }
 .ig-enclosure { padding: var(--space-lg); border: 1px dashed var(--color-text-muted); border-radius: var(--radius-md); background: var(--color-bg-secondary); }
 .ig-enclosure-label { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); justify-content: space-between; margin-bottom: var(--space-lg); font-size: .75rem; }
-.ig-slots { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
-.ig-slots > span { padding: var(--space-sm); border: var(--ig-rule); text-align: center; }
+.ig-slots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-md); }
+.ig-slots > span { padding: var(--space-sm); border: var(--ig-rule); text-align: center; hyphens: auto; overflow-wrap: anywhere; }
 .ig-slots small { display: block; font-size: .75rem; color: var(--color-text-muted); }
 .ig-compute, .ig-modem { border: var(--ig-rule); padding: var(--space-sm); text-align: center; }
 .ig-compute { border-left: 3px solid var(--color-primary); }
