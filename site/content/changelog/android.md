@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v2.21.0"
   latest_tag_date: "2026-10-13"
   latest_tag_anchor: "v2210-2026-10-13"
-  unreleased_count: 7
-  unreleased_since: "2026-10-19"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-19"
+  unreleased_count: 12
+  unreleased_since: "2026-10-20"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-20"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -23,14 +23,19 @@ the repository's
 carries the same history in Keep a Changelog form.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-19)
+## Unreleased (main, last change 2026-10-20)
 
 ### Features
 
+- **sos**: an SOS carries its own id, so the Hub pages once whichever routes carry it, and its cancel goes until the Hub has it ([26faed19](https://github.com/meshsat/meshsat-android/commit/26faed19bbc4c27009db59ada89cfd9501ff5084))
+- **messages**: texts to another MeshSat app or kit through the Hub, marked delivered only on the recipient app's own answer ([b0a84f5c](https://github.com/meshsat/meshsat-android/commit/b0a84f5c7e5f51d696129d5addaff563b55e24d2))
 - **hub**: a phone provisioned into an organisation's tenant publishes and subscribes under that tenant's topic root ([e5af6337](https://github.com/meshsat/meshsat-android/commit/e5af6337e683579c321d238ea5462541f1c8dbf9))
 
 ### Fixes
 
+- **messages**: a reconnect in the middle of a Hub pass no longer hides a lost status, and nothing goes out before the Hub subscriptions hold ([3073d3d1](https://github.com/meshsat/meshsat-android/commit/3073d3d1218789ceed5b2ae2b143dd22fcc45e18))
+- **messages**: the Hub bridge id field takes the id as typed, without autocorrect ([f1c53dff](https://github.com/meshsat/meshsat-android/commit/f1c53dff06ee8ead41e4f48f3e6cde29f4684806))
+- **ui**: the welcome screen headings show on the dark background instead of black on black ([607b7f77](https://github.com/meshsat/meshsat-android/commit/607b7f775ff5cfa6747e796ae99270b21beb9f82))
 - **reticulum**: Reticulum over the Hub's MQTT publishes under the tenant's topic root too ([3f94112e](https://github.com/meshsat/meshsat-android/commit/3f94112eca4e34685470eefea53aeeca81c41034))
 - **iridium**: a satellite send that ends uncertain no longer takes back "The Hub has it" from an earlier session's receipt ([28fb5279](https://github.com/meshsat/meshsat-android/commit/28fb527940e45ce820ffb33c59f641e1a1cbc16c))
 - **delivery**: a delivery report that lands while a send is out is never undone by the worker, and a confirmed delivery is never sent again ([89abb0b0](https://github.com/meshsat/meshsat-android/commit/89abb0b0664bc035a63d9daee313c678eb0b2e87))

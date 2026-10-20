@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 94
-  unreleased_since: "2026-10-19"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-19"
+  unreleased_count: 97
+  unreleased_since: "2026-10-20"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-20"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -21,10 +21,12 @@ transport by transport; there is no release yet. Builds, once there are any,
 are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-19)
+## Unreleased (main, last change 2026-10-20)
 
 ### Features
 
+- **sos**: an SOS carries its own id, so the Hub pages once whichever routes carry it, and its cancel goes until the Hub has it ([40bbc673](https://github.com/meshsat/meshsat-ios/commit/40bbc673ae02c03a85a6b9533afbbb49c0ce513c))
+- **messages**: texts to another MeshSat app or kit through the Hub, as on Android, marked delivered only on the recipient app's own answer ([97d8dbb8](https://github.com/meshsat/meshsat-ios/commit/97d8dbb82b30c7616cdf4f7c443b43f898cc2255))
 - **hub**: the MQTT transport and Reticulum over it use the tenant's topic root, and a root that is not meshsat or meshsat/\<tenant\> is refused ([ead59f55](https://github.com/meshsat/meshsat-ios/commit/ead59f55dd2fbfae58ecf172c7820e79bc46e53b))
 - **store**: store\_resubmit lane resolves the rejected item and resubmits the same submission ([10530e44](https://github.com/meshsat/meshsat-ios/commit/10530e447d6462c602f31a63ee6271b2d44d433d))
 - **satellite**: Iridium BLE contract v2, node health card from STATS, pass windows to the node ([241755fd](https://github.com/meshsat/meshsat-ios/commit/241755fd2483bacda65b300e39a0eeacc6526c1a))
@@ -84,6 +86,7 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Fixes
 
+- **messages**: a reconnect in the middle of a Hub pass no longer hides a lost status, and nothing goes out before the Hub subscriptions hold, as on Android ([96a94e61](https://github.com/meshsat/meshsat-ios/commit/96a94e61821cfef80e95707b43684c6c6bc61851))
 - **mqtt**: a broker drop right after the connect brings the MQTT transport back instead of leaving it connected on a dead session ([7a95d811](https://github.com/meshsat/meshsat-ios/commit/7a95d811762f1bbad55bc3430f7ecbc9bfc37df7))
 - **iridium**: a satellite send that ends uncertain no longer takes back "The Hub has it" from an earlier session's receipt ([c891e136](https://github.com/meshsat/meshsat-ios/commit/c891e13603e9f8eaab630bff716581276acd98d2))
 - **delivery**: a confirmation that lands while a send is out is never undone by the worker, and a confirmed delivery is never sent again ([e6068935](https://github.com/meshsat/meshsat-ios/commit/e606893575b00ff2a3a0a354d7a4fc34bf0851d1))

@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 66
-  unreleased_since: "2026-10-19"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-19"
+  unreleased_count: 73
+  unreleased_since: "2026-10-20"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-20"
 ---
 
 Generated from the commit history of
@@ -20,10 +20,13 @@ under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-19)
+## Unreleased (main, last change 2026-10-20)
 
 ### Features
 
+- **sos**: an SOS carries its own id, so the Hub pages once whichever bearers carry it, a cancel stops it for good, and the sender gets an ack for each ([553fac4d](https://github.com/meshsat/meshsat-hub/commit/553fac4d7c711bca183d87170d302e6291555c5b))
+- **hub**: the Hub carries texts between bridges that ask for it, the route now on in production ([ec16b29d](https://github.com/meshsat/meshsat-hub/commit/ec16b29d3b461cd92da9bce1eb96029db1da7c8b))
+- **hub**: the Hub carries a bridge's text to another bridge of its tenant and tells the sender what is known, behind HUB\_MSG\_ROUTE\_ENABLED ([ba4c6a16](https://github.com/meshsat/meshsat-hub/commit/ba4c6a1670e2bc0df31c68392fd11f156be680fe))
 - **lxmf**: the Reticulum page tells a tenant where a client connects, from HUB\_RNS\_PUBLIC\_ENDPOINT ([9cfccf8e](https://github.com/meshsat/meshsat-hub/commit/9cfccf8eaa393fe4ac1ff5b8ee00facff38bc087))
 - **lxmf**: every tenant address runs an LXMF propagation node that holds messages for offline clients, on RNS link requests added to the node ([c9462e26](https://github.com/meshsat/meshsat-hub/commit/c9462e26e6d1ef355c6b522a9e0b789293da8916))
 - **lxmf**: the Reticulum page in the console (address with copy and QR, inbox, send, peers) and the public listener's edge path ([7e42c2f4](https://github.com/meshsat/meshsat-hub/commit/7e42c2f4409cfb10ac3d4b1d2854c7562f3134a4))
@@ -50,6 +53,10 @@ it goes live.
 
 ### Fixes
 
+- **sos**: a Hub replica starts again with bridges connected, as the SOS answers no longer wait inside the MQTT handler ([a32ca045](https://github.com/meshsat/meshsat-hub/commit/a32ca045c7557c418a7d82538893c2a4266270a4))
+- **sos**: a bridge that stays connected while the Hub restarts still learns the Hub's SOS caps ([11f85020](https://github.com/meshsat/meshsat-hub/commit/11f850208c95c6e9bd7ac7ba94d0064650206693))
+- **hub**: a bridge that repeats its submission gets every event again, however soon it asks ([26fd2a44](https://github.com/meshsat/meshsat-hub/commit/26fd2a44c45c7ca30ac86f97952d4de660273b1b))
+- **hub**: the other replica's copy of a bridge's submission no longer sends the sender its status a second time ([32449415](https://github.com/meshsat/meshsat-hub/commit/32449415e68acc349c0c4b571687b3545b1c4a4b))
 - **nats**: a bridge or a phone can no longer publish its own msg/in or msg/status, which only the Hub may ([c5b1b101](https://github.com/meshsat/meshsat-hub/commit/c5b1b1016b1ad9e9d8e82b97e30a191971b02c7e))
 - **routing**: a Bridge's mesh text on any channel is routed and stored, and one SOS raises one alert whatever bearer carried it ([9566a375](https://github.com/meshsat/meshsat-hub/commit/9566a3752cd27d7d309a8fe794da62b1b3e8b06e))
 - **authentik**: the sign-up notification rule fires once per enrolment, from one policy that cannot throw ([9954d552](https://github.com/meshsat/meshsat-hub/commit/9954d5526d76f1e006ac4b2ee5fd2bebff2c49ab))

@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1006
-  unreleased_since: "2026-10-19"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-19"
+  unreleased_count: 1014
+  unreleased_since: "2026-10-20"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-20"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,12 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-19)
+## Unreleased (main, last change 2026-10-20)
 
 ### Features
 
+- **sos**: an SOS carries its own id, so the Hub pages once whichever bearers carry it, and a cancel goes on each of them until the Hub has it ([df4419fe](https://github.com/meshsat/meshsat/commit/df4419fefb3eb43cb18009020c48349cfcf8dab2))
+- **intents**: a text to a contact's bridge goes through the Hub and closes delivered to the MeshSat app, behind MESHSAT\_HUB\_MSG\_ROUTE ([6a28669f](https://github.com/meshsat/meshsat/commit/6a28669f9707c32fd52fea2560d5655fa4c6893b))
 - **hub**: a Bridge in an organisation's tenant publishes and subscribes under that tenant's topic root ([3b305817](https://github.com/meshsat/meshsat/commit/3b305817783e6a60fa4f86fea8e9a9e7512c179a))
 - **delivery**: a text by TETRA that a MeshSat Bridge on the group acknowledges shows as acked by a station, and one nobody acknowledged as may have been sent ([3d21a68e](https://github.com/meshsat/meshsat/commit/3d21a68ee67e7cf46e191192362325147d1db966))
 - **tetra**: MeshSat Bridges on a TETRA group confirm each text they receive, so a text lost in a collision both radios missed is sent again ([6aba9c83](https://github.com/meshsat/meshsat/commit/6aba9c83b2e0b7c5c1d0ace4eb18746adc914fe3))
@@ -443,6 +445,12 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **intents**: an event kept before the bound is never reported as an unknown outcome, even when its cleanup failed ([44343766](https://github.com/meshsat/meshsat/commit/443437665a0c52c0d75b368264d1bebc9c71058c))
+- **intents**: a completion lost after an expiry is still asked for, and a start asks for every operation without one ([fb7d4d29](https://github.com/meshsat/meshsat/commit/fb7d4d298136496bfb94ddc0cf8c525eaba965ea))
+- **intents**: a Hub event the kit could not keep stays asked for until its outcome is kept, across a restart too ([64a3990a](https://github.com/meshsat/meshsat/commit/64a3990a892144083f55c0e5d7d7d8511cacd69a))
+- **intents**: a Hub event or hand-off whose write fails is applied again and kept once, and a lost event is asked for again ([ace79651](https://github.com/meshsat/meshsat/commit/ace79651f1eea3270daa6fddd2c780027f73933c))
+- **links**: the Hub messages link reads online while its route is on, and unbound when it is off ([96532aa2](https://github.com/meshsat/meshsat/commit/96532aa258bea7028dc32a44b97e41bacfe77501))
+- **intents**: a text the Hub refuses reads not sent, not accepted, and its refusal counts once ([8c960933](https://github.com/meshsat/meshsat/commit/8c960933290e027ead91cce4f11b2d10d1d548de))
 - **hub**: a blank topic root saved in the Hub settings returns the Bridge to the platform tenant, whatever MESHSAT\_HUB\_TOPIC\_PREFIX says ([8b06e7ca](https://github.com/meshsat/meshsat/commit/8b06e7ca8be942facd917103ca10af823bab0dea))
 - **hub**: a Hub command that ran without its claim no longer stores its reply under another request's claim ([88826a95](https://github.com/meshsat/meshsat/commit/88826a9583e5a413e135ff574cd35fe9a7e90924))
 - **hub**: a Hub send\_text run again after a restart answers the delivery it queued first, a command that changes something is not run without the command log, and a refusal never replaces a finished command's reply ([9d703ced](https://github.com/meshsat/meshsat/commit/9d703cedb9def776799ed0fb54287581cd0de533))
