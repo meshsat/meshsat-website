@@ -754,7 +754,7 @@ ig_radio_key:
   other: "Local radio designators"
 
 ig_render_caption:
-  other: "R&D concept render. Proposed enclosure, not validated hardware."
+  other: "R&D concept render by MeshSat. Enclosure, hardware and RF integration remain unverified."
 
 ig_render_alt:
   other: "MSC-3T enclosure concept with a small colour e-paper display, compact Iridium antenna and TETRA whip antenna"
@@ -1181,3 +1181,33 @@ ig_rockblock_fact_3_0:
 
 ig_rockblock_fact_3_1:
   other: "TTL UART or USB-C serial"
+
+ig_enlarge:
+  other: "Enlarge concept image"
+
+ig_study_eyebrow:
+  other: "MSC-3T / ENCLOSURE STUDY"
+
+ig_study_title:
+  other: "Display, controls and handling"
+
+ig_study_intro:
+  other: "A small colour e-paper display compatible with the Raspberry Pi is under evaluation. These views explore the enclosure and controls; ergonomics and antenna placement still require testing."
+
+ig_detail_alt:
+  other: "MSC-3T concept close-up of an e-paper display, two front buttons and the enclosure seal"
+
+ig_detail_caption:
+  other: "Display and controls study. The screen illustrates status information."
+
+ig_hand_alt:
+  other: "MSC-3T enclosure concept held by a simplified gloved-hand model, with two antennas visible"
+
+ig_hand_caption:
+  other: "Handling study with a simplified hand model. Size and grip are unvalidated."
+
+ig_field_alt:
+  other: "MSC-3T concept beside a generic handheld radio on a transport case in a rendered outdoor scene"
+
+ig_field_caption:
+  other: "Illustrated direct-mode team setup. A simulated scene, not a field test."

@@ -754,7 +754,7 @@ ig_radio_key:
   other: "Kennbuchstaben der lokalen Funkmodule"
 
 ig_render_caption:
-  other: "Konzeptdarstellung für Forschung und Entwicklung. Gehäuseentwurf, keine validierte Hardware."
+  other: "Konzeptdarstellung für Forschung und Entwicklung von MeshSat. Gehäuse, Hardware und HF-Integration sind noch nicht verifiziert."
 
 ig_render_alt:
   other: "MSC-3T-Gehäusekonzept mit kleiner farbiger E-Paper-Anzeige, kompakter Iridium-Antenne und TETRA-Stabantenne"
@@ -1181,3 +1181,33 @@ ig_rockblock_fact_2_0:
 
 ig_rockblock_fact_3_0:
   other: "Hostschnittstelle"
+
+ig_enlarge:
+  other: "Konzeptbild vergrößern"
+
+ig_study_eyebrow:
+  other: "MSC-3T / GEHÄUSESTUDIE"
+
+ig_study_title:
+  other: "Anzeige, Bedienelemente und Handhabung"
+
+ig_study_intro:
+  other: "Eine kleine farbige E-Paper-Anzeige, kompatibel mit dem Raspberry Pi, wird evaluiert. Diese Ansichten untersuchen Gehäuse und Bedienelemente; Ergonomie und Antennenpositionierung müssen noch getestet werden."
+
+ig_detail_alt:
+  other: "Nahansicht des MSC-3T-Konzepts mit E-Paper-Anzeige, zwei Fronttasten und Gehäusedichtung"
+
+ig_detail_caption:
+  other: "Studie zu Anzeige und Bedienung. Das Display zeigt beispielhafte Statusinformationen."
+
+ig_hand_alt:
+  other: "MSC-3T-Gehäusekonzept in einem vereinfachten Modell einer behandschuhten Hand, mit zwei sichtbaren Antennen"
+
+ig_hand_caption:
+  other: "Handhabungsstudie mit vereinfachtem Handmodell. Größe und Griff sind nicht validiert."
+
+ig_field_alt:
+  other: "MSC-3T-Konzept neben einem generischen Handfunkgerät auf einem Transportkoffer in einer gerenderten Außenszene"
+
+ig_field_caption:
+  other: "Illustration einer Teamkonfiguration im Direktmodus. Simulierte Szene, kein Feldtest."

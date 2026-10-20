@@ -754,7 +754,7 @@ ig_radio_key:
   other: "Lettres des radios locales"
 
 ig_render_caption:
-  other: "Rendu conceptuel de R&D. Proposition de boîtier, pas du matériel validé."
+  other: "Rendu conceptuel de R&D par MeshSat. Le boîtier, le matériel et l’intégration RF restent à vérifier."
 
 ig_render_alt:
   other: "Concept de boîtier MSC-3T avec petit afficheur à papier électronique couleur, antenne Iridium compacte et antenne fouet TETRA"
@@ -1181,3 +1181,33 @@ ig_rockblock_fact_2_0:
 
 ig_rockblock_fact_3_0:
   other: "Interface hôte"
+
+ig_enlarge:
+  other: "Agrandir l’image du concept"
+
+ig_study_eyebrow:
+  other: "MSC-3T / ÉTUDE DU BOÎTIER"
+
+ig_study_title:
+  other: "Afficheur, commandes et prise en main"
+
+ig_study_intro:
+  other: "Un petit afficheur à papier électronique couleur compatible avec le Raspberry Pi est en cours d’évaluation. Ces vues explorent le boîtier et les commandes ; l’ergonomie et le placement des antennes nécessitent encore des essais."
+
+ig_detail_alt:
+  other: "Gros plan du concept MSC-3T avec afficheur à papier électronique, deux boutons en façade et joint du boîtier"
+
+ig_detail_caption:
+  other: "Étude de l’afficheur et des commandes. L’écran illustre des informations d’état."
+
+ig_hand_alt:
+  other: "Concept de boîtier MSC-3T tenu par un modèle simplifié de main gantée, avec deux antennes visibles"
+
+ig_hand_caption:
+  other: "Étude de prise en main avec un modèle de main simplifié. Taille et préhension non validées."
+
+ig_field_alt:
+  other: "Concept MSC-3T à côté d’une radio portable générique sur une mallette de transport dans une scène extérieure de synthèse"
+
+ig_field_caption:
+  other: "Illustration d’une équipe en mode direct. Scène simulée, pas un essai sur le terrain."

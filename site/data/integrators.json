@@ -326,5 +326,37 @@
       "source": "https://docs.groundcontrol.com/iot/rockblock-9704/specification",
       "sourceLabel": "ig_rockblock_sourceLabel"
     }
-  ]
+  ],
+  "imagery": {
+    "detail": {
+      "full": "/images/msc3/msc3t-detail-20261021.webp",
+      "small": "/images/msc3/msc3t-detail-20261021-small.webp",
+      "width": 1920,
+      "height": 1280,
+      "smallWidth": 960,
+      "sizes": "(max-width: 700px) calc(100vw - 48px), 740px",
+      "alt": "ig_detail_alt",
+      "caption": "ig_detail_caption"
+    },
+    "hand": {
+      "full": "/images/msc3/msc3t-in-hand-20261021.webp",
+      "small": "/images/msc3/msc3t-in-hand-20261021-small.webp",
+      "width": 1280,
+      "height": 1600,
+      "smallWidth": 640,
+      "sizes": "(max-width: 700px) calc(100vw - 48px), 400px",
+      "alt": "ig_hand_alt",
+      "caption": "ig_hand_caption"
+    },
+    "field": {
+      "full": "/images/msc3/msc3t-field-20261021.webp",
+      "small": "/images/msc3/msc3t-field-20261021-small.webp",
+      "width": 1920,
+      "height": 1080,
+      "smallWidth": 960,
+      "sizes": "(max-width: 900px) calc(100vw - 48px), 620px",
+      "alt": "ig_field_alt",
+      "caption": "ig_field_caption"
+    }
+  }
 }
