@@ -1201,10 +1201,10 @@ ig_detail_caption:
   other: "Studie zu Anzeige und Bedienung. Das Display zeigt beispielhafte Statusinformationen."
 
 ig_hand_alt:
-  other: "MSC-3T-Gehäusekonzept in einem vereinfachten Modell einer behandschuhten Hand, mit zwei sichtbaren Antennen"
+  other: "MSC-3T-Gehäusekonzept in einer behandschuhten Hand, mit zwei sichtbaren Antennen"
 
 ig_hand_caption:
-  other: "Handhabungsstudie mit vereinfachtem Handmodell. Größe und Griff sind nicht validiert."
+  other: "Handhabungsstudie mit einer behandschuhten Hand. Größe und Griff sind nicht validiert."
 
 ig_field_alt:
   other: "MSC-3T-Konzept neben einem generischen Handfunkgerät auf einem Transportkoffer in einer gerenderten Außenszene"

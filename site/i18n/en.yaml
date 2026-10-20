@@ -1201,10 +1201,10 @@ ig_detail_caption:
   other: "Display and controls study. The screen illustrates status information."
 
 ig_hand_alt:
-  other: "MSC-3T enclosure concept held by a simplified gloved-hand model, with two antennas visible"
+  other: "MSC-3T enclosure concept held in a gloved hand, with two antennas visible"
 
 ig_hand_caption:
-  other: "Handling study with a simplified hand model. Size and grip are unvalidated."
+  other: "Handling study with a gloved hand. Size and grip are unvalidated."
 
 ig_field_alt:
   other: "MSC-3T concept beside a generic handheld radio on a transport case in a rendered outdoor scene"
