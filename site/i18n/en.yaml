@@ -442,3 +442,6 @@ start_demo:
 
 hw_start:
   other: "Minimum setup, optional additions and build guides"
+
+msc3_integrators:
+  other: "MSC-3 for integrators (English)"

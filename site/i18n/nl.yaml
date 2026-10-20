@@ -442,3 +442,6 @@ start_demo:
 
 hw_start:
   other: "Minimale opstelling, uitbreidingen en bouwhandleidingen"
+
+msc3_integrators:
+  other: "MSC-3 voor integrators (Engels)"

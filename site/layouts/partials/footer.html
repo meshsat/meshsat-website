@@ -2,6 +2,7 @@
     <!-- Colophon: BUILT WITH left, SUPPORTED BY right. One strip, the binary's
          own voice: its dependency list and its credits. The pre-release line
          lived here until 7 Sep 2026; the hero pill carries that framing. -->
+    {{ if not .Params.integrators }}
     <div class="colophon">
         <div class="container colophon-inner">
             <p class="colophon-stack"><span class="colophon-label">{{ i18n "f_builtwith" }}</span><a href="https://github.com/papadopouloskyriakos/hemb" target="_blank" rel="noopener" title="HeMB">HeMB</a><a href="https://reticulum.network/" target="_blank" rel="noopener" title="Reticulum">Reticulum</a><a href="https://meshtastic.org/" target="_blank" rel="noopener" title="Meshtastic">Meshtastic</a><a href="https://www.iridium.com/" target="_blank" rel="noopener" title="Iridium">Iridium</a><a href="https://www.raspberrypi.com/" target="_blank" rel="noopener" title="Raspberry Pi">Raspberry Pi</a><a href="https://www.docker.com/" target="_blank" rel="noopener" title="Docker">Docker</a></p>
@@ -15,6 +16,7 @@
         </div>
     </div>
 
+    {{ end }}
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
@@ -92,6 +94,7 @@
                     {{/* The one link from meshsat.net to the shop (MESHSAT-1517, 10 Oct 2026): the home
                          page keeps its no-prices rule; the product and its prices live on shop.meshsat.net. */}}
                     <li><a href="https://shop.meshsat.net/" data-umami-event="shop-click" data-umami-event-locale="{{ .Site.Language.Lang }}">MeshSat Compact v2</a></li>
+                    <li><a href="/integrators/"{{ if .Params.integrators }} aria-current="page"{{ end }}>{{ i18n "msc3_integrators" }}</a></li>
                 </ul>
             </div>
 

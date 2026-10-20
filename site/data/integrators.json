@@ -1,0 +1,330 @@
+{
+  "radios": [
+    {
+      "code": "T",
+      "name": "TETRA",
+      "data": "SDS text, status and position reports",
+      "modules": "Airbus TW1m; PMR-R & D BDM 31 3L",
+      "limit": "Licensed TETRA channels. Direct-mode SDS, status and location interoperability need validation with the team's radios. BDM 31 3L direct mode is unconfirmed."
+    },
+    {
+      "code": "D",
+      "name": "DMR",
+      "data": "Text; status and positions depend on the module and fleet",
+      "modules": "Leonardo ECOS-D MT100-N; NiceRF DMR818S",
+      "limit": "Licensed DMR channels. Text formats, location protocols and encryption vary by fleet. NiceRF's public command list does not document a location command. Cross-vendor data and encryption interoperability are unverified."
+    },
+    {
+      "code": "L",
+      "name": "LoRa / Meshtastic",
+      "data": "Meshtastic text and position packets",
+      "modules": "Semtech SX1262-based radio",
+      "limit": "Regional band, transmit power and duty-cycle limits apply. A Meshtastic host and compatible firmware are required; the SX1262 chip alone does not run Meshtastic."
+    },
+    {
+      "code": "A",
+      "name": "APRS",
+      "data": "Amateur-radio text, status and positions",
+      "modules": "PicoAPRS V4",
+      "limit": "Amateur radio only. A licensed operator is required. No encryption. Not for agency traffic; routes onto APRS must enforce this boundary."
+    },
+    {
+      "code": "H",
+      "name": "HaLow / 802.11ah",
+      "data": "Selected application messages over a local IP link",
+      "modules": "Morse Micro MM6108; LILYGO T-HaLow / TX-AH",
+      "limit": "Regional band and power limits apply. Requires compatible HaLow peers. The satellite path carries selected messages, not a broadband IP connection. Board choice and host integration are under evaluation."
+    },
+    {
+      "code": "G",
+      "name": "2G cell",
+      "data": "SMS from phones registered to a local GSM cell",
+      "modules": "PlutoSDR with Osmocom",
+      "limit": "Licensed per site. Each deployment needs its own radio authorization. SIM provisioning, spectrum, timing, RF filtering and compute capacity need validation. This is a local cell, not public-network roaming."
+    }
+  ],
+  "modules": [
+    {
+      "id": "tw1m",
+      "family": "T / TETRA",
+      "name": "Airbus TW1m",
+      "shape": "shield",
+      "width": 138,
+      "height": 105,
+      "facts": [
+        [
+          "Size / mass",
+          "84 × 67 × 24.7 mm / 66 g"
+        ],
+        [
+          "Bands",
+          "380-400 MHz; 406-430 MHz (RC-47)"
+        ],
+        [
+          "Data interface",
+          "RS-232 or USB; AT commands"
+        ],
+        [
+          "Published functions",
+          "DMO SDS and status; GPS"
+        ]
+      ],
+      "note": "Public brochure dimensions shown. Location handling and fleet interoperability require bench validation.",
+      "source": "https://kauppa.senop.fi/wp-content/uploads/TW1m_EN_datasheet.pdf",
+      "sourceLabel": "Airbus public datasheet, 03/2018 (Senop copy)"
+    },
+    {
+      "id": "bdm31",
+      "family": "T / TETRA",
+      "name": "PMR-R & D BDM 31 3L",
+      "shape": "board",
+      "width": 166,
+      "height": 80,
+      "facts": [
+        [
+          "Size / mass",
+          "86 × 43 × 8 mm / 35 g"
+        ],
+        [
+          "RF output",
+          "1.8 W, class 3L"
+        ],
+        [
+          "Supply",
+          "3.7 V; 3.0 A during a TX burst"
+        ],
+        [
+          "Data interface",
+          "PEI (ETSI EN 300 392-5); serial / RS-232"
+        ]
+      ],
+      "note": "The public datasheet lists TMO only. DMO support, required for the team-radio concept, is unconfirmed.",
+      "source": "https://www.pmr-rnd.de/wp-content/uploads/2018/06/TETRA-Radio-Modem-BDM-31_3L-V1_1.pdf",
+      "sourceLabel": "PMR-R & D public datasheet, V1.1"
+    },
+    {
+      "id": "mt100",
+      "family": "D / DMR",
+      "name": "Leonardo ECOS-D MT100-N",
+      "shape": "shield",
+      "width": 105,
+      "height": 140,
+      "facts": [
+        [
+          "Size / mass",
+          "48 × 64 × 10.4 mm / 50 g"
+        ],
+        [
+          "Bands / RF output",
+          "136-174 MHz / 4.7 W; 400-470 MHz / 4 W"
+        ],
+        [
+          "Supply",
+          "7.4 V; up to 2 A"
+        ],
+        [
+          "Data interface",
+          "3.3 V UART; AT commands; IP over DMR"
+        ]
+      ],
+      "note": "The datasheet lists DMRA AES-128/256 and ARC4. This does not establish interoperability with a fleet's text, location or encryption implementation.",
+      "source": "https://www.dmrassociation.org/leonardo/%5BECOS-D-MT100-N%5D_Modem-DMR_LQ_(mm08909).pdf",
+      "sourceLabel": "Leonardo public datasheet, mm08909, 09/2020"
+    },
+    {
+      "id": "dmr818",
+      "family": "D / DMR",
+      "name": "NiceRF DMR818S",
+      "shape": "stamp",
+      "width": 145,
+      "height": 88,
+      "facts": [
+        [
+          "Band options",
+          "134-174, 320-400 or 400-470 MHz"
+        ],
+        [
+          "RF output",
+          "2 W; datasheet specifies 1 W for CE/FCC"
+        ],
+        [
+          "Supply",
+          "3.3-4.5 V"
+        ],
+        [
+          "Data interface",
+          "57,600 baud UART; binary commands"
+        ]
+      ],
+      "note": "Text commands are documented; a location command is not. Encryption and text compatibility with other radios remain unverified.",
+      "source": "https://www.nicerf.com/pdf/dmr818s-2w-ce-fcc-certificated-digital-walkie-talkie-module-v1.8.pdf",
+      "sourceLabel": "NiceRF public datasheet, V1.8, 06/2026"
+    },
+    {
+      "id": "sx1262",
+      "family": "L / LoRa",
+      "name": "Semtech SX1262",
+      "shape": "chip",
+      "width": 85,
+      "height": 85,
+      "facts": [
+        [
+          "RF tuning range",
+          "150-960 MHz (chip capability)"
+        ],
+        [
+          "RF output",
+          "Up to +22 dBm (chip capability)"
+        ],
+        [
+          "Modulation",
+          "LoRa and (G)FSK"
+        ],
+        [
+          "Host interface",
+          "SPI"
+        ]
+      ],
+      "note": "A radio module, antenna and Meshtastic host are under evaluation. Chip limits are not permission to transmit at those settings.",
+      "source": "https://www.semtech.com/uploads/common/LoRa_products_sx126x.pdf",
+      "sourceLabel": "Semtech public SX126x product specifications"
+    },
+    {
+      "id": "picoaprs",
+      "family": "A / APRS",
+      "name": "PicoAPRS V4",
+      "shape": "handheld",
+      "width": 78,
+      "height": 142,
+      "facts": [
+        [
+          "Size / mass",
+          "Approx. 35 × 67 × 25 mm / 60 g"
+        ],
+        [
+          "EU transmit band",
+          "144-146 MHz"
+        ],
+        [
+          "RF output",
+          "Maximum 1 W"
+        ],
+        [
+          "Packet / interface",
+          "AX.25 at 1,200 baud; USB KISS TNC"
+        ]
+      ],
+      "note": "VHF model. Amateur radio only, licensed operator, no encryption. Its own battery is separate from the MSC-3 battery concept.",
+      "source": "http://www.db1nto.de/PicoAPRS_V4_User_Manual.pdf",
+      "sourceLabel": "Maker's public V4 manual, technical specifications, 20/11/2023"
+    },
+    {
+      "id": "mm6108",
+      "family": "H / HaLow",
+      "name": "Morse Micro MM6108",
+      "shape": "chip",
+      "width": 100,
+      "height": 100,
+      "facts": [
+        [
+          "Radio",
+          "Wi-Fi HaLow, IEEE 802.11ah"
+        ],
+        [
+          "Host interface",
+          "SDIO or SPI"
+        ],
+        [
+          "Role under evaluation",
+          "Local IP access for message transport"
+        ]
+      ],
+      "note": "A Morse Micro module and carrier remain under evaluation. The LILYGO T-HaLow board below uses TX-AH; it is a separate candidate.",
+      "source": "https://www.morsemicro.com/resources/product_brief/MM6108-Product-Brief.pdf",
+      "sourceLabel": "Morse Micro public MM6108 product brief"
+    },
+    {
+      "id": "thalow",
+      "family": "H / HaLow",
+      "name": "LILYGO T-HaLow / TX-AH",
+      "shape": "ethernet",
+      "width": 174,
+      "height": 66,
+      "facts": [
+        [
+          "Radio",
+          "Wi-Fi HaLow, IEEE 802.11ah"
+        ],
+        [
+          "Radio module",
+          "Taixin TX-AH, per LILYGO documentation"
+        ],
+        [
+          "Integration",
+          "Ethernet and AT-command control"
+        ]
+      ],
+      "note": "Board revision, regional RF variant and host interface need confirmation. No Morse Micro chipset is attributed to this board.",
+      "source": "https://github.com/Xinyuan-LilyGO/T-Halow",
+      "sourceLabel": "LILYGO public hardware documentation and module specifications"
+    },
+    {
+      "id": "pluto",
+      "family": "G / 2G cell",
+      "name": "PlutoSDR with Osmocom",
+      "shape": "sdr",
+      "width": 162,
+      "height": 106,
+      "facts": [
+        [
+          "RF tuning range",
+          "325 MHz to 3.8 GHz (SDR capability)"
+        ],
+        [
+          "Bandwidth",
+          "Up to 20 MHz (SDR capability)"
+        ],
+        [
+          "RF channels",
+          "One transmitter; one receiver"
+        ],
+        [
+          "Host interface",
+          "USB 2.0; libiio"
+        ]
+      ],
+      "note": "Analog Devices ADALM-PLUTO specifications. GSM operation with Osmocom, RF filtering and processing on the platform require validation. Licensed per site.",
+      "source": "https://wiki.analog.com/university/tools/pluto/devs/specs",
+      "sourceLabel": "Analog Devices public ADALM-PLUTO technical specifications"
+    },
+    {
+      "id": "rockblock",
+      "family": "Iridium / all variants",
+      "name": "Ground Control RockBLOCK 9704",
+      "shape": "satellite",
+      "width": 124,
+      "height": 116,
+      "facts": [
+        [
+          "Size / mass, SMA model",
+          "48 × 52 × 16 mm / less than 35 g, excluding antenna"
+        ],
+        [
+          "Satellite service",
+          "Iridium Messaging Transport (IMT)"
+        ],
+        [
+          "Maker's IMT payload limit",
+          "Up to 100,000 bytes per message"
+        ],
+        [
+          "Host interface",
+          "TTL UART or USB-C serial"
+        ]
+      ],
+      "note": "Always fitted in the MSC-3 concept; module integration is under evaluation. Requires an approved antenna and satellite service. The payload limit is a modem specification, not a validated MSC-3 payload size.",
+      "source": "https://docs.groundcontrol.com/iot/rockblock-9704/specification",
+      "sourceLabel": "Ground Control public RockBLOCK 9704 specifications"
+    }
+  ]
+}
