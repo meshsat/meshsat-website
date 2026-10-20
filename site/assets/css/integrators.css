@@ -44,6 +44,7 @@
 .ig-enclosure-study h3 { margin-block: var(--space-sm) var(--space-md); font-size: 1.5rem; }
 .ig-study-views { display: grid; grid-template-columns: 1.875fr 1fr; gap: var(--space-lg); align-items: start; }
 .ig-concept-view { min-width: 0; }
+.ig-exploded-view { margin-bottom: var(--space-3xl); }
 .ig-image-open { display: block; position: relative; width: 100%; padding: 0; border: 0; border-radius: 0; background: var(--color-bg-secondary); cursor: zoom-in; }
 .ig-image-open img { display: block; width: 100%; height: auto; }
 .ig-image-open::after { display: none; }

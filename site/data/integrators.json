@@ -357,6 +357,16 @@
       "sizes": "(max-width: 900px) calc(100vw - 48px), 620px",
       "alt": "ig_field_alt",
       "caption": "ig_field_caption"
+    },
+    "exploded": {
+      "full": "/images/msc3/msc3t-exploded-20261021.webp",
+      "small": "/images/msc3/msc3t-exploded-20261021-small.webp",
+      "width": 1920,
+      "height": 1280,
+      "smallWidth": 960,
+      "sizes": "(max-width: 1200px) calc(100vw - 48px), 1152px",
+      "alt": "ig_exploded_alt",
+      "caption": "ig_exploded_caption"
     }
   }
 }

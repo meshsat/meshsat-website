@@ -1211,3 +1211,6 @@ ig_field_alt:
 
 ig_field_caption:
   other: "Illustratie van een teamopstelling in directe modus. Een gesimuleerde scène, geen veldtest."
+
+ig_exploded_caption:
+  other: "Explosiestudie van de opbouw: behuizing, scherm, computer, Iridium-modem, één lokale radiomodule en ruimte voor de accu. De plaatsing van onderdelen is illustratief."

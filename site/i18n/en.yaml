@@ -1211,3 +1211,6 @@ ig_field_alt:
 
 ig_field_caption:
   other: "Illustrated direct-mode team setup. A simulated scene, not a field test."
+
+ig_exploded_caption:
+  other: "Exploded assembly study: enclosure, display, compute board, Iridium modem, one local radio module and battery space. Component placement is illustrative."
