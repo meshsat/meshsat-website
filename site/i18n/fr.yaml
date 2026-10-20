@@ -1211,3 +1211,6 @@ ig_field_alt:
 
 ig_field_caption:
   other: "Illustration d’une équipe en mode direct. Scène simulée, pas un essai sur le terrain."
+
+ig_exploded_caption:
+  other: "Étude en vue éclatée : boîtier, afficheur, carte de calcul, modem Iridium, un module radio local et espace pour la batterie. Le placement des composants est illustratif."

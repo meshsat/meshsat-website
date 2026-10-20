@@ -1211,3 +1211,6 @@ ig_field_alt:
 
 ig_field_caption:
   other: "Illustration einer Teamkonfiguration im Direktmodus. Simulierte Szene, kein Feldtest."
+
+ig_exploded_caption:
+  other: "Explosionsdarstellung der Baugruppen: Gehäuse, Anzeige, Rechnerplatine, Iridium-Modem, ein lokales Funkmodul und Akkuraum. Die Anordnung der Bauteile ist schematisch."
