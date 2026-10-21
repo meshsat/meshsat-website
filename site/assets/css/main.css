@@ -4715,3 +4715,13 @@ main { flex: 1 0 auto; }
     .build-section-heading { position: static; }
     .build-photo-open img, .build-jump svg { transition: none; transform: none; }
 }
+
+/* ---------- Review, 21 Oct 2026 (MESHSAT-1610) ----------
+   The star count and the visitor chip arrive after two fetches and re-wrapped
+   the hero-repo row from one line to two at 1440 (CLS 0.067): where the hero is
+   two columns the row reserves its two-line height, so the films section never
+   moves. Below 1100px the row stacks anyway and the chips land before first
+   paint. */
+@media (min-width: 1100px) {
+    .hero-repo { min-height: calc(2 * 41px + 0.5rem); }
+}
