@@ -165,19 +165,20 @@ img {
 }
 
 /* ---------- Skip Link ---------- */
+/* Hidden by clipping, not by an off-screen offset: an off-screen element turns
+   up in full-page captures and in zoomed layouts. The :focus rule in the a11y
+   block near the end of this file restores it (MESHSAT-1611). */
 .skip-link {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    padding: var(--space-sm) var(--space-md);
-    background: var(--color-primary);
-    color: #000;
-    z-index: 9999;
-    transition: top 0.2s;
-}
-
-.skip-link:focus {
-    top: 0;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    z-index: 999;
 }
 
 /* ---------- Header ---------- */
@@ -2850,11 +2851,6 @@ img {
 .footer-social a,
 .copy-btn { min-height: 34px; display: inline-flex; align-items: center; }
 
-:where(a, button):focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 3px;
-    border-radius: var(--radius-sm);
-}
 
 /* ---------- Signature: the message trace ----------
    One SOS, six routing decisions, shown as the log the bridge actually keeps.
@@ -3080,8 +3076,12 @@ img {
     transition: opacity .14s ease, transform .14s ease, visibility .14s;
     z-index: 60;
 }
+/* Open on hover, or when main.js has opened it from the button (is-open, so
+   Escape can close it while the button keeps focus); without JS the old
+   focus-within path still reaches the links from the keyboard. */
 .lang-switch:hover .lang-menu,
-.lang-switch:focus-within .lang-menu { opacity: 1; visibility: visible; transform: none; }
+.lang-switch.is-open .lang-menu,
+html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility: visible; transform: none; }
 .lang-menu a {
     display: block; padding: 0.42rem 0.6rem; border-radius: var(--radius-sm);
     color: var(--color-text); font-size: 0.88rem; text-decoration: none;
@@ -3158,13 +3158,11 @@ img {
 .table-wrap:focus-visible,
 .trace:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
 
-/* 2.5.8 Target Size (Minimum), new in WCAG 2.2: 24x24 CSS px. */
-.footer-col a,
-.nav-links a,
+/* 2.5.8 Target Size (Minimum), new in WCAG 2.2: 24x24 CSS px. The nav, footer
+   and copy-button links already carry 34px from the "Accessible hit areas"
+   rule; re-stating 24px here used to beat it (MESHSAT-1611). */
 .partners-logos a,
-.footer-social a,
-.lang-menu a,
-.copy-btn { min-height: 24px; }
+.lang-menu a { min-height: 24px; }
 
 /* 2.4.7 Focus Visible, and 1.4.11 for the indicator itself. */
 :where(a, button, [tabindex]):focus-visible {
@@ -4725,3 +4723,17 @@ main { flex: 1 0 auto; }
 @media (min-width: 1100px) {
     .hero-repo { min-height: calc(2 * 41px + 0.5rem); }
 }
+
+/* Native form controls and scrollbars follow the theme in force. */
+:root { color-scheme: dark; }
+[data-theme="light"] { color-scheme: light; }
+
+/* The language menu also opens from its button (click, tap, Enter), see
+   main.js; the hover and focus-within paths above stay. */
+.lang-switch.is-open .lang-menu { opacity: 1; visibility: visible; transform: none; }
+.lang-switch.is-open .lang-btn { color: var(--color-primary); border-color: var(--color-primary); }
+
+/* An in-page anchor moves focus to its section so assistive technology lands
+   there; a region focused by script needs no ring of its own. */
+#main-content:focus,
+:where(section, div, figure)[tabindex="-1"]:focus { outline: none; }

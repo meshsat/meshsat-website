@@ -202,10 +202,6 @@ nf4_h:
   other: "Not an emergency service"
 nf4_p:
   other: "A research prototype, not a replacement for 112, 911 or any national emergency number. Nothing here is certified and nothing here has been used in a real emergency."
-sys_title:
-  other: "The rest of the system"
-sys_sub:
-  other: "The Bridge is one device and works entirely on its own. Two other pieces exist for when one device is not the whole picture."
 hub_badge:
   other: "Open"
 hub_status:

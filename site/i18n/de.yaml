@@ -202,10 +202,6 @@ nf4_h:
   other: "Kein Notrufdienst"
 nf4_p:
   other: "Ein Forschungsprototyp, kein Ersatz für 112 oder eine andere nationale Notrufnummer. Nichts davon ist zertifiziert und nichts davon wurde in einem echten Notfall eingesetzt."
-sys_title:
-  other: "Der Rest des Systems"
-sys_sub:
-  other: "Die Bridge ist ein einzelnes Gerät und arbeitet vollständig eigenständig. Zwei weitere Teile gibt es für den Fall, dass ein Gerät nicht das ganze Bild ist."
 hub_badge:
   other: "Offen"
 hub_status:
