@@ -35,8 +35,27 @@ It takes one parameter, the dictionary:
 
 **Both ends must use the same dictionary.** A message compressed against the Meshtastic table and
 decompressed against the English one does not fail loudly, it produces different words. The
-Meshtastic dictionary is byte identical in the Bridge, the Hub and the Android app, so any of the
-three can decode the others as long as the transform lists match.
+Meshtastic dictionary is byte identical in the Bridge and the Hub. The MeshSat apps carry the
+standard dictionary only, so a chain whose far end is an app leaves `dict` out.
+
+The two encoders behave differently on short text. The standard one often makes a short ASCII
+message longer; the Meshtastic one writes plain ASCII as it is and only grows text in other
+scripts, where every run of non-ASCII bytes costs a count byte. On 733 texts from the field kits
+(median 25 bytes), the standard dictionary made 485 longer, the Meshtastic one 2, both of them
+not ASCII.
+
+## smaz2g: never more than one byte larger
+
+`smaz2g` puts one mode byte in front: `0x00` and the text as typed, or `0x01` and its SMAZ2, which
+it uses only when that is shorter. It takes the same `dict` parameter. A frame is at most one byte
+longer than its text, which matters for Greek, emoji or any other text SMAZ2 cannot shorten.
+
+```json
+{"type": "smaz2g", "params": {"dict": "meshtastic"}}
+```
+
+Only a MeshSat Bridge decodes `smaz2g`. The Hub and the apps do not, so use it on a link whose far
+end is another Bridge, and the validator warns when you save it anywhere.
 
 ## zstd for anything that is not short text
 
@@ -104,7 +123,8 @@ and for nothing else.
 
 ## Choosing
 
-- Short human text on any bearer: `smaz2` with the `meshtastic` dictionary.
+- Short human text on any bearer: `smaz2` with the `meshtastic` dictionary, or `smaz2g` with it
+  between two Bridges when the text may not be English.
 - Structured or binary payloads with room to spare: `zstd`.
 - Long natural language on an expensive, slow bearer, with a sidecar you monitor: `llamazip`.
 - Routine status where approximate is acceptable: `msvqsc`.

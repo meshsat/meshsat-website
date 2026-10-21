@@ -29,6 +29,7 @@ it is a message that arrives as noise.
 | Type | What it does | Output |
 |---|---|---|
 | `smaz2` | dictionary compression for short text | binary |
+| `smaz2g` | `smaz2` behind a mode byte: the text as typed when SMAZ2 would not make it shorter | binary |
 | `zstd` | general purpose compression | binary |
 | `llamazip` | model based compression, needs a sidecar | binary |
 | `msvqsc` | lossy semantic compression, needs a sidecar | binary |
@@ -45,7 +46,7 @@ save the interface and if one somehow reaches the dispatcher.
 Compression finds structure. Encryption destroys structure by design. Compressing after encrypting
 produces a slightly larger ciphertext and no saving at all, so the useful order is fixed:
 
-1. compress (`smaz2`, `zstd`, `llamazip`, `msvqsc`)
+1. compress (`smaz2`, `smaz2g`, `zstd`, `llamazip`, `msvqsc`)
 2. protect (`fec`) if the bearer loses bytes rather than whole messages
 3. `encrypt`
 4. `base64`, last, and only if the bearer cannot carry binary
@@ -56,6 +57,10 @@ SMS, MQTT and webhook interfaces carry text. Any chain that ends in binary on on
 rejected with `text-only transport (SMS/MQTT/webhook) requires base64 as the final transform after
 encrypt/compress`. It costs a quarter of your payload, which is the price of the bearer, not of the
 transform.
+
+The reverse holds too: Iridium SBD and IMT carry bytes, so base64 there only makes `n` bytes into
+`4 × ceil(n / 3)`. Leave it out of a satellite chain once every receiver of that interface reads the
+chain without it, and change both ends together.
 
 ## Check a chain before you save it
 
