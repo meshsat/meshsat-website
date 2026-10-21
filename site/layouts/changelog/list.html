@@ -6,10 +6,11 @@
 
         <div class="changelog-board-wrap">
         <table class="changelog-board">
-            <caption class="visually-hidden">Latest release and unreleased work per product</caption>
+            <caption class="visually-hidden">Last change, latest release and unreleased work per product</caption>
             <thead>
                 <tr>
                     <th scope="col">Product</th>
+                    <th scope="col">Last change</th>
                     <th scope="col">Latest release</th>
                     <th scope="col">Unreleased on main</th>
                 </tr>
@@ -22,6 +23,15 @@
                     <a class="board-product" href="{{ .RelPermalink }}">{{ .Title }}</a>
                     {{ with .Params.tagline }}<span class="board-tagline">{{ . }}</span>{{ end }}
                 </th>
+                <td data-label="Last change">
+                    {{ if and $c $c.unreleased_since }}
+                    <time datetime="{{ $c.unreleased_since }}">{{ $c.unreleased_since }}</time>
+                    {{ else if and $c $c.latest_tag_date }}
+                    <time datetime="{{ $c.latest_tag_date }}">{{ $c.latest_tag_date }}</time>
+                    {{ else }}
+                    <span class="board-none">No changes yet</span>
+                    {{ end }}
+                </td>
                 <td data-label="Latest release">
                     {{ if and $c $c.latest_tag }}
                     <a class="board-version" href="{{ .RelPermalink }}#{{ $c.latest_tag_anchor }}">{{ $c.latest_tag }}</a>
