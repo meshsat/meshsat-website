@@ -1,0 +1,15 @@
+{{/* A row of screenshot thumbnails that open in the shared lightbox. .shots is a
+     slice of dicts with "file" (under /images/screenshots/, 1280x720 plus a
+     -640 variant) and "cap" (an i18n key); .prefix names the caption ids;
+     .class adds a grid skin (hub-shots); .sizes is the srcset sizes list.
+     Each button is named by its caption plus the shared #shot-hint. */}}
+<div class="screenshots-grid{{ with .class }} {{ . }}{{ end }}" data-shots>
+    {{ range $i, $s := .shots }}
+    <figure class="screenshot-card">
+        <button type="button" class="shot-open" data-full="/images/screenshots/{{ $s.file }}@2x.webp" aria-labelledby="{{ $.prefix }}{{ $i }}" aria-describedby="shot-hint">
+            <img src="/images/screenshots/{{ $s.file }}.webp" srcset="/images/screenshots/{{ $s.file }}-640.webp 640w, /images/screenshots/{{ $s.file }}.webp 1280w" sizes="{{ $.sizes }}" alt="" loading="lazy" decoding="async" width="1280" height="720">
+        </button>
+        <figcaption id="{{ $.prefix }}{{ $i }}">{{ i18n $s.cap }}</figcaption>
+    </figure>
+    {{ end }}
+</div>

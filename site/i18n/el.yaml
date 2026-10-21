@@ -1212,3 +1212,21 @@ ig_field_caption:
 
 ig_exploded_caption:
   other: "Μελέτη συναρμολόγησης σε αναπτυγμένη όψη: περίβλημα, οθόνη, πλακέτα υπολογιστή, modem Iridium, μία τοπική μονάδα ασυρμάτου και χώρος μπαταρίας. Η διάταξη των εξαρτημάτων είναι ενδεικτική."
+
+f_social:
+  other: "Το MeshSat στο {{ .Platform }}"
+
+f_sidn_title:
+  other: "Το έργο αυτό γίνεται εφικτό με την υποστήριξη του SIDN fonds"
+
+hw_or:
+  other: "ή"
+
+hw5_part:
+  other: "CC2652P dongle"
+
+photo_enlarge:
+  other: "Μεγέθυνση φωτογραφίας"
+
+photo_credit:
+  other: "Φωτογραφία: MeshSat."

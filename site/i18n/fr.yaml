@@ -1212,3 +1212,21 @@ ig_field_caption:
 
 ig_exploded_caption:
   other: "Étude en vue éclatée : boîtier, afficheur, carte de calcul, modem Iridium, un module radio local et espace pour la batterie. Le placement des composants est illustratif."
+
+f_social:
+  other: "MeshSat sur {{ .Platform }}"
+
+f_sidn_title:
+  other: "Ce projet est rendu possible grâce au soutien du SIDN fonds"
+
+hw_or:
+  other: "ou"
+
+hw5_part:
+  other: "clé CC2652P"
+
+photo_enlarge:
+  other: "Agrandir la photo"
+
+photo_credit:
+  other: "Photo : MeshSat."
