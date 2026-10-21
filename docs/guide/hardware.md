@@ -1,4 +1,4 @@
-# Hardware Setup
+# Hardware setup
 
 Start with one working link. A complete field kit is an example of what you can add, not the
 minimum needed to run MeshSat.

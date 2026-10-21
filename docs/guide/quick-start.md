@@ -1,4 +1,4 @@
-# Quick Start
+# Quick start
 
 This guide walks you through installing MeshSat, connecting your first device, and sending a test message.
 
@@ -22,7 +22,7 @@ The dashboard shows the status of all configured transports and recent message a
 
 ## 3. Connect a Meshtastic Radio
 
-Plug a Meshtastic radio (T-Echo, Heltec V3, etc.) into a USB port on your device. MeshSat will auto-detect the serial port and begin receiving mesh messages.
+Plug a Meshtastic radio (LILYGO T-Echo, Heltec LoRa V4, and the others in the hardware guide) into a USB port on your device. MeshSat will auto-detect the serial port and begin receiving mesh messages.
 
 Run the following commands on the Linux machine running the Bridge. They use `curl` and `jq`;
 if you run them from another machine, replace `localhost` with the Bridge's IP address.
