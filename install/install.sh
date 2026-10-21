@@ -198,7 +198,7 @@ migrate_volume() {
     local mountpoint containers container stage volumes
     volumes=$(docker volume ls --format '{{ .Name }}') \
         || log_fatal "Cannot list Docker volumes. No data or configuration changed."
-    printf '%s\n' "$volumes" | grep -Fxq meshsat-data || return 0
+    printf '%s\n' "$volumes" | grep -Fx meshsat-data >/dev/null || return 0
     [ -z "$(ls -A "${MESHSAT_DIR}/data")" ] || return 0
     command -v diff >/dev/null || log_fatal "Install diffutils before migrating legacy data; no data changed."
     mountpoint=$(docker volume inspect -f '{{ .Mountpoint }}' meshsat-data)

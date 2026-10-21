@@ -76,6 +76,18 @@ docker() { if [[ $1 == stop ]]; then return 1; fi; original_docker "$@"; }'''
         self.assertEqual(list((self.root / 'data').iterdir()), [])
         self.assertEqual(self.config.read_text(), 'original')
 
+    def test_many_unrelated_volumes_do_not_skip_migration(self):
+        mock = '''eval "$(declare -f docker | sed '1s/docker/original_docker/')"
+docker() {
+ if [[ "$*" == 'volume ls --format '* ]]; then
+  echo meshsat-data
+  for ((i=0;i<20000;i++)); do echo "unrelated-volume-$i"; done
+ else original_docker "$@"; fi
+}'''
+        result = self.run_function('generate_compose', mock)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual((self.root / 'data/meshsat.db').read_bytes(), b'original database')
+
     def test_docker_failure_cannot_be_mistaken_for_no_volume(self):
         result = self.run_function('generate_compose', 'docker() { return 1; }')
         self.assertNotEqual(result.returncode, 0)
