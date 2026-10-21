@@ -1,9 +1,3 @@
-/* ==========================================================================
-   MeshSat — Main Stylesheet
-   Color scheme: rescue-orange primary, dark-first with light mode toggle
-   Based on MuleCube design system
-   ========================================================================== */
-
 /* ---------- Fonts: self-hosted IBM Plex, Latin and Greek subsets (MESHSAT-950) ----------
    Files under site/static/fonts/ (from @fontsource 5.2.7, OFL). Served with CORS so
    auth.meshsat.net can load them too. Plex Mono has no Greek, so Greek in the mono
@@ -28,7 +22,9 @@
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-700-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
 
 /* ---------- CSS Variables ---------- */
+/* Native form controls and scrollbars follow the theme in force (color-scheme). */
 :root {
+    color-scheme: dark;
     /* Ground: warm near-black, the inside of a sealed case. Not blue-black. */
     --color-bg: #14120F;
     --color-bg-secondary: #1A1714;
@@ -68,6 +64,7 @@
 }
 
 [data-theme="light"] {
+    color-scheme: light;
     --color-bg: #F7F5F2;
     --color-bg-secondary: #FFFFFF;
     --color-bg-card: #FFFFFF;
@@ -164,7 +161,6 @@ img {
     line-height: 1.7;
 }
 
-/* ---------- Skip Link ---------- */
 /* Hidden by clipping, not by an off-screen offset: an off-screen element turns
    up in full-page captures and in zoomed layouts. The :focus rule in the a11y
    block near the end of this file restores it (MESHSAT-1611). */
@@ -327,22 +323,6 @@ img {
     color: #000;
     box-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 40%, transparent);
     transform: translateY(-1px);
-}
-
-.btn-secondary {
-    background: var(--color-bg-card);
-    color: var(--color-text);
-    border: 1px solid var(--color-border);
-}
-
-.btn-secondary:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-}
-
-.btn-lg {
-    padding: 1rem 2rem;
-    font-size: 1rem;
 }
 
 /* ---------- Hero (slideshow background) ---------- */
@@ -540,310 +520,7 @@ img {
 .donate-btn svg { flex-shrink: 0; color: var(--color-primary); }
 .donate-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
 
-/* ---------- How It Works ---------- */
-.steps-grid {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: var(--space-lg);
-}
-
-.step-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
-    text-align: center;
-    flex: 1;
-    max-width: 320px;
-    transition: all 0.3s;
-}
-
-.step-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-    border-color: var(--color-border-light);
-}
-
-.step-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: #000;
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: var(--space-lg);
-    box-shadow: 0 4px 20px color-mix(in srgb, var(--color-primary) 30%, transparent);
-}
-
-.step-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: var(--space-sm);
-}
-
-.step-card p {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.step-arrow {
-    display: flex;
-    align-items: center;
-    padding-top: var(--space-3xl);
-}
-
-/* ---------- Use Cases ---------- */
-.use-cases-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
-}
-
-.use-case-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-
-.use-case-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--color-primary), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.use-case-card:hover {
-    border-color: var(--color-border-light);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-.use-case-card:hover::after {
-    opacity: 1;
-}
-
-.use-case-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-md);
-    background: var(--color-primary-glow);
-    margin-bottom: var(--space-lg);
-}
-
-.use-case-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: var(--space-sm);
-    color: var(--color-primary);
-}
-
-.use-case-card p {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-/* ---------- Products Overview ---------- */
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
-}
-
-.product-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
-    text-align: center;
-    transition: border-color 0.2s, transform 0.2s;
-}
-
-.product-card:hover {
-    border-color: var(--color-primary);
-    transform: translateY(-2px);
-}
-
-.product-card-highlight {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 30px var(--color-primary-glow);
-}
-
-.product-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 64px;
-    border-radius: var(--radius-lg);
-    background: var(--color-primary-glow);
-    color: var(--color-primary);
-    margin-bottom: var(--space-lg);
-}
-
-.product-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-sm);
-}
-
-.product-desc {
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    margin-bottom: var(--space-lg);
-}
-
-.product-tag {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.tag-free {
-    background: rgba(34, 197, 94, 0.15);
-    color: var(--color-success);
-}
-
-.tag-saas {
-    background: var(--color-primary-glow);
-    color: var(--color-primary);
-}
-
-.tag-mobile {
-    background: rgba(59, 130, 246, 0.15);
-    color: var(--color-accent);
-}
-
-/* ---------- Features ---------- */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
-}
-
-.feature-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.feature-card:hover {
-    border-color: var(--color-border-light);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-}
-
-.feature-card:hover::before {
-    opacity: 1;
-}
-
-.feature-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-md);
-    background: var(--color-primary-glow);
-    color: var(--color-primary);
-    margin-bottom: var(--space-lg);
-}
-
-.feature-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: var(--space-sm);
-}
-
-.feature-card p {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-/* ---------- Transport Table ---------- */
-.transport-table-wrapper,
-.comparison-table-wrapper {
-    overflow-x: auto;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border);
-}
-
-.transport-table,
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-}
-
-.transport-table th,
-.comparison-table th {
-    background: var(--color-bg-secondary);
-    padding: var(--space-md) var(--space-lg);
-    text-align: left;
-    font-weight: 600;
-    border-bottom: 1px solid var(--color-border);
-    white-space: nowrap;
-}
-
-.transport-table td,
-.comparison-table td {
-    padding: var(--space-md) var(--space-lg);
-    border-bottom: 1px solid var(--color-border);
-}
-
-.transport-table tr:last-child td,
-.comparison-table tr:last-child td {
-    border-bottom: none;
-}
-
-.transport-table tr:hover,
-.comparison-table tr:hover {
-    background: color-mix(in srgb, var(--color-primary) 3%, transparent);
-}
-
 /* ---------- Comparison ---------- */
-.highlight-col {
-    background: var(--color-primary-glow) !important;
-}
-
-.comparison-table .highlight-col {
-    border-left: 2px solid var(--color-primary);
-    border-right: 2px solid var(--color-primary);
-}
 
 .check {
     color: var(--color-success);
@@ -891,189 +568,12 @@ img {
     font-size: 0.9rem;
 }
 
-/* ---------- Hardware ---------- */
-.hardware-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
-    margin-bottom: var(--space-2xl);
-}
-
-.hardware-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
-}
-
-.hardware-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-sm);
-}
-
-.hardware-desc {
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-lg);
-}
-
-.hardware-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-}
-
-.hardware-table td {
-    padding: var(--space-sm) 0;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.hardware-table td:first-child {
-    font-weight: 500;
-    padding-right: var(--space-lg);
-}
-
-.hardware-table td:last-child {
-    color: var(--color-text-muted);
-}
-
-.hardware-table tr:last-child td {
-    border-bottom: none;
-}
-
-.hardware-photo {
-    text-align: center;
-}
-
-.hardware-photo img {
-    border-radius: var(--radius-xl);
-    max-height: 720px;
-    object-fit: cover;
-    object-position: center center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-}
-
-
-/* ---------- Use Cases ---------- */
-.use-cases-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
-}
-
-.use-case-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-
-.use-case-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--color-primary), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.use-case-card:hover {
-    border-color: var(--color-border-light);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-.use-case-card:hover::after {
-    opacity: 1;
-}
-
-.use-case-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: var(--space-sm);
-    color: var(--color-primary);
-}
-
-.use-case-card p {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-/* ---------- CTA ---------- */
-.cta {
-    background: var(--color-bg-secondary);
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-    text-align: center;
-}
-
-.cta h2 {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    margin-bottom: var(--space-md);
-}
-
-.cta p {
-    color: var(--color-text-muted);
-    font-size: 1.1rem;
-    margin-bottom: var(--space-xl);
-}
-
-.cta-actions {
-    display: flex;
-    gap: var(--space-md);
-    justify-content: center;
-}
-
 /* ---------- Footer ---------- */
 .site-footer {
     background: var(--color-bg-secondary);
     border-top: 1px solid var(--color-border);
     padding-top: 0;
 }
-
-.powered-by {
-    padding: var(--space-2xl) 0;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.powered-by-label {
-    text-align: center;
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: var(--space-lg);
-}
-
-.powered-by-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-2xl);
-    flex-wrap: wrap;
-}
-
-.powered-by-logos img {
-    height: 28px;
-    opacity: 0.6;
-    transition: opacity 0.2s;
-    filter: grayscale(100%);
-}
-
-.powered-by-logos a:hover img {
-    opacity: 1;
-    filter: none;
-}
-
-.partner-light { display: none; }
-[data-theme="light"] .partner-dark { display: none; }
-[data-theme="light"] .partner-light { display: block; }
 
 .footer-grid {
     display: grid;
@@ -1100,32 +600,6 @@ img {
     color: var(--color-primary);
 }
 
-.footer-links h3 {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-md);
-}
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: var(--space-sm);
-}
-
-.footer-links a {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    transition: color 0.2s;
-}
-
-.footer-links a:hover {
-    color: var(--color-primary);
-}
-
 .footer-bottom {
     border-top: 1px solid var(--color-border);
     padding: var(--space-lg) 0;
@@ -1141,74 +615,11 @@ img {
     color: var(--color-text-muted);
 }
 
-.footer-oss {
-    margin-top: var(--space-xs);
-    font-size: 0.8rem !important;
-}
-
 /* ---------- Install Page ---------- */
 .install-page h1 {
     text-align: center;
     font-family: var(--font-display);
     font-size: 2rem;
-    margin-bottom: var(--space-md);
-}
-
-.install-tabs {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-2xl);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--space-md);
-}
-
-.tab-btn {
-    padding: var(--space-sm) var(--space-lg);
-    background: transparent;
-    border: 1px solid transparent;
-    border-radius: var(--radius-md);
-    color: var(--color-text-muted);
-    cursor: pointer;
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.2s;
-}
-
-.tab-btn:hover {
-    color: var(--color-text);
-}
-
-.tab-btn.active {
-    background: var(--color-bg-card);
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-}
-
-.tab-content {
-    display: none;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-.tab-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: var(--space-md);
-}
-
-.tab-content h3 {
-    font-size: 1.15rem;
-    margin-top: var(--space-xl);
-    margin-bottom: var(--space-sm);
-}
-
-.tab-content p {
-    color: var(--color-text-muted);
     margin-bottom: var(--space-md);
 }
 
@@ -1258,43 +669,6 @@ img {
     background: var(--color-bg-secondary);
     padding: 0.1rem 0.4rem;
     border-radius: var(--radius-sm);
-}
-
-.platform-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: var(--space-md);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-}
-
-.platform-table th {
-    background: var(--color-bg-secondary);
-    padding: var(--space-sm) var(--space-md);
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.85rem;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.platform-table td {
-    padding: var(--space-sm) var(--space-md);
-    font-size: 0.9rem;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.platform-table tr:last-child td {
-    border-bottom: none;
-}
-
-.badge-ok {
-    background: rgba(34, 197, 94, 0.15);
-    color: var(--color-success);
-    padding: 0.15rem 0.5rem;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 600;
 }
 
 /* ---------- Changelog ---------- */
@@ -1525,14 +899,7 @@ img {
     padding: var(--space-xs) 0;
 }
 
-/* ---------- Linter-updated classes ---------- */
-
 /* Hero (centered layout) */
-.hero-inner {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
 
 .hero-title {
     font-family: var(--font-display);
@@ -1671,29 +1038,6 @@ img {
     color: var(--color-primary-hover);
 }
 
-/* Section status line (badge + note at the top of a system card). Its only
-   consumer is the Hub card; it must flow normally after the card heading. */
-.section-status {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-sm);
-    margin: 0 0 var(--space-md);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-    text-align: left;
-}
-
-.section-status .badge {
-    flex-shrink: 0;
-    margin-top: 0.15rem;
-    white-space: nowrap;
-}
-
-.section-status-text {
-    flex: 1 1 auto;
-}
-
 /* Category labels */
 .category-label {
     color: var(--color-primary);
@@ -1701,50 +1045,7 @@ img {
     font-size: 0.85rem;
 }
 
-
 /* BOM list (hardware) */
-.hardware-list {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.bom-list {
-    list-style: none;
-}
-
-.bom-list li {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.bom-list li:last-child {
-    border-bottom: none;
-}
-
-.bom-icon {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-md);
-    background: var(--color-primary-glow);
-}
-
-.bom-name {
-    font-weight: 500;
-}
-
-.bom-note {
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-    margin-left: auto;
-}
-
 
 .btn-outline {
     background: transparent;
@@ -1765,8 +1066,7 @@ img {
 }
 
 /* Full-width outline buttons belong to card layouts only; inline button rows keep natural width */
-.hero-actions .btn-outline,
-.hub-cta .btn-outline {
+.hero-actions .btn-outline {
     width: auto;
 }
 
@@ -1797,17 +1097,6 @@ img {
     pointer-events: none;
 }
 
-.cta-inner {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.cta-install {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-/* Tabs (changelog) */
 /* ---------- Hero label ---------- */
 .hero-label {
     font-size: 0.85rem;
@@ -1819,451 +1108,10 @@ img {
 }
 
 /* ---------- Architecture Diagram ---------- */
-.diagram {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-md);
-    padding: var(--space-2xl) 0;
-    overflow-x: auto;
-}
-
-.diagram-inputs,
-.diagram-outputs {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-}
-
-.diagram-arrows-in,
-.diagram-arrows-out {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-    color: var(--color-primary);
-    font-size: 1.5rem;
-    align-items: center;
-}
-
-.diagram-arrows-in .diagram-arrow,
-.diagram-arrows-out .diagram-arrow {
-    padding: 0.4rem 0;
-    opacity: 0.5;
-}
-
-.diagram-node {
-    padding: 0.6rem 1.2rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-size: 0.85rem;
-    font-weight: 600;
-    background: var(--color-bg-card);
-    white-space: nowrap;
-    text-align: center;
-    transition: all 0.3s;
-    letter-spacing: 0.02em;
-}
-
-.diagram-node:hover {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 15px var(--color-primary-glow);
-}
-
-.diagram-outputs .diagram-node {
-    border-left: 3px solid var(--color-primary);
-}
-
-.diagram-inputs .diagram-node {
-    border-right: 3px solid var(--color-accent);
-}
-
-.diagram-center {
-    flex-shrink: 0;
-}
-
-.diagram-gateway {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 2px solid var(--color-primary);
-    background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 15%, transparent) 0%, color-mix(in srgb, var(--color-primary) 5%, transparent) 60%, transparent 100%);
-    text-align: center;
-    box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 20%, transparent), 0 0 80px color-mix(in srgb, var(--color-primary) 8%, transparent);
-    animation: gateway-pulse 4s ease-in-out infinite;
-}
 
 @keyframes gateway-pulse {
     0%, 100% { box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 20%, transparent), 0 0 80px color-mix(in srgb, var(--color-primary) 8%, transparent); }
     50% { box-shadow: 0 0 50px color-mix(in srgb, var(--color-primary) 30%, transparent), 0 0 100px color-mix(in srgb, var(--color-primary) 12%, transparent); }
-}
-
-.diagram-gateway-label {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: var(--space-xs);
-}
-
-.diagram-gateway-sub {
-    font-size: 0.7rem;
-    color: var(--color-text-muted);
-    max-width: 140px;
-    line-height: 1.4;
-}
-
-/* ---------- Flow Example ---------- */
-.flow-card {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-left: 3px solid var(--color-primary);
-    border-radius: var(--radius-lg);
-    padding: var(--space-2xl) var(--space-2xl) var(--space-2xl) var(--space-3xl);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.flow-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 60px;
-    background: linear-gradient(90deg, var(--color-primary-glow), transparent);
-    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
-    pointer-events: none;
-}
-
-.flow-scenario h3 {
-    font-size: 1.2rem;
-    margin-bottom: var(--space-sm);
-}
-
-.flow-desc {
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-xl);
-}
-
-.flow-steps {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-}
-
-.flow-step {
-    display: flex;
-    gap: var(--space-md);
-    align-items: flex-start;
-}
-
-.flow-step-num {
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.85rem;
-}
-
-.flow-step-content strong {
-    display: block;
-    margin-bottom: 0.15rem;
-}
-
-.flow-step-content p {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.flow-note {
-    margin-top: var(--space-xl);
-    padding-top: var(--space-md);
-    border-top: 1px solid var(--color-border);
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-    font-style: italic;
-}
-
-/* ---------- Cost Comparison ---------- */
-.cost-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
-    max-width: 800px;
-    margin: 0 auto var(--space-xl);
-}
-
-.cost-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
-}
-
-.cost-card h3 {
-    font-size: 1.15rem;
-    margin-bottom: var(--space-xs);
-}
-
-.cost-desc {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    margin-bottom: var(--space-lg);
-}
-
-.cost-card ul {
-    list-style: none;
-}
-
-.cost-card li {
-    padding: var(--space-sm) 0;
-    border-bottom: 1px solid var(--color-border);
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-}
-
-.cost-card li:last-child {
-    border-bottom: none;
-}
-
-.cost-traditional {
-    opacity: 0.75;
-}
-
-.cost-meshsat {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 15%, transparent), 0 8px 32px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.cost-meshsat::after {
-    content: 'Recommended';
-    position: absolute;
-    top: -12px;
-    right: var(--space-lg);
-    background: var(--color-primary);
-    color: #000;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.2rem 0.75rem;
-    border-radius: 999px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.cost-footnote {
-    text-align: center;
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* ---------- Hub Section ---------- */
-.hub-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
-    margin-bottom: var(--space-2xl);
-}
-
-.hub-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
-    transition: all 0.3s;
-    border-top: 2px solid transparent;
-}
-
-.hub-card:hover {
-    border-top-color: var(--color-primary);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-.hub-card h3 {
-    font-size: 1.05rem;
-    margin-bottom: var(--space-sm);
-    color: var(--color-primary);
-}
-
-.hub-card p {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.hub-extras {
-    margin-bottom: var(--space-2xl);
-}
-
-.hub-extra-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-lg);
-}
-
-.hub-extra {
-    text-align: center;
-    padding: var(--space-lg);
-}
-
-.hub-extra strong {
-    display: block;
-    font-size: 0.95rem;
-    margin-bottom: var(--space-sm);
-}
-
-.hub-extra p {
-    color: var(--color-text-muted);
-    font-size: 0.8rem;
-    line-height: 1.5;
-}
-
-.hub-cta {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-md);
-}
-
-/* ---------- Android Section ---------- */
-.android-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-3xl);
-    align-items: start;
-}
-
-.android-intro {
-    font-size: 1.05rem;
-    color: var(--color-text-muted);
-    line-height: 1.7;
-    margin-bottom: var(--space-xl);
-}
-
-.android-features {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-    margin-bottom: var(--space-xl);
-}
-
-.android-feature {
-    padding-left: var(--space-lg);
-    border-left: 2px solid var(--color-primary);
-}
-
-.android-feature strong {
-    display: block;
-    margin-bottom: var(--space-xs);
-}
-
-.android-feature p {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-.android-note {
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-    margin-bottom: var(--space-lg);
-}
-
-.android-cta .btn {
-    display: inline-flex;
-    gap: var(--space-sm);
-}
-
-.android-phone {
-    background: var(--color-bg-card);
-    border: 2px solid var(--color-border);
-    border-radius: 24px;
-    padding: var(--space-lg) var(--space-lg) var(--space-2xl);
-    max-width: 320px;
-    margin: 0 auto;
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    position: relative;
-}
-
-.android-phone::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: var(--color-border);
-    border-radius: 999px;
-}
-
-.android-phone::after {
-    content: '';
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 4px;
-    background: var(--color-border);
-    border-radius: 999px;
-}
-
-.android-phone-screen {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-    padding: var(--space-lg);
-    background: var(--color-bg);
-    border-radius: var(--radius-md);
-}
-
-.android-transport {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    font-size: 0.9rem;
-    font-weight: 500;
-    padding: var(--space-sm) var(--space-md);
-    background: var(--color-bg-secondary);
-    border-radius: var(--radius-sm);
-}
-
-.android-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.dot-blue { background: var(--color-accent); }
-.dot-teal { background: var(--color-primary); }
-.dot-green { background: var(--color-success); }
-
-.android-rules {
-    text-align: center;
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
-    padding: var(--space-md);
-    border: 1px dashed var(--color-border);
-    border-radius: var(--radius-sm);
-    margin-top: var(--space-sm);
 }
 
 /* ---------- Not For ---------- */
@@ -2299,23 +1147,6 @@ img {
     line-height: 1.6;
 }
 
-/* Hero photo */
-.hero-photo {
-    margin-top: var(--space-2xl);
-    text-align: center;
-}
-
-.hero-photo img {
-    border-radius: var(--radius-xl);
-    max-height: 400px;
-    object-fit: cover;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="light"] .hero-photo img {
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-}
-
 /* Screenshots */
 .screenshots-grid {
     display: grid;
@@ -2347,27 +1178,6 @@ img {
     padding: var(--space-md) var(--space-lg);
     color: var(--color-text-muted);
     font-size: 0.9rem;
-}
-
-/* Hardware photo */
-.hardware-photo {
-    text-align: center;
-    margin-top: var(--space-2xl);
-}
-
-.hardware-photo img {
-    border-radius: var(--radius-xl);
-    max-height: 720px;
-    object-fit: cover;
-    object-position: center center;
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--color-border);
-    transition: all 0.3s;
-}
-
-.hardware-photo img:hover {
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 0 30px var(--color-primary-glow);
-    transform: scale(1.01);
 }
 
 /* Page title */
@@ -2414,38 +1224,10 @@ img {
     border-radius: var(--radius-sm);
 }
 
-/* ---------- Pre-release banner ---------- */
-.prerelease-banner {
-    background: rgba(245, 158, 11, 0.1);
-    border-bottom: 1px solid rgba(245, 158, 11, 0.3);
-    padding: var(--space-md) 0;
-    text-align: center;
-}
-
-.prerelease-banner p {
-    color: var(--color-warning);
-    font-size: 0.85rem;
-    margin: 0;
-}
-
 /* ---------- Footer (expanded) ---------- */
 .site-footer {
     background: var(--color-bg-secondary);
     border-top: 1px solid var(--color-border);
-}
-
-.partners-bar {
-    padding: var(--space-2xl) 0;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.partners-label {
-    text-align: center;
-    color: var(--color-text-muted);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: var(--space-lg);
 }
 
 .partners-logos {
@@ -2569,11 +1351,6 @@ img {
     color: var(--color-text-muted);
 }
 
-.footer-status {
-    margin-top: var(--space-xs);
-    font-size: 0.8rem !important;
-}
-
 /* Logo mark (approved brand artwork; dark/light raster variants, see MESHSAT-727) */
 .logo-mark {
     flex-shrink: 0;
@@ -2658,21 +1435,9 @@ img {
         margin: 0 auto;
     }
 
-    .hero-image {
-        display: none;
-    }
-
-    .products-grid,
-    .features-grid,
-    .use-cases-grid {
+    .screenshots-grid {
         grid-template-columns: 1fr;
     }
-
-    .screenshots-grid,
-    .hardware-grid {
-        grid-template-columns: 1fr;
-    }
-
 
     .footer-grid {
         grid-template-columns: 1fr;
@@ -2682,53 +1447,8 @@ img {
         font-size: 2.5rem;
     }
 
-    .steps-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .step-arrow {
-        transform: rotate(90deg);
-        padding-top: 0;
-    }
-
-    .step-card {
-        max-width: 100%;
-    }
-
-    .use-cases-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .diagram {
-        flex-direction: column;
-    }
-
-    .diagram-arrows-in,
-    .diagram-arrows-out {
-        flex-direction: row;
-    }
-
-    .diagram-inputs,
-    .diagram-outputs {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .diagram-gateway {
-        width: 150px;
-        height: 150px;
-    }
-
-    .hub-grid,
-    .hub-extra-grid,
-    .android-split,
-    .cost-grid,
     .not-for-grid,
-    .use-cases-grid,
-    .screenshots-grid,
-    .hardware-grid {
+    .screenshots-grid {
         grid-template-columns: 1fr;
     }
 
@@ -2741,19 +1461,6 @@ img {
         font-size: 1.5rem;
     }
 
-    .cta-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .install-tabs {
-        flex-wrap: wrap;
-    }
-
-    .cta-actions {
-        flex-direction: column;
-        align-items: center;
-    }
 }
 
 @media (max-width: 480px) {
@@ -2765,14 +1472,6 @@ img {
         grid-template-columns: 1fr;
     }
 
-    .comparison-table {
-        font-size: 0.8rem;
-    }
-
-    .comparison-table th,
-    .comparison-table td {
-        padding: var(--space-sm);
-    }
 }
 
 /* Footer social links (MESHSAT-719) */
@@ -2827,8 +1526,7 @@ img {
 
 .logo-text { font-weight: 600; letter-spacing: -0.02em; }
 
-.hero-label,
-.section-eyebrow {
+.hero-label {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     letter-spacing: 0.16em;
@@ -2850,7 +1548,6 @@ img {
 .nav-links a,
 .footer-social a,
 .copy-btn { min-height: 34px; display: inline-flex; align-items: center; }
-
 
 /* ---------- Signature: the message trace ----------
    One SOS, six routing decisions, shown as the log the bridge actually keeps.
@@ -2970,17 +1667,14 @@ img {
 
 /* ---------- New section components ---------- */
 
-.reason-grid,
-.system-grid {
+.reason-grid {
     display: grid;
     gap: var(--space-lg);
     margin-top: var(--space-2xl);
 }
 .reason-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.system-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 
-.reason-card,
-.system-card {
+.reason-card {
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
@@ -2990,19 +1684,16 @@ img {
    it encodes direction: these are steps a message passes through. */
 .reason-card { border-left: 2px solid var(--color-primary); }
 
-.reason-card h3,
-.system-card h3 {
+.reason-card h3 {
     font-family: var(--font-display);
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: -0.01em;
     margin-bottom: var(--space-sm);
 }
-.reason-card p,
-.system-card p { color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.6; }
+.reason-card p { color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.6; }
 
 /* .btn-outline is width:100% by inheritance; scope it back for inline rows. */
-.system-card .btn-outline { width: auto; margin-top: var(--space-md); }
 
 .table-note,
 .funding-note {
@@ -3020,8 +1711,6 @@ img {
     border-top: 1px dashed var(--color-border-light);
 }
 .table-note a, .funding-note a { color: var(--color-primary); }
-
-.cta-install { max-width: 34rem; margin: var(--space-xl) auto; }
 
 /* The hero carries more now, so give it room to breathe rather than centre
    everything in a column that fights the trace width. */
@@ -3090,11 +1779,6 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 .lang-menu a[aria-current="true"] { color: var(--color-primary); font-weight: 600; }
 @media (max-width: 560px) { .lang-current { display: none; } .lang-btn { padding: 0 0.45em; } }
 
-/* ==========================================================================
-   Accessibility fixes (MESHSAT-723) — WCAG 2.2 AA
-   Every value below was contrast-computed, not guessed.
-   ========================================================================== */
-
 /* 1.4.3 Contrast. opacity:0.6 on an already-muted token dropped these links to
    3.16:1 (dark) and 2.86:1 (light). The token passes at full strength, so the
    de-emphasis moves to size instead of transparency. Weight 600 by owner
@@ -3112,13 +1796,6 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .nav-hub-btn,
   :root:not([data-theme="light"]) .nav-hub-btn:hover { color: var(--color-bg) !important; }
-}
-
-/* 1.4.3 Contrast. The pre-release banner tint was a hardcoded amber unrelated
-   to the token set; drive it from the warning token so both themes track it. */
-.prerelease-banner {
-  background: color-mix(in srgb, var(--color-warning) 12%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-warning) 34%, transparent);
 }
 
 /* /security/ names third-party domains that are NOT ours. Red here is the
@@ -3193,7 +1870,7 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
    an auto-fit grid overflows any viewport narrower than that floor plus the
    container padding. min() lets the track collapse instead. */
 .reason-grid  { grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
-.system-grid  { grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); }
+
 .not-for-grid,
 .screenshots-grid { grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
 
@@ -3227,9 +1904,8 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     .trace,
     .hero-status,
     .reason-card,
-    .system-card,
     .not-for-card,
-    .table-wrap { border: 1px solid CanvasText; }
+.table-wrap { border: 1px solid CanvasText; }
 
     /* The trace's left rule and the reason cards' reading edge carry meaning. */
     .trace { border-left-width: 3px; }
@@ -3301,12 +1977,6 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
    left-aligned contexts; centre them here to match the section. */
 .cta-section .hero-actions { justify-content: center; }
 .cta-section .table-note { margin-inline: auto; }
-
-/* ==========================================================================
-   Density recomposition (MESHSAT-731)
-   The page's job is evidence, so the composition puts more of it in each
-   viewport. Same content, same tokens, same contracts; only the frame moves.
-   ========================================================================== */
 
 /* Section rhythm: a fifth of every section boundary was empty chrome. */
 .section { padding: 4rem 0; }
@@ -3382,7 +2052,7 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     .not-for-card { border: 1px solid CanvasText; }
 }
 
-.reason-grid, .system-grid { margin-top: var(--space-xl); }
+.reason-grid { margin-top: var(--space-xl); }
 
 /* ==========================================================================
    Phase 2 density (MESHSAT-732)
@@ -3443,40 +2113,12 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     border-top: 0;
 }
 
-/* The closing workbench: install left, the film right, system cards below. */
-.cta-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-lg) var(--space-2xl);
-    align-items: start;
-}
-@media (min-width: 1100px) {
-    .cta-grid { grid-template-columns: minmax(0, 11fr) minmax(0, 9fr); }
-    .cta-system { grid-column: 1 / -1; }
-}
-/* A third workbench column was tried and rejected: the Hub card at ~350px
-   becomes a text tower (and measured TALLER than the spanning layout). */
-.cta-section .section-eyebrow {
-    display: block;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    margin-bottom: var(--space-sm);
-}
 /* Left-range the pieces the old centred CTA aligned to the middle, and drop
    its decorative centre glow: the workbench is ranged left. */
 .cta-section { text-align: left; }
 .cta-section::before { display: none; }
 .cta-section .hero-actions { justify-content: flex-start; margin-bottom: 0; }
 .cta-section .table-note { margin-inline: 0; }
-.cta-install { max-width: 34rem; margin: 0 0 var(--space-lg); }
-.cta-watch .video-frame { max-width: 100%; margin: 0; }
-.cta-system {
-    margin-top: var(--space-lg);
-    padding-top: var(--space-lg);
-    border-top: 1px solid var(--color-border);
-}
-.cta-system .system-grid { margin-top: 0; }
-.system-card { padding: var(--space-md) var(--space-lg); }
 
 /* ---------- Alignment repair (2026-08-30 visual audit) ----------
    End-aligned section heads made every title start at a different offset
@@ -3497,10 +2139,6 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     }
 }
 
-/* Workbench columns stay top-anchored like every other section; centring
-   the install column was tried and read as floating. The air below the
-   note is trailing space, not a hole. */
-
 /* 1.4.3: black on the light-theme orange is 4.25:1, the exact nav-hub-btn
    failure from MESHSAT-723. It was masked from axe by the CTA's decorative
    glow behind the button; removing the glow exposed it. White clears light
@@ -3516,12 +2154,6 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
   :root:not([data-theme="light"]) .btn-primary:hover,
   :root:not([data-theme="light"]) .skip-link { color: var(--color-bg); }
 }
-
-/* ---------- Symmetry repair + screenshot lightbox (2026-08-30, audit 2) ----
-   Three raggednesses the owner read as misalignment, all real: the 880px
-   screenshot cap stopped 272px short of the table edge, the auto-fit
-   not-for grid wrapped a lone orphan card at laptop widths, and the
-   workbench columns ended 158px apart. */
 
 /* Screenshots: full container width, explicit tracks, click to view full
    size (the inline cards are evidence thumbnails). */
@@ -3631,11 +2263,9 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     flex: 1;
 }
 .artifact-body p { margin: 0; color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.6; }
-.artifact-body .section-status { display: flex; align-items: baseline; gap: var(--space-sm); flex-wrap: wrap; margin: 0; }
+
 /* CTAs sit on one shared baseline across the row (stretch + auto margin). */
 .artifact-body .btn-outline { width: auto; align-self: flex-start; margin-top: auto; }
-.artifact-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: auto; }
-.artifact-actions .btn-outline { margin-top: 0; }
 
 /* The terminal */
 .term-body {
@@ -3733,16 +2363,6 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 @media (max-width: 700px) { .not-for-grid { grid-template-columns: minmax(0, 1fr); } }
 .not-for-card { border-bottom: 1px solid var(--color-border-light); padding-bottom: var(--space-md); }
 .reason-grid { border-bottom: 1px solid var(--color-border-light); }
-
-/* Workbench bottom edges align: the start column stretches to the film
-   column's height (align-items:start earlier blocked this) and the note
-   pins to the shared baseline. */
-@media (min-width: 1100px) {
-    .cta-grid { align-items: stretch; }
-    .cta-start { display: flex; flex-direction: column; }
-    .cta-start .table-note { margin-top: auto; padding-top: var(--space-lg); }
-}
-
 
 /* ---------- Try it: two artifacts on one set of rails (MESHSAT-1096) ----------
    With the film gone the bench is the terminal and the phone. Both cards are
@@ -4053,12 +2673,6 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     .fabric-bus { border-color: CanvasText; }
 }
 
-/* ==========================================================================
-   Type and layout pass (MESHSAT-1103, 13 Sep 2026)
-   From a measured audit of the live site. Appended last so it settles the
-   cascade; each rule names the defect it removes.
-   ========================================================================== */
-
 /* Headings: display type inherited body leading (1.6), so every two-line
    section title stood ~53px line to line at 34px. Balanced wrapping stops a
    single word stranding on the last line ("islands", "ours", "Bridge"). */
@@ -4144,7 +2758,6 @@ p, li, dd, figcaption { text-wrap: pretty; }
 body { min-height: 100vh; display: flex; flex-direction: column; }
 main { flex: 1 0 auto; }
 
-/* ---------- Content pages ---------- */
 /* Prose ran 800 to 1128px wide at 16px: 90 to 127 characters a line. Tables
    keep the full width; running text stops near 75. */
 .page-content :is(p, ul, ol, h2, h3, blockquote) { max-width: 66ch; }
@@ -4278,7 +2891,6 @@ main { flex: 1 0 auto; }
 .error-content { max-width: 1200px; }
 .error-content > * { max-width: 40rem; }
 
-/* Second audit round (local render of the pass above). */
 /* The last text under 12px: the head-bar badge (10.9px), the trace header
    (11.2px) and the phone trace (10.6 to 11.5px). */
 .artifact-head .badge { font-size: 0.75rem; }
@@ -4464,10 +3076,6 @@ main { flex: 1 0 auto; }
     .chan-legend { display: block; line-height: 1.75; }
     .chan-legend li { display: inline; margin-inline-end: 0.9rem; }
 }
-
-/* ---------- Visual audit fixes (MESHSAT-1596, 19 Oct 2026) ----------
-   Found by a Playwright pass over production at 320 to 1440 px in both themes.
-   Appended last so they settle the cascade. */
 
 /* Header: the text links sat 5px above the logo, the Hub button and the
    toggles. The list stretched its items to the button's height and an inline
@@ -4724,9 +3332,6 @@ main { flex: 1 0 auto; }
     .hero-repo { min-height: calc(2 * 41px + 0.5rem); }
 }
 
-/* Native form controls and scrollbars follow the theme in force. */
-:root { color-scheme: dark; }
-[data-theme="light"] { color-scheme: light; }
 
 /* The language menu also opens from its button (click, tap, Enter), see
    main.js; the hover and focus-within paths above stay. */
