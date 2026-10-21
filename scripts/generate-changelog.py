@@ -364,7 +364,17 @@ def generate_block(token, repo):
         tag_blocks.append(lines)
         summary.append(f"{tag['name']} {count} bullets / {len(commits)} commits")
         previous = tag
-    blocks.extend(reversed(tag_blocks))
+    # Newest first: the unreleased section, the latest two tags, then every
+    # older tag inside one <details> so a page with dozens of versions reads
+    # as a page, not a scroll (MESHSAT-1613). Goldmark renders the headings
+    # inside it (unsafe HTML is on), and the heading ids still work as anchors.
+    tag_blocks = list(reversed(tag_blocks))
+    recent, older = tag_blocks[:2], tag_blocks[2:]
+    blocks.extend(recent)
+    if older:
+        blocks.append([f"<details class=\"changelog-older\">", f"<summary>Older releases ({len(older)})</summary>", ""])
+        blocks.extend(older)
+        blocks.append(["</details>", ""])
 
     out = []
     for lines in blocks:
