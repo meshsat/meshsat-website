@@ -1,3 +1,7 @@
+---
+description: "MeshSat Hub is the control room for every kit, phone and node you run: which paths each kit can use right now, every message, routing and SOS escalation."
+---
+
 # MeshSat Hub
 
 MeshSat Hub is the hosted fleet manager at [hub.meshsat.net](https://hub.meshsat.net). One place

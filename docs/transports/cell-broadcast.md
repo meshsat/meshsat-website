@@ -1,3 +1,7 @@
+---
+description: "The Bridge can receive and store them. We have no record of an alert received on a kit."
+---
+
 # Cell broadcast alerts
 
 <ChannelStatus code="code">The Bridge can receive and store them. We have no record of an alert received on a kit.</ChannelStatus>

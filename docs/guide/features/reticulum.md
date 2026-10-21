@@ -1,3 +1,7 @@
+---
+description: "Reticulum is a cryptographic networking stack that does not assume the internet."
+---
+
 # Reticulum
 
 Reticulum is a cryptographic networking stack that does not assume the internet. It routes by

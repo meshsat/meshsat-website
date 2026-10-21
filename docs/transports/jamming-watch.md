@@ -1,3 +1,7 @@
+---
+description: "Runs on both kits. It has only ever seen ambient noise, never a real jammer."
+---
+
 # Jamming watch
 
 <ChannelStatus code="live">Runs on both kits. It has only ever seen ambient noise, never a real jammer.</ChannelStatus>

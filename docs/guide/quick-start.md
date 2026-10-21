@@ -1,3 +1,7 @@
+---
+description: "This guide walks you through installing MeshSat, connecting your first device, and sending a test message."
+---
+
 # Quick start
 
 This guide walks you through installing MeshSat, connecting your first device, and sending a test message.

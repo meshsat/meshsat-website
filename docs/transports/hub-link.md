@@ -1,3 +1,7 @@
+---
+description: "Both kits report to the Hub. TAK through the Hub is not released on the Bridge yet."
+---
+
 # Hub link
 
 <ChannelStatus code="live">Both kits report to the Hub. TAK through the Hub is not released on the Bridge yet.</ChannelStatus>

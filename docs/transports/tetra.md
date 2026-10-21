@@ -1,3 +1,7 @@
+---
+description: "Working on hardware: both kits carry a TETRA handheld in Direct Mode, and the Bridge sends and receives text messages through it."
+---
+
 # TETRA Direct Mode
 
 <ChannelStatus code="live">Working on hardware: both kits carry a TETRA handheld in Direct Mode, and the Bridge sends and receives text messages through it.</ChannelStatus>

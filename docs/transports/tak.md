@@ -1,3 +1,7 @@
+---
+description: "A direct link to a TAK server is connected on both kits. TAK through the Hub is not released on the Bridge yet."
+---
+
 # TAK
 
 <ChannelStatus code="live">A direct link to a TAK server is connected on both kits. TAK through the Hub is not released on the Bridge yet.</ChannelStatus>

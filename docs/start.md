@@ -1,3 +1,7 @@
+---
+description: "MeshSat carries messages between mesh radios, satellite links, mobile networks and other systems."
+---
+
 # Choose your setup
 
 MeshSat carries messages between mesh radios, satellite links, mobile networks and other

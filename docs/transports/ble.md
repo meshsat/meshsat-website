@@ -1,3 +1,7 @@
+---
+description: "The interface is in the Bridge. We have no record of it running on a kit."
+---
+
 # Bluetooth LE
 
 <ChannelStatus code="code">The interface is in the Bridge. We have no record of it running on a kit.</ChannelStatus>

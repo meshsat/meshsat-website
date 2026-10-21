@@ -2,6 +2,7 @@ import DefaultTheme from 'vitepress/theme'
 import { h, defineComponent, onMounted } from 'vue'
 import type { EnhanceAppContext } from 'vitepress'
 import ChannelStatus from './ChannelStatus.vue'
+import NotFound from './NotFound.vue'
 import './custom.css'
 
 // The default home layout renders no <main>, leaving the hero and feature grid
@@ -25,7 +26,8 @@ const Layout = defineComponent({
   name: 'MeshSatLayout',
   setup() {
     onMounted(scheduleLandmark)
-    return () => h(DefaultTheme.Layout)
+    // The 404 in the site's own words (MESHSAT-1614); nginx serves it with a 404 status.
+    return () => h(DefaultTheme.Layout, null, { 'not-found': () => h(NotFound) })
   },
 })
 

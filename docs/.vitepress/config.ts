@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  lang: 'en',
   title: 'MeshSat Docs',
   description: 'Documentation for MeshSat: unified routing across mesh, satellite, and IP networks',
 
@@ -19,6 +20,20 @@ export default defineConfig({
       .replace(/\.md$/, '.html')
     pageData.frontmatter.head ??= []
     pageData.frontmatter.head.push(['link', { rel: 'canonical', href: canonical }])
+    // Social metadata per page (MESHSAT-1614): the page's own description where
+    // the frontmatter has one, the site's otherwise; the site's link card image.
+    const title = pageData.title ? `${pageData.title} | MeshSat Docs` : 'MeshSat Docs'
+    const description = pageData.description || pageData.frontmatter.description || 'Documentation for MeshSat: unified routing across mesh, satellite, and IP networks'
+    for (const tag of [
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:type', content: 'article' }],
+      ['meta', { property: 'og:url', content: canonical }],
+      ['meta', { property: 'og:site_name', content: 'MeshSat' }],
+      ['meta', { property: 'og:image', content: 'https://meshsat.net/images/og-image.jpg' }],
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+      ['meta', { name: 'twitter:image', content: 'https://meshsat.net/images/og-image.jpg' }],
+    ]) pageData.frontmatter.head.push(tag)
   },
 
   head: [
@@ -39,6 +54,8 @@ export default defineConfig({
         { text: 'Linux', link: '/linux/' },
       ] },
       { text: 'Node', link: '/node/' },
+      { text: 'Transports', link: '/transports/' },
+      { text: 'Architecture', link: '/architecture/' },
       { text: 'Reference', link: '/api/' },
       { text: 'Changelog', link: 'https://meshsat.net/changelog/' },
       { text: 'Status', link: 'https://status.meshsat.net' },
@@ -62,7 +79,7 @@ export default defineConfig({
         {
           text: 'Bridge',
           items: [
-            { text: 'Start here', link: '/guide/getting-started' },
+            { text: 'Getting started', link: '/guide/getting-started' },
             { text: 'What MeshSat is', link: '/guide/' },
             { text: 'Installation', link: '/guide/installation' },
             { text: 'Quick start', link: '/guide/quick-start' },
@@ -145,7 +162,8 @@ export default defineConfig({
             { text: 'Overview', link: '/node/' },
             { text: 'Build a node', link: '/node/build' },
             { text: 'Iridium Bluetooth service', link: '/node/iridium-ble' },
-            { text: 'Compact v2 conformity', link: '/conformity/msc-2/' },
+            { text: 'Conformity documents', link: '/conformity/' },
+        { text: 'Compact v2 conformity', link: '/conformity/msc-2/' },
           ],
         },
       ],
@@ -159,7 +177,8 @@ export default defineConfig({
             { text: 'Overview', link: '/node/' },
             { text: 'Build a node', link: '/node/build' },
             { text: 'Iridium Bluetooth service', link: '/node/iridium-ble' },
-            { text: 'Compact v2 conformity', link: '/conformity/msc-2/' },
+            { text: 'Conformity documents', link: '/conformity/' },
+        { text: 'Compact v2 conformity', link: '/conformity/msc-2/' },
           ],
         },
       ],

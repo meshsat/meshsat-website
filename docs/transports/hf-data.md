@@ -1,3 +1,7 @@
+---
+description: "Two HF transceivers and their antennas are on their way to the bench. Nothing has run on a radio."
+---
+
 # HF data
 
 <ChannelStatus code="coming-soon">Two HF transceivers and their antennas are on their way to the bench. Nothing has run on a radio.</ChannelStatus>

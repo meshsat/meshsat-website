@@ -1,3 +1,7 @@
+---
+description: "This code is for the Bridge: we have no record of a Bridge webhook running on a kit. The Hub's webhooks are a Hub feature."
+---
+
 # Webhooks
 
 <ChannelStatus code="code">This code is for the Bridge: we have no record of a Bridge webhook running on a kit. The Hub's webhooks are a Hub feature.</ChannelStatus>

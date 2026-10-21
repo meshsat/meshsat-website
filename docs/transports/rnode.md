@@ -1,3 +1,7 @@
+---
+description: "Verified against rnsd in software. No RNode radio is fitted in a kit."
+---
+
 # RNode
 
 <ChannelStatus code="code">Verified against rnsd in software. No RNode radio is fitted in a kit.</ChannelStatus>

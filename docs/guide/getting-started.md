@@ -1,3 +1,7 @@
+---
+description: "MeshSat Bridge is a multi-transport gateway that routes messages across mesh, satellite, cellular, and IP networks from a single device."
+---
+
 # Getting started
 
 MeshSat Bridge is a multi-transport gateway that routes messages across mesh, satellite, cellular, and IP networks from a single device.

@@ -1,3 +1,7 @@
+---
+description: "Setup is a short list: install the app, pair your node, and optionally connect the Hub and allow SMS."
+---
+
 # Set up MeshSat Android
 
 Setup is a short list: install the app, pair your node, and optionally connect the Hub and allow

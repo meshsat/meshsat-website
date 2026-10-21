@@ -1,3 +1,7 @@
+---
+description: "Proven with the phone apps. The Bridge's own client for the node's modem has not run against a real node yet."
+---
+
 # Iridium through a MeshSat node
 
 <ChannelStatus code="live">Proven with the phone apps. The Bridge's own client for the node's modem has not run against a real node yet.</ChannelStatus>
