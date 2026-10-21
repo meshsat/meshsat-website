@@ -1,6 +1,6 @@
 <header class="site-header">
     <a href="#main-content" class="skip-link">{{ i18n "skip_link" }}</a>
-    <nav class="container" role="navigation" aria-label="{{ i18n "main_navigation" }}">
+    <nav class="container" aria-label="{{ i18n "main_navigation" }}">
         <a href="{{ .Site.Home.RelPermalink }}" class="logo" aria-label="{{ i18n "home_label" }}">
             <img src="/images/meshsat-mark-dark.png" alt="" width="54" height="32" class="logo-mark logo-mark-dark">
             <img src="/images/meshsat-mark-light.png" alt="" width="54" height="32" class="logo-mark logo-mark-light">
@@ -17,7 +17,7 @@
             {{ $current := and (not .Params.external) (hasPrefix $href "/") (not (in $href "#")) (ne $href $.Site.Home.RelPermalink) (hasPrefix $.RelPermalink $href) }}
             <li>
                 <a href="{{ $href }}"{{ if .Params.external }} target="_blank" rel="noopener"{{ end }}{{ if .Params.highlight }} class="nav-hub-btn"{{ end }}{{ if $current }} aria-current="page"{{ end }}>
-                    {{ i18n (printf "nav_%s" .Identifier) }}{{ if and .Params.external (not .Params.highlight) }} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>{{ end }}
+                    {{ i18n (printf "nav_%s" .Identifier) }}{{ if and .Params.external (not .Params.highlight) }} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>{{ end }}
                 </a>
             </li>
             {{ end }}
@@ -41,11 +41,11 @@
                 </ul>
             </div>
 
-            <button class="theme-toggle" id="theme-toggle" aria-label="{{ i18n "toggle_theme" }}" title="{{ i18n "toggle_theme" }}">
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="{{ i18n "toggle_theme" }}" title="{{ i18n "toggle_theme" }}">
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                     <circle cx="12" cy="12" r="5"></circle>
                     <line x1="12" y1="1" x2="12" y2="3"></line>
                     <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -58,7 +58,7 @@
                 </svg>
             </button>
 
-            <button class="menu-toggle" aria-label="{{ i18n "toggle_menu" }}" aria-expanded="false" aria-controls="nav-links">
+            <button type="button" class="menu-toggle" aria-label="{{ i18n "toggle_menu" }}" aria-expanded="false" aria-controls="nav-links">
                 <span></span>
                 <span></span>
                 <span></span>

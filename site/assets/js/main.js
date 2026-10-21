@@ -4,7 +4,7 @@
 
     function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem(THEME_KEY, theme);
+        try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
     }
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -57,8 +57,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Close the open menu once the layout no longer shows the toggle; the
+        // breakpoint is the CSS's (768px, 1100px for Greek), not a number here.
         window.addEventListener('resize', function() {
-            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            if (getComputedStyle(menuToggle).display === 'none' && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
                 menuToggle.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
@@ -67,16 +69,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+// In-page anchors: scroll (plainly under reduced motion), move focus to the
+// target so keyboard and screen-reader users land where they scrolled, and
+// keep the hash in the URL. The skip link is left to the browser: intercepting
+// it used to scroll without moving focus, so the next Tab landed in the nav
+// (MESHSAT-1611).
+document.querySelectorAll('a[href*="#"]:not(.skip-link)').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
-        var href = this.getAttribute('href');
-        if (href === '#' || href === '') return;
-        var target = document.querySelector(href);
-        if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        // Same page only: "/#islands" on /install/ is a real navigation.
+        if (anchor.pathname !== location.pathname || !anchor.hash || anchor.hash === '#') return;
+        var target = document.getElementById(anchor.hash.slice(1));
+        if (!target) return;
+        e.preventDefault();
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+        if (window.history && history.pushState) history.pushState(null, '', anchor.hash);
     });
 });
 
@@ -115,21 +124,12 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     });
 })();
 
-// Copy to clipboard
-function copyToClipboard(text, btn) {
-    navigator.clipboard.writeText(text).then(function() {
-        var orig = btn.textContent;
-        btn.textContent = 'Copied!';
-        setTimeout(function() { btn.textContent = orig; }, 2000);
-    });
-}
-
 // Copy a code block's command. Lives here, not in a per-page scripts block:
-// the home page has two copy buttons (hero + the closing terminal) and defines
-// no scripts block, so the page-local definition on /install/ left both dead.
+// the home page's copy button and /install/'s share it. Without the clipboard
+// API (http, old browsers) the button does nothing rather than throwing.
 function copyCode(btn) {
     var block = btn.closest('.code-block');
-    if (!block) return;
+    if (!block || !navigator.clipboard) return;
     var code = block.querySelector('code').textContent;
     navigator.clipboard.writeText(code).then(function() {
         var text = btn.querySelector('.copy-text');
@@ -138,7 +138,7 @@ function copyCode(btn) {
         text.dataset.original = original;
         text.textContent = btn.dataset.copied || 'Copied';
         setTimeout(function() { text.textContent = original; }, 2000);
-    });
+    }).catch(function() {});
 }
 
 // Films — each poster facade opens one shared, centred modal at double the
@@ -324,4 +324,22 @@ function formatCount(n) {
             chip.hidden = false;
         })
         .catch(function() {});
+})();
+
+// Language switcher: the menu opens on hover and focus-within in CSS; the
+// button also toggles it on click and tap, says so in aria-expanded, and
+// Escape or a click elsewhere closes it (MESHSAT-1611).
+(function() {
+    var sw = document.querySelector('.lang-switch');
+    var btn = sw && sw.querySelector('.lang-btn');
+    if (!btn) return;
+    function set(open) {
+        sw.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    btn.addEventListener('click', function() { set(!sw.classList.contains('is-open')); });
+    document.addEventListener('click', function(e) { if (!sw.contains(e.target)) set(false); });
+    sw.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sw.classList.contains('is-open')) { set(false); btn.focus(); }
+    });
 })();

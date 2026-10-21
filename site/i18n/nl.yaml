@@ -202,10 +202,6 @@ nf4_h:
   other: "Geen hulpdienst"
 nf4_p:
   other: "Een onderzoeksprototype, geen vervanging van 112 of enig ander nationaal alarmnummer. Niets hiervan is gecertificeerd en niets hiervan is bij een echt noodgeval gebruikt."
-sys_title:
-  other: "De rest van het systeem"
-sys_sub:
-  other: "De Bridge is één apparaat en werkt volledig zelfstandig. Er zijn twee andere onderdelen voor als één apparaat niet het hele verhaal is."
 hub_badge:
   other: "Open"
 hub_status:

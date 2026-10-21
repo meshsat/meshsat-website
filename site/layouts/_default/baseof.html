@@ -62,10 +62,18 @@
 
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | MeshSat{{ end }}</title>
 
+    <!-- Both themes exist, dark first: native controls and scrollbars follow the
+         theme in force, and the browser chrome takes the page ground. -->
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#14120F" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#F7F5F2" media="(prefers-color-scheme: light)">
+
     <!-- Theme detection (prevents flash) -->
     <script>
         (function() {
-            var stored = localStorage.getItem('meshsat-theme');
+            document.documentElement.classList.add('has-js');
+            var stored = null;
+            try { stored = localStorage.getItem('meshsat-theme'); } catch (e) {}
             if (stored) {
                 document.documentElement.setAttribute('data-theme', stored);
             } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
@@ -104,8 +112,9 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "MeshSat",
-        "description": "Multi-transport mesh and satellite gateway. Unified routing across LoRa, satellite, cellular, and IP networks.",
-        "url": "https://meshsat.net",
+        "description": {{ (.Description | default .Site.Params.description) | jsonify }},
+        "url": "{{ .Permalink }}",
+        "inLanguage": "{{ .Site.Language.Lang }}",
         "applicationCategory": "CommunicationApplication",
         "operatingSystem": "Linux",
         "offers": {
@@ -130,19 +139,22 @@
     </script>
     {{ end }}
 
+    {{/* Deferred from the head: fetched early, run after parsing, before
+         DOMContentLoaded; the inline onclick handlers only fire on a click. */}}
+    {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
+
     {{ block "head" . }}{{ end }}
 </head>
 <body>
     {{ partial "header.html" . }}
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
         {{ block "main" . }}{{ end }}
     </main>
 
     {{ partial "footer.html" . }}
 
-    {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
-    <script src="{{ $js.RelPermalink }}"></script>
     {{ block "scripts" . }}{{ end }}
 </body>
 </html>
