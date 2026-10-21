@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 97
+  unreleased_count: 99
   unreleased_since: "2026-10-20"
   unreleased_anchor: "unreleased-main-last-change-2026-10-20"
 ---
@@ -86,6 +86,8 @@ are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
 ### Fixes
 
+- **sos**: an owed SOS cancel is never dropped to make room, and a stopped SOS controller no longer runs one more round ([dde0645e](https://github.com/meshsat/meshsat-ios/commit/dde0645edbe7a5af36c233b3da4b55ad94f18be3))
+- **sos**: an SOS cancel is no longer lost to a failed enqueue, a new SOS, or a cancel during the first Hub publish ([6e7cc18b](https://github.com/meshsat/meshsat-ios/commit/6e7cc18b16790fea964e12b47361d7b51eeb4c09))
 - **messages**: a reconnect in the middle of a Hub pass no longer hides a lost status, and nothing goes out before the Hub subscriptions hold, as on Android ([96a94e61](https://github.com/meshsat/meshsat-ios/commit/96a94e61821cfef80e95707b43684c6c6bc61851))
 - **mqtt**: a broker drop right after the connect brings the MQTT transport back instead of leaving it connected on a dead session ([7a95d811](https://github.com/meshsat/meshsat-ios/commit/7a95d811762f1bbad55bc3430f7ecbc9bfc37df7))
 - **iridium**: a satellite send that ends uncertain no longer takes back "The Hub has it" from an earlier session's receipt ([c891e136](https://github.com/meshsat/meshsat-ios/commit/c891e13603e9f8eaab630bff716581276acd98d2))

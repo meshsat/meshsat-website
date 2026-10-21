@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 73
+  unreleased_count: 87
   unreleased_since: "2026-10-20"
   unreleased_anchor: "unreleased-main-last-change-2026-10-20"
 ---
@@ -24,6 +24,12 @@ it goes live.
 
 ### Features
 
+- **directory**: bridges can fetch the Hub's directory key to pin on their first connect ([9745ebd1](https://github.com/meshsat/meshsat-hub/commit/9745ebd1d17bd646da012055f566fa791fd497b1))
+- **directory**: the signing key rotates through a signed chain every pinned bridge can follow ([a5ccd39c](https://github.com/meshsat/meshsat-hub/commit/a5ccd39c24d59f1b2e89ea0d76583f532ac50dd5))
+- **directory**: the Hub pushes each tenant's directory to its bridges within 10 s of a change and again at a bridge's next connect ([6590d70e](https://github.com/meshsat/meshsat-hub/commit/6590d70e6e288be774814f65e1319f1e7c310f25))
+- **directory**: the signed v2 envelope, every row with its origin and each policy with its seeded mark ([4436dd40](https://github.com/meshsat/meshsat-hub/commit/4436dd40c65e42710875057394358c580b49a224))
+- **directory**: group and policy REST, TETRA and CELL addresses, MQTT bridge:/device: values, group kinds checked ([3c7ca806](https://github.com/meshsat/meshsat-hub/commit/3c7ca806662e04be033c2cf3debf5815be2b828d))
+- **directory**: contacts, groups and policies on Postgres, every row keyed by its tenant and every change versioned in its own transaction ([952338ec](https://github.com/meshsat/meshsat-hub/commit/952338ecdae3b1fb7bb42439438cedfaa5c2b98b))
 - **sos**: an SOS carries its own id, so the Hub pages once whichever bearers carry it, a cancel stops it for good, and the sender gets an ack for each ([553fac4d](https://github.com/meshsat/meshsat-hub/commit/553fac4d7c711bca183d87170d302e6291555c5b))
 - **hub**: the Hub carries texts between bridges that ask for it, the route now on in production ([ec16b29d](https://github.com/meshsat/meshsat-hub/commit/ec16b29d3b461cd92da9bce1eb96029db1da7c8b))
 - **hub**: the Hub carries a bridge's text to another bridge of its tenant and tells the sender what is known, behind HUB\_MSG\_ROUTE\_ENABLED ([ba4c6a16](https://github.com/meshsat/meshsat-hub/commit/ba4c6a1670e2bc0df31c68392fd11f156be680fe))
@@ -53,6 +59,14 @@ it goes live.
 
 ### Fixes
 
+- **directory**: a key rotation makes its key current only from the key it started from, so a delayed caller never rolls the key back ([d960f391](https://github.com/meshsat/meshsat-hub/commit/d960f39196b31b46fb223182263a231acd30ce76))
+- **directory**: two replicas rotating at once no longer fail on one tenant's record ([0c8e1912](https://github.com/meshsat/meshsat-hub/commit/0c8e191203281462b53f94c57f55672c7a46f9e0))
+- **directory**: empty snapshots take the last rows back, key rotations reach every Bridge without being read as its rows, and a rotation's pending key is stored by compare-and-set ([8d84392c](https://github.com/meshsat/meshsat-hub/commit/8d84392cb213291bdab2273e68af98cb4103cc48))
+- **directory**: phones registered as bridges get no directory push and no longer hold their tenant on v1 ([af1c7a9d](https://github.com/meshsat/meshsat-hub/commit/af1c7a9d042efeee38d1f6b2e4d7bbb1a2e275b5))
+- **auth**: a password reset no longer activates an account, so only approval does ([0eb98cb7](https://github.com/meshsat/meshsat-hub/commit/0eb98cb79b13a6108f0dcc08e4da95ec73bf286d))
+- **sos**: a cancel closes its run's alert even before the alert exists, so a late start or a fallback pages nobody ([1090a8ad](https://github.com/meshsat/meshsat-hub/commit/1090a8adc9b3beaf4095e36579539b0259ece7f7))
+- **signups**: a pending applicant who reset their password can be approved or rejected again ([ae0a2c95](https://github.com/meshsat/meshsat-hub/commit/ae0a2c955c69c4d8162bf75e40b9fb80fd3462c9))
+- **sos**: a cancelled SOS stays cancelled through an escalation step, and its alert work survives a failed write or a restart ([18efecca](https://github.com/meshsat/meshsat-hub/commit/18efecca394213ec70a5ba9f67c02937ea9057d9))
 - **sos**: a Hub replica starts again with bridges connected, as the SOS answers no longer wait inside the MQTT handler ([a32ca045](https://github.com/meshsat/meshsat-hub/commit/a32ca045c7557c418a7d82538893c2a4266270a4))
 - **sos**: a bridge that stays connected while the Hub restarts still learns the Hub's SOS caps ([11f85020](https://github.com/meshsat/meshsat-hub/commit/11f850208c95c6e9bd7ac7ba94d0064650206693))
 - **hub**: a bridge that repeats its submission gets every event again, however soon it asks ([26fd2a44](https://github.com/meshsat/meshsat-hub/commit/26fd2a44c45c7ca30ac86f97952d4de660273b1b))

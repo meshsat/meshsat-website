@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v2.21.0"
   latest_tag_date: "2026-10-13"
   latest_tag_anchor: "v2210-2026-10-13"
-  unreleased_count: 12
+  unreleased_count: 14
   unreleased_since: "2026-10-20"
   unreleased_anchor: "unreleased-main-last-change-2026-10-20"
 ---
@@ -33,6 +33,8 @@ carries the same history in Keep a Changelog form.
 
 ### Fixes
 
+- **sos**: an owed SOS cancel is never dropped to make room, however many SOS follow ([457b8338](https://github.com/meshsat/meshsat-android/commit/457b8338b14cba208e74a4ec83a070e09794684c))
+- **sos**: an SOS cancel is no longer lost to a failed enqueue, a new SOS, or a cancel during the first Hub publish ([e1cbcac0](https://github.com/meshsat/meshsat-android/commit/e1cbcac09df6a952312cdd3c60dd350ab94f1d86))
 - **messages**: a reconnect in the middle of a Hub pass no longer hides a lost status, and nothing goes out before the Hub subscriptions hold ([3073d3d1](https://github.com/meshsat/meshsat-android/commit/3073d3d1218789ceed5b2ae2b143dd22fcc45e18))
 - **messages**: the Hub bridge id field takes the id as typed, without autocorrect ([f1c53dff](https://github.com/meshsat/meshsat-android/commit/f1c53dff06ee8ead41e4f48f3e6cde29f4684806))
 - **ui**: the welcome screen headings show on the dark background instead of black on black ([607b7f77](https://github.com/meshsat/meshsat-android/commit/607b7f775ff5cfa6747e796ae99270b21beb9f82))

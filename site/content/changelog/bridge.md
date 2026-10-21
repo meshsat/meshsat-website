@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1014
-  unreleased_since: "2026-10-20"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-20"
+  unreleased_count: 1023
+  unreleased_since: "2026-10-21"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-21"
 ---
 
 Generated from the commit history of
@@ -19,10 +19,14 @@ first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-20)
+## Unreleased (main, last change 2026-10-21)
 
 ### Features
 
+- **delivery**: GET /api/delivery/stats says what became of each delivery attempt, per bearer, interface and size, without calling any of it radio loss ([5f937e50](https://github.com/meshsat/meshsat/commit/5f937e507c0911b224901525aeb23c82a63084d4))
+- **directory**: an operator can remove a local address that keeps a Hub contact from its own, and a team send names the contact that holds it ([11e8adcc](https://github.com/meshsat/meshsat/commit/11e8adcc90bdc71e3d494471914ecc3a1c1ee3a4))
+- **directory**: send to a team: one submission, one intent per member, frozen at submission ([9c5ec210](https://github.com/meshsat/meshsat/commit/9c5ec210fa34290b084006d2c8e07542cf712bcb))
+- **directory**: the bridge applies its Hub's signed directory whole, keeps its own edits, and moves the Hub key only by a signed record ([11afb420](https://github.com/meshsat/meshsat/commit/11afb4205a75552ba504238f0429f7d5b2806c2f))
 - **sos**: an SOS carries its own id, so the Hub pages once whichever bearers carry it, and a cancel goes on each of them until the Hub has it ([df4419fe](https://github.com/meshsat/meshsat/commit/df4419fefb3eb43cb18009020c48349cfcf8dab2))
 - **intents**: a text to a contact's bridge goes through the Hub and closes delivered to the MeshSat app, behind MESHSAT\_HUB\_MSG\_ROUTE ([6a28669f](https://github.com/meshsat/meshsat/commit/6a28669f9707c32fd52fea2560d5655fa4c6893b))
 - **hub**: a Bridge in an organisation's tenant publishes and subscribes under that tenant's topic root ([3b305817](https://github.com/meshsat/meshsat/commit/3b305817783e6a60fa4f86fea8e9a9e7512c179a))
@@ -445,6 +449,11 @@ Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
 ### Fixes
 
+- **delivery**: the delivery statistics keep a pruned attempt in its own second, read one snapshot, prune one fixed set of intents, and say which intents an upgraded ledger may have lost ([82517821](https://github.com/meshsat/meshsat/commit/8251782138aef87f0d40ce399f6da7c757891f49))
+- **delivery**: the delivery statistics keep counting what the retention prune removes, keep fractional window bounds, and find receipts by index ([7782548d](https://github.com/meshsat/meshsat/commit/7782548d98c8b7bd53acce611d7bf626fe10429c))
+- **directory**: a key rotation keeps its own counter, a full snapshot moves addresses in any order and leaves a dropped contact only local data, and the Hub key is never fetched through a redirect ([45edce54](https://github.com/meshsat/meshsat/commit/45edce5444dc489954b28a13a01b00cc1b1205a3))
+- **sos**: an owed SOS cancel is never dropped to make room, however many SOS follow ([ceb7bbf6](https://github.com/meshsat/meshsat/commit/ceb7bbf6e9259a43ba20714ba1e2f8af63d56aa1))
+- **sos**: an SOS cancel frame is never lost to a failed enqueue, and a new SOS no longer drops the last one's unconfirmed cancel ([958b2256](https://github.com/meshsat/meshsat/commit/958b225690ff0075cda862e1d3cbeacd0ab11d9f))
 - **intents**: an event kept before the bound is never reported as an unknown outcome, even when its cleanup failed ([44343766](https://github.com/meshsat/meshsat/commit/443437665a0c52c0d75b368264d1bebc9c71058c))
 - **intents**: a completion lost after an expiry is still asked for, and a start asks for every operation without one ([fb7d4d29](https://github.com/meshsat/meshsat/commit/fb7d4d298136496bfb94ddc0cf8c525eaba965ea))
 - **intents**: a Hub event the kit could not keep stays asked for until its outcome is kept, across a restart too ([64a3990a](https://github.com/meshsat/meshsat/commit/64a3990a892144083f55c0e5d7d7d8511cacd69a))
