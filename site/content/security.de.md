@@ -75,7 +75,7 @@ sudo bash meshsat-install.sh</code></pre></div>
 Das aktuelle Installationsskript hat die Version `1.4.0`, sein SHA-256 lautet:
 
 <div class="code-block">
-<div class="code-block-body"><pre tabindex="0" role="region" aria-label="SHA-256-Prüfsumme des Installationsskripts"><code>63abfe069031c9205156c9ca482f4262b6849b8f501bf1112d43d0511f7de685  meshsat-install.sh</code></pre></div>
+<div class="code-block-body"><pre tabindex="0" role="region" aria-label="SHA-256-Prüfsumme des Installationsskripts"><code>0f7a2d9382cf77cc19dcbc7e6b06cf778ace54c151ab90160f90c174abc90d93  meshsat-install.sh</code></pre></div>
 </div>
 
 Das Skript liegt offen unter
