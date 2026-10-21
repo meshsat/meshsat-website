@@ -1,3 +1,7 @@
+---
+description: "Invite team members to MeshSat Hub, assign access and manage shared fleet resources on team plans."
+---
+
 # Your team
 
 Crew and Fleet are team plans. Here is how somebody else gets in.

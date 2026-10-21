@@ -4,7 +4,7 @@ description: "The media converters and the cable are on their way to the bench. 
 
 # Fiber
 
-<ChannelStatus code="coming-soon">The media converters and the cable are on their way to the bench. Nothing has been tested.</ChannelStatus>
+<ChannelStatus channel="fiber">The media converters and the cable are on their way to the bench. Nothing has been tested.</ChannelStatus>
 
 A fiber between two points has no radio in it: nothing to jam, nothing to locate, and no path
 for lightning. It is fixed and point to point, so it suits a link that stays put, such as a kit

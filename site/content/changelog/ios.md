@@ -20,6 +20,14 @@ app is a port of MeshSat Android and is being built up screen by screen and
 transport by transport; there is no release yet. Builds, once there are any,
 are on the [releases page](https://github.com/meshsat/meshsat-ios/releases).
 
+{{< release-summary tag="" >}}
+## Release status
+
+There is no tagged iOS release in this history. The entries below describe work on `main`.
+See [iOS availability and source builds](https://docs.meshsat.net/ios/) before choosing an
+installation path; a commit entry does not establish App Store availability.
+{{< /release-summary >}}
+
 <!-- generated:begin -->
 ## Unreleased (main, last change 2026-10-20)
 

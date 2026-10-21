@@ -4,7 +4,7 @@ description: "Working on hardware on both kits."
 
 # Meshtastic
 
-<ChannelStatus code="live">Working on hardware on both kits.</ChannelStatus>
+<ChannelStatus channel="meshtastic">Working on hardware on both kits.</ChannelStatus>
 
 LoRa mesh radios over USB serial. This is the transport most MeshSat deployments start with: a
 handful of cheap radios giving a group local coverage with no infrastructure at all.

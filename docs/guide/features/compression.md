@@ -1,3 +1,7 @@
+---
+description: "Choose MeshSat compression modes for limited satellite payloads and understand compatibility and size tradeoffs."
+---
+
 # Compression
 
 On a 340 byte satellite frame that costs money to send, compression is not an optimisation. It is

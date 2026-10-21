@@ -33,7 +33,7 @@ hero_title_b:
 hero_sub:
   other: "Un logiciel open source qui transmet des messages entre radios mesh, liaisons satellite et réseaux mobiles. Sur une passerelle Linux ou un téléphone, il relie des systèmes qui ne peuvent pas communiquer seuls entre eux."
 hero_status:
-  other: "Hub ouvert. Aucune flotte en service, jamais utilisé lors d'une vraie urgence."
+  other: "Prototypes en cours de développement. Jamais utilisés lors d’une vraie urgence."
 hero_star:
   other: "Ajouter une étoile sur GitHub"
 hero_visitors:
@@ -1245,3 +1245,33 @@ cta_note_link:
 
 f_help:
   other: "Aide et contributions"
+
+# Setup and evidence hierarchy
+nav_setup:
+  other: "Choisir votre configuration"
+hero_intro:
+  other: "Un logiciel libre qui transmet les messages entre radios maillées, satellites et réseaux mobiles. Commencez avec un ordinateur Linux ou un téléphone Android."
+message_title:
+  other: "Un message, de la radio à sa destination"
+message_intro:
+  other: "Le Bridge reçoit un message, applique vos règles de routage et le transmet par un transport configuré. Chaque destination indique son propre résultat."
+trace_example:
+  other: "Exemple de routage illustratif : voir le journal des messages"
+transport_details:
+  other: "Tous les transports et leur état de test"
+cost_details:
+  other: "Matériel, communications et financement du projet"
+support_title:
+  other: "Soutenir le projet"
+hardware_photo:
+  other: "Deux kits de terrain V1 en cours de montage, printemps 2026."
+hardware_process:
+  other: "Voir notre méthode de construction"
+language_home:
+  other: "accueil"
+
+ig_testing_scope:
+  other: "L’évaluation porte sur des modules individuels et le logiciel. Un assemblage MSC-3 complet n’a pas été validé."
+
+install_output:
+  other: "Exemple de sortie de l’installation"

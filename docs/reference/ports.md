@@ -1,3 +1,7 @@
+---
+description: "Network ports and protocols used by MeshSat Bridge and Hub, including dashboards, APIs and messaging connections."
+---
+
 # Ports
 
 What listens where, and what has to be reachable from where.

@@ -1,3 +1,7 @@
+---
+description: "Read and update Bridge configuration through the REST API, including settings and transport configuration."
+---
+
 # Configuration API
 
 Read and change the bridge's configuration without editing files on the device.

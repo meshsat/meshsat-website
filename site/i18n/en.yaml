@@ -33,7 +33,7 @@ hero_title_b:
 hero_sub:
   other: "Open source software that carries messages between mesh radios, satellite links and mobile networks. Run it on a Linux gateway or a phone, and connect systems that cannot reach each other on their own."
 hero_status:
-  other: "Hub open. No fleet running on it yet, never used in a real emergency."
+  other: "Prototypes under development. Never used in a real emergency."
 hero_star:
   other: "Star on GitHub"
 hero_visitors:
@@ -1245,3 +1245,33 @@ cta_note_link:
 
 f_help:
   other: "Help and contributing"
+
+# Setup and evidence hierarchy
+nav_setup:
+  other: "Choose your setup"
+hero_intro:
+  other: "Open source software that passes messages between mesh radios, satellites and mobile networks. Start with a Linux computer or an Android phone."
+message_title:
+  other: "A message, from radio to destination"
+message_intro:
+  other: "The Bridge receives a message, applies your routing rules and sends it through a configured transport. Each destination reports its own result."
+trace_example:
+  other: "Illustrative routing example: view the message log"
+transport_details:
+  other: "All transports and their test status"
+cost_details:
+  other: "Hardware, airtime and project funding"
+support_title:
+  other: "Support the project"
+hardware_photo:
+  other: "Two V1 field kits during assembly, spring 2026."
+hardware_process:
+  other: "See how we build"
+language_home:
+  other: "homepage"
+
+ig_testing_scope:
+  other: "Evaluation covers individual modules and software. A complete MSC-3 assembly has not been validated."
+
+install_output:
+  other: "Example installer output"

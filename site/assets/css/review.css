@@ -1,0 +1,19 @@
+/* Shared disclosure and readable metadata. */
+.lang-menu { transition: opacity .14s ease, transform .14s ease; }
+.lang-fallback { display: block; font-size: .875rem; color: var(--color-text-muted); }
+.lang-menu { min-width: 12rem; }
+.review-details { border-block: 1px solid var(--color-border); padding-block: 1rem; }
+.review-details summary { cursor: pointer; min-height: 44px; align-content: center; font-weight: 600; font-size: 1rem; }
+.review-details[open] summary { margin-bottom: 1rem; }
+.review-details .trace { max-width: none; margin: 0; }
+.trace-head, .trace-foot, .trace-row, .hero-status, .table-note, .chan-legend,
+.video-foot, .screenshot-card figcaption, .artifact-foot, .host-shared { font-size: .875rem; }
+html:not(.has-js) .menu-toggle, html:not(.has-js) .theme-toggle { display: none; }
+@media (max-width: 1099px) {
+    html:not(.has-js) .site-header { position: relative; }
+    html:not(.has-js) .site-header nav { flex-wrap: wrap; }
+    html:not(.has-js) .nav-links { position: static; display: flex; flex-wrap: wrap; order: 3; width: 100%; padding: .5rem 0; gap: .25rem 1rem; background: none; box-shadow: none; }
+    html:not(.has-js) .nav-links a { padding: .5rem 0; }
+}
+/* Keep pointer travel between the trigger and its offset menu inside the disclosure. */
+.lang-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -8px; height: 8px; }

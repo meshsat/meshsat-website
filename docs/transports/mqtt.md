@@ -4,7 +4,7 @@ description: "Both kits reach the Hub over MQTT."
 
 # MQTT
 
-<ChannelStatus code="live">Both kits reach the Hub over MQTT.</ChannelStatus>
+<ChannelStatus channel="mqtt">Both kits reach the Hub over MQTT.</ChannelStatus>
 
 MQTT is two different things in MeshSat and it is worth keeping them apart.
 

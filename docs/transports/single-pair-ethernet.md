@@ -4,7 +4,7 @@ description: "Two adapters are on their way to the bench. Nothing has been teste
 
 # Single-pair copper
 
-<ChannelStatus code="coming-soon">Two adapters are on their way to the bench. Nothing has been tested.</ChannelStatus>
+<ChannelStatus channel="single-pair-ethernet">Two adapters are on their way to the bench. Nothing has been tested.</ChannelStatus>
 
 10BASE-T1L is Ethernet over a single twisted pair: 10 Mbit/s over up to 1,000 m of cable (IEEE
 802.3cg). Like [fiber](/transports/fiber) it has no radio in it, so it cannot be jammed or

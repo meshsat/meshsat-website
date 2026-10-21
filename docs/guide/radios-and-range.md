@@ -1,3 +1,7 @@
+---
+description: "Radio options and estimated range for MeshSat, with source assumptions, calculations and limits of the estimates."
+---
+
 # Radios, antennas and range
 
 ::: danger No range tests yet

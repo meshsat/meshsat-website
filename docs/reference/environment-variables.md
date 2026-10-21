@@ -1,3 +1,7 @@
+---
+description: "Reference for MeshSat Bridge environment variables, default values and transport-specific configuration."
+---
+
 # Environment variables
 
 Complete reference of the MeshSat Bridge environment variables.

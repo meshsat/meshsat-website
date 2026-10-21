@@ -4,7 +4,7 @@ description: "The codec is verified against a reference. No real shout has been 
 
 # 10 m HF shouts
 
-<ChannelStatus code="code">The codec is verified against a reference. No real shout has been received or sent.</ChannelStatus>
+<ChannelStatus channel="hf-10m">The codec is verified against a reference. No real shout has been received or sent.</ChannelStatus>
 
 CrossTalk's amateur HF hop carries a short plaintext message over a licensed 10 m station when there
 is no other Reticulum path. Its codec is public, and the bridge implements it: receive on the kit's

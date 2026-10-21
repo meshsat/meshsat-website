@@ -1,3 +1,7 @@
+---
+description: "Configure ordered groups of transport interfaces so Bridge can retry deliveries over another available link."
+---
+
 # Failover
 
 A failover group is an ordered list of interfaces that behaves like a single destination. Point a

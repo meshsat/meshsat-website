@@ -1,3 +1,7 @@
+---
+description: "Diagnose Bridge startup, USB detection, mesh connections, satellite modems and failed message deliveries."
+---
+
 # Troubleshooting
 
 Things that go wrong on real hardware, and what they usually mean.

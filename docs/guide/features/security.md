@@ -1,3 +1,7 @@
+---
+description: "MeshSat encryption, key exchange and trust model: what is protected and where transport limitations apply."
+---
+
 # Security and key exchange
 
 What MeshSat encrypts, how keys move between devices, and what the trust model actually guarantees.

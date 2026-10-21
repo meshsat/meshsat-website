@@ -1,3 +1,7 @@
+---
+description: "Configure MeshSat Hub authentication modes, including local accounts, OIDC and deployment settings."
+---
+
 # Authentication
 
 MeshSat Hub supports four authentication modes, configured via `HUB_AUTH_MODE`.

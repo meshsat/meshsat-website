@@ -63,15 +63,14 @@ menu:
     - identifier: transports
       url: "/#transports"
       weight: 1
-    - identifier: why
-      url: "/#islands"
-      weight: 2
+    - identifier: setup
+      url: "/#setup"
+      weight: -1
+      params:
+        highlight: true
     - identifier: hardware
       url: "/#hardware"
       weight: 3
-    - identifier: install
-      url: "/install/"
-      weight: 4
     - identifier: security
       pageRef: "/security"
       weight: 5
@@ -86,8 +85,6 @@ menu:
     - identifier: hub
       url: "/#hub"
       weight: 8
-      params:
-        highlight: true
 
 markup:
   goldmark:

@@ -1,14 +1,9 @@
 {{ define "main" }}
 
 {{/* 1. HERO — the thesis is the trace, not the slogan. */}}
-<section class="hero">
-    <div class="hero-slideshow">
+<section class="hero" data-release="review-20261021">
+    <div class="hero-slideshow" aria-hidden="true">
         <div class="hero-slide active" style="background-image: url('/images/hero/field-comms.webp'); background-position: center 85%"></div>
-        {{- /* Slides 2 to 4 carry their photo in data-bg: main.js attaches them after
-             load, so the first paint fetches one hero photo, not four (MESHSAT-1610). */}}
-        <div class="hero-slide" data-bg="/images/hero/satcom.webp"></div>
-        <div class="hero-slide" data-bg="/images/hero/maritime.webp"></div>
-        <div class="hero-slide" data-bg="/images/hero/sar.webp" style="background-position: center 85%"></div>
     </div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
@@ -17,46 +12,20 @@
      sized to fit its column instead (MESHSAT-1596): the CSS reads the longest line's length. */}}
         {{- $hta := i18n "hero_title_a" }}{{ $htb := i18n "hero_title_b" }}
         <h1 class="hero-title"{{ if le (len (split $htb " ")) 3 }} style="--hl-chars: {{ math.Max (strings.RuneCount $hta) (strings.RuneCount $htb) }}"{{ end }}><span class="hero-title-fit">{{ $hta }}<br><span class="highlight">{{ $htb }}</span></span></h1>
-        <p class="hero-subtitle">{{ i18n "hero_sub" }}</p>
+        <p class="hero-subtitle">{{ i18n "hero_intro" }}</p>
 
         <p class="hero-status"><span class="dot"></span> {{ i18n "hero_status" }}</p>
 
         <div class="hero-install">
-            <nav class="hero-paths" aria-label="{{ i18n "start_label" }}">
+            <nav id="setup" class="hero-paths" aria-label="{{ i18n "start_label" }}">
                 <a href="{{ .Site.Params.docs_url }}/guide/quick-start.html"><strong>Bridge</strong><span>{{ i18n "start_bridge" }}</span></a>
                 <a href="{{ .Site.Params.docs_url }}/android/setup.html"><strong>Android</strong><span>{{ i18n "start_android" }}</span></a>
                 <a href="#hub"><strong>Hub</strong><span>{{ i18n "start_hub" }}</span></a>
             </nav>
             <a class="hero-demo" href="#video">{{ i18n "start_demo" }} <span aria-hidden="true">↓</span></a>
-            <p class="hero-repo">
-                <a href="{{ .Site.Params.github }}" class="gh-star-btn" target="_blank" rel="noopener" data-umami-event="star-click" data-umami-event-locale="{{ .Site.Language.Lang }}">
-                    {{ partial "icon.html" (dict "name" "github" "size" 16) }}
-                    <span>{{ i18n "hero_star" }}</span>
-                    <span class="gh-star-count" hidden><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span data-gh-stars></span></span>
-                </a>
-                {{ with .Site.Params.donate_url }}
-                <a href="{{ . }}" class="donate-btn" rel="nofollow noopener" data-umami-event="donate-click" data-umami-event-locale="{{ $.Site.Language.Lang }}">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-6.7-4.35-9.1-8.02C1.2 10.2 2.1 6.6 5.2 5.4c2-.77 4.1-.1 5.3 1.5l1.5 2 1.5-2c1.2-1.6 3.3-2.27 5.3-1.5 3.1 1.2 4 4.8 2.3 7.58C18.7 16.65 12 21 12 21z"/></svg>
-                    <span>{{ i18n "hero_donate" }}</span>
-                </a>
-                {{ end }}
-                <span class="visitors-chip" hidden data-visitors-endpoint="{{ with .Site.Params.umami_url }}{{ . }}/public/meshsat/visitors{{ end }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M2.203 8.611H.857a.845.845 0 0 0-.841.841v.858a13.31 13.31 0 0 0-.016.6c0 6.627 5.373 12 12 12 6.527 0 11.837-5.212 11.996-11.701 0-.025.004-.05.004-.075V9.452a.845.845 0 0 0-.841-.841h-1.346c-1.159-4.329-5.112-7.521-9.805-7.521-4.692 0-8.645 3.192-9.805 7.521Zm18.444 0H3.37c1.127-3.702 4.57-6.399 8.638-6.399 4.069 0 7.512 2.697 8.639 6.399Z"/></svg>
-                    <span>{{ i18n "hero_visitors" }}</span>
-                    <span class="visitors-count" data-visitor-count></span>
-                </span>
-            </p>
+
         </div>
-        <div class="trace" tabindex="0" role="img" aria-label="{{ i18n "trace_alt" }}">
-            <div class="trace-head"><span>{{ i18n "trace_title" }}</span><span>{{ i18n "trace_bridge" }}</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.118</span><span class="trace-if">mesh_0</span><span class="trace-dir">RX</span><span class="trace-msg">{{ i18n "t1" }}</span><span class="trace-state"></span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.140</span><span class="trace-if">router</span><span class="trace-dir">&middot;&middot;</span><span class="trace-msg">{{ i18n "t2" }}</span><span class="trace-state"></span></div>
-            <div class="trace-row is-fail"><span class="trace-t">09:14:02.191</span><span class="trace-if">iridium_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t3" }}</span><span class="trace-state fail">FAILED</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.204</span><span class="trace-if">cellular_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t4" }}</span><span class="trace-state ok">DELIVERED</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.209</span><span class="trace-if">tak_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ replace (i18n "t5") "Cursor-on-Target" "<span class=\"trace-term\">Cursor-on-Target</span>" | safeHTML }}</span><span class="trace-state ok">DELIVERED</span></div>
-            <div class="trace-row"><span class="trace-t">09:14:02.318</span><span class="trace-if">mqtt_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t6" }}</span><span class="trace-state ok">DELIVERED</span></div>
-            <p class="trace-foot">{{ i18n "trace_foot" }}</p>
-        </div>
+
 
     </div>
 </section>
@@ -94,57 +63,7 @@
     </div>
 </section>
 
-{{/* 1b. ISLANDS (MESHSAT-1096). The problem before the mechanism. Left: a
-     dated record of real failures, each sentence kept inside its linked
-     primary source. Right: what joining the islands looks like, written in the
-     trace's own interface IDs, with an honest state under every route: one run
-     on the bench, one verified leg, one not run end to end. */}}
-{{ $incidents := slice
-    (dict "when" "2005-08" "key" "inc1" "url" "https://docs.fcc.gov/public/attachments/FCC-06-83A1.pdf")
-    (dict "when" "2021-07" "key" "inc2" "url" "https://dokumente.landtag.rlp.de/landtag/drucksachen/1947-18.pdf")
-    (dict "when" "2023-08" "key" "inc3" "url" "https://fsri.org/resource/phase-two-lahaina-fire-incident-analysis-report")
-    (dict "when" "2025-04" "key" "inc4" "url" "https://www.entsoe.eu/publications/blackout/28-april-2025-iberian-blackout/")
-}}
-{{ $joins := slice
-    (dict "key" "join1" "route" (slice "mesh_0" "aprs_0" "mesh_0"))
-    (dict "key" "join2" "route" (slice "mesh_0" "iridium_0"))
-    (dict "key" "join3" "route" (slice "aprs_0" "tak_0"))
-}}
-<section id="islands" class="section section-alt islands-section">
-    <div class="container">
-        <div class="section-head">
-            <h2 class="section-title">{{ i18n "is_title" }}</h2>
-            <p class="section-subtitle">{{ i18n "is_sub" }}</p>
-        </div>
 
-        <div class="islands-grid">
-            <div class="islands-col">
-                <h3 class="islands-h">{{ i18n "is_record_h" }}</h3>
-                <ol class="incidents">
-                    {{ range $incidents }}
-                    <li class="incident">
-                        <time class="incident-when" datetime="{{ .when }}">{{ .when }}</time>
-                        <p><strong>{{ i18n (printf "%s_h" .key) }}</strong> {{ i18n (printf "%s_p" .key) }} <a href="{{ .url }}" target="_blank" rel="noopener">{{ i18n (printf "%s_src" .key) }}</a></p>
-                    </li>
-                    {{ end }}
-                </ol>
-            </div>
-            <div class="islands-col">
-                <h3 class="islands-h">{{ i18n "is_joins_h" }}</h3>
-                <ul class="joins">
-                    {{ range $joins }}
-                    <li class="join">
-                        <p class="join-h">{{ i18n (printf "%s_h" .key) }}</p>
-                        <p class="join-route">{{ range $i, $hop := .route }}{{ if $i }}<span class="join-arrow" aria-hidden="true">&rarr;</span><span class="visually-hidden">{{ i18n "is_to" }}</span>{{ end }}<code>{{ $hop }}</code>{{ end }}</p>
-                        <p class="join-state">{{ i18n (printf "%s_s" .key) }}</p>
-                    </li>
-                    {{ end }}
-                </ul>
-                <p class="islands-who">{{ i18n "is_who" }}</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 {{/* 2. WHAT IT BRIDGES */}}
 <section id="transports" class="section">
@@ -176,6 +95,7 @@
             (dict "id" "mqtt_0" "name" "MQTT")
             (dict "id" "webhook_0" "name" "Webhooks")
         }}
+        <p id="message-path" class="message-intro">{{ i18n "message_intro" }}</p>
         <figure class="fabric" aria-labelledby="fabric-cap">
             <ul class="fabric-row fabric-top">
                 {{ range $bearers }}<li class="fabric-node"><code>{{ .id }}</code><span>{{ .name }}</span></li>{{ end }}
@@ -195,61 +115,22 @@
              tokens in every language, like RX and TX in the trace; the legend
              under the table is translated. "k" is a translated name, "n" a
              proper noun, "s" the docs page under /transports/ and "u" a docs
-             path elsewhere. A status is a fact about the kits
-             and nodes: change it here and on the channel's docs page
-             together. */}}
-        {{ $codes := dict
-            "live"  (dict "label" "LIVE" "class" "badge-stable")
-            "code"  (dict "label" "CODE" "class" "badge-code")
-            "bench" (dict "label" "BENCH" "class" "badge-beta")
-            "soon"  (dict "label" "COMING SOON" "class" "badge-soon")
-            "plan"  (dict "label" "FUTURE PLAN" "class" "badge-plan")
-        }}
-        {{ $channels := slice
-            (dict "cat" "cat_sat" "groups" (slice
-                (dict "code" "live" "items" (slice
-                    (dict "n" "Iridium IMT (9704)" "s" "iridium-imt")
-                    (dict "k" "ch_node" "s" "iridium-node")))
-                (dict "code" "code" "items" (slice
-                    (dict "n" "Iridium SBD (9603N)" "s" "iridium-sbd")))))
-            (dict "cat" "cat_radio" "groups" (slice
-                (dict "code" "live" "items" (slice
-                    (dict "n" "Meshtastic LoRa" "s" "meshtastic")
-                    (dict "n" "APRS" "s" "aprs")
-                    (dict "k" "ch_cell" "s" "cellular")
-                    (dict "n" "Wi-Fi" "s" "wifi")
-                    (dict "n" "TETRA Direct Mode" "s" "tetra")))
-                (dict "code" "code" "items" (slice
-                    (dict "k" "ch_hf10" "s" "hf-10m")))
-                (dict "code" "soon" "items" (slice
-                    (dict "k" "ch_hfdata" "s" "hf-data")
-                    (dict "n" "Wi-Fi HaLow" "s" "halow")
-                    (dict "k" "ch_2g" "s" "gsm-cell")))))
-            (dict "cat" "cat_wired" "groups" (slice
-                (dict "code" "soon" "items" (slice
-                    (dict "k" "ch_fiber" "s" "fiber")
-                    (dict "k" "ch_copper" "s" "single-pair-ethernet")))))
-            (dict "cat" "cat_short" "groups" (slice
-                (dict "code" "code" "items" (slice
-                    (dict "n" "ZigBee" "s" "zigbee")
-                    (dict "n" "Bluetooth LE" "s" "ble")
-                    (dict "k" "ch_rnode" "s" "rnode")))))
-            (dict "cat" "cat_ip" "groups" (slice
-                (dict "code" "live" "items" (slice
-                    (dict "k" "ch_hub" "s" "hub-link")
-                    (dict "n" "MQTT" "s" "mqtt")
-                    (dict "n" "TAK" "s" "tak")
-                    (dict "n" "Reticulum" "u" "/guide/features/reticulum.html")))
-                (dict "code" "code" "items" (slice
-                    (dict "n" "Webhooks" "s" "webhooks")))))
-            (dict "cat" "cat_rx" "groups" (slice
-                (dict "code" "live" "items" (slice
-                    (dict "k" "ch_jam" "s" "jamming-watch")))
-                (dict "code" "code" "items" (slice
-                    (dict "k" "ch_cb" "s" "cell-broadcast")))
-                (dict "code" "bench" "items" (slice
-                    (dict "k" "ch_time" "s" "dcf77")))))
-        }}
+             path elsewhere. Statuses and evidence are shared with the docs through site/data/transports.json. */}}
+        {{ $codes := .Site.Data.transports.codes }}
+        {{ $channels := .Site.Data.transports.groups }}
+        <details class="review-details"><summary>{{ i18n "trace_example" }}</summary>
+        <div class="trace" tabindex="0" role="img" aria-label="{{ i18n "trace_alt" }}">
+            <div class="trace-head"><span>{{ i18n "trace_title" }}</span><span>{{ i18n "trace_bridge" }}</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.118</span><span class="trace-if">mesh_0</span><span class="trace-dir">RX</span><span class="trace-msg">{{ i18n "t1" }}</span><span class="trace-state"></span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.140</span><span class="trace-if">router</span><span class="trace-dir">&middot;&middot;</span><span class="trace-msg">{{ i18n "t2" }}</span><span class="trace-state"></span></div>
+            <div class="trace-row is-fail"><span class="trace-t">09:14:02.191</span><span class="trace-if">iridium_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t3" }}</span><span class="trace-state fail">FAILED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.204</span><span class="trace-if">cellular_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t4" }}</span><span class="trace-state ok">DELIVERED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.209</span><span class="trace-if">tak_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ replace (i18n "t5") "Cursor-on-Target" "<span class=\"trace-term\">Cursor-on-Target</span>" | safeHTML }}</span><span class="trace-state ok">DELIVERED</span></div>
+            <div class="trace-row"><span class="trace-t">09:14:02.318</span><span class="trace-if">mqtt_0</span><span class="trace-dir">TX</span><span class="trace-msg">{{ i18n "t6" }}</span><span class="trace-state ok">DELIVERED</span></div>
+            <p class="trace-foot">{{ i18n "trace_foot" }}</p>
+        </div>
+        </details>
+        <details class="review-details"><summary>{{ i18n "transport_details" }}</summary>
         <div class="table-wrap" tabindex="0" role="region" aria-label="{{ i18n "table_transports_label" }}">
             <table class="data-table chan-table">
                 <thead>
@@ -275,40 +156,64 @@
             <li><span class="badge badge-token {{ $c.class }}">{{ $c.label }}</span>&nbsp;{{ i18n (printf "lg_%s" .) }}</li>
             {{- end }}
         </ul>
+        </details>
         <p class="table-note">{{ i18n "tr_note_a" }} <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">{{ i18n "tr_note_link" }}</a> {{ i18n "tr_note_b" }}</p>
     </div>
 </section>
 
-{{/* 3. WHY IT EXISTS — the cost argument is the design argument */}}
-<section id="cost" class="section section-alt cost-section">
+{{/* 1b. ISLANDS (MESHSAT-1096). The problem before the mechanism. Left: a
+     dated record of real failures, each sentence kept inside its linked
+     primary source. Right: what joining the islands looks like, written in the
+     trace's own interface IDs, with an honest state under every route: one run
+     on the bench, one verified leg, one not run end to end. */}}
+{{ $incidents := slice
+    (dict "when" "2005-08" "key" "inc1" "url" "https://docs.fcc.gov/public/attachments/FCC-06-83A1.pdf")
+    (dict "when" "2021-07" "key" "inc2" "url" "https://dokumente.landtag.rlp.de/landtag/drucksachen/1947-18.pdf")
+    (dict "when" "2023-08" "key" "inc3" "url" "https://fsri.org/resource/phase-two-lahaina-fire-incident-analysis-report")
+    (dict "when" "2025-04" "key" "inc4" "url" "https://www.entsoe.eu/publications/blackout/28-april-2025-iberian-blackout/")
+}}
+{{ $joins := slice
+    (dict "key" "join1" "route" (slice "mesh_0" "aprs_0" "mesh_0"))
+    (dict "key" "join2" "route" (slice "mesh_0" "iridium_0"))
+    (dict "key" "join3" "route" (slice "aprs_0" "tak_0"))
+}}
+<section id="islands" class="section section-alt islands-section">
     <div class="container">
         <div class="section-head">
-            <h2 class="section-title">{{ i18n "cost_title" }}</h2>
-            <p class="section-subtitle">{{ i18n "cost_sub" }}</p>
+            <h2 class="section-title">{{ i18n "is_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "is_sub" }}</p>
         </div>
 
-        <div class="reason-grid">
-            <div class="reason-card">
-                <h3>{{ i18n "c1_h" }}</h3>
-                <p>{{ i18n "c1_p" }}</p>
-            </div>
-            <div class="reason-card">
-                <h3>{{ i18n "c2_h" }}</h3>
-                <p>{{ i18n "c2_p" }}</p>
-            </div>
-            <div class="reason-card">
-                <h3>{{ i18n "c3_h" }}</h3>
-                <p>{{ i18n "c3_p" }}</p>
-            </div>
-            <div class="reason-card">
-                <h3>{{ i18n "c4_h" }}</h3>
-                <p>{{ i18n "c4_p" }}</p>
+        <div class="islands-grid">
+            <details class="islands-col review-details incident-details">
+                <summary>{{ i18n "is_record_h" }}</summary>
+                <ol class="incidents">
+                    {{ range $incidents }}
+                    <li class="incident">
+                        <time class="incident-when" datetime="{{ .when }}">{{ .when }}</time>
+                        <p><strong>{{ i18n (printf "%s_h" .key) }}</strong> {{ i18n (printf "%s_p" .key) }} <a href="{{ .url }}" target="_blank" rel="noopener">{{ i18n (printf "%s_src" .key) }}</a></p>
+                    </li>
+                    {{ end }}
+                </ol>
+            </details>
+            <div class="islands-col">
+                <h3 class="islands-h">{{ i18n "is_joins_h" }}</h3>
+                <ul class="joins">
+                    {{ range $joins }}
+                    <li class="join">
+                        <p class="join-h">{{ i18n (printf "%s_h" .key) }}</p>
+                        <p class="join-route">{{ range $i, $hop := .route }}{{ if $i }}<span class="join-arrow" aria-hidden="true">&rarr;</span><span class="visually-hidden">{{ i18n "is_to" }}</span>{{ end }}<code>{{ $hop }}</code>{{ end }}</p>
+                        <p class="join-state">{{ i18n (printf "%s_s" .key) }}</p>
+                    </li>
+                    {{ end }}
+                </ul>
+                <p class="islands-who">{{ i18n "is_who" }}</p>
             </div>
         </div>
-
-        <p class="funding-note">{{ i18n "funding_a" }} <a href="{{ .Site.Params.sidn_url }}" target="_blank" rel="noopener">SIDN fonds</a>{{ i18n "funding_b" }}</p>
     </div>
 </section>
+
+
 
 {{/* 4. THE DEVICE */}}
 <section id="hardware" class="section">
@@ -318,6 +223,12 @@
             <p class="section-subtitle">{{ i18n "hw_sub" }}</p>
         </div>
 
+        <div class="hardware-evidence">
+        <figure class="hardware-photo">
+            <img src="/images/how-we-build/two-kits-in-build-20261021-960.webp" srcset="/images/how-we-build/two-kits-in-build-20261021-640.webp 640w, /images/how-we-build/two-kits-in-build-20261021-960.webp 960w, /images/how-we-build/two-kits-in-build-20261021.webp 1400w" sizes="(min-width: 900px) 44vw, 92vw" width="1400" height="788" alt="{{ i18n "hardware_photo" }}" loading="lazy" decoding="async">
+            <figcaption>{{ i18n "hardware_photo" }} <a href="/how-we-build/">{{ i18n "hardware_process" }}</a></figcaption>
+        </figure>
+        <div class="hardware-parts">
         <p class="hardware-start"><a href="{{ .Site.Params.docs_url }}/guide/hardware.html">{{ i18n "hw_start" }} <span aria-hidden="true">→</span></a></p>
         <p class="hardware-start"><a href="{{ "/integrators/" | relLangURL }}">{{ i18n "msc3_integrators" }}</a> <span class="badge badge-token badge-plan">FUTURE PLAN</span></p>
 
@@ -335,6 +246,8 @@
             </table>
         </div>
 
+        </div>
+        </div>
         {{/* Evidence thumbnails (MESHSAT-1101): the 1x file inline, the @2x file in
              data-full for the lightbox, which main.js steps through with the arrow
              keys. Each button is named by its caption, so the name is translated. */}}
@@ -401,18 +314,20 @@
                             <span class="copy-text">{{ i18n "copy" }}</span>
                         </button>
                     </div>
+                    <details class="install-output"><summary>{{ i18n "install_output" }}</summary>
                     <pre class="term-log" tabindex="0" role="region" aria-label="{{ i18n "term_log_label" }}"><span class="ok">[OK]</span>    Running as root
 <span class="ok">[OK]</span>    Architecture: aarch64
 <span class="ok">[OK]</span>    Created /meshsat/data
 <span class="ok">[OK]</span>    Generated /meshsat/docker-compose.yml
 <span class="ok">[OK]</span>    Image pulled
-<span class="ok">[OK]</span>    MeshSat Bridge started
+<span class="ok">[OK]</span>    MeshSat Bridge is ready
 
   Dashboard:  <span class="t">http://192.168.4.20:6050</span>
-  Data dir:   /meshsat/data
+  Config:     /meshsat/docker-compose.yml
 
   USB devices will be auto-detected.
   Plug in your Meshtastic radio or satellite modem.</pre>
+                    </details>
                 </div>
                 <div class="artifact-foot term-foot">
                     <div class="hero-actions">
@@ -539,6 +454,60 @@
         <p class="host-shared">{{ i18n "plans_airtime" }}</p>
     </div>
 </section>
+
+{{/* 3. WHY IT EXISTS — the cost argument is the design argument */}}
+<section id="cost" class="section section-alt cost-section">
+    <div class="container">
+        <div class="section-head">
+            <h2 class="section-title">{{ i18n "cost_title" }}</h2>
+            <p class="section-subtitle">{{ i18n "cost_sub" }}</p>
+        </div>
+
+        <details class="review-details"><summary>{{ i18n "cost_details" }}</summary>
+        <div class="reason-grid">
+            <div class="reason-card">
+                <h3>{{ i18n "c1_h" }}</h3>
+                <p>{{ i18n "c1_p" }}</p>
+            </div>
+            <div class="reason-card">
+                <h3>{{ i18n "c2_h" }}</h3>
+                <p>{{ i18n "c2_p" }}</p>
+            </div>
+            <div class="reason-card">
+                <h3>{{ i18n "c3_h" }}</h3>
+                <p>{{ i18n "c3_p" }}</p>
+            </div>
+            <div class="reason-card">
+                <h3>{{ i18n "c4_h" }}</h3>
+                <p>{{ i18n "c4_p" }}</p>
+            </div>
+        </div>
+
+        </details>
+        <p class="funding-note">{{ i18n "funding_a" }} <a href="{{ .Site.Params.sidn_url }}" target="_blank" rel="noopener">SIDN fonds</a>{{ i18n "funding_b" }}</p>
+    </div>
+</section>
+
+<section class="section project-support"><div class="container"><h2 class="section-title">{{ i18n "support_title" }}</h2>
+            <p class="hero-repo">
+                <a href="{{ .Site.Params.github }}" class="gh-star-btn" target="_blank" rel="noopener" data-umami-event="star-click" data-umami-event-locale="{{ .Site.Language.Lang }}">
+                    {{ partial "icon.html" (dict "name" "github" "size" 16) }}
+                    <span>{{ i18n "hero_star" }}</span>
+                    <span class="gh-star-count" hidden><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span data-gh-stars></span></span>
+                </a>
+                {{ with .Site.Params.donate_url }}
+                <a href="{{ . }}" class="donate-btn" rel="nofollow noopener" data-umami-event="donate-click" data-umami-event-locale="{{ $.Site.Language.Lang }}">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-6.7-4.35-9.1-8.02C1.2 10.2 2.1 6.6 5.2 5.4c2-.77 4.1-.1 5.3 1.5l1.5 2 1.5-2c1.2-1.6 3.3-2.27 5.3-1.5 3.1 1.2 4 4.8 2.3 7.58C18.7 16.65 12 21 12 21z"/></svg>
+                    <span>{{ i18n "hero_donate" }}</span>
+                </a>
+                {{ end }}
+                <span class="visitors-chip" hidden data-visitors-endpoint="{{ with .Site.Params.umami_url }}{{ . }}/public/meshsat/visitors{{ end }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M2.203 8.611H.857a.845.845 0 0 0-.841.841v.858a13.31 13.31 0 0 0-.016.6c0 6.627 5.373 12 12 12 6.527 0 11.837-5.212 11.996-11.701 0-.025.004-.05.004-.075V9.452a.845.845 0 0 0-.841-.841h-1.346c-1.159-4.329-5.112-7.521-9.805-7.521-4.692 0-8.645 3.192-9.805 7.521Zm18.444 0H3.37c1.127-3.702 4.57-6.399 8.638-6.399 4.069 0 7.512 2.697 8.639 6.399Z"/></svg>
+                    <span>{{ i18n "hero_visitors" }}</span>
+                    <span class="visitors-count" data-visitor-count></span>
+                </span>
+            </p>
+</div></section>
 
 {{/* Screenshot lightbox (MESHSAT-1101): one dialog for every thumbnail. main.js
      shows the thumbnail at once, swaps in the @2x file when it has loaded, and

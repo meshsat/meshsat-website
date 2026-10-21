@@ -27,6 +27,17 @@ its assets track the last of those updates; the tag itself points at the
 3 September sources. Those in-place asset swaps are not commits, so they do not
 appear below.
 
+{{< release-summary tag="revA" >}}
+## Latest tagged design: revA
+
+Tagged 3 September 2026. This design release contains the V2 carrier-board sources, review
+prints, vendor references and V1 build records. See the
+[revA design record](#reva-2026-09-03) for the files and changes.
+
+The V1 kits are built bench and demo units. V2 remains an unbuilt design: release files and
+an order-folder layout are not evidence of fabrication or a validated board.
+{{< /release-summary >}}
+
 <!-- generated:begin -->
 ## Unreleased (main, last change 2026-10-07)
 

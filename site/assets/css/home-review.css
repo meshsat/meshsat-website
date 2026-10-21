@@ -1,0 +1,87 @@
+/* Setup first, with one stable photograph and explicit evidence below. */
+.hero { min-height: 0; }
+.hero-content { display: block; max-width: 1200px; padding-block: 3rem; }
+.hero-title { max-width: 52rem; margin-bottom: 1.25rem; }
+.hero-subtitle { max-width: 44rem; margin-bottom: 1.25rem; }
+.hero-status { max-width: 44rem; margin-bottom: 1.25rem; }
+.hero-install { max-width: 44rem; }
+.hero-paths span { font-size: .875rem; }
+.hero-repo { min-height: 0; margin-top: 1.5rem; }
+.hero-slide { transition: none; }
+.hero-overlay { background: linear-gradient(90deg, rgba(20,18,15,.97), rgba(20,18,15,.88) 50%, rgba(20,18,15,.25)); }
+[data-theme="light"] .hero-overlay { background: linear-gradient(90deg, rgba(247,245,242,.98), rgba(247,245,242,.9) 50%, rgba(247,245,242,.32)); }
+.hero-title, .highlight { text-shadow: none; }
+.trace-row { animation: none; }
+.section-alt::before { display: none; }
+.message-section { padding-block: 2.5rem; }
+.islands-grid { display: flex; flex-direction: column; gap: 2rem; }
+.islands-col { min-width: 0; }
+.incident-details { order: 2; }
+.joins { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; }
+.join { padding: 0 0 1rem; }
+.joins .join-route { flex-wrap: wrap; }
+.islands-who { max-width: 65ch; }
+.hardware-photo { margin-block: 2rem; }
+.hardware-photo img { width: 100%; height: auto; border-radius: var(--radius-sm); }
+.hardware-photo figcaption { font-size: .875rem; color: var(--color-text-muted); padding-top: .75rem; }
+.screenshots-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.25rem; }
+.screenshots-grid .screenshot-card:first-child { grid-column: 1/-1; }
+.hub-shots { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.screenshot-card, .video-frame, .artifact { box-shadow: none; }
+.video-play img { object-fit: cover; transform: scale(1.08); }
+.video-media { overflow: hidden; }
+.project-support { padding-block: 2.5rem; }
+@media (max-width: 700px) {
+    .hero-content { padding-block: 1.75rem; }
+    .hero-title { font-size: 2.25rem; }
+    .hero-subtitle { font-size: 1rem; line-height: 1.5; }
+    .hero-status { line-height: 1.5; }
+    .hero-label { font-size: .875rem; margin-bottom: .75rem; }
+    .hero-paths { grid-template-columns: 1fr; }
+    .hero-paths a { flex-direction: row; align-items: baseline; gap: .75rem; }
+    .hero-paths strong { flex: 0 0 4.5rem; }
+    .joins { grid-template-columns: 1fr; gap: .5rem; }
+    .screenshots-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .screenshots-grid .screenshot-card:last-child:nth-child(even) { grid-column: 1/-1; }
+}
+.hardware-photo figcaption a { text-decoration: underline; text-underline-offset: .18em; }
+
+.hero-content { width: 100%; }
+.hero-status, .trace-head, .trace-foot, .trace-row, .chan-legend, .table-note,
+.video-foot, .screenshot-card figcaption, .artifact-foot, .host-shared, .term-note, .term-log { font-size: .875rem; }
+/* Show the hardware beside its parts and a readable lead view beside thumbnails. */
+.section { padding-block: 2rem; }
+.message-intro { max-width: 70ch; margin-bottom: 1.5rem; color: var(--color-text-muted); }
+.review-details + .review-details { border-top: 0; }
+.hardware-evidence { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2rem; margin-bottom: 2rem; align-items: start; }
+.hardware-evidence .hardware-photo { margin: 0; position: sticky; top: 6rem; }
+.hardware-parts { min-width: 0; }
+.hardware-parts .data-table { min-width: 0; }
+.hardware-parts .data-table td { white-space: normal; }
+.screenshots-grid { grid-template-columns: minmax(0,3fr) minmax(0,1fr); align-items: start; }
+.screenshots-grid .screenshot-card { grid-column: 2; }
+.screenshots-grid .screenshot-card:first-child { grid-column: 1; grid-row: 1 / span 3; }
+.hub-shots .screenshot-card:first-child { grid-row: 1 / span 2; }
+.install-output summary { padding-block: .75rem; min-height: 44px; cursor: pointer; color: var(--color-text-muted); font-size: .875rem; }
+.install-output .term-log { margin-top: .5rem; }
+@media (max-width: 899px) {
+  .hardware-evidence { grid-template-columns: 1fr; }
+  .hardware-evidence .hardware-photo { position: static; }
+}
+@media (max-width: 699px) {
+  .screenshots-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem; }
+  .hub-shots { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .screenshots-grid .screenshot-card { grid-column: auto; }
+  .screenshots-grid .screenshot-card:first-child { grid-column: 1/-1; grid-row: auto; }
+  .screenshots-grid .screenshot-card:last-child:nth-child(even) { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hardware-evidence .hardware-photo { position: static; }
+}
+.islands-col .joins { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+.islands-col .join { align-content: start; }
+.join-state { font-size: .875rem; }
+.project-support .section-title { text-align: left; }
+@media (max-width: 700px) {
+  .islands-col .joins { grid-template-columns: 1fr; gap: .5rem; }
+}

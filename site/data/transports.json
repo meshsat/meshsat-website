@@ -1,0 +1,308 @@
+{
+  "codes": {
+    "live": {
+      "label": "LIVE",
+      "class": "badge-stable",
+      "means": "Runs on our prototype hardware today."
+    },
+    "code": {
+      "label": "CODE",
+      "class": "badge-code",
+      "means": "In the Bridge, not running on a kit."
+    },
+    "bench": {
+      "label": "BENCH",
+      "class": "badge-beta",
+      "means": "Hardware on our bench, not in a kit yet."
+    },
+    "soon": {
+      "label": "COMING SOON",
+      "class": "badge-soon",
+      "means": "Hardware on its way to the bench, nothing tested."
+    },
+    "plan": {
+      "label": "FUTURE PLAN",
+      "class": "badge-plan",
+      "means": "Planned, nothing bought."
+    }
+  },
+  "groups": [
+    {
+      "cat": "cat_sat",
+      "groups": [
+        {
+          "code": "live",
+          "items": [
+            {
+              "n": "Iridium IMT (9704)",
+              "s": "iridium-imt",
+              "id": "iridium-imt",
+              "evidence": "https://docs.meshsat.net/transports/iridium-imt.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "k": "ch_node",
+              "s": "iridium-node",
+              "id": "iridium-node",
+              "evidence": "https://docs.meshsat.net/transports/iridium-node.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        },
+        {
+          "code": "code",
+          "items": [
+            {
+              "n": "Iridium SBD (9603N)",
+              "s": "iridium-sbd",
+              "id": "iridium-sbd",
+              "evidence": "https://docs.meshsat.net/transports/iridium-sbd.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat": "cat_radio",
+      "groups": [
+        {
+          "code": "live",
+          "items": [
+            {
+              "n": "Meshtastic LoRa",
+              "s": "meshtastic",
+              "id": "meshtastic",
+              "evidence": "https://docs.meshsat.net/transports/meshtastic.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "n": "APRS",
+              "s": "aprs",
+              "id": "aprs",
+              "evidence": "https://docs.meshsat.net/transports/aprs.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "k": "ch_cell",
+              "s": "cellular",
+              "id": "cellular",
+              "evidence": "https://docs.meshsat.net/transports/cellular.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "n": "Wi-Fi",
+              "s": "wifi",
+              "id": "wifi",
+              "evidence": "https://docs.meshsat.net/transports/wifi.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "n": "TETRA Direct Mode",
+              "s": "tetra",
+              "id": "tetra",
+              "evidence": "https://docs.meshsat.net/transports/tetra.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        },
+        {
+          "code": "code",
+          "items": [
+            {
+              "k": "ch_hf10",
+              "s": "hf-10m",
+              "id": "hf-10m",
+              "evidence": "https://docs.meshsat.net/transports/hf-10m.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        },
+        {
+          "code": "soon",
+          "items": [
+            {
+              "k": "ch_hfdata",
+              "s": "hf-data",
+              "id": "hf-data",
+              "evidence": "https://docs.meshsat.net/transports/hf-data.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "n": "Wi-Fi HaLow",
+              "s": "halow",
+              "id": "halow",
+              "evidence": "https://docs.meshsat.net/transports/halow.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "k": "ch_2g",
+              "s": "gsm-cell",
+              "id": "gsm-cell",
+              "evidence": "https://docs.meshsat.net/transports/gsm-cell.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat": "cat_wired",
+      "groups": [
+        {
+          "code": "soon",
+          "items": [
+            {
+              "k": "ch_fiber",
+              "s": "fiber",
+              "id": "fiber",
+              "evidence": "https://docs.meshsat.net/transports/fiber.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "k": "ch_copper",
+              "s": "single-pair-ethernet",
+              "id": "single-pair-ethernet",
+              "evidence": "https://docs.meshsat.net/transports/single-pair-ethernet.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat": "cat_short",
+      "groups": [
+        {
+          "code": "code",
+          "items": [
+            {
+              "n": "ZigBee",
+              "s": "zigbee",
+              "id": "zigbee",
+              "evidence": "https://docs.meshsat.net/transports/zigbee.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "n": "Bluetooth LE",
+              "s": "ble",
+              "id": "ble",
+              "evidence": "https://docs.meshsat.net/transports/ble.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "k": "ch_rnode",
+              "s": "rnode",
+              "id": "rnode",
+              "evidence": "https://docs.meshsat.net/transports/rnode.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat": "cat_ip",
+      "groups": [
+        {
+          "code": "live",
+          "items": [
+            {
+              "k": "ch_hub",
+              "s": "hub-link",
+              "id": "hub-link",
+              "evidence": "https://docs.meshsat.net/transports/hub-link.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "n": "MQTT",
+              "s": "mqtt",
+              "id": "mqtt",
+              "evidence": "https://docs.meshsat.net/transports/mqtt.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "n": "TAK",
+              "s": "tak",
+              "id": "tak",
+              "evidence": "https://docs.meshsat.net/transports/tak.html",
+              "reviewed": "2026-10-21"
+            },
+            {
+              "n": "Reticulum",
+              "u": "/guide/features/reticulum.html",
+              "id": "reticulum",
+              "evidence": "https://docs.meshsat.net/guide/features/reticulum.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        },
+        {
+          "code": "code",
+          "items": [
+            {
+              "n": "Webhooks",
+              "s": "webhooks",
+              "id": "webhooks",
+              "evidence": "https://docs.meshsat.net/transports/webhooks.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat": "cat_rx",
+      "groups": [
+        {
+          "code": "live",
+          "items": [
+            {
+              "k": "ch_jam",
+              "s": "jamming-watch",
+              "id": "jamming-watch",
+              "evidence": "https://docs.meshsat.net/transports/jamming-watch.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        },
+        {
+          "code": "code",
+          "items": [
+            {
+              "k": "ch_cb",
+              "s": "cell-broadcast",
+              "id": "cell-broadcast",
+              "evidence": "https://docs.meshsat.net/transports/cell-broadcast.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        },
+        {
+          "code": "bench",
+          "items": [
+            {
+              "k": "ch_time",
+              "s": "dcf77",
+              "id": "dcf77",
+              "evidence": "https://docs.meshsat.net/transports/dcf77.html",
+              "reviewed": "2026-10-21"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "additional": {
+    "kiss": {
+      "code": "code",
+      "evidence": "https://docs.meshsat.net/transports/kiss.html",
+      "reviewed": "2026-10-21"
+    },
+    "ip-mesh": {
+      "code": "code",
+      "evidence": "https://docs.meshsat.net/transports/ip-mesh.html",
+      "reviewed": "2026-10-21"
+    }
+  }
+}

@@ -4,7 +4,7 @@ description: "Two HaLow boards are on their way to the bench. Nothing has run on
 
 # Wi-Fi HaLow
 
-<ChannelStatus code="coming-soon">Two HaLow boards are on their way to the bench. Nothing has run on a HaLow radio.</ChannelStatus>
+<ChannelStatus channel="halow">Two HaLow boards are on their way to the bench. Nothing has run on a HaLow radio.</ChannelStatus>
 
 Wi-Fi HaLow (IEEE 802.11ah) is Wi-Fi below 1 GHz: slower than ordinary Wi-Fi and reaching
 further. It carries IP, so Reticulum's UDP and AutoInterface run over it with no new code in the

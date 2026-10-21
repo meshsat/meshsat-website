@@ -1,3 +1,7 @@
+---
+description: "Create and manage named Bridge interfaces, hardware bindings and ordered message transforms through the API."
+---
+
 # Interfaces
 
 An interface is a named, hardware-bound endpoint: this Meshtastic radio on this USB port, that

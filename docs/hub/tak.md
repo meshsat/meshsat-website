@@ -1,3 +1,7 @@
+---
+description: "Connect MeshSat Hub to a TAK server or use its managed TAK service to exchange positions with your team."
+---
+
 # TAK
 
 Your positions on ATAK, iTAK and WinTAK, and your TAK team on the map in MeshSat Android. You have

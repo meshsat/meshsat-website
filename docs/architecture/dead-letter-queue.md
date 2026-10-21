@@ -1,3 +1,7 @@
+---
+description: "How Bridge retains failed deliveries, schedules retries and lets operators inspect or discard dead-letter messages."
+---
+
 # Dead letter queue
 
 A message that cannot be delivered is not dropped. It goes into the dead letter queue, is retried

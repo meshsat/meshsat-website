@@ -1,3 +1,7 @@
+---
+description: "Install MeshSat on Mobian or Debian Linux phones, with package choices, tested hardware and current limitations."
+---
+
 # MeshSat Linux
 
 MeshSat Linux packages the Bridge and a native GTK app for Linux phones. It can use a

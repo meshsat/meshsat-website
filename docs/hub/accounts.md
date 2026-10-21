@@ -1,3 +1,7 @@
+---
+description: "Create a hosted MeshSat Hub account, understand approval and plan limits, and connect your own devices."
+---
+
 # Accounts and plans
 
 The Hub is a hosted service at [hub.meshsat.net](https://hub.meshsat.net). You do not

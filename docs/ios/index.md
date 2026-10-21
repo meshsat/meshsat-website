@@ -1,3 +1,7 @@
+---
+description: "MeshSat iOS prototype capabilities, availability and source builds for an iPhone paired with a mesh and satellite node."
+---
+
 # MeshSat iOS
 
 MeshSat iOS turns an iPhone into a MeshSat gateway. Paired with a [MeshSat node](/node/), a

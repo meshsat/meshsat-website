@@ -1,3 +1,7 @@
+---
+description: "Send mesh and gateway messages, retrieve message history and inspect the Bridge message API request fields."
+---
+
 # Messages
 
 ```

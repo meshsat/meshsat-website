@@ -1,3 +1,7 @@
+---
+description: "Use Hub audit records, connection status and provider responses to diagnose authentication and delivery failures."
+---
+
 # When something does not work
 
 Start with the **Audit log**. Every sign-in, every inbound delivery and every change is recorded there,

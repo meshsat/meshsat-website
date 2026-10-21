@@ -1,3 +1,7 @@
+---
+description: "MeshSat node Iridium-over-Bluetooth protocol: services, message exchange and phone integration details."
+---
+
 # Iridium Bluetooth service
 
 The MeshSat node exposes this service next to the Meshtastic service, on the same Bluetooth LE connection. It is a binary-safe serial line to the node's RockBLOCK 9603. The client speaks the modem's AT commands through it, exactly as it would over a cable. [MeshSat Android](/android/) is the client we build and test against.

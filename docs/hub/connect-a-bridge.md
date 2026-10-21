@@ -1,3 +1,7 @@
+---
+description: "Connect a Bridge to MeshSat Hub using its client certificate and MQTT over WebSocket, then verify the connection."
+---
+
 # Connect a bridge
 
 A bridge reaches the Hub over MQTT on a WebSocket, and the Hub authenticates it with a client

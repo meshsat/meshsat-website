@@ -1,4 +1,5 @@
 ---
+description: "Start with MeshSat Bridge, Hub, Android, iOS or Linux: setup guides, transport evidence, hardware and API reference."
 layout: home
 hero:
   name: MeshSat

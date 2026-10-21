@@ -4,7 +4,7 @@ description: "Verified against rnsd in software. Not run on a kit's network: Ret
 
 # IP mesh: UDP and AutoInterface
 
-<ChannelStatus code="code">Verified against rnsd in software. Not run on a kit's network: Reticulum over TCP is the IP path that is live.</ChannelStatus>
+<ChannelStatus channel="ip-mesh">Verified against rnsd in software. Not run on a kit's network: Reticulum over TCP is the IP path that is live.</ChannelStatus>
 
 Any IP network carries Reticulum, and the bridge speaks the two interface types the reference
 implementation uses for a LAN or a mesh: `UDPInterface` and `AutoInterface`. That covers a plain

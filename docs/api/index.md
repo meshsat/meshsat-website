@@ -1,3 +1,7 @@
+---
+description: "MeshSat Bridge REST API reference: base URL, authentication, response formats and resource endpoints."
+---
+
 # API Reference
 
 MeshSat Bridge exposes a REST API on port 6050 (configurable via `MESHSAT_PORT`).

@@ -19,6 +19,17 @@ newest first, one section per tag. Untagged work on the main branch is listed
 under Unreleased. The Hub is open: create an account and we review it before
 it goes live.
 
+{{< release-summary tag="v1.7.0" >}}
+## Latest tagged release: v1.7.0
+
+Tagged 20 September 2026. This release included live dashboard event updates, Cloudloop
+receipt handling and broader browser checks. See the
+[v1.7.0 release record](#v170-2026-09-20) for the complete changes.
+
+Later work on `main` is listed separately under Unreleased. A tag is a software milestone,
+not a claim of emergency reliability.
+{{< /release-summary >}}
+
 <!-- generated:begin -->
 ## Unreleased (main, last change 2026-10-20)
 

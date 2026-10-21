@@ -230,3 +230,12 @@
     .ig-module-art { color: CanvasText; }
     .ig-art-board, .ig-art-side, .ig-art-shield, .ig-art-screen { fill: Canvas; }
 }
+
+@media (max-width: 700px) {
+  .ig-capabilities, .ig-capabilities tbody, .ig-capabilities tr, .ig-capabilities th, .ig-capabilities td { display: block; width: 100%; min-width: 0; }
+  .ig-capabilities thead { display: none; }
+  .ig-capabilities tr { border-top: var(--ig-rule); padding-block: 1rem; }
+  .ig-capabilities th, .ig-capabilities td { border: 0; padding: .5rem 0; }
+  .ig-capabilities td::before { content: attr(data-label); display: block; font-weight: 600; color: var(--color-text-muted); font-size: .875rem; }
+  .ig-capabilities caption { display: block; }
+}

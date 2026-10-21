@@ -6,8 +6,8 @@
 # shipped and rendered a 404 link on every page of the site for months.
 #
 # Pure shell on purpose, same as verify-site.sh: the Hugo/Node runner images
-# cannot be relied on for python, and a browser in a job that gates deploys is a
-# flakiness risk. No network: external links are deliberately not checked,
+# cannot be relied on for python. Built-artifact and browser checks run in
+# dedicated CI jobs. No network: external links are deliberately not checked,
 # because a third-party outage that reddens the pipeline trains people to ignore
 # it.
 #
@@ -84,11 +84,9 @@ else
   pass "no 'no subscription' claim"
 fi
 
-echo "=== 4. house style: em and en dashes in the docs (report; blocks once MESHSAT-1253 is done) ==="
-# The site's gate has refused dashes since MESHSAT-853; the docs still carry
-# them on six pages (MESHSAT-1253). Reported here so the number only goes down;
-# switch DASH_BLOCKS to 1 when it reaches zero.
-DASH_BLOCKS=0
+echo "=== 4. house style: no em or en dashes in the docs ==="
+# Both site and documentation source now enforce the same punctuation policy.
+DASH_BLOCKS=1
 DASHED=0
 while IFS= read -r f; do
   N=$( { grep -o -e '—' -e '–' "$f" || true; } | wc -l | tr -d ' ' )
@@ -111,15 +109,15 @@ while IFS= read -r f; do
 done < <(find "$D" -name '*.md' -not -path "*/node_modules/*" -not -path "*/.vitepress/*" | sort)
 [ "$ORPHANS" -eq 0 ] && pass "every page is linked from somewhere"
 
-echo "=== 6. pages with their own description (report) ==="
+echo "=== 6. every page has its own description ==="
 # A page without one ships the site's generic sentence as its meta description
-# and social preview (MESHSAT-1614). Count only; add them page by page.
+# and social preview (MESHSAT-1614). Keep every page explicit.
 TOTAL=0; WITH=0
 while IFS= read -r f; do
   TOTAL=$((TOTAL+1))
   if head -12 "$f" | grep -q '^description:'; then WITH=$((WITH+1)); fi
 done < <(find "$D" -name '*.md' -not -path "*/node_modules/*" -not -path "*/.vitepress/*")
-echo "  [info] $WITH of $TOTAL pages carry a description"
+[ "$WITH" -eq "$TOTAL" ] && pass "$WITH of $TOTAL pages carry a description" || fail "Only $WITH of $TOTAL pages carry a description"
 
 echo
 if [ "$FAIL" -eq 0 ]; then echo "verify-docs: PASSED"; else echo "verify-docs: FAILED"; fi

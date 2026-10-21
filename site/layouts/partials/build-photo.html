@@ -1,6 +1,7 @@
 <figure class="build-photo{{ if .hero }} build-photo-hero{{ end }}">
   <button class="shot-open build-photo-open" type="button" data-full="/images/how-we-build/{{ .file }}" aria-label="{{ i18n "photo_enlarge" }}: {{ .alt }}">
-    <img src="/images/how-we-build/{{ .file }}" width="{{ .width }}" height="{{ .height }}" alt="{{ .alt }}" decoding="async"{{ if .hero }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
+    {{ $stem := strings.TrimSuffix ".webp" .file }}
+    <img src="/images/how-we-build/{{ .file }}" srcset="/images/how-we-build/{{ $stem }}-640.webp 640w, {{ if gt .width 960 }}/images/how-we-build/{{ $stem }}-960.webp 960w, {{ end }}/images/how-we-build/{{ .file }} {{ .width }}w" sizes="{{ if .hero }}100vw{{ else }}(min-width: 900px) 55vw, 92vw{{ end }}" width="{{ .width }}" height="{{ .height }}" alt="{{ .alt }}" decoding="async"{{ if .hero }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
     <span class="build-photo-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" focusable="false"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M3 3l6 6m12-6-6 6M3 21l6-6m12 6-6-6"/></svg></span>
   </button>
   <figcaption{{ if .hero }} class="container"{{ end }}>{{ .caption }} <span>{{ i18n "photo_credit" }}</span></figcaption>

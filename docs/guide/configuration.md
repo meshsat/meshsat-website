@@ -1,3 +1,7 @@
+---
+description: "Configure MeshSat Bridge with environment variables, dashboard settings and transport-specific options."
+---
+
 # Configuration
 
 MeshSat is configured via environment variables. See the [Environment Variables reference](/reference/environment-variables) for the complete list.
@@ -13,7 +17,7 @@ MeshSat is configured via environment variables. See the [Environment Variables 
 
 ## Serial Ports
 
-All default to `auto` — USB VID:PID tables and protocol probing detect devices automatically.
+All default to `auto`: USB VID:PID tables and protocol probing detect devices automatically.
 
 | Variable | Description |
 |----------|-------------|

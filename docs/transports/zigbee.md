@@ -4,7 +4,7 @@ description: "The coordinator dongle left the kits on 20 September 2026. Before 
 
 # ZigBee
 
-<ChannelStatus code="code">The coordinator dongle left the kits on 20 September 2026. Before that: code complete, light field exposure.</ChannelStatus>
+<ChannelStatus channel="zigbee">The coordinator dongle left the kits on 20 September 2026. Before that: code complete, light field exposure.</ChannelStatus>
 
 IEEE 802.15.4 mesh through a ZigBee coordinator dongle.
 
