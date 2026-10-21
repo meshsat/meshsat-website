@@ -1,3 +1,7 @@
+---
+description: "Two receiver modules are on the bench. Neither is wired to a kit, and nothing has been received."
+---
+
 # DCF77 time signal
 
 <ChannelStatus code="bench">Two receiver modules are on the bench. Neither is wired to a kit, and nothing has been received.</ChannelStatus>

@@ -1,3 +1,7 @@
+---
+description: "The radio and the test SIM cards are on their way to the bench. Nothing has been tested, and there is no code for it in the Bridge."
+---
+
 # Own 2G cell
 
 <ChannelStatus code="coming-soon">The radio and the test SIM cards are on their way to the bench. Nothing has been tested, and there is no code for it in the Bridge.</ChannelStatus>

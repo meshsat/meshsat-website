@@ -1,3 +1,7 @@
+---
+description: "Two adapters are on their way to the bench. Nothing has been tested."
+---
+
 # Single-pair copper
 
 <ChannelStatus code="coming-soon">Two adapters are on their way to the bench. Nothing has been tested.</ChannelStatus>

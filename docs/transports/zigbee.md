@@ -1,3 +1,7 @@
+---
+description: "The coordinator dongle left the kits on 20 September 2026. Before that: code complete, light field exposure."
+---
+
 # ZigBee
 
 <ChannelStatus code="code">The coordinator dongle left the kits on 20 September 2026. Before that: code complete, light field exposure.</ChannelStatus>

@@ -1,3 +1,7 @@
+---
+description: "Each kit's own Wi-Fi is its way to the internet today. The Wi-Fi link between the two kits is built and switched off."
+---
+
 # Wi-Fi
 
 <ChannelStatus code="live">Each kit's own Wi-Fi is its way to the internet today. The Wi-Fi link between the two kits is built and switched off.</ChannelStatus>

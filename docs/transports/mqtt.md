@@ -1,3 +1,7 @@
+---
+description: "Both kits reach the Hub over MQTT."
+---
+
 # MQTT
 
 <ChannelStatus code="live">Both kits reach the Hub over MQTT.</ChannelStatus>

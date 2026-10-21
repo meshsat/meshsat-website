@@ -1,3 +1,7 @@
+---
+description: "Every channel a MeshSat kit or node can pass a message over, and where each one stands today."
+---
+
 # Transports
 
 Every channel a MeshSat kit or node can pass a message over, and where each one stands today.

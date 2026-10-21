@@ -1,3 +1,7 @@
+---
+description: "MeshSat is developed in separate repositories on the project's self-hosted GitLab instance. The links below go to the public GitHub mirrors."
+---
+
 # Project sources
 
 MeshSat is developed in separate repositories on the project's self-hosted GitLab instance.

@@ -1,3 +1,7 @@
+---
+description: "Working on hardware: both kits carry a VHF APRS radio on 144.800 MHz."
+---
+
 # APRS
 
 <ChannelStatus code="live">Working on hardware: both kits carry a VHF APRS radio on 144.800 MHz.</ChannelStatus>

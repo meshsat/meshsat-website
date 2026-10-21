@@ -1,3 +1,7 @@
+---
+description: "Verified over a real satellite link in March 2026. Both kits carry a RockBLOCK 9704."
+---
+
 # Iridium IMT
 
 <ChannelStatus code="live">Verified over a real satellite link in March 2026. Both kits carry a RockBLOCK 9704.</ChannelStatus>

@@ -1,3 +1,7 @@
+---
+description: "MeshSat Android turns an ordinary Android phone into a MeshSat gateway."
+---
+
 # MeshSat Android
 
 MeshSat Android turns an ordinary Android phone into a MeshSat gateway. Paired with a

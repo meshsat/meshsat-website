@@ -1,3 +1,7 @@
+---
+description: "MeshSat Hub is Apache 2.0: the hosted service at hub.meshsat.net is one deployment of it, and this page is the operator's guide to running your own."
+---
+
 # Self-hosting the Hub
 
 MeshSat Hub is Apache 2.0. The hosted service at hub.meshsat.net is one deployment of it; you

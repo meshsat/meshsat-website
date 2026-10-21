@@ -1,3 +1,7 @@
+---
+description: "Two HaLow boards are on their way to the bench. Nothing has run on a HaLow radio."
+---
+
 # Wi-Fi HaLow
 
 <ChannelStatus code="coming-soon">Two HaLow boards are on their way to the bench. Nothing has run on a HaLow radio.</ChannelStatus>

@@ -1,3 +1,7 @@
+---
+description: "SMS in both directions, working on hardware on both kits."
+---
+
 # Cellular
 
 <ChannelStatus code="live">SMS in both directions, working on hardware on both kits.</ChannelStatus>

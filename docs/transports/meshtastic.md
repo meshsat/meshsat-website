@@ -1,3 +1,7 @@
+---
+description: "Working on hardware on both kits."
+---
+
 # Meshtastic
 
 <ChannelStatus code="live">Working on hardware on both kits.</ChannelStatus>

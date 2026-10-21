@@ -1,3 +1,7 @@
+---
+description: "The codec is verified against a reference. No real shout has been received or sent."
+---
+
 # 10 m HF shouts
 
 <ChannelStatus code="code">The codec is verified against a reference. No real shout has been received or sent.</ChannelStatus>

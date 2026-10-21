@@ -1,3 +1,7 @@
+---
+description: "The media converters and the cable are on their way to the bench. Nothing has been tested."
+---
+
 # Fiber
 
 <ChannelStatus code="coming-soon">The media converters and the cable are on their way to the bench. Nothing has been tested.</ChannelStatus>

@@ -1,3 +1,7 @@
+---
+description: "Verified against rnsd in software. No TNC or HF modem is connected to a kit."
+---
+
 # KISS TNC
 
 <ChannelStatus code="code">Verified against rnsd in software. No TNC or HF modem is connected to a kit.</ChannelStatus>

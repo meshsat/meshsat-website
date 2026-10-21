@@ -1,3 +1,7 @@
+---
+description: "Worked on hardware in a kit until 1 October 2026, when the last 9603N in a kit made way for a 9704."
+---
+
 # Iridium SBD
 
 <ChannelStatus code="code">Worked on hardware in a kit until 1 October 2026, when the last 9603N in a kit made way for a 9704. A MeshSat node carries the same kind of modem, and that path is live.</ChannelStatus>

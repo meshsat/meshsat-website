@@ -1,3 +1,7 @@
+---
+description: "Verified against rnsd in software. Not run on a kit's network: Reticulum over TCP is the IP path that is live."
+---
+
 # IP mesh: UDP and AutoInterface
 
 <ChannelStatus code="code">Verified against rnsd in software. Not run on a kit's network: Reticulum over TCP is the IP path that is live.</ChannelStatus>
