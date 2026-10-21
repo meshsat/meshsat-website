@@ -54,7 +54,7 @@ async function capture(page, filename) {
 }
 async function dialogAxe(page) {
   await page.addScriptTag({url:new URL('/__axe.js',page.url()).href});
-  assert.deepEqual(await page.evaluate(async()=>(await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>v.id)),[]);
+  assert.deepEqual(await page.evaluate(async()=>(await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa','best-practice']}})).violations.map(v=>v.id)),[]);
 }
 async function audit(page, name, runAxe=true) {
   await settle(page);
@@ -73,7 +73,7 @@ async function audit(page, name, runAxe=true) {
   if (data.cta && data.width===390) assert(data.cta.bottom < 844,`${name}: setup below fold (${data.cta.bottom})`);
   if (runAxe) {
     await page.addScriptTag({url:new URL('/__axe.js',page.url()).href});
-    const violations = await page.evaluate(async () => (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})));
+    const violations = await page.evaluate(async () => (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa','best-practice']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})));
     assert.deepEqual(violations,[],`${name}: accessibility`);
   }
   results.push({name,...data});

@@ -1,5 +1,5 @@
 <template>
-  <footer class="docs-footer">
+  <div class="docs-footer">
     <nav aria-label="Project and community">
       <a href="https://meshsat.net">MeshSat</a>
       <a href="https://meshsat.net/changelog/">Changelog</a>
@@ -13,7 +13,7 @@
       <a href="https://www.reddit.com/r/meshsat/">Reddit</a>
       <a href="https://meshsat.net/privacy/">Privacy</a>
     </nav>
-  </footer>
+  </div>
 </template>
 <style scoped>
 .docs-footer { border-top: 1px solid var(--vp-c-divider); padding: 24px; background: var(--vp-c-bg); position: relative; z-index: 30; }
