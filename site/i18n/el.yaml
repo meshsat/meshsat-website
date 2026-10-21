@@ -10,6 +10,8 @@ nav_security:
   other: "Ασφάλεια"
 nav_changelog:
   other: "Αλλαγές"
+nav_how_we_build:
+  other: "Πώς το φτιάχνουμε"
 nav_docs:
   other: "Τεκμηρίωση"
 nav_hub:

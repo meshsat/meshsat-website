@@ -10,6 +10,8 @@ nav_security:
   other: "Sécurité"
 nav_changelog:
   other: "Journal"
+nav_how_we_build:
+  other: "Comment nous construisons"
 nav_docs:
   other: "Docs"
 nav_hub:
