@@ -37,7 +37,7 @@
     {{ end }}{{ end }}{{ end }}
 
     {{ $socialImage := .Params.social_image | default "/images/og-image.jpg" }}
-    {{ $socialAlt := "" }}{{ with .Params.social_image_alt_key }}{{ $socialAlt = i18n . }}{{ end }}
+    {{ $socialAlt := .Params.social_image_alt | default "" }}{{ with .Params.social_image_alt_key }}{{ $socialAlt = i18n . }}{{ end }}
     <!-- Open Graph -->
     <meta property="og:title" content="{{ .Title | default .Site.Title }}">
     <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">

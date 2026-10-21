@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="build-page" data-release="how-we-build-v1" data-shots>
+  <section class="build-hero" aria-labelledby="build-title">
+    <div class="container build-intro">
+      <h1 id="build-title"><span>How we build</span> MeshSat</h1>
+      <div>
+        <p class="build-lead">MeshSat is built with AI tools. We test it on real hardware, and we answer for all of it.</p>
+        <a class="build-jump" href="#who-builds-it">Meet the team and see the process <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a>
+      </div>
+    </div>
+    {{ partial "build-photo.html" (dict "file" "elli-soldering-20261021.webp" "width" 1400 "height" 788 "alt" "Elli at a table covered in parts, soldering under a head lamp." "caption" "Elli soldering, spring 2026." "hero" true) }}
+  </section>
+  {{ .Content }}
+</article>
+{{ partial "integrators-lightbox.html" . }}
+{{ end }}
