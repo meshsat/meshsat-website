@@ -71,10 +71,10 @@ less meshsat-install.sh
 sudo bash meshsat-install.sh</code></pre></div>
 </div>
 
-Het huidige installatiescript is versie `1.3.0` en de SHA-256 daarvan is:
+Het huidige installatiescript is versie `1.3.1` en de SHA-256 daarvan is:
 
 <div class="code-block">
-<div class="code-block-body"><pre tabindex="0" role="region" aria-label="SHA-256-controlesom van het installatiescript"><code>e62dfeff9e26e92d842ba2b6114a5e32bdedd308b79e5c1311aafaa29df16041  meshsat-install.sh</code></pre></div>
+<div class="code-block-body"><pre tabindex="0" role="region" aria-label="SHA-256-controlesom van het installatiescript"><code>98e586fbdba4bbaff8a0e769f32827aa6351ed0b5b041c0e1775d4bc4f8b7d94  meshsat-install.sh</code></pre></div>
 </div>
 
 Het script staat open en bloot in
