@@ -80,16 +80,39 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     });
 });
 
-// Hero slideshow — CSS-only crossfade, no controls
+// Hero slideshow: CSS crossfade, no controls. The first photo is inline CSS;
+// slides 2 to 4 carry theirs in data-bg and are attached here after load, so
+// the first paint fetches one photo, not four. The cycle never starts under
+// prefers-reduced-motion (the first photo stays) and pauses while the tab is
+// hidden (MESHSAT-1610).
 (function() {
     var slides = document.querySelectorAll('.hero-slide');
     if (slides.length < 2) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var current = 0;
-    setInterval(function() {
+    var timer = null;
+    function attach() {
+        slides.forEach(function(s) {
+            var bg = s.getAttribute('data-bg');
+            if (bg) {
+                s.style.backgroundImage = "url('" + bg + "')";
+                s.removeAttribute('data-bg');
+            }
+        });
+    }
+    function step() {
         slides[current].classList.remove('active');
         current = (current + 1) % slides.length;
         slides[current].classList.add('active');
-    }, 6000);
+    }
+    function start() { if (!timer) timer = setInterval(step, 6000); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function begin() { attach(); if (!document.hidden) start(); }
+    if (document.readyState === 'complete') begin();
+    else window.addEventListener('load', begin, { once: true });
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) stop(); else start();
+    });
 })();
 
 // Copy to clipboard

@@ -4,9 +4,11 @@
 <section class="hero">
     <div class="hero-slideshow">
         <div class="hero-slide active" style="background-image: url('/images/hero/field-comms.webp'); background-position: center 85%"></div>
-        <div class="hero-slide" style="background-image: url('/images/hero/satcom.webp')"></div>
-        <div class="hero-slide" style="background-image: url('/images/hero/maritime.webp')"></div>
-        <div class="hero-slide" style="background-image: url('/images/hero/sar.webp'); background-position: center 85%"></div>
+        {{- /* Slides 2 to 4 carry their photo in data-bg: main.js attaches them after
+             load, so the first paint fetches one hero photo, not four (MESHSAT-1610). */}}
+        <div class="hero-slide" data-bg="/images/hero/satcom.webp"></div>
+        <div class="hero-slide" data-bg="/images/hero/maritime.webp"></div>
+        <div class="hero-slide" data-bg="/images/hero/sar.webp" style="background-position: center 85%"></div>
     </div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
@@ -63,8 +65,8 @@
      head-bar chrome. Each poster is a click-to-play facade: nothing loads from
      YouTube until a press, then playVideo() in main.js opens the shared modal. */}}
 {{ $films := slice
-    (dict "id" "Q-JKNwWlzpE" "name" "MeshSat-intro.mp4" "time" "2:02" "poster" "/images/video-poster.jpg" "play" "video_play" "cap" "video_sub")
-    (dict "id" "-yTImop3Qk8" "name" "MeshSat-field-kits.mp4" "time" "3:04" "poster" "/images/video-poster-fieldkits.jpg" "play" "film_kits_play" "cap" "film_kits_cap")
+    (dict "id" "Q-JKNwWlzpE" "name" "MeshSat-intro.mp4" "time" "2:02" "poster" "video-poster-intro-2026-10" "play" "video_play" "cap" "video_sub")
+    (dict "id" "-yTImop3Qk8" "name" "MeshSat-field-kits.mp4" "time" "3:04" "poster" "video-poster-fieldkits-2026-10" "play" "film_kits_play" "cap" "film_kits_cap")
 }}
 <section id="video" class="section films-section">
     <div class="container">
@@ -79,7 +81,7 @@
                 <div class="video-head"><span>{{ .name }}</span><span>{{ .time }}</span></div>
                 <div class="video-media">
                     <button type="button" class="video-play" onclick="playVideo(this)" data-umami-event="video-play" data-umami-event-film="{{ .id }}" data-umami-event-locale="{{ $.Site.Language.Lang }}" data-embed="https://www.youtube-nocookie.com/embed/{{ .id }}?autoplay=1&amp;rel=0" data-name="{{ .name }}" data-time="{{ .time }}" aria-label="{{ i18n .play }}">
-                        <img src="{{ .poster }}" alt="" width="1280" height="720" loading="lazy">
+                        <img src="/images/{{ .poster }}.webp" srcset="/images/{{ .poster }}-640.webp 640w, /images/{{ .poster }}.webp 1280w" sizes="(min-width: 860px) 46vw, 92vw" alt="" width="1280" height="720" loading="lazy" decoding="async">
                         <span class="video-play-glyph" aria-hidden="true">
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
                         </span>
@@ -346,7 +348,7 @@
             {{ range $i, $s := $shots }}
             <figure class="screenshot-card">
                 <button type="button" class="shot-open" data-full="/images/screenshots/{{ $s.file }}@2x.webp" aria-labelledby="shot-cap-{{ $i }}" aria-describedby="shot-hint">
-                    <img src="/images/screenshots/{{ $s.file }}.webp" alt="" loading="lazy" width="1280" height="720">
+                    <img src="/images/screenshots/{{ $s.file }}.webp" srcset="/images/screenshots/{{ $s.file }}-640.webp 640w, /images/screenshots/{{ $s.file }}.webp 1280w" sizes="(min-width: 1100px) 23vw, (min-width: 560px) 46vw, 92vw" alt="" loading="lazy" decoding="async" width="1280" height="720">
                 </button>
                 <figcaption id="shot-cap-{{ $i }}">{{ i18n $s.cap }}</figcaption>
             </figure>
@@ -439,7 +441,7 @@
                          old design (MESHSAT-1249 replaces it). */}}
                     <figure class="and-shot">
                         <button type="button" class="shot-open" data-full="/images/screenshots/android-home-2026-09@2x.webp" aria-labelledby="and-shot-cap" aria-describedby="shot-hint">
-                            <img src="/images/screenshots/android-home-2026-09.webp" alt="" loading="lazy" width="480" height="771">
+                            <img src="/images/screenshots/android-home-2026-09.webp" alt="" loading="lazy" decoding="async" width="480" height="771">
                         </button>
                         <figcaption id="and-shot-cap">{{ i18n "and_cap" }}</figcaption>
                     </figure>
@@ -491,7 +493,7 @@
             {{ range $i, $s := $hubShots }}
             <figure class="screenshot-card">
                 <button type="button" class="shot-open" data-full="/images/screenshots/{{ $s.file }}@2x.webp" aria-labelledby="hub-shot-cap-{{ $i }}" aria-describedby="shot-hint">
-                    <img src="/images/screenshots/{{ $s.file }}.webp" alt="" loading="lazy" width="1280" height="720">
+                    <img src="/images/screenshots/{{ $s.file }}.webp" srcset="/images/screenshots/{{ $s.file }}-640.webp 640w, /images/screenshots/{{ $s.file }}.webp 1280w" sizes="(min-width: 700px) 31vw, 92vw" alt="" loading="lazy" decoding="async" width="1280" height="720">
                 </button>
                 <figcaption id="hub-shot-cap-{{ $i }}">{{ i18n $s.cap }}</figcaption>
             </figure>
