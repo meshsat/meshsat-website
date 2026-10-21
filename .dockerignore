@@ -1,0 +1,20 @@
+# Build context for the three images: only the built output, the installer, the
+# nginx configs and security.txt are copied in. Everything else stays out so a
+# build does not ship .git or the brand package to the docker daemon (MESHSAT-1610).
+.git
+.gitlab-ci.yml
+.claude
+CLAUDE.md
+brand
+shop
+scripts
+docs/node_modules
+docs/.vitepress/cache
+site/resources
+site/assets
+site/content
+site/data
+site/i18n
+site/layouts
+site/static/images
+site/static/fonts
