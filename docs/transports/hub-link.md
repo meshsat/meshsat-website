@@ -4,7 +4,7 @@ description: "Both kits report to the Hub. TAK through the Hub is not released o
 
 # Hub link
 
-<ChannelStatus code="live">Both kits report to the Hub. TAK through the Hub is not released on the Bridge yet.</ChannelStatus>
+<ChannelStatus channel="hub-link">Both kits report to the Hub. TAK through the Hub is not released on the Bridge yet.</ChannelStatus>
 
 The Hub link is how a kit reaches the [MeshSat Hub](/hub/): the Hub sees the kit, its positions
 and its messages, and can send to it. The Hub is optional. A kit routes between its own channels

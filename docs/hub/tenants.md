@@ -1,3 +1,7 @@
+---
+description: "Configure multi-tenant MeshSat Hub deployments and understand account isolation and administrative boundaries."
+---
+
 # Multi-Tenancy
 
 MeshSat Hub supports multi-tenant deployments where multiple organizations share a single Hub instance with strict data isolation.

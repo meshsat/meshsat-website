@@ -1,3 +1,7 @@
+---
+description: "How MeshSat Bridge receives, transforms, routes and delivers messages across its transport adapters."
+---
+
 # Architecture
 
 MeshSat is built around a message routing core that connects transports through a policy engine. This page describes the high-level architecture and how the components fit together.
@@ -101,7 +105,7 @@ The Transport Manager owns all transport instances. It handles initialization, c
 
 ### Policy Engine
 
-The Policy Engine evaluates each incoming message against all configured routing policies. A policy defines a source transport, a destination transport, optional filters (by priority, sender, content type), and an optional transform. When a message matches a policy, it is forwarded to the destination transport — potentially through the Transform Pipeline first.
+The Policy Engine evaluates each incoming message against all configured routing policies. A policy defines a source transport, a destination transport, optional filters (by priority, sender, content type), and an optional transform. When a message matches a policy, it is forwarded to the destination transport: potentially through the Transform Pipeline first.
 
 See [Policy Engine](/architecture/policy-engine) for the full rule syntax and evaluation order.
 
@@ -128,7 +132,7 @@ See [Dead Letter Queue](/architecture/dead-letter-queue) for retry configuration
 
 ### Message Store
 
-All messages — incoming, outgoing, and failed — are stored in a local SQLite database. The store supports querying by transport, time range, sender, and status. It is also used for deduplication to prevent message loops in multi-transport routing scenarios.
+All messages: incoming, outgoing, and failed: are stored in a local SQLite database. The store supports querying by transport, time range, sender, and status. It is also used for deduplication to prevent message loops in multi-transport routing scenarios.
 
 ### REST API
 
@@ -154,7 +158,7 @@ See [API Reference](/api/) for the full endpoint documentation.
 
 ## Next Steps
 
-- [Policy Engine](/architecture/policy-engine) — Rule syntax and evaluation
-- [Transform Pipeline](/architecture/transform-pipeline) — Payload transformations
-- [Pass Scheduler](/architecture/pass-scheduler) — Satellite pass prediction
-- [Dead Letter Queue](/architecture/dead-letter-queue) — Retry and failure handling
+- [Policy Engine](/architecture/policy-engine): Rule syntax and evaluation
+- [Transform Pipeline](/architecture/transform-pipeline): Payload transformations
+- [Pass Scheduler](/architecture/pass-scheduler): Satellite pass prediction
+- [Dead Letter Queue](/architecture/dead-letter-queue): Retry and failure handling

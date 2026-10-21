@@ -1,3 +1,7 @@
+---
+description: "How per-interface rules match incoming and outgoing messages, select destinations and apply routing priorities."
+---
+
 # Policy engine
 
 The policy engine decides what happens to every message: whether it is forwarded, where to, and

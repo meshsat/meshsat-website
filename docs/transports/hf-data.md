@@ -4,7 +4,7 @@ description: "Two HF transceivers and their antennas are on their way to the ben
 
 # HF data
 
-<ChannelStatus code="coming-soon">Two HF transceivers and their antennas are on their way to the bench. Nothing has run on a radio.</ChannelStatus>
+<ChannelStatus channel="hf-data">Two HF transceivers and their antennas are on their way to the bench. Nothing has run on a radio.</ChannelStatus>
 
 Shortwave reaches hundreds to thousands of kilometres with no infrastructure at all, which makes
 it the long path that is left when the satellites are not an option. The plan pairs two small HF

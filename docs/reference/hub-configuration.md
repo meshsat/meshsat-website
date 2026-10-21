@@ -1,3 +1,7 @@
+---
+description: "Reference for MeshSat Hub configuration variables, storage, authentication, providers and deployment options."
+---
+
 # Hub configuration
 
 MeshSat Hub is configured via environment variables with the `HUB_*` prefix, or via `config.yaml`.
@@ -16,10 +20,10 @@ MeshSat Hub is configured via environment variables with the `HUB_*` prefix, or 
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `HUB_DB_DRIVER` | sniffed | `sqlite` or `postgres` |
-| `HUB_DATABASE_URL` | — | PostgreSQL DSN (cluster and kubernetes modes) |
+| `HUB_DATABASE_URL` |: | PostgreSQL DSN (cluster and kubernetes modes) |
 | `HUB_SQLITE_PATH` | `/data/hub.db` | SQLite file (standalone mode) |
-| `HUB_REDIS_URL` | — | Redis or KeyDB URL (cluster and kubernetes modes) |
-| `HUB_NATS_URL` | — | NATS URL |
+| `HUB_REDIS_URL` |: | Redis or KeyDB URL (cluster and kubernetes modes) |
+| `HUB_NATS_URL` |: | NATS URL |
 
 Without `HUB_DB_DRIVER` the driver is worked out from the rest: a `postgres://` DSN means
 Postgres, so does `HUB_MODE=cluster` or `kubernetes`, and anything else means SQLite. MariaDB and
@@ -39,21 +43,21 @@ See [Database](/reference/database) for what each engine is used for.
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `HUB_AUTH_MODE` | auto-detect | `none`, `token`, `local`, `oidc` |
-| `HUB_AUTH_TOKEN` | — | Bearer token (mode=token) |
-| `HUB_JWT_SIGNING_KEY` | — | HMAC key for local JWT (min 32 chars) |
-| `HUB_OIDC_ISSUER_URL` | — | OIDC issuer URL |
-| `HUB_OIDC_AUDIENCE` | — | Expected JWT audience |
-| `HUB_OIDC_CERT_PIN` | — | TLS SPKI pin (base64 SHA256) |
+| `HUB_AUTH_TOKEN` |: | Bearer token (mode=token) |
+| `HUB_JWT_SIGNING_KEY` |: | HMAC key for local JWT (min 32 chars) |
+| `HUB_OIDC_ISSUER_URL` |: | OIDC issuer URL |
+| `HUB_OIDC_AUDIENCE` |: | Expected JWT audience |
+| `HUB_OIDC_CERT_PIN` |: | TLS SPKI pin (base64 SHA256) |
 | `HUB_TENANT_ENFORCE` | `false` | Require tenant context |
 
 ## Satellite Constellations
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `HUB_CLOUDLOOP_API_KEY` | — | Cloudloop API key (Iridium MT) |
+| `HUB_CLOUDLOOP_API_KEY` |: | Cloudloop API key (Iridium MT) |
 | `HUB_CLOUDLOOP_API_URL` | `https://api.cloudloop.com` | Cloudloop endpoint |
-| `HUB_ROCKBLOCK_SECRET` | — | RockBLOCK webhook HMAC secret |
-| `HUB_GLOBALSTAR_API_KEY` | — | Globalstar API key |
+| `HUB_ROCKBLOCK_SECRET` |: | RockBLOCK webhook HMAC secret |
+| `HUB_GLOBALSTAR_API_KEY` |: | Globalstar API key |
 | `HUB_GLOBALSTAR_API_URL` | `https://api.globalstar.com/v1` | Globalstar endpoint |
 
 ## Integrations
@@ -61,9 +65,9 @@ See [Database](/reference/database) for what each engine is used for.
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `HUB_TAK_ENABLED` | `false` | Enable TAK/CoT gateway |
-| `HUB_TAK_HOST` | — | OpenTAKServer hostname |
+| `HUB_TAK_HOST` |: | OpenTAKServer hostname |
 | `HUB_APRSIS_ENABLED` | `false` | Enable APRS-IS IGate |
-| `HUB_APRSIS_CALLSIGN` | — | Amateur radio callsign |
+| `HUB_APRSIS_CALLSIGN` |: | Amateur radio callsign |
 | `HUB_SMS_ENABLED` | `false` | Enable Twilio SMS |
 | `HUB_EMAIL_ENABLED` | `false` | Enable PGP email gateway |
 | `HUB_APPRISE_ENABLED` | `false` | Enable Apprise notifications |

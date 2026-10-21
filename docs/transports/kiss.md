@@ -4,7 +4,7 @@ description: "Verified against rnsd in software. No TNC or HF modem is connected
 
 # KISS TNC
 
-<ChannelStatus code="code">Verified against rnsd in software. No TNC or HF modem is connected to a kit.</ChannelStatus>
+<ChannelStatus channel="kiss">Verified against rnsd in software. No TNC or HF modem is connected to a kit.</ChannelStatus>
 
 Raw Reticulum packets over a KISS TNC, the reference implementation's `KISSInterface`. Unlike the
 [APRS](/transports/aprs) path, nothing is wrapped in AX.25: the TNC receives the packet as the frame.

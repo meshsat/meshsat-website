@@ -18,6 +18,17 @@ Generated from the commit history of
 first, one section per tag. Untagged work on the main branch is listed under
 Unreleased. MeshSat is a prototype and has never been deployed to a real user.
 
+{{< release-summary tag="v0.1.0" >}}
+## Latest tagged release: v0.1.0
+
+Tagged 4 March 2026. This release added direct serial access for standalone installations,
+satellite pass scheduling, forwarding rules and delivery tracking. See the
+[v0.1.0 release record](#v010-2026-03-04) for its features and fixes.
+
+The much longer Unreleased section records later work on `main`; it is not a separate tagged
+release and does not establish that every feature has been tested on hardware.
+{{< /release-summary >}}
+
 <!-- generated:begin -->
 ## Unreleased (main, last change 2026-10-21)
 

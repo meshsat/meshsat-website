@@ -34,49 +34,49 @@ compatibility with physical radios or every third-party client.
 
 | Channel | Status | Proven so far |
 |---|---|---|
-| [Iridium IMT](/transports/iridium-imt) | <ChannelStatus code="live" inline /> | Verified over a real satellite link, March 2026. A RockBLOCK 9704 in both kits |
-| [Iridium through a MeshSat node](/transports/iridium-node) | <ChannelStatus code="live" inline /> | Satellite messages both ways with MeshSat Android and MeshSat iOS. The Bridge's own client has not run against a real node |
-| [Iridium SBD](/transports/iridium-sbd) | <ChannelStatus code="code" inline /> | Worked on hardware in a kit. No 9603N in a kit since 1 October 2026 |
+| [Iridium IMT](/transports/iridium-imt) | <ChannelStatus channel="iridium-imt" inline /> | Verified over a real satellite link, March 2026. A RockBLOCK 9704 in both kits |
+| [Iridium through a MeshSat node](/transports/iridium-node) | <ChannelStatus channel="iridium-node" inline /> | Satellite messages both ways with MeshSat Android and MeshSat iOS. The Bridge's own client has not run against a real node |
+| [Iridium SBD](/transports/iridium-sbd) | <ChannelStatus channel="iridium-sbd" inline /> | Worked on hardware in a kit. No 9603N in a kit since 1 October 2026 |
 
 ## Radio
 
 | Channel | Status | Proven so far |
 |---|---|---|
-| [Meshtastic](/transports/meshtastic) | <ChannelStatus code="live" inline /> | Working on hardware, both kits |
-| [APRS](/transports/aprs) | <ChannelStatus code="live" inline /> | Working on hardware: a VHF radio on 144.800 MHz in both kits |
-| [Cellular](/transports/cellular) | <ChannelStatus code="live" inline /> | SMS in both directions, working on hardware |
-| [Wi-Fi](/transports/wifi) | <ChannelStatus code="live" inline /> | Each kit's uplink. The kit-to-kit link was proven once and is switched off |
-| [10 m HF shouts](/transports/hf-10m) | <ChannelStatus code="code" inline /> | Codec verified against a reference, no radio yet |
-| [TETRA Direct Mode](/transports/tetra) | <ChannelStatus code="live" inline /> | Working on hardware: texts between both kits in Direct Mode, through the Bridge on both sides |
-| [HF data](/transports/hf-data) | <ChannelStatus code="coming-soon" inline /> | Nothing on a radio |
-| [Wi-Fi HaLow](/transports/halow) | <ChannelStatus code="coming-soon" inline /> | Nothing on a HaLow radio |
-| [Own 2G cell](/transports/gsm-cell) | <ChannelStatus code="coming-soon" inline /> | Nothing. No code in the Bridge |
+| [Meshtastic](/transports/meshtastic) | <ChannelStatus channel="meshtastic" inline /> | Working on hardware, both kits |
+| [APRS](/transports/aprs) | <ChannelStatus channel="aprs" inline /> | Working on hardware: a VHF radio on 144.800 MHz in both kits |
+| [Cellular](/transports/cellular) | <ChannelStatus channel="cellular" inline /> | SMS in both directions, working on hardware |
+| [Wi-Fi](/transports/wifi) | <ChannelStatus channel="wifi" inline /> | Each kit's uplink. The kit-to-kit link was proven once and is switched off |
+| [10 m HF shouts](/transports/hf-10m) | <ChannelStatus channel="hf-10m" inline /> | Codec verified against a reference, no radio yet |
+| [TETRA Direct Mode](/transports/tetra) | <ChannelStatus channel="tetra" inline /> | Working on hardware: texts between both kits in Direct Mode, through the Bridge on both sides |
+| [HF data](/transports/hf-data) | <ChannelStatus channel="hf-data" inline /> | Nothing on a radio |
+| [Wi-Fi HaLow](/transports/halow) | <ChannelStatus channel="halow" inline /> | Nothing on a HaLow radio |
+| [Own 2G cell](/transports/gsm-cell) | <ChannelStatus channel="gsm-cell" inline /> | Nothing. No code in the Bridge |
 
 ## Wired
 
 | Channel | Status | Proven so far |
 |---|---|---|
-| [Fiber](/transports/fiber) | <ChannelStatus code="coming-soon" inline /> | Nothing |
-| [Single-pair copper](/transports/single-pair-ethernet) | <ChannelStatus code="coming-soon" inline /> | Nothing |
+| [Fiber](/transports/fiber) | <ChannelStatus channel="fiber" inline /> | Nothing |
+| [Single-pair copper](/transports/single-pair-ethernet) | <ChannelStatus channel="single-pair-ethernet" inline /> | Nothing |
 
 ## Short range
 
 | Channel | Status | Proven so far |
 |---|---|---|
-| [ZigBee](/transports/zigbee) | <ChannelStatus code="code" inline /> | Code complete, light field exposure. No dongle in a kit since 20 September 2026 |
-| [Bluetooth LE](/transports/ble) | <ChannelStatus code="code" inline /> | No record of a run on a kit |
-| [RNode](/transports/rnode) | <ChannelStatus code="code" inline /> | Verified against `rnsd`, not a radio |
-| [KISS TNC](/transports/kiss) | <ChannelStatus code="code" inline /> | Verified against `rnsd`, not a TNC |
+| [ZigBee](/transports/zigbee) | <ChannelStatus channel="zigbee" inline /> | Code complete, light field exposure. No dongle in a kit since 20 September 2026 |
+| [Bluetooth LE](/transports/ble) | <ChannelStatus channel="ble" inline /> | No record of a run on a kit |
+| [RNode](/transports/rnode) | <ChannelStatus channel="rnode" inline /> | Verified against `rnsd`, not a radio |
+| [KISS TNC](/transports/kiss) | <ChannelStatus channel="kiss" inline /> | Verified against `rnsd`, not a TNC |
 
 ## IP and Hub
 
 | Channel | Status | Proven so far |
 |---|---|---|
-| [Hub link](/transports/hub-link) | <ChannelStatus code="live" inline /> | Both kits report to the Hub. A fallback over SMS and Iridium |
-| [MQTT](/transports/mqtt) | <ChannelStatus code="live" inline /> | Both kits reach the Hub over MQTT |
-| [TAK](/transports/tak) | <ChannelStatus code="live" inline /> | A direct link to a TAK server on both kits. Through the Hub: not released on the Bridge |
-| [Webhooks](/transports/webhooks) | <ChannelStatus code="code" inline /> | No record of a Bridge webhook running on a kit |
-| [IP mesh: UDP and AutoInterface](/transports/ip-mesh) | <ChannelStatus code="code" inline /> | Verified against `rnsd`. Reticulum over TCP is the IP path that is live |
+| [Hub link](/transports/hub-link) | <ChannelStatus channel="hub-link" inline /> | Both kits report to the Hub. A fallback over SMS and Iridium |
+| [MQTT](/transports/mqtt) | <ChannelStatus channel="mqtt" inline /> | Both kits reach the Hub over MQTT |
+| [TAK](/transports/tak) | <ChannelStatus channel="tak" inline /> | A direct link to a TAK server on both kits. Through the Hub: not released on the Bridge |
+| [Webhooks](/transports/webhooks) | <ChannelStatus channel="webhooks" inline /> | No record of a Bridge webhook running on a kit |
+| [IP mesh: UDP and AutoInterface](/transports/ip-mesh) | <ChannelStatus channel="ip-mesh" inline /> | Verified against `rnsd`. Reticulum over TCP is the IP path that is live |
 
 ## Receive only
 
@@ -84,9 +84,9 @@ These carry no messages out. They tell the kit something.
 
 | Channel | Status | Proven so far |
 |---|---|---|
-| [Jamming watch](/transports/jamming-watch) | <ChannelStatus code="live" inline /> | Tested against ambient noise only, never against a real jammer |
-| [Cell broadcast alerts](/transports/cell-broadcast) | <ChannelStatus code="code" inline /> | No record of an alert received on a kit |
-| [DCF77 time signal](/transports/dcf77) | <ChannelStatus code="bench" inline /> | Nothing. Two receiver modules on the bench, none wired to a kit |
+| [Jamming watch](/transports/jamming-watch) | <ChannelStatus channel="jamming-watch" inline /> | Tested against ambient noise only, never against a real jammer |
+| [Cell broadcast alerts](/transports/cell-broadcast) | <ChannelStatus channel="cell-broadcast" inline /> | No record of an alert received on a kit |
+| [DCF77 time signal](/transports/dcf77) | <ChannelStatus channel="dcf77" inline /> | Nothing. Two receiver modules on the bench, none wired to a kit |
 
 ## Transport lifecycle
 

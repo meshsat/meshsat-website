@@ -1,3 +1,7 @@
+---
+description: "Use satellite pass predictions and transmission windows in Bridge, including location inputs and scheduler modes."
+---
+
 # Satellite passes
 
 An Iridium satellite is overhead for a few minutes at a time. The pass scheduler predicts when,

@@ -89,40 +89,7 @@ document.querySelectorAll('a[href*="#"]:not(.skip-link)').forEach(function(ancho
     });
 });
 
-// Hero slideshow: CSS crossfade, no controls. The first photo is inline CSS;
-// slides 2 to 4 carry theirs in data-bg and are attached here after load, so
-// the first paint fetches one photo, not four. The cycle never starts under
-// prefers-reduced-motion (the first photo stays) and pauses while the tab is
-// hidden (MESHSAT-1610).
-(function() {
-    var slides = document.querySelectorAll('.hero-slide');
-    if (slides.length < 2) return;
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var current = 0;
-    var timer = null;
-    function attach() {
-        slides.forEach(function(s) {
-            var bg = s.getAttribute('data-bg');
-            if (bg) {
-                s.style.backgroundImage = "url('" + bg + "')";
-                s.removeAttribute('data-bg');
-            }
-        });
-    }
-    function step() {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-    }
-    function start() { if (!timer) timer = setInterval(step, 6000); }
-    function stop() { if (timer) { clearInterval(timer); timer = null; } }
-    function begin() { attach(); if (!document.hidden) start(); }
-    if (document.readyState === 'complete') begin();
-    else window.addEventListener('load', begin, { once: true });
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) stop(); else start();
-    });
-})();
+
 
 // Copy a code block's command. Lives here, not in a per-page scripts block:
 // the home page's copy button and /install/'s share it. Without the clipboard
@@ -172,7 +139,7 @@ function playVideo(btn) {
 // buttons step through the thumbnail's own set (the nearest [data-shots]: the
 // Bridge, the Hub, the phone; MESHSAT-1251) and wrap; a set of one hides the
 // stepping; the neighbours are fetched ahead so a step is instant; closing puts
-// focus back on the thumbnail last shown. A portrait screen gets a narrow frame.
+// focus back on the thumbnail that opened it. A portrait screen gets a narrow frame.
 (function() {
     var dlg = document.getElementById('shot-dialog');
     var all = Array.prototype.slice.call(document.querySelectorAll('.shot-open'));
@@ -184,6 +151,7 @@ function playVideo(btn) {
     var full = {};
     var set = all;
     var current = 0;
+    var opener = null;
 
     function setOf(btn) {
         var group = btn.closest('[data-shots]');
@@ -233,6 +201,7 @@ function playVideo(btn) {
 
     all.forEach(function(btn) {
         btn.addEventListener('click', function() {
+            opener = btn;
             set = setOf(btn);
             // Before showModal, so autofocus never lands on a button that is
             // about to disappear; a set of one opens on the close button.
@@ -252,7 +221,7 @@ function playVideo(btn) {
         if (e.key === 'ArrowRight') { e.preventDefault(); show(current + 1); }
         else if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1); }
     });
-    dlg.addEventListener('close', function() { set[current].focus(); });
+    dlg.addEventListener('close', function() { if (opener) opener.focus(); });
 })();
 // One delegated click handler for the buttons that used to carry inline
 // onclick attributes (the CSP allows no inline script since MESHSAT-1612):
@@ -336,20 +305,41 @@ function formatCount(n) {
         .catch(function() {});
 })();
 
-// Language switcher: the menu opens on hover and focus-within in CSS; the
-// button also toggles it on click and tap, says so in aria-expanded, and
-// Escape or a click elsewhere closes it (MESHSAT-1611).
+// One disclosure state for pointer, keyboard and touch.
 (function() {
     var sw = document.querySelector('.lang-switch');
     var btn = sw && sw.querySelector('.lang-btn');
     if (!btn) return;
+    var hoverOpened = false;
+    var closeTimer = null;
     function set(open) {
+        clearTimeout(closeTimer);
         sw.classList.toggle('is-open', open);
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-expanded', String(open));
     }
-    btn.addEventListener('click', function() { set(!sw.classList.contains('is-open')); });
+    set(false);
+    sw.addEventListener('pointerenter', function(e) {
+        clearTimeout(closeTimer);
+        if (e.pointerType === 'mouse') { hoverOpened = true; set(true); }
+    });
+    sw.addEventListener('pointerleave', function() {
+        hoverOpened = false;
+        // Allow diagonal pointer travel into the wider menu. Escape still
+        // closes immediately, and re-entering cancels the pending close.
+        closeTimer = setTimeout(function() {
+            if (!sw.contains(document.activeElement)) set(false);
+        }, 200);
+    });
+    btn.addEventListener('click', function() {
+        if (hoverOpened) { hoverOpened = false; set(true); }
+        else set(!sw.classList.contains('is-open'));
+    });
+    sw.addEventListener('focusout', function(e) { if (!sw.contains(e.relatedTarget)) set(false); });
     document.addEventListener('click', function(e) { if (!sw.contains(e.target)) set(false); });
     sw.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && sw.classList.contains('is-open')) { set(false); btn.focus(); }
+        if (e.key === 'Escape') { set(false); hoverOpened = false; btn.focus(); }
+        if (e.key === 'ArrowDown' && e.target === btn) {
+            e.preventDefault(); set(true); sw.querySelector('.lang-menu a').focus();
+        }
     });
 })();

@@ -21,3 +21,6 @@ Thumbs.db
 .idea/
 .vscode/
 scripts/__pycache__/
+
+# Browser validation artifacts
+browser-results/

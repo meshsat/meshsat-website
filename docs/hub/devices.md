@@ -1,3 +1,7 @@
+---
+description: "Register and manage modems, phones and radio devices in MeshSat Hub, including identifiers and device status."
+---
+
 # Devices
 
 A device is a thing that sends and receives messages: an Iridium modem with an IMEI, an Android

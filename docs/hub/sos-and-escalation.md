@@ -1,3 +1,7 @@
+---
+description: "Configure Hub SOS escalation and acknowledgement workflows, with the limits of prototype emergency messaging."
+---
+
 # SOS and escalation
 
 An SOS is the reason this product exists, so it is worth being precise about what the Hub

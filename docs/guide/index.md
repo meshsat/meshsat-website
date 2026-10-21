@@ -1,3 +1,7 @@
+---
+description: "Understand the roles of MeshSat Bridge, Hub, phone apps and hardware, and how messages move between them."
+---
+
 # Introduction
 
 MeshSat is a unified message routing gateway that bridges mesh radios, satellite modems, cellular networks, and IP-based services into a single coherent system. Messages arrive on any transport and can be routed to any other transport based on configurable policies.
@@ -8,7 +12,7 @@ MeshSat is a unified message routing gateway that bridges mesh radios, satellite
 
 ### MeshSat Bridge
 
-The standalone gateway. A single Go binary that runs on a Raspberry Pi (or any ARM64/x86 machine) and connects directly to hardware — serial ports, USB devices, and network interfaces. Bridge is fully self-contained with no cloud dependency.
+The standalone gateway. A single Go binary that runs on a Raspberry Pi (or any ARM64/x86 machine) and connects directly to hardware: serial ports, USB devices, and network interfaces. Bridge is fully self-contained with no cloud dependency.
 
 - Runs on Raspberry Pi 4/5, ARM64 SBCs, or x86/amd64 servers
 - Direct serial access to Meshtastic radios, Iridium modems, and more
@@ -46,8 +50,8 @@ standalone hardware builds. [Project sources](/projects) maps all repositories.
 
 ## Next Steps
 
-- [Installation](/guide/installation) — Get MeshSat running on your hardware
-- [Quick Start](/guide/quick-start) — Connect your first device and send a test message
-- [Configuration](/guide/configuration) — Tune transports, policies, and transforms
-- [Transports](/transports/) — every bearer the router speaks
-- [The Hub](/hub/accounts) — the hosted fleet manager, and what it costs
+- [Installation](/guide/installation): Get MeshSat running on your hardware
+- [Quick Start](/guide/quick-start): Connect your first device and send a test message
+- [Configuration](/guide/configuration): Tune transports, policies, and transforms
+- [Transports](/transports/): every bearer the router speaks
+- [The Hub](/hub/accounts): the hosted fleet manager, and what it costs

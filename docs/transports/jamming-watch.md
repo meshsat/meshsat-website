@@ -4,7 +4,7 @@ description: "Runs on both kits. It has only ever seen ambient noise, never a re
 
 # Jamming watch
 
-<ChannelStatus code="live">Runs on both kits. It has only ever seen ambient noise, never a real jammer.</ChannelStatus>
+<ChannelStatus channel="jamming-watch">Runs on both kits. It has only ever seen ambient noise, never a real jammer.</ChannelStatus>
 
 A kit carries an RTL-SDR receiver that transmits nothing. The Bridge uses it to watch the bands
 its own radios work on. When a band looks jammed, the interface on that band gets a health score

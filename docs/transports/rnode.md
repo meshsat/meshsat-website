@@ -4,7 +4,7 @@ description: "Verified against rnsd in software. No RNode radio is fitted in a k
 
 # RNode
 
-<ChannelStatus code="code">Verified against rnsd in software. No RNode radio is fitted in a kit.</ChannelStatus>
+<ChannelStatus channel="rnode">Verified against rnsd in software. No RNode radio is fitted in a kit.</ChannelStatus>
 
 An RNode is a LoRa radio running the Reticulum project's [RNode firmware](https://github.com/markqvist/RNode_Firmware)
 or the community edition. It speaks Reticulum natively, so the bridge drives it as one of its own

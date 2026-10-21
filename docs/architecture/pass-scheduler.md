@@ -1,3 +1,7 @@
+---
+description: "How Bridge predicts satellite passes and schedules transmission windows, location sources and power states."
+---
+
 # Pass scheduler
 
 A satellite is not always overhead. The pass scheduler predicts when one will be, and moves the

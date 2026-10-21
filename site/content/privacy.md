@@ -3,9 +3,9 @@ title: "Privacy Policy"
 description: "What MeshSat collects, why, who else sees it, and how to get it back or delete it."
 ---
 
-**Last updated: September 2026**
+**Last updated: 21 October 2026**
 
-Four products, two very different answers. The Bridge and the phone apps run on your hardware and send us nothing. The Hub is a service we operate, so this policy is mostly about the Hub.
+Four products, two very different answers. The Bridge and phone apps run on your hardware; the services they contact depend on your configuration. The Hub is a service we operate, so this policy is mostly about the Hub.
 
 <!--more-->
 
@@ -15,11 +15,11 @@ The controller for personal data held in MeshSat Hub and on meshsat.net is Elli.
 
 ## meshsat.net
 
-We use [Umami](https://umami.is/) for analytics. It is self-hosted on our own infrastructure, sets no cookies, and does not build a profile of you. Nothing is shared with anyone.
+We use [Umami](https://umami.is/) for analytics. It is self-hosted on our own infrastructure, sets no cookies, and does not build a profile of you. The homepage also requests public repository statistics from GitHub, which receives the network information needed to answer that request. Videos load from YouTube only after you select a play button; YouTube then receives the request and applies its own privacy policy.
 
 ## MeshSat Bridge, MeshSat Android and MeshSat iOS
 
-They run on your own hardware. There is no account, no analytics, no advertising and no crash reporting to us: the apps never contact MeshSat. Nothing reaches us unless you deliberately connect the Bridge or an app to a Hub account, or configure a transport that relays through a carrier.
+They run on your own hardware. There is no account, no analytics, no advertising and no crash reporting to us: data reaches MeshSat services when you connect the Bridge or an app to our Hub. Maps, orbit data and configured carriers make the other network requests described below.
 
 The Android app comes in two editions. The full app, from GitHub (and from F-Droid once it lists it), can send and receive SMS through your SIM. The Google Play edition has no SMS access at all. Apart from that, the two handle your data identically. On iPhone, the app hands a text to Apple's Messages app for you to send, and never reads your texts.
 
@@ -32,7 +32,7 @@ The Android app comes in two editions. The full app, from GitHub (and from F-Dro
 - **Your messages and positions** go to the carriers you configure: the Iridium network through your own RockBLOCK modem and Rock7 or Ground Control account, your mobile operator for SMS, APRS-IS if you connect to it. These are your accounts and their terms apply.
 - **A Hub**, if you connect one. Positions, telemetry and messages then go to that Hub. If it is ours, the rest of this policy applies. If you self-host, everything below describes data that stays on your own infrastructure, and we are not involved in it at all.
 
-Installing from Google Play, or from the App Store once MeshSat iOS is listed there, tells Google or Apple that you did, under their own policies; we see only the totals. Installing from GitHub tells nobody.
+Installing from Google Play, or from the App Store once MeshSat iOS is listed there, tells Google or Apple that you did, under their own policies; we see only the totals. Downloading from GitHub sends a request to GitHub, including the network information needed to deliver the file.
 
 ## MeshSat Hub: what we hold
 

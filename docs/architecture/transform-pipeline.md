@@ -1,3 +1,7 @@
+---
+description: "How ordered ingress and egress transforms compress, encode and encrypt messages at each Bridge interface."
+---
+
 # Transform pipeline
 
 Each interface carries two ordered lists of transforms: one applied to messages coming in, one to

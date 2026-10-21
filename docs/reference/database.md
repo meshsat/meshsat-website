@@ -1,3 +1,7 @@
+---
+description: "MeshSat Bridge SQLite database schema, message and delivery records, configuration storage and maintenance."
+---
+
 # Database
 
 The Bridge and the Hub each keep their own database. They are different engines for different

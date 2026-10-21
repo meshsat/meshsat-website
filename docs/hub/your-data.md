@@ -1,3 +1,7 @@
+---
+description: "Understand MeshSat Hub data storage, retention, export and account deletion, including provider credentials."
+---
+
 # Your data
 
 ## What the Hub holds

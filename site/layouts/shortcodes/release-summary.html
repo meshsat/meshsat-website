@@ -1,0 +1,6 @@
+{{- $release := .Page.Params.changelog -}}
+{{- if eq $release.latest_tag (.Get "tag") -}}
+  {{ .Inner | .Page.RenderString }}
+{{- else -}}
+  <p>See <a href="#{{ $release.latest_tag_anchor }}">{{ $release.latest_tag }}</a> for the latest tagged changes. Later commits are listed under Unreleased.</p>
+{{- end -}}

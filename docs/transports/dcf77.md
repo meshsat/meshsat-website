@@ -4,7 +4,7 @@ description: "Two receiver modules are on the bench. Neither is wired to a kit, 
 
 # DCF77 time signal
 
-<ChannelStatus code="bench">Two receiver modules are on the bench. Neither is wired to a kit, and nothing has been received.</ChannelStatus>
+<ChannelStatus channel="dcf77">Two receiver modules are on the bench. Neither is wired to a kit, and nothing has been received.</ChannelStatus>
 
 DCF77 is the longwave time signal sent from Germany on 77.5 kHz. A small receiver decodes the
 time from it with no network and no satellite. It would give a kit the time when there is no

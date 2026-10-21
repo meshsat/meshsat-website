@@ -33,7 +33,7 @@ hero_title_b:
 hero_sub:
   other: "Opensourcesoftware die berichten tussen meshradio’s, satellietverbindingen en mobiele netwerken doorgeeft. Draai het op een Linux-gateway of telefoon en verbind systemen die elkaar zelf niet kunnen bereiken."
 hero_status:
-  other: "Hub open. Nog geen vloot actief, nooit gebruikt bij een echt noodgeval."
+  other: "Prototypes in ontwikkeling. Nooit gebruikt bij een echt noodgeval."
 hero_star:
   other: "Geef een ster op GitHub"
 hero_visitors:
@@ -1245,3 +1245,33 @@ cta_note_link:
 
 f_help:
   other: "Hulp en bijdragen"
+
+# Setup and evidence hierarchy
+nav_setup:
+  other: "Kies je opstelling"
+hero_intro:
+  other: "Opensourcesoftware die berichten doorgeeft tussen meshradio’s, satellieten en mobiele netwerken. Begin met een Linux-computer of Android-telefoon."
+message_title:
+  other: "Een bericht, van radio naar bestemming"
+message_intro:
+  other: "De Bridge ontvangt een bericht, past je routeringsregels toe en verstuurt het via een ingesteld transport. Elke bestemming meldt een eigen resultaat."
+trace_example:
+  other: "Illustratief routeringsvoorbeeld: bekijk het berichtenlog"
+transport_details:
+  other: "Alle transporten en hun teststatus"
+cost_details:
+  other: "Hardware, zendtijd en projectfinanciering"
+support_title:
+  other: "Steun het project"
+hardware_photo:
+  other: "Twee V1-veldkits tijdens de bouw, voorjaar 2026."
+hardware_process:
+  other: "Bekijk hoe we bouwen"
+language_home:
+  other: "startpagina"
+
+ig_testing_scope:
+  other: "De evaluatie betreft afzonderlijke modules en software. Een complete MSC-3-assemblage is niet gevalideerd."
+
+install_output:
+  other: "Voorbeeld van installatie-uitvoer"

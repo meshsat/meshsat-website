@@ -1,3 +1,7 @@
+---
+description: "Define Bridge message routing rules, source and destination filters, rate limits and failover destinations."
+---
+
 # Access rules
 
 Access rules decide what the bridge does with every message that arrives on an interface, and

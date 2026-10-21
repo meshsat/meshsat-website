@@ -1,3 +1,7 @@
+---
+description: "Manage Bridge access rules and failover groups through the REST API, including rule ordering and match fields."
+---
+
 # Access rules
 
 The API behind the [policy engine](/architecture/policy-engine).

@@ -1,3 +1,7 @@
+---
+description: "Configure Android SOS alerts, retries, dead-man checks and geofences, and understand their delivery limits."
+---
+
 # Safety
 
 ::: danger Not an emergency service

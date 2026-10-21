@@ -1,3 +1,7 @@
+---
+description: "Connect your own satellite and SMS provider accounts to MeshSat Hub and understand who bills for airtime."
+---
+
 # Provider accounts
 
 The Hub does not resell satellite time or SMS. You bring your own accounts, your provider bills

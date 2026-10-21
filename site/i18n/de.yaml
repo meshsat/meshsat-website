@@ -33,7 +33,7 @@ hero_title_b:
 hero_sub:
   other: "Open-Source-Software, die Nachrichten zwischen Mesh-Funkgeräten, Satellitenverbindungen und Mobilfunknetzen überträgt. Sie läuft auf einem Linux-Gateway oder Telefon und verbindet Systeme, die einander allein nicht erreichen."
 hero_status:
-  other: "Hub offen. Noch keine Flotte im Einsatz, nie in einem echten Notfall verwendet."
+  other: "Prototypen in Entwicklung. Nie in einem echten Notfall verwendet."
 hero_star:
   other: "Auf GitHub einen Stern geben"
 hero_visitors:
@@ -1245,3 +1245,33 @@ cta_note_link:
 
 f_help:
   other: "Hilfe und Mitarbeit"
+
+# Setup and evidence hierarchy
+nav_setup:
+  other: "Aufbau wählen"
+hero_intro:
+  other: "Open-Source-Software leitet Nachrichten zwischen Mesh-Funkgeräten, Satelliten und Mobilfunknetzen weiter. Beginne mit einem Linux-Rechner oder Android-Handy."
+message_title:
+  other: "Eine Nachricht, vom Funkgerät zum Ziel"
+message_intro:
+  other: "Die Bridge empfängt eine Nachricht, wendet deine Routingregeln an und sendet sie über einen konfigurierten Transport. Jedes Ziel meldet sein eigenes Ergebnis."
+trace_example:
+  other: "Beispiel für das Routing: Nachrichtenprotokoll ansehen"
+transport_details:
+  other: "Alle Transportwege und ihr Teststatus"
+cost_details:
+  other: "Hardware, Übertragungsgebühren und Projektförderung"
+support_title:
+  other: "Das Projekt unterstützen"
+hardware_photo:
+  other: "Zwei V1-Feldkits beim Zusammenbau, Frühjahr 2026."
+hardware_process:
+  other: "So bauen wir"
+language_home:
+  other: "Startseite"
+
+ig_testing_scope:
+  other: "Die Evaluierung betrifft einzelne Module und Software. Ein vollständiger MSC-3-Aufbau wurde nicht validiert."
+
+install_output:
+  other: "Beispielausgabe des Installationsprogramms"

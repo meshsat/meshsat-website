@@ -4,7 +4,7 @@ description: "The interface is in the Bridge. We have no record of it running on
 
 # Bluetooth LE
 
-<ChannelStatus code="code">The interface is in the Bridge. We have no record of it running on a kit.</ChannelStatus>
+<ChannelStatus channel="ble">The interface is in the Bridge. We have no record of it running on a kit.</ChannelStatus>
 
 `ble_0` is a Reticulum interface over Bluetooth Low Energy, for short-range routing between a
 Bridge and a nearby device. It uses the Raspberry Pi's built-in Bluetooth through BlueZ, with no

@@ -1,3 +1,7 @@
+---
+description: "Bridge monitoring features for link health, radio conditions, positions and field alerts, with their operating limits."
+---
+
 # Field intelligence
 
 A bridge in the field is not just a relay. It watches its own links, its radio environment and the

@@ -4,7 +4,7 @@ description: "The Bridge can receive and store them. We have no record of an ale
 
 # Cell broadcast alerts
 
-<ChannelStatus code="code">The Bridge can receive and store them. We have no record of an alert received on a kit.</ChannelStatus>
+<ChannelStatus channel="cell-broadcast">The Bridge can receive and store them. We have no record of an alert received on a kit.</ChannelStatus>
 
 Cell broadcast is how mobile networks push public warnings to every phone in an area: NL-Alert
 and the other EU-Alert systems, and the wireless emergency alerts in the United States. A

@@ -4,7 +4,7 @@ description: "Proven with the phone apps. The Bridge's own client for the node's
 
 # Iridium through a MeshSat node
 
-<ChannelStatus code="live">Proven with the phone apps. The Bridge's own client for the node's modem has not run against a real node yet.</ChannelStatus>
+<ChannelStatus channel="iridium-node">Proven with the phone apps. The Bridge's own client for the node's modem has not run against a real node yet.</ChannelStatus>
 
 A [MeshSat node](/node/) carries a RockBLOCK 9603 beside its LoRa radio and offers the modem over
 Bluetooth as a serial pipe. Whoever holds the pipe speaks the 9603's AT commands through it,

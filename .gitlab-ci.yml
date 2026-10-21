@@ -203,6 +203,43 @@ verify:docs:
   needs: []
   rules: !reference [.rules-build, rules]
 
+# Validate complete builds and installer recovery before any image is published.
+verify:artifacts:
+  stage: build
+  image: python:3.12-alpine
+  tags: [docker]
+  before_script:
+    - apk add --no-cache bash diffutils coreutils
+  script:
+    - python3 scripts/test-installer.py
+    - python3 scripts/test-built-links.py
+    - python3 scripts/verify-built-links.py site/public docs/.vitepress/dist
+  needs:
+    - job: build:site
+      artifacts: true
+    - job: build:docs
+      artifacts: true
+  rules: !reference [.rules-build, rules]
+
+verify:browser:
+  stage: build
+  image: mcr.microsoft.com/playwright:v1.59.1-noble
+  tags: [docker]
+  script:
+    - npm ci --prefix tests/browser --ignore-scripts
+    - node tests/browser/check.cjs site/public docs/.vitepress/dist browser-results
+  artifacts:
+    when: always
+    paths:
+      - browser-results/
+    expire_in: 7 days
+  needs:
+    - job: build:site
+      artifacts: true
+    - job: build:docs
+      artifacts: true
+  rules: !reference [.rules-build, rules]
+
 # -----------------------------------------------------------------------------
 # DOCKER — Build and push container images to GHCR
 # -----------------------------------------------------------------------------
@@ -220,6 +257,8 @@ docker:site:
     - job: build:site
       artifacts: true
     - job: verify:site
+    - job: verify:artifacts
+    - job: verify:browser
   rules: !reference [.rules-main-deploy, rules]
 
 docker:docs:
@@ -236,6 +275,8 @@ docker:docs:
     - job: build:docs
       artifacts: true
     - job: verify:docs
+    - job: verify:artifacts
+    - job: verify:browser
   rules: !reference [.rules-main-deploy, rules]
 
 docker:install:
@@ -250,6 +291,8 @@ docker:install:
     - docker push ${GHCR_INSTALL}:latest
   needs:
     - job: verify:site
+    - job: verify:artifacts
+    - job: verify:browser
   rules: !reference [.rules-main-deploy, rules]
 
 deploy:

@@ -4,7 +4,7 @@ description: "Working on hardware: both kits carry a TETRA handheld in Direct Mo
 
 # TETRA Direct Mode
 
-<ChannelStatus code="live">Working on hardware: both kits carry a TETRA handheld in Direct Mode, and the Bridge sends and receives text messages through it.</ChannelStatus>
+<ChannelStatus channel="tetra">Working on hardware: both kits carry a TETRA handheld in Direct Mode, and the Bridge sends and receives text messages through it.</ChannelStatus>
 
 TETRA is the digital radio many emergency services carry. In Direct Mode (DMO) two TETRA radios
 talk to each other with no network between them, and they can exchange short text messages (SDS).

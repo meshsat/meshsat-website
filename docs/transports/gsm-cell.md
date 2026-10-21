@@ -4,7 +4,7 @@ description: "The radio and the test SIM cards are on their way to the bench. No
 
 # Own 2G cell
 
-<ChannelStatus code="coming-soon">The radio and the test SIM cards are on their way to the bench. Nothing has been tested, and there is no code for it in the Bridge.</ChannelStatus>
+<ChannelStatus channel="gsm-cell">The radio and the test SIM cards are on their way to the bench. Nothing has been tested, and there is no code for it in the Bridge.</ChannelStatus>
 
 When the mobile network is down, the one thing a kit cannot reach is the phone in someone's
 pocket. The idea: the kit runs a small 2G cell of its own, ordinary phones join it and send a

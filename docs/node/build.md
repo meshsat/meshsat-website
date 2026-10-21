@@ -1,3 +1,7 @@
+---
+description: "Build and flash a MeshSat pocket node, including ESP32-S3 hardware, radio connections and initial checks."
+---
+
 # Build a node
 
 ::: danger Prototype

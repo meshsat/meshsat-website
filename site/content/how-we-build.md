@@ -41,6 +41,19 @@ We're not the only ones working this way. In October 2026 Linus Torvalds publish
 </div>
 </section>
 
+<section class="build-section container" id="the-checks" aria-labelledby="build-checks-title">
+<div class="build-section-heading"><h2 id="build-checks-title">How it gets checked</h2></div>
+<div class="build-detail">
+
+- The Bridge, the Hub and both phone apps run automated tests on changes to their main branches. Required test failures block the build or release.
+- The Bridge pipeline targets both of our field kits on every change to its main branch, the two prototypes in the photo below.
+- A channel is only marked LIVE after it has run on the prototype hardware.
+
+{{< build-photo file="two-kits-in-build-20261021.webp" width="1400" height="788" alt="Two Raspberry Pi field kits half assembled side by side on a desk, radios and cables around them." caption="Both field kits half built, spring 2026." >}}
+
+</div>
+</section>
+
 <section class="build-section container" id="the-numbers" aria-labelledby="build-numbers-title">
 <div class="build-section-heading"><h2 id="build-numbers-title">The numbers</h2><p class="build-note">Counted from the repositories on <time datetime="2026-10-21">21 October 2026</time>.</p></div>
 <div class="build-detail">
@@ -67,19 +80,6 @@ That's about four months of actual work. There were almost no commits between la
 Non-blank lines in every programming language we use, tests counted apart. Docs, config, generated files and other people's vendored code aren't in it. In our fork of the Meshtastic firmware we only count the lines we added.
 
 The tokens come from the session logs on our build server, where nearly all of the work happens. Logs from before 7 September 2026 are gone, so March to August isn't in those two numbers. Most of the tokens processed are the tools reading code and context again that they've already seen.
-
-</div>
-</section>
-
-<section class="build-section container" id="the-checks" aria-labelledby="build-checks-title">
-<div class="build-section-heading"><h2 id="build-checks-title">How it gets checked</h2></div>
-<div class="build-detail">
-
-- The Bridge, the Hub and both phone apps run automated tests on changes to their main branches. Required test failures block the build or release.
-- The Bridge pipeline targets both of our field kits on every change to its main branch, the two prototypes in the photo below.
-- A channel is only marked LIVE after it has run on the prototype hardware.
-
-{{< build-photo file="two-kits-in-build-20261021.webp" width="1400" height="788" alt="Two Raspberry Pi field kits half assembled side by side on a desk, radios and cables around them." caption="Both field kits half built, spring 2026." >}}
 
 </div>
 </section>

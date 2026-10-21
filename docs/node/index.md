@@ -1,3 +1,7 @@
+---
+description: "Understand the MeshSat pocket node, its mesh and satellite hardware, phone connections and prototype status."
+---
+
 # MeshSat node
 
 ::: danger Prototype

@@ -4,25 +4,43 @@
    and display text takes Plex Sans Greek; until 19 Oct 2026 /el/ fell back to
    whatever the visitor's system had (MESHSAT-1596). Anything outside these ranges
    (stars, crosses, side arrows) still falls back: draw UI symbols as SVG. */
+
 @font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 @font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 @font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 @font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/ibm-plex-sans-latin-700-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-600-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/ibm-plex-mono-latin-700-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 @font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-400-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+
 @font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-500-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+
 @font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-600-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+
 @font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-700-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-400-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-500-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-600-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
+
 @font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/ibm-plex-sans-greek-700-normal.woff2') format('woff2'); unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF; }
 
 /* ---------- CSS Variables ---------- */
+
 /* Native form controls and scrollbars follow the theme in force (color-scheme). */
+
 :root {
     color-scheme: dark;
     /* Ground: warm near-black, the inside of a sealed case. Not blue-black. */
@@ -82,6 +100,7 @@
 }
 
 /* ---------- Reset ---------- */
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -116,6 +135,7 @@ img {
 }
 
 /* ---------- Utility ---------- */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -132,6 +152,7 @@ img {
 }
 
 /* Subtle top gradient on alternating sections */
+
 .section-alt::before {
     content: '';
     position: absolute;
@@ -164,6 +185,7 @@ img {
 /* Hidden by clipping, not by an off-screen offset: an off-screen element turns
    up in full-page captures and in zoomed layouts. The :focus rule in the a11y
    block near the end of this file restores it (MESHSAT-1611). */
+
 .skip-link {
     position: fixed;
     top: 8px;
@@ -178,6 +200,7 @@ img {
 }
 
 /* ---------- Header ---------- */
+
 .site-header {
     position: sticky;
     top: 0;
@@ -276,7 +299,9 @@ img {
 }
 
 .theme-toggle .sun-icon { display: none; }
+
 [data-theme="light"] .theme-toggle .sun-icon { display: block; }
+
 [data-theme="light"] .theme-toggle .moon-icon { display: none; }
 
 .menu-toggle {
@@ -297,6 +322,7 @@ img {
 }
 
 /* ---------- Buttons ---------- */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -326,105 +352,15 @@ img {
 }
 
 /* ---------- Hero (slideshow background) ---------- */
-.hero {
-    position: relative;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-
-.hero-slideshow {
-    position: absolute;
-    inset: 0;
-}
-
-.hero-slide {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-}
-
-.hero-slide.active {
-    opacity: 1;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(10, 10, 11, 0.92) 0%, rgba(10, 10, 11, 0.85) 40%, rgba(10, 10, 11, 0.7) 100%);
-    z-index: 1;
-}
-
-[data-theme="light"] .hero-overlay {
-    background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(248, 249, 250, 0.9) 40%, rgba(248, 249, 250, 0.8) 100%);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 720px;
-    min-width: 0; /* flex item: stop the no-wrap install command from widening the hero past the viewport on mobile */
-    padding: var(--space-4xl) 0;
-}
-
-.hero-title {
-    font-family: var(--font-display);
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: var(--space-lg);
-}
 
 .highlight {
     color: var(--color-primary);
 }
 
-.hero-subtitle {
-    color: var(--color-text-muted);
-    font-size: 1.15rem;
-    line-height: 1.7;
-    margin-bottom: var(--space-xl);
-}
-
-.hero-actions {
-    display: flex;
-    gap: var(--space-md);
-    margin-bottom: var(--space-xl);
-}
-
-.hero-install .code-block-inline {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-sm) var(--space-md);
-    margin-bottom: 0;
-    background: rgba(10, 10, 11, 0.6);
-    backdrop-filter: blur(4px);
-}
-
-[data-theme="light"] .hero-install .code-block-inline {
-    background: rgba(255, 255, 255, 0.8);
-}
-
-.hero-install .code-block-inline .code-block-body {
-    padding: 0;
-}
-
 /* The star ask lives under the install command: same translucent chip
    treatment as the install block so it reads on the photo in both themes.
    The count chip stays hidden until main.js fills it from the GitHub API. */
-.hero-repo {
-    margin: var(--space-sm) 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--space-sm);
-}
+
 .gh-star-btn {
     display: inline-flex;
     align-items: center;
@@ -441,8 +377,11 @@ img {
     backdrop-filter: blur(4px);
     transition: border-color 0.2s, color 0.2s;
 }
+
 [data-theme="light"] .gh-star-btn { background: rgba(255, 255, 255, 0.8); }
+
 .gh-star-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
 .gh-star-count {
     display: inline-flex;
     align-items: center;
@@ -452,10 +391,13 @@ img {
     padding-left: 0.6rem;
     border-left: 1px solid var(--color-border);
 }
+
 /* The star is an SVG, not U+2605: the Plex subsets we ship are Latin only, so a
    text star fell back to the visitor's fonts and rendered as an empty box where
    none of them had it (owner's laptop, 19 Oct 2026). */
+
 .gh-star-count svg { flex: none; }
+
 .gh-star-count[hidden] { display: none; }
 
 /* The visitor chip sits BESIDE the star button, not inside it: the count is not
@@ -463,6 +405,7 @@ img {
    accessible name. Same translucent chrome as .gh-star-btn above, duplicated
    rather than factored out so an edit here cannot disturb the hero CTA; keep
    the two in sync. Filled from our own Umami by main.js. [MESHSAT-782] */
+
 .visitors-chip {
     display: inline-flex;
     align-items: center;
@@ -477,16 +420,21 @@ img {
     background: rgba(10, 10, 11, 0.6);
     backdrop-filter: blur(4px);
 }
+
 [data-theme="light"] .visitors-chip { background: rgba(255, 255, 255, 0.8); }
+
 .visitors-chip svg { flex-shrink: 0; }
+
 .visitors-count {
     font-family: var(--font-mono);
     font-size: 0.8rem;
     padding-left: 0.6rem;
     border-left: 1px solid var(--color-border);
 }
+
 /* Declared explicitly so a future display rule on the class cannot defeat the
    hidden attribute, same reason as .gh-star-count[hidden]. */
+
 .visitors-chip[hidden] { display: none; }
 
 /* The donation ask sits between the star button and the visitor chip: a plain
@@ -500,6 +448,7 @@ img {
    glyph carries --color-primary (>= 3:1 on both chip grounds), the label stays
    neutral so no new text/background pair is introduced. Hidden when donate_url
    is unset (the anchor is inside a `with`). [MESHSAT-816, MESHSAT-1023] */
+
 .donate-btn {
     display: inline-flex;
     align-items: center;
@@ -516,8 +465,11 @@ img {
     backdrop-filter: blur(4px);
     transition: border-color 0.2s, color 0.2s;
 }
+
 [data-theme="light"] .donate-btn { background: rgba(255, 255, 255, 0.8); }
+
 .donate-btn svg { flex-shrink: 0; color: var(--color-primary); }
+
 .donate-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
 
 /* ---------- Comparison ---------- */
@@ -536,6 +488,7 @@ img {
 }
 
 /* ---------- Screenshots ---------- */
+
 .screenshots-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -569,6 +522,7 @@ img {
 }
 
 /* ---------- Footer ---------- */
+
 .site-footer {
     background: var(--color-bg-secondary);
     border-top: 1px solid var(--color-border);
@@ -616,6 +570,7 @@ img {
 }
 
 /* ---------- Install Page ---------- */
+
 .install-page h1 {
     text-align: center;
     font-family: var(--font-display);
@@ -672,6 +627,7 @@ img {
 }
 
 /* ---------- Changelog ---------- */
+
 .changelog-page h1 {
     text-align: center;
     font-family: var(--font-display);
@@ -755,6 +711,7 @@ img {
    cost list; product names in the display mono, versions in mono (machine
    tokens), dates in body sans. Below 640px the header row hides and each
    cell carries its column name from data-label. */
+
 .changelog-board-wrap {
     max-width: 800px;
     margin: 0 auto var(--space-lg);
@@ -871,6 +828,7 @@ img {
 }
 
 /* ---------- Page Content (privacy, terms) ---------- */
+
 .page-content h1 {
     font-family: var(--font-display);
     font-size: 2rem;
@@ -901,15 +859,8 @@ img {
 
 /* Hero (centered layout) */
 
-.hero-title {
-    font-family: var(--font-display);
-    font-size: 3.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: var(--space-lg);
-}
-
 /* Code blocks (header/body layout) */
+
 .code-block {
     display: flex;
     flex-direction: column;
@@ -970,6 +921,7 @@ img {
 }
 
 /* Tables (data-table, table-wrap) */
+
 .table-wrap {
     overflow-x: auto;
     border-radius: var(--radius-lg);
@@ -1006,6 +958,7 @@ img {
 }
 
 /* Badges */
+
 .badge {
     display: inline-block;
     padding: 0.15rem 0.5rem;
@@ -1033,12 +986,14 @@ img {
    the page ground it looks fine, which is the trap this file already warns about
    for .badge-stable and .badge-beta. The hover token is a genuine pass on the
    composited pill in both themes: 5.4:1 dark, 5.9:1 light. */
+
 .badge-open {
     background: var(--color-primary-glow);
     color: var(--color-primary-hover);
 }
 
 /* Category labels */
+
 .category-label {
     color: var(--color-primary);
     font-weight: 600;
@@ -1066,9 +1021,6 @@ img {
 }
 
 /* Full-width outline buttons belong to card layouts only; inline button rows keep natural width */
-.hero-actions .btn-outline {
-    width: auto;
-}
 
 .btn-outline:hover {
     border-color: var(--color-primary);
@@ -1076,6 +1028,7 @@ img {
 }
 
 /* CTA section */
+
 .cta-section {
     background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg) 50%, var(--color-bg-secondary) 100%);
     border-top: 1px solid var(--color-border);
@@ -1098,14 +1051,6 @@ img {
 }
 
 /* ---------- Hero label ---------- */
-.hero-label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-primary);
-    margin-bottom: var(--space-md);
-}
 
 /* ---------- Architecture Diagram ---------- */
 
@@ -1115,39 +1060,9 @@ img {
 }
 
 /* ---------- Not For ---------- */
-.not-for-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
-}
-
-.not-for-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-left: 3px solid var(--color-warning);
-    border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
-    transition: all 0.3s;
-}
-
-.not-for-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.not-for-card h3 {
-    font-size: 1.05rem;
-    margin-bottom: var(--space-sm);
-    color: var(--color-warning);
-}
-
-.not-for-card p {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
 
 /* Screenshots */
+
 .screenshots-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1181,6 +1096,7 @@ img {
 }
 
 /* Page title */
+
 .page-title {
     text-align: center;
     font-family: var(--font-display);
@@ -1189,6 +1105,7 @@ img {
 }
 
 /* Install page extras */
+
 .install-hero {
     max-width: 600px;
     margin: 0 auto var(--space-2xl);
@@ -1225,6 +1142,7 @@ img {
 }
 
 /* ---------- Footer (expanded) ---------- */
+
 .site-footer {
     background: var(--color-bg-secondary);
     border-top: 1px solid var(--color-border);
@@ -1254,6 +1172,7 @@ img {
 
 /* Supported-by logos: SIDN fonds, then Ground Control (MESHSAT-851). One height,
    one theme swap; the SIDN classes stay for every rule that already matches them. */
+
 .partners-logos .sidn-logo,
 .partners-logos .partner-logo {
     height: 28px;
@@ -1265,6 +1184,7 @@ img {
 /* The two-line Ground Control lockup at 28px reads smaller than the SIDN slab
    (its text block is 75% of the box); 40px puts both wordmarks at the same
    optical size. Owner call, 7 Sep 2026. */
+
 .partners-logos .partner-logo {
     height: 40px;
 }
@@ -1352,6 +1272,7 @@ img {
 }
 
 /* Logo mark (approved brand artwork; dark/light raster variants, see MESHSAT-727) */
+
 .logo-mark {
     flex-shrink: 0;
     height: 32px;
@@ -1383,6 +1304,7 @@ img {
 }
 
 /* ---------- Responsive ---------- */
+
 @media (max-width: 1024px) {
 
     .footer-grid {
@@ -1475,6 +1397,7 @@ img {
 }
 
 /* Footer social links (MESHSAT-719) */
+
 .footer-social {
     display: flex;
     align-items: center;
@@ -1511,13 +1434,6 @@ img {
    a message trace, so the headline voice is telemetry, not sci-fi.
    ========================================================================== */
 
-.hero-title {
-    font-weight: 600;
-    letter-spacing: -0.04em;
-    font-size: clamp(2.1rem, 5.2vw, 4rem);
-    line-height: 1.05;
-}
-
 .section-title {
     font-weight: 600;
     letter-spacing: -0.03em;
@@ -1526,24 +1442,22 @@ img {
 
 .logo-text { font-weight: 600; letter-spacing: -0.02em; }
 
-.hero-label {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.16em;
-}
-
 /* Wide content scrolls inside its own box, never clipped by the section.
    Without max-width the wrap grows past the viewport and overflow-x never
    engages, which silently hid the Status column on phones. */
+
 .table-wrap {
     max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
+
 .data-table { min-width: 460px; }
+
 .container, .section, .hero-content { min-width: 0; }
 
 /* Accessible hit areas. */
+
 .footer-col a,
 .nav-links a,
 .footer-social a,
@@ -1553,145 +1467,20 @@ img {
    One SOS, six routing decisions, shown as the log the bridge actually keeps.
    State colour is meaning here: green delivered, red failed, nothing else. */
 
-.trace {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    line-height: 1.45;
-    background: rgba(10, 9, 7, 0.82);
-    border: 1px solid var(--color-border-light);
-    border-left: 3px solid var(--color-primary);
-    border-radius: var(--radius-md);
-    padding: var(--space-md) var(--space-lg);
-    max-width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    backdrop-filter: blur(3px);
-}
-[data-theme="light"] .trace { background: rgba(255, 255, 255, 0.9); }
-
-.trace-head {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--space-md);
-    color: var(--color-text-muted);
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding-bottom: var(--space-sm);
-    margin-bottom: var(--space-sm);
-    border-bottom: 1px dashed var(--color-border-light);
-    white-space: nowrap;
-}
-
-.trace-row {
-    display: grid;
-    grid-template-columns: 7.8em 6.6em 2.4em 1fr auto;
-    gap: 0 1em;
-    white-space: nowrap;
-    padding: 0.18rem 0;
-    min-width: 34em;
-}
-.trace-t   { color: var(--color-text-muted); }
-.trace-if  { color: var(--color-accent); }
-.trace-dir { color: var(--color-text-muted); }
-.trace-msg { color: var(--color-text); white-space: normal; }
-.trace-state { font-weight: 600; letter-spacing: 0.04em; }
-.trace-state.ok   { color: var(--color-success); }
-.trace-state.fail { color: var(--color-error); }
-.trace-row.is-fail .trace-msg { color: var(--color-text-muted); }
-
-.trace-foot {
-    margin-top: var(--space-sm);
-    padding-top: var(--space-sm);
-    border-top: 1px dashed var(--color-border-light);
-    color: var(--color-text-muted);
-    font-size: 0.72rem;
-    white-space: normal;
-}
-
 /* Reveal each row once on load. Orchestrated, not scattered. */
-@media (prefers-reduced-motion: no-preference) {
-    .trace-row { opacity: 0; animation: trace-in .28s ease-out forwards; }
-    .trace-row:nth-child(1) { animation-delay: .25s }
-    .trace-row:nth-child(2) { animation-delay: .45s }
-    .trace-row:nth-child(3) { animation-delay: .70s }
-    .trace-row:nth-child(4) { animation-delay: .95s }
-    .trace-row:nth-child(5) { animation-delay: 1.1s }
-    .trace-row:nth-child(6) { animation-delay: 1.25s }
-}
+
 @keyframes trace-in { from { opacity: 0; transform: translateY(3px) } to { opacity: 1; transform: none } }
 
 /* On a phone the timestamp and direction are the least useful columns, so the
    row reflows to interface + state on one line and the message beneath.
    Nothing is hidden behind a horizontal scroll the reader has to discover. */
-@media (max-width: 640px) {
-    .trace { font-size: 0.72rem; padding: var(--space-sm) var(--space-md); overflow-x: visible; }
-    .trace-head { white-space: normal; font-size: 0.62rem; }
-    .trace-head span + span { display: none; }
-    .trace-row {
-        grid-template-columns: 1fr auto;
-        grid-template-areas: "iface state" "msg msg";
-        min-width: 0;
-        white-space: normal;
-        gap: 0.1em 0.8em;
-        padding: 0.42rem 0;
-        border-bottom: 1px solid var(--color-border);
-    }
-    .trace-row:last-of-type { border-bottom: 0; }
-    .trace-t, .trace-dir { display: none; }
-    .trace-if { grid-area: iface; }
-    .trace-state { grid-area: state; font-size: 0.92em; }
-    .trace-msg { grid-area: msg; }
-}
 
 /* Honest status line, stated where people actually read it. */
-.hero-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55em;
-    font-family: var(--font-mono);
-    font-size: 0.74rem;
-    letter-spacing: 0.06em;
-    color: var(--color-text-muted);
-    border: 1px solid var(--color-border-light);
-    border-radius: 999px;
-    padding: 0.3em 0.85em;
-    margin-bottom: var(--space-lg);
-    background: rgba(10, 9, 7, 0.55);
-}
-[data-theme="light"] .hero-status { background: rgba(255, 255, 255, 0.75); }
-.hero-status .dot {
-    width: .5em; height: .5em; border-radius: 50%;
-    background: var(--color-warning); flex: none;
-}
 
 /* ---------- New section components ---------- */
 
-.reason-grid {
-    display: grid;
-    gap: var(--space-lg);
-    margin-top: var(--space-2xl);
-}
-.reason-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-
-.reason-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-lg);
-}
 /* One hairline of the accent, on the reading edge. Cheaper than an icon and
    it encodes direction: these are steps a message passes through. */
-.reason-card { border-left: 2px solid var(--color-primary); }
-
-.reason-card h3 {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    margin-bottom: var(--space-sm);
-}
-.reason-card p { color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.6; }
 
 /* .btn-outline is width:100% by inheritance; scope it back for inline rows. */
 
@@ -1703,41 +1492,23 @@ img {
     line-height: 1.65;
     max-width: 68ch;
 }
-.funding-note {
-    margin-inline: auto;
-    text-align: center;
-    margin-top: var(--space-2xl);
-    padding-top: var(--space-lg);
-    border-top: 1px dashed var(--color-border-light);
-}
+
 .table-note a, .funding-note a { color: var(--color-primary); }
 
 /* The hero carries more now, so give it room to breathe rather than centre
    everything in a column that fights the trace width. */
-.hero-content { max-width: 46rem; }
-.hero-subtitle { max-width: 44rem; }
-.hero-install { margin-top: var(--space-lg); max-width: 34rem; }
 
 /* A log is left-aligned. Always, at every width. */
-.trace, .trace-row, .trace-head, .trace-foot { text-align: left; }
 
 /* The hero stops centring. Centred hero text over a photo is the single most
    templated arrangement on the web, and the trace reads as data when it is
    ranged left against a consistent margin. */
-.hero-content { text-align: left; margin-inline: auto; }
-.hero-status { text-align: left; }
-@media (max-width: 640px) {
-    .hero-title { font-size: clamp(1.8rem, 8.5vw, 2.4rem); }
-}
 
 /* Three buttons do not fit one phone row. Let them wrap instead of clipping. */
-.hero-actions { flex-wrap: wrap; }
-@media (max-width: 480px) {
-    .hero-actions .btn { width: 100%; justify-content: center; }
-}
 
 /* Cell text wraps happily, so on a phone drop the min-width and let all three
    columns fit rather than hiding Status behind a scroll nobody discovers. */
+
 @media (max-width: 640px) {
     .data-table { min-width: 0; font-size: 0.8rem; }
     .data-table th, .data-table td { padding-inline: 0.6rem; }
@@ -1745,7 +1516,9 @@ img {
 }
 
 /* ---------- Language switcher ---------- */
+
 .lang-switch { position: relative; }
+
 .lang-btn {
     display: inline-flex; align-items: center; gap: 0.4em;
     min-height: 34px; padding: 0 0.6em;
@@ -1753,9 +1526,11 @@ img {
     border-radius: var(--radius-md); color: var(--color-text-muted);
     font-family: var(--font-mono); font-size: 0.78rem; cursor: pointer;
 }
+
 .lang-btn:hover, .lang-switch:focus-within .lang-btn {
     color: var(--color-primary); border-color: var(--color-primary);
 }
+
 .lang-menu {
     position: absolute; right: 0; top: calc(100% + 6px);
     min-width: 10rem; margin: 0; padding: 0.3rem; list-style: none;
@@ -1765,34 +1540,44 @@ img {
     transition: opacity .14s ease, transform .14s ease, visibility .14s;
     z-index: 60;
 }
+
 /* Open on hover, or when main.js has opened it from the button (is-open, so
    Escape can close it while the button keeps focus); without JS the old
    focus-within path still reaches the links from the keyboard. */
-.lang-switch:hover .lang-menu,
+
 .lang-switch.is-open .lang-menu,
 html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility: visible; transform: none; }
+
 .lang-menu a {
     display: block; padding: 0.42rem 0.6rem; border-radius: var(--radius-sm);
     color: var(--color-text); font-size: 0.88rem; text-decoration: none;
 }
+
 .lang-menu a:hover, .lang-menu a:focus-visible { background: var(--color-bg-secondary); color: var(--color-primary); }
+
 .lang-menu a[aria-current="true"] { color: var(--color-primary); font-weight: 600; }
+
 @media (max-width: 560px) { .lang-current { display: none; } .lang-btn { padding: 0 0.45em; } }
 
 /* 1.4.3 Contrast. opacity:0.6 on an already-muted token dropped these links to
    3.16:1 (dark) and 2.86:1 (light). The token passes at full strength, so the
    de-emphasis moves to size instead of transparency. Weight 600 by owner
    request 2026-08-29; bolder only helps contrast, opacity must stay 1. */
+
 .partners-logos a { opacity: 1; font-weight: 600; }
+
 .partners-logos a:hover,
 .partners-logos a:focus-visible { color: var(--color-primary); opacity: 1; }
 
 /* 1.4.3 Contrast. Black on the light-theme orange is 4.25:1, just under AA.
    White clears it at 4.94:1; the darker ink stays on the brighter dark orange. */
+
 .nav-hub-btn,
 .nav-hub-btn:hover { color: #FFFFFF !important; }
+
 :root[data-theme="dark"] .nav-hub-btn,
 :root[data-theme="dark"] .nav-hub-btn:hover { color: var(--color-bg) !important; }
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .nav-hub-btn,
   :root:not([data-theme="light"]) .nav-hub-btn:hover { color: var(--color-bg) !important; }
@@ -1805,6 +1590,7 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
    around it ("is not affiliated with this project"), so colour is emphasis
    and 1.4.1 is satisfied without it. Contrast measured: 5.98:1 dark
    (#F0655A on #14120F), 6.63:1 light (#A32A22 on #F7F5F2). */
+
 .page-content code.not-ours {
   color: var(--color-error);
   font-weight: 600;
@@ -1813,6 +1599,7 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 /* 1.4.1 Use of Colour. Links inside running text need a non-colour cue.
    .page-content covers the markdown pages (/security/, /privacy/, /terms/),
    which are prose end to end and whose links were colour-only until now. */
+
 .page-content a,
 .build-page a,
 .table-note a,
@@ -1829,9 +1616,11 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 }
 
 /* 2.1.1 Keyboard. A scrolling region must be reachable without a mouse. */
+
 .code-block pre,
 .table-wrap,
 .trace { scrollbar-width: thin; }
+
 .code-block pre:focus-visible,
 .table-wrap:focus-visible,
 .trace:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
@@ -1839,14 +1628,17 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 /* 2.5.8 Target Size (Minimum), new in WCAG 2.2: 24x24 CSS px. The nav, footer
    and copy-button links already carry 34px from the "Accessible hit areas"
    rule; re-stating 24px here used to beat it (MESHSAT-1611). */
+
 .partners-logos a,
 .lang-menu a { min-height: 24px; }
 
 /* 2.4.7 Focus Visible, and 1.4.11 for the indicator itself. */
+
 :where(a, button, [tabindex]):focus-visible {
   outline: 3px solid var(--color-primary);
   outline-offset: 2px;
 }
+
 .skip-link:focus {
   position: fixed; top: 8px; left: 8px; z-index: 999;
   width: auto; height: auto; overflow: visible; clip: auto; clip-path: none;
@@ -1856,6 +1648,7 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 
 /* 2.3.3 / 2.2.2. Honour reduced motion everywhere, including the hero slideshow
    and the trace reveal. */
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .001ms !important;
@@ -1870,7 +1663,6 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 /* 1.4.10 Reflow. A bare minmax() floor cannot shrink below its own minimum, so
    an auto-fit grid overflows any viewport narrower than that floor plus the
    container padding. min() lets the track collapse instead. */
-.reason-grid  { grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
 
 .not-for-grid,
 .screenshots-grid { grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
@@ -1879,9 +1671,12 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
    ground; on the badge's own tinted pill it lands at 4.12:1, just under AA, and
    composites differently on white table rows than on tinted sections. Badges get
    their own darker ink so they pass on every surface they can sit on. */
+
 [data-theme="light"] .badge-stable,
 [data-theme="light"] .badge-beta { color: #26663F; }
+
 [data-theme="light"] .badge-beta { color: #8A5A0B; }
+
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) .badge-stable { color: #26663F; }
   :root:not([data-theme="dark"]) .badge-beta   { color: #8A5A0B; }
@@ -1893,6 +1688,7 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
    not. The result is text on a bright photo, which is the opposite of what a user
    who turned this mode on asked for. The photo is decorative, so remove it and let
    the system colours do their job. Content images (screenshots) are left alone. */
+
 @media (forced-colors: active) {
     .hero-slideshow,
     .hero-slide,
@@ -1921,6 +1717,7 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 }
 
 /* ---------- Video section — the intro framed as a log artifact ---------- */
+
 .video-frame {
     max-width: 860px;
     margin: 0 auto;
@@ -1929,6 +1726,7 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     border-radius: var(--radius-lg);
     overflow: hidden;
 }
+
 .video-head {
     display: flex;
     justify-content: space-between;
@@ -1940,10 +1738,15 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     color: var(--color-text-muted);
     border-bottom: 1px solid var(--color-border);
 }
+
 .video-media { position: relative; aspect-ratio: 16 / 9; background: #000; }
+
 .video-media iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
 .video-play { position: absolute; inset: 0; width: 100%; height: 100%; display: block; padding: 0; border: 0; background: none; cursor: pointer; }
+
 .video-play img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
 .video-play-glyph {
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
@@ -1955,10 +1758,14 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
     transition: background 0.15s ease, transform 0.15s ease;
 }
+
 .video-play-glyph svg { margin-left: 3px; }
+
 .video-play:hover .video-play-glyph,
 .video-play:focus-visible .video-play-glyph { background: var(--color-primary-hover); transform: translate(-50%, -50%) scale(1.06); }
+
 .video-play:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -2px; }
+
 .video-foot {
     padding: var(--space-sm) var(--space-md);
     font-family: var(--font-mono);
@@ -1967,8 +1774,11 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     border-top: 1px solid var(--color-border);
     margin: 0;
 }
+
 .video-foot a { color: var(--color-text-muted); text-decoration: underline; }
+
 .video-foot a:hover { color: var(--color-primary); }
+
 @media (prefers-reduced-motion: reduce) {
     .video-play-glyph { transition: none; }
     .video-play:hover .video-play-glyph, .video-play:focus-visible .video-play-glyph { transform: translate(-50%, -50%); }
@@ -1976,16 +1786,18 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 
 /* CTA section reuses .hero-actions and .table-note, both styled for
    left-aligned contexts; centre them here to match the section. */
-.cta-section .hero-actions { justify-content: center; }
+
 .cta-section .table-note { margin-inline: auto; }
 
 /* Section rhythm: a fifth of every section boundary was empty chrome. */
+
 .section { padding: 4rem 0; }
 
 /* Split section header: claim left, argument right, baselines aligned.
    Scoped to .section-head so changelog/install keep their centred titles.
    The centred header survives on the video and CTA sections deliberately:
    media moment and closing cadence, not evidence. */
+
 .section-head {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -1993,67 +1805,31 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     align-items: end;
     margin-bottom: var(--space-xl);
 }
+
 .section-head .section-title { text-align: left; margin-bottom: 0; }
+
 .section-head .section-subtitle { text-align: left; margin: 0; max-width: 60ch; }
+
 @media (min-width: 960px) {
     .section-head { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
 }
 
 /* The hero's own padding shorthand had been cancelling .container's side
    gutters, so hero text sat flush against the viewport edge on phones. */
-.hero-content { padding: var(--space-4xl) var(--space-lg); }
 
 /* Two-column hero from 1100px: thesis left, the trace as evidence right, both
    inside the first viewport. Below 1100px the stacked flow is untouched.
    Vertical rhythm inside each column still comes from the elements' own
    margins; the grid only places them. */
-@media (min-width: 1100px) {
-    .hero { min-height: 0; } /* the 90vh floor is what made the hero tall */
-    .hero-content {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        grid-template-areas:
-            "label    trace"
-            "title    trace"
-            "subtitle trace"
-            "status   trace"
-            "install  trace";
-        grid-template-rows: auto auto auto auto 1fr;
-        column-gap: var(--space-2xl);
-        max-width: 1200px;
-        /* Horizontal padding matches .container so the hero's left edge lines
-           up with every section head below it. */
-        padding: var(--space-3xl) var(--space-lg);
-    }
-    .hero-label    { grid-area: label; }
-    .hero-title    { grid-area: title; }
-    .hero-subtitle { grid-area: subtitle; }
-    .hero-status   { grid-area: status; align-self: start; justify-self: start; }
-    .hero-install  { grid-area: install; align-self: start; }
-    .hero-content .trace { grid-area: trace; align-self: center; min-width: 0; }
-}
 
 /* "What it is not": the boxed cards were the heaviest containers left on the
    page. A hairline on the top edge carries the same grouping at a third of
    the height. */
-.not-for-card {
-    background: transparent;
-    border: 0;
-    border-top: 1px solid var(--color-border-light);
-    border-radius: 0;
-    padding: var(--space-md) 0 0;
-}
-.not-for-card:hover { transform: none; box-shadow: none; }
 
 /* The MESHSAT-723 forced-colors block re-boxes .not-for-card so the grouping
    survives when our borders lose their colour, but it sits EARLIER in this
    file and @media adds no specificity, so `border: 0` above would silently
    win there. Restore the box here, after it. */
-@media (forced-colors: active) {
-    .not-for-card { border: 1px solid CanvasText; }
-}
-
-.reason-grid { margin-top: var(--space-xl); }
 
 /* ==========================================================================
    Phase 2 density (MESHSAT-732)
@@ -2063,62 +1839,40 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
    ========================================================================== */
 
 .section { padding: 2.75rem 0; }
+
 .section-head { margin-bottom: var(--space-lg); }
 
 /* Anchor jumps used to land content under the 65px sticky header. */
+
 :where(section[id], #video, #hub) { scroll-margin-top: 5rem; }
 
 /* Tables: the rows are the evidence; the padding was not. */
+
 .data-table th,
 .data-table td { padding-block: 0.55rem; }
+
 .table-note { margin-top: var(--space-md); }
 
 /* Two screenshots, sized as evidence rather than inflated to fill the row. */
+
 .screenshots-grid { max-width: 880px; margin-top: var(--space-lg); }
 
 /* Cost as a row-list: claim left, explanation right, one hairline per row.
    Same anatomy as the tables, lighter chrome. */
-.reason-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-    margin-top: var(--space-lg);
-}
-.reason-card {
-    display: grid;
-    grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
-    gap: var(--space-xs) var(--space-2xl);
-    align-items: baseline;
-    background: transparent;
-    border: 0;
-    border-top: 1px solid var(--color-border-light);
-    border-radius: 0;
-    padding: 0.7rem 0;
-}
-.reason-card h3 { margin-bottom: 0; }
-.reason-card p { margin: 0; }
-@media (max-width: 700px) {
-    .reason-card { grid-template-columns: minmax(0, 1fr); }
-}
+
 /* The MESHSAT-723 forced-colors block boxes .reason-card EARLIER in the file,
    so the border reset above would beat it there (the both-ways cascade
    lesson). Re-state after. */
-@media (forced-colors: active) {
-    .reason-card { border: 1px solid CanvasText; border-left-width: 3px; }
-}
 
 /* The funding note follows a left-ranged row-list now; stop centring it. */
-.funding-note {
-    text-align: left;
-    margin: var(--space-lg) 0 0;
-    padding-top: 0;
-    border-top: 0;
-}
 
 /* Left-range the pieces the old centred CTA aligned to the middle, and drop
    its decorative centre glow: the workbench is ranged left. */
+
 .cta-section { text-align: left; }
+
 .cta-section::before { display: none; }
-.cta-section .hero-actions { justify-content: flex-start; margin-bottom: 0; }
+
 .cta-section .table-note { margin-inline: 0; }
 
 /* ---------- Alignment repair (2026-08-30 visual audit) ----------
@@ -2126,30 +1880,29 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
    from its subtitle (12 to 42px, in both directions, section by section).
    Top-align them and pad the subtitle so the two first baselines sit
    together, identically, in every section. */
+
 .section-head { align-items: start; }
+
 @media (min-width: 960px) {
     .section-head .section-subtitle { padding-top: 1.05rem; }
 }
 
 /* One seam per section: the cost rows adopt the head's exact column split,
    so the subtitle and every row explanation hang from the same vertical. */
-@media (min-width: 960px) {
-    .reason-card {
-        grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-        gap: var(--space-xs) var(--space-3xl);
-    }
-}
 
 /* 1.4.3: black on the light-theme orange is 4.25:1, the exact nav-hub-btn
    failure from MESHSAT-723. It was masked from axe by the CTA's decorative
    glow behind the button; removing the glow exposed it. White clears light
    at 4.94:1; dark keeps near-black ink on the brighter orange. */
+
 .btn-primary,
 .btn-primary:hover,
 .skip-link { color: #FFFFFF; }
+
 :root[data-theme="dark"] .btn-primary,
 :root[data-theme="dark"] .btn-primary:hover,
 :root[data-theme="dark"] .skip-link { color: var(--color-bg); }
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .btn-primary,
   :root:not([data-theme="light"]) .btn-primary:hover,
@@ -2158,47 +1911,66 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 
 /* Screenshots: full container width, explicit tracks, click to view full
    size (the inline cards are evidence thumbnails). */
+
 .screenshots-grid { max-width: none; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
 @media (max-width: 700px) { .screenshots-grid { grid-template-columns: minmax(0, 1fr); } }
+
 .shot-open { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+
 .shot-open img { display: block; width: 100%; }
+
 .shot-open:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
 
 /* The global `* { margin: 0 }` reset kills the UA margin:auto that centres
    native dialogs, leaving them pinned to the top-left. Restore it. */
+
 .shot-dialog { border: 0; padding: 0; margin: auto; background: transparent; width: min(1160px, 94vw); }
+
 .shot-dialog::backdrop { background: rgba(10, 9, 7, 0.84); }
+
 .shot-frame {
     background: var(--color-bg-card);
     border: 1px solid var(--color-border-light);
     border-radius: var(--radius-lg);
     overflow: hidden;
 }
+
 .shot-head {
     display: flex; justify-content: space-between; align-items: center;
     gap: var(--space-md); padding: var(--space-sm) var(--space-md);
     font-family: var(--font-mono); font-size: 0.75rem;
     color: var(--color-text-muted); border-bottom: 1px solid var(--color-border);
 }
+
 /* Close, previous and next draw SVG icons, not U+2715/2190/2192, for the same
    reason as the star: no glyph for them in the Latin subsets we ship. */
+
 .shot-close {
     display: inline-flex; align-items: center; justify-content: center;
     flex: none; min-width: 28px; min-height: 28px; cursor: pointer;
     background: none; border: 1px solid var(--color-border);
     border-radius: var(--radius-sm); color: var(--color-text-muted);
 }
+
 /* main.js hides previous/next for a set of one with the hidden attribute, which
    the display rule above would otherwise defeat. */
+
 .shot-close[hidden] { display: none; }
+
 .shot-close:hover, .shot-close:focus-visible { color: var(--color-primary); border-color: var(--color-primary); }
+
 .shot-frame img { display: block; width: 100%; height: auto; max-height: 82vh; object-fit: contain; background: #000; }
+
 @media (forced-colors: active) { .shot-frame { border: 1px solid CanvasText; } }
 
 /* The film opens the same way: centred, at double the inline card's size,
    width capped so the 16:9 box always fits the viewport height. */
+
 .video-dialog { width: min(980px, 94vw, calc((94vh - 3.5rem) * 16 / 9)); }
+
 .video-dialog .shot-head { gap: var(--space-md); }
+
 .video-dialog .shot-time { margin-left: auto; }
 
 /* ==========================================================================
@@ -2210,115 +1982,33 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
    cta-watch / cta-system / section-eyebrow rules above are dead markup-side.
    ========================================================================== */
 
-.bench {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-lg);
-}
-@media (min-width: 1100px) {
-    .bench { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: stretch; }
-}
-
-.artifact {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    max-width: none;
-    margin: 0;
-}
-
-.artifact-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-sm) var(--space-md);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-    color: var(--color-text-muted);
-    border-bottom: 1px solid var(--color-border);
-}
-.artifact-head h3 {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin: 0;
-    color: var(--color-text);
-}
 /* The Hub's status badge is this artifact's right-hand meta, the slot holding
    `bash` on the terminal and `2:02` on the film. Scaled to the head bar so all
    four bars keep one height; ink and pill are the shared badge tokens, which
    the MESHSAT-723 block already tuned for this surface. */
-.artifact-head .badge { font-size: 0.68rem; padding: 0.1rem 0.45rem; }
-
-.artifact-body {
-    padding: var(--space-md) var(--space-lg) var(--space-lg);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-    flex: 1;
-}
-.artifact-body p { margin: 0; color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.6; }
 
 /* CTAs sit on one shared baseline across the row (stretch + auto margin). */
-.artifact-body .btn-outline { width: auto; align-self: flex-start; margin-top: auto; }
 
 /* The terminal */
-.term-body {
-    padding: var(--space-md) var(--space-lg);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-    flex: 1;
-}
+
 /* Both .code-block base rules set column direction and centring; the prompt
    row resets every axis explicitly or it inherits them property by property. */
-.term-cmd {
-    background: transparent; border: 0; margin: 0; padding: 0;
-    display: flex; flex-direction: row; align-items: center;
-    justify-content: flex-start; text-align: left; gap: var(--space-md);
-}
-.term-cmd .code-block-body { padding: 0; flex: 1; min-width: 0; overflow-x: auto; }
-.term-cmd .copy-btn { flex: none; }
-.term-cmd code::before { content: "$ "; color: var(--color-text-muted); }
-.term-log {
-    margin: 0;
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    line-height: 1.7;
-    color: var(--color-text-muted);
-    white-space: pre;
-    overflow-x: auto;
-    scrollbar-width: thin; /* scrollable region, keyboard-reachable (2.1.1) */
-}
-.term-log .ok { color: var(--color-success); }
-.term-log .t { color: var(--color-text); }
-.term-foot {
-    border-top: 1px solid var(--color-border);
-    padding: var(--space-md) var(--space-lg);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-}
-.term-note { margin: 0; font-size: 0.82rem; line-height: 1.6; color: var(--color-text-muted); }
 
 /* The colophon (footer): status line left, the stack right. */
+
 .colophon {
     border-top: 1px solid var(--color-border);
     background: var(--color-bg-secondary);
     font-family: var(--font-mono);
     font-size: 0.75rem;
 }
+
 /* One band, two segments: BUILT WITH left, SUPPORTED BY right. The old
    .partners-bar gave the SIDN stamp a 200px centred stage of its own; the
    credit now sits in the system (same logo, same size, same theme swap). The
    spanning pre-release status line was removed 7 Sep 2026 (owner: invisible
    at that size, and the hero pill already says it). */
+
 .colophon-inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -2326,12 +2016,16 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     align-items: center;
     padding-block: var(--space-md);
 }
+
 .colophon-sidn { justify-self: end; }
+
 .colophon .partners-logos { display: inline-flex; align-items: center; margin: 0; }
+
 @media (max-width: 900px) {
     .colophon-inner { grid-template-columns: minmax(0, 1fr); }
     .colophon-sidn { justify-self: start; }
 }
+
 .colophon-stack {
     margin: 0;
     display: flex;
@@ -2340,7 +2034,9 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     align-items: baseline;
     color: var(--color-text-muted);
 }
+
 .colophon-label { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem; }
+
 .colophon-stack a {
     color: var(--color-text-muted);
     font-size: 0.875rem; /* owner 7 Sep 2026: the stack names read too small at 0.75rem */
@@ -2349,76 +2045,32 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
     display: inline-flex;
     align-items: center;
 }
+
 .colophon-stack a:hover,
 .colophon-stack a:focus-visible { color: var(--color-primary); }
-
-@media (forced-colors: active) {
-    .artifact { border: 1px solid CanvasText; }
-}
 
 /* not-for: explicit symmetric tracks, never an auto-fit orphan row. Cards
    stretch to row height, so a bottom rule closes every card on one line;
    the cost row-list closes with the same rule. */
-.not-for-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (min-width: 1100px) { .not-for-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-@media (max-width: 700px) { .not-for-grid { grid-template-columns: minmax(0, 1fr); } }
-.not-for-card { border-bottom: 1px solid var(--color-border-light); padding-bottom: var(--space-md); }
-.reason-grid { border-bottom: 1px solid var(--color-border-light); }
 
 /* ---------- Try it: two artifacts on one set of rails (MESHSAT-1096) ----------
    With the film gone the bench is the terminal and the phone. Both cards are
    head / body / foot, laid on a shared subgrid so the head bars, the foot rules
    and the button rows line up across the pair, whichever body is longer.
    Without subgrid support each card simply falls back to its flex column. */
-@media (min-width: 1100px) {
-    .bench { grid-template-rows: auto 1fr auto; }
-    .bench > .artifact {
-        display: grid;
-        grid-row: span 3;
-        grid-template-rows: subgrid;
-        row-gap: 0;
-    }
-}
 
 /* ---------- Films (MESHSAT-1096) ----------
    Two recordings side by side in the bench's head-bar chrome. The caption is
    running text, so it is set in the body face; the head bar stays mono. */
-.films-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-lg);
-}
-@media (min-width: 860px) {
-    .films-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-.films-grid .video-frame {
-    max-width: none;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
+
 /* The foot absorbs the difference between the two caption lengths, so both
    posters start on one line and both frames close on one line. */
-.films-grid .video-foot {
-    flex: 1;
-    font-family: var(--font-sans);
-    font-size: 0.875rem;
-    line-height: 1.6;
-    padding: var(--space-sm) var(--space-md) var(--space-md);
-}
 
 /* ---------- Hero lead line (MESHSAT-1096) ----------
    The eyebrow now carries the page's first sentence, the islands thesis, so it
    is set to be read: sentence case at reading size, no tracking. An uppercase
    tracked label at 0.75rem was fine for six words and a shout for fourteen.
    The H1 stays the typographic event beneath it. */
-.hero-label {
-    text-transform: none;
-    letter-spacing: 0;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    max-width: 46ch;
-}
 
 /* ---------- Islands (MESHSAT-1096) ----------
    The problem before the mechanism. Left: a dated record of real failures,
@@ -2426,146 +2078,50 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
    the trace's own interface IDs (same sand as .trace-if), with an honest state
    under every route. Same 5fr / 6fr seam as the section head; hairlines, not
    cards. */
-.islands-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-2xl) var(--space-3xl);
-    align-items: start;
-}
-@media (min-width: 960px) {
-    .islands-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
-}
-.islands-h {
-    padding-top: var(--space-md);
-    border-top: 1px solid var(--color-border-light);
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--color-text);
-}
-.incidents,
-.joins { list-style: none; margin: 0; padding: 0; }
-
-.incident {
-    display: grid;
-    grid-template-columns: 4.5rem minmax(0, 1fr);
-    gap: var(--space-md);
-    padding-block: var(--space-md);
-    border-bottom: 1px solid var(--color-border);
-}
-.incident-when {
-    display: block;
-    padding-top: 0.12rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    font-variant-numeric: tabular-nums;
-    color: var(--color-text-muted);
-}
-.incident p {
-    margin: 0;
-    font-size: 0.92rem;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-}
-.incident strong { font-weight: 600; color: var(--color-text); }
-.incident a { color: var(--color-text-muted); text-decoration: underline; }
-.incident a:hover { color: var(--color-primary); }
-
-.join {
-    display: grid;
-    gap: var(--space-xs);
-    padding-block: var(--space-md);
-    border-bottom: 1px solid var(--color-border);
-}
-.incident:last-child,
-.join:last-child { border-bottom: 0; padding-bottom: 0; }
-.join-h { margin: 0; font-size: 0.95rem; font-weight: 600; color: var(--color-text); }
-.join-route {
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--space-xs) var(--space-sm);
-    font-family: var(--font-mono);
-    font-size: 0.95rem;
-}
-.join-route code {
-    font-family: inherit;
-    font-size: inherit;
-    color: var(--color-accent);
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    padding: 0.05rem 0.5rem;
-}
-.join-arrow { color: var(--color-text-muted); }
-.join-state { margin: 0; font-size: 0.85rem; line-height: 1.55; color: var(--color-text-muted); }
 
 /* Who it is for closes the joins column rather than spanning under both: the
    record is the longer column, and a full-width line under it left the joins
    column a 300px hole and a hairline that stopped mid-page. */
-.islands-who {
-    margin: var(--space-xl) 0 0;
-    padding-top: var(--space-md);
-    border-top: 1px solid var(--color-border-light);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--color-text-muted);
-}
+
 /* On a phone the date column costs a third of the measure; the date moves
    above its entry instead, like a log line's timestamp. */
-@media (max-width: 640px) {
-    .incident { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); }
-    .incident-when { padding-top: 0; }
-}
 
 /* Both columns close on one line, the workbench rule (MESHSAT-735): the grid
    stretches, and the who line pins to the shared bottom edge, so any spare
    height sits between the routes and that line rather than under a column. */
-@media (min-width: 960px) {
-    .islands-grid { align-items: stretch; }
-    .islands-col { display: flex; flex-direction: column; }
-    /* The spare height is shared by the three routes as equal bands, content
-       centred in each, rather than left as one hole above the who line (tried:
-       its rule then landed 38px off the record's last row rule, a near miss). */
-    .islands-col .joins { flex: 1; display: flex; flex-direction: column; margin-bottom: var(--space-xl); }
-    .islands-col .join { flex: 1; align-content: center; }
-    .islands-col .join:last-child { padding-bottom: var(--space-md); }
-    .islands-who { margin-top: auto; }
-    /* Side by side, only the two heading rules may cross the seam: they align
-       exactly. Rules between routes landed 6 to 38px off the record's row rules
-       beside them, so at two columns the routes are separated by space alone. */
-    .islands-col .join,
-    .islands-who { border: 0; }
-}
-@media (min-width: 960px) and (forced-colors: active) {
-    .islands-who { border-top: 1px solid CanvasText; }
-}
-@media (forced-colors: active) {
-    .join-route code { border-color: CanvasText; }
-}
 
 /* ---------- Screenshots: four thumbnails and a stepping lightbox (MESHSAT-1101) ----------
    Evidence thumbnails, so four across on a desktop rather than two rows of large
    cards; the lightbox carries the detail at 2x. The caption is a figcaption now
    and takes over the two older `.screenshot-card p` rules. The hover lift and
    glow go: a click-to-zoom thumbnail signals with its border and the cursor. */
+
 .screenshots-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); }
+
 @media (min-width: 1100px) { .screenshots-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
 @media (max-width: 560px) { .screenshots-grid { grid-template-columns: minmax(0, 1fr); } }
+
 .screenshot-card { margin: 0; display: flex; flex-direction: column; }
+
 .screenshot-card:hover { transform: none; box-shadow: none; }
+
 .screenshot-card figcaption {
     padding: var(--space-sm) var(--space-md) var(--space-md);
     color: var(--color-text-muted);
     font-size: 0.85rem;
     line-height: 1.55;
 }
+
 .shot-head #shot-caption { flex: 1; min-width: 0; }
+
 .shot-count { flex: none; font-variant-numeric: tabular-nums; }
+
 .shot-nav { font-size: 0.95rem; line-height: 1; }
+
 /* On a phone the caption takes its own row under the counter and buttons,
    instead of being squeezed to a 180px column beside them. */
+
 @media (max-width: 560px) {
     .shot-head { flex-wrap: wrap; }
     .shot-head #shot-caption { order: 2; flex-basis: 100%; }
@@ -2579,120 +2135,41 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
    The roadmap is dashed and muted. Stubs are pseudo-elements, so assistive
    technology reads two plain lists and a caption. Below 900px the stubs go and
    the rows simply wrap around the bus. */
-.fabric {
-    --fab-gap: var(--space-lg);
-    margin: 0 0 var(--space-xl);
-    padding: var(--space-xl) var(--space-xl) var(--space-lg);
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-}
-.fabric-row {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: var(--space-sm);
-}
-.fabric-top { grid-template-columns: repeat(auto-fit, minmax(min(7.5rem, 100%), 1fr)); }
-.fabric-bottom { grid-template-columns: repeat(auto-fit, minmax(min(7.5rem, 100%), 1fr)); }
-.fabric-node {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.1rem;
-    padding: 0.45rem 0.5rem;
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-sm);
-    background: var(--color-bg);
-    text-align: center;
-    min-width: 0;
-}
-.fabric-node code {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--color-accent);
-}
-.fabric-node span { font-size: 0.8rem; color: var(--color-text); }
-.fabric-node.is-future { border-style: dashed; background: transparent; }
-.fabric-node.is-future span { font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-muted); }
-.fabric-node em { font-style: normal; font-size: 0.72rem; color: var(--color-text-muted); }
 
-.fabric-bus {
-    margin: var(--fab-gap) 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: center;
-    gap: 0.2rem var(--space-md);
-    padding: 0.55rem var(--space-md);
-    border-block: 1px solid var(--color-primary);
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--color-text);
-    text-align: center;
-}
 /* The router token is body ink, not orange: orange text on the orange tint
    failed 1.4.3 in both themes (axe). The orange stays on the bus rules, where
    3:1 non-text contrast is the bar. */
-.fabric-bus code { font-family: inherit; font-weight: 600; color: var(--color-text); }
-
-.fabric figcaption {
-    margin-top: var(--space-lg);
-    max-width: 72ch;
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-}
 
 /* Stubs from each node to the bus, only where the rows do not wrap. */
-@media (min-width: 900px) {
-    .fabric-top { grid-template-columns: repeat(8, minmax(0, 1fr)); }
-    .fabric-bottom { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: calc(3 / 8 * 100%); margin-inline: auto; }
-    .fabric-top .fabric-node::after,
-    .fabric-bottom .fabric-node::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        height: var(--fab-gap);
-        border-left: 1px solid var(--color-border-light);
-    }
-    .fabric-top .fabric-node::after { top: 100%; }
-    .fabric-bottom .fabric-node::before { bottom: 100%; }
-    .fabric-top .fabric-node.is-future::after { border-left-style: dashed; }
-}
+
 /* On a phone the panel's inner padding gives the chips their room back, and
    the three integrations share one row instead of orphaning webhook_0. */
-@media (max-width: 560px) {
-    .fabric { padding: var(--space-md); }
-    .fabric-bottom { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .fabric-node { padding-inline: 0.25rem; }
-    .fabric-node code { font-size: 0.78rem; }
-}
-@media (forced-colors: active) {
-    .fabric-bus { border-color: CanvasText; }
-}
 
 /* Headings: display type inherited body leading (1.6), so every two-line
    section title stood ~53px line to line at 34px. Balanced wrapping stops a
    single word stranding on the last line ("islands", "ours", "Bridge"). */
+
 h1, h2, h3 { text-wrap: balance; }
+
 .section-title,
 .page-title,
 .page-content h1,
 .install-page h1 { line-height: 1.2; }
+
 p, li, dd, figcaption { text-wrap: pretty; }
 
 /* One sans scale, four steps, instead of ten sizes between 13 and 18px:
    14px captions and notes under media, 15px card and table text, 16px body,
    18px lead. */
+
 .section-subtitle { font-size: 1.125rem; }
+
 .term-note,
 .join-state,
 .fabric figcaption,
 .screenshot-card figcaption,
 .films-grid .video-foot { font-size: 0.875rem; }
+
 .not-for-card p,
 .incident p,
 .reason-card p,
@@ -2703,6 +2180,7 @@ p, li, dd, figcaption { text-wrap: pretty; }
 .funding-note,
 .data-table th,
 .data-table td { font-size: 0.9375rem; }
+
 @media (max-width: 640px) {
     .section-subtitle { font-size: 1rem; line-height: 1.6; }
     .data-table th,
@@ -2715,91 +2193,70 @@ p, li, dd, figcaption { text-wrap: pretty; }
    the diagram's "not built" (11.5px). The pill is a squared tag, not a
    capsule, because its sentence wraps to two lines at most widths, and a
    two-line capsule reads as a mistake. */
-.hero-status {
-    font-size: 0.8rem;
-    letter-spacing: 0.02em;
-    border-radius: var(--radius-md);
-    text-wrap: balance;
-}
-.trace-foot { font-size: 0.78rem; }
-.fabric-node em { font-size: 0.75rem; }
 
 /* One card heading: display mono, 600, body ink, 1.05rem. "What it is not"
    was sans 700 in --color-warning, a state colour used as decoration and a
    different orange from the brand's. */
-.not-for-card h3,
-.reason-card h3,
-.host-body h3 {
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--color-text);
-}
 
 /* "What it is not" on one column drew a bottom rule and the next card's top
    rule 32px apart: two lines for one boundary. */
-@media (max-width: 700px) {
-    .not-for-card { border-bottom: 0; }
-    .not-for-card:last-child { border-bottom: 1px solid var(--color-border-light); }
-}
 
 /* The hero on a phone ended in ~95px of empty photograph. */
-@media (max-width: 1099px) {
-    .hero-content { padding-block: var(--space-3xl) var(--space-2xl); }
-}
 
 /* Footer on a phone: three stacked link lists ran ~550px; two columns. */
+
 @media (max-width: 640px) {
     .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xl) var(--space-lg); }
     .footer-brand { grid-column: 1 / -1; }
 }
 
 /* Short pages (404) left a band of page ground under the footer. */
+
 body { min-height: 100vh; display: flex; flex-direction: column; }
+
 main { flex: 1 0 auto; }
 
 /* Prose ran 800 to 1128px wide at 16px: 90 to 127 characters a line. Tables
    keep the full width; running text stops near 75. */
+
 .page-content :is(p, ul, ol, h2, h3, blockquote) { max-width: 66ch; }
+
 .page-content h2 { margin-top: var(--space-2xl); margin-bottom: var(--space-sm); line-height: 1.25; }
+
 .page-content h3 { margin-top: var(--space-xl); margin-bottom: var(--space-xs); line-height: 1.3; }
+
 .page-content table { margin-bottom: var(--space-lg); }
+
 .page-content li { margin-bottom: var(--space-xs); }
 
 /* Code blocks with a header: the base .code-block centres its children in a
    column, so the header shrank to a tab around "Quick Install" and its Copy
    button (on /install/ and /security/). */
+
 .code-block > .code-block-header,
 .code-block > .code-block-header + .code-block-body { align-self: stretch; text-align: left; }
 
 /* /install/ centred its title and install block over left-aligned content.
    Ranged left like every other page. */
+
 .install-page .page-title { text-align: left; }
+
 .install-page .container > .section-subtitle { text-align: left; margin-inline: 0; max-width: 66ch; margin-bottom: var(--space-xl); }
+
 .install-hero { margin: 0 0 var(--space-2xl); max-width: 40rem; }
+
 .install-hero .table-note { margin-inline: 0; }
 
 /* ---------- The Hub: your servers or ours (MESHSAT-1103 redesign) ----------
    Two artifacts on one set of rails (the Try it bench's subgrid): head,
    readout, one primary action each. */
+
 #plans { scroll-margin-top: 5rem; }
-.host-bench {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-lg);
-}
-@media (min-width: 900px) {
-    .host-bench { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto 1fr auto; }
-    .host-bench > .artifact { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; }
-}
-.host-section .hero-actions { justify-content: flex-start; margin-bottom: 0; }
-.host-body { gap: var(--space-sm); }
-.host-body > p { font-size: 0.9375rem; }
-.host-body > .host-note { font-size: 0.875rem; line-height: 1.6; margin-top: var(--space-xs); }
 
 /* Label / value rows. The value is the data, so it takes the mono. */
+
 .readout { margin: var(--space-sm) 0 0; }
+
 .readout > div {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -2808,11 +2265,15 @@ main { flex: 1 0 auto; }
     padding-block: 0.6rem;
     border-top: 1px solid var(--color-border);
 }
+
 .readout > div:last-child { border-bottom: 1px solid var(--color-border); }
+
 .readout dt { font-size: 0.9375rem; color: var(--color-text-muted); }
+
 .readout dd { margin: 0; font-family: var(--font-mono); font-size: 0.9rem; color: var(--color-text); text-align: right; }
 
 .readout-table { width: 100%; border-collapse: collapse; margin-top: var(--space-sm); }
+
 .readout-table th,
 .readout-table td {
     padding: 0.6rem 0;
@@ -2821,19 +2282,23 @@ main { flex: 1 0 auto; }
     vertical-align: baseline;
     font-weight: 400;
 }
+
 .readout-table thead th {
     padding-top: 0;
     font-size: 0.8125rem;
     color: var(--color-text-muted);
     border-bottom-color: var(--color-border-light);
 }
+
 .readout-table tbody th {
     font-family: var(--font-display);
     font-size: 0.9375rem;
     font-weight: 600;
     color: var(--color-text);
 }
+
 .readout-table .num { text-align: right; padding-left: var(--space-md); }
+
 .readout-table td.count {
     font-family: var(--font-mono);
     font-variant-numeric: tabular-nums;
@@ -2841,9 +2306,13 @@ main { flex: 1 0 auto; }
     font-weight: 600;
     color: var(--color-text);
 }
+
 .readout-table td:last-child { font-size: 0.9375rem; color: var(--color-text-muted); }
+
 .readout-table a { color: var(--color-text-muted); text-decoration: underline; text-underline-offset: 0.18em; }
+
 .readout-table a:hover { color: var(--color-primary); }
+
 @media (max-width: 480px) {
     .readout-table thead th { font-size: 0.75rem; }
     .readout > div { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
@@ -2853,14 +2322,18 @@ main { flex: 1 0 auto; }
 /* ---------- 404 ----------
    The page had no styles at all: icon, heading, text and button stacked flush,
    the button touching the footer rule. */
+
 .error-page { padding-block: var(--space-4xl); }
+
 .error-content { max-width: 40rem; }
+
 .error-code {
     font-family: var(--font-mono);
     font-size: 0.875rem;
     color: var(--color-text-muted);
     margin-bottom: var(--space-sm);
 }
+
 .error-title {
     font-family: var(--font-display);
     font-size: clamp(2rem, 6vw, 3rem);
@@ -2869,7 +2342,9 @@ main { flex: 1 0 auto; }
     line-height: 1.1;
     margin-bottom: var(--space-md);
 }
+
 .error-detail { color: var(--color-text-muted); font-size: 1.125rem; margin-bottom: var(--space-lg); }
+
 .error-log {
     font-family: var(--font-mono);
     font-size: 0.85rem;
@@ -2884,40 +2359,26 @@ main { flex: 1 0 auto; }
     flex-wrap: wrap;
     gap: 0.25rem var(--space-md);
 }
-.error-log .trace-if { color: var(--color-accent); }
-.error-log .trace-state.fail { color: var(--color-error); font-weight: 600; margin-left: auto; }
-.error-page .hero-actions { justify-content: flex-start; margin-bottom: 0; }
+
 /* The 404 block aligns to the site's left gutter like every other page head,
    instead of a narrow column centred at x=424. */
+
 .error-content { max-width: 1200px; }
+
 .error-content > * { max-width: 40rem; }
 
 /* The last text under 12px: the head-bar badge (10.9px), the trace header
    (11.2px) and the phone trace (10.6 to 11.5px). */
-.artifact-head .badge { font-size: 0.75rem; }
-.trace-head { font-size: 0.75rem; }
-@media (max-width: 640px) {
-    .trace { font-size: 0.8rem; }
-    .trace-head { font-size: 0.75rem; }
-    .trace-state { font-size: 1em; }
-}
+
 /* 66ch of Plex Sans still ran 85 to 92 characters; 60ch sits near 75. */
+
 .page-content :is(p, ul, ol, h2, h3, blockquote) { max-width: 60ch; }
-.term-note { max-width: 60ch; }
+
 /* One column of "What it is not": the rule now carries the separation, so the
    gap only needs to clear it. */
-@media (max-width: 700px) {
-    .not-for-grid { row-gap: var(--space-lg); }
-}
+
 /* Airtime applies to both deployments, so it is said once under both cards,
    which also stops the hosted card's note leaving the other card half empty. */
-.host-shared {
-    margin: var(--space-md) 0 0;
-    max-width: 66ch;
-    font-size: 0.875rem;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-}
 
 /* ---------- Hub screens and the phone (MESHSAT-1251) ----------
    The Hub section opens with three of its own screens, spanning both
@@ -2926,8 +2387,7 @@ main { flex: 1 0 auto; }
    Android card shows its Home screen beside the text: a phone screen, not a
    drawn phone, cropped above the SOS card. Both reuse the evidence-thumbnail
    chrome and the one lightbox; each set steps on its own. */
-.hub-shots { margin-top: 0; }
-@media (min-width: 700px) { .hub-shots { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
 .hub-shots-note {
     margin: var(--space-md) 0 var(--space-xl);
     max-width: 66ch;
@@ -2936,67 +2396,24 @@ main { flex: 1 0 auto; }
     color: var(--color-text-muted);
 }
 
-.and-body { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: var(--space-md); }
-@media (min-width: 440px) {
-    .and-body { grid-template-columns: minmax(0, 1fr) minmax(0, 10rem); column-gap: var(--space-lg); align-items: start; }
-}
-.and-shot { margin: 0; max-width: 10rem; }
-.and-shot .shot-open {
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    background: #000;
-}
-.and-shot figcaption {
-    margin-top: var(--space-sm);
-    font-size: 0.875rem;
-    line-height: 1.5;
-    color: var(--color-text-muted);
-}
-@media (forced-colors: active) { .and-shot .shot-open { border-color: CanvasText; } }
-
 /* A portrait screen in the lightbox: the frame hugs the image instead of
    letterboxing it in a landscape box. A dialog sized to its content would take
    the image's intrinsic width, so the width is set from the aspect ratio that
    main.js reads off the thumbnail (--shot-ratio, width / height). */
+
 .shot-dialog.is-portrait { width: min(94vw, calc(82vh * var(--shot-ratio, 0.62) + 2px)); }
+
 .shot-dialog.is-portrait .shot-frame img { width: 100%; max-height: 82vh; }
 
 /* ---------- A button that leads with an icon (MESHSAT-1340) ----------
    The Google Play button on the Android card. The glyph takes the button's
    ink, so it follows the hover colour and forced-colors with the label. */
+
 .btn-icon { gap: 0.5rem; }
+
 .btn-icon svg { flex-shrink: 0; }
 
 /* First steps stay ahead of the routing trace on small screens. */
-.hero-paths {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.5rem;
-}
-.hero-paths a {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    padding: 0.65rem;
-    min-height: 44px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    background: var(--color-bg-secondary);
-    color: var(--color-text);
-    text-decoration: none;
-}
-.hero-paths a:hover { border-color: var(--color-primary); }
-.hero-paths strong { color: var(--color-primary); font-size: 1rem; }
-.hero-paths span { font-size: 0.8rem; line-height: 1.45; }
-.hero-demo { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; margin-block: 0.35rem; }
-.hardware-start { margin: 0 0 var(--space-md); }
-@media (max-width: 480px) {
-    .hero-paths { grid-template-columns: minmax(0, 1fr); }
-    .hero-paths a { flex-direction: row; align-items: baseline; gap: 0.75rem; }
-    .hero-paths strong { flex: 0 0 4.5rem; }
-    .hero-paths span { min-width: 0; }
-}
 
 /* ---------- Channel status codes (MESHSAT-1498) ----------
    Five codes say where a channel stands: LIVE, CODE, BENCH, COMING SOON,
@@ -3007,6 +2424,7 @@ main { flex: 1 0 auto; }
    only an outline (solid: the code exists; dashed and dotted: it does not run
    anywhere yet). The neutral inks are the body and muted tokens, which pass
    AA on the page ground in both themes; these pills have no tint to composite. */
+
 .badge-token {
     font-family: var(--font-mono);
     font-size: 0.75rem;
@@ -3015,8 +2433,11 @@ main { flex: 1 0 auto; }
     white-space: nowrap;
     border: 1px solid transparent;
 }
+
 .badge-code { background: transparent; color: var(--color-text); border-color: var(--color-border-light); }
+
 .badge-soon { background: transparent; color: var(--color-text-muted); border: 1px dashed currentColor; }
+
 .badge-plan { background: transparent; color: var(--color-text-muted); border: 1px dotted currentColor; }
 
 /* The channel table: one row per category, the codes running inline ahead of
@@ -3024,68 +2445,21 @@ main { flex: 1 0 auto; }
    and its names stay together when the line breaks; on a phone they flow as
    text, and a no-break space keeps a code on the line of its first name. The row header is a th for assistive technology and looks like the
    old category cell. */
-.chan-table tbody th {
-    background: none;
-    font-weight: inherit;
-    white-space: normal;
-    border-bottom: 1px solid var(--color-border);
-}
-.chan-table tbody tr:last-child th { border-bottom: none; }
-.chan-table tbody th,
-.chan-table td { vertical-align: baseline; line-height: 1.75; }
-.chan-group:not(:last-child) { margin-inline-end: 0.9rem; }
-.chan-names a {
-    color: var(--color-text);
-    text-decoration: underline;
-    text-decoration-color: var(--color-text-muted);
-    text-underline-offset: 0.18em;
-    text-decoration-thickness: from-font;
-}
-.chan-names a:hover { color: var(--color-primary); text-decoration-color: currentColor; }
-@media (min-width: 700px) {
-    .chan-table tbody th { width: 11rem; }
-    .chan-group { display: inline-block; }
-}
+
 /* On a phone the column heads cost a row and say nothing the row headers do
    not; they stay in the accessibility tree and leave the layout. */
-@media (max-width: 640px) {
-    .data-table.chan-table { min-width: 0; }
-    .chan-table tbody th { width: 5.5rem; }
-    .chan-table thead {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip-path: inset(50%);
-        white-space: nowrap;
-    }
-}
-
-.chan-legend {
-    list-style: none;
-    margin: var(--space-md) 0 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem var(--space-lg);
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-}
-.chan-legend li { white-space: normal; }
-@media (max-width: 640px) {
-    .chan-legend { display: block; line-height: 1.75; }
-    .chan-legend li { display: inline; margin-inline-end: 0.9rem; }
-}
 
 /* Header: the text links sat 5px above the logo, the Hub button and the
    toggles. The list stretched its items to the button's height and an inline
    link sits at the top of its item. The phone menu is a column: leave it. */
+
 @media (min-width: 769px) {
     .nav-links { align-items: center; }
 }
+
 /* Greek navigation needs the compact menu at tablet widths to keep the
    longer labels clear of the logo and language/theme controls. */
+
 @media (min-width: 769px) and (max-width: 1099px) {
     html[lang="el"] .menu-toggle { display: flex; }
     html[lang="el"] .nav-links {
@@ -3103,11 +2477,14 @@ main { flex: 1 0 auto; }
     }
     html[lang="el"] .nav-links.active { display: flex; }
 }
+
 /* The page you are on, for menu links that are pages rather than anchors. */
+
 .nav-links a[aria-current="page"] { color: var(--color-primary); }
 
 /* Light theme: the translucent header let the screenshots and headings behind
    it show through as grey shapes under the nav. */
+
 [data-theme="light"] .site-header { background: var(--color-bg-secondary); }
 
 /* Hero below 1100px: a centred 46rem column started 120 to 144px in from the
@@ -3115,11 +2492,6 @@ main { flex: 1 0 auto; }
    centred the paths, the film link and the chips inside it, 72px right of the
    headline. Range the whole hero on the page gutter; the lead keeps its own
    measure. */
-@media (max-width: 1099px) {
-    .hero-content { max-width: 1200px; }
-}
-.hero-subtitle,
-.hero-install { margin-inline: 0; }
 
 /* The headline's second line balances on its own. As an inline span after a
    <br> it was not balanced, and nl left one word on a third line. A line of
@@ -3128,45 +2500,21 @@ main { flex: 1 0 auto; }
    length as --hl-chars and the headline shrinks just enough for it to fit:
    Plex Mono advances 0.6em a character, 0.56em with the -0.04em tracking.
    Where it already fits, min() keeps the size it had. */
-.hero-title .highlight { display: block; text-wrap: balance; }
-.hero-title { container-type: inline-size; }
-.hero-title-fit { display: block; }
-.hero-title[style*="--hl-chars"] .hero-title-fit {
-    font-size: min(1em, calc(100cqi / (var(--hl-chars) * 0.56 + 0.3)));
-    letter-spacing: -0.04em;
-}
 
 /* Balanced lines left the right half of the pill empty wherever the box is
    wider than the text; pretty fills the first line and still keeps the last
    word company. */
-.hero-status { text-wrap: pretty; }
 
 /* A protocol name never breaks at its own hyphen ("Cursor-" / "on-Target"). */
-.trace-term { white-space: nowrap; }
 
 /* Channel table from 700px: a code group is an inline-block, whose baseline
    is its LAST line, so a row header sat on the second line of a wrapped
    group ("Radio" at 768px). Top-align the group so the first line leads. */
-@media (min-width: 700px) {
-    .chan-group { vertical-align: top; }
-}
 
 /* Phone legend: one code per line. Run as text, each description wrapped and
    the next code landed after a lone word ("today", "kit", "yet"). The spacing
    around it is trimmed so the section stays the height it was (en, de, fr
    +7px, nl and el -16px at 390). */
-@media (max-width: 640px) {
-    .chan-legend {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.1rem;
-        line-height: 1.5;
-        margin-top: var(--space-sm);
-    }
-    .chan-legend li { display: block; margin: 0; }
-    .chan-legend + .table-note { margin-top: 0.75rem; }
-}
 
 /* Try it on a phone: the command was cut mid-URL ("https://get.ı") beside the
    Copy button, with nothing to say it scrolls. A command you pipe into sudo is
@@ -3175,6 +2523,7 @@ main { flex: 1 0 auto; }
    on the right edge while there is more to the right. The shade is scrolling
    shadow (background-attachment scroll) under a cover that travels with the
    content (local) and hides it at the end. */
+
 @media (max-width: 560px) {
     .term-cmd { flex-wrap: wrap; row-gap: var(--space-sm); }
     .term-cmd .copy-btn { order: -1; margin-left: auto; }
@@ -3195,133 +2544,35 @@ main { flex: 1 0 auto; }
    1024 with a 160px phone screen beside four lines of text: about 250px empty
    under the text. The terminal column is narrower here, so its command goes
    under Copy as on a phone. */
-@media (min-width: 960px) and (max-width: 1099px) {
-    .bench {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: auto 1fr auto;
-        align-items: stretch;
-    }
-    .bench > .artifact {
-        display: grid;
-        grid-row: span 3;
-        grid-template-rows: subgrid;
-        row-gap: 0;
-    }
-    .term-cmd { flex-wrap: wrap; row-gap: var(--space-sm); }
-    .term-cmd .copy-btn { order: -1; margin-left: auto; }
-    .term-cmd .code-block-body { flex: 1 1 100%; }
-}
+
 /* Below that, in one column (700 to 959px): the text spans the card and the
    screen and its caption sit in a row under it, instead of the screen standing
    beside a short paragraph with the space under the text left empty. */
-@media (min-width: 700px) and (max-width: 959px) {
-    .and-body { grid-template-columns: minmax(0, 1fr); }
-    .and-shot {
-        max-width: none;
-        display: grid;
-        grid-template-columns: 10rem minmax(0, 32ch);
-        column-gap: var(--space-lg);
-        align-items: end;
-    }
-    .and-shot figcaption { margin-top: 0; }
-}
 
 /* Footer: SUPPORTED BY sat on the logos' baseline, 8px below BUILT WITH and
    under the logos' centre line. And where the two halves do not fit side by
    side (below about 1100px in English, at 1440px in Dutch), the grid broke the
    BUILT WITH list instead ("Docker" alone on a second line): as a wrapping
    row, SUPPORTED BY moves to its own line whole. */
+
 .colophon-sidn { align-items: center; }
+
 .colophon-inner { display: flex; flex-wrap: wrap; justify-content: space-between; }
 
 /* Content-page tables on a phone: a link or code without a break point (the
    Matrix room on /security/) made the table wider than its box and clipped
    the cells at the right edge. */
+
 .data-table td a,
 .data-table td code { overflow-wrap: anywhere; }
+
 /* Content pages: a table's bottom margin sat inside its bordered scroll box,
    an empty band under the last row, and the paragraph after the box touched
    it (/security/). The margin belongs outside the box. */
-.page-content .table-wrap > table { margin-bottom: 0; }
-.page-content .table-wrap { margin-bottom: var(--space-lg); }
 
-/* How we build: the workshop photographs lead the account (MESHSAT-1607). */
-.build-page :is(h1, h2, h3) { font-family: var(--font-display); line-height: 1.2; text-wrap: balance; }
-.build-page h2 { font-size: 1.75rem; letter-spacing: -0.025em; }
-.build-page h3 { font-size: 1.05rem; margin-block: var(--space-xl) var(--space-sm); }
-.build-page p { max-width: 60ch; }
-.build-intro { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; padding-block: var(--space-2xl); }
-.build-intro h1 { font-size: clamp(3rem, 5vw, 5rem); letter-spacing: -0.045em; }
-.build-intro h1 span { display: block; font-size: 0.45em; letter-spacing: -0.02em; margin-bottom: var(--space-xs); }
-.build-lead { font-size: 1.125rem; }
-.build-jump { display: inline-flex; gap: var(--space-sm); align-items: center; padding-block: var(--space-sm); margin-top: var(--space-sm); }
-.build-jump svg { flex: none; transition: transform 180ms ease; }
-.build-jump:hover svg { transform: translateY(3px); }
-.build-photo { margin: 0; }
-.build-photo-open { position: relative; overflow: hidden; }
-.build-photo-open img { transition: transform 300ms ease; }
-.build-photo-open:hover img { transform: scale(1.015); }
-.build-photo-hero .build-photo-open { height: clamp(250px, 30vw, 430px); }
-.build-photo-hero img { height: 100%; object-fit: cover; object-position: 50% 35%; }
-.build-photo figcaption { padding-block: var(--space-sm); color: var(--color-text-muted); font-size: 0.875rem; line-height: 1.6; }
-.build-photo figcaption span { white-space: nowrap; }
-.build-photo-zoom { position: absolute; right: var(--space-sm); bottom: var(--space-sm); display: grid; place-items: center; width: 36px; height: 36px; background: var(--color-bg); color: var(--color-text); border: 1px solid var(--color-border-light); }
-.build-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--space-3xl); padding-block: var(--space-3xl); border-top: 1px solid var(--color-border-light); scroll-margin-top: 90px; }
-.build-hero + .build-section { border-top: 0; }
-.build-section-heading { align-self: start; position: sticky; top: 100px; }
-.build-section-heading h2 { max-width: 17ch; }
-.build-mascot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: var(--space-lg); align-items: center; margin-top: var(--space-xl); }
-.build-mascot h3 { margin-top: 0; }
-.build-note { margin-top: var(--space-md); font-size: 0.875rem; color: var(--color-text-muted); }
-.build-detail { min-width: 0; }
-.build-detail > :is(p, ul, ol, .table-wrap) { margin-bottom: var(--space-lg); }
-.build-page ul { padding-left: 1.2em; max-width: 60ch; }
-.build-page li { margin-bottom: var(--space-sm); }
-.build-detail > :last-child { margin-bottom: 0; }
-.build-page .table-wrap { border: 0; border-radius: 0; box-shadow: none; }
-.build-table { width: 100%; min-width: 0; table-layout: fixed; margin: 0; font-size: 0.9375rem; }
-.build-table th { width: 58%; font-weight: 500; background: none; }
-.build-table td { font-variant-numeric: tabular-nums; }
-.build-table :is(th, td) { padding: var(--space-sm) var(--space-md); vertical-align: top; white-space: normal; overflow-wrap: anywhere; }
-.build-table th:first-child { padding-left: 0; }
-.build-table td:last-child { padding-right: 0; }
-.build-table tr:last-child th { border-bottom: 0; }
-.build-status-list { margin-block: var(--space-xl); }
-.build-status-list > div { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: var(--space-lg); border-top: 1px solid var(--color-border-light); padding-block: var(--space-md); }
-.build-status-list dt { font-family: var(--font-mono); font-size: 0.875rem; font-weight: 600; }
-.build-status-list dd { font-size: 0.9375rem; }
-.build-prototype { border-left: 3px solid var(--color-primary); padding-left: var(--space-lg); }
-.build-prototype strong { display: block; margin-bottom: var(--space-xs); }
-.build-hands .build-section-heading ul { margin-top: var(--space-lg); }
-.build-portrait { max-width: 440px; justify-self: end; width: 100%; }
-.build-contact { background: var(--color-bg-secondary); border-top: 1px solid var(--color-border-light); padding-block: var(--space-3xl); }
-.build-contact .container { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-lg); }
-.build-contact a { font-size: 1.125rem; padding-block: var(--space-sm); }
-@media (prefers-reduced-motion: no-preference) {
-    .build-intro { animation: build-enter 450ms ease-out both; }
-    .build-photo-hero { animation: build-enter 550ms 80ms ease-out both; }
-    @keyframes build-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-}
-@media (max-width: 700px) {
-    .build-intro { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); padding-block: var(--space-xl); }
-    .build-intro h1 { font-size: 3.5rem; }
-    .build-lead { font-size: 1rem; }
-    .build-photo-hero .build-photo-open { height: auto; }
-    .build-photo-hero img { height: auto; }
-    .build-section { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); padding-block: var(--space-2xl); }
-    .build-section-heading { position: static; }
-    .build-section-heading h2 { max-width: 22ch; }
-    .build-page h2 { font-size: 1.5rem; }
-    .build-status-list > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); }
-    .build-mascot { grid-template-columns: minmax(0, 1fr); }
-    .build-portrait { justify-self: start; }
-    .build-table :is(th, td) { padding-inline: var(--space-sm); }
-    .build-contact { padding-block: var(--space-2xl); }
-}
-@media (prefers-reduced-motion: reduce) {
-    .build-section-heading { position: static; }
-    .build-photo-open img, .build-jump svg { transition: none; transform: none; }
-}
+.page-content .table-wrap > table { margin-bottom: 0; }
+
+.page-content .table-wrap { margin-bottom: var(--space-lg); }
 
 /* ---------- Review, 21 Oct 2026 (MESHSAT-1610) ----------
    The star count and the visitor chip arrive after two fetches and re-wrapped
@@ -3329,18 +2580,17 @@ main { flex: 1 0 auto; }
    two columns the row reserves its two-line height, so the films section never
    moves. Below 1100px the row stacks anyway and the chips land before first
    paint. */
-@media (min-width: 1100px) {
-    .hero-repo { min-height: calc(2 * 41px + 0.5rem); }
-}
-
 
 /* The language menu also opens from its button (click, tap, Enter), see
    main.js; the hover and focus-within paths above stay. */
+
 .lang-switch.is-open .lang-menu { opacity: 1; visibility: visible; transform: none; }
+
 .lang-switch.is-open .lang-btn { color: var(--color-primary); border-color: var(--color-primary); }
 
 /* An in-page anchor moves focus to its section so assistive technology lands
    there; a region focused by script needs no ring of its own. */
+
 #main-content:focus,
 :where(section, div, figure)[tabindex="-1"]:focus { outline: none; }
 
@@ -3348,39 +2598,39 @@ main { flex: 1 0 auto; }
    The Bridge path is the hero's primary action (owner, 21 Oct 2026): filled
    with the brand orange, ink per the shared rule (white in light, the page
    ground in dark); Android and Hub stay outline cards. */
-.hero-paths a:first-child {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
-    color: #FFFFFF;
-}
-.hero-paths a:first-child strong { color: inherit; }
-.hero-paths a:first-child:hover { filter: brightness(1.08); }
-:root[data-theme="dark"] .hero-paths a:first-child { color: var(--color-bg); }
-@media (forced-colors: active) {
-    .hero-paths a:first-child { forced-color-adjust: none; background: Highlight; color: HighlightText; border-color: Highlight; }
-}
 
 /* Below the two-column hero the trace follows the status pill, before the
    three paths and the chips, so the page's signature element is on the first
    screen (owner, 21 Oct 2026). A flex column for the order property; the
    margins that block flow collapsed are set by hand so the hero keeps its
    height. */
-@media (max-width: 1099px) {
-    .hero-content { display: flex; flex-direction: column; }
-    .hero-content > .trace { order: 1; margin-top: 0; margin-bottom: var(--space-lg); }
-    .hero-content > .hero-install { order: 2; margin-top: 0; }
-}
 
 /* Try it on phones: two buttons per row, not six full-width rows. */
-@media (max-width: 480px) {
-    .bench .hero-actions .btn { width: auto; flex: 1 1 40%; }
-}
 
 /* Islands: the joins sit at their natural height with the who-line under
    them; the spare height of the shorter column stays at its foot instead of
    being spread between the routes. */
-@media (min-width: 960px) {
-    .islands-col .joins { flex: none; margin-bottom: 0; }
-    .islands-col .join { flex: none; }
-    .islands-who { margin-top: var(--space-xl); }
+
+.hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
 }
+
+.hero-actions .btn-outline {
+    width: auto;
+}
+
+.hero-actions { flex-wrap: wrap; }
+
+@media (max-width: 480px) {
+    .hero-actions .btn { width: 100%; justify-content: center; }
+}
+
+.cta-section .hero-actions { justify-content: center; }
+
+.cta-section .hero-actions { justify-content: flex-start; margin-bottom: 0; }
+
+.host-section .hero-actions { justify-content: flex-start; margin-bottom: 0; }
+
+.error-page .hero-actions { justify-content: flex-start; margin-bottom: 0; }

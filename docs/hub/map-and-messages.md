@@ -1,3 +1,7 @@
+---
+description: "Use the MeshSat Hub map and message history to inspect device positions, conversations and delivery outcomes."
+---
+
 # Map and messages
 
 ## The map

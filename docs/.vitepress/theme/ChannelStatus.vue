@@ -1,34 +1,36 @@
 <script setup lang="ts">
-// The status block that opens every /transports/ page (MESHSAT-1498).
-//
-// Five codes say where a channel stands. The codes and their meanings live
-// here once and match the legend under the transports table on meshsat.net
-// (site/i18n/en.yaml, lg_*): change one, change the other. A status is a fact
-// about the kits and nodes, so a page's code changes when the hardware does,
-// together with the home page row.
-//
-//   <ChannelStatus code="coming-soon">One line about this channel.</ChannelStatus>
-//   <ChannelStatus code="live" inline />      just the code, for a table cell
-const CODES = {
-  'live': { label: 'LIVE', means: 'Runs on our prototype hardware today.' },
-  'code': { label: 'CODE', means: 'In the Bridge, not running on a kit.' },
-  'bench': { label: 'BENCH', means: 'Hardware on our bench, not in a kit yet.' },
-  'coming-soon': { label: 'COMING SOON', means: 'Hardware on its way to the bench, nothing tested.' },
-  'future-plan': { label: 'FUTURE PLAN', means: 'Planned, nothing bought.' },
-} as const
+import { computed } from 'vue'
+import registry from '../../../site/data/transports.json'
 
-const props = defineProps<{ code: keyof typeof CODES; inline?: boolean }>()
-const status = CODES[props.code]
+// Shared with Hugo. The page's prose records the limits of the cited evidence.
+const channels: Record<string, { code: string; evidence: string; reviewed: string }> = { ...registry.additional }
+for (const category of registry.groups) {
+  for (const group of category.groups) {
+    for (const item of group.items) channels[item.id] = { ...item, code: group.code }
+  }
+}
+const props = defineProps<{ channel?: string; code?: string; inline?: boolean }>()
+const code = computed(() => {
+  const value = props.channel ? channels[props.channel]?.code : props.code
+  return ({ 'coming-soon': 'soon', 'future-plan': 'plan' } as Record<string, string>)[value || ''] || value
+})
+const status = computed(() => {
+  const value = registry.codes[code.value as keyof typeof registry.codes]
+  if (!value) throw new Error(`Unknown transport status: ${props.channel || props.code}`)
+  return value
+})
+const className = computed(() => ({ soon: 'coming-soon', plan: 'future-plan' }[code.value || ''] || code.value))
 </script>
 
 <template>
-  <span v-if="inline" class="channel-code" :class="`is-${code}`">{{ status.label }}</span>
+  <span v-if="inline" class="channel-code" :class="`is-${className}`">{{ status.label }}</span>
   <div v-else class="channel-status">
     <p class="channel-status-line">
-      <span class="channel-code" :class="`is-${code}`">{{ status.label }}</span>
+      <span class="channel-code" :class="`is-${className}`">{{ status.label }}</span>
       <span>{{ status.means }}</span>
       <a href="/transports/#status-codes">What the codes mean</a>
     </p>
     <p v-if="$slots.default" class="channel-status-note"><slot /></p>
+    <p v-if="channel" class="channel-status-note">Status reviewed {{ channels[channel].reviewed }}. The evidence and limits are described below.</p>
   </div>
 </template>

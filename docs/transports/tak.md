@@ -4,7 +4,7 @@ description: "A direct link to a TAK server is connected on both kits. TAK throu
 
 # TAK
 
-<ChannelStatus code="live">A direct link to a TAK server is connected on both kits. TAK through the Hub is not released on the Bridge yet.</ChannelStatus>
+<ChannelStatus channel="tak">A direct link to a TAK server is connected on both kits. TAK through the Hub is not released on the Bridge yet.</ChannelStatus>
 
 Team Awareness Kit integration: MeshSat positions appear on ATAK, iTAK and WinTAK as Cursor on
 Target events, so a team already using TAK sees mesh and satellite devices alongside everything

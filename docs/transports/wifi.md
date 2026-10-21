@@ -4,7 +4,7 @@ description: "Each kit's own Wi-Fi is its way to the internet today. The Wi-Fi l
 
 # Wi-Fi
 
-<ChannelStatus code="live">Each kit's own Wi-Fi is its way to the internet today. The Wi-Fi link between the two kits is built and switched off.</ChannelStatus>
+<ChannelStatus channel="wifi">Each kit's own Wi-Fi is its way to the internet today. The Wi-Fi link between the two kits is built and switched off.</ChannelStatus>
 
 Wi-Fi does two different jobs on a kit, and only one of them runs today.
 

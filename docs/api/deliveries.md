@@ -1,3 +1,7 @@
+---
+description: "Inspect message delivery attempts, outcomes, retries and dead-letter records through the Bridge API."
+---
+
 # Deliveries
 
 A delivery is one attempt to get one message to one destination. A single message that fans out

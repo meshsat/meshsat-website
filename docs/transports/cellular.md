@@ -4,7 +4,7 @@ description: "SMS in both directions, working on hardware on both kits."
 
 # Cellular
 
-<ChannelStatus code="live">SMS in both directions, working on hardware on both kits.</ChannelStatus>
+<ChannelStatus channel="cellular">SMS in both directions, working on hardware on both kits.</ChannelStatus>
 
 SMS and data over a USB cellular modem: Huawei E220, SIM7600, Quectel EC25 and similar sticks.
 

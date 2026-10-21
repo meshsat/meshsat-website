@@ -1,3 +1,7 @@
+---
+description: "MeshSat Hub REST API endpoints, authentication and account-scoped resources for fleet integrations."
+---
+
 # Hub API
 
 The Hub has its own REST API at `https://hub.meshsat.net/api`. It is not the Bridge API: that one

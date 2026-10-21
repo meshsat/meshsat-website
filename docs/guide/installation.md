@@ -1,3 +1,7 @@
+---
+description: "Install MeshSat Bridge with the installer or Docker Compose, including manual setup and air-gapped deployment."
+---
+
 # Installation
 
 ## Requirements
@@ -14,7 +18,14 @@
 curl -fsSL https://get.meshsat.net | sudo bash
 ```
 
-The script installs into `/meshsat`. After it finishes, follow the
+The script installs into `/meshsat`. Reruns preserve an existing `docker-compose.yml`.
+To replace it deliberately, download and inspect the script, then run
+`sudo bash meshsat-install.sh --replace-config`; it first makes a dated configuration backup.
+When migrating an old named volume, the installer stops its containers, verifies a staged
+copy and keeps the original volume. Success is reported only after the Bridge health check passes.
+
+The standard configuration stores data in `/meshsat/data`. Custom Compose files define
+their own storage and networking. After it finishes, follow the
 [quick start](/guide/quick-start) to connect a radio and verify a message.
 
 ## Manual Setup

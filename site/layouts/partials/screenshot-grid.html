@@ -7,7 +7,7 @@
     {{ range $i, $s := .shots }}
     <figure class="screenshot-card">
         <button type="button" class="shot-open" data-full="/images/screenshots/{{ $s.file }}@2x.webp" aria-labelledby="{{ $.prefix }}{{ $i }}" aria-describedby="shot-hint">
-            <img src="/images/screenshots/{{ $s.file }}.webp" srcset="/images/screenshots/{{ $s.file }}-640.webp 640w, /images/screenshots/{{ $s.file }}.webp 1280w" sizes="{{ $.sizes }}" alt="" loading="lazy" decoding="async" width="1280" height="720">
+            <img src="/images/screenshots/{{ $s.file }}.webp" srcset="/images/screenshots/{{ $s.file }}-640.webp 640w, {{ if eq $i 0 }}/images/screenshots/{{ $s.file }}-960.webp 960w, {{ end }} /images/screenshots/{{ $s.file }}.webp 1280w" sizes="{{ if eq $i 0 }}(min-width: 1200px) 840px, (min-width: 700px) 70vw, 92vw{{ else }}{{ $.sizes }}{{ end }}" alt="" loading="lazy" decoding="async" width="1280" height="720">
         </button>
         <figcaption id="{{ $.prefix }}{{ $i }}">{{ i18n $s.cap }}</figcaption>
     </figure>

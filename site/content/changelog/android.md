@@ -22,6 +22,17 @@ the repository's
 [CHANGELOG.md](https://github.com/meshsat/meshsat-android/blob/main/CHANGELOG.md)
 carries the same history in Keep a Changelog form.
 
+{{< release-summary tag="v2.21.0" >}}
+## Latest tagged release: v2.21.0
+
+Tagged 13 October 2026. This release added RNode connections over USB OTG or Bluetooth LE,
+Wi-Fi peer discovery through Reticulum AutoInterface, and LXMF propagation-node messaging.
+See the [v2.21.0 release record](#v2210-2026-10-13) for the changes.
+
+Check the [setup guide](https://docs.meshsat.net/android/setup.html) when choosing an edition:
+the Google Play app has no SMS access; the GitHub APK is the full edition.
+{{< /release-summary >}}
+
 <!-- generated:begin -->
 ## Unreleased (main, last change 2026-10-20)
 

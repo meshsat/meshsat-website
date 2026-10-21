@@ -1,3 +1,7 @@
+---
+description: "Send and receive Iridium SBD messages through a MeshSat node, with payload limits, queues and satellite visibility requirements."
+---
+
 # Satellite
 
 The app sends and receives Iridium SBD messages through the node's RockBLOCK 9603: up to 340
