@@ -217,7 +217,7 @@
                     (dict "n" "Meshtastic LoRa" "s" "meshtastic")
                     (dict "n" "APRS" "s" "aprs")
                     (dict "k" "ch_cell" "s" "cellular")
-                    (dict "n" "WiFi" "s" "wifi")
+                    (dict "n" "Wi-Fi" "s" "wifi")
                     (dict "n" "TETRA Direct Mode" "s" "tetra")))
                 (dict "code" "code" "items" (slice
                     (dict "k" "ch_hf10" "s" "hf-10m")))
@@ -420,7 +420,7 @@
                         <a href="{{ .Site.Params.docs_url }}" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "cta_docs" }}</a>
                         {{ with .Site.Params.matrix_url }}<a href="{{ . }}" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "cta_matrix" }}</a>{{ end }}
                     </div>
-                    <p class="term-note">{{ i18n "cta_note" }}</p>
+                    <p class="term-note">{{ i18n "cta_note" }} <a href="{{ .Site.Params.docs_url }}/start.html#help-and-contributing" target="_blank" rel="noopener">{{ i18n "cta_note_link" }}</a></p>
                 </div>
             </div>
 

@@ -125,7 +125,7 @@ tr_note_b:
 cost_title:
   other: "Use the cheapest path that still works."
 cost_sub:
-  other: "An Iridium line costs tens of euros a month plus credits per message, billed in 340 byte blocks. Give one to every person in a team and the bill scales with headcount. That price shapes every routing decision."
+  other: "An Iridium line costs tens of euros a month plus credits per message, billed per credit at 50 bytes a credit. Give one to every person in a team and the bill scales with headcount. That price shapes every routing decision."
 c1_h:
   other: "One paid link, shared"
 c1_p:
@@ -133,17 +133,17 @@ c1_p:
 c2_h:
   other: "Free bearers first"
 c2_p:
-  other: "Every interface declares a cost. The router prefers the free ones, mesh, packet radio, Bluetooth and WiFi, and only reaches for satellite or SMS when nothing free is up."
+  other: "Every interface declares a cost. The router prefers the free ones, mesh, packet radio, Bluetooth and Wi-Fi, and only reaches for satellite or SMS when nothing free is up."
 c3_h:
   other: "Fewer bytes when it does"
 c3_p:
-  other: "Anything leaving on a metered bearer is compressed first. SMAZ2 runs in under a millisecond on short text, which matters when you are billed per block rather than per byte."
+  other: "Anything leaving on a metered bearer is compressed first. SMAZ2 runs in under a millisecond on short text, which matters when you are billed per credit rather than per byte."
 c4_h:
   other: "Sent when the sky is right"
 c4_p:
   other: "Pass prediction from SGP4 orbital elements holds traffic for visibility windows instead of burning battery retrying against a satellite that is below the horizon."
 funding_a:
-  other: "MeshSat is free software under the GPLv3. Development is supported by"
+  other: "The Bridge is free software under the GPLv3, the Hub under Apache 2.0. Development is supported by"
 funding_b:
   other: ", and a six month field programme starts in November 2026."
 hw_title:
@@ -271,7 +271,7 @@ f_status:
 f_license:
   other: "GPLv3 License"
 f_copy:
-  other: "is free software, released under the"
+  other: "is free software:"
 install_cmd_label:
   other: "Install command, scrollable"
 table_transports_label:
@@ -1230,3 +1230,18 @@ photo_enlarge:
 
 photo_credit:
   other: "Photo: MeshSat."
+
+f_copy_bridge:
+  other: "the Bridge under the"
+
+f_copy_hub:
+  other: "the Hub under"
+
+f_copy_hw:
+  other: "the hardware under"
+
+cta_note_link:
+  other: "How to report one"
+
+f_help:
+  other: "Help and contributing"

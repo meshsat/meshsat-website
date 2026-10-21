@@ -125,7 +125,7 @@ tr_note_b:
 cost_title:
   other: "Prendre le chemin le moins cher qui fonctionne encore."
 cost_sub:
-  other: "Une ligne Iridium coûte quelques dizaines d'euros par mois plus des crédits par message, facturés par blocs de 340 octets. Donnez-en une à chaque personne d'une équipe et la facture suit les effectifs. Ce prix pèse sur chaque décision de routage."
+  other: "Une ligne Iridium coûte quelques dizaines d'euros par mois plus des crédits par message, facturés par crédit de 50 octets. Donnez-en une à chaque personne d'une équipe et la facture suit les effectifs. Ce prix pèse sur chaque décision de routage."
 c1_h:
   other: "Une liaison payante, partagée"
 c1_p:
@@ -133,17 +133,17 @@ c1_p:
 c2_h:
   other: "Les porteurs gratuits d'abord"
 c2_p:
-  other: "Chaque interface déclare un coût. Le routeur préfère les gratuits, maillage, packet radio, Bluetooth et WiFi, et ne recourt au satellite ou au SMS que lorsque plus rien de gratuit n'est disponible."
+  other: "Chaque interface déclare un coût. Le routeur préfère les gratuits, maillage, packet radio, Bluetooth et Wi-Fi, et ne recourt au satellite ou au SMS que lorsque plus rien de gratuit n'est disponible."
 c3_h:
   other: "Et alors le moins d'octets possible"
 c3_p:
-  other: "Tout ce qui part sur un porteur facturé est d'abord compressé. SMAZ2 s'exécute en moins d'une milliseconde sur du texte court, ce qui compte quand la facturation se fait par bloc et non par octet."
+  other: "Tout ce qui part sur un porteur facturé est d'abord compressé. SMAZ2 s'exécute en moins d'une milliseconde sur du texte court, ce qui compte quand la facturation se fait par crédit et non par octet."
 c4_h:
   other: "Envoyé quand le ciel s'y prête"
 c4_p:
   other: "La prédiction de passage à partir des éléments orbitaux SGP4 retient le trafic jusqu'à une fenêtre de visibilité, au lieu d'épuiser la batterie contre un satellite sous l'horizon."
 funding_a:
-  other: "MeshSat est un logiciel libre sous GPLv3. Le développement est soutenu par"
+  other: "Le Bridge est un logiciel libre sous GPLv3, le Hub sous Apache 2.0. Le développement est soutenu par"
 funding_b:
   other: ", et un programme de terrain de six mois commence en novembre 2026."
 hw_title:
@@ -271,7 +271,7 @@ f_status:
 f_license:
   other: "Licence GPLv3"
 f_copy:
-  other: "est un logiciel libre, publié sous"
+  other: "est un logiciel libre :"
 install_cmd_label:
   other: "Commande d'installation, défilable"
 table_transports_label:
@@ -1230,3 +1230,18 @@ photo_enlarge:
 
 photo_credit:
   other: "Photo : MeshSat."
+
+f_copy_bridge:
+  other: "le Bridge sous la"
+
+f_copy_hub:
+  other: "le Hub sous"
+
+f_copy_hw:
+  other: "le matériel sous"
+
+cta_note_link:
+  other: "Comment en signaler un"
+
+f_help:
+  other: "Aide et contributions"

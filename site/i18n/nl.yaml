@@ -125,7 +125,7 @@ tr_note_b:
 cost_title:
   other: "Neem de goedkoopste route die nog werkt."
 cost_sub:
-  other: "Een Iridium-abonnement kost tientallen euro's per maand plus credits per bericht, afgerekend in blokken van 340 bytes. Geef er iedereen in een team één en de rekening groeit mee met het aantal mensen. Die prijs bepaalt elke routeringsbeslissing."
+  other: "Een Iridium-abonnement kost tientallen euro's per maand plus credits per bericht, afgerekend per credit van 50 bytes. Geef er iedereen in een team één en de rekening groeit mee met het aantal mensen. Die prijs bepaalt elke routeringsbeslissing."
 c1_h:
   other: "Eén betaalde verbinding, gedeeld"
 c1_p:
@@ -137,13 +137,13 @@ c2_p:
 c3_h:
   other: "En dan zo min mogelijk bytes"
 c3_p:
-  other: "Alles wat via een betaalde drager vertrekt, wordt eerst gecomprimeerd. SMAZ2 doet dat in minder dan een milliseconde bij korte tekst, wat telt als je per blok betaalt en niet per byte."
+  other: "Alles wat via een betaalde drager vertrekt, wordt eerst gecomprimeerd. SMAZ2 doet dat in minder dan een milliseconde bij korte tekst, wat telt als je per credit betaalt en niet per byte."
 c4_h:
   other: "Verstuurd als de hemel goed staat"
 c4_p:
   other: "Passagevoorspelling op basis van SGP4-baangegevens houdt verkeer vast tot een zichtbaarheidsvenster, in plaats van batterij te verspillen aan pogingen richting een satelliet die onder de horizon staat."
 funding_a:
-  other: "MeshSat is vrije software onder de GPLv3. De ontwikkeling wordt ondersteund door"
+  other: "De Bridge is vrije software onder de GPLv3, de Hub onder Apache 2.0. De ontwikkeling wordt ondersteund door"
 funding_b:
   other: ", en een veldprogramma van zes maanden begint in november 2026."
 hw_title:
@@ -271,7 +271,7 @@ f_status:
 f_license:
   other: "GPLv3-licentie"
 f_copy:
-  other: "is vrije software, uitgebracht onder de"
+  other: "is vrije software:"
 install_cmd_label:
   other: "Installatiecommando, scrollbaar"
 table_transports_label:
@@ -1230,3 +1230,18 @@ photo_enlarge:
 
 photo_credit:
   other: "Foto: MeshSat."
+
+f_copy_bridge:
+  other: "de Bridge onder de"
+
+f_copy_hub:
+  other: "de Hub onder"
+
+f_copy_hw:
+  other: "de hardware onder"
+
+cta_note_link:
+  other: "Zo meld je er een"
+
+f_help:
+  other: "Hulp en bijdragen"

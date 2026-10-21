@@ -43,10 +43,10 @@ Subscriptions are taken through [Stripe](https://stripe.com), which handles the 
 
 | Plan | Devices and bridges | Price |
 |---|---|---|
-| Free | 4 | none |
+| Free | 4 | included |
 | Crew | 24 | EUR 9 per month |
 | Fleet | 100 | EUR 29 per month |
-| Custom | agreed with us | on request |
+| More | over 100 | on request |
 
 Those are the final amounts you pay. Any VAT is included in them, so nothing is added at checkout.
 

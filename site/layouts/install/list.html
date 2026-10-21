@@ -50,12 +50,13 @@
                 </thead>
                 <tbody>
                     <tr><td>Raspberry Pi 5 / 4</td><td>aarch64</td><td><span class="badge badge-stable">Tested</span></td></tr>
-                    <tr><td>BananaPi BPI-M4 Zero</td><td>aarch64</td><td><span class="badge badge-stable">Tested</span></td></tr>
+                    <tr><td>BananaPi BPI-M4 Zero</td><td>aarch64</td><td><span class="badge badge-beta">Not recommended</span></td></tr>
                     <tr><td>Other ARM64 SBCs</td><td>aarch64</td><td><span class="badge badge-stable">Supported</span></td></tr>
                     <tr><td>x86_64 / amd64</td><td>x86_64</td><td><span class="badge badge-stable">Supported</span></td></tr>
                 </tbody>
             </table>
         </div>
+        <p class="table-note">The BPI-M4 Zero ran the Bridge, but its USB proved unreliable with several radios attached; the <a href="{{ .Site.Params.docs_url }}/guide/hardware.html">hardware guide</a> has the tested boards and what to expect from each.</p>
     </div>
 </section>
 {{ end }}
