@@ -27,6 +27,17 @@ variables:
     - if: '$DEPLOY_RUN == "1" && $CI_COMMIT_BRANCH == "main"'
     - if: '($CI_PIPELINE_SOURCE == "push" || $CI_PIPELINE_SOURCE == "web") && $CI_COMMIT_BRANCH == "main"'
 
+# The builds and both gates also run on a merge request, so a break is seen
+# before it is on main (MESHSAT-1615). The owner pushes straight to main, so
+# this only ever fires when an MR exists; it builds nothing for a branch push.
+.rules-build:
+  rules:
+    - if: '$CHANGELOG_RUN == "1"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$DEPLOY_RUN == "1" && $CI_COMMIT_BRANCH == "main"'
+    - if: '($CI_PIPELINE_SOURCE == "push" || $CI_PIPELINE_SOURCE == "web") && $CI_COMMIT_BRANCH == "main"'
+
 # One registry login for the three docker jobs; both passwords on stdin.
 .docker-login:
   before_script:
@@ -149,7 +160,7 @@ build:site:
     paths:
       - site/public/
     expire_in: 1 hour
-  rules: !reference [.rules-main-deploy, rules]
+  rules: !reference [.rules-build, rules]
 
 build:docs:
   stage: build
@@ -163,7 +174,7 @@ build:docs:
     paths:
       - docs/.vitepress/dist/
     expire_in: 1 hour
-  rules: !reference [.rules-main-deploy, rules]
+  rules: !reference [.rules-build, rules]
 
 verify:site:
   stage: build
@@ -174,7 +185,7 @@ verify:site:
   needs:
     - job: build:site
       artifacts: true
-  rules: !reference [.rules-main-deploy, rules]
+  rules: !reference [.rules-build, rules]
 
 # -----------------------------------------------------------------------------
 # VERIFY:DOCS — link gates. BLOCKS the docs deploy on purpose.
@@ -190,7 +201,7 @@ verify:docs:
   script:
     - ./scripts/verify-docs.sh docs
   needs: []
-  rules: !reference [.rules-main-deploy, rules]
+  rules: !reference [.rules-build, rules]
 
 # -----------------------------------------------------------------------------
 # DOCKER — Build and push container images to GHCR
