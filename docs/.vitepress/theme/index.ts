@@ -1,4 +1,6 @@
-import DefaultTheme from 'vitepress/theme'
+// theme-without-fonts: the default theme minus its Inter preload and faces; the
+// docs set IBM Plex in custom.css (MESHSAT-1614).
+import DefaultTheme from 'vitepress/theme-without-fonts'
 import { h, defineComponent, onMounted } from 'vue'
 import type { EnhanceAppContext } from 'vitepress'
 import ChannelStatus from './ChannelStatus.vue'
