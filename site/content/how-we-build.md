@@ -15,9 +15,17 @@ social_image_alt: "Elli soldering MeshSat hardware at a table covered in parts."
 
 We get asked about this a lot, so it's all on one page.
 
-MeshSat is a small team in Leiden, the Netherlands. One person directs the code: Kyriakos. Elli does the hardware assembly, and the verification and QA of everything.
+MeshSat is a small team in Leiden, the Netherlands. One person directs the code: Kyriakos. Elli does the hardware assembly, and the verification and QA of everything. George is our PR and marketing consultant.
 
 {{< build-photo file="team-ttc26-20261021.webp" width="1400" height="1052" alt="Portraits of Elli, George and Kyriakos above the two open field kits on a conference table." caption="Elli, George and Kyriakos, and the two kits at The Things Conference in Amsterdam, September 2026." >}}
+
+<div class="build-mascot">
+<div><h3>Fred</h3><p>Our guest cat and team mascot.</p></div>
+
+{{< build-photo file="fred-mascot-20261021.webp" width="1400" height="788" alt="Fred, an orange-and-white cat, resting on a chair beside a desk." caption="Fred beside the work desk." >}}
+
+</div>
+
 
 </div>
 </section>
