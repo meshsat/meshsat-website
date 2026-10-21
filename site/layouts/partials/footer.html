@@ -75,6 +75,7 @@
                     <li><a href="{{ .Site.Home.RelPermalink }}#hub">MeshSat Hub</a></li>
                     <li><a href="{{ .Site.Params.github }}-android" target="_blank" rel="noopener">MeshSat Android</a></li>
                     <li><a href="{{ .Site.Params.github }}-ios" target="_blank" rel="noopener">MeshSat iOS</a></li>
+                    <li><a href="{{ .Site.Params.github }}-linux" target="_blank" rel="noopener">MeshSat Linux</a></li>
                     <li><a href="{{ .Site.Params.github }}-esp32" target="_blank" rel="noopener">MeshSat Node</a></li>
                     <li><a href="{{ .Site.Params.github }}-fieldkit" target="_blank" rel="noopener">MeshSat Field Kit</a></li>
                     {{/* The one link from meshsat.net to the shop (MESHSAT-1517, 10 Oct 2026): the home
@@ -89,6 +90,7 @@
                 <ul>
                     <li><a href="/install/">{{ i18n "nav_install" }}</a></li>
                     <li><a href="{{ .Site.Params.docs_url }}" target="_blank" rel="noopener">{{ i18n "cta_docs" }}</a></li>
+                    <li><a href="{{ .Site.Params.docs_url }}/start.html#help-and-contributing" target="_blank" rel="noopener">{{ i18n "f_help" }}</a></li>
                     <li><a href="/changelog/">{{ i18n "nav_changelog" }}</a></li>
                     <li><a href="/how-we-build/"{{ if eq .Layout "how-we-build" }} aria-current="page"{{ end }}>{{ i18n "nav_how_we_build" }}</a></li>
                     <li><a href="{{ "/security/" | relLangURL }}">{{ i18n "nav_security" }}</a></li>
@@ -107,7 +109,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; {{ now.Year }} <a href="https://portfolio.ellizg.com/" target="_blank" rel="noopener">Elli</a> &amp; <a href="https://kyriakos.papadopoulos.tech/" target="_blank" rel="noopener">Kyriakos</a>. <a href="https://github.com/meshsat" target="_blank" rel="noopener">MeshSat</a> {{ i18n "f_copy" }} <a href="https://github.com/meshsat/meshsat?tab=GPL-3.0-1-ov-file" target="_blank" rel="noopener">GPLv3</a>.</p>
+            <p>&copy; {{ now.Year }} <a href="https://portfolio.ellizg.com/" target="_blank" rel="noopener">Elli</a> &amp; <a href="https://kyriakos.papadopoulos.tech/" target="_blank" rel="noopener">Kyriakos</a>. <a href="https://github.com/meshsat" target="_blank" rel="noopener">MeshSat</a> {{ i18n "f_copy" }} {{ i18n "f_copy_bridge" }} <a href="{{ .Site.Params.github }}?tab=GPL-3.0-1-ov-file" target="_blank" rel="noopener">GPLv3</a>, {{ i18n "f_copy_hub" }} <a href="{{ .Site.Params.github }}-hub/blob/main/LICENSE" target="_blank" rel="noopener">Apache 2.0</a>, {{ i18n "f_copy_hw" }} <a href="{{ .Site.Params.github }}-fieldkit/blob/main/LICENSE" target="_blank" rel="noopener">CERN-OHL-S</a>.</p>
         </div>
     </div>
 </footer>
