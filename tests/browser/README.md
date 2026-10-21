@@ -16,7 +16,7 @@ Third-party services receive fixture responses, so these checks do not depend on
 Checks cover five languages, both themes, widths 320/390/768/1440, mobile navigation,
 keyboard disclosures, clipboard, dialogs, media consent, the integrator configurator,
 no-JavaScript navigation, forced colors and reduced motion. Axe checks the relevant WCAG
-A/AA rules, including open dialogs. Screenshots and results are retained as CI artifacts.
+A/AA and best-practice rules, including open dialogs. Screenshots and results are retained as CI artifacts.
 
 `CHECK_FILTER` accepts a regular expression for a focused rerun while developing a fix.
 Run the complete suite before publishing. Production QA must also verify the deployed
