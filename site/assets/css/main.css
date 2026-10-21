@@ -1816,6 +1816,7 @@ html:not(.has-js) .lang-switch:focus-within .lang-menu { opacity: 1; visibility:
 .page-content a,
 .build-page a,
 .table-note a,
+.term-note a,
 .funding-note a,
 .section-subtitle a,
 .footer-bottom a,
@@ -3342,3 +3343,44 @@ main { flex: 1 0 auto; }
    there; a region focused by script needs no ring of its own. */
 #main-content:focus,
 :where(section, div, figure)[tabindex="-1"]:focus { outline: none; }
+
+/* ---------- Review, 21 Oct 2026, phase 5 (MESHSAT-1614) ----------
+   The Bridge path is the hero's primary action (owner, 21 Oct 2026): filled
+   with the brand orange, ink per the shared rule (white in light, the page
+   ground in dark); Android and Hub stay outline cards. */
+.hero-paths a:first-child {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #FFFFFF;
+}
+.hero-paths a:first-child strong { color: inherit; }
+.hero-paths a:first-child:hover { filter: brightness(1.08); }
+:root[data-theme="dark"] .hero-paths a:first-child { color: var(--color-bg); }
+@media (forced-colors: active) {
+    .hero-paths a:first-child { forced-color-adjust: none; background: Highlight; color: HighlightText; border-color: Highlight; }
+}
+
+/* Below the two-column hero the trace follows the status pill, before the
+   three paths and the chips, so the page's signature element is on the first
+   screen (owner, 21 Oct 2026). A flex column for the order property; the
+   margins that block flow collapsed are set by hand so the hero keeps its
+   height. */
+@media (max-width: 1099px) {
+    .hero-content { display: flex; flex-direction: column; }
+    .hero-content > .trace { order: 1; margin-top: 0; margin-bottom: var(--space-lg); }
+    .hero-content > .hero-install { order: 2; margin-top: 0; }
+}
+
+/* Try it on phones: two buttons per row, not six full-width rows. */
+@media (max-width: 480px) {
+    .bench .hero-actions .btn { width: auto; flex: 1 1 40%; }
+}
+
+/* Islands: the joins sit at their natural height with the who-line under
+   them; the spare height of the shorter column stays at its foot instead of
+   being spread between the routes. */
+@media (min-width: 960px) {
+    .islands-col .joins { flex: none; margin-bottom: 0; }
+    .islands-col .join { flex: none; }
+    .islands-who { margin-top: var(--space-xl); }
+}
