@@ -30,7 +30,7 @@
             <a class="hero-demo" href="#video">{{ i18n "start_demo" }} <span aria-hidden="true">↓</span></a>
             <p class="hero-repo">
                 <a href="{{ .Site.Params.github }}" class="gh-star-btn" target="_blank" rel="noopener" data-umami-event="star-click" data-umami-event-locale="{{ .Site.Language.Lang }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.573C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    {{ partial "icon.html" (dict "name" "github" "size" 16) }}
                     <span>{{ i18n "hero_star" }}</span>
                     <span class="gh-star-count" hidden><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span data-gh-stars></span></span>
                 </a>
@@ -80,7 +80,7 @@
             <figure class="video-frame">
                 <div class="video-head"><span>{{ .name }}</span><span>{{ .time }}</span></div>
                 <div class="video-media">
-                    <button type="button" class="video-play" onclick="playVideo(this)" data-umami-event="video-play" data-umami-event-film="{{ .id }}" data-umami-event-locale="{{ $.Site.Language.Lang }}" data-embed="https://www.youtube-nocookie.com/embed/{{ .id }}?autoplay=1&amp;rel=0" data-name="{{ .name }}" data-time="{{ .time }}" aria-label="{{ i18n .play }}">
+                    <button type="button" class="video-play" data-umami-event="video-play" data-umami-event-film="{{ .id }}" data-umami-event-locale="{{ $.Site.Language.Lang }}" data-embed="https://www.youtube-nocookie.com/embed/{{ .id }}?autoplay=1&amp;rel=0" data-name="{{ .name }}" data-time="{{ .time }}" aria-label="{{ i18n .play }}">
                         <img src="/images/{{ .poster }}.webp" srcset="/images/{{ .poster }}-640.webp 640w, /images/{{ .poster }}.webp 1280w" sizes="(min-width: 860px) 46vw, 92vw" alt="" width="1280" height="720" loading="lazy" decoding="async">
                         <span class="video-play-glyph" aria-hidden="true">
                             <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
@@ -239,7 +239,7 @@
                     (dict "k" "ch_hub" "s" "hub-link")
                     (dict "n" "MQTT" "s" "mqtt")
                     (dict "n" "TAK" "s" "tak")
-                    (dict "n" "Reticulum" "u" "/guide/features/reticulum")))
+                    (dict "n" "Reticulum" "u" "/guide/features/reticulum.html")))
                 (dict "code" "code" "items" (slice
                     (dict "n" "Webhooks" "s" "webhooks")))))
             (dict "cat" "cat_rx" "groups" (slice
@@ -261,7 +261,7 @@
                         {{- range .groups }}{{ $c := index $codes .code }}
                         <span class="chan-group"><span class="badge badge-token {{ $c.class }}">{{ $c.label }}</span>&nbsp;<span class="chan-names">
                             {{- range $i, $it := .items }}{{ if $i }}, {{ end }}{{ $name := $it.n }}{{ with $it.k }}{{ $name = i18n . }}{{ end }}
-                            {{- $href := "" }}{{ with $it.s }}{{ $href = printf "%s/transports/%s" $.Site.Params.docs_url . }}{{ end }}{{ with $it.u }}{{ $href = printf "%s%s" $.Site.Params.docs_url . }}{{ end }}
+                            {{- $href := "" }}{{ with $it.s }}{{ $href = printf "%s/transports/%s.html" $.Site.Params.docs_url . }}{{ end }}{{ with $it.u }}{{ $href = printf "%s%s" $.Site.Params.docs_url . }}{{ end }}
                             {{- with $href }}<a href="{{ . }}">{{ $name }}</a>{{ else }}{{ $name }}{{ end }}
                             {{- end }}</span></span>
                         {{- end }}
@@ -306,7 +306,7 @@
             </div>
         </div>
 
-        <p class="funding-note">{{ i18n "funding_a" }} <a href="https://www.sidnfonds.nl/projecten/meshsat-keeping-people-connected-when-the-network-is-not" target="_blank" rel="noopener">SIDN fonds</a>{{ i18n "funding_b" }}</p>
+        <p class="funding-note">{{ i18n "funding_a" }} <a href="{{ .Site.Params.sidn_url }}" target="_blank" rel="noopener">SIDN fonds</a>{{ i18n "funding_b" }}</p>
     </div>
 </section>
 
@@ -327,9 +327,9 @@
                 <tbody>
                     <tr><td><strong>Raspberry Pi 5</strong> (8 GB)</td><td>{{ i18n "hw1" }}</td></tr>
                     <tr><td><strong>LILYGO T-Echo</strong> / <strong>Heltec LoRa V4</strong></td><td>{{ i18n "hw2" }}</td></tr>
-                    <tr><td><strong>RockBLOCK 9603</strong> or <strong>9704</strong></td><td>{{ i18n "hw3" }}</td></tr>
+                    <tr><td><strong>RockBLOCK 9603</strong> {{ i18n "hw_or" }} <strong>9704</strong></td><td>{{ i18n "hw3" }}</td></tr>
                     <tr><td><strong>LILYGO T-Call A7670E</strong></td><td>{{ i18n "hw4" }}</td></tr>
-                    <tr><td><strong>CC2652P dongle</strong></td><td>{{ i18n "hw5" }}</td></tr>
+                    <tr><td><strong>{{ i18n "hw5_part" }}</strong></td><td>{{ i18n "hw5" }}</td></tr>
                     <tr><td><strong>{{ i18n "hw6" }}</strong></td><td>{{ i18n "hw6r" }}</td></tr>
                 </tbody>
             </table>
@@ -344,19 +344,10 @@
             (dict "file" "bridge-spectrum-waterfall-2026-09" "cap" "cap3")
             (dict "file" "bridge-zigbee-sensor-2026-09" "cap" "cap4")
         }}
-        <div class="screenshots-grid" data-shots>
-            {{ range $i, $s := $shots }}
-            <figure class="screenshot-card">
-                <button type="button" class="shot-open" data-full="/images/screenshots/{{ $s.file }}@2x.webp" aria-labelledby="shot-cap-{{ $i }}" aria-describedby="shot-hint">
-                    <img src="/images/screenshots/{{ $s.file }}.webp" srcset="/images/screenshots/{{ $s.file }}-640.webp 640w, /images/screenshots/{{ $s.file }}.webp 1280w" sizes="(min-width: 1100px) 23vw, (min-width: 560px) 46vw, 92vw" alt="" loading="lazy" decoding="async" width="1280" height="720">
-                </button>
-                <figcaption id="shot-cap-{{ $i }}">{{ i18n $s.cap }}</figcaption>
-            </figure>
-            {{ end }}
-        </div>
+        {{ partial "screenshot-grid.html" (dict "shots" $shots "prefix" "shot-cap-" "class" "" "sizes" "(min-width: 1100px) 23vw, (min-width: 560px) 46vw, 92vw") }}
         <span id="shot-hint" class="visually-hidden">{{ i18n "shot_open" }}</span>
         <p class="table-note">{{ i18n "hw_note" }}</p>
-        <p class="table-note">{{ i18n "hw_repo_a" }}<a href="https://github.com/meshsat/meshsat-fieldkit" target="_blank" rel="noopener">meshsat-fieldkit</a>{{ i18n "hw_repo_b" }}</p>
+        <p class="table-note">{{ i18n "hw_repo_a" }}<a href="{{ .Site.Params.github }}-fieldkit" target="_blank" rel="noopener">meshsat-fieldkit</a>{{ i18n "hw_repo_b" }}</p>
     </div>
 </section>
 
@@ -405,7 +396,7 @@
                 <div class="term-body">
                     <div class="code-block code-block-inline term-cmd">
                         <pre class="code-block-body" tabindex="0" role="group" aria-label="{{ i18n "install_cmd_label" }}"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre>
-                        <button type="button" class="copy-btn" onclick="copyCode(this)" data-copied="{{ i18n "copied" }}" data-umami-event="install-copy" data-umami-event-where="bench" data-umami-event-locale="{{ .Site.Language.Lang }}">
+                        <button type="button" class="copy-btn" data-copied="{{ i18n "copied" }}" data-umami-event="install-copy" data-umami-event-where="bench" data-umami-event-locale="{{ .Site.Language.Lang }}">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                             <span class="copy-text">{{ i18n "copy" }}</span>
                         </button>
@@ -489,16 +480,7 @@
             (dict "file" "hub-messages-2026-09-21" "cap" "hub_shot2")
             (dict "file" "hub-routing-2026-09-21" "cap" "hub_shot3")
         }}
-        <div class="screenshots-grid hub-shots" data-shots>
-            {{ range $i, $s := $hubShots }}
-            <figure class="screenshot-card">
-                <button type="button" class="shot-open" data-full="/images/screenshots/{{ $s.file }}@2x.webp" aria-labelledby="hub-shot-cap-{{ $i }}" aria-describedby="shot-hint">
-                    <img src="/images/screenshots/{{ $s.file }}.webp" srcset="/images/screenshots/{{ $s.file }}-640.webp 640w, /images/screenshots/{{ $s.file }}.webp 1280w" sizes="(min-width: 700px) 31vw, 92vw" alt="" loading="lazy" decoding="async" width="1280" height="720">
-                </button>
-                <figcaption id="hub-shot-cap-{{ $i }}">{{ i18n $s.cap }}</figcaption>
-            </figure>
-            {{ end }}
-        </div>
+        {{ partial "screenshot-grid.html" (dict "shots" $hubShots "prefix" "hub-shot-cap-" "class" "hub-shots" "sizes" "(min-width: 700px) 31vw, 92vw") }}
         <p class="hub-shots-note">{{ i18n "hub_shots_note" }}</p>
 
         <div class="host-bench">
@@ -562,25 +544,14 @@
      shows the thumbnail at once, swaps in the @2x file when it has loaded, and
      steps with Left / Right or the head-bar buttons, wrapping at either end.
      Focus lands on Next, so Enter keeps stepping. */}}
-<dialog class="shot-dialog" id="shot-dialog" aria-labelledby="shot-caption">
-    <div class="shot-frame">
-        <div class="shot-head">
-            <span id="shot-caption" aria-live="polite"></span>
-            <span class="shot-count" id="shot-count"></span>
-            <button type="button" class="shot-close shot-nav" data-step="-1" aria-keyshortcuts="ArrowLeft" aria-label="{{ i18n "shot_prev" }}"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></button>
-            <button type="button" class="shot-close shot-nav" data-step="1" aria-keyshortcuts="ArrowRight" aria-label="{{ i18n "shot_next" }}" autofocus><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
-            <button type="button" class="shot-close" onclick="this.closest('dialog').close()" aria-label="{{ i18n "lightbox_close" }}"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-        </div>
-        <img id="shot-img" alt="">
-    </div>
-</dialog>
+{{ partial "shot-dialog.html" (dict "class" "") }}
 
 {{/* Video modal, shared by both films. playVideo() names it after the film
      and injects the nocookie iframe; closing removes the iframe so playback
      actually stops. */}}
 <dialog class="shot-dialog video-dialog" id="video-dialog" aria-labelledby="video-dialog-name">
     <div class="shot-frame">
-        <div class="shot-head"><span id="video-dialog-name"></span><span class="shot-time" id="video-dialog-time"></span><button type="button" class="shot-close" onclick="this.closest('dialog').close()" aria-label="{{ i18n "lightbox_close" }}"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+        <div class="shot-head"><span id="video-dialog-name"></span><span class="shot-time" id="video-dialog-time"></span><button type="button" class="shot-close" aria-label="{{ i18n "lightbox_close" }}"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
         <div class="video-media" id="video-dialog-media"></div>
     </div>
 </dialog>

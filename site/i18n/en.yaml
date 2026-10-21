@@ -1212,3 +1212,21 @@ ig_field_caption:
 
 ig_exploded_caption:
   other: "Exploded assembly study: enclosure, display, compute board, Iridium modem, one local radio module and battery space. Component placement is illustrative."
+
+f_social:
+  other: "MeshSat on {{ .Platform }}"
+
+f_sidn_title:
+  other: "This project is made possible with support from SIDN fonds"
+
+hw_or:
+  other: "or"
+
+hw5_part:
+  other: "CC2652P dongle"
+
+photo_enlarge:
+  other: "Enlarge photograph"
+
+photo_credit:
+  other: "Photo: MeshSat."

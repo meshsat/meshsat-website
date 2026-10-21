@@ -254,9 +254,19 @@ function playVideo(btn) {
     });
     dlg.addEventListener('close', function() { set[current].focus(); });
 })();
-// Any modal closes on a backdrop click (clicks on ::backdrop target the
+// One delegated click handler for the buttons that used to carry inline
+// onclick attributes (the CSP allows no inline script since MESHSAT-1612):
+// the copy buttons, the film posters and the dialogs' close buttons. Any
+// modal also closes on a backdrop click (clicks on ::backdrop target the
 // dialog element itself; clicks inside land on its children).
 document.addEventListener('click', function(e) {
+    var t = e.target.closest ? e.target.closest('.copy-btn, .video-play, .shot-close:not([data-step])') : null;
+    if (t) {
+        if (t.classList.contains('copy-btn')) copyCode(t);
+        else if (t.classList.contains('video-play')) playVideo(t);
+        else { var d = t.closest('dialog'); if (d && d.open) d.close(); }
+        return;
+    }
     if (e.target && e.target.tagName === 'DIALOG' && e.target.open) e.target.close();
 });
 

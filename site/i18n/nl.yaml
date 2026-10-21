@@ -1212,3 +1212,21 @@ ig_field_caption:
 
 ig_exploded_caption:
   other: "Explosiestudie van de opbouw: behuizing, scherm, computer, Iridium-modem, één lokale radiomodule en ruimte voor de accu. De plaatsing van onderdelen is illustratief."
+
+f_social:
+  other: "MeshSat op {{ .Platform }}"
+
+f_sidn_title:
+  other: "Dit project wordt mede mogelijk gemaakt met steun van SIDN fonds"
+
+hw_or:
+  other: "of"
+
+hw5_part:
+  other: "CC2652P-dongle"
+
+photo_enlarge:
+  other: "Foto vergroten"
+
+photo_credit:
+  other: "Foto: MeshSat."

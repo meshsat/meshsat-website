@@ -1212,3 +1212,21 @@ ig_field_caption:
 
 ig_exploded_caption:
   other: "Explosionsdarstellung der Baugruppen: Gehäuse, Anzeige, Rechnerplatine, Iridium-Modem, ein lokales Funkmodul und Akkuraum. Die Anordnung der Bauteile ist schematisch."
+
+f_social:
+  other: "MeshSat auf {{ .Platform }}"
+
+f_sidn_title:
+  other: "Dieses Projekt wird mit Unterstützung des SIDN fonds ermöglicht"
+
+hw_or:
+  other: "oder"
+
+hw5_part:
+  other: "CC2652P-Dongle"
+
+photo_enlarge:
+  other: "Foto vergrößern"
+
+photo_credit:
+  other: "Foto: MeshSat."

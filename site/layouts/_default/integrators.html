@@ -138,7 +138,7 @@
     <a class="btn btn-primary" href="mailto:{{ .Site.Params.contact_email }}?subject={{ printf "MSC-3 %s" (i18n "ig_mail_subject") | urlquery }}">{{ i18n "ig_contact" }}</a>
   </div></section>
 </article>
-{{ partial "integrators-lightbox.html" . }}
+{{ partial "shot-dialog.html" (dict "class" "ig-image-dialog") }}
 <script type="application/json" id="ig-radio-data">{{ dict "radios" $radios "copy" (dict "bridgeTwo" (i18n "ig_bridge_two") "bridgeOne" (i18n "ig_bridge_one") "evaluation" (i18n "ig_under_evaluation") "subject" (i18n "ig_mail_subject") "body" (i18n "ig_mail_body")) | jsonify | safeJS }}</script>
 {{ end }}
 

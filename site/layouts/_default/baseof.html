@@ -68,19 +68,12 @@
     <meta name="theme-color" content="#14120F" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#F7F5F2" media="(prefers-color-scheme: light)">
 
-    <!-- Theme detection (prevents flash) -->
-    <script>
-        (function() {
-            document.documentElement.classList.add('has-js');
-            var stored = null;
-            try { stored = localStorage.getItem('meshsat-theme'); } catch (e) {}
-            if (stored) {
-                document.documentElement.setAttribute('data-theme', stored);
-            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        })();
-    </script>
+    <!-- Theme detection before first paint. An external, fingerprinted file
+         rather than an inline script: the CSP allows no inline script, and a
+         hash of minified inline text would drift with the minifier (0.147 in CI,
+         0.158 locally). Blocking on purpose, 400 bytes, same origin. -->
+    {{ $theme := resources.Get "js/theme.js" | minify | fingerprint }}
+    <script src="{{ $theme.RelPermalink }}"></script>
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
