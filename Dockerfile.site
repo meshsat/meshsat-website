@@ -6,3 +6,4 @@ COPY site/public/ /usr/share/nginx/html/
 # the same day (MESHSAT-1523): it is built and served from meshsat-shop. The DMZ
 # serves meshsat.net only.
 COPY nginx-site.conf /etc/nginx/nginx.conf
+COPY nginx-site-headers.conf /etc/nginx/security-headers.conf
