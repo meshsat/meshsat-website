@@ -21,7 +21,7 @@ and validate sequence. It has not yet been run on a physical board.
 | `auto` | The device supervisor probes boards whose USB ids RNode firmware runs on and claims the first one that answers the detect burst. Never a cellular or ZigBee id. |
 | `usb_serial:<serial number>` | Pinned by the board's USB serial number, so it survives re-enumeration. The recommended form. |
 | `/dev/serial/by-id/...` | A device path. |
-| `tcp://host[:7633]` | RNode over WiFi. The bridge keeps the link alive with the firmware's detect request every 3.5 s of silence. |
+| `tcp://host[:7633]` | RNode over Wi-Fi. The bridge keeps the link alive with the firmware's detect request every 3.5 s of silence. |
 | `ble://<name or MAC>` | RNode over Bluetooth LE (Nordic UART service). The board must be bonded to the host first; the bridge container needs `/run/dbus`. |
 
 ## Radio settings

@@ -41,7 +41,7 @@ compatibility with physical radios or every third-party client.
 | [Meshtastic](/transports/meshtastic) | <ChannelStatus code="live" inline /> | Working on hardware, both kits |
 | [APRS](/transports/aprs) | <ChannelStatus code="live" inline /> | Working on hardware: a VHF radio on 144.800 MHz in both kits |
 | [Cellular](/transports/cellular) | <ChannelStatus code="live" inline /> | SMS in both directions, working on hardware |
-| [WiFi](/transports/wifi) | <ChannelStatus code="live" inline /> | Each kit's uplink. The kit-to-kit link was proven once and is switched off |
+| [Wi-Fi](/transports/wifi) | <ChannelStatus code="live" inline /> | Each kit's uplink. The kit-to-kit link was proven once and is switched off |
 | [10 m HF shouts](/transports/hf-10m) | <ChannelStatus code="code" inline /> | Codec verified against a reference, no radio yet |
 | [TETRA Direct Mode](/transports/tetra) | <ChannelStatus code="live" inline /> | Working on hardware: texts between both kits in Direct Mode, through the Bridge on both sides |
 | [HF data](/transports/hf-data) | <ChannelStatus code="coming-soon" inline /> | Nothing on a radio |

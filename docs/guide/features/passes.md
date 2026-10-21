@@ -22,7 +22,7 @@ the single most common reason the scheduler reports nothing useful.
 
 ## Tell it where the satellites are
 
-Orbital elements come from Celestrak's Iridium NEXT set and are refreshed daily. They are cached in
+Orbital elements come from CelesTrak's Iridium NEXT set and are refreshed daily. They are cached in
 the bridge's database, so a bridge that loses internet keeps predicting from the last set it has.
 Predictions degrade slowly as elements age rather than failing.
 

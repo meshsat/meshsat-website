@@ -13,7 +13,7 @@ API keys provide programmatic access to the Hub API.
 curl -X POST https://hub.meshsat.net/api/auth/keys \
   -H "Authorization: Bearer <owner-token>" \
   -H "Content-Type: application/json" \
-  -d '{"label": "CI pipeline", "role": "admin"}'
+  -d '{"label": "CI pipeline", "role": "operator"}'
 ```
 
 The response includes the key once. Store it securely:
@@ -23,7 +23,7 @@ The response includes the key once. Store it securely:
   "id": "abc123",
   "label": "CI pipeline",
   "key": "meshsat_a1b2c3d4...",
-  "role": "admin",
+  "role": "operator",
   "created_at": "2026-03-23T00:00:00Z"
 }
 ```

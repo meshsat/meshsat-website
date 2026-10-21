@@ -1,4 +1,4 @@
-# Environment Variables
+# Environment variables
 
 Complete reference of the MeshSat Bridge environment variables.
 

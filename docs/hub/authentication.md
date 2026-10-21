@@ -38,7 +38,7 @@ API keys provide programmatic access without user sessions.
 | Role | Permissions |
 |------|------------|
 | `viewer` | Read devices, messages, positions |
-| `admin` | Create/update devices, messages, webhooks, escalation chains |
+| `operator` | Create/update devices, messages, webhooks, escalation chains |
 | `owner` | Full access + user management + API key management + audit log |
 
 ## Multi-tenancy

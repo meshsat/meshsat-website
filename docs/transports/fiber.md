@@ -26,7 +26,7 @@ Reticulum's UDP and AutoInterface run over any IP link; see [IP mesh](/transport
 4. Run Reticulum over the link.
 
 One rule holds throughout: the new interface never takes a kit's default route, and it is never
-set up by changing the network configuration over the kit's own WiFi, which is the only way in.
+set up by changing the network configuration over the kit's own Wi-Fi, which is the only way in.
 
 ## Between the bench and a kit
 

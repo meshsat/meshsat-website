@@ -1,4 +1,4 @@
-# Hub Configuration
+# Hub configuration
 
 MeshSat Hub is configured via environment variables with the `HUB_*` prefix, or via `config.yaml`.
 

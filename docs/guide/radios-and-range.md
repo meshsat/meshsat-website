@@ -19,8 +19,8 @@ Each estimate says where it comes from: **(maker)**, **(record)**, **(Wikipedia)
 | Iridium satellite | Taoglas IAA.01 puck | 781 km to a satellite overhead, up to about 3,250 km to one on the horizon (calculated). Anywhere on Earth with a clear view of the sky (maker) | Same 781 to 3,250 km: a bigger antenna does not reach further (calculated) |
 | Cellular, LTE and 2G | LTE stubby | Up to about 28 km to a 30 m phone mast in line of sight (calculated). LTE: 5 km optimal, 30 km reasonable; 2G: 35 km maximum (Wikipedia) | 11 dBi directional antenna on a 10 m pole: up to about 36 km to a 30 m mast (calculated). LTE cells: up to 100 km; 2G still 35 km (Wikipedia) |
 | ZigBee, 2.4 GHz (not fitted since 20 September 2026) | SONOFF antenna | 135 m in free line of sight (maker) | Still about 135 m per hop: the legal limit caps what the coordinator may send. Each extra ZigBee router adds another hop of up to 135 m (maker) |
-| WiFi, kit to kit | Two external antennas | About 1.5 km between the kits at 2.4 GHz (calculated) | Two 30 dBi dishes on 10 m masts at 5 GHz: about 26 km (calculated). MikroTik: up to 30 km in ideal conditions for its 27 dBi grid radio (maker) |
-| WiFi and Bluetooth on the Raspberry Pi 5 | Internal, inside the case | WiFi: about 20 m indoors, up to 150 m outdoors. Bluetooth 5 LE: up to 240 m (Wikipedia) | USB Bluetooth adapter with long range: 1,300 m measured by Nordic on development boards (maker); over 4,500 m claimed for the Fanstel BU840XE (maker) |
+| Wi-Fi, kit to kit | Two external antennas | About 1.5 km between the kits at 2.4 GHz (calculated) | Two 30 dBi dishes on 10 m masts at 5 GHz: about 26 km (calculated). MikroTik: up to 30 km in ideal conditions for its 27 dBi grid radio (maker) |
+| Wi-Fi and Bluetooth on the Raspberry Pi 5 | Internal, inside the case | Wi-Fi: about 20 m indoors, up to 150 m outdoors. Bluetooth 5 LE: up to 240 m (Wikipedia) | USB Bluetooth adapter with long range: 1,300 m measured by Nordic on development boards (maker); over 4,500 m claimed for the Fanstel BU840XE (maker) |
 | GPS, receive only | u-blox 7 puck on the lid | About 20,200 km to a satellite overhead, up to about 25,800 km near the horizon (calculated) | Same distances: an active antenna helps under partial cover, not with distance (calculated) |
 | RTL-SDR, receive only | Diamond SRH805S | Hears a transmitter at head height up to about 11 km away, an aircraft at 10 km altitude up to about 418 km (calculated) | Discone on a 10 m mast: about 18 km to head height, about 425 km to an aircraft (calculated) |
 
@@ -97,11 +97,11 @@ The sections below give the detail and the sources for every cell, and the last 
 - Still about 135 m per hop for two-way traffic. The 2.4 GHz limit for this kind of radio is 100 mW EIRP, which is 20 dBm ([Dutch regulation, annex 11](https://wetten.overheid.nl/BWBR0036378)). SONOFF's own figures already reach it, so a high-gain antenna means turning transmit power down. Its gain still helps the dongle hear sensors further away, but the sensors still have to hear the dongle.
 - Further means more hops. ZigBee is a mesh: mains-powered ZigBee devices route for each other ([Connectivity Standards Alliance](https://csa-iot.org/all-solutions/zigbee/)), so each router adds another hop of up to 135 m.
 
-## WiFi, kit to kit
+## Wi-Fi, kit to kit
 
 **On the kit.** An ALFA AWUS036ACM USB adapter (MediaTek MT7612U) with two external antennas on the case, for a direct link between the two kits.
 
-**Estimated range on the kit.** About 1.5 km between the two kits at 2.4 GHz, antennas at 2 m (calculated). ALFA publishes no distance, only "maximum WiFi range", and lists 21 dBm transmit power and -90 dBm sensitivity for 802.11n, with 5 dBi antennas ([ALFA](https://www.alfa.com.tw/products/awus036acm_1)). The calculation uses the legal 20 dBm EIRP (below) rather than full power, and assumes ALFA's 5 dBi antennas.
+**Estimated range on the kit.** About 1.5 km between the two kits at 2.4 GHz, antennas at 2 m (calculated). ALFA publishes no distance, only "maximum Wi-Fi range", and lists 21 dBm transmit power and -90 dBm sensitivity for 802.11n, with 5 dBi antennas ([ALFA](https://www.alfa.com.tw/products/awus036acm_1)). The calculation uses the legal 20 dBm EIRP (below) rather than full power, and assumes ALFA's 5 dBi antennas.
 
 **With a bigger external antenna.**
 
@@ -110,11 +110,11 @@ The sections below give the detail and the sources for every cell, and the last 
 - A USB adapter feeding a dish through a cable is a hobby setup. Radios built for point to point links do it properly: MikroTik says its 27 dBi LHG XL 5 ax is "capable of stable point-to-point links up to 30 km in ideal conditions" ([MikroTik](https://mikrotik.com/product/lhg_5_ax_xl)).
 - A beam only a few degrees wide needs careful aiming, which a portable kit makes hard.
 
-## WiFi and Bluetooth on the Raspberry Pi 5
+## Wi-Fi and Bluetooth on the Raspberry Pi 5
 
-**On the kit.** The Pi's own dual-band WiFi and Bluetooth 5.0, on its internal antenna, inside the case. Raspberry Pi publishes no range ([Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/)).
+**On the kit.** The Pi's own dual-band Wi-Fi and Bluetooth 5.0, on its internal antenna, inside the case. Raspberry Pi publishes no range ([Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/)).
 
-**Estimated range on the kit.** Typical figures, not specific to the Pi: WiFi "about 20 m (66 ft) indoors, while some access points claim up to a 150 m (490 ft) range outdoors" ([Wikipedia, Wi-Fi](https://en.wikipedia.org/wiki/Wi-Fi)); Bluetooth 5 Low Energy up to 240 m in Wikipedia's specification table ([Wikipedia, Bluetooth](https://en.wikipedia.org/wiki/Bluetooth)). Inside a closed case, expect less.
+**Estimated range on the kit.** Typical figures, not specific to the Pi: Wi-Fi "about 20 m (66 ft) indoors, while some access points claim up to a 150 m (490 ft) range outdoors" ([Wikipedia, Wi-Fi](https://en.wikipedia.org/wiki/Wi-Fi)); Bluetooth 5 Low Energy up to 240 m in Wikipedia's specification table ([Wikipedia, Bluetooth](https://en.wikipedia.org/wiki/Bluetooth)). Inside a closed case, expect less.
 
 **With a bigger external antenna.**
 
@@ -159,7 +159,7 @@ A link works while transmit power, plus both antenna gains, minus that loss, sta
 
 **Satellites.** The straight-line distance to a satellite overhead is its orbit height; to one on the horizon it follows from the orbit height and the Earth's radius (6,371 km).
 
-**Assumptions we had to make.** The APRS receiver at the other end decodes at -110 dBm (the PicoAPRS maker publishes no sensitivity). The kit-to-kit WiFi antennas are ALFA's 5 dBi. LoRa at SF12, the slowest setting.
+**Assumptions we had to make.** The APRS receiver at the other end decodes at -110 dBm (the PicoAPRS maker publishes no sensitivity). The kit-to-kit Wi-Fi antennas are ALFA's 5 dBi. LoRa at SF12, the slowest setting.
 
 ## The other end
 
