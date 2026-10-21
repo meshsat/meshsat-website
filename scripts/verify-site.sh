@@ -39,15 +39,19 @@ echo "=== 3. house style: no em or en dashes anywhere in the built HTML ==="
 # /security/ and its four translations are standalone pages like the changelog
 # children, so they are named explicitly: the changelog tabs sat outside this
 # scan and carried em dashes for months before anyone noticed.
-for f in "$PUB/index.html" "$PUB"/nl/index.html "$PUB"/de/index.html "$PUB"/fr/index.html "$PUB"/el/index.html "$PUB"/changelog/index.html "$PUB"/changelog/*/index.html "$PUB"/security/index.html "$PUB"/??/security/index.html "$PUB"/integrators/index.html "$PUB"/??/integrators/index.html "$PUB"/how-we-build/index.html; do
-  [ -f "$f" ] || continue
+# Since 21 Oct 2026 (MESHSAT-1615) the scan covers EVERY built page, so a new
+# page can never sit outside it the way the changelog children once did.
+CLEAN=0
+while IFS= read -r f; do
   N=$( { grep -o -e '—' -e '–' "$f" || true; } | wc -l | tr -d ' ' )
-  if [ "$N" -eq 0 ]; then pass "no em/en dashes in ${f#$PUB/}"
+  if [ "$N" -eq 0 ]; then CLEAN=$((CLEAN+1))
   else
     fail "$N em/en dash(es) in ${f#$PUB/}"
     { grep -o -e '.\{0,60\}—.\{0,40\}' -e '.\{0,60\}–.\{0,40\}' "$f" || true; } | head -3 | sed 's/^/         /'
   fi
-done
+done < <(find "$PUB" -name '*.html' | sort)
+pass "$CLEAN page(s) without em or en dashes"
+
 
 echo "=== 4. i18n key parity ==="
 # A key missing from one catalogue falls back to English SILENTLY: the page looks
@@ -105,6 +109,35 @@ for lang in en nl de fr el; do
   if grep -Eq '\big_[a-z0-9_]+\b' "$IG"; then fail "$lang integrators: unresolved translation key"; fi
   pass "$lang integrators: translated framing and alternate-page checks completed"
 done
+
+echo "=== 7. every root-relative link and source resolves to a built file ==="
+# A href="/x/" or src="/images/y.webp" must exist in the build: a renamed image
+# (immutable cache, new names on purpose) or a moved page otherwise ships as a
+# 404 that only a crawler notices. Fragments and query strings are dropped;
+# /x resolves as a file, a directory index or x.html. External URLs are not ours
+# to police. Pure shell (MESHSAT-1615).
+MISSING=0; CHECKED=0
+TMP=$(mktemp)
+grep -ohE '(href|src)=["'"'"']?/[^"'"'"' >#?]*' "$PUB"/*.html "$PUB"/*/*.html "$PUB"/*/*/*.html 2>/dev/null \
+  | sed -E 's/^(href|src)=["'"'"']?//' | grep -v '^//' | sort -u > "$TMP"
+while IFS= read -r u; do
+  [ -z "$u" ] && continue
+  CHECKED=$((CHECKED+1))
+  p="$PUB/${u#/}"
+  if [ -f "$p" ] || [ -f "$p/index.html" ] || [ -f "${p%/}.html" ]; then continue; fi
+  fail "link target $u exists in no built file"; MISSING=$((MISSING+1))
+done < "$TMP"
+rm -f "$TMP"
+[ "$MISSING" -eq 0 ] && pass "$CHECKED distinct internal targets all resolve"
+
+echo "=== 8. every image carries an alt attribute ==="
+# Hugo's minifier writes an empty alt as a bare attribute, so both forms count.
+NOALT=$( { grep -ohE '<img [^>]*>' "$PUB"/*.html "$PUB"/*/*.html "$PUB"/*/*/*.html 2>/dev/null || true; } | grep -vE ' alt(=|>| )' | wc -l | tr -d ' ' )
+if [ "$NOALT" -eq 0 ]; then pass "every <img> has an alt attribute"
+else
+  fail "$NOALT <img> element(s) without alt"
+  { grep -ohE '<img [^>]*>' "$PUB"/*.html "$PUB"/*/*.html "$PUB"/*/*/*.html 2>/dev/null || true; } | grep -vE ' alt(=|>| )' | head -3 | sed 's/^/         /'
+fi
 
 echo
 if [ "$FAIL" -eq 0 ]; then echo "verify-site: PASSED"; else echo "verify-site: FAILED"; fi
