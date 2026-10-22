@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 138
-  latest_tag: "v2.22.2"
+  tags: 139
+  latest_tag: "v2.22.3"
   latest_tag_date: "2026-10-22"
-  latest_tag_anchor: "v2222-2026-10-22"
+  latest_tag_anchor: "v2223-2026-10-22"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -38,6 +38,12 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 No unreleased changes.
 
+## v2.22.3 (2026-10-22)
+
+### Features
+
+- **satellite**: Settings shows the satellite key's check value to compare with the kit's, and the service's satellite send and receive are the tested chain steps themselves ([20e004d8](https://github.com/meshsat/meshsat-android/commit/20e004d8e6645e2f47d2a465a377031265e2a191))
+
 ## v2.22.2 (2026-10-22)
 
 ### Features
@@ -48,12 +54,12 @@ No unreleased changes.
 
 - **hub**: births go out one at a time from one worker, so an older birth taken late can no longer clear a newer one that failed, and a stamp always labels the snapshot built with it ([c6c43848](https://github.com/meshsat/meshsat-android/commit/c6c438487a17526eaf92c455f0ba4902f077b438))
 
+<details class="changelog-older">
+<summary>Older releases (137)</summary>
+
 ## v2.22.1 (2026-10-22)
 
 No user-facing changes (1 commits of other types).
-
-<details class="changelog-older">
-<summary>Older releases (136)</summary>
 
 ## v2.22.0 (2026-10-22)
 

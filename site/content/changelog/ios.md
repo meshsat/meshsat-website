@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 101
+  unreleased_count: 105
   unreleased_since: "2026-10-22"
   unreleased_anchor: "unreleased-main-last-change-2026-10-22"
 ---
@@ -33,6 +33,8 @@ installation path; a commit entry does not establish App Store availability.
 
 ### Features
 
+- **satellite**: Setup shows the kit key's check value to compare with the kit's, and the satellite send and receive are the tested chain steps themselves ([f171027f](https://github.com/meshsat/meshsat-ios/commit/f171027f73d812f21b8213a2964e043fc20b7d6a))
+- **satellite**: the satellite chain can roll back to the kits' old chain (smaz2, encrypt, base64) both ways, and its key is read as iridium:shared only ([7913d9bd](https://github.com/meshsat/meshsat-ios/commit/7913d9bd9335c932173d66ccf0be55503c3a9c0c))
 - **satellite**: MeshSat iOS drives the node's 9704, sends and reads the kits' encrypted satellite chain, and declares it to the Hub ([e5a6b9ca](https://github.com/meshsat/meshsat-ios/commit/e5a6b9cab6d816aa6aa34915fcb4492699241a9e))
 - **satellite**: MeshSatKit reads and writes the kits' encrypted satellite chain, drives a RockBLOCK 9704 over the node's pipe, and declares the chain to the Hub with ordered birth stamps ([0ba951ae](https://github.com/meshsat/meshsat-ios/commit/0ba951aeea0ff6854c81ff3bfce8d6a1e7bf20a7))
 - **sos**: an SOS carries its own id, so the Hub pages once whichever routes carry it, and its cancel goes until the Hub has it ([40bbc673](https://github.com/meshsat/meshsat-ios/commit/40bbc673ae02c03a85a6b9533afbbb49c0ce513c))
@@ -96,6 +98,8 @@ installation path; a commit entry does not establish App Store availability.
 
 ### Fixes
 
+- **satellite**: a Reticulum packet that comes in over the 9704 is no longer stored, shown or forwarded as a text ([63e80cdc](https://github.com/meshsat/meshsat-ios/commit/63e80cdc957ea35d9fd1dec629d8deeb6356fe6e))
+- **hub**: births go out one at a time from one worker, so an older birth taken late can no longer clear a newer one that failed, and a stamp always labels the snapshot built with it ([2d3350a6](https://github.com/meshsat/meshsat-ios/commit/2d3350a60d1ea3b067e671f23701f00529aa1a60))
 - **sos**: an owed SOS cancel is never dropped to make room, and a stopped SOS controller no longer runs one more round ([dde0645e](https://github.com/meshsat/meshsat-ios/commit/dde0645edbe7a5af36c233b3da4b55ad94f18be3))
 - **sos**: an SOS cancel is no longer lost to a failed enqueue, a new SOS, or a cancel during the first Hub publish ([6e7cc18b](https://github.com/meshsat/meshsat-ios/commit/6e7cc18b16790fea964e12b47361d7b51eeb4c09))
 - **messages**: a reconnect in the middle of a Hub pass no longer hides a lost status, and nothing goes out before the Hub subscriptions hold, as on Android ([96a94e61](https://github.com/meshsat/meshsat-ios/commit/96a94e61821cfef80e95707b43684c6c6bc61851))

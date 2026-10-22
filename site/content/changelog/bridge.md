@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1030
-  unreleased_since: "2026-10-21"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-21"
+  unreleased_count: 1031
+  unreleased_since: "2026-10-22"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-22"
 ---
 
 Generated from the commit history of
@@ -30,10 +30,11 @@ release and does not establish that every feature has been tested on hardware.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-21)
+## Unreleased (main, last change 2026-10-22)
 
 ### Features
 
+- **keys**: the key list gives each key's check value, so a phone and a kit can show they hold the same key without showing it ([2f664212](https://github.com/meshsat/meshsat/commit/2f66421274407cdaacaa44a9b78291ec2a48bc25))
 - **hub**: the birth declares each satellite chain's format explicitly, sealed or plain ([7a7b88e8](https://github.com/meshsat/meshsat/commit/7a7b88e8dbe666daf6e5c7cbbbddc6bdc70124a2))
 - **hub**: a kit's birth says whether each satellite chain seals its payloads, and the satellite and SMS framing each send path uses is one function the gateways and the S3-2 measurement share ([b4a56fb2](https://github.com/meshsat/meshsat/commit/b4a56fb28a4c1a185f8bf8d6a345fde7e190f3cc))
 - **transforms**: smaz2g sends a text as typed when SMAZ2 would not make it shorter, and a satellite payload that starts with the version byte is Reticulum only when it is a signed announce ([051ac60c](https://github.com/meshsat/meshsat/commit/051ac60c1e5dc1099ebcad985b1f02e617bcc107))
