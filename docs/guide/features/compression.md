@@ -39,8 +39,10 @@ It takes one parameter, the dictionary:
 
 **Both ends must use the same dictionary.** A message compressed against the Meshtastic table and
 decompressed against the English one does not fail loudly, it produces different words. The
-Meshtastic dictionary is byte identical in the Bridge and the Hub. The MeshSat apps carry the
-standard dictionary only, so a chain whose far end is an app leaves `dict` out.
+Meshtastic dictionary is byte identical in the Bridge, the Hub and MeshSat Android. MeshSat
+Android carries both: the Meshtastic one for a kit's satellite chain through a node's 9704 (from
+2.22.3), the standard one for SMS. MeshSat iOS has the same in its code, not yet in a released
+build. An SMS chain whose far end is an app leaves `dict` out.
 
 The two encoders behave differently on short text. The standard one often makes a short ASCII
 message longer; the Meshtastic one writes plain ASCII as it is and only grows text in other
@@ -58,8 +60,11 @@ longer than its text, which matters for Greek, emoji or any other text SMAZ2 can
 {"type": "smaz2g", "params": {"dict": "meshtastic"}}
 ```
 
-Only a MeshSat Bridge decodes `smaz2g`. The Hub and the apps do not, so use it on a link whose far
-end is another Bridge, and the validator warns when you save it anywhere.
+A MeshSat Bridge decodes `smaz2g`, and so does MeshSat Android from 2.22.3 on the satellite chain
+through a node's 9704 (its first field run is still to come). The Hub never decodes it: on the
+Hub's path a `smaz2g` frame is only relayed, byte for byte, between two modems. Use it on a link
+whose far end is another Bridge or a phone on a node's 9704; the validator warns when you save it,
+because a far end that is the Hub would see nothing it can read.
 
 ## zstd for anything that is not short text
 
@@ -128,7 +133,8 @@ and for nothing else.
 ## Choosing
 
 - Short human text on any bearer: `smaz2` with the `meshtastic` dictionary, or `smaz2g` with it
-  between two Bridges when the text may not be English.
+  between two Bridges, or a Bridge and MeshSat Android on a node's 9704, when the text may not be
+  English.
 - Structured or binary payloads with room to spare: `zstd`.
 - Long natural language on an expensive, slow bearer, with a sidecar you monitor: `llamazip`.
 - Routine status where approximate is acceptable: `msvqsc`.
