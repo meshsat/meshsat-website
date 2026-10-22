@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 99
-  unreleased_since: "2026-10-20"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-20"
+  unreleased_count: 100
+  unreleased_since: "2026-10-22"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-22"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -29,10 +29,11 @@ installation path; a commit entry does not establish App Store availability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-20)
+## Unreleased (main, last change 2026-10-22)
 
 ### Features
 
+- **satellite**: MeshSatKit reads and writes the kits' encrypted satellite chain, drives a RockBLOCK 9704 over the node's pipe, and declares the chain to the Hub with ordered birth stamps ([0ba951ae](https://github.com/meshsat/meshsat-ios/commit/0ba951aeea0ff6854c81ff3bfce8d6a1e7bf20a7))
 - **sos**: an SOS carries its own id, so the Hub pages once whichever routes carry it, and its cancel goes until the Hub has it ([40bbc673](https://github.com/meshsat/meshsat-ios/commit/40bbc673ae02c03a85a6b9533afbbb49c0ce513c))
 - **messages**: texts to another MeshSat app or kit through the Hub, as on Android, marked delivered only on the recipient app's own answer ([97d8dbb8](https://github.com/meshsat/meshsat-ios/commit/97d8dbb82b30c7616cdf4f7c443b43f898cc2255))
 - **hub**: the MQTT transport and Reticulum over it use the tenant's topic root, and a root that is not meshsat or meshsat/\<tenant\> is refused ([ead59f55](https://github.com/meshsat/meshsat-ios/commit/ead59f55dd2fbfae58ecf172c7820e79bc46e53b))

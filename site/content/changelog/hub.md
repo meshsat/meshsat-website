@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 87
-  unreleased_since: "2026-10-20"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-20"
+  unreleased_count: 93
+  unreleased_since: "2026-10-21"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-21"
 ---
 
 Generated from the commit history of
@@ -31,7 +31,7 @@ not a claim of emergency reliability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-20)
+## Unreleased (main, last change 2026-10-21)
 
 ### Features
 
@@ -70,6 +70,12 @@ not a claim of emergency reliability.
 
 ### Fixes
 
+- **satellite**: a declaration this Hub confirmed earlier answers a failed lookup only when it is sealed, never plain, so a newer sealed stored meanwhile cannot be read as text ([edb93e97](https://github.com/meshsat/meshsat-hub/commit/edb93e97128950e81a26f35bee0bd804e3dd045e))
+- **satellite**: a birth is written whole in one ordered transaction, so a retry or a replica behind never undoes a newer declaration, and a held birth links its modem before it is let go ([09217e7b](https://github.com/meshsat/meshsat-hub/commit/09217e7bc8fa01e70ff5eca8db54d0f11b3b0674))
+- **satellite**: a declaration is saved with the birth that makes it and held until every write lands, so a failed write never leaves an older plain in charge ([25979ad4](https://github.com/meshsat/meshsat-hub/commit/25979ad4ee6aac967a9f752483842301a7006f2c))
+- **satellite**: a kit's sealing declaration is kept per modem, so a birth without the IMEI or the gateway, or a failed lookup, never turns its ciphertext into guessed text ([4e5ac7d7](https://github.com/meshsat/meshsat-hub/commit/4e5ac7d769c7763887cdbece44da77618da73983))
+- **satellite**: versioned plain SMAZ2 is read again, and a payload is taken for a kit's ciphertext only when it is base64 of binary or its bridge declared the chain sealing ([aadcff4d](https://github.com/meshsat/meshsat-hub/commit/aadcff4df96467f4e0cb5dc366b0f01fee545d45))
+- **satellite**: a Bridge's ciphertext without base64 stays opaque, an unframed 0x01 payload is Reticulum only when it is a signed announce, and nothing the Hub cannot read reaches a person as an empty message ([b335ce93](https://github.com/meshsat/meshsat-hub/commit/b335ce930e94abc4c059ce572ee4819af9dd9e3d))
 - **directory**: a key rotation makes its key current only from the key it started from, so a delayed caller never rolls the key back ([d960f391](https://github.com/meshsat/meshsat-hub/commit/d960f39196b31b46fb223182263a231acd30ce76))
 - **directory**: two replicas rotating at once no longer fail on one tenant's record ([0c8e1912](https://github.com/meshsat/meshsat-hub/commit/0c8e191203281462b53f94c57f55672c7a46f9e0))
 - **directory**: empty snapshots take the last rows back, key rotations reach every Bridge without being read as its rows, and a rotation's pending key is stored by compare-and-set ([8d84392c](https://github.com/meshsat/meshsat-hub/commit/8d84392cb213291bdab2273e68af98cb4103cc48))
