@@ -4,13 +4,13 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 135
-  latest_tag: "v2.21.0"
-  latest_tag_date: "2026-10-13"
-  latest_tag_anchor: "v2210-2026-10-13"
-  unreleased_count: 14
-  unreleased_since: "2026-10-20"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-20"
+  tags: 137
+  latest_tag: "v2.22.1"
+  latest_tag_date: "2026-10-22"
+  latest_tag_anchor: "v2221-2026-10-22"
+  unreleased_count: 0
+  unreleased_since: ""
+  unreleased_anchor: "unreleased-main"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -34,16 +34,28 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-20)
+## Unreleased (main)
+
+No unreleased changes.
+
+## v2.22.1 (2026-10-22)
+
+No user-facing changes (1 commits of other types).
+
+## v2.22.0 (2026-10-22)
 
 ### Features
 
+- **satellite**: the app reads and writes the kits' encrypted satellite chain over the 9704 and declares it to the Hub with ordered birth stamps ([4d0c70c8](https://github.com/meshsat/meshsat-android/commit/4d0c70c8ceb50a73fc8b8c61364be3d07dccab3d))
 - **sos**: an SOS carries its own id, so the Hub pages once whichever routes carry it, and its cancel goes until the Hub has it ([26faed19](https://github.com/meshsat/meshsat-android/commit/26faed19bbc4c27009db59ada89cfd9501ff5084))
 - **messages**: texts to another MeshSat app or kit through the Hub, marked delivered only on the recipient app's own answer ([b0a84f5c](https://github.com/meshsat/meshsat-android/commit/b0a84f5c7e5f51d696129d5addaff563b55e24d2))
 - **hub**: a phone provisioned into an organisation's tenant publishes and subscribes under that tenant's topic root ([e5af6337](https://github.com/meshsat/meshsat-android/commit/e5af6337e683579c321d238ea5462541f1c8dbf9))
 
 ### Fixes
 
+- **hub**: a ready 9704 reads online on the Hub, not offline ([0249d1a6](https://github.com/meshsat/meshsat-android/commit/0249d1a6ede5d2a19531abdab6f596c139f13aa4))
+- **sms**: a compressed SMS whose text is Greek or other non-English is shown as text, not as its raw bytes ([3adc16ea](https://github.com/meshsat/meshsat-android/commit/3adc16ea2ce661d649839c6ee00601c852964a0b))
+- **sms**: a compressed SMS with Greek or other non-ASCII text reads back as it was sent instead of garbage ([31f3aefb](https://github.com/meshsat/meshsat-android/commit/31f3aefbff216167dbd8d7ea0c5577e2e09056e0))
 - **sos**: an owed SOS cancel is never dropped to make room, however many SOS follow ([457b8338](https://github.com/meshsat/meshsat-android/commit/457b8338b14cba208e74a4ec83a070e09794684c))
 - **sos**: an SOS cancel is no longer lost to a failed enqueue, a new SOS, or a cancel during the first Hub publish ([e1cbcac0](https://github.com/meshsat/meshsat-android/commit/e1cbcac09df6a952312cdd3c60dd350ab94f1d86))
 - **messages**: a reconnect in the middle of a Hub pass no longer hides a lost status, and nothing goes out before the Hub subscriptions hold ([3073d3d1](https://github.com/meshsat/meshsat-android/commit/3073d3d1218789ceed5b2ae2b143dd22fcc45e18))
@@ -55,6 +67,9 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 - **sms**: a delivery report and the outcome it leads to are saved together, a failure never takes back a delivered SMS, and a send's part count is fixed before it goes out ([b90c94e9](https://github.com/meshsat/meshsat-android/commit/b90c94e9893ee9713ee5a0556261d711756de491))
 - **sms**: a long SMS shows delivered only once every part is, and a CDMA delivery report is read as one ([0b144032](https://github.com/meshsat/meshsat-android/commit/0b144032124a317e7844fbf219f362c311f798af))
 - **delivery**: each channel's pending acks time out on its own timeout, a mesh broadcast no longer waits for an ack, only an SMS the phone confirmed shows delivered, and a late ack is kept ([534224b1](https://github.com/meshsat/meshsat-android/commit/534224b12dfc07a4feaa1932a070e4d8385dcc3b))
+
+<details class="changelog-older">
+<summary>Older releases (135)</summary>
 
 ## v2.21.0 (2026-10-13)
 
@@ -1056,4 +1071,6 @@ Same sources as v0.1.0.
 
 - increase Gradle heap for 8GB LXC, build passes ([adcc5519](https://github.com/meshsat/meshsat-android/commit/adcc5519fa54284d0155be40d042c13358a0a2ad))
 - build config: Gradle wrapper, AndroidX, BuildConfig, memory tuning ([92fdac5e](https://github.com/meshsat/meshsat-android/commit/92fdac5e082238394d9efccaa9d0d1bd6bceaf27))
+
+</details>
 <!-- generated:end -->

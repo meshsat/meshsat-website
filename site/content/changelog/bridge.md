@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1023
+  unreleased_count: 1030
   unreleased_since: "2026-10-21"
   unreleased_anchor: "unreleased-main-last-change-2026-10-21"
 ---
@@ -34,6 +34,9 @@ release and does not establish that every feature has been tested on hardware.
 
 ### Features
 
+- **hub**: the birth declares each satellite chain's format explicitly, sealed or plain ([7a7b88e8](https://github.com/meshsat/meshsat/commit/7a7b88e8dbe666daf6e5c7cbbbddc6bdc70124a2))
+- **hub**: a kit's birth says whether each satellite chain seals its payloads, and the satellite and SMS framing each send path uses is one function the gateways and the S3-2 measurement share ([b4a56fb2](https://github.com/meshsat/meshsat/commit/b4a56fb28a4c1a185f8bf8d6a345fde7e190f3cc))
+- **transforms**: smaz2g sends a text as typed when SMAZ2 would not make it shorter, and a satellite payload that starts with the version byte is Reticulum only when it is a signed announce ([051ac60c](https://github.com/meshsat/meshsat/commit/051ac60c1e5dc1099ebcad985b1f02e617bcc107))
 - **delivery**: GET /api/delivery/stats says what became of each delivery attempt, per bearer, interface and size, without calling any of it radio loss ([5f937e50](https://github.com/meshsat/meshsat/commit/5f937e507c0911b224901525aeb23c82a63084d4))
 - **directory**: an operator can remove a local address that keeps a Hub contact from its own, and a team send names the contact that holds it ([11e8adcc](https://github.com/meshsat/meshsat/commit/11e8adcc90bdc71e3d494471914ecc3a1c1ee3a4))
 - **directory**: send to a team: one submission, one intent per member, frozen at submission ([9c5ec210](https://github.com/meshsat/meshsat/commit/9c5ec210fa34290b084006d2c8e07542cf712bcb))
@@ -460,6 +463,10 @@ release and does not establish that every feature has been tested on hardware.
 
 ### Fixes
 
+- **hub**: a birth goes out only with a stamp stored before it, and one that cannot read or store its stamp is held back and sent once it can ([4566ccab](https://github.com/meshsat/meshsat/commit/4566ccabd93557ecbf1582a3686d58a814aa7bae))
+- **hub**: every birth is stamped later than the bridge's last one, also when its clock stepped back or it restarted, so the Hub can order its births ([767ba66c](https://github.com/meshsat/meshsat/commit/767ba66c97f5e169a516c0acc60a97994d8e4e32))
+- **hub**: a satellite chain that could not be read declares nothing in the birth, never plain, and is declared once it reads again ([de433b68](https://github.com/meshsat/meshsat/commit/de433b68188dd96ee4612140dfb3998eb67feb3b))
+- **hub**: the birth goes out again once a satellite modem has told its IMEI, so the Hub can tie the modem and its sealing declaration to this bridge ([682b7477](https://github.com/meshsat/meshsat/commit/682b7477d45d210ce5bad739cba7f09403b05e74))
 - **delivery**: the delivery statistics keep a pruned attempt in its own second, read one snapshot, prune one fixed set of intents, and say which intents an upgraded ledger may have lost ([82517821](https://github.com/meshsat/meshsat/commit/8251782138aef87f0d40ce399f6da7c757891f49))
 - **delivery**: the delivery statistics keep counting what the retention prune removes, keep fractional window bounds, and find receipts by index ([7782548d](https://github.com/meshsat/meshsat/commit/7782548d98c8b7bd53acce611d7bf626fe10429c))
 - **directory**: a key rotation keeps its own counter, a full snapshot moves addresses in any order and leaves a dropped contact only local data, and the Hub key is never fetched through a redirect ([45edce54](https://github.com/meshsat/meshsat/commit/45edce5444dc489954b28a13a01b00cc1b1205a3))
