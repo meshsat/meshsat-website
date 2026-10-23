@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v2.22.3"
   latest_tag_date: "2026-10-22"
   latest_tag_anchor: "v2223-2026-10-22"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  unreleased_count: 9
+  unreleased_since: "2026-10-23"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-23"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -34,9 +34,22 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-10-23)
 
-No unreleased changes.
+### Features
+
+- **sms**: SMS go out in app SMS wire v2, whose frame names its codec inside the ciphertext, and the receiver reads v2 by it and v1 by the old rule ([645ca3bf](https://github.com/meshsat/meshsat-android/commit/645ca3bfbf3b69c47532325cc4c5c64b23937055))
+- **directory**: the phone reads its organisation's contacts and groups from the Hub, signed by the key it pinned from its provisioning bundle, and follows the Hub's key rotations ([fc7b8f12](https://github.com/meshsat/meshsat-android/commit/fc7b8f12f9644b2f73058121c071664daf164ffc))
+- **lxmf**: every LXMF message the app writes carries its message id, and a repeat of one already taken is dropped, also after a restart ([6ed801eb](https://github.com/meshsat/meshsat-android/commit/6ed801eb2b4b403d70b76a829efcdb071b53d8c7))
+
+### Fixes
+
+- **directory**: a reprovision to another Hub, bridge, topic root or tenant starts the directory over even under the same key, takes only the bundle's tenant, and drops a reply from before ([22d445b9](https://github.com/meshsat/meshsat-android/commit/22d445b91dbb35f132cff0ad47d95c53b1c170e1))
+- **lxmf**: an inbound message and its id are filed in one Room transaction and shown only once filed, so a failed write can be taken again ([a8e4dbe5](https://github.com/meshsat/meshsat-android/commit/a8e4dbe580bd209b139c23c4bc0bee1c2b44699f))
+- **sms**: a single Greek word or emoji SMS that was never compressed reads back as sent, not as SMAZ2 ([cbb258ac](https://github.com/meshsat/meshsat-android/commit/cbb258ac6cbede469ed794935ee565b29b0b0196))
+- **codec**: text with bytes 0x01-0x08 survives SMAZ2 with the default table, as on the Bridge, and every other text compresses exactly as before ([a1a3b917](https://github.com/meshsat/meshsat-android/commit/a1a3b9176eb6cfff3475af4f3a76ecd17cd11ef6))
+- **iridium**: the 9704's firmware version comes from the modem's firmware query, and malformed segment fields from the modem are ignored instead of crashing the driver ([e6bac086](https://github.com/meshsat/meshsat-android/commit/e6bac0867b85cd2d6726693ab0926c24d4343df6))
+- **sms**: an encrypted SMS that was never compressed, such as Greek text, reads back as sent instead of as SMAZ2 gibberish ([54de9eb1](https://github.com/meshsat/meshsat-android/commit/54de9eb1ee59d6a0e67a19a767e6472dba0022ea))
 
 ## v2.22.3 (2026-10-22)
 
