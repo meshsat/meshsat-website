@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 105
-  unreleased_since: "2026-10-22"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-22"
+  unreleased_count: 117
+  unreleased_since: "2026-10-23"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-23"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -29,10 +29,15 @@ installation path; a commit entry does not establish App Store availability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-22)
+## Unreleased (main, last change 2026-10-23)
 
 ### Features
 
+- **sms**: SMS go out in app SMS wire v2, whose frame names its codec inside the ciphertext, and the app reads v2 by it and v1 by the old rule, as Android does ([44721c83](https://github.com/meshsat/meshsat-ios/commit/44721c8323c234bf49c399316cf2d1eaead6a1f5))
+- **crypto**: a kit's key bundle QR imports on iOS as on Android: signed, the kit's key pinned on first use, a changed key only on the user's yes ([5988bece](https://github.com/meshsat/meshsat-ios/commit/5988bece550374aafef26621b6f9e23e1a595176))
+- **iridium**: the Hub's send\_mt reaches the node's 9704 when it names it, and the background sync drains a queue the 9704 carries ([059a0fb9](https://github.com/meshsat/meshsat-ios/commit/059a0fb91bb004fee6685d7f1e2c2cf4ada603ad))
+- **directory**: the app reads the organisation's directory on every Hub connect and every 15 minutes, pins the bundle's key, follows no redirect, and shows it on People ([f21ae124](https://github.com/meshsat/meshsat-ios/commit/f21ae1244be8378499899fdc52c6956d4c6f4526))
+- **directory**: the Kit reads the organisation's contacts and groups from the Hub, signed by the key pinned from the provisioning bundle, and follows the Hub's key rotations, as Android does ([80776c04](https://github.com/meshsat/meshsat-ios/commit/80776c04761d472e1f0c8d124a3de65060c480e6))
 - **satellite**: Setup shows the kit key's check value to compare with the kit's, and the satellite send and receive are the tested chain steps themselves ([f171027f](https://github.com/meshsat/meshsat-ios/commit/f171027f73d812f21b8213a2964e043fc20b7d6a))
 - **satellite**: the satellite chain can roll back to the kits' old chain (smaz2, encrypt, base64) both ways, and its key is read as iridium:shared only ([7913d9bd](https://github.com/meshsat/meshsat-ios/commit/7913d9bd9335c932173d66ccf0be55503c3a9c0c))
 - **satellite**: MeshSat iOS drives the node's 9704, sends and reads the kits' encrypted satellite chain, and declares it to the Hub ([e5a6b9ca](https://github.com/meshsat/meshsat-ios/commit/e5a6b9cab6d816aa6aa34915fcb4492699241a9e))
@@ -98,6 +103,13 @@ installation path; a commit entry does not establish App Store availability.
 
 ### Fixes
 
+- **directory**: a reprovision to another Hub, bridge, topic root or tenant starts the directory over even under the same key, takes only the bundle's tenant, and drops a reply from before ([168701c8](https://github.com/meshsat/meshsat-ios/commit/168701c8d8dd667ce132785140906b19e7b2c101))
+- **sms**: the plain-text check reads UTF-8 without the iOS 18 API, so the app builds for iOS 17 again ([161afcc5](https://github.com/meshsat/meshsat-ios/commit/161afcc518c18ca48889ec20212156d55ac77f36))
+- **sms**: a single Greek word or emoji SMS that was never compressed reads back as sent, not as SMAZ2 ([a1767e6e](https://github.com/meshsat/meshsat-ios/commit/a1767e6ea04d321fcfac295a796fb3571ef7c96e))
+- **codec**: text with bytes 0x01-0x08 survives SMAZ2 with the default table, as on the Bridge, and every other text compresses exactly as before ([10711645](https://github.com/meshsat/meshsat-ios/commit/1071164505942843b42c27d741fc277e706d357d))
+- **iridium**: the 9704's firmware version comes from the modem's firmware query, as the official library reads it, not from the hardware version ([abebefbb](https://github.com/meshsat/meshsat-ios/commit/abebefbb8c7dfa3b5e14c2bfb2bbe2003d0c630b))
+- **sms**: a compressed SMS with Greek, accented or emoji text reads back as sent, and an encrypted SMS that was never compressed is no longer read as SMAZ2 gibberish ([d074e8bb](https://github.com/meshsat/meshsat-ios/commit/d074e8bbe6ffb8f923dd063bdd7f52f9f686f759))
+- **crypto**: the key check takes only the 64 ASCII hex characters a key is made of, so a fullwidth digit is refused before encrypt refuses it ([2958c4ea](https://github.com/meshsat/meshsat-ios/commit/2958c4eab31386f8b61bc275253fdb6f54b445d5))
 - **satellite**: a Reticulum packet that comes in over the 9704 is no longer stored, shown or forwarded as a text ([63e80cdc](https://github.com/meshsat/meshsat-ios/commit/63e80cdc957ea35d9fd1dec629d8deeb6356fe6e))
 - **hub**: births go out one at a time from one worker, so an older birth taken late can no longer clear a newer one that failed, and a stamp always labels the snapshot built with it ([2d3350a6](https://github.com/meshsat/meshsat-ios/commit/2d3350a60d1ea3b067e671f23701f00529aa1a60))
 - **sos**: an owed SOS cancel is never dropped to make room, and a stopped SOS controller no longer runs one more round ([dde0645e](https://github.com/meshsat/meshsat-ios/commit/dde0645edbe7a5af36c233b3da4b55ad94f18be3))
