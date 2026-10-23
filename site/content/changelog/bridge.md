@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1031
-  unreleased_since: "2026-10-22"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-22"
+  unreleased_count: 1061
+  unreleased_since: "2026-10-23"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-23"
 ---
 
 Generated from the commit history of
@@ -30,10 +30,18 @@ release and does not establish that every feature has been tested on hardware.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-22)
+## Unreleased (main, last change 2026-10-23)
 
 ### Features
 
+- **hopset**: media hopping gets one switch in Settings, off by default, so routing stays as it was until someone turns it on ([daafa0c7](https://github.com/meshsat/meshsat/commit/daafa0c794d481ce1126966c2211ee99dc6a1ae8))
+- **hopset**: the hop set takes the owner's numbers, counts repeated radio refusals and silence as signs, and brings a link back more slowly each time it fails again ([d67419d3](https://github.com/meshsat/meshsat/commit/d67419d3bb83b9eae078e7d45d4e2a30a41e9d67))
+- **hopset**: the delivery worker, the mesh receipts and the receivers feed the hop set; MESHSAT\_HOPSET makes it the route gate, GET /api/hopset shows it ([e969c6c9](https://github.com/meshsat/meshsat/commit/e969c6c99fbcfa043cdb74808c4be1d8888cc803))
+- **hopset**: the hop set keeps per link a state built from contact-independent evidence, with a two-sign rule, hysteresis and a floor ([f83b0f97](https://github.com/meshsat/meshsat/commit/f83b0f97949d92726ae257b3353e70ff4daf6072))
+- **routing**: failover groups and the delivery intents skip a link whose band is jammed or whose receiver is deaf ([05151076](https://github.com/meshsat/meshsat/commit/05151076b3109a33c8cb7f46124c463dab39a150))
+- **sms**: chat SMS go out in app SMS wire v2, whose frame names its codec inside the ciphertext, and v1 is still read by the old rule ([a2239b8e](https://github.com/meshsat/meshsat/commit/a2239b8ee6685de35a0de93d58283c3cc88fe3e3))
+- **directory**: the Hub settings take the provisioning bundle's directory key and pin it when none is, so the HTTPS fetch never runs, and never over another key ([74c5ab48](https://github.com/meshsat/meshsat/commit/74c5ab48f6c34985b2f61a13be869abe1802d97e))
+- **lxmf**: every LXMF message the bridge sends carries its message id, an intent's own, and a repeat of one already taken in is dropped, also after a restart ([44d9263c](https://github.com/meshsat/meshsat/commit/44d9263cb3e7f640f0b8a38e4129deb3dd81a74d))
 - **keys**: the key list gives each key's check value, so a phone and a kit can show they hold the same key without showing it ([2f664212](https://github.com/meshsat/meshsat/commit/2f66421274407cdaacaa44a9b78291ec2a48bc25))
 - **hub**: the birth declares each satellite chain's format explicitly, sealed or plain ([7a7b88e8](https://github.com/meshsat/meshsat/commit/7a7b88e8dbe666daf6e5c7cbbbddc6bdc70124a2))
 - **hub**: a kit's birth says whether each satellite chain seals its payloads, and the satellite and SMS framing each send path uses is one function the gateways and the S3-2 measurement share ([b4a56fb2](https://github.com/meshsat/meshsat/commit/b4a56fb28a4c1a185f8bf8d6a345fde7e190f3cc))
@@ -464,6 +472,28 @@ release and does not establish that every feature has been tested on hardware.
 
 ### Fixes
 
+- **hopset**: only the modem's own failure or answer counts as a bearer refusing, never a send its caller cancelled or a queued SMS that never ran ([738c29ac](https://github.com/meshsat/meshsat/commit/738c29ac0e5b6e4a0d8a8436eb309c5220bb0375))
+- **hopset**: native gateways' own refusals reach the hop set again, turning media hopping off stops its audits and events at once, and the settings page keeps an unsaved choice ([a022c2a6](https://github.com/meshsat/meshsat/commit/a022c2a6daf2a2b0dbf0b5698fa008cd2f92e9b7))
+- **hopset**: the intent sends feed the hop set, the paid alarm fires at a real submission, and the hop set learns which devices are absent ([1d57101c](https://github.com/meshsat/meshsat/commit/1d57101c92690f1c98bbf77e611d261e0a1987cb))
+- **hopset**: answered signs stay cleared, a recovering link waits for re-admission, a known-absent device is down, and every net change is audited ([dd9c265c](https://github.com/meshsat/meshsat/commit/dd9c265c26f4fee04fa4f22bf366fc39114d4094))
+- **spectrum**: only a scan pass that classified every calibrated band measures the reader, so failed scans can't stretch a jam verdict's age limit ([31eb92ec](https://github.com/meshsat/meshsat/commit/31eb92eccc6201d63cb9297d54e1d20c49d7a1a1))
+- **spectrum**: a jam verdict's age limit is the classifier's own recovery dwell, or two rounds of a slow reader ([d98555a4](https://github.com/meshsat/meshsat/commit/d98555a4cd42c00d1da3eeb7bf4c75f978e25761))
+- **iridium**: an AT-MSSTM count of zero is no usable time, as an MSGEO stamp of zero already was ([673492a7](https://github.com/meshsat/meshsat/commit/673492a73a84e38a0a2d17dadf08482bbe81d3d2))
+- **health**: the signal recorder writes a reading at the time the modem observed it, so polling an old cached reading never makes it fresh ([2e7377e1](https://github.com/meshsat/meshsat/commit/2e7377e1d63b3aac36ecfcb2ff59c00d5a400b09))
+- **routing**: the retry path's failover reads the same route gate as the groups and the delivery intents, so it skips a jammed member too ([5888a14a](https://github.com/meshsat/meshsat/commit/5888a14afb7f064a79c89277f6407b64bbd5cc9f))
+- **spectrum**: a jam verdict carries its age and reads unknown when stale or the monitor is off, the 2 m band also answers for the APRS link, and the mesh band gets the LoRa power floor ([edab8709](https://github.com/meshsat/meshsat/commit/edab87097a77d29f0918c2831c998a321e8bf0f2))
+- **health**: the interface health score reads each modem's own signal and prices IMT, the free radios and the 2G cell right, and says when its success rate rests on no data ([7054af8e](https://github.com/meshsat/meshsat/commit/7054af8eac5f3dcfa713ce93b3bb91065bc2c302))
+- **iridium**: MSSTM and MSGEO read Iridium time in ERA3, the era it counts in since 14 Jan 2026, and a missing stamp reads as unknown, not now ([9a620790](https://github.com/meshsat/meshsat/commit/9a6207905b911dce5511fd1aa2d4ff7442a209ab))
+- **sms**: the SMS history, receiver and relay read a clear app SMS wire v2 frame, keep what they cannot read, and let a key's reading outrank it ([3d1c3708](https://github.com/meshsat/meshsat/commit/3d1c3708b29dd06c2752d72c1c94ac6556c335b5))
+- **rns**: a single data packet may carry what fits the MTU once encrypted, as upstream RNS allows, so a full single-packet LXMF message goes ([b515ace3](https://github.com/meshsat/meshsat/commit/b515ace34d3fcd51d520d2fb38c8d287718c634d))
+- **lxmf**: an inbound message and its id are filed in one transaction and handed on only once filed, and a ledger row keeps one persisted UUIDv7 as its message id ([8f4ba9ab](https://github.com/meshsat/meshsat/commit/8f4ba9ab2dcdd500e88b204411343a75ec8397e3))
+- **transforms**: the smaz2g warning says MeshSat Android reads it on a node's 9704 and the Hub only relays it, as the docs do ([ae44caa7](https://github.com/meshsat/meshsat/commit/ae44caa77b4470ab89e942fce4573f974ac8e275))
+- **sos**: the legacy SOS frame to the Hub's SMS number fits one SMS whatever the bridge id, as the C10 start frame does ([52da137c](https://github.com/meshsat/meshsat/commit/52da137c4fb0a67fafc3163061f068abade19fad))
+- **imt**: the 9704's firmware version comes from the modem's firmware query, as the official library reads it, not from the hardware version ([ff0b094c](https://github.com/meshsat/meshsat/commit/ff0b094c29c5944d62409ad1b13b96faa890aa29))
+- **compress**: text with bytes 0x01-0x08 survives SMAZ2 with the default table, and every other text compresses exactly as before ([9e6e9315](https://github.com/meshsat/meshsat/commit/9e6e93150ab0b09683ff1bfa58f543879d72dbdb))
+- **keys**: the key list and Settings show each key's check value instead of the key's first four bytes ([a13adcdd](https://github.com/meshsat/meshsat/commit/a13adcdd537f9722d784017415e34bd26037ef72))
+- **messages**: since and until take an RFC 3339 time and find that day's messages, and the topology view's message links come back ([f99edd4f](https://github.com/meshsat/meshsat/commit/f99edd4f394cbd7a66e615844c1f87eabd72d1b3))
+- **iridium**: the SBD gateway takes the modem's IMEI at the post-subscribe check, so the birth names a modem that answered after the start read ([0b46b973](https://github.com/meshsat/meshsat/commit/0b46b97380f1d7829e2346629c45501b17cef682))
 - **hub**: a birth goes out only with a stamp stored before it, and one that cannot read or store its stamp is held back and sent once it can ([4566ccab](https://github.com/meshsat/meshsat/commit/4566ccabd93557ecbf1582a3686d58a814aa7bae))
 - **hub**: every birth is stamped later than the bridge's last one, also when its clock stepped back or it restarted, so the Hub can order its births ([767ba66c](https://github.com/meshsat/meshsat/commit/767ba66c97f5e169a516c0acc60a97994d8e4e32))
 - **hub**: a satellite chain that could not be read declares nothing in the birth, never plain, and is declared once it reads again ([de433b68](https://github.com/meshsat/meshsat/commit/de433b68188dd96ee4612140dfb3998eb67feb3b))

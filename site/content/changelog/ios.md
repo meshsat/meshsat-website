@@ -8,7 +8,7 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 117
+  unreleased_count: 118
   unreleased_since: "2026-10-23"
   unreleased_anchor: "unreleased-main-last-change-2026-10-23"
 ---
@@ -103,6 +103,7 @@ installation path; a commit entry does not establish App Store availability.
 
 ### Fixes
 
+- **sms**: what a key opens outranks a clear SMS wire v2 reading of the same bytes, so an old sealed SMS whose nonce starts like a v2 header reads as its words ([27848c39](https://github.com/meshsat/meshsat-ios/commit/27848c39f5b6ad53678985150914a13fd099422a))
 - **directory**: a reprovision to another Hub, bridge, topic root or tenant starts the directory over even under the same key, takes only the bundle's tenant, and drops a reply from before ([168701c8](https://github.com/meshsat/meshsat-ios/commit/168701c8d8dd667ce132785140906b19e7b2c101))
 - **sms**: the plain-text check reads UTF-8 without the iOS 18 API, so the app builds for iOS 17 again ([161afcc5](https://github.com/meshsat/meshsat-ios/commit/161afcc518c18ca48889ec20212156d55ac77f36))
 - **sms**: a single Greek word or emoji SMS that was never compressed reads back as sent, not as SMAZ2 ([a1767e6e](https://github.com/meshsat/meshsat-ios/commit/a1767e6ea04d321fcfac295a796fb3571ef7c96e))

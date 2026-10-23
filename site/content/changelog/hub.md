@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 93
-  unreleased_since: "2026-10-21"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-21"
+  unreleased_count: 99
+  unreleased_since: "2026-10-23"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-23"
 ---
 
 Generated from the commit history of
@@ -31,10 +31,13 @@ not a claim of emergency reliability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-21)
+## Unreleased (main, last change 2026-10-23)
 
 ### Features
 
+- **provision**: the bundle names the bridge's tenant, so a phone binds its directory to it, and the protocol says how a phone and a Bridge pin the directory key differently ([1071d0ac](https://github.com/meshsat/meshsat-hub/commit/1071d0ac1ea5eb9bfc160cab2e30910540cced43))
+- **sms**: the Hub reads app SMS wire v2 by the codec its frame names, keeps a v2 frame it cannot read as it came, and reads v1 by the old rule ([dab5a12a](https://github.com/meshsat/meshsat-hub/commit/dab5a12a027e014c738303940a7c789f75aad06d))
+- **relay**: the phones read their tenant's signed directory and the key rotation chain from GET /api/relay/directory with their bridge credentials ([7c3ef2e5](https://github.com/meshsat/meshsat-hub/commit/7c3ef2e58da696c359453c5b7b0772b8316bedf9))
 - **directory**: bridges can fetch the Hub's directory key to pin on their first connect ([9745ebd1](https://github.com/meshsat/meshsat-hub/commit/9745ebd1d17bd646da012055f566fa791fd497b1))
 - **directory**: the signing key rotates through a signed chain every pinned bridge can follow ([a5ccd39c](https://github.com/meshsat/meshsat-hub/commit/a5ccd39c24d59f1b2e89ea0d76583f532ac50dd5))
 - **directory**: the Hub pushes each tenant's directory to its bridges within 10 s of a change and again at a bridge's next connect ([6590d70e](https://github.com/meshsat/meshsat-hub/commit/6590d70e6e288be774814f65e1319f1e7c310f25))
@@ -70,6 +73,9 @@ not a claim of emergency reliability.
 
 ### Fixes
 
+- **sms**: what a key opens outranks a clear app SMS wire v2 reading of the same bytes, so an old sealed SMS whose nonce starts like a v2 header reads as its words ([82840301](https://github.com/meshsat/meshsat-hub/commit/82840301e9abfa1efaf4c8ca6dc62c15b6c933c2))
+- **sms**: an SMS from a MeshSat app reads at the Hub as written, compressed or not, encrypted or not, Greek included ([af087536](https://github.com/meshsat/meshsat-hub/commit/af087536327717e210a776e209e7e6e24f62012d))
+- **store**: a SQLite Hub runs the WAL journal, busy timeout and synchronous mode its DSN names, with foreign keys off as on Postgres ([ebe81fe5](https://github.com/meshsat/meshsat-hub/commit/ebe81fe56042c73e00505fd088bc8bd83e7d2a4b))
 - **satellite**: a declaration this Hub confirmed earlier answers a failed lookup only when it is sealed, never plain, so a newer sealed stored meanwhile cannot be read as text ([edb93e97](https://github.com/meshsat/meshsat-hub/commit/edb93e97128950e81a26f35bee0bd804e3dd045e))
 - **satellite**: a birth is written whole in one ordered transaction, so a retry or a replica behind never undoes a newer declaration, and a held birth links its modem before it is let go ([09217e7b](https://github.com/meshsat/meshsat-hub/commit/09217e7bc8fa01e70ff5eca8db54d0f11b3b0674))
 - **satellite**: a declaration is saved with the birth that makes it and held until every write lands, so a failed write never leaves an older plain in charge ([25979ad4](https://github.com/meshsat/meshsat-hub/commit/25979ad4ee6aac967a9f752483842301a7006f2c))
