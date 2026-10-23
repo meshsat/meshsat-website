@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v2.22.3"
   latest_tag_date: "2026-10-22"
   latest_tag_anchor: "v2223-2026-10-22"
-  unreleased_count: 9
+  unreleased_count: 10
   unreleased_since: "2026-10-23"
   unreleased_anchor: "unreleased-main-last-change-2026-10-23"
 ---
@@ -44,6 +44,7 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 ### Fixes
 
+- **sms**: what the key opens outranks a clear SMS wire v2 reading of the same bytes, so an old sealed SMS whose nonce starts like a v2 header reads as its words ([3f327e66](https://github.com/meshsat/meshsat-android/commit/3f327e666bdfe7a8a121a2751b4b3444e52400a6))
 - **directory**: a reprovision to another Hub, bridge, topic root or tenant starts the directory over even under the same key, takes only the bundle's tenant, and drops a reply from before ([22d445b9](https://github.com/meshsat/meshsat-android/commit/22d445b91dbb35f132cff0ad47d95c53b1c170e1))
 - **lxmf**: an inbound message and its id are filed in one Room transaction and shown only once filed, so a failed write can be taken again ([a8e4dbe5](https://github.com/meshsat/meshsat-android/commit/a8e4dbe580bd209b139c23c4bc0bee1c2b44699f))
 - **sms**: a single Greek word or emoji SMS that was never compressed reads back as sent, not as SMAZ2 ([cbb258ac](https://github.com/meshsat/meshsat-android/commit/cbb258ac6cbede469ed794935ee565b29b0b0196))
