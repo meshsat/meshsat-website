@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 141
-  latest_tag: "v2.22.5"
+  tags: 142
+  latest_tag: "v2.22.6"
   latest_tag_date: "2026-10-24"
-  latest_tag_anchor: "v2225-2026-10-24"
+  latest_tag_anchor: "v2226-2026-10-24"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -38,6 +38,12 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 No unreleased changes.
 
+## v2.22.6 (2026-10-24)
+
+### Fixes
+
+- **node**: a cached Bluetooth table without CONTROL is dropped and discovered again, so the switches show after a firmware update ([d3f3aa50](https://github.com/meshsat/meshsat-android/commit/d3f3aa5046e6a9122816acaf3c1f7804d66051bd))
+
 ## v2.22.5 (2026-10-24)
 
 ### Features
@@ -48,6 +54,9 @@ No unreleased changes.
 ### Fixes
 
 - **node**: the firmware update waits at most 300 ms for a write-without-response report, the updater's ACK being the flow control ([acbe5125](https://github.com/meshsat/meshsat-android/commit/acbe51250cceb907e65130d49291e4290a774f43))
+
+<details class="changelog-older">
+<summary>Older releases (140)</summary>
 
 ## v2.22.4 (2026-10-24)
 
@@ -67,9 +76,6 @@ No unreleased changes.
 - **codec**: text with bytes 0x01-0x08 survives SMAZ2 with the default table, as on the Bridge, and every other text compresses exactly as before ([a1a3b917](https://github.com/meshsat/meshsat-android/commit/a1a3b9176eb6cfff3475af4f3a76ecd17cd11ef6))
 - **iridium**: the 9704's firmware version comes from the modem's firmware query, and malformed segment fields from the modem are ignored instead of crashing the driver ([e6bac086](https://github.com/meshsat/meshsat-android/commit/e6bac0867b85cd2d6726693ab0926c24d4343df6))
 - **sms**: an encrypted SMS that was never compressed, such as Greek text, reads back as sent instead of as SMAZ2 gibberish ([54de9eb1](https://github.com/meshsat/meshsat-android/commit/54de9eb1ee59d6a0e67a19a767e6472dba0022ea))
-
-<details class="changelog-older">
-<summary>Older releases (139)</summary>
 
 ## v2.22.3 (2026-10-22)
 
