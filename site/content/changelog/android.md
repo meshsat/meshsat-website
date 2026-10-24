@@ -4,13 +4,13 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 139
-  latest_tag: "v2.22.3"
-  latest_tag_date: "2026-10-22"
-  latest_tag_anchor: "v2223-2026-10-22"
-  unreleased_count: 10
-  unreleased_since: "2026-10-23"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-23"
+  tags: 140
+  latest_tag: "v2.22.4"
+  latest_tag_date: "2026-10-24"
+  latest_tag_anchor: "v2224-2026-10-24"
+  unreleased_count: 2
+  unreleased_since: "2026-10-24"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-24"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -34,7 +34,14 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-23)
+## Unreleased (main, last change 2026-10-24)
+
+### Features
+
+- **node**: update the node's firmware from a file over Bluetooth, through the OTA loader in its app1 ([7079541c](https://github.com/meshsat/meshsat-android/commit/7079541c0eb4868575899ddc0dd1131267ef07f4))
+- **node**: switch the node's status LED and screen on and off from Settings, through the node's CONTROL characteristic ([3a1bf4d2](https://github.com/meshsat/meshsat-android/commit/3a1bf4d20e00fe7d6ee5fd28a34cca2edb65fd86))
+
+## v2.22.4 (2026-10-24)
 
 ### Features
 
@@ -44,6 +51,7 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 ### Fixes
 
+- **iridium**: a 9704 send that saw no satellite comes back within a minute instead of on the 9603's 30-minute schedule, and an unanswered signal read keeps the last bars instead of showing 0 ([83972b9b](https://github.com/meshsat/meshsat-android/commit/83972b9bd60c1ee5bb8766829dd8ad23386d615d))
 - **sms**: what the key opens outranks a clear SMS wire v2 reading of the same bytes, so an old sealed SMS whose nonce starts like a v2 header reads as its words ([3f327e66](https://github.com/meshsat/meshsat-android/commit/3f327e666bdfe7a8a121a2751b4b3444e52400a6))
 - **directory**: a reprovision to another Hub, bridge, topic root or tenant starts the directory over even under the same key, takes only the bundle's tenant, and drops a reply from before ([22d445b9](https://github.com/meshsat/meshsat-android/commit/22d445b91dbb35f132cff0ad47d95c53b1c170e1))
 - **lxmf**: an inbound message and its id are filed in one Room transaction and shown only once filed, so a failed write can be taken again ([a8e4dbe5](https://github.com/meshsat/meshsat-android/commit/a8e4dbe580bd209b139c23c4bc0bee1c2b44699f))
@@ -58,6 +66,9 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 - **satellite**: Settings shows the satellite key's check value to compare with the kit's, and the service's satellite send and receive are the tested chain steps themselves ([20e004d8](https://github.com/meshsat/meshsat-android/commit/20e004d8e6645e2f47d2a465a377031265e2a191))
 
+<details class="changelog-older">
+<summary>Older releases (138)</summary>
+
 ## v2.22.2 (2026-10-22)
 
 ### Features
@@ -67,9 +78,6 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 ### Fixes
 
 - **hub**: births go out one at a time from one worker, so an older birth taken late can no longer clear a newer one that failed, and a stamp always labels the snapshot built with it ([c6c43848](https://github.com/meshsat/meshsat-android/commit/c6c438487a17526eaf92c455f0ba4902f077b438))
-
-<details class="changelog-older">
-<summary>Older releases (137)</summary>
 
 ## v2.22.1 (2026-10-22)
 
