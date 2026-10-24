@@ -63,7 +63,7 @@ trace_foot:
 tr_title:
   other: "Jedes System hängt am selben Router"
 tr_sub:
-  other: "Jedes System ist ein Adapter hinter derselben Schnittstelle, mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette, und eine Regel kann von jedem Adapter zu jedem anderen routen. Der Code an jedem Kanal sagt, wo er wirklich steht, nicht was wir hoffen: Nur LIVE läuft heute auf unserer Hardware."
+  other: "Jedes System ist ein Adapter hinter derselben Schnittstelle, mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette, und eine Regel kann von jedem Adapter zu jedem anderen routen. Der Code an jedem Kanal sagt, wo er wirklich steht, nicht was wir hoffen: Nur LIVE ist auf unserer Hardware erprobt."
 th_category:
   other: "Kategorie"
 th_channels:
@@ -107,7 +107,7 @@ ch_time:
 lg_label:
   other: "Was die Statuscodes bedeuten"
 lg_live:
-  other: "läuft heute auf unserer Prototyp-Hardware"
+  other: "erprobt auf unserer Prototyp-Hardware"
 lg_code:
   other: "in der Bridge, auf keinem Kit"
 lg_bench:

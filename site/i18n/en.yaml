@@ -63,7 +63,7 @@ trace_foot:
 tr_title:
   other: "Every system plugs into the same router"
 tr_sub:
-  other: "Each one is an adapter behind the same interface, with its own MTU, cost model and transform pipeline, and a rule can route from any adapter to any other. The code on each channel says where it really stands, not what we hope: only LIVE runs on our hardware today."
+  other: "Each one is an adapter behind the same interface, with its own MTU, cost model and transform pipeline, and a rule can route from any adapter to any other. The code on each channel says where it really stands, not what we hope: only LIVE is tested and working on our hardware."
 th_category:
   other: "Category"
 th_channels:
@@ -107,7 +107,7 @@ ch_time:
 lg_label:
   other: "What the status codes mean"
 lg_live:
-  other: "runs on our prototype hardware today"
+  other: "tested and working on our prototype hardware"
 lg_code:
   other: "in the Bridge, not running on a kit"
 lg_bench:

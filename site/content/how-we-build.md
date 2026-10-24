@@ -91,7 +91,7 @@ The tokens come from the session logs on our build server, where nearly all of t
 Every channel carries one of five codes. They mean the same thing here, in the docs and in the Bridge README.
 
 <dl class="build-status-list">
-<div><dt>LIVE</dt><dd>Runs on our prototype hardware today: the two V1 field kits, or a MeshSat node with a phone</dd></div>
+<div><dt>LIVE</dt><dd>Tested and working on our prototype hardware: the two V1 field kits, or a MeshSat node with a phone</dd></div>
 <div><dt>CODE</dt><dd>In the Bridge, not running on a kit: either no kit carries the hardware, or we have no record of a run. It doesn't mean it failed.</dd></div>
 <div><dt>BENCH</dt><dd>The hardware is on our bench, not in a kit yet</dd></div>
 <div><dt>COMING SOON</dt><dd>The hardware is on its way to the bench. Nothing has been tested</dd></div>

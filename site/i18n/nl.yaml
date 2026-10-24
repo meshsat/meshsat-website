@@ -63,7 +63,7 @@ trace_foot:
 tr_title:
   other: "Elk systeem sluit aan op dezelfde router"
 tr_sub:
-  other: "Elk systeem is een adapter achter dezelfde interface, met een eigen MTU, kostenmodel en transformatieketen, en een regel kan van elke adapter naar elke andere routeren. De code bij elk kanaal zegt waar het werkelijk staat, niet wat we hopen: alleen LIVE draait vandaag op onze hardware."
+  other: "Elk systeem is een adapter achter dezelfde interface, met een eigen MTU, kostenmodel en transformatieketen, en een regel kan van elke adapter naar elke andere routeren. De code bij elk kanaal zegt waar het werkelijk staat, niet wat we hopen: alleen LIVE is getest en werkt op onze hardware."
 th_category:
   other: "Categorie"
 th_channels:
@@ -107,7 +107,7 @@ ch_time:
 lg_label:
   other: "Wat de statuscodes betekenen"
 lg_live:
-  other: "draait vandaag op onze prototypehardware"
+  other: "getest en werkend op onze prototypehardware"
 lg_code:
   other: "in de Bridge, draait niet op een kit"
 lg_bench:
