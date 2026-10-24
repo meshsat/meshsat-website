@@ -1,12 +1,12 @@
 ---
-description: "Worked on hardware in a kit until 1 October 2026, when the last 9603N in a kit made way for a 9704."
+description: "Worked on hardware in a kit, and works through a MeshSat node, which carries the same kind of modem."
 ---
 
 # Iridium SBD
 
-<ChannelStatus channel="iridium-sbd">Worked on hardware in a kit until 1 October 2026, when the last 9603N in a kit made way for a 9704. A MeshSat node carries the same kind of modem, and that path is live.</ChannelStatus>
+<ChannelStatus channel="iridium-sbd">Worked on hardware in a kit, and works through a MeshSat node, which carries the same kind of modem.</ChannelStatus>
 
-Short Burst Data over an Iridium 9603N modem, usually a RockBLOCK. This is the bearer that works
+Short Burst Data over an Iridium 9602 or 9603N modem, usually a RockBLOCK. The two take the same AT commands and the same message sizes. This is the bearer that works
 when nothing else does, and the one that costs real money per message.
 
 ## The constraint that shapes everything
@@ -38,5 +38,5 @@ You bring your own Cloudloop or Rock7 account; the Hub does not resell airtime. 
 
 ## What the modem needs
 
-Sky view. A 9603N will not get a fix or a pass indoors. First activation on a new line can take
+Sky view. An SBD modem will not get a fix or a pass indoors. First activation on a new line can take
 ten to thirty minutes with a clear view of the sky.

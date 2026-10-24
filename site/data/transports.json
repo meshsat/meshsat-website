@@ -38,7 +38,7 @@
               "s": "iridium-imt",
               "id": "iridium-imt",
               "evidence": "https://docs.meshsat.net/transports/iridium-imt.html",
-              "reviewed": "2026-10-21"
+              "reviewed": "2026-10-24"
             },
             {
               "k": "ch_node",
@@ -46,18 +46,13 @@
               "id": "iridium-node",
               "evidence": "https://docs.meshsat.net/transports/iridium-node.html",
               "reviewed": "2026-10-21"
-            }
-          ]
-        },
-        {
-          "code": "code",
-          "items": [
+            },
             {
               "n": "Iridium SBD (9603N)",
               "s": "iridium-sbd",
               "id": "iridium-sbd",
               "evidence": "https://docs.meshsat.net/transports/iridium-sbd.html",
-              "reviewed": "2026-10-21"
+              "reviewed": "2026-10-24"
             }
           ]
         }

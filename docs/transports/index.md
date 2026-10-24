@@ -34,9 +34,9 @@ compatibility with physical radios or every third-party client.
 
 | Channel | Status | Proven so far |
 |---|---|---|
-| [Iridium IMT](/transports/iridium-imt) | <ChannelStatus channel="iridium-imt" inline /> | Verified over a real satellite link, March 2026. A RockBLOCK 9704 in both kits |
+| [Iridium IMT](/transports/iridium-imt) | <ChannelStatus channel="iridium-imt" inline /> | Verified over a real satellite link, March 2026, then in both kits with many messages both ways |
 | [Iridium through a MeshSat node](/transports/iridium-node) | <ChannelStatus channel="iridium-node" inline /> | Satellite messages both ways with MeshSat Android and MeshSat iOS. The Bridge's own client has not run against a real node |
-| [Iridium SBD](/transports/iridium-sbd) | <ChannelStatus channel="iridium-sbd" inline /> | Worked on hardware in a kit. No 9603N in a kit since 1 October 2026 |
+| [Iridium SBD](/transports/iridium-sbd) | <ChannelStatus channel="iridium-sbd" inline /> | Worked on hardware in a kit, and works through a MeshSat node (row above) |
 
 ## Radio
 
