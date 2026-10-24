@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 99
-  unreleased_since: "2026-10-23"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-23"
+  unreleased_count: 100
+  unreleased_since: "2026-10-24"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-24"
 ---
 
 Generated from the commit history of
@@ -31,10 +31,11 @@ not a claim of emergency reliability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-23)
+## Unreleased (main, last change 2026-10-24)
 
 ### Features
 
+- **relay**: satellite\_relay reaches an SBD modem through Rock7 and carries an SBD message's bytes on, one 270-byte frame at most, never cut ([cca0a426](https://github.com/meshsat/meshsat-hub/commit/cca0a4264459e9487ad93bfb88f06de55afe1e25))
 - **provision**: the bundle names the bridge's tenant, so a phone binds its directory to it, and the protocol says how a phone and a Bridge pin the directory key differently ([1071d0ac](https://github.com/meshsat/meshsat-hub/commit/1071d0ac1ea5eb9bfc160cab2e30910540cced43))
 - **sms**: the Hub reads app SMS wire v2 by the codec its frame names, keeps a v2 frame it cannot read as it came, and reads v1 by the old rule ([dab5a12a](https://github.com/meshsat/meshsat-hub/commit/dab5a12a027e014c738303940a7c789f75aad06d))
 - **relay**: the phones read their tenant's signed directory and the key rotation chain from GET /api/relay/directory with their bridge credentials ([7c3ef2e5](https://github.com/meshsat/meshsat-hub/commit/7c3ef2e58da696c359453c5b7b0772b8316bedf9))
