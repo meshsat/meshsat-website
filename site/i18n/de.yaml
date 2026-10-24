@@ -1267,6 +1267,10 @@ hardware_photo:
   other: "Zwei V1-Feldkits beim Zusammenbau, Frühjahr 2026."
 hardware_process:
   other: "So bauen wir"
+msc2_photo:
+  other: "MeshSat Compact v2, der erste Prototyp: Mesh-Funk, Satellitenmodem und Akku in einem handgroßen Gehäuse. Er hat Satellitennachrichten gesendet und empfangen."
+msc2_launch:
+  other: "MSC-2, das Team-Gateway: zur Liste für den Marktstart"
 language_home:
   other: "Startseite"
 

@@ -224,12 +224,19 @@
         </div>
 
         <div class="hardware-evidence">
+        <div class="hardware-photos">
         <figure class="hardware-photo">
             <img src="/images/how-we-build/two-kits-in-build-20261021-960.webp" srcset="/images/how-we-build/two-kits-in-build-20261021-640.webp 640w, /images/how-we-build/two-kits-in-build-20261021-960.webp 960w, /images/how-we-build/two-kits-in-build-20261021.webp 1400w" sizes="(min-width: 900px) 44vw, 92vw" width="1400" height="788" alt="{{ i18n "hardware_photo" }}" loading="lazy" decoding="async">
             <figcaption>{{ i18n "hardware_photo" }} <a href="/how-we-build/">{{ i18n "hardware_process" }}</a></figcaption>
         </figure>
+        <figure class="hardware-photo">
+            <img src="/images/msc2-prototype-front-20261024-960.webp" srcset="/images/msc2-prototype-front-20261024-640.webp 640w, /images/msc2-prototype-front-20261024-960.webp 960w, /images/msc2-prototype-front-20261024.webp 1400w" sizes="(min-width: 900px) 44vw, 92vw" width="1400" height="788" alt="{{ i18n "msc2_photo" }}" loading="lazy" decoding="async">
+            <figcaption>{{ i18n "msc2_photo" }}</figcaption>
+        </figure>
+        </div>
         <div class="hardware-parts">
         <p class="hardware-start"><a href="{{ .Site.Params.docs_url }}/guide/hardware.html">{{ i18n "hw_start" }} <span aria-hidden="true">→</span></a></p>
+        <p class="hardware-start"><a href="https://shop.meshsat.net/" data-umami-event="shop-click" data-umami-event-locale="{{ .Site.Language.Lang }}" data-umami-event-from="hardware">{{ i18n "msc2_launch" }}</a></p>
         <p class="hardware-start"><a href="{{ "/integrators/" | relLangURL }}">{{ i18n "msc3_integrators" }}</a> <span class="badge badge-token badge-plan">FUTURE PLAN</span></p>
 
         <div class="table-wrap" tabindex="0" role="region" aria-label="{{ i18n "table_hardware_label" }}">

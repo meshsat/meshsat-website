@@ -54,7 +54,8 @@
 .message-intro { max-width: 70ch; margin-bottom: 1.5rem; color: var(--color-text-muted); }
 .review-details + .review-details { border-top: 0; }
 .hardware-evidence { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2rem; margin-bottom: 2rem; align-items: start; }
-.hardware-evidence .hardware-photo { margin: 0; position: sticky; top: 6rem; }
+.hardware-evidence .hardware-photos { position: sticky; top: 6rem; display: grid; gap: 1.5rem; }
+.hardware-evidence .hardware-photo { margin: 0; }
 .hardware-parts { min-width: 0; }
 .hardware-parts .data-table { min-width: 0; }
 .hardware-parts .data-table td { white-space: normal; }
@@ -66,7 +67,7 @@
 .install-output .term-log { margin-top: .5rem; }
 @media (max-width: 899px) {
   .hardware-evidence { grid-template-columns: 1fr; }
-  .hardware-evidence .hardware-photo { position: static; }
+  .hardware-evidence .hardware-photos { position: static; }
 }
 @media (max-width: 699px) {
   .screenshots-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem; }
@@ -76,7 +77,7 @@
   .screenshots-grid .screenshot-card:last-child:nth-child(even) { grid-column: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hardware-evidence .hardware-photo { position: static; }
+  .hardware-evidence .hardware-photos { position: static; }
 }
 .islands-col .joins { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
 .islands-col .join { align-content: start; }
