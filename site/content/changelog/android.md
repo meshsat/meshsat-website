@@ -4,13 +4,13 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 140
-  latest_tag: "v2.22.4"
+  tags: 141
+  latest_tag: "v2.22.5"
   latest_tag_date: "2026-10-24"
-  latest_tag_anchor: "v2224-2026-10-24"
-  unreleased_count: 2
-  unreleased_since: "2026-10-24"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-24"
+  latest_tag_anchor: "v2225-2026-10-24"
+  unreleased_count: 0
+  unreleased_since: ""
+  unreleased_anchor: "unreleased-main"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -34,12 +34,20 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-24)
+## Unreleased (main)
+
+No unreleased changes.
+
+## v2.22.5 (2026-10-24)
 
 ### Features
 
 - **node**: update the node's firmware from a file over Bluetooth, through the OTA loader in its app1 ([7079541c](https://github.com/meshsat/meshsat-android/commit/7079541c0eb4868575899ddc0dd1131267ef07f4))
 - **node**: switch the node's status LED and screen on and off from Settings, through the node's CONTROL characteristic ([3a1bf4d2](https://github.com/meshsat/meshsat-android/commit/3a1bf4d20e00fe7d6ee5fd28a34cca2edb65fd86))
+
+### Fixes
+
+- **node**: the firmware update waits at most 300 ms for a write-without-response report, the updater's ACK being the flow control ([acbe5125](https://github.com/meshsat/meshsat-android/commit/acbe51250cceb907e65130d49291e4290a774f43))
 
 ## v2.22.4 (2026-10-24)
 
@@ -60,14 +68,14 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 - **iridium**: the 9704's firmware version comes from the modem's firmware query, and malformed segment fields from the modem are ignored instead of crashing the driver ([e6bac086](https://github.com/meshsat/meshsat-android/commit/e6bac0867b85cd2d6726693ab0926c24d4343df6))
 - **sms**: an encrypted SMS that was never compressed, such as Greek text, reads back as sent instead of as SMAZ2 gibberish ([54de9eb1](https://github.com/meshsat/meshsat-android/commit/54de9eb1ee59d6a0e67a19a767e6472dba0022ea))
 
+<details class="changelog-older">
+<summary>Older releases (139)</summary>
+
 ## v2.22.3 (2026-10-22)
 
 ### Features
 
 - **satellite**: Settings shows the satellite key's check value to compare with the kit's, and the service's satellite send and receive are the tested chain steps themselves ([20e004d8](https://github.com/meshsat/meshsat-android/commit/20e004d8e6645e2f47d2a465a377031265e2a191))
-
-<details class="changelog-older">
-<summary>Older releases (138)</summary>
 
 ## v2.22.2 (2026-10-22)
 
