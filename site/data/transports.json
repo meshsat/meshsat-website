@@ -3,7 +3,7 @@
     "live": {
       "label": "LIVE",
       "class": "badge-stable",
-      "means": "Runs on our prototype hardware today."
+      "means": "Tested and working on our prototype hardware."
     },
     "code": {
       "label": "CODE",

@@ -16,7 +16,7 @@ it has its own page under [Reticulum](/guide/features/reticulum). The same table
 
 | Code | What it means |
 |---|---|
-| <ChannelStatus code="live" inline /> | Runs on our prototype hardware today: the two V1 field kits, or a MeshSat node with a phone |
+| <ChannelStatus code="live" inline /> | Tested and working on our prototype hardware: the two V1 field kits, or a MeshSat node with a phone |
 | <ChannelStatus code="code" inline /> | In the Bridge, not running on a kit: either no kit carries the hardware, or we have no record of a run |
 | <ChannelStatus code="bench" inline /> | The hardware is on our bench, not in a kit yet |
 | <ChannelStatus code="coming-soon" inline /> | The hardware is on its way to the bench. Nothing has been tested |

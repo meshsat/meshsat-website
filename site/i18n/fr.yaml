@@ -63,7 +63,7 @@ trace_foot:
 tr_title:
   other: "Chaque système se branche sur le même routeur"
 tr_sub:
-  other: "Chaque système est un adaptateur derrière une même interface, avec sa propre MTU, son modèle de coût et sa chaîne de transformation, et une règle peut router de n'importe quel adaptateur vers n'importe quel autre. Le code de chaque canal dit où il en est réellement, pas ce que nous espérons : seul LIVE tourne aujourd'hui sur notre matériel."
+  other: "Chaque système est un adaptateur derrière une même interface, avec sa propre MTU, son modèle de coût et sa chaîne de transformation, et une règle peut router de n'importe quel adaptateur vers n'importe quel autre. Le code de chaque canal dit où il en est réellement, pas ce que nous espérons : seul LIVE est testé et fonctionne sur notre matériel."
 th_category:
   other: "Catégorie"
 th_channels:
@@ -107,7 +107,7 @@ ch_time:
 lg_label:
   other: "Ce que signifient les codes de statut"
 lg_live:
-  other: "tourne aujourd'hui sur notre matériel prototype"
+  other: "testé et fonctionnel sur notre matériel prototype"
 lg_code:
   other: "dans le Bridge, ne tourne sur aucun kit"
 lg_bench:
