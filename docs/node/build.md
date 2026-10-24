@@ -87,10 +87,26 @@ Flash it over USB with esptool. Erase first on a board that ran something else:
 esptool --chip esp32s3 --port /dev/ttyACM0 erase-flash
 esptool --chip esp32s3 --port /dev/ttyACM0 write-flash \
   0x0      .pio/build/meshsat-tbeam-s3-rockblock/firmware-meshsat-tbeam-s3-rockblock-*.factory.bin \
-  0x670000 .pio/build/meshsat-tbeam-s3-rockblock/littlefs-meshsat-tbeam-s3-rockblock-*.bin
+  0x670000 .pio/build/meshsat-tbeam-s3-rockblock/littlefs-meshsat-tbeam-s3-rockblock-*.bin \
+  0x340000 mt-esp32s3-ota.bin
 ```
 
-Then set it up like any Meshtastic node, with the Meshtastic app or CLI: your region, an owner name, and Bluetooth pairing set to a fixed PIN of your own. Updates go over USB the same way; over-the-air updates are not supported.
+`mt-esp32s3-ota.bin` is Meshtastic's Bluetooth update loader, from the
+[Meshtastic 2.8.0 release](https://github.com/meshtastic/firmware/releases/tag/v2.8.0.47db0e3). It is
+not in the factory image, and without it the node cannot be updated from the phone.
+
+Then set it up like any Meshtastic node, with the Meshtastic app or CLI: your region, an owner name, and Bluetooth pairing set to a fixed PIN of your own.
+
+## Updates
+
+Released builds are on the [releases page](https://github.com/meshsat/meshsat-firmware/releases), each
+with its SHA-256. In MeshSat Android 2.22.8 or later, Settings > Satellite > **Node firmware** >
+**Check for update** asks GitHub for the latest release, picks the build your node runs, checks the
+download's size and SHA-256, and installs it over Bluetooth. The card shows the version on the node
+and the one available. **Update from a file** takes a `firmware-<build>-<version>.bin` you
+downloaded yourself. The node keeps its settings and its Bluetooth pairing.
+
+Over USB, writing the app image alone at `0x10000` does the same.
 
 ## Pair with MeshSat Android
 

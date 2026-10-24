@@ -49,6 +49,11 @@ where you are: clear sky 5°, partial view 20°, urban 40°.
 The signal also shows as an icon in Android's status bar. Zero bars is normal between passes
 and under a limited view of the sky; the app sends anyway and keeps retrying.
 
+With a RockBLOCK 9704 the bars are the modem's last reading. Once that reading is more than about
+a minute old, the screen says how old it is ("3/5, last reading 4 min ago"), and before the first
+reading it shows "?". The bars are only a hint: whether a message went out shows on the message
+itself.
+
 ## Where satellite messages land
 
 A message sent by satellite arrives at the satellite provider, which hands it to the
