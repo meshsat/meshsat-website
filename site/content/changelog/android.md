@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 143
-  latest_tag: "v2.22.7"
+  tags: 144
+  latest_tag: "v2.22.8"
   latest_tag_date: "2026-10-24"
-  latest_tag_anchor: "v2227-2026-10-24"
+  latest_tag_anchor: "v2228-2026-10-24"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -38,20 +38,31 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 No unreleased changes.
 
+## v2.22.8 (2026-10-24)
+
+### Features
+
+- **node**: Check for update fetches the newest MeshSat firmware for the node's own build and checks its size and SHA-256; the update scans for the node's updater first ([9eaf6570](https://github.com/meshsat/meshsat-android/commit/9eaf6570017cc2301ca04d97ea4f88b6e95e053d))
+
+### Fixes
+
+- **node**: the firmware card shows the release as available beside the version on the node, never as newer, because a version ends in a commit hash ([d23d1cc9](https://github.com/meshsat/meshsat-android/commit/d23d1cc941bb8bb130017e9294eb26002094ffcc))
+- **9704**: the modem's segment request is answered the moment it is read, ahead of signal reads, MT handling and other Bluetooth writes; the signal shows its age once stale ([00433b4a](https://github.com/meshsat/meshsat-android/commit/00433b4a925769f4e41fb3b6a7e04f391abea2e5))
+
 ## v2.22.7 (2026-10-24)
 
 ### Fixes
 
 - **satellite**: a plain text behind the version byte opens as a plain message on a phone that seals nothing, instead of cannot open ([f82ae17a](https://github.com/meshsat/meshsat-android/commit/f82ae17addd621e07665bbb39d0e65a7c7ac50c0))
 
+<details class="changelog-older">
+<summary>Older releases (142)</summary>
+
 ## v2.22.6 (2026-10-24)
 
 ### Fixes
 
 - **node**: a cached Bluetooth table without CONTROL is dropped and discovered again, so the switches show after a firmware update ([d3f3aa50](https://github.com/meshsat/meshsat-android/commit/d3f3aa5046e6a9122816acaf3c1f7804d66051bd))
-
-<details class="changelog-older">
-<summary>Older releases (141)</summary>
 
 ## v2.22.5 (2026-10-24)
 
