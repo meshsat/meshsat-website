@@ -1267,6 +1267,10 @@ hardware_photo:
   other: "Deux kits de terrain V1 en cours de montage, printemps 2026."
 hardware_process:
   other: "Voir notre méthode de construction"
+msc2_photo:
+  other: "MeshSat Compact v2, le premier prototype : radio mesh, modem satellite et batterie dans un boîtier qui tient dans la main. Il a envoyé et reçu des messages par satellite."
+msc2_launch:
+  other: "MSC-2, la passerelle d'équipe : inscrivez-vous à la liste de lancement"
 language_home:
   other: "accueil"
 

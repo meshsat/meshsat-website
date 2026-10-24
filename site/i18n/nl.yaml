@@ -1267,6 +1267,10 @@ hardware_photo:
   other: "Twee V1-veldkits tijdens de bouw, voorjaar 2026."
 hardware_process:
   other: "Bekijk hoe we bouwen"
+msc2_photo:
+  other: "MeshSat Compact v2, het eerste prototype: meshradio, satellietmodem en batterij in één behuizing die in je hand past. Het heeft satellietberichten verstuurd en ontvangen."
+msc2_launch:
+  other: "MSC-2, de teamgateway: schrijf je in voor de lancering"
 language_home:
   other: "startpagina"
 
