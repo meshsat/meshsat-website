@@ -63,7 +63,7 @@ The sections below give the detail and the sources for every cell, and the last 
 
 ## Iridium
 
-**On the kit.** A RockBLOCK 9704 (Iridium IMT) in both kits. tesseract had a RockBLOCK 9603 (Iridium SBD) until its own 9704 was fitted. A Taoglas IAA.01 puck outside the case.
+**On the kit.** An Iridium modem: a RockBLOCK 9704 (Iridium IMT) or an SBD RockBLOCK (9603 or Mk2), depending on the kit's build. A Taoglas IAA.01 puck outside the case.
 
 **Estimated range on the kit.**
 
