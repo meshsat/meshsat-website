@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 100
+  unreleased_count: 102
   unreleased_since: "2026-10-24"
   unreleased_anchor: "unreleased-main-last-change-2026-10-24"
 ---
@@ -74,6 +74,8 @@ not a claim of emergency reliability.
 
 ### Fixes
 
+- **cloudloop**: a text to a 9704 goes as its own bytes, so MeshSat Android and iOS open it instead of showing cannot open ([12acb1b5](https://github.com/meshsat/meshsat-hub/commit/12acb1b5478c186a847506eaf9f05155fa286536))
+- **compress**: word 124 of the Meshtastic table is the Bridge's "satellite" again, so the Hub and the kits read the same word ([c1012241](https://github.com/meshsat/meshsat-hub/commit/c101224116d14a3ca02669e5e83232af6aba5916))
 - **sms**: what a key opens outranks a clear app SMS wire v2 reading of the same bytes, so an old sealed SMS whose nonce starts like a v2 header reads as its words ([82840301](https://github.com/meshsat/meshsat-hub/commit/82840301e9abfa1efaf4c8ca6dc62c15b6c933c2))
 - **sms**: an SMS from a MeshSat app reads at the Hub as written, compressed or not, encrypted or not, Greek included ([af087536](https://github.com/meshsat/meshsat-hub/commit/af087536327717e210a776e209e7e6e24f62012d))
 - **store**: a SQLite Hub runs the WAL journal, busy timeout and synchronous mode its DSN names, with foreign keys off as on Postgres ([ebe81fe5](https://github.com/meshsat/meshsat-hub/commit/ebe81fe56042c73e00505fd088bc8bd83e7d2a4b))

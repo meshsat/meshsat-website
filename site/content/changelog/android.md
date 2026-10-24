@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 142
-  latest_tag: "v2.22.6"
+  tags: 143
+  latest_tag: "v2.22.7"
   latest_tag_date: "2026-10-24"
-  latest_tag_anchor: "v2226-2026-10-24"
+  latest_tag_anchor: "v2227-2026-10-24"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -38,11 +38,20 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 No unreleased changes.
 
+## v2.22.7 (2026-10-24)
+
+### Fixes
+
+- **satellite**: a plain text behind the version byte opens as a plain message on a phone that seals nothing, instead of cannot open ([f82ae17a](https://github.com/meshsat/meshsat-android/commit/f82ae17addd621e07665bbb39d0e65a7c7ac50c0))
+
 ## v2.22.6 (2026-10-24)
 
 ### Fixes
 
 - **node**: a cached Bluetooth table without CONTROL is dropped and discovered again, so the switches show after a firmware update ([d3f3aa50](https://github.com/meshsat/meshsat-android/commit/d3f3aa5046e6a9122816acaf3c1f7804d66051bd))
+
+<details class="changelog-older">
+<summary>Older releases (141)</summary>
 
 ## v2.22.5 (2026-10-24)
 
@@ -54,9 +63,6 @@ No unreleased changes.
 ### Fixes
 
 - **node**: the firmware update waits at most 300 ms for a write-without-response report, the updater's ACK being the flow control ([acbe5125](https://github.com/meshsat/meshsat-android/commit/acbe51250cceb907e65130d49291e4290a774f43))
-
-<details class="changelog-older">
-<summary>Older releases (140)</summary>
 
 ## v2.22.4 (2026-10-24)
 

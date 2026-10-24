@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1061
-  unreleased_since: "2026-10-23"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-23"
+  unreleased_count: 1068
+  unreleased_since: "2026-10-24"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-24"
 ---
 
 Generated from the commit history of
@@ -30,10 +30,12 @@ release and does not establish that every feature has been tested on hardware.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-23)
+## Unreleased (main, last change 2026-10-24)
 
 ### Features
 
+- **hopset**: Settings \> Media Hopping shows each link's last probe and what each peer reports about its own links ([d711136c](https://github.com/meshsat/meshsat/commit/d711136cfae5349217e395c8f7103d562fe5b3ad))
+- **hopset**: two Bridges tell each other their links' hop state over STATUS-NET, shown and never acted on, and a time-sync request answered on its link is that link's probe ([8f0bd76a](https://github.com/meshsat/meshsat/commit/8f0bd76acc94215cbda67cd3eff9de89171053b5))
 - **hopset**: media hopping gets one switch in Settings, off by default, so routing stays as it was until someone turns it on ([daafa0c7](https://github.com/meshsat/meshsat/commit/daafa0c794d481ce1126966c2211ee99dc6a1ae8))
 - **hopset**: the hop set takes the owner's numbers, counts repeated radio refusals and silence as signs, and brings a link back more slowly each time it fails again ([d67419d3](https://github.com/meshsat/meshsat/commit/d67419d3bb83b9eae078e7d45d4e2a30a41e9d67))
 - **hopset**: the delivery worker, the mesh receipts and the receivers feed the hop set; MESHSAT\_HOPSET makes it the route gate, GET /api/hopset shows it ([e969c6c9](https://github.com/meshsat/meshsat/commit/e969c6c99fbcfa043cdb74808c4be1d8888cc803))
@@ -472,6 +474,11 @@ release and does not establish that every feature has been tested on hardware.
 
 ### Fixes
 
+- **hopset**: a STATUS-NET request keeps the media hopping interval it was made in, and a reply carries our hop state only while it holds that interval, so turning media hopping off waits for it ([755512fa](https://github.com/meshsat/meshsat/commit/755512fa113622597572399ed03bfbd1febb81d1))
+- **hopset**: turning media hopping off ends its interval, so a hop report, reply or probe from before is never read after, and off waits for a share or a reply carrying our state that is under way ([23cbdce1](https://github.com/meshsat/meshsat/commit/23cbdce13469639c71f7c5df82fc23551b6c15bb))
+- **hopset**: the STATUS-NET hop exchange tells a peer once per 10 min under concurrency, leaves paid bearers' replies as they were, reads only replies to our own requests, caps them per peer and keeps nothing while off ([6e6ce119](https://github.com/meshsat/meshsat/commit/6e6ce1190a2e4fc88c29b9aaaaea9946aa5fd5f9))
+- **hopset**: a time-sync answer on ax25\_N is the probe of the APRS link aprs\_N, and nothing is recorded per link while media hopping is off ([f1039e3a](https://github.com/meshsat/meshsat/commit/f1039e3a84d12c411ae69fc5c32636c76f5e73c4))
+- **hopset**: the hop form is canonical, one link per interface and no leading zero, and a reader takes the last form in a STATUS-NET body ([e8cca4f0](https://github.com/meshsat/meshsat/commit/e8cca4f048fce8c68802ed06f643360c06bf9095))
 - **hopset**: only the modem's own failure or answer counts as a bearer refusing, never a send its caller cancelled or a queued SMS that never ran ([738c29ac](https://github.com/meshsat/meshsat/commit/738c29ac0e5b6e4a0d8a8436eb309c5220bb0375))
 - **hopset**: native gateways' own refusals reach the hop set again, turning media hopping off stops its audits and events at once, and the settings page keeps an unsaved choice ([a022c2a6](https://github.com/meshsat/meshsat/commit/a022c2a6daf2a2b0dbf0b5698fa008cd2f92e9b7))
 - **hopset**: the intent sends feed the hop set, the paid alarm fires at a real submission, and the hop set learns which devices are absent ([1d57101c](https://github.com/meshsat/meshsat/commit/1d57101c92690f1c98bbf77e611d261e0a1987cb))
