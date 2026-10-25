@@ -295,13 +295,13 @@ and_play_note:
 films_title:
   other: "See it working"
 films_sub:
-  other: "The introduction first, then MeshSat explained level by level, from the idea down to the bits."
+  other: "The introduction first, then two field kits on the bench passing a message from one mesh to the other, over APRS radio and then over SMS."
 films_consent:
   other: "Nothing loads from YouTube until you press play."
-film_explainer_play:
-  other: "Play MeshSat, explained"
-film_explainer_cap:
-  other: "MeshSat explained, from the idea of bridging networks that disasters turn into islands down to the bytes of an SOS on the wire. Subtitles in English, Greek and Dutch."
+film_kits_play:
+  other: "Play the field kit video"
+film_kits_cap:
+  other: "Recorded in Leiden on 12 September 2026: a message crosses from one kit's mesh to the other's over APRS on 144.800 MHz, then again over SMS."
 host_title:
   other: "Run the Hub on your own servers, or try it on ours"
 host_caption:
@@ -436,7 +436,7 @@ start_hub:
   other: "Manage your devices"
 
 start_demo:
-  other: "Watch MeshSat, explained"
+  other: "Watch the bench demonstration"
 
 hw_start:
   other: "Minimum setup, optional additions and build guides"

@@ -295,13 +295,13 @@ and_play_note:
 films_title:
   other: "Le voir fonctionner"
 films_sub:
-  other: "D'abord la présentation, puis MeshSat expliqué niveau par niveau, de l'idée jusqu'aux bits."
+  other: "D'abord la présentation, puis deux kits de terrain sur l'établi qui font passer un message d'un maillage à l'autre, par radio APRS puis par SMS."
 films_consent:
   other: "Rien n'est chargé depuis YouTube avant que vous appuyiez sur lecture."
-film_explainer_play:
-  other: "Lire le film sur MeshSat"
-film_explainer_cap:
-  other: "MeshSat expliqué, de l'idée de relier les réseaux que les catastrophes changent en îles jusqu'aux octets d'un SOS sur la ligne. Sous-titres en anglais, grec et néerlandais."
+film_kits_play:
+  other: "Lire la vidéo des kits de terrain"
+film_kits_cap:
+  other: "Enregistré à Leyde le 12 septembre 2026 : un message passe du maillage d'un kit à celui de l'autre par APRS sur 144,800 MHz, puis à nouveau par SMS."
 host_title:
   other: "Hébergez le Hub sur vos serveurs, ou essayez-le sur les nôtres"
 host_caption:
@@ -436,7 +436,7 @@ start_hub:
   other: "Gérer vos appareils"
 
 start_demo:
-  other: "Voir le film sur MeshSat"
+  other: "Voir la démonstration sur banc"
 
 hw_start:
   other: "Équipement minimal, extensions et guides de montage"
