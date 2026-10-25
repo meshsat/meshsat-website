@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v2.22.8"
   latest_tag_date: "2026-10-24"
   latest_tag_anchor: "v2228-2026-10-24"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  unreleased_count: 2
+  unreleased_since: "2026-10-24"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-24"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -34,9 +34,12 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-10-24)
 
-No unreleased changes.
+### Fixes
+
+- **node**: what a node in its updater is left with belongs to the recovery session, so a later attempt never says the old firmware is still there after an earlier one erased it, and a recovery without history never claims it ([ab2383ec](https://github.com/meshsat/meshsat-android/commit/ab2383ece3edbc9aa756102ce302d50dcdb29459))
+- **node**: a firmware update that stops once the node went to its updater keeps the image and its address and offers a retry, saying whether the old firmware may be erased ([7122d40c](https://github.com/meshsat/meshsat-android/commit/7122d40c30ba288d7d5f100e3b7ee7f9de053409))
 
 ## v2.22.8 (2026-10-24)
 

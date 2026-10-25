@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 118
-  unreleased_since: "2026-10-23"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-23"
+  unreleased_count: 125
+  unreleased_since: "2026-10-24"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-24"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -29,10 +29,12 @@ installation path; a commit entry does not establish App Store availability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-23)
+## Unreleased (main, last change 2026-10-24)
 
 ### Features
 
+- **node**: update the node's firmware over Bluetooth from the published release or a file, through the OTA loader found by its service ([5266efd5](https://github.com/meshsat/meshsat-ios/commit/5266efd5c1029d3fb7f123cba5951d271da66af5))
+- **node**: switch the node's status LED and screen on and off from Settings, through the node's CONTROL characteristic ([25f404d4](https://github.com/meshsat/meshsat-ios/commit/25f404d4685146ba049546541ec083d0be88228f))
 - **sms**: SMS go out in app SMS wire v2, whose frame names its codec inside the ciphertext, and the app reads v2 by it and v1 by the old rule, as Android does ([44721c83](https://github.com/meshsat/meshsat-ios/commit/44721c8323c234bf49c399316cf2d1eaead6a1f5))
 - **crypto**: a kit's key bundle QR imports on iOS as on Android: signed, the kit's key pinned on first use, a changed key only on the user's yes ([5988bece](https://github.com/meshsat/meshsat-ios/commit/5988bece550374aafef26621b6f9e23e1a595176))
 - **iridium**: the Hub's send\_mt reaches the node's 9704 when it names it, and the background sync drains a queue the 9704 carries ([059a0fb9](https://github.com/meshsat/meshsat-ios/commit/059a0fb91bb004fee6685d7f1e2c2cf4ada603ad))
@@ -103,6 +105,11 @@ installation path; a commit entry does not establish App Store availability.
 
 ### Fixes
 
+- **node**: what a node in its updater is left with belongs to the recovery session, so a later attempt never says the old firmware is still there after an earlier one erased it, and a recovery without history never claims it ([5affad11](https://github.com/meshsat/meshsat-ios/commit/5affad11dfe6bda432990a7e5599f299a45fa97f))
+- **node**: a firmware update that stops after the update command keeps the image and offers a retry, as the node may be left erased in its updater ([f329abee](https://github.com/meshsat/meshsat-ios/commit/f329abee2458c5dff5ff9ca229d56b51dc93539c))
+- **9704**: the modem's segment request is answered the moment it is read, ahead of signal reads, MT handling and other Bluetooth writes ([f133b42b](https://github.com/meshsat/meshsat-ios/commit/f133b42b979886849f004786f080884e7de4ba21))
+- **iridium**: a 9704 send that saw no satellite comes back within a minute, an unanswered signal read keeps the last bars, and the bars say how old they are ([a5e531d6](https://github.com/meshsat/meshsat-ios/commit/a5e531d61c66ac3cd21d2221e3bbe8da068bf338))
+- **satellite**: a plain text behind the version byte opens as a plain message on a phone that seals nothing, instead of cannot open ([515486a6](https://github.com/meshsat/meshsat-ios/commit/515486a66018c35abf8c35af294e58f9ffb70e9c))
 - **sms**: what a key opens outranks a clear SMS wire v2 reading of the same bytes, so an old sealed SMS whose nonce starts like a v2 header reads as its words ([27848c39](https://github.com/meshsat/meshsat-ios/commit/27848c39f5b6ad53678985150914a13fd099422a))
 - **directory**: a reprovision to another Hub, bridge, topic root or tenant starts the directory over even under the same key, takes only the bundle's tenant, and drops a reply from before ([168701c8](https://github.com/meshsat/meshsat-ios/commit/168701c8d8dd667ce132785140906b19e7b2c101))
 - **sms**: the plain-text check reads UTF-8 without the iOS 18 API, so the app builds for iOS 17 again ([161afcc5](https://github.com/meshsat/meshsat-ios/commit/161afcc518c18ca48889ec20212156d55ac77f36))
