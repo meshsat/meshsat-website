@@ -295,13 +295,13 @@ and_play_note:
 films_title:
   other: "Sehen, wie es läuft"
 films_sub:
-  other: "Zuerst die Einführung, dann zwei Feldkits auf der Werkbank, die eine Nachricht von einem Mesh ins andere weitergeben, über APRS-Funk und danach über SMS."
+  other: "Zuerst die Einführung, dann MeshSat erklärt, Ebene für Ebene, von der Idee bis zu den Bits."
 films_consent:
   other: "Von YouTube wird nichts geladen, bevor Sie auf Abspielen drücken."
-film_kits_play:
-  other: "Video zu den Feldkits abspielen"
-film_kits_cap:
-  other: "Aufgenommen in Leiden am 12. September 2026: Eine Nachricht geht vom Mesh des einen Kits in das des anderen, über APRS auf 144,800 MHz und danach noch einmal über SMS."
+film_explainer_play:
+  other: "Film über MeshSat abspielen"
+film_explainer_cap:
+  other: "MeshSat erklärt, von der Idee, Netze zu verbinden, die Katastrophen zu Inseln machen, bis zu den Bytes eines SOS auf der Leitung. Untertitel auf Englisch, Griechisch und Niederländisch."
 host_title:
   other: "Den Hub auf eigenen Servern betreiben oder auf unseren ausprobieren"
 host_caption:
@@ -436,7 +436,7 @@ start_hub:
   other: "Geräte verwalten"
 
 start_demo:
-  other: "Vorführung am Prüfstand ansehen"
+  other: "Film über MeshSat ansehen"
 
 hw_start:
   other: "Mindestausstattung, Erweiterungen und Bauanleitungen"

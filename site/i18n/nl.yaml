@@ -295,13 +295,13 @@ and_play_note:
 films_title:
   other: "Zie het werken"
 films_sub:
-  other: "Eerst de introductie, daarna twee veldkits op de werkbank die een bericht van de ene mesh naar de andere doorgeven, via APRS-radio en daarna via sms."
+  other: "Eerst de introductie, daarna MeshSat uitgelegd, niveau voor niveau, van het idee tot de bits."
 films_consent:
   other: "Er wordt niets van YouTube geladen totdat je op afspelen drukt."
-film_kits_play:
-  other: "Speel de video over de veldkits af"
-film_kits_cap:
-  other: "Opgenomen in Leiden op 12 september 2026: een bericht gaat van de mesh van de ene kit naar die van de andere via APRS op 144,800 MHz, en daarna nog eens via sms."
+film_explainer_play:
+  other: "Speel de film over MeshSat af"
+film_explainer_cap:
+  other: "MeshSat uitgelegd, van het idee om netwerken te verbinden die bij rampen eilanden worden tot de bytes van een SOS op de lijn. Ondertiteling in het Engels, Grieks en Nederlands."
 host_title:
   other: "Draai de Hub op je eigen servers, of probeer hem op de onze"
 host_caption:
@@ -436,7 +436,7 @@ start_hub:
   other: "Beheer je apparaten"
 
 start_demo:
-  other: "Bekijk de demonstratie op de werkbank"
+  other: "Bekijk de film over MeshSat"
 
 hw_start:
   other: "Minimale opstelling, uitbreidingen en bouwhandleidingen"
