@@ -3,7 +3,7 @@ title: "Privacy Policy"
 description: "What MeshSat collects, why, who else sees it, and how to get it back or delete it."
 ---
 
-**Last updated: 21 October 2026**
+**Last updated: 26 October 2026**
 
 Four products, two very different answers. The Bridge and phone apps run on your hardware; the services they contact depend on your configuration. The Hub is a service we operate, so this policy is mostly about the Hub.
 
@@ -16,6 +16,12 @@ The controller for personal data held in MeshSat Hub and on meshsat.net is Elli.
 ## meshsat.net
 
 We use [Umami](https://umami.is/) for analytics. It is self-hosted on our own infrastructure, sets no cookies, and does not build a profile of you. The homepage also requests public repository statistics from GitHub, which receives the network information needed to answer that request. Videos load from YouTube only after you select a play button; YouTube then receives the request and applies its own privacy policy.
+
+## Our YouTube channel
+
+We publish MeshSat's own videos to our YouTube channel ([youtube.com/@MeshSat](https://www.youtube.com/@MeshSat)) with a small internal tool that uses the YouTube API Services. Only our team uses it, and only on our own channel. It reads and changes our channel's videos, captions and playlists. It does not read or collect anything about viewers or other YouTube users, and it sets no cookies. The access it holds for our channel is stored on our own server and is never shared. We can withdraw it at any time on the Google account's [permissions page](https://security.google.com/settings/security/permissions), which also removes it on Google's side; we then delete our stored copy.
+
+YouTube's [Terms of Service](https://www.youtube.com/t/terms) apply to anything you watch there, and Google handles YouTube data under the [Google Privacy Policy](https://policies.google.com/privacy).
 
 ## MeshSat Bridge, MeshSat Android and MeshSat iOS
 

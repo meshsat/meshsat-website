@@ -3,7 +3,7 @@ title: "Terms of Service"
 description: "Terms for MeshSat Bridge and the hosted MeshSat Hub."
 ---
 
-**Last updated: September 2026**
+**Last updated: October 2026**
 
 These terms cover two different things: software you run yourself, and a service we run for you.
 
@@ -85,6 +85,10 @@ What we collect and why is in the [Privacy Policy](/privacy/).
 Satellite and cellular messages cost money, and that money is owed to the carrier, not to us. You bring your own Iridium, Twilio, Rock7 or Globalstar account, and that carrier bills you directly for what your devices send.
 
 We provide rate limits, access rules and per-device ceilings so you can control that spend. Configuring them is your job. A chatty sensor and a wildcard routing rule will produce a bill, and it will be your bill.
+
+## Our videos on YouTube
+
+Our videos are published on YouTube. Watching them there, or in the players on our sites, means YouTube's [Terms of Service](https://www.youtube.com/t/terms) apply to you as well as these terms.
 
 ## Changes
 
