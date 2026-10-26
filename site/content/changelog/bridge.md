@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1068
-  unreleased_since: "2026-10-24"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-24"
+  unreleased_count: 1069
+  unreleased_since: "2026-10-26"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-26"
 ---
 
 Generated from the commit history of
@@ -30,10 +30,11 @@ release and does not establish that every feature has been tested on hardware.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-24)
+## Unreleased (main, last change 2026-10-26)
 
 ### Features
 
+- **tak**: a dispatcher's TAK chat to one crew reaches that node as a direct message, and the crew's answer goes back to the dispatcher ([23161237](https://github.com/meshsat/meshsat/commit/231612376552ad1976865dffd28f046012335d4b))
 - **hopset**: Settings \> Media Hopping shows each link's last probe and what each peer reports about its own links ([d711136c](https://github.com/meshsat/meshsat/commit/d711136cfae5349217e395c8f7103d562fe5b3ad))
 - **hopset**: two Bridges tell each other their links' hop state over STATUS-NET, shown and never acted on, and a time-sync request answered on its link is that link's probe ([8f0bd76a](https://github.com/meshsat/meshsat/commit/8f0bd76acc94215cbda67cd3eff9de89171053b5))
 - **hopset**: media hopping gets one switch in Settings, off by default, so routing stays as it was until someone turns it on ([daafa0c7](https://github.com/meshsat/meshsat/commit/daafa0c794d481ce1126966c2211ee99dc6a1ae8))
