@@ -232,12 +232,13 @@
 }
 
 @media (max-width: 700px) {
-  .ig-capabilities, .ig-capabilities tbody, .ig-capabilities tr, .ig-capabilities th, .ig-capabilities td { display: block; width: 100%; min-width: 0; }
-  .ig-capabilities thead { display: none; }
-  .ig-capabilities tr { border-top: var(--ig-rule); padding-block: 1rem; }
-  .ig-capabilities th, .ig-capabilities td { border: 0; padding: .5rem 0; }
-  .ig-capabilities td::before { content: attr(data-label); display: block; font-weight: 600; color: var(--color-text-muted); font-size: .875rem; }
-  .ig-capabilities caption { display: block; }
+  .ig-capabilities, .ig-capabilities tbody, .ig-capabilities tr, .ig-capabilities th, .ig-capabilities td,
+  .ig-sensors, .ig-sensors tbody, .ig-sensors tr, .ig-sensors th, .ig-sensors td { display: block; width: 100%; min-width: 0; }
+  .ig-capabilities thead, .ig-sensors thead { display: none; }
+  .ig-capabilities tr, .ig-sensors tr { border-top: var(--ig-rule); padding-block: 1rem; }
+  .ig-capabilities th, .ig-capabilities td, .ig-sensors th, .ig-sensors td { border: 0; padding: .5rem 0; }
+  .ig-capabilities td::before, .ig-sensors td[data-label]::before { content: attr(data-label); display: block; font-weight: 600; color: var(--color-text-muted); font-size: .875rem; }
+  .ig-capabilities caption, .ig-sensors caption { display: block; }
 }
 
 /* The explainer film (26 Oct 2026): copy and two chapter jumps beside the home
