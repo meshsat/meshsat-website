@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 104
-  unreleased_since: "2026-10-24"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-24"
+  unreleased_count: 110
+  unreleased_since: "2026-10-26"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-26"
 ---
 
 Generated from the commit history of
@@ -31,10 +31,13 @@ not a claim of emergency reliability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-24)
+## Unreleased (main, last change 2026-10-26)
 
 ### Features
 
+- **tak**: dispatcher-to-crew chat is on: a dispatcher on TAK or the Hub map can write to one crew ([46b09c2b](https://github.com/meshsat/meshsat-hub/commit/46b09c2b9a1776772890d839a2b94717ea8c9ace))
+- **tak**: a dispatcher can write to one crew from TAK or the Hub map, and the crew's answer comes back ([9e759744](https://github.com/meshsat/meshsat-hub/commit/9e759744c09358ab819064c42a122ad27b51b700))
+- **tak**: a hosted TAK server hands the Hub a chat a TAK user addresses to one crew ([f4389a4c](https://github.com/meshsat/meshsat-hub/commit/f4389a4c4f5e097e6fb0f6a8d306c99084f2e3f6))
 - **console**: a Contacts page, and Settings chooses who devices may write to ([fee8a67e](https://github.com/meshsat/meshsat-hub/commit/fee8a67e71a940d680c1351e023094115680ce50))
 - **hub**: a device writes to a person by SMS or email with "@", and the reply comes back to the device, plain or end to end ([755260b9](https://github.com/meshsat/meshsat-hub/commit/755260b91c24f364152aad381880a4ad652579d3))
 - **relay**: satellite\_relay reaches an SBD modem through Rock7 and carries an SBD message's bytes on, one 270-byte frame at most, never cut ([cca0a426](https://github.com/meshsat/meshsat-hub/commit/cca0a4264459e9487ad93bfb88f06de55afe1e25))
@@ -76,6 +79,9 @@ not a claim of emergency reliability.
 
 ### Fixes
 
+- **tak**: hosted TAK servers move to the image that routes a dispatcher's chat to one crew ([da4f95c8](https://github.com/meshsat/meshsat-hub/commit/da4f95c898fd96cb6a7adace48d5493125eed10e))
+- **tak**: the hosted TAK server image passes its CVE gate again ([ab683719](https://github.com/meshsat/meshsat-hub/commit/ab6837192f4e9c33705bbe424203b814ca734852))
+- **tak**: the hosted TAK server image builds again without the two feed packages deleted from PyPI ([ad3ccbdb](https://github.com/meshsat/meshsat-hub/commit/ad3ccbdbc55a603aa636e3dab410b5d8d453699d))
 - **cloudloop**: a text to a 9704 goes as its own bytes, so MeshSat Android and iOS open it instead of showing cannot open ([12acb1b5](https://github.com/meshsat/meshsat-hub/commit/12acb1b5478c186a847506eaf9f05155fa286536))
 - **compress**: word 124 of the Meshtastic table is the Bridge's "satellite" again, so the Hub and the kits read the same word ([c1012241](https://github.com/meshsat/meshsat-hub/commit/c101224116d14a3ca02669e5e83232af6aba5916))
 - **sms**: what a key opens outranks a clear app SMS wire v2 reading of the same bytes, so an old sealed SMS whose nonce starts like a v2 header reads as its words ([82840301](https://github.com/meshsat/meshsat-hub/commit/82840301e9abfa1efaf4c8ca6dc62c15b6c933c2))

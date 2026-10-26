@@ -4,13 +4,13 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 144
-  latest_tag: "v2.22.8"
-  latest_tag_date: "2026-10-24"
-  latest_tag_anchor: "v2228-2026-10-24"
-  unreleased_count: 2
-  unreleased_since: "2026-10-24"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-24"
+  tags: 145
+  latest_tag: "v2.23.0"
+  latest_tag_date: "2026-10-26"
+  latest_tag_anchor: "v2230-2026-10-26"
+  unreleased_count: 0
+  unreleased_since: ""
+  unreleased_anchor: "unreleased-main"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -34,7 +34,15 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-24)
+## Unreleased (main)
+
+No unreleased changes.
+
+## v2.23.0 (2026-10-26)
+
+### Features
+
+- **tak**: a dispatcher's TAK chat to this phone arrives as a message with a notification, and the answer goes back to the dispatcher ([4b2640a5](https://github.com/meshsat/meshsat-android/commit/4b2640a58fb6ae7cd713c51c7035d4f2b67eb3af))
 
 ### Fixes
 
@@ -52,14 +60,14 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 - **node**: the firmware card shows the release as available beside the version on the node, never as newer, because a version ends in a commit hash ([d23d1cc9](https://github.com/meshsat/meshsat-android/commit/d23d1cc941bb8bb130017e9294eb26002094ffcc))
 - **9704**: the modem's segment request is answered the moment it is read, ahead of signal reads, MT handling and other Bluetooth writes; the signal shows its age once stale ([00433b4a](https://github.com/meshsat/meshsat-android/commit/00433b4a925769f4e41fb3b6a7e04f391abea2e5))
 
+<details class="changelog-older">
+<summary>Older releases (143)</summary>
+
 ## v2.22.7 (2026-10-24)
 
 ### Fixes
 
 - **satellite**: a plain text behind the version byte opens as a plain message on a phone that seals nothing, instead of cannot open ([f82ae17a](https://github.com/meshsat/meshsat-android/commit/f82ae17addd621e07665bbb39d0e65a7c7ac50c0))
-
-<details class="changelog-older">
-<summary>Older releases (142)</summary>
 
 ## v2.22.6 (2026-10-24)
 
