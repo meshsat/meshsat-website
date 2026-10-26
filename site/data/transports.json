@@ -114,6 +114,18 @@
           ]
         },
         {
+          "code": "bench",
+          "items": [
+            {
+              "k": "ch_2g",
+              "s": "gsm-cell",
+              "id": "gsm-cell",
+              "evidence": "https://docs.meshsat.net/transports/gsm-cell.html",
+              "reviewed": "2026-10-27"
+            }
+          ]
+        },
+        {
           "code": "soon",
           "items": [
             {
@@ -128,13 +140,6 @@
               "s": "halow",
               "id": "halow",
               "evidence": "https://docs.meshsat.net/transports/halow.html",
-              "reviewed": "2026-10-21"
-            },
-            {
-              "k": "ch_2g",
-              "s": "gsm-cell",
-              "id": "gsm-cell",
-              "evidence": "https://docs.meshsat.net/transports/gsm-cell.html",
               "reviewed": "2026-10-21"
             }
           ]

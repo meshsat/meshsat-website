@@ -50,7 +50,7 @@ compatibility with physical radios or every third-party client.
 | [TETRA Direct Mode](/transports/tetra) | <ChannelStatus channel="tetra" inline /> | Working on hardware: texts between both kits in Direct Mode, through the Bridge on both sides |
 | [HF data](/transports/hf-data) | <ChannelStatus channel="hf-data" inline /> | Nothing on a radio |
 | [Wi-Fi HaLow](/transports/halow) | <ChannelStatus channel="halow" inline /> | Nothing on a HaLow radio |
-| [Own 2G cell](/transports/gsm-cell) | <ChannelStatus channel="gsm-cell" inline /> | Nothing. No code in the Bridge |
+| [Own 2G cell](/transports/gsm-cell) | <ChannelStatus channel="gsm-cell" inline /> | On the bench: two phones on our cell, texts and calls both ways; the Bridge runs the cell. Not in a kit |
 
 ## Wired
 
