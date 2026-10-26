@@ -638,7 +638,7 @@ ig_limits:
   other: "Te onderzoeken beperkingen"
 
 ig_config_eyebrow:
-  other: "03 / RADIOCONFIGURATOR"
+  other: "04 / RADIOCONFIGURATOR"
 
 ig_config_title:
   other: "Verken een radiocombinatie"
@@ -686,7 +686,7 @@ ig_mail_body:
   other: "Lokale radio's: {radios}\nAltijd ingebouwd: Iridium / RockBLOCK 9704 (module in evaluatie)\n\nRadiomodellen en berichttypen:\nLand en locatie van inzet:\nIntegratie-eindpunt:\n"
 
 ig_modules_eyebrow:
-  other: "04 / MODULES IN EVALUATIE"
+  other: "05 / MODULES IN EVALUATIE"
 
 ig_modules_title:
   other: "Openbare specificaties, expliciete grenzen"
@@ -707,7 +707,7 @@ ig_specs_caption:
   other: "openbare componentspecificaties"
 
 ig_cases_eyebrow:
-  other: "05 / TOEPASSINGEN VOOR EVALUATIE"
+  other: "06 / TOEPASSINGEN VOOR EVALUATIE"
 
 ig_cases_title:
   other: "Integratiescenario's"
@@ -1279,3 +1279,65 @@ ig_testing_scope:
 
 install_output:
   other: "Voorbeeld van installatie-uitvoer"
+
+# Integrators page: the explainer film and the sensors section (26 Oct 2026)
+ig_film_link:
+  other: "Bekijk de uitlegfilm van 17 minuten"
+ig_film_eyebrow:
+  other: "DE FILM / 17:13"
+ig_film_title:
+  other: "MeshSat, uitgelegd"
+ig_film_intro:
+  other: "Van het idee om netwerken te verbinden die door rampen van elkaar worden afgesneden, tot de bytes van een SOS op de lijn. Elk MSC-3-concept draait de MeshSat Bridge, de routeringslaag die de film laat zien."
+ig_film_chapters:
+  other: "TWEE HOOFDSTUKKEN VOOR INTEGRATORS"
+ig_film_ch_system:
+  other: "Het systeem: één routeringslaag tussen de radio's"
+ig_film_ch_hardware:
+  other: "De hardware: de veldkits en MSC-2"
+ig_film_ch_system_play:
+  other: "Speel MeshSat, uitgelegd, af vanaf Het systeem op 4:48"
+ig_film_ch_hardware_play:
+  other: "Speel MeshSat, uitgelegd, af vanaf De hardware op 11:09"
+ig_film_languages:
+  other: "Geluid in het Engels, Nederlands of Grieks, met ondertitels in alle drie (het tandwiel, dan Audiotrack)."
+ig_nav_sensors:
+  other: "Sensoren"
+ig_sensors_eyebrow:
+  other: "03 / SENSOREN EN POSITIE"
+ig_sensors_title:
+  other: "Een sensormeting reist als bericht"
+ig_sensors_intro:
+  other: "Geen enkel MSC-3-concept heeft eigen sensoren. Voor MeshSat is een sensormeting een bericht: die neemt dezelfde routes als tekst, Iridium inbegrepen. Dit bestaat er vandaag, en dit niet."
+ig_sensors_caption:
+  other: "Sensoren en positie: status op 26 oktober 2026"
+ig_sensor_col_source:
+  other: "Bron"
+ig_sensor_col_status:
+  other: "Status"
+ig_sensor_col_today:
+  other: "Vandaag"
+ig_sensor_col_open:
+  other: "Nog open"
+ig_sensor_zigbee:
+  other: "ZigBee-sensoren"
+ig_sensor_zigbee_today:
+  other: "In de MeshSat Bridge. Getest op de veldkits met temperatuur- en vochtigheidssensoren; elke meting verschijnt op de TAK-kaart als speld op de positie van de kit."
+ig_sensor_zigbee_open:
+  other: "De ZigBee-coördinator is op 20 september 2026 uit de kits gehaald. Nog geen onderdeel van een MSC-3-concept."
+ig_sensor_position:
+  other: "Positie van de radio's van het team"
+ig_sensor_position_today:
+  other: "Onderdeel van de beoogde berichten van een variant waar de radio positiemeldingen draagt, zoals in de capaciteitenmatrix."
+ig_sensor_position_open:
+  other: "Moet per radiovloot worden gevalideerd."
+ig_sensor_own:
+  other: "Andere sensoren"
+ig_sensor_own_today:
+  other: "In geen enkel concept: andere sensortypen, of een sensoraansluiting op de behuizing."
+ig_sensor_own_open:
+  other: "Laat ons weten welke sensoren en metingen uw project nodig heeft."
+ig_sensors_link:
+  other: "ZigBee op docs.meshsat.net"
+ig_sensors_plan:
+  other: "een ontwerpconcept, niets gebouwd"

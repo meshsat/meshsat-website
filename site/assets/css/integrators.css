@@ -239,3 +239,22 @@
   .ig-capabilities td::before { content: attr(data-label); display: block; font-weight: 600; color: var(--color-text-muted); font-size: .875rem; }
   .ig-capabilities caption { display: block; }
 }
+
+/* The explainer film (26 Oct 2026): copy and two chapter jumps beside the home
+   page's film frame. The chapter buttons reuse .video-play for main.js's click
+   delegation, so they undo its poster sizing here. */
+.ig-film { background: var(--color-bg-secondary); border-bottom: var(--ig-rule); }
+.ig-film-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: center; padding-block: var(--space-2xl); }
+.ig-film-copy h2 { margin-block: var(--space-sm) var(--space-md); }
+.ig-film-label { margin-top: var(--space-lg); font: 500 .75rem/1.5 var(--font-mono); letter-spacing: .08em; color: var(--color-text-muted); }
+.ig-film-chapters { list-style: none; margin: var(--space-sm) 0 var(--space-lg); padding: 0; display: grid; gap: var(--space-sm); max-width: 66ch; }
+.ig-film .video-chapter { position: static; inset: auto; width: 100%; height: auto; min-height: 44px; display: flex; align-items: baseline; gap: var(--space-md); padding: var(--space-sm) var(--space-md); border: var(--ig-rule); border-radius: var(--radius-sm); background: var(--color-bg); color: var(--color-text); font: inherit; font-size: .9375rem; text-align: left; cursor: pointer; }
+.ig-film .video-chapter:hover { border-color: var(--color-primary); }
+.ig-film .video-chapter:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.ig-film-time { flex-shrink: 0; min-width: 3.25rem; font: 600 .875rem/1.5 var(--font-mono); }
+.ig-film-frame { margin: 0; }
+.ig-sensors th[scope="row"] { min-width: 10rem; }
+.ig-sensors td:nth-child(2) { white-space: nowrap; }
+#sensors .ig-table-scroll + .ig-note { margin-top: var(--space-md); }
+@media (max-width: 900px) { .ig-film-grid { grid-template-columns: 1fr; gap: var(--space-xl); } }
+@media (forced-colors: active) { .ig-film .video-chapter { border: 1px solid ButtonText; } }

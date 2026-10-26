@@ -638,7 +638,7 @@ ig_limits:
   other: "Limits to resolve"
 
 ig_config_eyebrow:
-  other: "03 / RADIO CONFIGURATOR"
+  other: "04 / RADIO CONFIGURATOR"
 
 ig_config_title:
   other: "Explore a radio combination"
@@ -686,7 +686,7 @@ ig_mail_body:
   other: "Local radios: {radios}\nAlways fitted: Iridium / RockBLOCK 9704 (module under evaluation)\n\nRadio models and message types:\nDeployment country and site:\nIntegration endpoint:\n"
 
 ig_modules_eyebrow:
-  other: "04 / MODULES UNDER EVALUATION"
+  other: "05 / MODULES UNDER EVALUATION"
 
 ig_modules_title:
   other: "Public specifications, explicit limits"
@@ -707,7 +707,7 @@ ig_specs_caption:
   other: "public component specifications"
 
 ig_cases_eyebrow:
-  other: "05 / USE CASES FOR EVALUATION"
+  other: "06 / USE CASES FOR EVALUATION"
 
 ig_cases_title:
   other: "Integration scenarios"
@@ -1279,3 +1279,65 @@ ig_testing_scope:
 
 install_output:
   other: "Example installer output"
+
+# Integrators page: the explainer film and the sensors section (26 Oct 2026)
+ig_film_link:
+  other: "Watch the 17-minute explainer"
+ig_film_eyebrow:
+  other: "THE FILM / 17:13"
+ig_film_title:
+  other: "MeshSat, explained"
+ig_film_intro:
+  other: "From the idea of bridging networks that disasters cut apart, down to the bytes of an SOS on the wire. Every MSC-3 concept runs the MeshSat Bridge, the routing layer the film shows."
+ig_film_chapters:
+  other: "TWO CHAPTERS FOR INTEGRATORS"
+ig_film_ch_system:
+  other: "The system: one routing layer between the radios"
+ig_film_ch_hardware:
+  other: "The hardware: the field kits and MSC-2"
+ig_film_ch_system_play:
+  other: "Play MeshSat, explained, from The system at 4:48"
+ig_film_ch_hardware_play:
+  other: "Play MeshSat, explained, from The hardware at 11:09"
+ig_film_languages:
+  other: "Audio in English, Dutch or Greek, with subtitles in all three (the gear icon, then Audio track)."
+ig_nav_sensors:
+  other: "Sensors"
+ig_sensors_eyebrow:
+  other: "03 / SENSORS AND POSITION"
+ig_sensors_title:
+  other: "A sensor reading travels as a message"
+ig_sensors_intro:
+  other: "No MSC-3 concept has sensors of its own. To MeshSat a sensor reading is a message: it takes the same paths as text, Iridium included. This is what exists today and what does not."
+ig_sensors_caption:
+  other: "Sensors and position: status on 26 October 2026"
+ig_sensor_col_source:
+  other: "Source"
+ig_sensor_col_status:
+  other: "Status"
+ig_sensor_col_today:
+  other: "Today"
+ig_sensor_col_open:
+  other: "Still open"
+ig_sensor_zigbee:
+  other: "ZigBee sensors"
+ig_sensor_zigbee_today:
+  other: "In the MeshSat Bridge. Tested on the field kits with temperature and humidity sensors; each reading appears on the TAK map as a pin at the kit's position."
+ig_sensor_zigbee_open:
+  other: "The ZigBee coordinator left the kits on 20 September 2026. Not part of an MSC-3 concept yet."
+ig_sensor_position:
+  other: "Position from the team's radios"
+ig_sensor_position_today:
+  other: "Part of a variant's intended messages where its radio carries position reports, as listed in the capability matrix."
+ig_sensor_position_open:
+  other: "Needs validation with each radio fleet."
+ig_sensor_own:
+  other: "Other sensors"
+ig_sensor_own_today:
+  other: "Not in any concept: other sensor types, or a sensor port on the enclosure."
+ig_sensor_own_open:
+  other: "Tell us which sensors and readings your project needs."
+ig_sensors_link:
+  other: "ZigBee on docs.meshsat.net"
+ig_sensors_plan:
+  other: "a design concept, nothing built"

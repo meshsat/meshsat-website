@@ -20,7 +20,7 @@
         <p class="ig-eyebrow">{{ i18n "ig_eyebrow" }}</p>
         <p class="ig-series" aria-hidden="true">MSC-3</p><h1 id="ig-title">{{ .Title }}</h1>
         <p class="ig-lead">{{ i18n "ig_lead" }}</p>
-        <div class="ig-actions"><a class="btn btn-primary" href="#configurator">{{ i18n "ig_explore" }}</a><a href="#capabilities">{{ i18n "ig_matrix_link" }}</a></div>
+        <div class="ig-actions"><a class="btn btn-primary" href="#configurator">{{ i18n "ig_explore" }}</a><a href="#capabilities">{{ i18n "ig_matrix_link" }}</a><a href="#film">{{ i18n "ig_film_link" }}</a></div>
       </div>
     </div></div>
     <div class="container ig-hero-foot">
@@ -30,7 +30,36 @@
     </div>
   </section>
 
-  <nav class="ig-section-nav" aria-label="{{ i18n "ig_nav" }}"><div class="container"><a href="#platform">01 {{ i18n "ig_nav_platform" }}</a><a href="#capabilities">02 {{ i18n "ig_nav_capabilities" }}</a><a href="#configurator">03 {{ i18n "ig_nav_configure" }}</a><a href="#modules">04 {{ i18n "ig_nav_modules" }}</a><a href="#use-cases">05 {{ i18n "ig_nav_cases" }}</a></div></nav>
+{{/* The explainer film (26 Oct 2026). The poster and the chapter buttons are
+     the site's click-to-play facade: nothing loads from YouTube until a press,
+     then playVideo() in main.js opens the shared #video-dialog (partial below). */}}
+  {{ $film := dict "id" "AzYjH1Ct8aI" "name" "MeshSat-explained.mp4" "time" "17:13" "poster" "video-poster-explainer-2026-10" }}
+  {{ $embed := printf "https://www.youtube-nocookie.com/embed/%s?autoplay=1&rel=0" $film.id }}
+  <section class="ig-film" id="film" aria-labelledby="film-title"><div class="container ig-film-grid">
+    <div class="ig-film-copy">
+      <p class="ig-eyebrow">{{ i18n "ig_film_eyebrow" }}</p>
+      <h2 id="film-title">{{ i18n "ig_film_title" }}</h2>
+      <p>{{ i18n "ig_film_intro" }}</p>
+      <p class="ig-film-label" id="ig-film-chapters">{{ i18n "ig_film_chapters" }}</p>
+      <ul class="ig-film-chapters" aria-labelledby="ig-film-chapters">
+        <li><button type="button" class="video-play video-chapter" data-umami-event="video-play" data-umami-event-film="{{ $film.id }}" data-umami-event-start="288" data-umami-event-locale="{{ $.Site.Language.Lang }}" data-embed="{{ $embed }}&amp;start=288" data-name="{{ $film.name }}" data-time="{{ $film.time }}" aria-label="{{ i18n "ig_film_ch_system_play" }}"><span class="ig-film-time">4:48</span><span>{{ i18n "ig_film_ch_system" }}</span></button></li>
+        <li><button type="button" class="video-play video-chapter" data-umami-event="video-play" data-umami-event-film="{{ $film.id }}" data-umami-event-start="669" data-umami-event-locale="{{ $.Site.Language.Lang }}" data-embed="{{ $embed }}&amp;start=669" data-name="{{ $film.name }}" data-time="{{ $film.time }}" aria-label="{{ i18n "ig_film_ch_hardware_play" }}"><span class="ig-film-time">11:09</span><span>{{ i18n "ig_film_ch_hardware" }}</span></button></li>
+      </ul>
+      <p class="ig-note">{{ i18n "ig_film_languages" }} {{ i18n "films_consent" }}</p>
+    </div>
+    <figure class="video-frame ig-film-frame">
+      <div class="video-head"><span>{{ $film.name }}</span><span>{{ $film.time }}</span></div>
+      <div class="video-media">
+        <button type="button" class="video-play" data-umami-event="video-play" data-umami-event-film="{{ $film.id }}" data-umami-event-locale="{{ $.Site.Language.Lang }}" data-embed="{{ $embed }}" data-name="{{ $film.name }}" data-time="{{ $film.time }}" aria-label="{{ i18n "film_explainer_play" }}">
+          <img src="/images/{{ $film.poster }}.webp" srcset="/images/{{ $film.poster }}-640.webp 640w, /images/{{ $film.poster }}.webp 1280w" sizes="(min-width: 900px) 52vw, 92vw" alt="" width="1280" height="720" loading="lazy" decoding="async">
+          <span class="video-play-glyph" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+        </button>
+      </div>
+      <figcaption class="video-foot"><a href="https://www.youtube.com/watch?v={{ $film.id }}" target="_blank" rel="noopener">{{ i18n "video_watch" }}</a></figcaption>
+    </figure>
+  </div></section>
+
+    <nav class="ig-section-nav" aria-label="{{ i18n "ig_nav" }}"><div class="container"><a href="#platform">01 {{ i18n "ig_nav_platform" }}</a><a href="#capabilities">02 {{ i18n "ig_nav_capabilities" }}</a><a href="#sensors">03 {{ i18n "ig_nav_sensors" }}</a><a href="#configurator">04 {{ i18n "ig_nav_configure" }}</a><a href="#modules">05 {{ i18n "ig_nav_modules" }}</a><a href="#use-cases">06 {{ i18n "ig_nav_cases" }}</a></div></nav>
 
   <section class="ig-section container" id="platform" aria-labelledby="platform-title">
     <div class="ig-section-heading"><p class="ig-eyebrow">{{ i18n "ig_platform_eyebrow" }}</p><h2 id="platform-title">{{ i18n "ig_platform_title" }}</h2><p>{{ i18n "ig_platform_intro" }}</p></div>
@@ -84,6 +113,21 @@
       </tbody></table>
     </div>
   </div></section>
+
+  <section class="ig-section container" id="sensors" aria-labelledby="sensors-title">
+    <div class="ig-section-heading"><p class="ig-eyebrow">{{ i18n "ig_sensors_eyebrow" }}</p><h2 id="sensors-title">{{ i18n "ig_sensors_title" }}</h2><p>{{ i18n "ig_sensors_intro" }}</p></div>
+    <div class="ig-table-scroll" tabindex="0" role="region" aria-label="{{ i18n "ig_sensors_caption" }}">
+      <table class="ig-table ig-sensors"><caption>{{ i18n "ig_sensors_caption" }}</caption>
+        <thead><tr><th scope="col">{{ i18n "ig_sensor_col_source" }}</th><th scope="col">{{ i18n "ig_sensor_col_status" }}</th><th scope="col">{{ i18n "ig_sensor_col_today" }}</th><th scope="col">{{ i18n "ig_sensor_col_open" }}</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">{{ i18n "ig_sensor_zigbee" }}</th><td><span class="badge badge-token badge-code">CODE</span></td><td>{{ i18n "ig_sensor_zigbee_today" }}</td><td>{{ i18n "ig_sensor_zigbee_open" }}</td></tr>
+          <tr><th scope="row">{{ i18n "ig_sensor_position" }}</th><td><span class="badge badge-token badge-plan">FUTURE PLAN</span></td><td>{{ i18n "ig_sensor_position_today" }}</td><td>{{ i18n "ig_sensor_position_open" }}</td></tr>
+          <tr><th scope="row">{{ i18n "ig_sensor_own" }}</th><td><span class="badge badge-token badge-plan">FUTURE PLAN</span></td><td>{{ i18n "ig_sensor_own_today" }}</td><td>{{ i18n "ig_sensor_own_open" }}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="ig-note"><strong>CODE</strong>: {{ i18n "lg_code" }}. <strong>FUTURE PLAN</strong>: {{ i18n "ig_sensors_plan" }}. <a href="https://docs.meshsat.net/transports/zigbee.html" target="_blank" rel="noopener">{{ i18n "ig_sensors_link" }}</a></p>
+  </section>
 
   <section class="ig-section container" id="configurator" aria-labelledby="configurator-title">
     <div class="ig-section-heading"><p class="ig-eyebrow">{{ i18n "ig_config_eyebrow" }}</p><h2 id="configurator-title">{{ i18n "ig_config_title" }}</h2><p>{{ i18n "ig_config_intro" }}</p></div>
@@ -139,6 +183,7 @@
   </div></section>
 </article>
 {{ partial "shot-dialog.html" (dict "class" "ig-image-dialog") }}
+{{ partial "video-dialog.html" . }}
 <script type="application/json" id="ig-radio-data">{{ dict "radios" $radios "copy" (dict "bridgeTwo" (i18n "ig_bridge_two") "bridgeOne" (i18n "ig_bridge_one") "evaluation" (i18n "ig_under_evaluation") "subject" (i18n "ig_mail_subject") "body" (i18n "ig_mail_body")) | jsonify | safeJS }}</script>
 {{ end }}
 

@@ -522,14 +522,6 @@
      Focus lands on Next, so Enter keeps stepping. */}}
 {{ partial "shot-dialog.html" (dict "class" "") }}
 
-{{/* Video modal, shared by both films. playVideo() names it after the film
-     and injects the nocookie iframe; closing removes the iframe so playback
-     actually stops. */}}
-<dialog class="shot-dialog video-dialog" id="video-dialog" aria-labelledby="video-dialog-name">
-    <div class="shot-frame">
-        <div class="shot-head"><span id="video-dialog-name"></span><span class="shot-time" id="video-dialog-time"></span><button type="button" class="shot-close" aria-label="{{ i18n "lightbox_close" }}"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-        <div class="video-media" id="video-dialog-media"></div>
-    </div>
-</dialog>
+{{ partial "video-dialog.html" . }}
 
 {{ end }}
