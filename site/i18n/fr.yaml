@@ -638,7 +638,7 @@ ig_limits:
   other: "Limites à résoudre"
 
 ig_config_eyebrow:
-  other: "03 / CONFIGURATEUR RADIO"
+  other: "04 / CONFIGURATEUR RADIO"
 
 ig_config_title:
   other: "Explorer une combinaison radio"
@@ -686,7 +686,7 @@ ig_mail_body:
   other: "Radios locales : {radios}\nToujours intégré : Iridium / RockBLOCK 9704 (module en cours d'évaluation)\n\nModèles de radios et types de messages :\nPays et site de déploiement :\nPoint d'intégration :\n"
 
 ig_modules_eyebrow:
-  other: "04 / MODULES EN COURS D'ÉVALUATION"
+  other: "05 / MODULES EN COURS D'ÉVALUATION"
 
 ig_modules_title:
   other: "Spécifications publiques, limites explicites"
@@ -707,7 +707,7 @@ ig_specs_caption:
   other: "spécifications publiques du composant"
 
 ig_cases_eyebrow:
-  other: "05 / USAGES À ÉVALUER"
+  other: "06 / USAGES À ÉVALUER"
 
 ig_cases_title:
   other: "Scénarios d'intégration"
@@ -1279,3 +1279,65 @@ ig_testing_scope:
 
 install_output:
   other: "Exemple de sortie de l’installation"
+
+# Integrators page: the explainer film and the sensors section (26 Oct 2026)
+ig_film_link:
+  other: "Voir le film explicatif de 17 minutes"
+ig_film_eyebrow:
+  other: "LE FILM / 17:13"
+ig_film_title:
+  other: "MeshSat, expliqué"
+ig_film_intro:
+  other: "De l'idée de relier des réseaux que les catastrophes coupent les uns des autres jusqu'aux octets d'un SOS sur la ligne. Chaque concept MSC-3 fait tourner le MeshSat Bridge, la couche de routage que montre le film."
+ig_film_chapters:
+  other: "DEUX CHAPITRES POUR LES INTÉGRATEURS"
+ig_film_ch_system:
+  other: "Le système : une couche de routage entre les radios"
+ig_film_ch_hardware:
+  other: "Le matériel : les kits de terrain et MSC-2"
+ig_film_ch_system_play:
+  other: "Lire MeshSat, expliqué, à partir du Système à 4:48"
+ig_film_ch_hardware_play:
+  other: "Lire MeshSat, expliqué, à partir du Matériel à 11:09"
+ig_film_languages:
+  other: "Son en anglais, néerlandais ou grec, avec sous-titres dans les trois langues (la roue dentée, puis Piste audio)."
+ig_nav_sensors:
+  other: "Capteurs"
+ig_sensors_eyebrow:
+  other: "03 / CAPTEURS ET POSITION"
+ig_sensors_title:
+  other: "Une mesure de capteur voyage comme un message"
+ig_sensors_intro:
+  other: "Aucun concept MSC-3 n'a de capteurs propres. Pour MeshSat, une mesure de capteur est un message : elle emprunte les mêmes chemins que le texte, Iridium compris. Voici ce qui existe aujourd'hui, et ce qui n'existe pas."
+ig_sensors_caption:
+  other: "Capteurs et position : état au 26 octobre 2026"
+ig_sensor_col_source:
+  other: "Source"
+ig_sensor_col_status:
+  other: "État"
+ig_sensor_col_today:
+  other: "Aujourd'hui"
+ig_sensor_col_open:
+  other: "Encore ouvert"
+ig_sensor_zigbee:
+  other: "Capteurs ZigBee"
+ig_sensor_zigbee_today:
+  other: "Dans le MeshSat Bridge. Testé sur les kits de terrain avec des capteurs de température et d'humidité ; chaque mesure apparaît sur la carte TAK comme un repère à la position du kit."
+ig_sensor_zigbee_open:
+  other: "Le coordinateur ZigBee a été retiré des kits le 20 septembre 2026. Pas encore dans un concept MSC-3."
+ig_sensor_position:
+  other: "Position fournie par les radios de l'équipe"
+ig_sensor_position_today:
+  other: "Fait partie des messages prévus d'une variante lorsque sa radio transmet des rapports de position, comme dans la matrice des capacités."
+ig_sensor_position_open:
+  other: "À valider avec chaque flotte de radios."
+ig_sensor_own:
+  other: "Autres capteurs"
+ig_sensor_own_today:
+  other: "Dans aucun concept : d'autres types de capteurs, ou un port capteur sur le boîtier."
+ig_sensor_own_open:
+  other: "Dites-nous quels capteurs et quelles mesures votre projet demande."
+ig_sensors_link:
+  other: "ZigBee sur docs.meshsat.net"
+ig_sensors_plan:
+  other: "un concept, rien de construit"

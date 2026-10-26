@@ -638,7 +638,7 @@ ig_limits:
   other: "Zu klärende Einschränkungen"
 
 ig_config_eyebrow:
-  other: "03 / FUNKKONFIGURATOR"
+  other: "04 / FUNKKONFIGURATOR"
 
 ig_config_title:
   other: "Eine Funkkombination erkunden"
@@ -686,7 +686,7 @@ ig_mail_body:
   other: "Lokale Funkmodule: {radios}\nImmer eingebaut: Iridium / RockBLOCK 9704 (Modul in Evaluierung)\n\nFunkgerätemodelle und Nachrichtentypen:\nEinsatzland und Standort:\nIntegrationsendpunkt:\n"
 
 ig_modules_eyebrow:
-  other: "04 / MODULE IN EVALUIERUNG"
+  other: "05 / MODULE IN EVALUIERUNG"
 
 ig_modules_title:
   other: "Öffentliche Spezifikationen, klare Grenzen"
@@ -707,7 +707,7 @@ ig_specs_caption:
   other: "öffentliche Komponentenspezifikationen"
 
 ig_cases_eyebrow:
-  other: "05 / ANWENDUNGEN ZUR EVALUIERUNG"
+  other: "06 / ANWENDUNGEN ZUR EVALUIERUNG"
 
 ig_cases_title:
   other: "Integrationsszenarien"
@@ -1279,3 +1279,65 @@ ig_testing_scope:
 
 install_output:
   other: "Beispielausgabe des Installationsprogramms"
+
+# Integrators page: the explainer film and the sensors section (26 Oct 2026)
+ig_film_link:
+  other: "Den 17-minütigen Erklärfilm ansehen"
+ig_film_eyebrow:
+  other: "DER FILM / 17:13"
+ig_film_title:
+  other: "MeshSat, erklärt"
+ig_film_intro:
+  other: "Von der Idee, Netze zu verbinden, die Katastrophen voneinander abschneiden, bis zu den Bytes eines SOS auf der Leitung. Jedes MSC-3-Konzept läuft mit der MeshSat Bridge, der Routing-Schicht, die der Film zeigt."
+ig_film_chapters:
+  other: "ZWEI KAPITEL FÜR INTEGRATOREN"
+ig_film_ch_system:
+  other: "Das System: eine Routing-Schicht zwischen den Funkgeräten"
+ig_film_ch_hardware:
+  other: "Die Hardware: die Feldkits und MSC-2"
+ig_film_ch_system_play:
+  other: "MeshSat, erklärt, ab Das System bei 4:48 abspielen"
+ig_film_ch_hardware_play:
+  other: "MeshSat, erklärt, ab Die Hardware bei 11:09 abspielen"
+ig_film_languages:
+  other: "Ton auf Englisch, Niederländisch oder Griechisch, mit Untertiteln in allen drei Sprachen (das Zahnrad, dann Audiospur)."
+ig_nav_sensors:
+  other: "Sensoren"
+ig_sensors_eyebrow:
+  other: "03 / SENSOREN UND POSITION"
+ig_sensors_title:
+  other: "Ein Sensorwert reist als Nachricht"
+ig_sensors_intro:
+  other: "Kein MSC-3-Konzept hat eigene Sensoren. Für MeshSat ist ein Sensorwert eine Nachricht: Er nimmt dieselben Wege wie Text, Iridium eingeschlossen. Das gibt es heute, und das nicht."
+ig_sensors_caption:
+  other: "Sensoren und Position: Stand am 26. Oktober 2026"
+ig_sensor_col_source:
+  other: "Quelle"
+ig_sensor_col_status:
+  other: "Status"
+ig_sensor_col_today:
+  other: "Heute"
+ig_sensor_col_open:
+  other: "Noch offen"
+ig_sensor_zigbee:
+  other: "ZigBee-Sensoren"
+ig_sensor_zigbee_today:
+  other: "In der MeshSat Bridge. Auf den Feldkits mit Temperatur- und Feuchtesensoren erprobt; jeder Wert erscheint auf der TAK-Karte als Markierung an der Position des Kits."
+ig_sensor_zigbee_open:
+  other: "Der ZigBee-Koordinator wurde am 20. September 2026 aus den Kits entfernt. Noch nicht Teil eines MSC-3-Konzepts."
+ig_sensor_position:
+  other: "Position aus den Funkgeräten des Teams"
+ig_sensor_position_today:
+  other: "Teil der vorgesehenen Nachrichten einer Variante, wo ihr Funkgerät Positionsmeldungen überträgt, wie in der Fähigkeitsmatrix."
+ig_sensor_position_open:
+  other: "Muss mit jeder Funkgeräteflotte validiert werden."
+ig_sensor_own:
+  other: "Andere Sensoren"
+ig_sensor_own_today:
+  other: "In keinem Konzept: andere Sensortypen oder ein Sensoranschluss am Gehäuse."
+ig_sensor_own_open:
+  other: "Sagen Sie uns, welche Sensoren und Werte Ihr Projekt braucht."
+ig_sensors_link:
+  other: "ZigBee auf docs.meshsat.net"
+ig_sensors_plan:
+  other: "ein Entwurfskonzept, nichts gebaut"

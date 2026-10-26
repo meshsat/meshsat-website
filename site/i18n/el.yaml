@@ -638,7 +638,7 @@ ig_limits:
   other: "Περιορισμοί προς διερεύνηση"
 
 ig_config_eyebrow:
-  other: "03 / ΔΙΑΜΟΡΦΩΤΗΣ ΑΣΥΡΜΑΤΩΝ"
+  other: "04 / ΔΙΑΜΟΡΦΩΤΗΣ ΑΣΥΡΜΑΤΩΝ"
 
 ig_config_title:
   other: "Εξερευνήστε έναν συνδυασμό ασυρμάτων"
@@ -686,7 +686,7 @@ ig_mail_body:
   other: "Τοπικοί ασύρματοι: {radios}\nΠάντα ενσωματωμένο: Iridium / RockBLOCK 9704 (μονάδα υπό αξιολόγηση)\n\nΜοντέλα ασυρμάτων και τύποι μηνυμάτων:\nΧώρα και τοποθεσία εγκατάστασης:\nΣημείο ενσωμάτωσης:\n"
 
 ig_modules_eyebrow:
-  other: "04 / ΜΟΝΑΔΕΣ ΥΠΟ ΑΞΙΟΛΟΓΗΣΗ"
+  other: "05 / ΜΟΝΑΔΕΣ ΥΠΟ ΑΞΙΟΛΟΓΗΣΗ"
 
 ig_modules_title:
   other: "Δημόσιες προδιαγραφές, σαφή όρια"
@@ -707,7 +707,7 @@ ig_specs_caption:
   other: "δημόσιες προδιαγραφές εξαρτήματος"
 
 ig_cases_eyebrow:
-  other: "05 / ΧΡΗΣΕΙΣ ΠΡΟΣ ΑΞΙΟΛΟΓΗΣΗ"
+  other: "06 / ΧΡΗΣΕΙΣ ΠΡΟΣ ΑΞΙΟΛΟΓΗΣΗ"
 
 ig_cases_title:
   other: "Σενάρια ενσωμάτωσης"
@@ -1279,3 +1279,65 @@ ig_testing_scope:
 
 install_output:
   other: "Ενδεικτική έξοδος εγκατάστασης"
+
+# Integrators page: the explainer film and the sensors section (26 Oct 2026)
+ig_film_link:
+  other: "Δείτε την ταινία των 17 λεπτών"
+ig_film_eyebrow:
+  other: "Η ΤΑΙΝΙΑ / 17:13"
+ig_film_title:
+  other: "Το MeshSat, εξηγημένο"
+ig_film_intro:
+  other: "Από την ιδέα να γεφυρωθούν δίκτυα που οι καταστροφές αποκόπτουν μεταξύ τους, μέχρι τα bytes ενός SOS στη γραμμή. Κάθε σχεδιαστική ιδέα MSC-3 τρέχει το MeshSat Bridge, το επίπεδο δρομολόγησης που δείχνει η ταινία."
+ig_film_chapters:
+  other: "ΔΥΟ ΚΕΦΑΛΑΙΑ ΓΙΑ SYSTEM INTEGRATORS"
+ig_film_ch_system:
+  other: "Το σύστημα: ένα επίπεδο δρομολόγησης ανάμεσα στους ασυρμάτους"
+ig_film_ch_hardware:
+  other: "Ο εξοπλισμός: τα κιτ πεδίου και το MSC-2"
+ig_film_ch_system_play:
+  other: "Αναπαραγωγή της ταινίας από το κεφάλαιο Το σύστημα, στο 4:48"
+ig_film_ch_hardware_play:
+  other: "Αναπαραγωγή της ταινίας από το κεφάλαιο Ο εξοπλισμός, στο 11:09"
+ig_film_languages:
+  other: "Ήχος στα αγγλικά, ολλανδικά ή ελληνικά, με υπότιτλους και στις τρεις γλώσσες (το γρανάζι, μετά Κομμάτι ήχου)."
+ig_nav_sensors:
+  other: "Αισθητήρες"
+ig_sensors_eyebrow:
+  other: "03 / ΑΙΣΘΗΤΗΡΕΣ ΚΑΙ ΘΕΣΗ"
+ig_sensors_title:
+  other: "Μια μέτρηση αισθητήρα ταξιδεύει ως μήνυμα"
+ig_sensors_intro:
+  other: "Καμία σχεδιαστική ιδέα MSC-3 δεν έχει δικούς της αισθητήρες. Για το MeshSat μια μέτρηση αισθητήρα είναι μήνυμα: ακολουθεί τις ίδιες διαδρομές με το κείμενο, μαζί και το Iridium. Παρακάτω τι υπάρχει σήμερα και τι όχι."
+ig_sensors_caption:
+  other: "Αισθητήρες και θέση: κατάσταση στις 26 Οκτωβρίου 2026"
+ig_sensor_col_source:
+  other: "Πηγή"
+ig_sensor_col_status:
+  other: "Κατάσταση"
+ig_sensor_col_today:
+  other: "Σήμερα"
+ig_sensor_col_open:
+  other: "Ανοιχτό ακόμη"
+ig_sensor_zigbee:
+  other: "Αισθητήρες ZigBee"
+ig_sensor_zigbee_today:
+  other: "Στο MeshSat Bridge. Δοκιμάστηκε στα κιτ πεδίου με αισθητήρες θερμοκρασίας και υγρασίας· κάθε μέτρηση εμφανίζεται στον χάρτη TAK ως σημείο στη θέση του κιτ."
+ig_sensor_zigbee_open:
+  other: "Ο συντονιστής ZigBee αφαιρέθηκε από τα κιτ στις 20 Σεπτεμβρίου 2026. Δεν περιλαμβάνεται ακόμη σε σχεδιαστική ιδέα MSC-3."
+ig_sensor_position:
+  other: "Θέση από τους ασυρμάτους της ομάδας"
+ig_sensor_position_today:
+  other: "Μέρος των προτεινόμενων μηνυμάτων μιας παραλλαγής, όπου ο ασύρματός της μεταφέρει αναφορές θέσης, όπως στον πίνακα δυνατοτήτων."
+ig_sensor_position_open:
+  other: "Χρειάζεται επικύρωση με κάθε στόλο ασυρμάτων."
+ig_sensor_own:
+  other: "Άλλοι αισθητήρες"
+ig_sensor_own_today:
+  other: "Σε καμία σχεδιαστική ιδέα: άλλοι τύποι αισθητήρων ή θύρα αισθητήρων στο περίβλημα."
+ig_sensor_own_open:
+  other: "Πείτε μας ποιους αισθητήρες και ποιες μετρήσεις χρειάζεται το έργο σας."
+ig_sensors_link:
+  other: "Το ZigBee στο docs.meshsat.net"
+ig_sensors_plan:
+  other: "σχεδιαστική ιδέα, τίποτα κατασκευασμένο"
