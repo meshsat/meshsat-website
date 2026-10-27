@@ -8,9 +8,9 @@ changelog:
   latest_tag: ""
   latest_tag_date: ""
   latest_tag_anchor: ""
-  unreleased_count: 125
-  unreleased_since: "2026-10-24"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-24"
+  unreleased_count: 126
+  unreleased_since: "2026-10-26"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-26"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -29,10 +29,11 @@ installation path; a commit entry does not establish App Store availability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-24)
+## Unreleased (main, last change 2026-10-26)
 
 ### Features
 
+- **tak**: a dispatcher's TAK chat to this phone arrives as a message with a notification, and the answer goes back to the dispatcher ([15ec3176](https://github.com/meshsat/meshsat-ios/commit/15ec317618408a557b4ab3b24c2afee8969f7d41))
 - **node**: update the node's firmware over Bluetooth from the published release or a file, through the OTA loader found by its service ([5266efd5](https://github.com/meshsat/meshsat-ios/commit/5266efd5c1029d3fb7f123cba5951d271da66af5))
 - **node**: switch the node's status LED and screen on and off from Settings, through the node's CONTROL characteristic ([25f404d4](https://github.com/meshsat/meshsat-ios/commit/25f404d4685146ba049546541ec083d0be88228f))
 - **sms**: SMS go out in app SMS wire v2, whose frame names its codec inside the ciphertext, and the app reads v2 by it and v1 by the old rule, as Android does ([44721c83](https://github.com/meshsat/meshsat-ios/commit/44721c8323c234bf49c399316cf2d1eaead6a1f5))
