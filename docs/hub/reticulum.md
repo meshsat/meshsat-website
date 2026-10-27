@@ -42,8 +42,12 @@ What Private covers, and what it does not:
   the passphrase for everyone.
 - Private is a closed network: from it, your address does not reach public Reticulum destinations
   through the Hub.
-- Your kits do not reach a Private address yet. Their link to the Hub's node does not carry your
-  workspace's code; that is the next step on the Hub.
+- A kit joins a Private network the way an app does: a Reticulum TCP interface to
+  `rns.meshsat.net` port 4242 with the network name and passphrase. On that link the kit carries
+  only its own messages and never connects your workspace's network to its LoRa mesh or its other
+  links. This is in the bridge software and tested against the reference Reticulum stack, not yet
+  on a kit. The kit's Settings have no form for it yet; it is set through the kit's API
+  (`POST /api/routing/ifaces`, type `tcp_rns`, with `ifac_netname` and `ifac_passphrase`).
 
 Switching from Public to Off stops the Hub serving the address, but a client that heard it while it
 was Public keeps it in its own cache until that expires.
