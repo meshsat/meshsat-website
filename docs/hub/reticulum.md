@@ -61,7 +61,11 @@ All clients connect to the same place, `rns.meshsat.net` port 4242, with a TCP c
 port. For a Private address, also enter the network name and the passphrase from the Reticulum
 page.
 
-**MeshChat, NomadNet, `rnsd`** and anything else that reads a Reticulum config:
+**MeshChat and CrossTalk**: Interfaces, Add Interface, TCP Client. Enter `rns.meshsat.net` and
+`4242`, and for a Private address open IFAC Settings and enter the network name and the
+passphrase. CrossTalk connects at once; MeshChat asks to be restarted first.
+
+**NomadNet, `rnsd`** and anything else that reads a Reticulum config:
 
 ```ini
 [[MeshSat Hub]]
@@ -95,7 +99,17 @@ from outside the Hub through `rns.meshsat.net:4242`:
 - After **Replace passphrase**, the old code got no path and a client connected with it was
   disconnected; the new code worked.
 
-Not tested yet: a run in the Sideband app itself.
+The apps, the same day, each with a new identity on a Private network:
+
+- **MeshChat 2.4.0** and **CrossTalk 2.6.0**, their own screens in a browser on Linux (the
+  screens their desktop windows show), and **NomadNet 1.4.4** in a terminal: a message to the
+  workspace address over a direct link showed as delivered, with the name the workspace gave its
+  address; the reply sent from the Reticulum page arrived; and with the workspace's propagation
+  node set in the app's settings, a message held there for the app arrived when the app synced.
+- **Sideband 2.2.0**: its own messaging code, run without its screens, did the same and also
+  reached both field kits.
+
+Not tested yet: Sideband's screens on a phone.
 
 ## Related
 
