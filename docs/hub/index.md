@@ -124,6 +124,7 @@ The Hub routes messages through **Iridium** and **Globalstar** and picks the bac
 - **Backup and restore:** full state export and import with a diff preview
 - **90+ notification backends** through Apprise, plus ntfy push
 - **Reticulum routing** across all satellite backends; the Hub is a Reticulum transport node
+- **An LXMF address per workspace** for Sideband, MeshChat and NomadNet users, private to the people you give its code to by default: see [Reticulum](/hub/reticulum)
 - **WireGuard** peer management and a **Tor hidden service**
 - **MPTCP concentrator** for satellite plus cellular link aggregation
 - **MSVQ-SC decoder** for messages compressed by MeshSat Android

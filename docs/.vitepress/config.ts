@@ -118,6 +118,7 @@ export default defineConfig({
             { text: 'SOS and escalation', link: '/hub/sos-and-escalation' },
             { text: 'Provider accounts', link: '/hub/provider-accounts' },
             { text: 'TAK', link: '/hub/tak' },
+            { text: 'Reticulum', link: '/hub/reticulum' },
             { text: 'Your team', link: '/hub/team' },
             { text: 'Your data', link: '/hub/your-data' },
             { text: 'Hub API', link: '/hub/api' },
