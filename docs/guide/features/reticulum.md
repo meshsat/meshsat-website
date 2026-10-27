@@ -15,7 +15,7 @@ and an LXMF client such as Sideband or CrossTalk can message it.
 ## Verified against upstream
 
 Every claim below is a test that runs in the bridge's own suite against the upstream Python packages,
-pinned to **RNS 1.5.4** and **LXMF 1.1.0**, with the bridge in-process on one side and `rnsnode.py`
+pinned to **RNS 1.5.7** and **LXMF 1.2.1**, with the bridge in-process on one side and `rnsnode.py`
 or a stock `rnsd` on the other.
 
 | Exchange | Direction | Through a stock `rnsd` as transport |
