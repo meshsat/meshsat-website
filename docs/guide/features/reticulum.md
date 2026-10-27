@@ -168,7 +168,12 @@ the receiver requests parts, and the transfer is resumable. `GET /api/resources`
 
 ## Connecting to the MeshSat Hub
 
-The Hub runs a Reticulum node reachable at `reticulum.meshsat.net:443`. It is TLS with **mutual**
+The Hub's Reticulum node has two entrances. Apps such as Sideband, MeshChat and NomadNet use
+`rns.meshsat.net:4242`, plain TCP, to reach a workspace's LXMF address; who gets in there is each
+workspace's choice (a network name and passphrase by default), see [Reticulum in the Hub](/hub/reticulum).
+Kits use the second entrance, below.
+
+The kits' entrance is `reticulum.meshsat.net:443`. It is TLS with **mutual**
 authentication: the connection is refused without a client certificate signed by the Hub's own
 bridge certificate authority.
 
