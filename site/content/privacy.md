@@ -38,7 +38,7 @@ The Android app comes in two editions. The full app, from GitHub (and from F-Dro
 - **Your messages and positions** go to the carriers you configure: the Iridium network through your own RockBLOCK modem and Rock7 or Ground Control account, your mobile operator for SMS, APRS-IS if you connect to it. These are your accounts and their terms apply.
 - **A Hub**, if you connect one. Positions, telemetry and messages then go to that Hub. If it is ours, the rest of this policy applies. If you self-host, everything below describes data that stays on your own infrastructure, and we are not involved in it at all.
 
-Installing from Google Play, or from the App Store once MeshSat iOS is listed there, tells Google or Apple that you did, under their own policies; we see only the totals. Downloading from GitHub sends a request to GitHub, including the network information needed to deliver the file.
+Installing from Google Play or the App Store tells Google or Apple that you did, under their own policies; we see only the totals. Downloading from GitHub sends a request to GitHub, including the network information needed to deliver the file.
 
 ## MeshSat Hub: what we hold
 

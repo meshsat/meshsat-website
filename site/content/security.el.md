@@ -18,6 +18,7 @@ description: "Πού δημοσιεύεται το MeshSat, πώς ελέγχε�
 <tr><td>Όλα τα repositories μας</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
 <tr><td>Container images</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
 <tr><td>Εφαρμογή Android</td><td><a href="https://play.google.com/store/apps/details?id=net.meshsat.android">net.meshsat.android</a>: Google Play (χωρίς SMS)· το πλήρες APK βρίσκεται στις <a href="https://github.com/meshsat/meshsat-android/releases/latest">GitHub Releases</a>.</td></tr>
+<tr><td>Εφαρμογή iOS</td><td><a href="https://apps.apple.com/us/app/meshsat/id6815748748">MeshSat για iPhone στο App Store.</a></td></tr>
 <tr><td>Hub</td><td><code>hub.meshsat.net</code>, ανοιχτό, οι λογαριασμοί ελέγχονται πριν ενεργοποιηθούν</td></tr>
 <tr><td>Συνομιλία</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a> στο Matrix</td></tr>
 <tr><td>Email</td><td><a href="mailto:hello@meshsat.net">hello@meshsat.net</a></td></tr>
