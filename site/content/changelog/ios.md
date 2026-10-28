@@ -4,13 +4,13 @@ description: "MeshSat iOS changelog: the iPhone gateway app, a port of MeshSat A
 tagline: "iPhone gateway app"
 weight: 4
 changelog:
-  tags: 0
-  latest_tag: ""
-  latest_tag_date: ""
-  latest_tag_anchor: ""
-  unreleased_count: 126
-  unreleased_since: "2026-10-26"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-26"
+  tags: 2
+  latest_tag: "v0.2.0"
+  latest_tag_date: "2026-10-28"
+  latest_tag_anchor: "v020-2026-10-28"
+  unreleased_count: 0
+  unreleased_since: ""
+  unreleased_anchor: "unreleased-main"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -29,7 +29,11 @@ installation path; a commit entry does not establish App Store availability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-26)
+## Unreleased (main)
+
+No unreleased changes.
+
+## v0.2.0 (2026-10-28)
 
 ### Features
 
@@ -48,6 +52,36 @@ installation path; a commit entry does not establish App Store availability.
 - **sos**: an SOS carries its own id, so the Hub pages once whichever routes carry it, and its cancel goes until the Hub has it ([40bbc673](https://github.com/meshsat/meshsat-ios/commit/40bbc673ae02c03a85a6b9533afbbb49c0ce513c))
 - **messages**: texts to another MeshSat app or kit through the Hub, as on Android, marked delivered only on the recipient app's own answer ([97d8dbb8](https://github.com/meshsat/meshsat-ios/commit/97d8dbb82b30c7616cdf4f7c443b43f898cc2255))
 - **hub**: the MQTT transport and Reticulum over it use the tenant's topic root, and a root that is not meshsat or meshsat/\<tenant\> is refused ([ead59f55](https://github.com/meshsat/meshsat-ios/commit/ead59f55dd2fbfae58ecf172c7820e79bc46e53b))
+
+### Fixes
+
+- **node**: what a node in its updater is left with belongs to the recovery session, so a later attempt never says the old firmware is still there after an earlier one erased it, and a recovery without history never claims it ([5affad11](https://github.com/meshsat/meshsat-ios/commit/5affad11dfe6bda432990a7e5599f299a45fa97f))
+- **node**: a firmware update that stops after the update command keeps the image and offers a retry, as the node may be left erased in its updater ([f329abee](https://github.com/meshsat/meshsat-ios/commit/f329abee2458c5dff5ff9ca229d56b51dc93539c))
+- **9704**: the modem's segment request is answered the moment it is read, ahead of signal reads, MT handling and other Bluetooth writes ([f133b42b](https://github.com/meshsat/meshsat-ios/commit/f133b42b979886849f004786f080884e7de4ba21))
+- **iridium**: a 9704 send that saw no satellite comes back within a minute, an unanswered signal read keeps the last bars, and the bars say how old they are ([a5e531d6](https://github.com/meshsat/meshsat-ios/commit/a5e531d61c66ac3cd21d2221e3bbe8da068bf338))
+- **satellite**: a plain text behind the version byte opens as a plain message on a phone that seals nothing, instead of cannot open ([515486a6](https://github.com/meshsat/meshsat-ios/commit/515486a66018c35abf8c35af294e58f9ffb70e9c))
+- **sms**: what a key opens outranks a clear SMS wire v2 reading of the same bytes, so an old sealed SMS whose nonce starts like a v2 header reads as its words ([27848c39](https://github.com/meshsat/meshsat-ios/commit/27848c39f5b6ad53678985150914a13fd099422a))
+- **directory**: a reprovision to another Hub, bridge, topic root or tenant starts the directory over even under the same key, takes only the bundle's tenant, and drops a reply from before ([168701c8](https://github.com/meshsat/meshsat-ios/commit/168701c8d8dd667ce132785140906b19e7b2c101))
+- **sms**: the plain-text check reads UTF-8 without the iOS 18 API, so the app builds for iOS 17 again ([161afcc5](https://github.com/meshsat/meshsat-ios/commit/161afcc518c18ca48889ec20212156d55ac77f36))
+- **sms**: a single Greek word or emoji SMS that was never compressed reads back as sent, not as SMAZ2 ([a1767e6e](https://github.com/meshsat/meshsat-ios/commit/a1767e6ea04d321fcfac295a796fb3571ef7c96e))
+- **codec**: text with bytes 0x01-0x08 survives SMAZ2 with the default table, as on the Bridge, and every other text compresses exactly as before ([10711645](https://github.com/meshsat/meshsat-ios/commit/1071164505942843b42c27d741fc277e706d357d))
+- **iridium**: the 9704's firmware version comes from the modem's firmware query, as the official library reads it, not from the hardware version ([abebefbb](https://github.com/meshsat/meshsat-ios/commit/abebefbb8c7dfa3b5e14c2bfb2bbe2003d0c630b))
+- **sms**: a compressed SMS with Greek, accented or emoji text reads back as sent, and an encrypted SMS that was never compressed is no longer read as SMAZ2 gibberish ([d074e8bb](https://github.com/meshsat/meshsat-ios/commit/d074e8bbe6ffb8f923dd063bdd7f52f9f686f759))
+- **crypto**: the key check takes only the 64 ASCII hex characters a key is made of, so a fullwidth digit is refused before encrypt refuses it ([2958c4ea](https://github.com/meshsat/meshsat-ios/commit/2958c4eab31386f8b61bc275253fdb6f54b445d5))
+- **satellite**: a Reticulum packet that comes in over the 9704 is no longer stored, shown or forwarded as a text ([63e80cdc](https://github.com/meshsat/meshsat-ios/commit/63e80cdc957ea35d9fd1dec629d8deeb6356fe6e))
+- **hub**: births go out one at a time from one worker, so an older birth taken late can no longer clear a newer one that failed, and a stamp always labels the snapshot built with it ([2d3350a6](https://github.com/meshsat/meshsat-ios/commit/2d3350a60d1ea3b067e671f23701f00529aa1a60))
+- **sos**: an owed SOS cancel is never dropped to make room, and a stopped SOS controller no longer runs one more round ([dde0645e](https://github.com/meshsat/meshsat-ios/commit/dde0645edbe7a5af36c233b3da4b55ad94f18be3))
+- **sos**: an SOS cancel is no longer lost to a failed enqueue, a new SOS, or a cancel during the first Hub publish ([6e7cc18b](https://github.com/meshsat/meshsat-ios/commit/6e7cc18b16790fea964e12b47361d7b51eeb4c09))
+- **messages**: a reconnect in the middle of a Hub pass no longer hides a lost status, and nothing goes out before the Hub subscriptions hold, as on Android ([96a94e61](https://github.com/meshsat/meshsat-ios/commit/96a94e61821cfef80e95707b43684c6c6bc61851))
+- **mqtt**: a broker drop right after the connect brings the MQTT transport back instead of leaving it connected on a dead session ([7a95d811](https://github.com/meshsat/meshsat-ios/commit/7a95d811762f1bbad55bc3430f7ecbc9bfc37df7))
+- **iridium**: a satellite send that ends uncertain no longer takes back "The Hub has it" from an earlier session's receipt ([c891e136](https://github.com/meshsat/meshsat-ios/commit/c891e13603e9f8eaab630bff716581276acd98d2))
+- **delivery**: a confirmation that lands while a send is out is never undone by the worker, and a confirmed delivery is never sent again ([e6068935](https://github.com/meshsat/meshsat-ios/commit/e606893575b00ff2a3a0a354d7a4fc34bf0851d1))
+- **delivery**: each channel's pending acks time out on its own timeout, a mesh broadcast no longer waits for an ack, a late ack is kept, and the dedup window applies and survives a restart's hash ([6e5f0ef3](https://github.com/meshsat/meshsat-ios/commit/6e5f0ef38a5a374c1e3102f311f5e93d0d7728ab))
+
+## v0.1.0 (2026-10-06)
+
+### Features
+
 - **store**: store\_resubmit lane resolves the rejected item and resubmits the same submission ([10530e44](https://github.com/meshsat/meshsat-ios/commit/10530e447d6462c602f31a63ee6271b2d44d433d))
 - **satellite**: Iridium BLE contract v2, node health card from STATS, pass windows to the node ([241755fd](https://github.com/meshsat/meshsat-ios/commit/241755fd2483bacda65b300e39a0eeacc6526c1a))
 - **node**: Setup \> Advanced \> Node log, the node's live log over Bluetooth ([087f163d](https://github.com/meshsat/meshsat-ios/commit/087f163d2bbe0d033da58f1b0ef74bb2b1bd4ecf))
@@ -106,28 +140,6 @@ installation path; a commit entry does not establish App Store availability.
 
 ### Fixes
 
-- **node**: what a node in its updater is left with belongs to the recovery session, so a later attempt never says the old firmware is still there after an earlier one erased it, and a recovery without history never claims it ([5affad11](https://github.com/meshsat/meshsat-ios/commit/5affad11dfe6bda432990a7e5599f299a45fa97f))
-- **node**: a firmware update that stops after the update command keeps the image and offers a retry, as the node may be left erased in its updater ([f329abee](https://github.com/meshsat/meshsat-ios/commit/f329abee2458c5dff5ff9ca229d56b51dc93539c))
-- **9704**: the modem's segment request is answered the moment it is read, ahead of signal reads, MT handling and other Bluetooth writes ([f133b42b](https://github.com/meshsat/meshsat-ios/commit/f133b42b979886849f004786f080884e7de4ba21))
-- **iridium**: a 9704 send that saw no satellite comes back within a minute, an unanswered signal read keeps the last bars, and the bars say how old they are ([a5e531d6](https://github.com/meshsat/meshsat-ios/commit/a5e531d61c66ac3cd21d2221e3bbe8da068bf338))
-- **satellite**: a plain text behind the version byte opens as a plain message on a phone that seals nothing, instead of cannot open ([515486a6](https://github.com/meshsat/meshsat-ios/commit/515486a66018c35abf8c35af294e58f9ffb70e9c))
-- **sms**: what a key opens outranks a clear SMS wire v2 reading of the same bytes, so an old sealed SMS whose nonce starts like a v2 header reads as its words ([27848c39](https://github.com/meshsat/meshsat-ios/commit/27848c39f5b6ad53678985150914a13fd099422a))
-- **directory**: a reprovision to another Hub, bridge, topic root or tenant starts the directory over even under the same key, takes only the bundle's tenant, and drops a reply from before ([168701c8](https://github.com/meshsat/meshsat-ios/commit/168701c8d8dd667ce132785140906b19e7b2c101))
-- **sms**: the plain-text check reads UTF-8 without the iOS 18 API, so the app builds for iOS 17 again ([161afcc5](https://github.com/meshsat/meshsat-ios/commit/161afcc518c18ca48889ec20212156d55ac77f36))
-- **sms**: a single Greek word or emoji SMS that was never compressed reads back as sent, not as SMAZ2 ([a1767e6e](https://github.com/meshsat/meshsat-ios/commit/a1767e6ea04d321fcfac295a796fb3571ef7c96e))
-- **codec**: text with bytes 0x01-0x08 survives SMAZ2 with the default table, as on the Bridge, and every other text compresses exactly as before ([10711645](https://github.com/meshsat/meshsat-ios/commit/1071164505942843b42c27d741fc277e706d357d))
-- **iridium**: the 9704's firmware version comes from the modem's firmware query, as the official library reads it, not from the hardware version ([abebefbb](https://github.com/meshsat/meshsat-ios/commit/abebefbb8c7dfa3b5e14c2bfb2bbe2003d0c630b))
-- **sms**: a compressed SMS with Greek, accented or emoji text reads back as sent, and an encrypted SMS that was never compressed is no longer read as SMAZ2 gibberish ([d074e8bb](https://github.com/meshsat/meshsat-ios/commit/d074e8bbe6ffb8f923dd063bdd7f52f9f686f759))
-- **crypto**: the key check takes only the 64 ASCII hex characters a key is made of, so a fullwidth digit is refused before encrypt refuses it ([2958c4ea](https://github.com/meshsat/meshsat-ios/commit/2958c4eab31386f8b61bc275253fdb6f54b445d5))
-- **satellite**: a Reticulum packet that comes in over the 9704 is no longer stored, shown or forwarded as a text ([63e80cdc](https://github.com/meshsat/meshsat-ios/commit/63e80cdc957ea35d9fd1dec629d8deeb6356fe6e))
-- **hub**: births go out one at a time from one worker, so an older birth taken late can no longer clear a newer one that failed, and a stamp always labels the snapshot built with it ([2d3350a6](https://github.com/meshsat/meshsat-ios/commit/2d3350a60d1ea3b067e671f23701f00529aa1a60))
-- **sos**: an owed SOS cancel is never dropped to make room, and a stopped SOS controller no longer runs one more round ([dde0645e](https://github.com/meshsat/meshsat-ios/commit/dde0645edbe7a5af36c233b3da4b55ad94f18be3))
-- **sos**: an SOS cancel is no longer lost to a failed enqueue, a new SOS, or a cancel during the first Hub publish ([6e7cc18b](https://github.com/meshsat/meshsat-ios/commit/6e7cc18b16790fea964e12b47361d7b51eeb4c09))
-- **messages**: a reconnect in the middle of a Hub pass no longer hides a lost status, and nothing goes out before the Hub subscriptions hold, as on Android ([96a94e61](https://github.com/meshsat/meshsat-ios/commit/96a94e61821cfef80e95707b43684c6c6bc61851))
-- **mqtt**: a broker drop right after the connect brings the MQTT transport back instead of leaving it connected on a dead session ([7a95d811](https://github.com/meshsat/meshsat-ios/commit/7a95d811762f1bbad55bc3430f7ecbc9bfc37df7))
-- **iridium**: a satellite send that ends uncertain no longer takes back "The Hub has it" from an earlier session's receipt ([c891e136](https://github.com/meshsat/meshsat-ios/commit/c891e13603e9f8eaab630bff716581276acd98d2))
-- **delivery**: a confirmation that lands while a send is out is never undone by the worker, and a confirmed delivery is never sent again ([e6068935](https://github.com/meshsat/meshsat-ios/commit/e606893575b00ff2a3a0a354d7a4fc34bf0851d1))
-- **delivery**: each channel's pending acks time out on its own timeout, a mesh broadcast no longer waits for an ack, a late ack is kept, and the dedup window applies and survives a restart's hash ([6e5f0ef3](https://github.com/meshsat/meshsat-ios/commit/6e5f0ef38a5a374c1e3102f311f5e93d0d7728ab))
 - **ble**: a link restored by iOS is picked up on poweredOn instead of staying on Connecting ([c704cce4](https://github.com/meshsat/meshsat-ios/commit/c704cce4cd1921c812aac6eaed625d51eb051a4a))
 - **background**: no location background mode, significant-change updates in the background ([5ef26ab5](https://github.com/meshsat/meshsat-ios/commit/5ef26ab563170f3702337bc6c5c84b9b5b24591c))
 - **setup**: the node page asks for Bluetooth with Continue and offers Settings when denied ([3b76f265](https://github.com/meshsat/meshsat-ios/commit/3b76f265ece35211a5d98088f4523f00ce47cedc))
