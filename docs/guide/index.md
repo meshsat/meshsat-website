@@ -43,7 +43,7 @@ The phone as the gateway. Paired with a [MeshSat node](/node/), one Android phon
 
 ### iOS, Linux and hardware
 
-[iOS](/ios/) is the iPhone gateway, with its App Store submission waiting for review; source builds are available.
+[iOS](/ios/) is the iPhone gateway, available from the [App Store](https://apps.apple.com/us/app/meshsat/id6815748748); source builds are also available.
 [Linux](/linux/) packages the native app and Bridge for Linux phones. The [node](/node/) pairs
 with a phone for mesh and satellite; the [field kits](/guide/hardware#reference-kits) are the
 standalone hardware builds. [Project sources](/projects) maps all repositories.
