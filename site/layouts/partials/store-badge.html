@@ -1,0 +1,22 @@
+{{- $ctx := .ctx -}}
+{{- $store := .store -}}
+{{- $lang := $ctx.Site.Language.Lang -}}
+{{- $url := $ctx.Site.Params.app_store_url -}}
+{{- $alt := i18n "app_store_badge" -}}
+{{- $event := "app-store-click" -}}
+{{- $ext := "svg" -}}
+{{- $width := 120 -}}
+{{- $height := 40 -}}
+{{- if eq $store "google-play" -}}
+  {{- $url = $ctx.Site.Params.play_url -}}
+  {{- $alt = i18n "google_play_badge" -}}
+  {{- $event = "play-click" -}}
+  {{- $ext = "png" -}}
+  {{- $width = 478 -}}
+  {{- $height = 142 -}}
+{{- else if eq $lang "fr" -}}
+  {{- $width = 127 -}}
+{{- end -}}
+{{- with $url -}}
+<a class="store-badge" href="{{ . }}" target="_blank" rel="noopener" data-umami-event="{{ $event }}" data-umami-event-locale="{{ $lang }}"><img src="/images/stores/{{ $store }}-{{ $lang }}-20261028.{{ $ext }}" alt="{{ $alt }}" width="{{ $width }}" height="{{ $height }}" loading="lazy" decoding="async"></a>
+{{- end -}}

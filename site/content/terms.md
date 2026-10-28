@@ -106,6 +106,10 @@ We are not liable for indirect or consequential loss, for lost profit or data, o
 
 Dutch law applies. Disputes go to the courts of the Netherlands. If you are a consumer, this does not deprive you of the protection of the law of the country you live in, and you may also bring a claim there.
 
+## App store trademarks
+
+Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.
+
 ## Contact
 
 [hello@meshsat.net](mailto:hello@meshsat.net)

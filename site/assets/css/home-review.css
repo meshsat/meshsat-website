@@ -96,3 +96,8 @@
 @media (max-width: 1099px) {
   .ios-download { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Official store badges: original artwork, proportions and clear space. */
+.store-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; padding-block: 12px; }
+a.store-badge { display: inline-flex; flex: 0 0 auto; width: auto; padding: 0; border: 0; background: transparent; box-shadow: none; text-decoration: none; line-height: 0; }
+a.store-badge img { display: block; width: auto; height: 48px; max-width: none; border: 0; }

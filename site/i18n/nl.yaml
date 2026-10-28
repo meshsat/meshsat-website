@@ -1350,3 +1350,9 @@ ios_store_note:
 
 ios_docs:
   other: "iOS: installatie en beperkingen"
+
+app_store_badge:
+  other: "Download in de App Store"
+
+google_play_badge:
+  other: "Ontdek het op Google Play"
