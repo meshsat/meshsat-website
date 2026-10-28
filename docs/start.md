@@ -14,7 +14,7 @@ in an emergency. Each product page separates tested capabilities from unfinished
 |---|---|---|
 | Send my first mesh message from a Linux machine | [Bridge quick start](/guide/quick-start) | ARM64 or x86_64 Linux, Docker, a USB Meshtastic radio and a second radio to check reception |
 | Use an Android phone as the gateway | [Android setup](/android/setup) | Android 8+, a Bluetooth Meshtastic radio for mesh; a MeshSat node for satellite |
-| Use an iPhone | [iOS status and source builds](/ios/) | iOS 17+ and a compatible node; App Store submission waiting for review, source builds available |
+| Use an iPhone | [Install MeshSat iOS](/ios/#install) | iOS 17+ and a compatible node; available on the App Store |
 | Use a Linux phone | [MeshSat Linux](/linux/) | Mobian / Debian 13; tested on one PinePhone Pro, with Bluetooth or the LoRa back cover |
 | Manage several kits or phones | [Hub accounts](/hub/accounts) or [self-hosting](/hub/self-hosting) | A hosted account reviewed before activation, or your own server |
 | Build a pocket mesh and satellite node | [Node build guide](/node/build) | ESP32-S3 hardware, a RockBLOCK 9603, firmware and an airtime account |

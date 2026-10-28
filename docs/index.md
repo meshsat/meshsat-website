@@ -27,7 +27,7 @@ features:
     details: An ordinary Android phone as the gateway. Paired with a MeshSat node it reaches the mesh and an Iridium modem over one Bluetooth connection, and the full APK edition adds SMS from its own SIM. Google Play carries the edition without SMS.
     link: /android/
   - title: iOS
-    details: An iPhone gateway, tested with a MeshSat node for mesh and satellite. App Store submission waiting for review; no public download yet. Text messages use the Messages composer.
+    details: An iPhone gateway, tested with a MeshSat node for mesh and satellite. Available on the App Store for iOS 17 or later. Text messages use the Messages composer.
     link: /ios/
   - title: Linux
     details: A native app and the Bridge in one Debian package. Tested on one PinePhone Pro; Bluetooth node or experimental LoRa back cover.
