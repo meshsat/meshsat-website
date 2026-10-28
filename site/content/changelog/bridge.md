@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1069
-  unreleased_since: "2026-10-26"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-26"
+  unreleased_count: 1072
+  unreleased_since: "2026-10-27"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-27"
 ---
 
 Generated from the commit history of
@@ -30,10 +30,12 @@ release and does not establish that every feature has been tested on hardware.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-26)
+## Unreleased (main, last change 2026-10-27)
 
 ### Features
 
+- **reticulum**: the kit joins its workspace's Private Reticulum network with the access code the Hub hands it, keeps that one link current, and takes at most 60 inbound LXMF messages a minute ([bf5ea819](https://github.com/meshsat/meshsat/commit/bf5ea819b0e56860bbcd90b56938db74cb6923eb))
+- **reticulum**: a Reticulum TCP link can carry a private network's access code, and then carries only this kit's own traffic and never connects that network to the kit's mesh or other links ([5eea43dd](https://github.com/meshsat/meshsat/commit/5eea43dd25d28b3b99da0e6e391cbdddff4b25a6))
 - **tak**: a dispatcher's TAK chat to one crew reaches that node as a direct message, and the crew's answer goes back to the dispatcher ([23161237](https://github.com/meshsat/meshsat/commit/231612376552ad1976865dffd28f046012335d4b))
 - **hopset**: Settings \> Media Hopping shows each link's last probe and what each peer reports about its own links ([d711136c](https://github.com/meshsat/meshsat/commit/d711136cfae5349217e395c8f7103d562fe5b3ad))
 - **hopset**: two Bridges tell each other their links' hop state over STATUS-NET, shown and never acted on, and a time-sync request answered on its link is that link's probe ([8f0bd76a](https://github.com/meshsat/meshsat/commit/8f0bd76acc94215cbda67cd3eff9de89171053b5))
@@ -475,6 +477,7 @@ release and does not establish that every feature has been tested on hardware.
 
 ### Fixes
 
+- **rns**: a satellite link opened without an extra-hops value gets 20, so a stock Reticulum client's direct message waits long enough for the round trip ([21d5c545](https://github.com/meshsat/meshsat/commit/21d5c54573cef545864e2c33f70430a36eca7b21))
 - **hopset**: a STATUS-NET request keeps the media hopping interval it was made in, and a reply carries our hop state only while it holds that interval, so turning media hopping off waits for it ([755512fa](https://github.com/meshsat/meshsat/commit/755512fa113622597572399ed03bfbd1febb81d1))
 - **hopset**: turning media hopping off ends its interval, so a hop report, reply or probe from before is never read after, and off waits for a share or a reply carrying our state that is under way ([23cbdce1](https://github.com/meshsat/meshsat/commit/23cbdce13469639c71f7c5df82fc23551b6c15bb))
 - **hopset**: the STATUS-NET hop exchange tells a peer once per 10 min under concurrency, leaves paid bearers' replies as they were, reads only replies to our own requests, caps them per peer and keeps nothing while off ([6e6ce119](https://github.com/meshsat/meshsat/commit/6e6ce1190a2e4fc88c29b9aaaaea9946aa5fd5f9))
