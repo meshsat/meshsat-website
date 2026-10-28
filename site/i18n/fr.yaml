@@ -1341,3 +1341,12 @@ ig_sensors_link:
   other: "ZigBee sur docs.meshsat.net"
 ig_sensors_plan:
   other: "un concept, rien de construit"
+
+ios_store_intro:
+  other: "Disponible sur l’App Store pour iPhone. Nécessite iOS 17 ou une version ultérieure."
+
+ios_store_note:
+  other: "Les SMS s’ouvrent dans l’app Messages d’Apple pour que vous les envoyiez. MeshSat ne peut pas lire les SMS et son fonctionnement comme passerelle en arrière-plan est limité."
+
+ios_docs:
+  other: "iOS : installation et limites"

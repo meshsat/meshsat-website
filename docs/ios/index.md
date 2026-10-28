@@ -14,22 +14,25 @@ the same wire formats, built from the Android app's code. Where iOS does not all
 Android does, this page says so.
 
 ::: danger Prototype
-MeshSat iOS has been exercised on an iPhone. Its App Store submission is **Waiting for Review**
-(as of 3 October 2026); it is not yet available from the App Store. It is a
+MeshSat iOS has been exercised on an iPhone and is available from the App Store. It remains a
 prototype under active development: it has never been deployed to a real
 user and has never been used in an actual emergency. Do not rely on it when lives are at risk.
 :::
 
 **Source:** [meshsat/meshsat-ios](https://github.com/meshsat/meshsat-ios), GPLv3.
-**App Store submission:** Waiting for Review, as of 3 October 2026. A submitted build is not
-yet an approved public listing.
 
-**Download:** the public [releases page](https://github.com/meshsat/meshsat-ios/releases) had
-no published builds when checked on 3 October 2026. Developers can
-[build from source](https://github.com/meshsat/meshsat-ios#build-from-source) on a Mac with
-Xcode; the app requires iOS 17 or later.
+## Install
 
-Do not treat a successful source build or a tested capability as an available store release.
+Download [MeshSat from the App Store](https://apps.apple.com/us/app/meshsat/id6815748748).
+The app requires iOS 17 or later. The public listing was checked on 28 October 2026.
+
+The iOS app opens Apple's Messages composer for you to send texts; it cannot send or read
+SMS automatically. Background gateway operation is limited. See the platform limits below.
+Store availability does not establish MSC-2 compatibility: the documented iOS satellite tests
+use the earlier RockBLOCK 9603 node.
+
+Developers can also [build from source](https://github.com/meshsat/meshsat-ios#build-from-source)
+on a Mac with Xcode.
 
 ## What it is built to do
 

@@ -22,6 +22,7 @@ params:
   # The Google Play listing of MeshSat Android: the edition without SMS
   # (MESHSAT-1340). The full app stays the APK on GitHub releases.
   play_url: "https://play.google.com/store/apps/details?id=net.meshsat.android"
+  app_store_url: "https://apps.apple.com/us/app/meshsat/id6815748748"
   install_url: "https://get.meshsat.net"
   # The SIDN fonds project page, linked from the cost section and the footer colophon.
   sidn_url: "https://www.sidnfonds.nl/projecten/meshsat-keeping-people-connected-when-the-network-is-not"
