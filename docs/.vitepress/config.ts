@@ -95,6 +95,7 @@ export default defineConfig({
           text: 'Features',
           items: [
             { text: 'Access rules', link: '/guide/features/access-rules' },
+            { text: 'Community Post', link: '/guide/features/community-post' },
             { text: 'Compression', link: '/guide/features/compression' },
             { text: 'Failover', link: '/guide/features/failover' },
             { text: 'Field intelligence', link: '/guide/features/field-intelligence' },
