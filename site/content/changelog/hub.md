@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 110
-  unreleased_since: "2026-10-26"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-26"
+  unreleased_count: 123
+  unreleased_since: "2026-10-28"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-28"
 ---
 
 Generated from the commit history of
@@ -31,10 +31,14 @@ not a claim of emergency reliability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-26)
+## Unreleased (main, last change 2026-10-28)
 
 ### Features
 
+- **rns**: an app that joins a workspace's Reticulum network hears the workspace's address within a minute, without asking for a path ([f036857a](https://github.com/meshsat/meshsat-hub/commit/f036857abcfbdcc475742d4c38e546d98836d5ae))
+- **rns**: the Hub hands each kit its workspace's Reticulum access code, so kits join the workspace's Private network without anyone typing it ([4a03e6db](https://github.com/meshsat/meshsat-hub/commit/4a03e6dbbb471f5897733f78506121da21e04db2))
+- **rns**: a node can mark an interface as a leaf that carries only its own traffic, which keeps a kit on a tenant's Private network from bridging it to its mesh ([dfbe4fbc](https://github.com/meshsat/meshsat-hub/commit/dfbe4fbc3afb29a678f1080f4b1599a2335b8fdc))
+- **rns**: each tenant chooses who reaches its Reticulum address: Private with its own network name and passphrase (the default), Public or Off ([4ec8ca8a](https://github.com/meshsat/meshsat-hub/commit/4ec8ca8a212afe57001e2e2e2f77fb9c86e0f829))
 - **tak**: dispatcher-to-crew chat is on: a dispatcher on TAK or the Hub map can write to one crew ([46b09c2b](https://github.com/meshsat/meshsat-hub/commit/46b09c2b9a1776772890d839a2b94717ea8c9ace))
 - **tak**: a dispatcher can write to one crew from TAK or the Hub map, and the crew's answer comes back ([9e759744](https://github.com/meshsat/meshsat-hub/commit/9e759744c09358ab819064c42a122ad27b51b700))
 - **tak**: a hosted TAK server hands the Hub a chat a TAK user addresses to one crew ([f4389a4c](https://github.com/meshsat/meshsat-hub/commit/f4389a4c4f5e097e6fb0f6a8d306c99084f2e3f6))
@@ -79,6 +83,15 @@ not a claim of emergency reliability.
 
 ### Fixes
 
+- **console**: a page opened right after sign-in is the page that shows ([571d993d](https://github.com/meshsat/meshsat-hub/commit/571d993dc493bf883cfcbc57dd7a9ea583d0ad8f))
+- **tak**: hosted TAK clients get back in within seconds of a Hub rollout instead of after five minutes ([0a8f874e](https://github.com/meshsat/meshsat-hub/commit/0a8f874eaa5ee9b81194b34f3fd0004f53275c30))
+- **console**: the offer of a new Reticulum passphrase after a kit is deleted is a visible button ([c93fc2cf](https://github.com/meshsat/meshsat-hub/commit/c93fc2cf7ba3428f8b84be6f88aec355718662d1))
+- **bridge**: a bridge id holds only letters, digits, - and \_, a birth counts only for its own bridge, and deleting a kit offers a new Reticulum access code ([32b171f6](https://github.com/meshsat/meshsat-hub/commit/32b171f671de1b19c8b07d866b7cac878c2a5aa0))
+- **nats**: no bridge can publish the Hub's answers to another bridge of its workspace, whatever that bridge is called ([63fe4037](https://github.com/meshsat/meshsat-hub/commit/63fe40379f6ec32894708202e5b52df31025fd41))
+- **signups**: a switched-off account's right password gets the same answer as a wrong one at the MeshSat sign-in ([3dc5c71f](https://github.com/meshsat/meshsat-hub/commit/3dc5c71f4d2057505c8c63bc702053c1b99f3f4d))
+- **rns**: a path reloaded after a restart never names a connection of the new term ([b43d13a5](https://github.com/meshsat/meshsat-hub/commit/b43d13a553940e66d00e0cfbace88e2f371db445))
+- **rns**: nothing from the public Reticulum port reaches the Hub's internal kit layer ([35e9c959](https://github.com/meshsat/meshsat-hub/commit/35e9c959c9bd2ecfe155acf33e766f4a549e2236))
+- **signups**: a waiting applicant is told a person approves the account, at the end of sign-up and at sign-in ([8b0c7db7](https://github.com/meshsat/meshsat-hub/commit/8b0c7db7a007107d6dda07f069a9e7252d8d6b23))
 - **tak**: hosted TAK servers move to the image that routes a dispatcher's chat to one crew ([da4f95c8](https://github.com/meshsat/meshsat-hub/commit/da4f95c898fd96cb6a7adace48d5493125eed10e))
 - **tak**: the hosted TAK server image passes its CVE gate again ([ab683719](https://github.com/meshsat/meshsat-hub/commit/ab6837192f4e9c33705bbe424203b814ca734852))
 - **tak**: the hosted TAK server image builds again without the two feed packages deleted from PyPI ([ad3ccbdb](https://github.com/meshsat/meshsat-hub/commit/ad3ccbdbc55a603aa636e3dab410b5d8d453699d))
