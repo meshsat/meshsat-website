@@ -1350,3 +1350,9 @@ ios_store_note:
 
 ios_docs:
   other: "iOS: Einrichtung und Grenzen"
+
+app_store_badge:
+  other: "Laden im App Store"
+
+google_play_badge:
+  other: "Jetzt bei Google Play"
