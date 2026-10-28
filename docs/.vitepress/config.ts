@@ -103,6 +103,7 @@ export default defineConfig({
             { text: 'Reticulum', link: '/guide/features/reticulum' },
             { text: 'Security', link: '/guide/features/security' },
             { text: 'Transforms', link: '/guide/features/transforms' },
+            { text: 'Voice notes and photos', link: '/guide/features/voice-notes-and-photos' },
           ],
         },
       ],
