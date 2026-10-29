@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v2.23.0"
   latest_tag_date: "2026-10-26"
   latest_tag_anchor: "v2230-2026-10-26"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  unreleased_count: 3
+  unreleased_since: "2026-10-28"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-28"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -34,9 +34,13 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-10-28)
 
-No unreleased changes.
+### Features
+
+- **kits**: a field kit on the LAN has its own card under Setup, with its address and the API token the kit may ask for, kept in the encrypted preferences and sent as the Bearer on every direct request; a 401 becomes one line asking for the token; through the Hub relay nothing changes ([f124aacd](https://github.com/meshsat/meshsat-android/commit/f124aacd7cd4dc24c53f47c9b830cefa0b211925))
+- **warnings**: a public warning a MeshSat kit relays over the mesh, on ALERT\_APP or as a text with the kit's relay line, sounds the alarm, fills the screen while the app is open and stays under Setup \> Safety \> Warnings until the kit's cancel or a newer one of its event; a TEST warning says so with the normal sound ([b1a71405](https://github.com/meshsat/meshsat-android/commit/b1a71405608a67023d26231b4a426c3274f4d3b6))
+- **lxmf**: a voice note and a photo ride in a message's LXMF fields, are kept with the row, played and shown in the chat, and go on a Reticulum link only ([aed83984](https://github.com/meshsat/meshsat-android/commit/aed839842db7cc759195c10ec6ac36741973da29))
 
 ## v2.23.0 (2026-10-26)
 

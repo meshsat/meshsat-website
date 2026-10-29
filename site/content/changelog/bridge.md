@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1072
-  unreleased_since: "2026-10-27"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-27"
+  unreleased_count: 1091
+  unreleased_since: "2026-10-28"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-28"
 ---
 
 Generated from the commit history of
@@ -30,10 +30,23 @@ release and does not establish that every feature has been tested on hardware.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-27)
+## Unreleased (main, last change 2026-10-28)
 
 ### Features
 
+- **web**: a Warnings page lists the public warnings the kit holds, in force first with their marks, times, source, label, via and bearers, read again on every warning event and once a minute, and a banner on the dashboard and the booth screen carries the headline and the label while one is in force ([8faee40a](https://github.com/meshsat/meshsat/commit/8faee40a35b564dbe6dd36a83e9dc9e04b3ded5a))
+- **warnings**: a relayed public warning also goes to every LXMF peer heard in the last day on a free link, once per digest and peer through the delivery ledger, is one warning event on the Bridge's event stream, and stands at the top of every Community Post page while in force ([62151db0](https://github.com/meshsat/meshsat/commit/62151db0c8c848d84b3c8fbf7e0c2a2ec7736378))
+- **tak**: a dispatcher's chat the Hub could not hand this kit over MQTT comes as one frame, a satellite MT or an SMS from the Hub's number, is delivered as the same GeoChat, and the crew's answer and the kit's word go back as frames on that bearer ([216f2256](https://github.com/meshsat/meshsat/commit/216f225623aa424931d9505f0932c7f478a86d55))
+- **cell**: the warning relay broadcasts a relayed warning on the kit's own 2G cell, 4380 for a test, the EU-Alert identifier for a real one only where the owner cleared it and channel 50 otherwise, through an allow-list that refuses every real identifier as cbs.sh does and a TX-log row before each; an Update replaces, a Cancel deletes; POST /api/cell/cbs/test and GET /api/cell/cbs for the bench ([c9d4e36b](https://github.com/meshsat/meshsat/commit/c9d4e36b175b2913f9235583e6befa35aef6ccdc))
+- **web**: an LXMF voice note plays in the kit's web UI, Codec2 decoded by the vendored libcodec2 wasm on first play, Opus in the browser's own player, a photo shown inline ([afb91671](https://github.com/meshsat/meshsat/commit/afb91671c17f0f603bbb94dcca58fa21aaf47463))
+- **api**: the web app asks for the kit's API token on a 401, keeps it in the browser, sends it on every call and logs in for the event stream's cookie ([fc81458c](https://github.com/meshsat/meshsat/commit/fc81458cf6bca7832cb9c180d7f8451c53597e38))
+- **api**: the Bridge's API can require a token, off by default: a Bearer header or the login cookie gets in, so do the kit itself and a phone through the Hub relay, CORS narrows to the kit's own origin, and the token is set, rotated and cleared through the API ([8ddb389a](https://github.com/meshsat/meshsat/commit/8ddb389aa33a3de502141810a31c3b4a88931614))
+- **post**: the operator screen closes, reopens and purges the post, and shows the receipt printer as it last reported itself ([4e455994](https://github.com/meshsat/meshsat/commit/4e455994cac1ba36c82aaa21e76885c2302ea621))
+- **post**: the operator closes the post and everything it stored is purged 30 days later or now, the portal and its notice say so, and an approved post and a reply print a slip on the kit's receipt printer, which reports itself to the Bridge ([9779d556](https://github.com/meshsat/meshsat/commit/9779d556281cf0d26c8a51b65cabce5f28ddd771))
+- **tak**: a kit tells the Hub what became of a dispatcher's chat on its own tak/chat/status: queued in the ledger, undelivered with the reason, failed when the ledger gives up ([4993da58](https://github.com/meshsat/meshsat/commit/4993da586836fdc8ba602b2bc2afc0fb8648344e))
+- **warnings**: the kit takes a public warning digest the Hub signed with the directory key it pins, on its own warn/in or as a satellite MT, keeps it, honours an Update or a Cancel, and puts it on the mesh as an alert and a text and on APRS as a bulletin, each once ([b252eaef](https://github.com/meshsat/meshsat/commit/b252eaef0e0d743c06e978cf5ebd9b5b3caeeec3))
+- **post**: the Community Post, a kit's no-app front door: a captive portal on its own listener, an approval queue, one plain "@" lane text per post, the Hub's "\[from\]" replies parsed to a pickup code, and the host AP files installed disabled ([b7bfa6aa](https://github.com/meshsat/meshsat/commit/b7bfa6aa3a27c5789c86b8dda5cd322f173dfe40))
+- **lxmf**: a voice note and a photo ride in a message's LXMF fields, are kept on the kit and served by the API, and the rules forward the text only ([92dcf314](https://github.com/meshsat/meshsat/commit/92dcf314ba63096a2e178f70d8611db69376402f))
 - **reticulum**: the kit joins its workspace's Private Reticulum network with the access code the Hub hands it, keeps that one link current, and takes at most 60 inbound LXMF messages a minute ([bf5ea819](https://github.com/meshsat/meshsat/commit/bf5ea819b0e56860bbcd90b56938db74cb6923eb))
 - **reticulum**: a Reticulum TCP link can carry a private network's access code, and then carries only this kit's own traffic and never connects that network to the kit's mesh or other links ([5eea43dd](https://github.com/meshsat/meshsat/commit/5eea43dd25d28b3b99da0e6e391cbdddff4b25a6))
 - **tak**: a dispatcher's TAK chat to one crew reaches that node as a direct message, and the crew's answer goes back to the dispatcher ([23161237](https://github.com/meshsat/meshsat/commit/231612376552ad1976865dffd28f046012335d4b))
@@ -477,6 +490,12 @@ release and does not establish that every feature has been tested on hardware.
 
 ### Fixes
 
+- **lxmf**: a message goes as one packet only up to LXMF 1.2's 287 bytes of content, not 1.1's 295, so the 288 to 295 byte case travels over a link as the pinned reference does ([786a9310](https://github.com/meshsat/meshsat/commit/786a9310d2bab7a44d81c3d4718e1a4f3bf46835))
+- **rns**: a newer announce on a leaf displaces a stale path to the same destination elsewhere, never a neighbour's path used within the reverse table's lifetime, and SetLeaf changes the mark and the table under one lock ([bc7e0c41](https://github.com/meshsat/meshsat/commit/bc7e0c41be6147acfe1efed6b97632958a5d94bb))
+- **tak**: a position the radio replays from its node table after a config download is dated by when the kit heard it, and one heard longer ago than cot\_stale\_seconds is not exported on any output, so a Bridge restart no longer puts nodes last heard weeks ago on the Hub's map as crews seen this minute ([0f9db42e](https://github.com/meshsat/meshsat/commit/0f9db42e906375a2a6d833eeb63f46407cd10c2a))
+- **cell**: a cell broadcast the kit's modem receives keeps its pages, its coding and its language, is stored once, and reads 919 and 3471 as NL-Alert, 4370 as presidential, 4379 as amber and 4355/4380/4381 as tests; the modem is asked for every broadcast in the form the A7670E takes ([2b2a4a21](https://github.com/meshsat/meshsat/commit/2b2a4a2153508d8760bcc21f492d58a22e446ba9))
+- **hubreporter**: a send\_mt from the Hub goes on the satellite link the kit carries today, not on the 9704's name every kit once had ([521f3a65](https://github.com/meshsat/meshsat/commit/521f3a65fc701db9890953a03e9c1c25eeabc88e))
+- **tak**: a position export carries the fix's own time, and a chat to a crew the kit has not heard for a day says so in the log instead of vanishing ([e508c5b1](https://github.com/meshsat/meshsat/commit/e508c5b19a5c824c65741cbcd2e191ec8d84b840))
 - **rns**: a satellite link opened without an extra-hops value gets 20, so a stock Reticulum client's direct message waits long enough for the round trip ([21d5c545](https://github.com/meshsat/meshsat/commit/21d5c54573cef545864e2c33f70430a36eca7b21))
 - **hopset**: a STATUS-NET request keeps the media hopping interval it was made in, and a reply carries our hop state only while it holds that interval, so turning media hopping off waits for it ([755512fa](https://github.com/meshsat/meshsat/commit/755512fa113622597572399ed03bfbd1febb81d1))
 - **hopset**: turning media hopping off ends its interval, so a hop report, reply or probe from before is never read after, and off waits for a share or a reply carrying our state that is under way ([23cbdce1](https://github.com/meshsat/meshsat/commit/23cbdce13469639c71f7c5df82fc23551b6c15bb))
