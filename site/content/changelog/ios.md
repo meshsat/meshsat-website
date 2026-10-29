@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.2.0"
   latest_tag_date: "2026-10-28"
   latest_tag_anchor: "v020-2026-10-28"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  unreleased_count: 2
+  unreleased_since: "2026-10-28"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-28"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -29,9 +29,12 @@ installation path; a commit entry does not establish App Store availability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-10-28)
 
-No unreleased changes.
+### Features
+
+- **lxmf**: the LXMF message packs and unpacks to the Bridge's and Python's bytes: hash, signature, stamp, the HeMB-NG mid, the audio and image fields, the announce app data and the stamper, proven against vectors the Bridge's Go code and Python LXMF 1.2.1 agreed on ([a006b035](https://github.com/meshsat/meshsat-ios/commit/a006b035806fb2f4c10a06eb6ae5e871e229a90e))
+- **lxmf**: the Reticulum wire LXMF stands on, as Python RNS writes it: msgpack like umsgpack, the identity in Python's key order with its hashes and single-packet token, the header with its context byte, the announce with its 32-byte ratchet, read against the vectors Python RNS wrote for Android ([fc6e4ae3](https://github.com/meshsat/meshsat-ios/commit/fc6e4ae37ecd606138b45cbb44e1378afbc84e01))
 
 ## v0.2.0 (2026-10-28)
 

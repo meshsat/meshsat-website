@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 123
+  unreleased_count: 146
   unreleased_since: "2026-10-28"
   unreleased_anchor: "unreleased-main-last-change-2026-10-28"
 ---
@@ -35,6 +35,22 @@ not a claim of emergency reliability.
 
 ### Features
 
+- **warnings**: the console and the satellite option say what a warning costs on a kit's satellite leg, 5 SBD credits or 230 bytes of IMT airtime ([8d569677](https://github.com/meshsat/meshsat-hub/commit/8d569677f205e426ad8800e9f846984974fd2c0d))
+- **lxmf**: every message row carries its attachment count, so the console lists voice notes and photos without a read per row and asks nothing of a message that has none ([de7e41c4](https://github.com/meshsat/meshsat-hub/commit/de7e41c46629630da9bd73a4519a9c949bac6cf1))
+- **warnings**: an Update or Cancel that names no area goes to the kits the message it references went to, in the workspace whose match that was, at the first delivery, on the bench path and at every repeat ([17204b2a](https://github.com/meshsat/meshsat-hub/commit/17204b2a538e08ff08b772226ba657f130b4fba9))
+- **web**: a workspace owner chooses on the Settings page whether a crew message to a kit off MQTT goes by satellite or SMS, or forces one bearer for a test, and the crew chat panel says which bearer each message went on ([2e8ed12c](https://github.com/meshsat/meshsat-hub/commit/2e8ed12c49e84d3a2f8297f87749f77a126b33b0))
+- **takchat**: a dispatcher's chat reaches a kit that is off MQTT as one frame over the workspace's satellite account or as an SMS to the kit's SIM, the crew's answer and the kit's word come back the same way, and the message records its bearer ([f688c70b](https://github.com/meshsat/meshsat-hub/commit/f688c70b803820177cfa3a36ae7d0b9df24048ca))
+- **web**: an LXMF voice note plays in the console, Codec2 decoded by the vendored libcodec2 wasm on first play, Opus in the browser's own player, a photo shown inline; the CSP admits same-origin WebAssembly ([a4ae8d71](https://github.com/meshsat/meshsat-hub/commit/a4ae8d713806d214d606ab2e82932814cfb42f25))
+- **console**: a Warnings page lists the public warnings relayed to the workspace's kits, which kit got each one and when, and lets an owner send a test warning to the first area ([e3501f67](https://github.com/meshsat/meshsat-hub/commit/e3501f676dd79ee0caca5a3cf438a0f096d31afb))
+- **warnings**: a CAP polygon rides the digest ahead of the geocodes when it comes down to twelve points within 3 km, so a kit can place itself against the outline ([c9a2236f](https://github.com/meshsat/meshsat-hub/commit/c9a2236fc2fb91998791c2e3371100e8a57d7665))
+- **warnings**: a warning in force is handed to each kit again every repeat\_hours (default 6, 0 never), claimed once per kit and slot, so a kit that was off gets it at the next slot ([f68a24fd](https://github.com/meshsat/meshsat-hub/commit/f68a24fd54be61800c3d034c2c318752437e6da6))
+- **console**: a device's page sets its profile, ordinary or Community Post kit, and says what a post device does to the @ lane ([2b8737ae](https://github.com/meshsat/meshsat-hub/commit/2b8737aea91d97a52a31d7c97544729704bca532))
+- **takchat**: a kit's word on what became of a dispatcher's chat is recorded on the message, told to the Matrix room as a reaction and one notice, and shown under the message in the console ([47ab803b](https://github.com/meshsat/meshsat-hub/commit/47ab803bd6d50b1b4331a69dfd7e0d1178526c82))
+- **warnings**: the Hub relays DWD and MeteoAlarm public warnings to the kits in their area as a digest signed by the directory key, once per kit across the replicas, with a per-workspace opt-in and an owner's test injection ([6418098f](https://github.com/meshsat/meshsat-hub/commit/6418098f54e085e498199a69d8fa9cbc069f1aa4))
+- **personchat**: a post device runs the "@" lane open and keys every conversation by the pickup code the kit appends, so two people at one Community Post never collide, and its replies carry "#\<code\>" in front ([2d9f3834](https://github.com/meshsat/meshsat-hub/commit/2d9f3834c662c5cfc021575be2bc3893c5524b48))
+- **lxmf**: a tenant's LXMF messages keep their voice note and photo in the object store, listed and served by the API, and a send carries both ([dc2e6d07](https://github.com/meshsat/meshsat-hub/commit/dc2e6d07fab6741ca25e25a704facaf24333ef93))
+- **netguard**: a self-hosted Hub may reach the services its users configure on its own network, by the operator's HUB\_ALLOW\_PRIVATE\_TARGETS; the hosted Hub never sets it ([7cd5ae07](https://github.com/meshsat/meshsat-hub/commit/7cd5ae07d5af9fa33e0389d13a29c9c1ca8a73bc))
+- **matrix**: a dispatcher in the tenant's own Matrix room writes to one crew with @ and its callsign, and the crew's answer comes back into the room ([fefd40a5](https://github.com/meshsat/meshsat-hub/commit/fefd40a53d2bddb3dd56641bbd08ab25c5abb5a3))
 - **rns**: an app that joins a workspace's Reticulum network hears the workspace's address within a minute, without asking for a path ([f036857a](https://github.com/meshsat/meshsat-hub/commit/f036857abcfbdcc475742d4c38e546d98836d5ae))
 - **rns**: the Hub hands each kit its workspace's Reticulum access code, so kits join the workspace's Private network without anyone typing it ([4a03e6db](https://github.com/meshsat/meshsat-hub/commit/4a03e6dbbb471f5897733f78506121da21e04db2))
 - **rns**: a node can mark an interface as a leaf that carries only its own traffic, which keeps a kit on a tenant's Private network from bridging it to its mesh ([dfbe4fbc](https://github.com/meshsat/meshsat-hub/commit/dfbe4fbc3afb29a678f1080f4b1599a2335b8fdc))
@@ -83,6 +99,13 @@ not a claim of emergency reliability.
 
 ### Fixes
 
+- **lxmf**: a message goes as one packet only up to LXMF 1.2's 287 bytes of content, not 1.1's 295, the same limit as the Bridge's ([cd5912cc](https://github.com/meshsat/meshsat-hub/commit/cd5912cc80b86ebfa51eaeb55e4a2ca2ea6339d3))
+- **rns**: a newer announce on a leaf displaces a stale path to the same destination elsewhere, never a neighbour's path used within the reverse table's lifetime, and SetLeaf changes the mark and the table under one lock ([c1cc1195](https://github.com/meshsat/meshsat-hub/commit/c1cc1195b36b5cae439804d5afd3f2de5749893a))
+- **tak**: the hosted TAK server image passes its CVE gate again, dnspython and msgpack lifted past the advisories of pipeline 61943 ([1ef06706](https://github.com/meshsat/meshsat-hub/commit/1ef067065b56ec64f33169e0022ab2b54196f932))
+- **warnings**: a digest goes only to a kit whose birth declares a mesh, APRS or the 2G cell, never to a phone or a bridge that has not sent a birth ([0442bad1](https://github.com/meshsat/meshsat-hub/commit/0442bad1ce62b428f57efdf6b11815d81e330668))
+- **warnings**: MeteoAlarm is asked with Accept \*/\*, the only value its feed does not refuse with 406 ([1d58df0b](https://github.com/meshsat/meshsat-hub/commit/1d58df0b9e669b8b745ee3bdd38905b8ae1d0ed6))
+- **warnings**: the closes are checked, the test key is parsed the Go 1.26 way, and the swagger spec carries the warnings routes ([a8ae5d6a](https://github.com/meshsat/meshsat-hub/commit/a8ae5d6a32193d698e16ccd11e002444b65470c6))
+- **takhosted**: a crew's sighting is recorded at the event's own time, so a replayed old fix does not make a crew seen this minute ([7ea3a87c](https://github.com/meshsat/meshsat-hub/commit/7ea3a87c06f1dd4d08f7014fbe7818d6dfde16e1))
 - **console**: a page opened right after sign-in is the page that shows ([571d993d](https://github.com/meshsat/meshsat-hub/commit/571d993dc493bf883cfcbc57dd7a9ea583d0ad8f))
 - **tak**: hosted TAK clients get back in within seconds of a Hub rollout instead of after five minutes ([0a8f874e](https://github.com/meshsat/meshsat-hub/commit/0a8f874eaa5ee9b81194b34f3fd0004f53275c30))
 - **console**: the offer of a new Reticulum passphrase after a kit is deleted is a visible button ([c93fc2cf](https://github.com/meshsat/meshsat-hub/commit/c93fc2cf7ba3428f8b84be6f88aec355718662d1))
