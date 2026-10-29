@@ -4,13 +4,13 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 145
-  latest_tag: "v2.23.0"
-  latest_tag_date: "2026-10-26"
-  latest_tag_anchor: "v2230-2026-10-26"
-  unreleased_count: 3
-  unreleased_since: "2026-10-28"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-28"
+  tags: 146
+  latest_tag: "v2.24.0"
+  latest_tag_date: "2026-10-29"
+  latest_tag_anchor: "v2240-2026-10-29"
+  unreleased_count: 0
+  unreleased_since: ""
+  unreleased_anchor: "unreleased-main"
 ---
 
 Every tagged release of the app, generated from the commit history of
@@ -34,13 +34,21 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-28)
+## Unreleased (main)
+
+No unreleased changes.
+
+## v2.24.0 (2026-10-29)
 
 ### Features
 
 - **kits**: a field kit on the LAN has its own card under Setup, with its address and the API token the kit may ask for, kept in the encrypted preferences and sent as the Bearer on every direct request; a 401 becomes one line asking for the token; through the Hub relay nothing changes ([f124aacd](https://github.com/meshsat/meshsat-android/commit/f124aacd7cd4dc24c53f47c9b830cefa0b211925))
 - **warnings**: a public warning a MeshSat kit relays over the mesh, on ALERT\_APP or as a text with the kit's relay line, sounds the alarm, fills the screen while the app is open and stays under Setup \> Safety \> Warnings until the kit's cancel or a newer one of its event; a TEST warning says so with the normal sound ([b1a71405](https://github.com/meshsat/meshsat-android/commit/b1a71405608a67023d26231b4a426c3274f4d3b6))
 - **lxmf**: a voice note and a photo ride in a message's LXMF fields, are kept with the row, played and shown in the chat, and go on a Reticulum link only ([aed83984](https://github.com/meshsat/meshsat-android/commit/aed839842db7cc759195c10ec6ac36741973da29))
+
+### Fixes
+
+- **privacy**: nothing goes online before it is asked for: the map is built when its tab is first opened, orbit data is downloaded once a satellite modem is set up, the welcome asks for each permission once, and no SMS log line carries a number or a text ([a5a1dd3b](https://github.com/meshsat/meshsat-android/commit/a5a1dd3b6dc00d94560f5a75e24aa66b5fd6d69a))
 
 ## v2.23.0 (2026-10-26)
 
@@ -53,6 +61,9 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 - **node**: what a node in its updater is left with belongs to the recovery session, so a later attempt never says the old firmware is still there after an earlier one erased it, and a recovery without history never claims it ([ab2383ec](https://github.com/meshsat/meshsat-android/commit/ab2383ece3edbc9aa756102ce302d50dcdb29459))
 - **node**: a firmware update that stops once the node went to its updater keeps the image and its address and offers a retry, saying whether the old firmware may be erased ([7122d40c](https://github.com/meshsat/meshsat-android/commit/7122d40c30ba288d7d5f100e3b7ee7f9de053409))
 
+<details class="changelog-older">
+<summary>Older releases (144)</summary>
+
 ## v2.22.8 (2026-10-24)
 
 ### Features
@@ -63,9 +74,6 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 - **node**: the firmware card shows the release as available beside the version on the node, never as newer, because a version ends in a commit hash ([d23d1cc9](https://github.com/meshsat/meshsat-android/commit/d23d1cc941bb8bb130017e9294eb26002094ffcc))
 - **9704**: the modem's segment request is answered the moment it is read, ahead of signal reads, MT handling and other Bluetooth writes; the signal shows its age once stale ([00433b4a](https://github.com/meshsat/meshsat-android/commit/00433b4a925769f4e41fb3b6a7e04f391abea2e5))
-
-<details class="changelog-older">
-<summary>Older releases (143)</summary>
 
 ## v2.22.7 (2026-10-24)
 
