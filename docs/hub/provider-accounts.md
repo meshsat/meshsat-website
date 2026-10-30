@@ -23,6 +23,19 @@ Credentials are encrypted per account. Another account on the Hub cannot read yo
 export in [Your data](/hub/your-data) deliberately withholds them rather than handing back
 recoverable secrets.
 
+## A sender name for alert texts
+
+Twilio can show a name instead of a number on a text, such as `MeshSat`. On the Twilio account
+under **Settings**, fill in **Sender name for alerts** (up to 11 letters, digits or spaces) and
+**Countries for the sender name**, the calling codes it may be used for, for example `+31`. Alert
+texts to numbers in those countries (SOS, check-ins, geofences, alert rules) then show the name.
+Alerts to any other country, and everything else the Hub sends by SMS, keep your From number.
+
+Nobody can reply to a name. That is why only alerts use it: your kits, the commands the Hub sends
+them and any conversation with a person stay on the number, which can be answered. Some countries
+require the name to be registered with Twilio before carriers show it; the Netherlands does not. If
+Twilio refuses the name, the Hub sends the alert again from the number.
+
 ## Webhook URLs
 
 Each provider account gets its own webhook URL, with a secret in the path. Paste that whole URL

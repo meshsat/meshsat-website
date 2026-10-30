@@ -49,6 +49,10 @@ Delivery uses your own accounts. SMS goes through the Twilio credentials you add
 [Provider accounts](/hub/provider-accounts). If you have not added any, the Hub has no way to
 reach anyone and an escalation has nowhere to go.
 
+An SMS alert comes from your Twilio number, or from a sender name such as `MeshSat` in the countries
+you list for it (see [A sender name for alert texts](/hub/provider-accounts#a-sender-name-for-alert-texts)).
+Nobody can reply to a name, so acknowledge an alert on the Alerts page, not by answering the text.
+
 ## Test it
 
 Do not wait for a real emergency to find out whether the chain works.
