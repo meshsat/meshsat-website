@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1091
-  unreleased_since: "2026-10-28"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-28"
+  unreleased_count: 1097
+  unreleased_since: "2026-10-29"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-29"
 ---
 
 Generated from the commit history of
@@ -30,7 +30,7 @@ release and does not establish that every feature has been tested on hardware.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-28)
+## Unreleased (main, last change 2026-10-29)
 
 ### Features
 
@@ -490,6 +490,12 @@ release and does not establish that every feature has been tested on hardware.
 
 ### Fixes
 
+- **aprs**: a callsign, audio card or PTT device with a line break, space or # is refused before it reaches direwolf.conf, and KISS mode applies the same 1-6 character callsign rule as APRS-IS ([0faa9daa](https://github.com/meshsat/meshsat/commit/0faa9daaa262d0dd896cd6b59905949b7d1675d1))
+- **interfaces**: a link bound to a device that is gone follows the one device of its type on the bus, cell\_0 reads available only while the cell gateway runs, and sms\_0 reads as the cellular modem does ([5d45800c](https://github.com/meshsat/meshsat/commit/5d45800caebe3e9ee7b7e2deb3b31735521f8124))
+- **gateway**: the TAK server, KISS and SMPP addresses are joined with net.JoinHostPort, so an IPv6 literal host can be dialled ([06afe614](https://github.com/meshsat/meshsat/commit/06afe614d5aab0842e29da85c99a147283e40622))
+- **api**: the demo status is encoded without copying the run's lock, so go vet passes ([835b07f1](https://github.com/meshsat/meshsat/commit/835b07f12ce3db83d6532e11c6419b060da06f3c))
+- **mesh**: a text waits out the radio's own 2 s interval instead of being dropped by it, so every chunk of an OOB reply goes on air; a position, waypoint or traceroute too soon answers 429 ([af0c5420](https://github.com/meshsat/meshsat/commit/af0c542030a8708fcea25b8843cefaff54ccf725))
+- **hopset**: the paid alarm names a free link's state as it is, recovering as well as excluded ([115bc47f](https://github.com/meshsat/meshsat/commit/115bc47f3fb7dcd6c5188d683031e3b76819abca))
 - **lxmf**: a message goes as one packet only up to LXMF 1.2's 287 bytes of content, not 1.1's 295, so the 288 to 295 byte case travels over a link as the pinned reference does ([786a9310](https://github.com/meshsat/meshsat/commit/786a9310d2bab7a44d81c3d4718e1a4f3bf46835))
 - **rns**: a newer announce on a leaf displaces a stale path to the same destination elsewhere, never a neighbour's path used within the reverse table's lifetime, and SetLeaf changes the mark and the table under one lock ([bc7e0c41](https://github.com/meshsat/meshsat/commit/bc7e0c41be6147acfe1efed6b97632958a5d94bb))
 - **tak**: a position the radio replays from its node table after a config download is dated by when the kit heard it, and one heard longer ago than cot\_stale\_seconds is not exported on any output, so a Bridge restart no longer puts nodes last heard weeks ago on the Hub's map as crews seen this minute ([0f9db42e](https://github.com/meshsat/meshsat/commit/0f9db42e906375a2a6d833eeb63f46407cd10c2a))
