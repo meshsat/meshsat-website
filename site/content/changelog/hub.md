@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 146
-  unreleased_since: "2026-10-28"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-28"
+  unreleased_count: 147
+  unreleased_since: "2026-10-30"
+  unreleased_anchor: "unreleased-main-last-change-2026-10-30"
 ---
 
 Generated from the commit history of
@@ -31,10 +31,11 @@ not a claim of emergency reliability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-28)
+## Unreleased (main, last change 2026-10-30)
 
 ### Features
 
+- **sms**: alert texts to Dutch numbers show the sender name MeshSat, while everything a kit or a person answers stays on the number ([2e142717](https://github.com/meshsat/meshsat-hub/commit/2e142717f11499ba9ad1d46e43a66513f9dc8fb3))
 - **warnings**: the console and the satellite option say what a warning costs on a kit's satellite leg, 5 SBD credits or 230 bytes of IMT airtime ([8d569677](https://github.com/meshsat/meshsat-hub/commit/8d569677f205e426ad8800e9f846984974fd2c0d))
 - **lxmf**: every message row carries its attachment count, so the console lists voice notes and photos without a read per row and asks nothing of a message that has none ([de7e41c4](https://github.com/meshsat/meshsat-hub/commit/de7e41c46629630da9bd73a4519a9c949bac6cf1))
 - **warnings**: an Update or Cancel that names no area goes to the kits the message it references went to, in the workspace whose match that was, at the first delivery, on the bench path and at every repeat ([17204b2a](https://github.com/meshsat/meshsat-hub/commit/17204b2a538e08ff08b772226ba657f130b4fba9))
