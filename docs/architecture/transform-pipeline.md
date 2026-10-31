@@ -37,9 +37,3 @@ configurable rather than always on.
 
 AES-256-GCM, wire format `[12 byte nonce][ciphertext + 16 byte tag]`. Identical across all three
 products for the same reason the dictionary is.
-
-## Bonded links
-
-Bond groups carry their own transform columns, because coding across several bearers needs to
-encrypt once before the data is split into symbols rather than once per symbol. The pipeline for a
-bond group is therefore a property of the group, not of any one interface in it.

@@ -17,7 +17,7 @@ devices.
 ## Finding your way
 
 The menu on the left is grouped by what you are doing: **Now** (Overview, Map, Messages),
-**Fleet** (Kits, Devices, Groups, Bonding), **Safety** (Alerts, Check-ins, Geofences, Alert
+**Fleet** (Kits, Devices, Groups), **Safety** (Alerts, Check-ins, Geofences, Alert
 rules, Notifications), **Delivery** (Routing, Integrations, Webhooks, Email, TAK, Costs),
 **Network** and **Admin**. A kit is a connected bridge: a Pi in a case, or a phone running
 MeshSat Android.

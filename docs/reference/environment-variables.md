@@ -54,7 +54,7 @@ Only the SBD modem uses GPIO. The 9704 is USB and needs none of these.
 | `MESHSAT_PAID_RATE_LIMIT` | `60` | Minimum seconds between paid satellite sends |
 | `MESHSAT_MAX_HOPS` | `8` | Maximum interfaces a message may traverse |
 | `MESHSAT_MESH_WATCHDOG_MIN` | `0` | Minutes of channel silence before the Meshtastic serial port is reopened. 0 disables it, and the device-health mesh probe covers a stalled radio. A radio that still answers local requests is never reopened |
-| `MESHSAT_MESH_MTU` | `100` | Mesh bearer MTU in bytes for bonding, range 1 to 237 |
+| `MESHSAT_MESH_MTU` | `100` | Largest text in bytes the delivery intents send on the mesh, range 1 to 237 |
 
 ## SMS bundle counter
 

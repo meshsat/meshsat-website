@@ -70,9 +70,6 @@ Pi UART GPIO -------->-|  DirectIMTTransport (RockBLOCK 9704)         |->  SSE E
                        |         Dispatcher                           |
                        |           (delivery workers per iface)       |
                        |              |                               |
-                       |         HeMB Bonder (bond groups)            |
-                       |        (RLNC coding, free-first allocation)  |
-                       |              |                               |
                        |      TransformPipeline                       |
                        |        (zstd, smaz2, aes-256-gcm, b64)       |
                        |              |                               |

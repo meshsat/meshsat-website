@@ -60,51 +60,6 @@ jammed, and one the receive watchdog reports as deaf. Both are cases where the a
 A disabled interface also scores zero. The score is diagnostic rather than an input to selection:
 failover picks by priority, not by score. Use the score to work out what your priorities should be.
 
-## Failover groups are not bond groups
-
-They solve different problems and both exist.
-
-| | Failover group | Bond group |
-|---|---|---|
-| Bearers used | one at a time | several at once |
-| Chooses by | priority order | free first, configured MTU, then paid cost |
-| Purpose | keep working when a bearer fails | push one message through several weak bearers |
-| Configured at | `/api/failover-groups` | `/api/bond-groups` |
-
-A bond group encodes a message as source and repair symbols for its member bearers. The current
-allocator sorts free bearers by configured MTU, not measured bandwidth. While a free bearer is
-available, the largest-MTU free bearer gets all source symbols and paid bearers get none. Other
-free members may carry repair symbols. Only a group with no free bearer allocates source symbols
-to a paid member, choosing by cost.
-
-There is no capacity model yet. Capacity-aware paid activation remains specification work, and
-bonding over a paid satellite link has not been validated. See the
-[Bridge evidence table](https://github.com/meshsat/meshsat#what-is-proven-and-what-is-not).
-
-The per bearer maximum the allocator plans against:
-
-| Bearer | MTU |
-|---|---|
-| mesh (Meshtastic) | 100 bytes, `MESHSAT_MESH_MTU` to override, 1 to 237 |
-| iridium (SBD) | 340 bytes |
-| iridium_imt | 100 KB |
-| cellular, sms | 160 bytes |
-| zigbee | 100 bytes |
-| aprs | 256 bytes |
-| tcp, mqtt, webhook | 65535 bytes |
-
-The mesh default is conservative on purpose. Meshtastic nominally allows around 237 bytes of
-payload on SF7 LongFast, but the radio firmware drops larger frames depending on preset, region and
-antenna, and 100 bytes is what has actually been measured to work on the field kits. Raise it only
-after testing your own radio configuration.
-
-## Rehearsing a failure
-
-`POST /api/hemb/fault-inject` marks a bearer as faulted so the allocator skips it, and
-`DELETE /api/hemb/fault-inject/{id}` restores it. It is the honest way to answer "what happens when
-the satellite modem dies" without unplugging anything in the field, and it is worth doing before
-you need the answer.
-
 ## Related
 
 - [Access rules](/guide/features/access-rules) for pointing `forward_to` at a group.
