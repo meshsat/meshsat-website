@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 146
-  latest_tag: "v2.24.0"
-  latest_tag_date: "2026-10-29"
-  latest_tag_anchor: "v2240-2026-10-29"
+  tags: 147
+  latest_tag: "v2.25.0"
+  latest_tag_date: "2026-11-02"
+  latest_tag_anchor: "v2250-2026-11-02"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -36,7 +36,13 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 <!-- generated:begin -->
 ## Unreleased (main)
 
-No user-facing changes (2 commits of other types).
+No unreleased changes.
+
+## v2.25.0 (2026-11-02)
+
+### Features
+
+- **node**: the app shows the node's satellite beacon: a line on the Home satellite lane while it is on, and a Satellite beacon row on the Node health card with the next position, when it goes off by itself and why it last went off ([64e26190](https://github.com/meshsat/meshsat-android/commit/64e26190ff7e087f83a025f263201fdade6c7d76))
 
 ## v2.24.0 (2026-10-29)
 
@@ -50,6 +56,9 @@ No user-facing changes (2 commits of other types).
 
 - **privacy**: nothing goes online before it is asked for: the map is built when its tab is first opened, orbit data is downloaded once a satellite modem is set up, the welcome asks for each permission once, and no SMS log line carries a number or a text ([a5a1dd3b](https://github.com/meshsat/meshsat-android/commit/a5a1dd3b6dc00d94560f5a75e24aa66b5fd6d69a))
 
+<details class="changelog-older">
+<summary>Older releases (145)</summary>
+
 ## v2.23.0 (2026-10-26)
 
 ### Features
@@ -60,9 +69,6 @@ No user-facing changes (2 commits of other types).
 
 - **node**: what a node in its updater is left with belongs to the recovery session, so a later attempt never says the old firmware is still there after an earlier one erased it, and a recovery without history never claims it ([ab2383ec](https://github.com/meshsat/meshsat-android/commit/ab2383ece3edbc9aa756102ce302d50dcdb29459))
 - **node**: a firmware update that stops once the node went to its updater keeps the image and its address and offers a retry, saying whether the old firmware may be erased ([7122d40c](https://github.com/meshsat/meshsat-android/commit/7122d40c30ba288d7d5f100e3b7ee7f9de053409))
-
-<details class="changelog-older">
-<summary>Older releases (144)</summary>
 
 ## v2.22.8 (2026-10-24)
 
