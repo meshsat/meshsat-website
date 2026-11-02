@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 147
-  latest_tag: "v2.25.0"
+  tags: 148
+  latest_tag: "v2.25.1"
   latest_tag_date: "2026-11-02"
-  latest_tag_anchor: "v2250-2026-11-02"
+  latest_tag_anchor: "v2251-2026-11-02"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -38,11 +38,20 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 No unreleased changes.
 
+## v2.25.1 (2026-11-02)
+
+### Fixes
+
+- **node**: with the node's satellite switched off the app stops setting up its 9704 and says so on Home, and sets it up again within seconds of the switch going on ([be4a2245](https://github.com/meshsat/meshsat-android/commit/be4a224584af495804e0be721fa7089efeebc9f7))
+
 ## v2.25.0 (2026-11-02)
 
 ### Features
 
 - **node**: the app shows the node's satellite beacon: a line on the Home satellite lane while it is on, and a Satellite beacon row on the Node health card with the next position, when it goes off by itself and why it last went off ([64e26190](https://github.com/meshsat/meshsat-android/commit/64e26190ff7e087f83a025f263201fdade6c7d76))
+
+<details class="changelog-older">
+<summary>Older releases (146)</summary>
 
 ## v2.24.0 (2026-10-29)
 
@@ -55,9 +64,6 @@ No unreleased changes.
 ### Fixes
 
 - **privacy**: nothing goes online before it is asked for: the map is built when its tab is first opened, orbit data is downloaded once a satellite modem is set up, the welcome asks for each permission once, and no SMS log line carries a number or a text ([a5a1dd3b](https://github.com/meshsat/meshsat-android/commit/a5a1dd3b6dc00d94560f5a75e24aa66b5fd6d69a))
-
-<details class="changelog-older">
-<summary>Older releases (145)</summary>
 
 ## v2.23.0 (2026-10-26)
 
