@@ -5,11 +5,11 @@ description: "Wofür MeshSat da ist und welche Grenze es nicht überschreitet: k
 
 *Dies ist eine Übersetzung. Verbindlich ist der englische Text unter [meshsat.net/policy/](/policy/).*
 
-**Version 1.0, 3. November 2026.**
+**Version 1.1, 3. November 2026.**
 
 Herausgegeben von Elli.Z.G., handelnd als MeshSat, einem Einzelunternehmen nach niederländischem Recht, Leiden, Niederlande, niederländische Handelskammer (KvK) 99812584. Sie bindet Elli.Z.G. und jeden Rechtsnachfolger, einschließlich jedes Unternehmens, das später gegründet wird, um MeshSat fortzuführen.
 
-Unterzeichnet von Elli Zafeiridou Georgiadou, Inhaberin, und Kyriakos Papadopoulos, Mitgründer, als öffentliche Verpflichtung.
+Als öffentliche Verpflichtung unterzeichnet von Kyriakos Papadopoulos, Gründer und leitender Ingenieur; Elli Zafeiridou Georgiadou, Mitgründerin und Projektmanagerin; und George Zafeiridis, Spezialist für Öffentlichkeitsarbeit und Kommunikation.
 
 ## Warum wir dies geschrieben haben
 
@@ -111,7 +111,7 @@ Wenn MeshSat selbst den Inhaber wechselt, bindet diese Richtlinie den Rechtsnach
 
 ## 9. Wie sie geändert wird
 
-Diese Richtlinie ist versioniert. Eine Änderung erfordert die Zustimmung beider Unterzeichnenden. Ist einer der Unterzeichnenden nicht mehr an MeshSat beteiligt, kann die Richtlinie verschärft, aber nicht gelockert werden. Jede Änderung, die eine Organisation oder eine Installation zulässt, die diese Version ausschließt, oder die eine Verpflichtung aus Abschnitt 3 abschwächt, ist eine Lockerung. Jede Änderung wird mit ihren Gründen und dem Datum veröffentlicht, und jede frühere Version bleibt unter ihrer eigenen Adresse unter https://meshsat.net/policy/ abrufbar. Die Richtlinie wird nicht stillschweigend gelockert, nicht für ein bestimmtes Geschäft und nicht unter kommerziellem Druck. Eine Änderung, die nicht öffentlich vorgenommen wird, ist keine Änderung dieser Richtlinie; sie ist ein Verstoß gegen sie.
+Diese Richtlinie ist versioniert. Eine Änderung erfordert die Zustimmung aller Unterzeichnenden. Ist einer der Unterzeichnenden nicht mehr an MeshSat beteiligt, kann die Richtlinie verschärft, aber nicht gelockert werden. Jede Änderung, die eine Organisation oder eine Installation zulässt, die diese Version ausschließt, oder die eine Verpflichtung aus Abschnitt 3 abschwächt, ist eine Lockerung. Jede Änderung wird mit ihren Gründen und dem Datum veröffentlicht, und jede frühere Version bleibt unter ihrer eigenen Adresse unter https://meshsat.net/policy/ abrufbar. Die Richtlinie wird nicht stillschweigend gelockert, nicht für ein bestimmtes Geschäft und nicht unter kommerziellem Druck. Eine Änderung, die nicht öffentlich vorgenommen wird, ist keine Änderung dieser Richtlinie; sie ist ein Verstoß gegen sie.
 
 ## 10. Herkunft
 
@@ -121,4 +121,4 @@ Die Form dieser Richtlinie ist älter als die Technik. Es ist die Geschichte ein
 
 Diese Richtlinie wurde im November 2026 geschrieben, als sich die Frage in einem echten Gespräch stellte, damit sie entschieden ist, bevor ein Vertrag sie für uns entscheidet.
 
-Version 1.0 wird auch unter ihrer eigenen Adresse aufbewahrt, [/policy/v1.0/](/policy/v1.0/).
+Version 1.1, 3. November 2026: George Zafeiridis unterzeichnet mit, daher erfordert eine Änderung nun die Zustimmung aller drei Unterzeichnenden, und die Rolle jedes Unterzeichnenden ist vollständig angegeben. Sonst hat sich nichts geändert. Version 1.0 wird unter ihrer eigenen Adresse aufbewahrt, [/policy/v1.0/](/policy/v1.0/).

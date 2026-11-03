@@ -5,11 +5,11 @@ description: "Ce à quoi sert MeshSat, et la ligne qu’il ne franchira pas : au
 
 *Ceci est une traduction. Seul le texte anglais publié sur [meshsat.net/policy/](/policy/) fait foi.*
 
-**Version 1.0, 3 novembre 2026.**
+**Version 1.1, 3 novembre 2026.**
 
 Émise par Elli.Z.G., exerçant sous le nom commercial MeshSat, entreprise individuelle de droit néerlandais, Leyde, Pays-Bas, Chambre de commerce néerlandaise (KvK) 99812584. Elle engage Elli.Z.G. et tout successeur, y compris toute société constituée ultérieurement pour poursuivre MeshSat.
 
-Signée par Elli Zafeiridou Georgiadou, propriétaire, et Kyriakos Papadopoulos, cofondateur, à titre d’engagement public.
+Signée à titre d’engagement public par Kyriakos Papadopoulos, fondateur et ingénieur principal ; Elli Zafeiridou Georgiadou, cofondatrice et cheffe de projet ; et George Zafeiridis, spécialiste des relations publiques et de la communication.
 
 ## Pourquoi nous l’avons écrite
 
@@ -111,7 +111,7 @@ Si MeshSat lui-même change de mains, cette politique engage le successeur, comm
 
 ## 9. Comment elle est modifiée
 
-Cette politique est versionnée. Toute modification requiert l’accord des deux signataires. Si un signataire ne participe plus à MeshSat, la politique peut être renforcée mais non assouplie. Toute modification qui admet une organisation ou un déploiement que cette version exclut, ou qui affaiblit un engagement de la section 3, constitue un assouplissement. Toute modification est publiée avec ses motifs et sa date, et chaque version antérieure reste disponible à sa propre adresse sous https://meshsat.net/policy/. La politique ne sera pas assouplie discrètement, ni pour une affaire particulière, ni sous la pression commerciale. Une modification qui n’est pas faite au grand jour n’est pas une modification de cette politique : c’en est une violation.
+Cette politique est versionnée. Toute modification requiert l’accord de tous les signataires. Si un signataire ne participe plus à MeshSat, la politique peut être renforcée mais non assouplie. Toute modification qui admet une organisation ou un déploiement que cette version exclut, ou qui affaiblit un engagement de la section 3, constitue un assouplissement. Toute modification est publiée avec ses motifs et sa date, et chaque version antérieure reste disponible à sa propre adresse sous https://meshsat.net/policy/. La politique ne sera pas assouplie discrètement, ni pour une affaire particulière, ni sous la pression commerciale. Une modification qui n’est pas faite au grand jour n’est pas une modification de cette politique : c’en est une violation.
 
 ## 10. Filiation
 
@@ -121,4 +121,4 @@ La forme de cette politique est plus ancienne que la technologie. C’est l’hi
 
 Cette politique a été écrite en novembre 2026, lorsque la question s’est posée dans une conversation réelle, afin qu’elle soit tranchée avant qu’un contrat ne la tranche à notre place.
 
-La version 1.0 est également conservée à sa propre adresse, [/policy/v1.0/](/policy/v1.0/).
+Version 1.1, 3 novembre 2026 : George Zafeiridis devient signataire ; toute modification requiert donc désormais l’accord des trois signataires, et le rôle de chaque signataire est indiqué en entier. Rien d’autre n’a changé. La version 1.0 est conservée à sa propre adresse, [/policy/v1.0/](/policy/v1.0/).

@@ -5,11 +5,11 @@ description: "Waar MeshSat voor is, en de grens die het niet overschrijdt: geen 
 
 *Dit is een vertaling. De Engelse tekst op [meshsat.net/policy/](/policy/) is de bindende versie.*
 
-**Versie 1.0, 3 november 2026.**
+**Versie 1.1, 3 november 2026.**
 
 Uitgegeven door Elli.Z.G., handelend onder de naam MeshSat, een eenmanszaak naar Nederlands recht, Leiden, Nederland, Kamer van Koophandel 99812584. Het bindt Elli.Z.G. en iedere rechtsopvolger, waaronder iedere onderneming die later wordt opgericht om MeshSat voort te zetten.
 
-Ondertekend door Elli Zafeiridou Georgiadou, eigenaar, en Kyriakos Papadopoulos, medeoprichter, als publieke toezegging.
+Als publieke toezegging ondertekend door Kyriakos Papadopoulos, oprichter en lead engineer; Elli Zafeiridou Georgiadou, medeoprichter en projectmanager; en George Zafeiridis, specialist public relations en communicatie.
 
 ## Waarom we dit schreven
 
@@ -111,7 +111,7 @@ Als MeshSat zelf van eigenaar verandert, bindt dit beleid de rechtsopvolger, zoa
 
 ## 9. Hoe het wordt gewijzigd
 
-Dit beleid heeft versies. Een wijziging vereist de instemming van beide ondertekenaars. Als een ondertekenaar niet langer bij MeshSat betrokken is, kan het beleid worden aangescherpt maar niet versoepeld. Elke wijziging die een organisatie of installatie toelaat die deze versie uitsluit, of die een toezegging in sectie 3 afzwakt, is een versoepeling. Elke wijziging wordt gepubliceerd met de redenen en de datum, en elke eerdere versie blijft beschikbaar op een eigen adres onder https://meshsat.net/policy/. Het beleid wordt niet stilletjes versoepeld, niet voor een bepaalde deal en niet onder commerciële druk. Een wijziging die niet openlijk wordt doorgevoerd, is geen wijziging van dit beleid; het is een overtreding ervan.
+Dit beleid heeft versies. Een wijziging vereist de instemming van alle ondertekenaars. Als een ondertekenaar niet langer bij MeshSat betrokken is, kan het beleid worden aangescherpt maar niet versoepeld. Elke wijziging die een organisatie of installatie toelaat die deze versie uitsluit, of die een toezegging in sectie 3 afzwakt, is een versoepeling. Elke wijziging wordt gepubliceerd met de redenen en de datum, en elke eerdere versie blijft beschikbaar op een eigen adres onder https://meshsat.net/policy/. Het beleid wordt niet stilletjes versoepeld, niet voor een bepaalde deal en niet onder commerciële druk. Een wijziging die niet openlijk wordt doorgevoerd, is geen wijziging van dit beleid; het is een overtreding ervan.
 
 ## 10. Herkomst
 
@@ -121,4 +121,4 @@ De vorm van dit beleid is ouder dan de techniek. Het is het verhaal van een make
 
 Dit beleid is geschreven in november 2026, toen de vraag opkwam in een echt gesprek, zodat het vastligt voordat een contract het voor ons vastlegt.
 
-Versie 1.0 wordt ook bewaard op een eigen adres, [/policy/v1.0/](/policy/v1.0/).
+Versie 1.1, 3 november 2026: George Zafeiridis ondertekent mee, dus een wijziging vereist nu de instemming van alle drie de ondertekenaars, en de rol van elke ondertekenaar staat er voluit bij. Verder is er niets veranderd. Versie 1.0 wordt bewaard op een eigen adres, [/policy/v1.0/](/policy/v1.0/).

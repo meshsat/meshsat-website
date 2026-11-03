@@ -3,11 +3,11 @@ title: "MeshSat Mission and Use Policy"
 description: "What MeshSat is for, and the line it will not cross: no work with any organisation that develops, produces, integrates or operates weapon systems, and nothing provided for use in one."
 ---
 
-**Version 1.0, 3 November 2026.**
+**Version 1.1, 3 November 2026.**
 
 Issued by Elli.Z.G., trading as MeshSat, a sole proprietorship under Dutch law, Leiden, the Netherlands, Chamber of Commerce 99812584. It binds Elli.Z.G. and any successor, including any company later formed to carry on MeshSat.
 
-Signed by Elli Zafeiridou Georgiadou, owner, and Kyriakos Papadopoulos, co-founder, as a public commitment.
+Signed as a public commitment by Kyriakos Papadopoulos, founder and lead engineer; Elli Zafeiridou Georgiadou, co-founder and project manager; and George Zafeiridis, public relations and communications specialist.
 
 ## Why we wrote this
 
@@ -109,7 +109,7 @@ If MeshSat itself changes hands, this policy binds the successor, as stated at t
 
 ## 9. How it is changed
 
-This policy is versioned. A change requires the agreement of both signatories. If a signatory is no longer involved in MeshSat, the policy can be tightened but not loosened. Any change that admits an organisation or a deployment this version excludes, or that weakens a commitment in section 3, is a loosening. Any change is published with its reasons and the date, and every previous version remains available at its own address under https://meshsat.net/policy/. The policy will not be loosened quietly, for a particular deal, or under commercial pressure. A change that is not made in the open is not a change to this policy; it is a breach of it.
+This policy is versioned. A change requires the agreement of all signatories. If a signatory is no longer involved in MeshSat, the policy can be tightened but not loosened. Any change that admits an organisation or a deployment this version excludes, or that weakens a commitment in section 3, is a loosening. Any change is published with its reasons and the date, and every previous version remains available at its own address under https://meshsat.net/policy/. The policy will not be loosened quietly, for a particular deal, or under commercial pressure. A change that is not made in the open is not a change to this policy; it is a breach of it.
 
 ## 10. Lineage
 
@@ -119,4 +119,4 @@ The shape of the policy is older than the technology. It is the story of a maker
 
 This policy was written in November 2026, when the question came up in a real conversation, so that it is settled before a contract settles it for us.
 
-Version 1.0 is also kept at its own address, [/policy/v1.0/](/policy/v1.0/).
+Version 1.1, 3 November 2026: George Zafeiridis joins as a signatory, so a change now needs the agreement of all three signatories, and each signatory's role is given in full. Nothing else changed. Version 1.0 is kept at its own address, [/policy/v1.0/](/policy/v1.0/).
