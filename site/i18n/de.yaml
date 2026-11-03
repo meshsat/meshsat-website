@@ -271,7 +271,7 @@ f_policy:
 ig_policy_note:
   other: "MeshSat arbeitet mit keiner Organisation zusammen, die Waffensysteme entwickelt, herstellt, integriert oder betreibt, weder direkt noch über einen Integrator, und liefert nichts für den Einsatz in einem Waffensystem."
 ig_policy_link:
-  other: "Mission und Nutzungsrichtlinie lesen (Englisch)"
+  other: "Mission und Nutzungsrichtlinie lesen"
 f_status:
   other: "Dienststatus"
 f_license:
