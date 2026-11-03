@@ -5,7 +5,7 @@ description: "Wofür MeshSat da ist und welche Grenze es nicht überschreitet: k
 
 *Dies ist eine Übersetzung. Verbindlich ist der englische Text unter [meshsat.net/policy/](/policy/).*
 
-**Version 1.1, 3. November 2026.**
+**Version 1.0, 3. November 2026.**
 
 Herausgegeben von Elli.Z.G., handelnd als MeshSat, einem Einzelunternehmen nach niederländischem Recht, Leiden, Niederlande, niederländische Handelskammer (KvK) 99812584. Sie bindet Elli.Z.G. und jeden Rechtsnachfolger, einschließlich jedes Unternehmens, das später gegründet wird, um MeshSat fortzuführen.
 
@@ -120,5 +120,3 @@ Die Prüfung in Abschnitt 5 ist der Schadensklausel der Reticulum License nachge
 Die Form dieser Richtlinie ist älter als die Technik. Es ist die Geschichte eines Schmieds, der Ringe verschenkte und zu spät erfuhr, wofür sie bestimmt waren, und dessen einzige verbliebene Weisheit darin bestand, die zu verbergen, die er noch besaß; des Feindes, der einen Ring schmiedete, um die übrigen zu beherrschen; und der zwei, denen dieser Ring angeboten wurde, aus den besten Gründen, und die ihn ablehnten.
 
 Diese Richtlinie wurde im November 2026 geschrieben, als sich die Frage in einem echten Gespräch stellte, damit sie entschieden ist, bevor ein Vertrag sie für uns entscheidet.
-
-Version 1.1, 3. November 2026: George Zafeiridis unterzeichnet mit, daher erfordert eine Änderung nun die Zustimmung aller drei Unterzeichnenden, alle drei entscheiden gemeinsam über einen Fall, den dieser Text nicht klärt (Abschnitt 5), und die Rolle jedes Unterzeichnenden ist vollständig angegeben. Sonst hat sich nichts geändert. Version 1.0 wird unter ihrer eigenen Adresse aufbewahrt, [/policy/v1.0/](/policy/v1.0/).

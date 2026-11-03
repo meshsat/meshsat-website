@@ -3,7 +3,7 @@ title: "MeshSat Mission and Use Policy"
 description: "What MeshSat is for, and the line it will not cross: no work with any organisation that develops, produces, integrates or operates weapon systems, and nothing provided for use in one."
 ---
 
-**Version 1.1, 3 November 2026.**
+**Version 1.0, 3 November 2026.**
 
 Issued by Elli.Z.G., trading as MeshSat, a sole proprietorship under Dutch law, Leiden, the Netherlands, Chamber of Commerce 99812584. It binds Elli.Z.G. and any successor, including any company later formed to carry on MeshSat.
 
@@ -118,5 +118,3 @@ Section 5's test is modelled on the harm clause of the Reticulum License: "The S
 The shape of the policy is older than the technology. It is the story of a maker who gave rings away and learned too late what they were for, whose only remaining wisdom was to hide the ones he still held; of the enemy who forged one ring to rule the rest; and of the two who were offered that ring, for the best of reasons, and refused it.
 
 This policy was written in November 2026, when the question came up in a real conversation, so that it is settled before a contract settles it for us.
-
-Version 1.1, 3 November 2026: George Zafeiridis joins as a signatory, so a change now needs the agreement of all three signatories, a case this text does not settle is decided by all three (section 5), and each signatory's role is given in full. Nothing else changed. Version 1.0 is kept at its own address, [/policy/v1.0/](/policy/v1.0/).

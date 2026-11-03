@@ -5,7 +5,7 @@ description: "Waar MeshSat voor is, en de grens die het niet overschrijdt: geen 
 
 *Dit is een vertaling. De Engelse tekst op [meshsat.net/policy/](/policy/) is de bindende versie.*
 
-**Versie 1.1, 3 november 2026.**
+**Versie 1.0, 3 november 2026.**
 
 Uitgegeven door Elli.Z.G., handelend onder de naam MeshSat, een eenmanszaak naar Nederlands recht, Leiden, Nederland, Kamer van Koophandel 99812584. Het bindt Elli.Z.G. en iedere rechtsopvolger, waaronder iedere onderneming die later wordt opgericht om MeshSat voort te zetten.
 
@@ -120,5 +120,3 @@ De toets in sectie 5 is gebaseerd op de schadeclausule van de Reticulum License:
 De vorm van dit beleid is ouder dan de techniek. Het is het verhaal van een maker die ringen weggaf en te laat leerde waarvoor ze dienden, wiens enige overgebleven wijsheid was om de ringen die hij nog had te verbergen; van de vijand die één ring smeedde om over de rest te heersen; en van de twee aan wie die ring werd aangeboden, om de beste redenen, en die hem weigerden.
 
 Dit beleid is geschreven in november 2026, toen de vraag opkwam in een echt gesprek, zodat het vastligt voordat een contract het voor ons vastlegt.
-
-Versie 1.1, 3 november 2026: George Zafeiridis ondertekent mee, dus een wijziging vereist nu de instemming van alle drie de ondertekenaars, alle drie beslissen samen over een geval dat deze tekst niet beslecht (sectie 5), en de rol van elke ondertekenaar staat er voluit bij. Verder is er niets veranderd. Versie 1.0 wordt bewaard op een eigen adres, [/policy/v1.0/](/policy/v1.0/).

@@ -5,7 +5,7 @@ description: "Ce à quoi sert MeshSat, et la ligne qu’il ne franchira pas : au
 
 *Ceci est une traduction. Seul le texte anglais publié sur [meshsat.net/policy/](/policy/) fait foi.*
 
-**Version 1.1, 3 novembre 2026.**
+**Version 1.0, 3 novembre 2026.**
 
 Émise par Elli.Z.G., exerçant sous le nom commercial MeshSat, entreprise individuelle de droit néerlandais, Leyde, Pays-Bas, Chambre de commerce néerlandaise (KvK) 99812584. Elle engage Elli.Z.G. et tout successeur, y compris toute société constituée ultérieurement pour poursuivre MeshSat.
 
@@ -120,5 +120,3 @@ Le critère de la section 5 s’inspire de la clause de non-nuisance de la Retic
 La forme de cette politique est plus ancienne que la technologie. C’est l’histoire d’un artisan qui donna des anneaux et comprit trop tard à quoi ils servaient, dont la seule sagesse restante fut de cacher ceux qu’il détenait encore ; de l’ennemi qui forgea un anneau pour régner sur tous les autres ; et des deux à qui cet anneau fut offert, pour les meilleures raisons, et qui le refusèrent.
 
 Cette politique a été écrite en novembre 2026, lorsque la question s’est posée dans une conversation réelle, afin qu’elle soit tranchée avant qu’un contrat ne la tranche à notre place.
-
-Version 1.1, 3 novembre 2026 : George Zafeiridis devient signataire ; toute modification requiert donc désormais l’accord des trois signataires, les trois statuent ensemble sur un cas que ce texte ne règle pas (section 5), et le rôle de chaque signataire est indiqué en entier. Rien d’autre n’a changé. La version 1.0 est conservée à sa propre adresse, [/policy/v1.0/](/policy/v1.0/).
