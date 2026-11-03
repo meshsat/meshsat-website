@@ -81,7 +81,7 @@ A **weapon system** is "any kind of system which includes amongst its functions 
 
 The policy has two tests. The first is who we work with: an organisation that develops, produces, integrates or operates weapon systems is excluded, however civilian a particular project is. Armed forces, police forces, coast guards and border agencies operate weapons, and are excluded as organisations. The second is what a deployment does: MeshSat is not provided for use in a weapon system, whoever operates it. The **system** is the specific deployment MeshSat would become part of.
 
-Where a deployment's functions include both, this policy applies. MeshSat does not resolve ambiguity in its own commercial favour. We may ask a customer to state the purpose of a deployment. In a case this text does not settle, both signatories decide together, in writing, and the reasons are kept.
+Where a deployment's functions include both, this policy applies. MeshSat does not resolve ambiguity in its own commercial favour. We may ask a customer to state the purpose of a deployment. In a case this text does not settle, all signatories decide together, in writing, and the reasons are kept.
 
 Inside the mission, by way of example: humanitarian relief; search and rescue by civilian and volunteer services; disaster response; civil protection; fire and medical services; municipal and critical infrastructure resilience, including during conflict; protection of civilians; remote and unserved areas.
 
@@ -119,4 +119,4 @@ The shape of the policy is older than the technology. It is the story of a maker
 
 This policy was written in November 2026, when the question came up in a real conversation, so that it is settled before a contract settles it for us.
 
-Version 1.1, 3 November 2026: George Zafeiridis joins as a signatory, so a change now needs the agreement of all three signatories, and each signatory's role is given in full. Nothing else changed. Version 1.0 is kept at its own address, [/policy/v1.0/](/policy/v1.0/).
+Version 1.1, 3 November 2026: George Zafeiridis joins as a signatory, so a change now needs the agreement of all three signatories, a case this text does not settle is decided by all three (section 5), and each signatory's role is given in full. Nothing else changed. Version 1.0 is kept at its own address, [/policy/v1.0/](/policy/v1.0/).

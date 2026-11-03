@@ -83,7 +83,7 @@ Un **système d’armes** est « any kind of system which includes amongst its f
 
 La politique comporte deux critères. Le premier porte sur ceux avec qui nous travaillons : une organisation qui développe, produit, intègre ou exploite des systèmes d’armes est exclue, aussi civil que soit un projet particulier. Les forces armées, les forces de police, les garde-côtes et les services de garde-frontières exploitent des armes et sont exclus en tant qu’organisations. Le second porte sur ce que fait un déploiement : MeshSat n’est pas fourni pour être utilisé dans un système d’armes, quel que soit celui qui l’exploite. Le **système** est le déploiement précis dont MeshSat ferait partie.
 
-Lorsque les fonctions d’un déploiement relèvent des deux, cette politique s’applique. MeshSat ne tranche pas une ambiguïté en sa propre faveur commerciale. Nous pouvons demander à un client d’indiquer la finalité d’un déploiement. Dans un cas que ce texte ne règle pas, les deux signataires décident ensemble, par écrit, et les motifs sont conservés.
+Lorsque les fonctions d’un déploiement relèvent des deux, cette politique s’applique. MeshSat ne tranche pas une ambiguïté en sa propre faveur commerciale. Nous pouvons demander à un client d’indiquer la finalité d’un déploiement. Dans un cas que ce texte ne règle pas, tous les signataires décident ensemble, par écrit, et les motifs sont conservés.
 
 Relèvent de la mission, à titre d’exemple : l’aide humanitaire ; la recherche et le sauvetage par des services civils et bénévoles ; la réponse aux catastrophes ; la protection civile ; les services d’incendie et les services médicaux ; la résilience des communes et des infrastructures critiques, y compris pendant un conflit ; la protection des civils ; les zones isolées et non desservies.
 
@@ -121,4 +121,4 @@ La forme de cette politique est plus ancienne que la technologie. C’est l’hi
 
 Cette politique a été écrite en novembre 2026, lorsque la question s’est posée dans une conversation réelle, afin qu’elle soit tranchée avant qu’un contrat ne la tranche à notre place.
 
-Version 1.1, 3 novembre 2026 : George Zafeiridis devient signataire ; toute modification requiert donc désormais l’accord des trois signataires, et le rôle de chaque signataire est indiqué en entier. Rien d’autre n’a changé. La version 1.0 est conservée à sa propre adresse, [/policy/v1.0/](/policy/v1.0/).
+Version 1.1, 3 novembre 2026 : George Zafeiridis devient signataire ; toute modification requiert donc désormais l’accord des trois signataires, les trois statuent ensemble sur un cas que ce texte ne règle pas (section 5), et le rôle de chaque signataire est indiqué en entier. Rien d’autre n’a changé. La version 1.0 est conservée à sa propre adresse, [/policy/v1.0/](/policy/v1.0/).

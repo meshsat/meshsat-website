@@ -83,7 +83,7 @@ Een **wapensysteem** is "any kind of system which includes amongst its functions
 
 Het beleid kent twee toetsen. De eerste is met wie we samenwerken: een organisatie die wapensystemen ontwikkelt, produceert, integreert of inzet, is uitgesloten, hoe civiel een bepaald project ook is. Strijdkrachten, politiekorpsen, kustwachten en grensbewakingsdiensten zetten wapens in en zijn als organisatie uitgesloten. De tweede is wat een installatie doet: MeshSat wordt niet geleverd voor gebruik in een wapensysteem, wie het ook inzet. Het **systeem** is de specifieke installatie waarvan MeshSat deel zou worden.
 
-Waar de functies van een installatie beide omvatten, is dit beleid van toepassing. MeshSat beslecht onduidelijkheid niet in zijn eigen commerciële voordeel. We kunnen een klant vragen het doel van een installatie op te geven. In een geval dat deze tekst niet beslecht, beslissen beide ondertekenaars samen, schriftelijk, en worden de redenen bewaard.
+Waar de functies van een installatie beide omvatten, is dit beleid van toepassing. MeshSat beslecht onduidelijkheid niet in zijn eigen commerciële voordeel. We kunnen een klant vragen het doel van een installatie op te geven. In een geval dat deze tekst niet beslecht, beslissen alle ondertekenaars samen, schriftelijk, en worden de redenen bewaard.
 
 Binnen de missie vallen bijvoorbeeld: humanitaire hulp; opsporing en redding door civiele diensten en vrijwilligersdiensten; rampenbestrijding; civiele bescherming; brandweer en medische diensten; weerbaarheid van gemeenten en vitale infrastructuur, ook tijdens een conflict; bescherming van burgers; afgelegen en onbediende gebieden.
 
@@ -121,4 +121,4 @@ De vorm van dit beleid is ouder dan de techniek. Het is het verhaal van een make
 
 Dit beleid is geschreven in november 2026, toen de vraag opkwam in een echt gesprek, zodat het vastligt voordat een contract het voor ons vastlegt.
 
-Versie 1.1, 3 november 2026: George Zafeiridis ondertekent mee, dus een wijziging vereist nu de instemming van alle drie de ondertekenaars, en de rol van elke ondertekenaar staat er voluit bij. Verder is er niets veranderd. Versie 1.0 wordt bewaard op een eigen adres, [/policy/v1.0/](/policy/v1.0/).
+Versie 1.1, 3 november 2026: George Zafeiridis ondertekent mee, dus een wijziging vereist nu de instemming van alle drie de ondertekenaars, alle drie beslissen samen over een geval dat deze tekst niet beslecht (sectie 5), en de rol van elke ondertekenaar staat er voluit bij. Verder is er niets veranderd. Versie 1.0 wordt bewaard op een eigen adres, [/policy/v1.0/](/policy/v1.0/).

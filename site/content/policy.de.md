@@ -83,7 +83,7 @@ Ein **Waffensystem** ist "any kind of system which includes amongst its function
 
 Die Richtlinie hat zwei Prüfungen. Die erste betrifft, mit wem wir zusammenarbeiten: Eine Organisation, die Waffensysteme entwickelt, herstellt, integriert oder betreibt, ist ausgeschlossen, wie zivil ein bestimmtes Projekt auch sein mag. Streitkräfte, Polizeikräfte, Küstenwachen und Grenzschutzbehörden betreiben Waffen und sind als Organisationen ausgeschlossen. Die zweite betrifft, was eine Installation tut: MeshSat wird nicht für den Einsatz in einem Waffensystem bereitgestellt, unabhängig davon, wer es betreibt. Das **System** ist die konkrete Installation, deren Teil MeshSat würde.
 
-Wenn die Funktionen einer Installation beides umfassen, gilt diese Richtlinie. MeshSat löst Unklarheiten nicht zum eigenen geschäftlichen Vorteil auf. Wir können einen Kunden bitten, den Zweck einer Installation anzugeben. In einem Fall, den dieser Text nicht klärt, entscheiden beide Unterzeichnenden gemeinsam und schriftlich, und die Gründe werden aufbewahrt.
+Wenn die Funktionen einer Installation beides umfassen, gilt diese Richtlinie. MeshSat löst Unklarheiten nicht zum eigenen geschäftlichen Vorteil auf. Wir können einen Kunden bitten, den Zweck einer Installation anzugeben. In einem Fall, den dieser Text nicht klärt, entscheiden alle Unterzeichnenden gemeinsam und schriftlich, und die Gründe werden aufbewahrt.
 
 Innerhalb der Mission liegen zum Beispiel: humanitäre Hilfe; Suche und Rettung durch zivile und ehrenamtliche Dienste; Katastrophenhilfe; Bevölkerungsschutz; Feuerwehr und Rettungsdienst; die Widerstandsfähigkeit kommunaler und kritischer Infrastruktur, auch während eines Konflikts; Schutz der Zivilbevölkerung; abgelegene und unversorgte Gebiete.
 
@@ -121,4 +121,4 @@ Die Form dieser Richtlinie ist älter als die Technik. Es ist die Geschichte ein
 
 Diese Richtlinie wurde im November 2026 geschrieben, als sich die Frage in einem echten Gespräch stellte, damit sie entschieden ist, bevor ein Vertrag sie für uns entscheidet.
 
-Version 1.1, 3. November 2026: George Zafeiridis unterzeichnet mit, daher erfordert eine Änderung nun die Zustimmung aller drei Unterzeichnenden, und die Rolle jedes Unterzeichnenden ist vollständig angegeben. Sonst hat sich nichts geändert. Version 1.0 wird unter ihrer eigenen Adresse aufbewahrt, [/policy/v1.0/](/policy/v1.0/).
+Version 1.1, 3. November 2026: George Zafeiridis unterzeichnet mit, daher erfordert eine Änderung nun die Zustimmung aller drei Unterzeichnenden, alle drei entscheiden gemeinsam über einen Fall, den dieser Text nicht klärt (Abschnitt 5), und die Rolle jedes Unterzeichnenden ist vollständig angegeben. Sonst hat sich nichts geändert. Version 1.0 wird unter ihrer eigenen Adresse aufbewahrt, [/policy/v1.0/](/policy/v1.0/).
