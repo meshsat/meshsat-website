@@ -178,7 +178,7 @@
   </section>
 
   <section class="ig-contact-band" aria-labelledby="ig-contact-title"><div class="container">
-    <div><p class="ig-eyebrow">{{ i18n "ig_contact_eyebrow" }}</p><h2 id="ig-contact-title">{{ i18n "ig_contact_title" }}</h2><p>{{ i18n "ig_contact_intro" }}</p><p class="ig-note">MSC-3: <span class="badge badge-token badge-plan">FUTURE PLAN</span> {{ i18n "ig_contact_note" }}</p></div>
+    <div><p class="ig-eyebrow">{{ i18n "ig_contact_eyebrow" }}</p><h2 id="ig-contact-title">{{ i18n "ig_contact_title" }}</h2><p>{{ i18n "ig_contact_intro" }}</p><p class="ig-note">MSC-3: <span class="badge badge-token badge-plan">FUTURE PLAN</span> {{ i18n "ig_contact_note" }}</p><p class="ig-note">{{ i18n "ig_policy_note" }} <a href="/policy/" hreflang="en">{{ i18n "ig_policy_link" }}</a>.</p></div>
     <a class="btn btn-primary" href="mailto:{{ .Site.Params.contact_email }}?subject={{ printf "MSC-3 %s" (i18n "ig_mail_subject") | urlquery }}">{{ i18n "ig_contact" }}</a>
   </div></section>
 </article>

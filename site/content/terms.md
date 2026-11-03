@@ -3,7 +3,7 @@ title: "Terms of Service"
 description: "Terms for MeshSat Bridge and the hosted MeshSat Hub."
 ---
 
-**Last updated: October 2026**
+**Last updated: 3 November 2026**
 
 These terms cover two different things: software you run yourself, and a service we run for you.
 
@@ -19,6 +19,8 @@ MeshSat Bridge is open-source software under the GNU General Public License v3.0
 
 You are responsible for using it lawfully, including radio licensing for whatever transports you configure. A licence to use the software is not a licence to transmit.
 
+Our [Mission and Use Policy](/policy/) governs whom we work with. It does not restrict the licence.
+
 ## MeshSat Hub: what the service is
 
 MeshSat Hub is a hosted service. You create an account, connect bridges and devices to it, and it stores and relays their messages.
@@ -31,7 +33,9 @@ We give no warranty that the service will be available, uninterrupted or error f
 
 ## Accounts
 
-Access is by approval. Requesting an account does not entitle you to one, and we may decline without giving a reason.
+Access is by approval. Requesting an account does not entitle you to one, and we may decline without giving a reason, except that a request declined under our [Mission and Use Policy](/policy/) is told so and told why.
+
+The hosted Hub is offered under that policy. When you sign up you confirm that you do not represent an organisation it excludes: one that develops, produces, integrates or operates weapon systems. If an account holder is, or becomes, such an organisation, or uses MeshSat in a weapon system, we may close the account. We tell you why, the Hub service ends, and we refund the unused part of any fees paid in advance. Nothing is done remotely to your gateways.
 
 Keep your credentials secure. You are responsible for what happens under your account. Tell us promptly at [hello@meshsat.net](mailto:hello@meshsat.net) if you believe it has been compromised.
 

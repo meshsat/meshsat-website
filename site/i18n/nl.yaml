@@ -266,6 +266,12 @@ f_privacy:
   other: "Privacybeleid"
 f_terms:
   other: "Gebruiksvoorwaarden"
+f_policy:
+  other: "Missie- en gebruiksbeleid"
+ig_policy_note:
+  other: "MeshSat werkt niet met organisaties die wapensystemen ontwikkelen, produceren, integreren of gebruiken, direct of via een integrator, en levert niets voor gebruik in een wapensysteem."
+ig_policy_link:
+  other: "Lees het missie- en gebruiksbeleid (Engels)"
 f_status:
   other: "Dienststatus"
 f_license:

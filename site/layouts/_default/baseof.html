@@ -25,7 +25,7 @@
          answered 200 "Page not found": a Soft 404 that failed validation
          (MESHSAT-1184, 7 Oct 2026). */}}
     {{ if eq .Kind "404" }}<meta name="robots" content="noindex">
-    {{ else }}<link rel="canonical" href="{{ .Permalink }}">
+    {{ else }}<link rel="canonical" href="{{ with .Params.canonical }}{{ . | absURL }}{{ else }}{{ .Permalink }}{{ end }}">
     {{ end }}{{/* hreflang ONLY for pages that really have translations, and x-default points at
          the default-language version of THIS page. An English-only page that names the
          home page as its x-default is telling Google the two are the same page in

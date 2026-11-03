@@ -12,6 +12,7 @@
       <a href="https://www.facebook.com/meshsat">Facebook</a>
       <a href="https://www.reddit.com/r/meshsat/">Reddit</a>
       <a href="https://meshsat.net/privacy/">Privacy</a>
+      <a href="https://meshsat.net/policy/">Use policy</a>
     </nav>
   </div>
 </template>
