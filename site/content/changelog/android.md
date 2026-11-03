@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 149
-  latest_tag: "v2.25.2"
+  tags: 150
+  latest_tag: "v2.25.3"
   latest_tag_date: "2026-11-03"
-  latest_tag_anchor: "v2252-2026-11-03"
+  latest_tag_anchor: "v2253-2026-11-03"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -38,20 +38,26 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 No unreleased changes.
 
+## v2.25.3 (2026-11-03)
+
+### Features
+
+- **home**: the satellite beacon icon lights red while the beacon is on, as the node's LED does ([e60f0e6a](https://github.com/meshsat/meshsat-android/commit/e60f0e6ac27c8fbae7d9152df3795f2e4cd2b252))
+
 ## v2.25.2 (2026-11-03)
 
 ### Features
 
 - **home**: the node's satellite beacon gets an icon left of night mode that lights every 3 s while it is on, amber while it sends its last message, grey when switched off, and opens Satellite setup ([f448c7e3](https://github.com/meshsat/meshsat-android/commit/f448c7e3dafd8f876736a69885a835e4efe53104))
 
+<details class="changelog-older">
+<summary>Older releases (148)</summary>
+
 ## v2.25.1 (2026-11-02)
 
 ### Fixes
 
 - **node**: with the node's satellite switched off the app stops setting up its 9704 and says so on Home, and sets it up again within seconds of the switch going on ([be4a2245](https://github.com/meshsat/meshsat-android/commit/be4a224584af495804e0be721fa7089efeebc9f7))
-
-<details class="changelog-older">
-<summary>Older releases (147)</summary>
 
 ## v2.25.0 (2026-11-02)
 
