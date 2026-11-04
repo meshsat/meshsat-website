@@ -40,6 +40,15 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#040406' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
+    // Umami, the same self-hosted, cookieless counter as meshsat.net, on its own
+    // site entry (MESHSAT-1227). It follows VitePress's client-side navigation by
+    // itself; data-domains keeps a local preview from counting.
+    ['script', {
+      defer: '',
+      src: 'https://analytics.cubeos.app/script.js',
+      'data-website-id': 'f5b7953b-5212-471c-9bfd-345c5116d261',
+      'data-domains': 'docs.meshsat.net',
+    }],
   ],
 
   themeConfig: {
