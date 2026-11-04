@@ -13,9 +13,9 @@ Four products, two very different answers. The Bridge and phone apps run on your
 
 The controller for personal data held in MeshSat Hub and on meshsat.net is Elli.Z.G., a sole proprietorship registered in Leiden, the Netherlands, Chamber of Commerce number 99812584, trading as MeshSat. Contact: [hello@meshsat.net](mailto:hello@meshsat.net).
 
-## meshsat.net
+## meshsat.net and docs.meshsat.net
 
-We use [Umami](https://umami.is/) for analytics. It is self-hosted on our own infrastructure, sets no cookies, and does not build a profile of you. The homepage also requests public repository statistics from GitHub, which receives the network information needed to answer that request. Videos load from YouTube only after you select a play button; YouTube then receives the request and applies its own privacy policy.
+We use [Umami](https://umami.is/) for analytics on both sites. It is self-hosted on our own infrastructure, sets no cookies, and does not build a profile of you. The homepage also requests public repository statistics from GitHub, which receives the network information needed to answer that request. Videos load from YouTube only after you select a play button; YouTube then receives the request and applies its own privacy policy.
 
 ## Our YouTube channel
 
