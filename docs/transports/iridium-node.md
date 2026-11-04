@@ -17,7 +17,7 @@ enough. The pipe's contract is on [Iridium over Bluetooth](/node/iridium-ble).
 |---|---|
 | [MeshSat Android](/android/) | Satellite messages out and in through the node, first on 19 September 2026, and on the T-Beam Supreme node since 21 September 2026. With a RockBLOCK 9704 behind the node, the app picks the modem's driver from the node's own word and brought it up on 8 October 2026. On 24 October 2026 texts went both ways through a 9704 behind the node for the first time, six up and three down on the second compact v2 unit |
 | [MeshSat iOS](/ios/) | The RockBLOCK over the node's pipe, one satellite message out and one in, 25 September 2026 |
-| The node alone, no phone | A text on the node's Iridium mesh channel reached the Hub over satellite and the reply came back, 27 September 2026 |
+| The node alone, no phone | A text on the node's Iridium mesh channel reached the Hub over satellite and the reply came back, 27 September 2026, and on 4 November 2026 the panel switch's beacon messages reached a phone by SMS through the Hub, sent from indoors |
 | The Bridge | In the code since 29 September 2026 and tested against a simulated node only. Never run against a real node |
 
 The full table, with what is not proven, is on the [node page](/node/#what-is-proven-and-what-is-not).
