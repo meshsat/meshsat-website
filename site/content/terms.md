@@ -1,11 +1,11 @@
 ---
 title: "Terms of Service"
-description: "Terms for MeshSat Bridge and the hosted MeshSat Hub."
+description: "Terms for the MeshSat apps, MeshSat Bridge and the hosted MeshSat Hub."
 ---
 
-**Last updated: 3 November 2026**
+**Last updated: 4 November 2026**
 
-These terms cover two different things: software you run yourself, and a service we run for you.
+These terms cover two different things: software you run yourself, meaning MeshSat Bridge and the MeshSat apps, and a service we run for you, MeshSat Hub.
 
 <!--more-->
 
@@ -18,6 +18,26 @@ MeshSat is a trading name of Elli.Z.G., a sole proprietorship (eenmanszaak) unde
 MeshSat Bridge is open-source software under the GNU General Public License v3.0. It is provided as is, without warranty of any kind. You run it on your own hardware, on your own network. Nothing in this section is a service, and we owe you nothing in respect of it beyond the licence.
 
 You are responsible for using it lawfully, including radio licensing for whatever transports you configure. A licence to use the software is not a licence to transmit.
+
+Our [Mission and Use Policy](/policy/) governs whom we work with. It does not restrict the licence.
+
+## The MeshSat apps
+
+This section applies to each MeshSat app, wherever you got it:
+
+- **MeshSat Android** (`net.meshsat.android`). The full app, which can send and receive SMS through your SIM, comes from our [GitHub releases](https://github.com/meshsat/meshsat-android/releases), and from F-Droid once F-Droid lists it. The edition on [Google Play](https://play.google.com/store/apps/details?id=net.meshsat.android) is the same app without SMS.
+- **MeshSat iOS**, on the [App Store](https://apps.apple.com/app/meshsat/id6815748748), with unsigned builds in our [GitHub releases](https://github.com/meshsat/meshsat-ios/releases).
+- **MeshSat for Linux**, a package for Linux phones from our [GitHub releases](https://github.com/meshsat/meshsat-linux/releases). It installs MeshSat Bridge alongside the app, so the section above applies to that part as well.
+
+The apps are open-source software under the GNU General Public License v3.0. They are free of charge, with no advertising and no in-app purchases, and you need no account with us to use them. They are provided as is, without warranty of any kind. They run on your own phone, and like the Bridge, nothing in an app is a service: we owe you nothing in respect of it beyond the licence.
+
+**The SOS in the apps is not an emergency service.** It sends your alarm to the people you chose and, if you connected one, to a Hub, over whatever routes the phone has at that moment. We do not promise that it arrives, or arrives within any period. It does not call the emergency number, and nobody at MeshSat watches for it. The apps are pre-release prototypes that have never been used in an actual emergency. Keep a way to call for help that does not depend on MeshSat.
+
+You are responsible for using an app lawfully, including any radio licence the links you switch on require. APRS, for one, needs an amateur radio licence.
+
+If you installed from Google Play or the App Store, that store's own terms also apply to the download and to your account with the store. Those terms are between you and Google or Apple. A store can carry an older version than our GitHub releases, and we may stop offering an app, or a version of it, in any store. Google Play signs its edition with its own key, so a Google Play install and a GitHub or F-Droid install cannot update each other.
+
+If you connect an app to our Hub, the Hub sections below apply to that use. A Hub you run yourself involves us in nothing. What the apps keep on the phone and what they send off it is in the [Privacy Policy](/privacy/).
 
 Our [Mission and Use Policy](/policy/) governs whom we work with. It does not restrict the licence.
 
@@ -90,6 +110,8 @@ Satellite and cellular messages cost money, and that money is owed to the carrie
 
 We provide rate limits, access rules and per-device ceilings so you can control that spend. Configuring them is your job. A chatty sensor and a wildcard routing rule will produce a bill, and it will be your bill.
 
+The same goes for the apps. An SMS sent from your phone is billed by your mobile operator, and a satellite message by whoever sells your modem its airtime. An SOS and an alarm test go out on every route you have set up, so each of those routes can be billed.
+
 ## Our videos on YouTube
 
 Our videos are published on YouTube. Watching them there, or in the players on our sites, means YouTube's [Terms of Service](https://www.youtube.com/t/terms) apply to you as well as these terms.
@@ -98,11 +120,13 @@ Our videos are published on YouTube. Watching them there, or in the players on o
 
 We may change these terms. If a change matters to you, meaning it affects price, your rights, or what we do with your data, we will email the address on your account before it takes effect. Continuing to use the service afterwards means you accept the change. If you would rather not, close the account and we will refund the unused part of a paid period.
 
+The Bridge and the apps come with no account we could write to. For them, the date at the top of this page says when these terms last changed.
+
 ## Liability
 
 Nothing here limits liability for death or personal injury caused by our negligence, for fraud, or anything else that cannot lawfully be limited. Consumer rights that apply to you regardless of contract are unaffected.
 
-Subject to that, our total liability to you for anything connected with the service is limited to the fees you actually paid us in the 12 months before the claim arose. If you are on the free plan, that is zero, and you should read that as the plain statement of risk it is.
+Subject to that, our total liability to you for anything connected with the service or the software is limited to the fees you actually paid us in the 12 months before the claim arose. If you are on the free plan, that is zero, and you should read that as the plain statement of risk it is. The Bridge and the apps cost nothing, so for them it is zero as well.
 
 We are not liable for indirect or consequential loss, for lost profit or data, or for a message that did not arrive, arrived late, or arrived at the wrong recipient.
 
@@ -110,9 +134,9 @@ We are not liable for indirect or consequential loss, for lost profit or data, o
 
 Dutch law applies. Disputes go to the courts of the Netherlands. If you are a consumer, this does not deprive you of the protection of the law of the country you live in, and you may also bring a claim there.
 
-## App store trademarks
+## Trademarks
 
-Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.
+Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc. Android, Google Play and the Google Play logo are trademarks of Google LLC. Linux is the registered trademark of Linus Torvalds in the U.S. and other countries.
 
 ## Contact
 
