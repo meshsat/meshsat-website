@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 148
-  unreleased_since: "2026-11-03"
-  unreleased_anchor: "unreleased-main-last-change-2026-11-03"
+  unreleased_count: 149
+  unreleased_since: "2026-11-04"
+  unreleased_anchor: "unreleased-main-last-change-2026-11-04"
 ---
 
 Generated from the commit history of
@@ -31,7 +31,7 @@ not a claim of emergency reliability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-11-03)
+## Unreleased (main, last change 2026-11-04)
 
 ### Features
 
@@ -101,6 +101,7 @@ not a claim of emergency reliability.
 
 ### Fixes
 
+- **federation**: two tenants on one Hub can peer; a relay to this Hub's own endpoint is served in-process with every check, the guard still refuses every private address ([ac90b65d](https://github.com/meshsat/meshsat-hub/commit/ac90b65d5177a6e79d43c52a2b4bfd50a3c21c95))
 - **lxmf**: a message goes as one packet only up to LXMF 1.2's 287 bytes of content, not 1.1's 295, the same limit as the Bridge's ([cd5912cc](https://github.com/meshsat/meshsat-hub/commit/cd5912cc80b86ebfa51eaeb55e4a2ca2ea6339d3))
 - **rns**: a newer announce on a leaf displaces a stale path to the same destination elsewhere, never a neighbour's path used within the reverse table's lifetime, and SetLeaf changes the mark and the table under one lock ([c1cc1195](https://github.com/meshsat/meshsat-hub/commit/c1cc1195b36b5cae439804d5afd3f2de5749893a))
 - **tak**: the hosted TAK server image passes its CVE gate again, dnspython and msgpack lifted past the advisories of pipeline 61943 ([1ef06706](https://github.com/meshsat/meshsat-hub/commit/1ef067065b56ec64f33169e0022ab2b54196f932))
