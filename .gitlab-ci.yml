@@ -335,3 +335,24 @@ deploy:
     - job: docker:docs
     - job: docker:install
   rules: !reference [.rules-main-deploy, rules]
+
+# Publish to the public GitHub repository (github.com/meshsat/meshsat-website).
+# GitLab is canonical; this job replaced the push mirror (MESHSAT-1797). Its
+# script and filter are the protected file variable PUBLISH_SCRIPT; the public
+# history is deterministic, so main only ever fast-forwards there. The
+# commit-map artifact maps each GitLab commit to its GitHub commit.
+publish:github:
+  stage: deploy
+  image: python:3.12-bookworm
+  tags: [docker]
+  needs: []
+  resource_group: publish-github
+  variables:
+    GIT_STRATEGY: none
+  rules: !reference [.rules-main-deploy, rules]
+  script:
+    - sh "$PUBLISH_SCRIPT"
+  artifacts:
+    paths: [commit-map]
+    expire_in: 1 year
+    when: on_success
