@@ -308,6 +308,8 @@ film_explainer_play:
   other: "Play MeshSat, explained"
 film_explainer_cap:
   other: "MeshSat explained, from the idea of bridging networks that disasters turn into islands down to the bytes of an SOS on the wire. Subtitles in English, Greek and Dutch."
+film_explainer_credit:
+  other: "Ground Control, the maker of RockBLOCK, shared the film on LinkedIn."
 host_title:
   other: "Run the Hub on your own servers, or try it on ours"
 host_caption:

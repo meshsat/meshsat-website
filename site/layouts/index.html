@@ -32,10 +32,13 @@
 
 {{/* 6. FILMS (MESHSAT-1096). Two recordings side by side in the bench's
      head-bar chrome. Each poster is a click-to-play facade: nothing loads from
-     YouTube until a press, then playVideo() in main.js opens the shared modal. */}}
+     YouTube until a press, then playVideo() in main.js opens the shared modal.
+     A film someone else shared carries "credit" (i18n key) and "credit_url" (the
+     post, without tracking parameters), its own line under the caption
+     (MESHSAT-1801). */}}
 {{ $films := slice
     (dict "id" "Q-JKNwWlzpE" "name" "MeshSat-intro.mp4" "time" "2:02" "poster" "video-poster-intro-2026-10" "play" "video_play" "cap" "video_sub")
-    (dict "id" "AzYjH1Ct8aI" "name" "MeshSat-explained.mp4" "time" "17:13" "poster" "video-poster-explainer-2026-10" "play" "film_explainer_play" "cap" "film_explainer_cap")
+    (dict "id" "AzYjH1Ct8aI" "name" "MeshSat-explained.mp4" "time" "17:13" "poster" "video-poster-explainer-2026-10" "play" "film_explainer_play" "cap" "film_explainer_cap" "credit" "film_explainer_credit" "credit_url" "https://www.linkedin.com/feed/update/urn:li:share:7524032967246004224/")
 }}
 <section id="video" class="section films-section">
     <div class="container">
@@ -56,7 +59,7 @@
                         </span>
                     </button>
                 </div>
-                <figcaption class="video-foot">{{ i18n .cap }} <a href="https://www.youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">{{ i18n "video_watch" }}</a></figcaption>
+                <figcaption class="video-foot">{{ i18n .cap }} <a href="https://www.youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">{{ i18n "video_watch" }}</a>{{ if .credit }}<span class="video-credit"><a href="{{ .credit_url }}" target="_blank" rel="noopener" hreflang="en">{{ i18n .credit }}</a></span>{{ end }}</figcaption>
             </figure>
             {{ end }}
         </div>

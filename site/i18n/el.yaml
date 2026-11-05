@@ -308,6 +308,8 @@ film_explainer_play:
   other: "Αναπαραγωγή της ταινίας για το MeshSat"
 film_explainer_cap:
   other: "Το MeshSat εξηγημένο, από την ιδέα να γεφυρωθούν δίκτυα που οι καταστροφές μετατρέπουν σε νησιά μέχρι τα bytes ενός SOS στη γραμμή. Υπότιτλοι στα αγγλικά, ελληνικά και ολλανδικά."
+film_explainer_credit:
+  other: "Η Ground Control, που κατασκευάζει το RockBLOCK, μοιράστηκε την ταινία στο LinkedIn."
 host_title:
   other: "Τρέξτε το Hub στους δικούς σας διακομιστές ή δοκιμάστε το στους δικούς μας"
 host_caption:

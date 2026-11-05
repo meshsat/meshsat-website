@@ -556,6 +556,13 @@
     padding: var(--space-sm) var(--space-md) var(--space-md);
 }
 
+/* A film someone else shared gets its own line under the caption, in the
+   caption's ink: a credit, not a call to action (MESHSAT-1801). */
+.films-grid .video-credit {
+    display: block;
+    margin-top: var(--space-sm);
+}
+
 .hero-label {
     text-transform: none;
     letter-spacing: 0;

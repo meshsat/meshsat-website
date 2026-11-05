@@ -308,6 +308,8 @@ film_explainer_play:
   other: "Film über MeshSat abspielen"
 film_explainer_cap:
   other: "MeshSat erklärt, von der Idee, Netze zu verbinden, die Katastrophen zu Inseln machen, bis zu den Bytes eines SOS auf der Leitung. Untertitel auf Englisch, Griechisch und Niederländisch."
+film_explainer_credit:
+  other: "Ground Control, der Hersteller von RockBLOCK, hat den Film auf LinkedIn geteilt."
 host_title:
   other: "Den Hub auf eigenen Servern betreiben oder auf unseren ausprobieren"
 host_caption:
