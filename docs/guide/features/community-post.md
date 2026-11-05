@@ -23,7 +23,7 @@ Off by default: a kit behaves exactly as before until an operator switches the p
 **Write.** The phone joins the open network `MeshSat Post` and its own captive-portal check opens
 the page: a recipient (a number with its country code, or an email address), an optional name,
 the message (at most 150 characters, no links) and whether it is an emergency. The page is plain
-HTML in Greek, Dutch and English; the confirmation shows the pickup code large.
+HTML in Greek, Dutch, German and English; the confirmation shows the pickup code large.
 
 **Approve.** The operator sees the queue on the kit's own screen (`/post` in the Bridge interface)
 and approves or refuses each post. The queue is on by default: a human in the loop, not an abuse
