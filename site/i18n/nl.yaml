@@ -1,5 +1,5 @@
 nav_transports:
-  other: "Transporten"
+  other: "Verbindingen"
 nav_why:
   other: "Waarom"
 nav_hardware:
@@ -21,7 +21,7 @@ skip_link:
 toggle_theme:
   other: "Thema wisselen"
 toggle_menu:
-  other: "Menu openen"
+  other: "Menu"
 choose_language:
   other: "Taal kiezen"
 hero_eyebrow:
@@ -31,7 +31,7 @@ hero_title_a:
 hero_title_b:
   other: "Elke weg naar buiten."
 hero_sub:
-  other: "Opensourcesoftware die berichten tussen meshradio’s, satellietverbindingen en mobiele netwerken doorgeeft. Draai het op een Linux-gateway of telefoon en verbind systemen die elkaar zelf niet kunnen bereiken."
+  other: "Opensourcesoftware die berichten tussen meshradio's, satellietverbindingen en mobiele netwerken doorgeeft. Draai het op een Linux-gateway of telefoon en verbind systemen die elkaar zelf niet kunnen bereiken."
 hero_status:
   other: "Prototypes in ontwikkeling. Nooit gebruikt bij een echt noodgeval."
 hero_star:
@@ -45,11 +45,11 @@ trace_title:
 trace_bridge:
   other: "bridge tesseract"
 trace_alt:
-  other: "Voorbeeld van een routeringslog: een SOS komt binnen via LoRa mesh, de Iridium-poging mislukt omdat de satelliet onder de horizon staat, en het bericht wordt in plaats daarvan bezorgd via sms, TAK en MQTT."
+  other: "Voorbeeld van een routeringslog: een SOS komt binnen via LoRa-mesh, de Iridium-poging mislukt omdat de satelliet onder de horizon staat, en het bericht wordt in plaats daarvan bezorgd via sms, TAK en MQTT."
 t1:
   other: "SOS van node !a4f2c1, 17 bytes"
 t2:
-  other: "3 regels overeen, 4 routes gekozen"
+  other: "3 regels van toepassing, 4 routes gekozen"
 t3:
   other: "onder de horizon, volgende passage over 11m 38s"
 t4:
@@ -59,11 +59,11 @@ t5:
 t6:
   other: "vastgelegd voor dashboard en webhooks"
 trace_foot:
-  other: "De satellietverbinding mislukte en het bericht kwam toch aan, in drie systemen die de mesh zelf niet kan bereiken. Routes, failover-volgorde en transformatieketens worden per interface ingesteld."
+  other: "De poging via de satelliet mislukte en het bericht kwam toch aan, in drie systemen die de mesh zelf niet kan bereiken. Routes, failover-volgorde en transformatieketens worden per interface ingesteld."
 tr_title:
   other: "Elk systeem sluit aan op dezelfde router"
 tr_sub:
-  other: "Elk systeem is een adapter achter dezelfde interface, met een eigen MTU, kostenmodel en transformatieketen, en een regel kan van elke adapter naar elke andere routeren. De code bij elk kanaal zegt waar het werkelijk staat, niet wat we hopen: alleen LIVE is getest en werkt op onze hardware."
+  other: "Elk systeem is een adapter achter dezelfde interface, met een eigen MTU, kostenmodel en transformatieketen, en een regel kan van elke adapter naar elke andere routeren. De code bij elk kanaal zegt hoe het er werkelijk voor staat, niet wat we hopen: alleen LIVE is getest en werkt op onze hardware."
 th_category:
   other: "Categorie"
 th_channels:
@@ -101,13 +101,13 @@ ch_hub:
 ch_jam:
   other: "Stoorbewaking"
 ch_cb:
-  other: "Cell broadcast-meldingen"
+  other: "Cell-broadcastmeldingen"
 ch_time:
   other: "DCF77-tijdsignaal"
 lg_label:
   other: "Wat de statuscodes betekenen"
 lg_live:
-  other: "getest en werkend op onze prototypehardware"
+  other: "getest en werkt op onze prototypehardware"
 lg_code:
   other: "in de Bridge, draait niet op een kit"
 lg_bench:
@@ -117,7 +117,7 @@ lg_soon:
 lg_plan:
   other: "gepland, nog niets gekocht"
 tr_note_a:
-  other: "Bundeling over meerdere dragers via een betaalde satellietverbinding is nog niet gevalideerd, en de stoordetectie heeft alleen nog omgevingsruis gezien."
+  other: "De stoordetectie heeft tot nu toe alleen omgevingsruis gezien."
 tr_note_link:
   other: "De repository geeft de volledige lijst"
 tr_note_b:
@@ -125,23 +125,23 @@ tr_note_b:
 cost_title:
   other: "Neem de goedkoopste route die nog werkt."
 cost_sub:
-  other: "Een Iridium-abonnement kost tientallen euro's per maand plus credits per bericht, afgerekend per credit van 50 bytes. Geef er iedereen in een team één en de rekening groeit mee met het aantal mensen. Die prijs bepaalt elke routeringsbeslissing."
+  other: "Een Iridium-abonnement kost tientallen euro's per maand plus credits per bericht, afgerekend per credit van 50 bytes. Geef iedereen in een team er een en de rekening groeit mee met het aantal mensen. Die prijs bepaalt elke routeringsbeslissing."
 c1_h:
   other: "Eén betaalde verbinding, gedeeld"
 c1_p:
-  other: "Een team draagt goedkope mesh-radio's. Eén gateway houdt de dure satellietverbinding. Iedereen bereikt de buitenwereld daardoorheen, zodat de kosten niet meer meegroeien met het aantal mensen."
+  other: "Een team heeft goedkope meshradio's bij zich. Eén gateway heeft de dure satellietverbinding. Iedereen bereikt de buitenwereld via die gateway, zodat de kosten niet meer meegroeien met het aantal mensen."
 c2_h:
   other: "Eerst de gratis dragers"
 c2_p:
-  other: "Elke interface geeft een kostprijs op. De router kiest bij voorkeur de gratis dragers, mesh, packet radio, Bluetooth en wifi, en grijpt pas naar satelliet of sms als er niets gratis beschikbaar is."
+  other: "Elke interface geeft aan wat hij kost. De router kiest bij voorkeur de gratis dragers (mesh, packetradio, Bluetooth en wifi) en grijpt pas naar satelliet of sms als er niets gratis beschikbaar is."
 c3_h:
   other: "En dan zo min mogelijk bytes"
 c3_p:
-  other: "Alles wat via een betaalde drager vertrekt, wordt eerst gecomprimeerd. SMAZ2 doet dat in minder dan een milliseconde bij korte tekst, wat telt als je per credit betaalt en niet per byte."
+  other: "Alles wat via een betaalde drager vertrekt, wordt eerst gecomprimeerd. SMAZ2 doet dat bij korte tekst in minder dan een milliseconde, en dat doet ertoe als je per credit betaalt en niet per byte."
 c4_h:
-  other: "Verstuurd als de hemel goed staat"
+  other: "Verstuurd als de satelliet in zicht is"
 c4_p:
-  other: "Passagevoorspelling op basis van SGP4-baangegevens houdt verkeer vast tot een zichtbaarheidsvenster, in plaats van batterij te verspillen aan pogingen richting een satelliet die onder de horizon staat."
+  other: "Passagevoorspelling op basis van SGP4-baanelementen houdt verkeer vast tot het volgende zichtbaarheidsvenster, in plaats van de accu leeg te trekken met pogingen richting een satelliet die onder de horizon staat."
 funding_a:
   other: "De Bridge is vrije software onder de GPLv3, de Hub onder Apache 2.0. De ontwikkeling wordt ondersteund door"
 funding_b:
@@ -155,11 +155,11 @@ th_part:
 th_role:
   other: "Rol"
 hw1:
-  other: "Host. ARM64, of elke x86_64 Linux met Docker en USB-serieel."
+  other: "Host. ARM64, of elk x86_64-Linuxsysteem met Docker en USB-serieel."
 hw2:
-  other: "Meshtastic mesh-radio op 868 of 915 MHz."
+  other: "Meshtastic-meshradio op 868 of 915 MHz."
 hw3:
-  other: "Iridium-satelliet. SBD met 340 bytes, of IMT met 100 KB."
+  other: "Iridium-satelliet. SBD met 340 bytes, of IMT met 100 kB."
 hw4:
   other: "4G en 2G mobiel, voor sms en data."
 hw5:
@@ -169,15 +169,15 @@ hw6:
 hw6r:
   other: "Omdat de interessante gevallen juist die zijn waarin ook de netstroom is weggevallen."
 cap1:
-  other: "Spectrum per band, verbindingen en de gezondheid van elke drager, geserveerd door het apparaat zelf"
+  other: "Spectrum per band, verbindingen en de toestand van elke drager, aangeboden door het apparaat zelf"
 cap2:
-  other: "Passagevoorspelling, zodat de wachtrij wacht op een satelliet die er echt is"
+  other: "Passagevoorspelling, zodat de wachtrij wacht op een satelliet die echt boven de horizon staat"
 cap3:
-  other: "Zes uur van de 868 MHz LoRa-band. De stoordetectie heeft alleen nog omgevingsruis gezien."
+  other: "Zes uur van de LoRa-band op 868 MHz. De stoordetectie heeft tot nu toe alleen omgevingsruis gezien."
 cap4:
   other: "Een ZigBee-sensor voor temperatuur en luchtvochtigheid, en zijn laatste 24 uur"
 hw_note:
-  other: "Het dashboard zit in de binary en wordt vanaf het apparaat geserveerd. Geen cloud, geen account."
+  other: "Het dashboard zit in de binary en wordt door het apparaat zelf aangeboden. Geen afhankelijkheid van de cloud, geen account."
 hw_repo_a:
   other: "De hardware heeft een eigen repository, "
 hw_repo_b:
@@ -185,15 +185,15 @@ hw_repo_b:
 nf_title:
   other: "Wat het niet is"
 nf_sub:
-  other: "Starlink is connectiviteit, Meshtastic een lokale mesh, Reticulum een netwerk dat over elke drager loopt, TAK een gedeelde kaart van de situatie. MeshSat vervangt geen van allen. Het brengt berichten tussen ze over."
+  other: "Starlink is connectiviteit, Meshtastic een lokale mesh, Reticulum een netwerk dat over elke drager loopt, TAK een gedeelde kaart van de situatie. MeshSat vervangt er geen van. Het brengt berichten tussen deze systemen over."
 nf1_h:
   other: "Geen vervanging van Starlink"
 nf1_p:
-  other: "MeshSat verplaatst tekst, posities en telemetrie. Wil je videobellen of het web, gebruik dan Starlink. Dit is voor de gevallen die een schotel niet aankan: op accu, zakformaat, zonder netstroom."
+  other: "MeshSat verstuurt tekst, posities en telemetrie. Heb je videobellen of het web nodig, gebruik dan Starlink. Dit is voor de gevallen die een schotel niet aankan: op accu, zakformaat, zonder netstroom."
 nf2_h:
   other: "Geen spraak of video"
 nf2_p:
-  other: "Satelliet- en meshverbindingen hebben hoge vertraging en lage doorvoer. Dit is store and forward berichtenverkeer. Denk aan sms, niet aan bellen."
+  other: "Satelliet- en meshverbindingen hebben een hoge latentie en een lage doorvoer. Dit is berichtenverkeer volgens store-and-forward. Denk aan sms, niet aan bellen."
 nf3_h:
   other: "Geen LoRaWAN-netwerkserver"
 nf3_p:
@@ -229,11 +229,11 @@ plan_fleet_price:
 plan_more_price:
   other: "neem contact op"
 plans_airtime:
-  other: "Je zendtijd blijft van jou. Koppel je eigen Cloudloop, Twilio en Rock7 accounts; wij verkopen geen satelliet of SMS door."
+  other: "Je satelliet- en sms-tegoed blijft van jou. Koppel je eigen Cloudloop-, Twilio- en Rock7-accounts; wij verkopen nooit satelliet- of sms-tegoed door."
 plans_keeps:
-  other: "Een geregistreerd apparaat blijft werken op elk abonnement. Een kleiner abonnement stopt alleen het toevoegen van nieuwe, en een SOS wordt nooit geraakt."
+  other: "Een apparaat dat je hebt geregistreerd, blijft op elk abonnement werken. Een kleiner abonnement houdt alleen het toevoegen van nieuwe apparaten tegen, en een SOS heeft er nooit last van."
 and_p:
-  other: "Een gewone Android-telefoon wordt de gateway, zonder Pi. Gekoppeld aan een MeshSat-node op zakformaat bereikt één Bluetooth-verbinding zowel de meshradio als het Iridium-modem, en de volledige APK-versie voegt sms toe via de eigen simkaart van de telefoon. Satellietberichten wachten in een wachtrij op de volgende overgang, die de telefoon zonder internet voorspelt."
+  other: "Een gewone Android-telefoon wordt de gateway, zonder Pi. Gekoppeld aan een MeshSat-node op zakformaat bereikt de telefoon via één Bluetooth-verbinding zowel de meshradio als het Iridium-modem, en de volledige APK-versie voegt sms toe via de eigen simkaart van de telefoon. Satellietberichten wachten in een wachtrij op de volgende passage, die de telefoon zonder internet voorspelt."
 and_cta:
   other: "Android-broncode"
 cta_title:
@@ -247,7 +247,7 @@ cta_docs:
 cta_matrix:
   other: "Vraag het op Matrix"
 cta_note:
-  other: "Foutmeldingen van mensen met hardware die wij niet hebben geprobeerd zijn het nuttigste wat je kunt sturen. De lijst met ondersteunde apparaten is kort omdat er alleen op staat wat we fysiek hebben gedraaid."
+  other: "Bugmeldingen van mensen met hardware die wij niet hebben uitgeprobeerd, zijn het nuttigste wat je kunt sturen. De lijst met ondersteunde apparaten is kort, omdat er alleen apparaten op staan waarop we het zelf echt hebben gedraaid."
 f_builtwith:
   other: "Gebouwd met"
 f_supported:
@@ -259,7 +259,7 @@ f_resources:
 f_legal:
   other: "Juridisch"
 f_strapline:
-  other: "Mensen bereikbaar houden als het netwerk dat niet is."
+  other: "Mensen verbonden houden wanneer het netwerk uitvalt."
 f_madein:
   other: "Gemaakt in Nederland"
 f_privacy:
@@ -269,7 +269,7 @@ f_terms:
 f_policy:
   other: "Missie- en gebruiksbeleid"
 ig_policy_note:
-  other: "MeshSat werkt niet met organisaties die wapensystemen ontwikkelen, produceren, integreren of inzetten, direct of via een integrator, en levert niets voor gebruik in een wapensysteem."
+  other: "MeshSat werkt niet samen met organisaties die wapensystemen ontwikkelen, produceren, integreren of inzetten, direct of via een integrator, en levert niets voor gebruik in een wapensysteem."
 ig_policy_link:
   other: "Lees het missie- en gebruiksbeleid"
 f_status:
@@ -285,7 +285,7 @@ table_transports_label:
 table_hardware_label:
   other: "Hardwaretabel, scrollbaar"
 video_sub:
-  other: "De prototypes op de werkbank, een lokale verzending in het webdashboard en het 3D-ontwerp van de veldkits in aanbouw."
+  other: "De prototypes op de werkbank, een bericht dat lokaal wordt verstuurd vanuit het webdashboard, en het 3D-ontwerp van de veldkits in aanbouw."
 video_play:
   other: "Speel de introductievideo af"
 video_watch:
@@ -297,9 +297,9 @@ term_log_label:
 and_apk:
   other: "APK downloaden"
 and_play_note:
-  other: "Op Google Play staat de app zonder sms, omdat het beleid van Google dat daar niet toestaat. De APK is de volledige app. De twee kunnen elkaar niet bijwerken."
+  other: "Op Google Play is de app er zonder sms, omdat het beleid van Google dat daar niet toestaat. De APK is de volledige app. De ene versie kan de andere niet bijwerken."
 films_title:
-  other: "Zie het werken"
+  other: "Zie het in actie"
 films_sub:
   other: "Eerst de introductie, daarna MeshSat uitgelegd, niveau voor niveau, van het idee tot de bits."
 films_consent:
@@ -307,7 +307,7 @@ films_consent:
 film_explainer_play:
   other: "Speel de film over MeshSat af"
 film_explainer_cap:
-  other: "MeshSat uitgelegd, van het idee om netwerken te verbinden die bij rampen eilanden worden tot de bytes van een SOS op de lijn. Ondertiteling in het Engels, Grieks en Nederlands."
+  other: "MeshSat uitgelegd: van het idee om netwerken te verbinden die bij rampen uiteenvallen in eilanden, tot aan de bytes van een SOS op de lijn. Ondertiteling in het Engels, Grieks en Nederlands."
 film_explainer_credit:
   other: "Ground Control, de maker van RockBLOCK, deelde de film op LinkedIn."
 host_title:
@@ -317,7 +317,7 @@ host_caption:
 host_self_h:
   other: "Op je eigen servers"
 host_self_p:
-  other: "Dezelfde code die hub.meshsat.net draait, op hardware die jij beheert."
+  other: "Dezelfde code waarop hub.meshsat.net draait, op hardware die jij beheert."
 host_self_src:
   other: "Broncode van de Hub"
 host_self_deploy:
@@ -333,27 +333,27 @@ host_self_price:
 is_title:
   other: "Netwerken vallen uiteen in eilanden"
 is_sub:
-  other: "Een ramp legt zelden alle systemen tegelijk stil. Hij verbreekt de verbindingen ertussen: de radio blijft werken binnen één dienst of één cel, het telefoonnet valt weg, en wat het ene team weet bereikt het team dat het nodig heeft niet."
+  other: "Een ramp legt zelden alle systemen tegelijk stil. Hij verbreekt de verbindingen ertussen: de radio blijft werken binnen één dienst of één cel, het telefoonnet valt weg, en wat het ene team weet, komt niet aan bij het team dat het nodig heeft."
 is_record_h:
   other: "Het is eerder gebeurd"
 is_joins_h:
-  other: "Hoe verbinden eruitziet"
+  other: "Zo ziet verbinden eruit"
 is_to:
   other: "naar"
 join1_h:
   other: "Twee teams op twee meshes, geen internet"
 join1_s:
-  other: "Op 12 september 2026 van kit naar kit getest via APRS en daarna via sms. Zie de film over de veldkits hierboven."
+  other: "Op 12 september 2026 van kit naar kit getest via APRS en daarna via sms."
 join2_h:
   other: "Een dal zonder bereik, een kantoor ver weg"
 join2_s:
-  other: "De satellietverbinding is bevestigd over een echte Iridium-link, maart 2026."
+  other: "Het satellietdeel is in maart 2026 geverifieerd over een echte Iridium-verbinding."
 join3_h:
   other: "Een radionet van vrijwilligers en een commandopost"
 join3_s:
-  other: "Beide interfaces zijn in het veld getest. Deze route is nog niet van begin tot eind gedraaid."
+  other: "Beide interfaces zijn in het veld getest. Deze route is nog niet van begin tot eind doorlopen."
 is_who:
-  other: "Gebouwd voor de mensen die tussen die eilanden werken: zoek- en reddingsteams, crisisbeheersing en civiele bescherming, humanitaire organisaties, noodnetten van zendamateurs, expedities, bemanningen op zee en industrie op afgelegen plekken. Geen van hen gebruikt het nog; het veldprogramma dat in november 2026 begint is de eerste echte test."
+  other: "Gebouwd voor de mensen die tussen die eilanden werken: zoek- en reddingsteams, rampenbestrijding en crisisbeheersing, humanitaire organisaties, noodnetten van zendamateurs, expedities, bemanningen op zee en industrie op afgelegen plekken. Geen van hen gebruikt het nog; het veldprogramma dat in november 2026 begint, is de eerste echte test."
 inc1_h:
   other: "Orkaan Katrina, Golfkust van de VS."
 inc1_p:
@@ -363,23 +363,23 @@ inc1_src:
 inc2_h:
   other: "Overstromingen in het Ahrdal en de Eifel, Duitsland."
 inc2_p:
-  other: "34 basisstations van het noodradionet werden getroffen. In terugvalmodus bleef de radio alleen binnen de eigen cel van elk station werken, en verbindingen daarbuiten werden per geval hersteld, bijvoorbeeld met gatewayverbindingen."
+  other: "34 basisstations van het noodradionet werden getroffen. In terugvalmodus bleef de radio alleen binnen de eigen cel van elk station werken, en verbindingen daarbuiten werden per geval geïmproviseerd, bijvoorbeeld met gatewayverbindingen."
 inc2_src:
   other: "Landtag Rheinland-Pfalz, Drucksache 18/1947"
 inc3_h:
-  other: "Bosbrand in Lahaina, Maui."
+  other: "Natuurbrand in Lahaina, Maui."
 inc3_p:
-  other: "Het radiosysteem van de hulpdiensten van de county lijkt de hele tijd te hebben gewerkt, maar de politie kon de brandweerkanalen niet horen en de brandweer de politie niet, en onbetrouwbaar mobiel bereik liet particuliere watertankers zonder coördinatie."
+  other: "Het radiosysteem van de hulpdiensten in de county lijkt de hele tijd te hebben gewerkt, maar de politie kon de brandweerkanalen niet horen en de brandweer die van de politie niet, en door het onbetrouwbare mobiele bereik werden particuliere watertankers niet gecoördineerd."
 inc3_src:
   other: "FSRI-rapport voor de procureur-generaal van Hawaï"
 inc4_h:
   other: "Stroomstoring in Spanje en Portugal."
 inc4_p:
-  other: "Het openbare vaste en mobiele telefoonnet viel uit, en de Portugese distributienetbeheerder week uit naar satelliettelefoons. De Spaanse netbeheerder kon nog bellen maar het distributiecentrum in Sevilla niet bereiken, en het herstel van de stroomvoorziening in Andalusië werd gepauzeerd."
+  other: "Het openbare vaste en mobiele telefoonnet viel uit, en de Portugese distributienetbeheerder greep terug op satelliettelefoons. De Spaanse netbeheerder kon nog bellen, maar kon het controlecentrum van het distributienet in Sevilla niet bereiken, en het herstel van de stroomvoorziening in Andalusië werd tijdelijk stilgelegd."
 inc4_src:
   other: "rapport van het ENTSO-E-expertpanel"
 shot_open:
-  other: "Openen op volle grootte"
+  other: "Op volledige grootte openen"
 shot_prev:
   other: "Vorige schermafbeelding"
 shot_next:
@@ -389,7 +389,7 @@ fab_bus:
 fab_cap:
   other: "Dragers boven, integraties onder, één router ertussen: een regel kan van elke adapter naar elke andere routeren. Gestippeld betekent: nog geen code in de Bridge; het label zegt waar de hardware staat."
 host_lead:
-  other: "De controlekamer voor elke kit, telefoon en zaknode die je gebruikt: één kaart, elk bericht, de routes tussen netwerken, en wie er gebeld wordt als iemand op SOS drukt. De kits hebben hem nooit nodig om een bericht door te geven. De code is in beide gevallen dezelfde; wat verschilt is wie hem draait en hoeveel apparaten je kunt registreren."
+  other: "De controlekamer voor elke kit, telefoon en node op zakformaat die je gebruikt: één kaart, elk bericht, de routes tussen netwerken, en wie er gealarmeerd wordt als iemand op SOS drukt. De kits hebben hem nooit nodig om een bericht door te geven. De code is in beide gevallen dezelfde; wat verschilt is wie hem draait en hoeveel apparaten je kunt registreren."
 host_k_devices:
   other: "Apparaten en bridges"
 host_k_account:
@@ -405,7 +405,7 @@ host_th_plan:
 
 # Hub screens and the Android Home screen (MESHSAT-1251)
 and_cap:
-  other: "Home op een Pixel 9a: elke uitweg, en drie berichten die op een satelliet wachten"
+  other: "Startscherm op een Pixel 9a: elke uitweg, en drie berichten die op een satelliet wachten"
 host_k_ops:
   other: "Back-ups, updates, beveiliging"
 host_v_ops:
@@ -413,11 +413,11 @@ host_v_ops:
 hub_shot1:
   other: "Overzicht: de paden die elke kit nu kan gebruiken, het verkeer van de afgelopen dag en wat je aandacht nodig heeft (hier niets)"
 hub_shot2:
-  other: "Berichten over elke drager: satellietverkeer van kit naar kit blijft end-to-end versleuteld, en een antwoord gaat weg vanuit het paneel ernaast"
+  other: "Berichten over elke drager: satellietverkeer van kit naar kit blijft end-to-end versleuteld, en vanuit het paneel ernaast verstuur je een antwoord"
 hub_shot3:
   other: "Routering in gewone woorden: een satellietbericht gaat door naar een andere kit, naar APRS, MQTT en TAK, naar webhooks en naar meldingen"
 hub_shots_note:
-  other: "Dezelfde schermen op jouw server of op de onze. Vastgelegd op hub.meshsat.net op 21 september 2026, met telefoonnummers, IMEI's en hostnamen van de kits onscherp gemaakt."
+  other: "Dezelfde schermen op jouw server of op de onze. Vastgelegd op hub.meshsat.net op 21 september 2026; telefoonnummers, IMEI's en hostnamen van de kits zijn onscherp gemaakt."
 
 copy:
   other: "Kopiëren"
@@ -466,7 +466,7 @@ ig_eyebrow:
   other: "MSC-3-SERIE / INTEGRATIEOVERZICHT"
 
 ig_lead:
-  other: "Een concept voor een zakformaat gateway voor de radio's van een team, met Iridium voor tekst, status en posities."
+  other: "Concept van een gateway op zakformaat voor de radio's van een team, met Iridium voor tekst, status en posities."
 
 ig_intro:
   other: "Eén platform. Eén of twee lokale radio's. Iridium in elke variant."
@@ -478,10 +478,10 @@ ig_matrix_link:
   other: "Bekijk de mogelijkhedenmatrix"
 
 ig_scope:
-  other: "Onderzoek en ontwikkeling, geen gevalideerde apparaatspecificatie. Geen enkele MSC-3-variant is ooit bij een echte gebruiker ingezet. Geen noodhulpdienst en geen vervanging voor 112."
+  other: "Onderzoek en ontwikkeling, geen gevalideerde apparaatspecificatie. Geen enkele MSC-3-variant is ooit bij een echte gebruiker ingezet. Geen hulpdienst en geen vervanging van 112."
 
 ig_arch_alt:
-  other: "Conceptarchitectuur. Teamradio's verbinden via één of twee lokale radiomodules met MeshSat Bridge op een Raspberry Pi Zero 2 W. De Bridge routeert tussen de lokale radio's en een RockBLOCK 9704-modem voor Iridium IMT. Satellietberichten bereiken de backend van de integrator. Een accu voedt de gateway. Alle routes vereisen validatie."
+  other: "Conceptarchitectuur. Teamradio's maken via één of twee lokale radiomodules verbinding met MeshSat Bridge op een Raspberry Pi Zero 2 W. De Bridge routeert tussen de lokale radio's en een RockBLOCK 9704-modem voor Iridium IMT. Satellietberichten bereiken de backend van de integrator. Een accu voedt de gateway. Alle routes vereisen validatie."
 
 ig_team:
   other: "Teamradio's"
@@ -577,16 +577,16 @@ ig_local_value:
   other: "Eén of twee slots voor radiomodules; T, D, L, A, H of G."
 
 ig_local_limit:
-  other: "Elke combinatie vereist onderzoek naar mechanische inbouw, antenne-isolatie en zendcoördinatie."
+  other: "Elke combinatie vereist werk aan mechanische inbouw, antenne-isolatie en zendcoördinatie."
 
 ig_enclosure:
   other: "Behuizing / voeding"
 
 ig_enclosure_value:
-  other: "Robuuste zakformaat behuizing en accu."
+  other: "Robuuste behuizing op zakformaat en accu."
 
 ig_enclosure_limit:
-  other: "Afmetingen, massa, gebruiksduur, beschermingsgraad en laadontwerp zijn niet geverifieerd."
+  other: "Afmetingen, massa, accuduur, beschermingsgraad en laadontwerp zijn niet geverifieerd."
 
 ig_display:
   other: "Statusscherm"
@@ -613,7 +613,7 @@ ig_every_variant:
   other: "Elke MSC-3-variant."
 
 ig_integration_limit:
-  other: "Modulespecificaties bewijzen geen apparaatcertificering, goedkeuring voor een radiovloot of prestaties van de volledige verbinding."
+  other: "Modulespecificaties bewijzen geen apparaatcertificering, goedkeuring voor een radiopark of prestaties van de volledige verbinding."
 
 ig_capabilities_eyebrow:
   other: "02 / MOGELIJKHEDENMATRIX"
@@ -643,7 +643,7 @@ ig_messages:
   other: "Beoogde berichten"
 
 ig_limits:
-  other: "Te onderzoeken beperkingen"
+  other: "Op te lossen beperkingen"
 
 ig_config_eyebrow:
   other: "04 / RADIOCONFIGURATOR"
@@ -652,7 +652,7 @@ ig_config_title:
   other: "Verken een radiocombinatie"
 
 ig_config_intro:
-  other: "Kies één of twee lokale radio's. Dit beschrijft een integratieconcept; het bevestigt niet dat een combinatie in de behuizing past of met een bepaalde radiovloot werkt."
+  other: "Kies één of twee lokale radio's. Dit beschrijft een integratieconcept; het bevestigt niet dat een combinatie in de behuizing past of met een bepaald radiopark werkt."
 
 ig_slots:
   other: "Slots voor lokale radio's"
@@ -670,7 +670,7 @@ ig_nojs:
   other: "Schakel JavaScript in om de selectie te wijzigen. Het MSC-3TL-voorbeeld en de volledige mogelijkhedenmatrix zijn ook zonder JavaScript leesbaar."
 
 ig_result:
-  other: "RESULTEREND CONCEPT"
+  other: "UITKOMST"
 
 ig_bridge_two:
   other: "Beoogde verbinding: {first} en {second} met elkaar, en beide met Iridium. Retourberichten volgen dezelfde routes waar berichtformaten en routeringsbeleid dit toestaan."
@@ -712,7 +712,7 @@ ig_art_alt:
   other: "oorspronkelijke neutrale MeshSat-illustratie, geen productfoto"
 
 ig_specs_caption:
-  other: "openbare componentspecificaties"
+  other: "(openbare componentspecificaties)"
 
 ig_cases_eyebrow:
   other: "06 / TOEPASSINGEN VOOR EVALUATIE"
@@ -721,7 +721,7 @@ ig_cases_title:
   other: "Integratiescenario's"
 
 ig_cases_intro:
-  other: "Dit zijn onderzoeksscenario's. Er wordt geen inzet bij klanten, compatibiliteit met een radiovloot of operationele goedkeuring geclaimd."
+  other: "Dit zijn onderzoeksscenario's. Er wordt geen inzet bij klanten, compatibiliteit met een radiopark of operationele goedkeuring geclaimd."
 
 ig_case_tl_title:
   other: "TETRA-teams en een vrijwilligersmesh"
@@ -733,7 +733,7 @@ ig_case_td_title:
   other: "Teams met verschillende radiosystemen"
 
 ig_case_td_body:
-  other: "Evalueer berichtenuitwisseling tussen TETRA- en DMR-teams in directe modus. Vlootspecifieke gegevensformaten, kanaaltoestemming en de omgang met versleuteling moeten eerst worden vastgesteld."
+  other: "Evalueer berichtenuitwisseling tussen TETRA- en DMR-teams in directe modus. Gegevensformaten per radiopark, kanaalautorisatie en de omgang met versleuteling moeten eerst worden vastgesteld."
 
 ig_case_dl_title:
   other: "DMR-teams en lokale sensoren"
@@ -745,10 +745,10 @@ ig_contact_eyebrow:
   other: "TECHNISCH OVERLEG"
 
 ig_contact_title:
-  other: "Bespreek uw radio en toepassing."
+  other: "Kom met een radio en een toepassing."
 
 ig_contact_intro:
-  other: "Vertel ons welke radiomodellen, configuratie voor directe modus, berichttypen, land van inzet en integratie-eindpunt u wilt evalueren."
+  other: "Vertel ons welke radiomodellen, configuratie voor directe modus, berichttypen, land van inzet en integratie-eindpunt je wilt evalueren."
 
 ig_contact_note:
   other: "Concepten in onderzoek en ontwikkeling. Modules in evaluatie."
@@ -775,10 +775,10 @@ ig_radio_t_limit:
   other: "Vergunde TETRA-kanalen. Interoperabiliteit van SDS, status en locatie in directe modus moet met de teamradio's worden gevalideerd. Directe modus op de BDM 31 3L is niet bevestigd."
 
 ig_radio_d_data:
-  other: "Tekst; status en posities zijn afhankelijk van module en radiovloot"
+  other: "Tekst; status en posities zijn afhankelijk van module en radiopark"
 
 ig_radio_d_limit:
-  other: "Vergunde DMR-kanalen. Tekstformaten, locatieprotocollen en versleuteling verschillen per radiovloot. De openbare commandolijst van NiceRF documenteert geen locatiecommando. Gegevensuitwisseling en versleuteling tussen fabrikanten zijn niet geverifieerd."
+  other: "Vergunde DMR-kanalen. Tekstformaten, locatieprotocollen en versleuteling verschillen per radiopark. De openbare commandolijst van NiceRF documenteert geen locatiecommando. Gegevensuitwisseling en versleuteling tussen fabrikanten zijn niet geverifieerd."
 
 ig_radio_l_data:
   other: "Meshtastic-tekst- en positiepakketten"
@@ -787,7 +787,7 @@ ig_radio_l_modules:
   other: "Radio op basis van Semtech SX1262"
 
 ig_radio_l_limit:
-  other: "Regionale beperkingen voor frequentieband, zendvermogen en dutycycle gelden. Een Meshtastic-host en compatibele firmware zijn vereist; de SX1262-chip alleen draait geen Meshtastic."
+  other: "Er gelden regionale beperkingen voor frequentieband, zendvermogen en dutycycle. Een Meshtastic-host en compatibele firmware zijn vereist; de SX1262-chip zelf draait geen Meshtastic."
 
 ig_radio_a_data:
   other: "Tekst, status en posities voor amateurradio"
@@ -799,22 +799,22 @@ ig_radio_h_data:
   other: "Geselecteerde applicatieberichten via een lokale IP-verbinding"
 
 ig_radio_h_limit:
-  other: "Regionale band- en vermogensgrenzen gelden. Vereist compatibele HaLow-apparaten. De satellietroute vervoert geselecteerde berichten, geen breedband-IP-verbinding. Bordkeuze en hostintegratie worden geëvalueerd."
+  other: "Er gelden regionale grenzen voor band en vermogen. Vereist compatibele HaLow-apparaten. De satellietroute vervoert geselecteerde berichten, geen breedband-IP-verbinding. De keuze van het board en de hostintegratie worden geëvalueerd."
 
 ig_radio_g_name:
   other: "2G-cel"
 
 ig_radio_g_data:
-  other: "SMS van telefoons die bij een lokale GSM-cel zijn aangemeld"
+  other: "Sms van telefoons die bij een lokale GSM-cel zijn aangemeld"
 
 ig_radio_g_modules:
   other: "PlutoSDR met Osmocom"
 
 ig_radio_g_limit:
-  other: "Vergunning per locatie. Elke inzet vereist een eigen zendmachtiging. SIM-inrichting, spectrum, timing, RF-filtering en rekencapaciteit moeten worden gevalideerd. Dit is een lokale cel, geen roaming op openbare netwerken."
+  other: "Vergunning per locatie. Elke inzet vereist een eigen vergunning voor frequentiegebruik. SIM-inrichting, spectrum, timing, RF-filtering en rekencapaciteit moeten worden gevalideerd. Dit is een lokale cel, geen roaming op openbare netwerken."
 
 ig_tw1m_note:
-  other: "Afmetingen uit de openbare brochure. Locatieverwerking en interoperabiliteit met de radiovloot vereisen validatie op de testbank."
+  other: "Afmetingen uit de openbare brochure. Locatieverwerking en interoperabiliteit met het radiopark vereisen validatie op de testbank."
 
 ig_tw1m_sourceLabel:
   other: "Openbaar Airbus-datablad, 03/2018 (kopie van Senop)"
@@ -832,25 +832,25 @@ ig_bdm31_sourceLabel:
   other: "Openbaar PMR-R & D-datablad, V1.1"
 
 ig_bdm31_fact_1_1:
-  other: "1.8 W, klasse 3L"
+  other: "1,8 W, klasse 3L"
 
 ig_bdm31_fact_2_1:
-  other: "3.7 V; 3.0 A tijdens een zendpuls"
+  other: "3,7 V; 3,0 A tijdens een zendpuls"
 
 ig_bdm31_fact_3_1:
   other: "PEI (ETSI EN 300 392-5); serieel / RS-232"
 
 ig_mt100_note:
-  other: "Het datablad noemt DMRA AES-128/256 en ARC4. Dit bewijst geen interoperabiliteit met de tekst-, locatie- of versleutelingsimplementatie van een radiovloot."
+  other: "Het datablad noemt DMRA AES-128/256 en ARC4. Dit bewijst geen interoperabiliteit met de tekst-, locatie- of versleutelingsimplementatie van een radiopark."
 
 ig_mt100_sourceLabel:
   other: "Openbaar Leonardo-datablad, mm08909, 09/2020"
 
 ig_mt100_fact_2_1:
-  other: "7.4 V; tot 2 A"
+  other: "7,4 V; tot 2 A"
 
 ig_mt100_fact_3_1:
-  other: "3.3 V UART; AT-commando's; IP via DMR"
+  other: "3,3 V UART; AT-commando's; IP via DMR"
 
 ig_dmr818_note:
   other: "Tekstcommando's zijn gedocumenteerd, een locatiecommando niet. Compatibiliteit van versleuteling en tekst met andere radio's is nog niet geverifieerd."
@@ -886,7 +886,7 @@ ig_picoaprs_note:
   other: "VHF-model. Uitsluitend amateurradio, bevoegde zendamateur, geen versleuteling. De eigen accu staat los van het MSC-3-accuconcept."
 
 ig_picoaprs_sourceLabel:
-  other: "Openbare V4-handleiding van de maker, technische specificaties, 20/11/2023"
+  other: "Openbare V4-handleiding van de maker, technische specificaties, 20-11-2023"
 
 ig_picoaprs_fact_0_1:
   other: "Circa 35 × 67 × 25 mm / 60 g"
@@ -895,10 +895,10 @@ ig_picoaprs_fact_2_1:
   other: "Maximaal 1 W"
 
 ig_picoaprs_fact_3_1:
-  other: "AX.25 op 1.200 baud; USB KISS TNC"
+  other: "AX.25 op 1200 baud; USB KISS TNC"
 
 ig_mm6108_note:
-  other: "Een Morse Micro-module en draagprint worden nog geëvalueerd. Het LILYGO T-HaLow-bord hieronder gebruikt TX-AH; het is een afzonderlijke kandidaat."
+  other: "Een Morse Micro-module en draagprint worden nog geëvalueerd. Het LILYGO T-HaLow-board hieronder gebruikt TX-AH; het is een afzonderlijke kandidaat."
 
 ig_mm6108_sourceLabel:
   other: "Openbare Morse Micro MM6108-productbeschrijving"
@@ -910,7 +910,7 @@ ig_mm6108_fact_2_1:
   other: "Lokale IP-toegang voor berichtentransport"
 
 ig_thalow_note:
-  other: "Bordrevisie, regionale RF-variant en hostinterface moeten worden bevestigd. Aan dit bord wordt geen Morse Micro-chipset toegeschreven."
+  other: "Boardrevisie, regionale RF-variant en hostinterface moeten worden bevestigd. Aan dit board wordt geen Morse Micro-chipset toegeschreven."
 
 ig_thalow_sourceLabel:
   other: "Openbare LILYGO-hardwaredocumentatie en modulespecificaties"
@@ -934,7 +934,7 @@ ig_pluto_sourceLabel:
   other: "Openbare technische specificaties van de Analog Devices ADALM-PLUTO"
 
 ig_pluto_fact_0_1:
-  other: "325 MHz tot 3.8 GHz (SDR-mogelijkheden)"
+  other: "325 MHz tot 3,8 GHz (SDR-mogelijkheden)"
 
 ig_pluto_fact_1_1:
   other: "Tot 20 MHz (SDR-mogelijkheden)"
@@ -997,7 +997,7 @@ ig_tw1m_fact_0_0:
   other: "Afmetingen / massa"
 
 ig_tw1m_fact_0_1:
-  other: "84 × 67 × 24.7 mm / 66 g"
+  other: "84 × 67 × 24,7 mm / 66 g"
 
 ig_tw1m_fact_1_0:
   other: "Banden"
@@ -1042,13 +1042,13 @@ ig_mt100_fact_0_0:
   other: "Afmetingen / massa"
 
 ig_mt100_fact_0_1:
-  other: "48 × 64 × 10.4 mm / 50 g"
+  other: "48 × 64 × 10,4 mm / 50 g"
 
 ig_mt100_fact_1_0:
   other: "Banden / RF-zendvermogen"
 
 ig_mt100_fact_1_1:
-  other: "136-174 MHz / 4.7 W; 400-470 MHz / 4 W"
+  other: "136-174 MHz / 4,7 W; 400-470 MHz / 4 W"
 
 ig_mt100_fact_2_0:
   other: "Voeding"
@@ -1072,7 +1072,7 @@ ig_dmr818_fact_2_0:
   other: "Voeding"
 
 ig_dmr818_fact_2_1:
-  other: "3.3-4.5 V"
+  other: "3,3-4,5 V"
 
 ig_dmr818_fact_3_0:
   other: "Gegevensinterface"
@@ -1117,7 +1117,7 @@ ig_picoaprs_fact_2_0:
   other: "RF-zendvermogen"
 
 ig_picoaprs_fact_3_0:
-  other: "Pakket / interface"
+  other: "Packet / interface"
 
 ig_mm6108_name:
   other: "Morse Micro MM6108"
@@ -1225,7 +1225,7 @@ f_social:
   other: "MeshSat op {{ .Platform }}"
 
 f_sidn_title:
-  other: "Dit project wordt mede mogelijk gemaakt met steun van SIDN fonds"
+  other: "Dit project wordt mede mogelijk gemaakt door SIDN fonds"
 
 hw_or:
   other: "of"
@@ -1258,17 +1258,17 @@ f_help:
 nav_setup:
   other: "Kies je opstelling"
 hero_intro:
-  other: "Opensourcesoftware die berichten doorgeeft tussen meshradio’s, satellieten en mobiele netwerken. Begin met een Linux-computer of Android-telefoon."
+  other: "Opensourcesoftware die berichten doorgeeft tussen meshradio's, satellieten en mobiele netwerken. Begin met een Linux-computer of Android-telefoon."
 message_title:
   other: "Een bericht, van radio naar bestemming"
 message_intro:
-  other: "De Bridge ontvangt een bericht, past je routeringsregels toe en verstuurt het via een ingesteld transport. Elke bestemming meldt een eigen resultaat."
+  other: "De Bridge ontvangt een bericht, past je routeringsregels toe en verstuurt het via een ingestelde verbinding. Elke bestemming meldt zijn eigen resultaat."
 trace_example:
   other: "Illustratief routeringsvoorbeeld: bekijk het berichtenlog"
 transport_details:
-  other: "Alle transporten en hun teststatus"
+  other: "Alle verbindingen en hun teststatus"
 cost_details:
-  other: "Hardware, zendtijd en projectfinanciering"
+  other: "Hardware, verbindingskosten en projectfinanciering"
 support_title:
   other: "Steun het project"
 hardware_photo:
@@ -1276,9 +1276,9 @@ hardware_photo:
 hardware_process:
   other: "Bekijk hoe we bouwen"
 msc2_photo:
-  other: "MeshSat Compact v2, het eerste prototype: meshradio, satellietmodem en batterij in één behuizing die in je hand past. Het heeft satellietberichten verstuurd en ontvangen."
+  other: "MeshSat Compact v2, het eerste prototype: meshradio, satellietmodem en accu in één behuizing die in je hand past. Het heeft satellietberichten verstuurd en ontvangen."
 msc2_launch:
-  other: "MSC-2, de teamgateway: schrijf je in voor de lancering"
+  other: "MSC-2, de teamgateway: krijg bericht bij de lancering"
 language_home:
   other: "startpagina"
 
@@ -1304,11 +1304,11 @@ ig_film_ch_system:
 ig_film_ch_hardware:
   other: "De hardware: de veldkits en MSC-2"
 ig_film_ch_system_play:
-  other: "Speel MeshSat, uitgelegd, af vanaf Het systeem op 4:48"
+  other: "Speel de film over MeshSat af vanaf het hoofdstuk Het systeem (4:48)"
 ig_film_ch_hardware_play:
-  other: "Speel MeshSat, uitgelegd, af vanaf De hardware op 11:09"
+  other: "Speel de film over MeshSat af vanaf het hoofdstuk De hardware (11:09)"
 ig_film_languages:
-  other: "Geluid in het Engels, Nederlands of Grieks, met ondertitels in alle drie (het tandwiel, dan Audiotrack)."
+  other: "Audio in het Engels, Nederlands of Grieks, met ondertiteling in alle drie de talen (het tandwiel, dan Audiotrack)."
 ig_nav_sensors:
   other: "Sensoren"
 ig_sensors_eyebrow:
@@ -1316,7 +1316,7 @@ ig_sensors_eyebrow:
 ig_sensors_title:
   other: "Een sensormeting reist als bericht"
 ig_sensors_intro:
-  other: "Geen enkel MSC-3-concept heeft eigen sensoren. Voor MeshSat is een sensormeting een bericht: die neemt dezelfde routes als tekst, Iridium inbegrepen. Dit bestaat er vandaag, en dit niet."
+  other: "Geen enkel MSC-3-concept heeft eigen sensoren. Voor MeshSat is een sensormeting een bericht: die neemt dezelfde routes als tekst, Iridium inbegrepen. Hieronder staat wat er vandaag bestaat en wat niet."
 ig_sensors_caption:
   other: "Sensoren en positie: status op 26 oktober 2026"
 ig_sensor_col_source:
@@ -1336,15 +1336,15 @@ ig_sensor_zigbee_open:
 ig_sensor_position:
   other: "Positie van de radio's van het team"
 ig_sensor_position_today:
-  other: "Onderdeel van de beoogde berichten van een variant waar de radio positiemeldingen draagt, zoals in de capaciteitenmatrix."
+  other: "Onderdeel van de beoogde berichten van een variant als de radio positiemeldingen verstuurt, zoals vermeld in de mogelijkhedenmatrix."
 ig_sensor_position_open:
-  other: "Moet per radiovloot worden gevalideerd."
+  other: "Moet per radiopark worden gevalideerd."
 ig_sensor_own:
   other: "Andere sensoren"
 ig_sensor_own_today:
   other: "In geen enkel concept: andere sensortypen, of een sensoraansluiting op de behuizing."
 ig_sensor_own_open:
-  other: "Laat ons weten welke sensoren en metingen uw project nodig heeft."
+  other: "Laat ons weten welke sensoren en metingen je project nodig heeft."
 ig_sensors_link:
   other: "ZigBee op docs.meshsat.net"
 ig_sensors_plan:
@@ -1364,3 +1364,11 @@ app_store_badge:
 
 google_play_badge:
   other: "Ontdek het op Google Play"
+
+# A colon after a label: French puts a narrow no-break space before it.
+colon:
+  other: ":"
+
+# A word before the linked "MeshSat" in the footer licence line (Greek needs the article).
+f_copy_pre:
+  other: ""

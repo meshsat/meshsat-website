@@ -21,15 +21,15 @@ skip_link:
 toggle_theme:
   other: "Design wechseln"
 toggle_menu:
-  other: "Menü öffnen"
+  other: "Menü ein- und ausblenden"
 choose_language:
   other: "Sprache wählen"
 hero_eyebrow:
-  other: "Wenn Netze ausfallen, zerfällt, was übrig bleibt, in Inseln. MeshSat verbindet sie."
+  other: "Wenn Netze ausfallen, zerfällt der Rest in Inseln. MeshSat verbindet sie."
 hero_title_a:
   other: "Eine Nachricht."
 hero_title_b:
-  other: "Jeder Weg hinaus."
+  other: "Jeder Ausweg."
 hero_sub:
   other: "Open-Source-Software, die Nachrichten zwischen Mesh-Funkgeräten, Satellitenverbindungen und Mobilfunknetzen überträgt. Sie läuft auf einem Linux-Gateway oder Telefon und verbindet Systeme, die einander allein nicht erreichen."
 hero_status:
@@ -41,17 +41,17 @@ hero_visitors:
 hero_donate:
   other: "MeshSat unterstützen"
 trace_title:
-  other: "Routing-Protokoll, eine Notmeldung"
+  other: "Routing-Log, eine Notmeldung"
 trace_bridge:
   other: "bridge tesseract"
 trace_alt:
-  other: "Beispielhaftes Routing-Protokoll: Ein SOS trifft über LoRa-Mesh ein, der Iridium-Versuch schlägt fehl, weil der Satellit unter dem Horizont steht, und die Nachricht wird stattdessen über SMS, TAK und MQTT zugestellt."
+  other: "Beispielhaftes Routing-Log: Ein SOS trifft über LoRa-Mesh ein, der Iridium-Versuch schlägt fehl, weil der Satellit unter dem Horizont steht, und die Nachricht wird stattdessen über SMS, TAK und MQTT zugestellt."
 t1:
   other: "SOS von Knoten !a4f2c1, 17 Bytes"
 t2:
-  other: "3 Regeln zutreffend, 4 Routen gewählt"
+  other: "3 Regeln greifen, 4 Routen gewählt"
 t3:
-  other: "unter dem Horizont, nächster Überflug in 11m 38s"
+  other: "unter dem Horizont, nächster Überflug in 11 min 38 s"
 t4:
   other: "smaz2 17 auf 11 Bytes, SMS an Kontaktgruppe"
 t5:
@@ -59,11 +59,11 @@ t5:
 t6:
   other: "protokolliert für Dashboard und Webhooks"
 trace_foot:
-  other: "Die Satellitenstrecke schlug fehl und die Nachricht kam trotzdem an, in drei Systemen, die das Mesh allein nicht erreicht. Routen, Failover-Reihenfolge und Transformationsketten werden je Schnittstelle konfiguriert."
+  other: "Der Versand über Satellit schlug fehl, und die Nachricht kam trotzdem an: in drei Systemen, die das Mesh allein nicht erreicht. Routen, Failover-Reihenfolge und Transformationsketten werden je Schnittstelle konfiguriert."
 tr_title:
   other: "Jedes System hängt am selben Router"
 tr_sub:
-  other: "Jedes System ist ein Adapter hinter derselben Schnittstelle, mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette, und eine Regel kann von jedem Adapter zu jedem anderen routen. Der Code an jedem Kanal sagt, wo er wirklich steht, nicht was wir hoffen: Nur LIVE ist auf unserer Hardware erprobt."
+  other: "Jedes System ist ein Adapter hinter derselben Schnittstelle, mit eigener MTU, eigenem Kostenmodell und eigener Transformationskette, und eine Regel kann von jedem Adapter zu jedem anderen routen. Der Statuscode an jedem Kanal zeigt, wo dieser wirklich steht, nicht was wir hoffen: Nur LIVE ist auf unserer Hardware getestet und funktioniert."
 th_category:
   other: "Kategorie"
 th_channels:
@@ -75,13 +75,13 @@ cat_radio:
 cat_wired:
   other: "Kabel"
 cat_short:
-  other: "Kurzstrecke"
+  other: "Nahbereich"
 cat_ip:
   other: "IP und Hub"
 cat_rx:
   other: "Nur Empfang"
 ch_node:
-  other: "Iridium über MeshSat-Knoten"
+  other: "Iridium über einen MeshSat-Knoten"
 ch_cell:
   other: "Mobilfunk: SMS und Daten"
 ch_hf10:
@@ -93,13 +93,13 @@ ch_2g:
 ch_fiber:
   other: "Glasfaser"
 ch_copper:
-  other: "Kupfer, ein Adernpaar"
+  other: "Kupfer, ein Aderpaar"
 ch_rnode:
   other: "RNode- und KISS-Funkgeräte"
 ch_hub:
   other: "Hub-Verbindung"
 ch_jam:
-  other: "Störüberwachung"
+  other: "Störsendererkennung"
 ch_cb:
   other: "Cell-Broadcast-Warnungen"
 ch_time:
@@ -107,17 +107,17 @@ ch_time:
 lg_label:
   other: "Was die Statuscodes bedeuten"
 lg_live:
-  other: "erprobt auf unserer Prototyp-Hardware"
+  other: "getestet, funktioniert auf unserer Prototyp-Hardware"
 lg_code:
   other: "in der Bridge, auf keinem Kit"
 lg_bench:
-  other: "auf unserer Werkbank, in keinem Kit"
+  other: "auf unserer Werkbank, noch in keinem Kit"
 lg_soon:
   other: "unterwegs zur Werkbank, nichts getestet"
 lg_plan:
   other: "geplant, nichts gekauft"
 tr_note_a:
-  other: "Die Bündelung mehrerer Träger über eine kostenpflichtige Satellitenstrecke ist noch nicht validiert, und die Störerkennung hat bisher nur Umgebungsrauschen gesehen."
+  other: "Die Störsendererkennung hat bisher nur Umgebungsrauschen gesehen."
 tr_note_link:
   other: "Das Repository führt die vollständige Liste"
 tr_note_b:
@@ -125,27 +125,27 @@ tr_note_b:
 cost_title:
   other: "Den günstigsten Weg nehmen, der noch funktioniert."
 cost_sub:
-  other: "Eine Iridium-Leitung kostet mehrere zehn Euro im Monat plus Guthaben je Nachricht, abgerechnet je Credit zu 50 Bytes. Gibt man jeder Person im Team eine, wächst die Rechnung mit der Teamgröße. Dieser Preis prägt jede Routing-Entscheidung."
+  other: "Ein Iridium-Anschluss kostet einige Dutzend Euro im Monat plus Credits je Nachricht, abgerechnet pro Credit zu je 50 Bytes. Gibt man jeder Person im Team einen, wächst die Rechnung mit der Teamgröße. Dieser Preis prägt jede Routing-Entscheidung."
 c1_h:
   other: "Eine bezahlte Strecke, gemeinsam genutzt"
 c1_p:
-  other: "Ein Team trägt günstige Mesh-Funkgeräte. Ein Gateway hält die teure Satellitenleitung. Alle erreichen die Außenwelt darüber, sodass die Kosten nicht mehr mit der Personenzahl wachsen."
+  other: "Ein Team trägt günstige Mesh-Funkgeräte. Ein Gateway hat den teuren Satellitenanschluss. Alle erreichen die Außenwelt darüber, sodass die Kosten nicht mehr mit der Personenzahl wachsen."
 c2_h:
-  other: "Kostenlose Träger zuerst"
+  other: "Kostenlose Übertragungswege zuerst"
 c2_p:
   other: "Jede Schnittstelle gibt Kosten an. Der Router bevorzugt die kostenlosen, also Mesh, Packet Radio, Bluetooth und WLAN, und greift erst zu Satellit oder SMS, wenn nichts Kostenloses verfügbar ist."
 c3_h:
   other: "Und dann möglichst wenige Bytes"
 c3_p:
-  other: "Alles, was über einen kostenpflichtigen Träger geht, wird zuerst komprimiert. SMAZ2 braucht dafür bei kurzem Text unter einer Millisekunde, was zählt, wenn pro Credit statt pro Byte abgerechnet wird."
+  other: "Alles, was über einen kostenpflichtigen Übertragungsweg geht, wird zuerst komprimiert. SMAZ2 braucht dafür bei kurzem Text weniger als eine Millisekunde; das ist wichtig, wenn pro Credit statt pro Byte abgerechnet wird."
 c4_h:
   other: "Gesendet, wenn der Himmel stimmt"
 c4_p:
-  other: "Überflugvorhersage aus SGP4-Bahndaten hält Verkehr bis zum Sichtbarkeitsfenster zurück, statt Akku für Versuche gegen einen Satelliten unter dem Horizont zu verbrauchen."
+  other: "Die Überflugvorhersage aus SGP4-Bahnelementen hält den Verkehr bis zum Sichtbarkeitsfenster zurück, statt den Akku mit Sendeversuchen zu leeren, solange der Satellit unter dem Horizont steht."
 funding_a:
-  other: "Die Bridge ist freie Software unter der GPLv3, der Hub unter Apache 2.0. Die Entwicklung wird gefördert von"
+  other: "Die Bridge ist freie Software unter der GPLv3, der Hub unter Apache 2.0. Die Entwicklung wird gefördert vom"
 funding_b:
-  other: ", und ein sechsmonatiges Feldprogramm beginnt im November 2026."
+  other: ", und ein sechsmonatiges Praxisprogramm beginnt im November 2026."
 hw_title:
   other: "Worauf es läuft"
 hw_sub:
@@ -155,13 +155,13 @@ th_part:
 th_role:
   other: "Funktion"
 hw1:
-  other: "Host. ARM64 oder jedes x86_64-Linux mit Docker und USB-Seriell."
+  other: "Host. ARM64 oder jedes x86_64-Linux mit Docker und USB-Seriell-Unterstützung."
 hw2:
-  other: "Meshtastic-Mesh-Funk auf 868 oder 915 MHz."
+  other: "Meshtastic-Mesh-Funkgerät für 868 oder 915 MHz."
 hw3:
   other: "Iridium-Satellit. SBD mit 340 Bytes oder IMT mit 100 KB."
 hw4:
-  other: "4G und 2G Mobilfunk, für SMS und Daten."
+  other: "4G- und 2G-Mobilfunk, für SMS und Daten."
 hw5:
   other: "ZigBee-Koordinator."
 hw6:
@@ -169,15 +169,15 @@ hw6:
 hw6r:
   other: "Weil die interessanten Fälle genau die sind, in denen auch der Netzstrom weg ist."
 cap1:
-  other: "Spektrum je Band, Verbindungen und der Zustand jedes Trägers, vom Gerät selbst ausgeliefert"
+  other: "Spektrum je Band, Verbindungen und der Zustand jedes Übertragungswegs, vom Gerät selbst ausgeliefert"
 cap2:
   other: "Überflugvorhersage, damit die Warteschlange auf einen wirklich sichtbaren Satelliten wartet"
 cap3:
-  other: "Sechs Stunden des 868-MHz-LoRa-Bands. Die Störerkennung hat bisher nur Umgebungsrauschen gesehen."
+  other: "Sechs Stunden des 868-MHz-LoRa-Bands. Die Störsendererkennung hat bisher nur Umgebungsrauschen gesehen."
 cap4:
   other: "Ein ZigBee-Sensor für Temperatur und Luftfeuchte und seine letzten 24 Stunden"
 hw_note:
-  other: "Das Dashboard steckt in der Binärdatei und wird vom Gerät ausgeliefert. Keine Cloud, kein Konto."
+  other: "Das Dashboard steckt in der Binärdatei und wird vom Gerät ausgeliefert. Keine Cloud-Abhängigkeit, kein Konto."
 hw_repo_a:
   other: "Die Hardware hat ein eigenes Repository, "
 hw_repo_b:
@@ -185,11 +185,11 @@ hw_repo_b:
 nf_title:
   other: "Was es nicht ist"
 nf_sub:
-  other: "Starlink ist Konnektivität, Meshtastic ein lokales Mesh, Reticulum ein Netz über beliebige Träger, TAK ein gemeinsames Lagebild. MeshSat ersetzt keines davon. Es trägt Nachrichten zwischen ihnen."
+  other: "Starlink liefert Konnektivität, Meshtastic ein lokales Mesh, Reticulum ein Netz über beliebige Übertragungswege, TAK ein gemeinsames Lagebild. MeshSat ersetzt keines davon. Es vermittelt Nachrichten zwischen ihnen."
 nf1_h:
   other: "Kein Ersatz für Starlink"
 nf1_p:
-  other: "MeshSat bewegt Text, Positionen und Telemetrie. Wer Videoanrufe oder das Web braucht, nimmt Starlink. Dies ist für die Fälle, die eine Schüssel nicht abdeckt: akkubetrieben, hosentaschengroß, ohne Netzstrom."
+  other: "MeshSat bewegt Text, Positionen und Telemetrie. Wer Videoanrufe oder das Web braucht, nimmt Starlink. MeshSat ist für die Fälle gedacht, die eine Starlink-Antenne nicht abdeckt: akkubetrieben, im Taschenformat, ohne Netzstrom."
 nf2_h:
   other: "Keine Sprache, kein Video"
 nf2_p:
@@ -197,7 +197,7 @@ nf2_p:
 nf3_h:
   other: "Kein LoRaWAN-Netzwerkserver"
 nf3_p:
-  other: "Die Mesh-Seite spricht Meshtastic, ein eigenes Protokoll über LoRa. Für LoRaWAN ChirpStack betreiben und per MQTT anbinden."
+  other: "Die Mesh-Seite spricht Meshtastic, ein eigenes Protokoll über LoRa. Für LoRaWAN betreiben Sie ChirpStack und binden es per MQTT an."
 nf4_h:
   other: "Kein Notrufdienst"
 nf4_p:
@@ -205,7 +205,7 @@ nf4_p:
 hub_badge:
   other: "Offen"
 hub_status:
-  other: "Der Hub ist offen. Erstellen Sie ein Konto, wir prüfen es, bevor es freigeschaltet wird."
+  other: "Der Hub ist offen. Erstellen Sie ein Konto; wir prüfen es, bevor es freigeschaltet wird."
 hub_cta:
   other: "Konto erstellen"
 hub_signin:
@@ -229,11 +229,11 @@ plan_fleet_price:
 plan_more_price:
   other: "sprechen Sie uns an"
 plans_airtime:
-  other: "Ihre Sendezeit bleibt Ihre. Binden Sie Ihre eigenen Cloudloop, Twilio und Rock7 Konten ein; wir verkaufen weder Satellit noch SMS weiter."
+  other: "Ihre Airtime bleibt bei Ihnen. Binden Sie Ihre eigenen Cloudloop-, Twilio- und Rock7-Konten ein; wir verkaufen nie Satelliten- oder SMS-Kontingente weiter."
 plans_keeps:
-  other: "Ein registriertes Gerät funktioniert in jedem Tarif weiter. Ein kleinerer Tarif verhindert nur neue Registrierungen, ein SOS ist nie betroffen."
+  other: "Ein registriertes Gerät funktioniert in jedem Tarif weiter. Ein kleinerer Tarif verhindert nur neue Registrierungen; ein SOS ist nie betroffen."
 and_p:
-  other: "Ein gewöhnliches Android-Telefon wird zum Gateway, ohne Pi. Gekoppelt mit einem MeshSat-Node im Taschenformat erreicht eine einzige Bluetooth-Verbindung sowohl das Mesh-Funkgerät als auch das Iridium-Modem, und die vollständige APK-Version ergänzt SMS über die eigene SIM-Karte des Telefons. Satellitennachrichten warten in einer Warteschlange auf den nächsten Überflug, den das Telefon ohne Internet vorhersagt."
+  other: "Ein gewöhnliches Android-Smartphone wird zum Gateway, ohne Pi. Ist es mit einem MeshSat-Knoten im Taschenformat gekoppelt, erreicht eine einzige Bluetooth-Verbindung sowohl das Mesh-Funkgerät als auch das Iridium-Modem, und die vollständige APK-Version ergänzt SMS über die eigene SIM-Karte des Smartphones. Satellitennachrichten warten in einer Warteschlange auf den nächsten Überflug, den das Smartphone ohne Internet vorhersagt."
 and_cta:
   other: "Android-Quellcode"
 cta_title:
@@ -247,11 +247,11 @@ cta_docs:
 cta_matrix:
   other: "Auf Matrix fragen"
 cta_note:
-  other: "Fehlerberichte von Leuten mit Hardware, die wir nicht ausprobiert haben, sind das Nützlichste, was Sie schicken können. Die Liste unterstützter Geräte ist kurz, weil dort nur steht, was wir physisch betrieben haben."
+  other: "Fehlerberichte zu Hardware, die wir nicht ausprobiert haben, sind das Nützlichste, was Sie uns schicken können. Die Liste unterstützter Geräte ist kurz, weil dort nur steht, was wir selbst in Betrieb hatten."
 f_builtwith:
   other: "Gebaut mit"
 f_supported:
-  other: "Gefördert von"
+  other: "Unterstützt von"
 f_products:
   other: "Produkte"
 f_resources:
@@ -259,7 +259,7 @@ f_resources:
 f_legal:
   other: "Rechtliches"
 f_strapline:
-  other: "Menschen erreichbar halten, wenn das Netz es nicht ist."
+  other: "Menschen in Verbindung halten, wenn das Netz ausfällt."
 f_madein:
   other: "Gebaut in den Niederlanden"
 f_privacy:
@@ -267,11 +267,11 @@ f_privacy:
 f_terms:
   other: "Nutzungsbedingungen"
 f_policy:
-  other: "Mission und Nutzungsrichtlinie"
+  other: "Missions- und Nutzungsrichtlinie"
 ig_policy_note:
   other: "MeshSat arbeitet mit keiner Organisation zusammen, die Waffensysteme entwickelt, herstellt, integriert oder betreibt, weder direkt noch über einen Integrator, und liefert nichts für den Einsatz in einem Waffensystem."
 ig_policy_link:
-  other: "Mission und Nutzungsrichtlinie lesen"
+  other: "Missions- und Nutzungsrichtlinie lesen"
 f_status:
   other: "Dienststatus"
 f_license:
@@ -285,7 +285,7 @@ table_transports_label:
 table_hardware_label:
   other: "Hardware-Tabelle, scrollbar"
 video_sub:
-  other: "Die Prototypen auf der Werkbank, ein lokaler Sendevorgang im Web-Dashboard und das 3D-Design der Feldkits im Bau."
+  other: "Die Prototypen auf der Werkbank, ein lokaler Sendevorgang im Web-Dashboard und das 3D-Design der Feldkits, die gerade gebaut werden."
 video_play:
   other: "Einführungsvideo abspielen"
 video_watch:
@@ -297,7 +297,7 @@ term_log_label:
 and_apk:
   other: "APK herunterladen"
 and_play_note:
-  other: "Bei Google Play gibt es die App ohne SMS, weil Googles Richtlinien das dort nicht erlauben. Die APK ist die vollständige App. Die beiden können einander nicht aktualisieren."
+  other: "Bei Google Play gibt es die App ohne SMS, weil Googles Richtlinien das dort nicht erlauben. Die APK ist die vollständige App. Die beiden Versionen können sich nicht gegenseitig aktualisieren."
 films_title:
   other: "Sehen, wie es läuft"
 films_sub:
@@ -305,7 +305,7 @@ films_sub:
 films_consent:
   other: "Von YouTube wird nichts geladen, bevor Sie auf Abspielen drücken."
 film_explainer_play:
-  other: "Film über MeshSat abspielen"
+  other: "„MeshSat, erklärt“ abspielen"
 film_explainer_cap:
   other: "MeshSat erklärt, von der Idee, Netze zu verbinden, die Katastrophen zu Inseln machen, bis zu den Bytes eines SOS auf der Leitung. Untertitel auf Englisch, Griechisch und Niederländisch."
 film_explainer_credit:
@@ -317,9 +317,9 @@ host_caption:
 host_self_h:
   other: "Auf Ihren eigenen Servern"
 host_self_p:
-  other: "Derselbe Code, auf dem hub.meshsat.net läuft, auf Hardware unter Ihrer Kontrolle."
+  other: "Derselbe Code wie auf hub.meshsat.net, auf Hardware unter Ihrer Kontrolle."
 host_self_src:
-  other: "Quellcode des Hub"
+  other: "Quellcode des Hubs"
 host_self_deploy:
   other: "Anleitung zum Selbsthosten"
 host_ours_h:
@@ -343,17 +343,17 @@ is_to:
 join1_h:
   other: "Zwei Teams in zwei Meshes, kein Internet"
 join1_s:
-  other: "Am 12. September 2026 von Kit zu Kit über APRS und danach über SMS getestet. Siehe den Film über die Feldkits oben."
+  other: "Am 12. September 2026 von Kit zu Kit über APRS und danach über SMS getestet."
 join2_h:
   other: "Ein Tal ohne Empfang, ein Büro weit weg"
 join2_s:
-  other: "Die Satellitenstrecke ist über eine echte Iridium-Verbindung bestätigt, März 2026."
+  other: "Die Satellitenstrecke wurde im März 2026 über eine echte Iridium-Verbindung verifiziert."
 join3_h:
-  other: "Ein Funknetz von Freiwilligen und eine Einsatzleitung"
+  other: "Ein Funknetz von Ehrenamtlichen und eine Einsatzleitung"
 join3_s:
-  other: "Beide Schnittstellen sind im Feld erprobt. Diese Route wurde noch nicht durchgehend betrieben."
+  other: "Beide Schnittstellen sind im Feld erprobt. Diese Route ist noch nie von Ende zu Ende gelaufen."
 is_who:
-  other: "Gebaut für die Menschen, die zwischen diesen Inseln arbeiten: Such- und Rettungsteams, Katastrophenschutz und Krisenmanagement, humanitäre Organisationen, Notfunkgruppen von Funkamateuren, Expeditionen, Schiffsbesatzungen und abgelegene Industrie. Noch nutzt es keiner von ihnen; das Feldprogramm, das im November 2026 beginnt, ist der erste echte Test."
+  other: "Gebaut für die Menschen, die zwischen diesen Inseln arbeiten: Such- und Rettungsteams, Katastrophenschutz und Krisenmanagement, humanitäre Organisationen, Notfunkgruppen von Funkamateuren, Expeditionen, Schiffsbesatzungen und Industriebetriebe an abgelegenen Standorten. Noch nutzt es keiner von ihnen; das Praxisprogramm, das im November 2026 beginnt, ist der erste echte Test."
 inc1_h:
   other: "Hurrikan Katrina, US-Golfküste."
 inc1_p:
@@ -369,7 +369,7 @@ inc2_src:
 inc3_h:
   other: "Waldbrand in Lahaina, Maui."
 inc3_p:
-  other: "Das Funksystem der Sicherheitsbehörden des Countys scheint durchgehend funktioniert zu haben, doch die Polizei konnte die Kanäle der Feuerwehr nicht hören und die Feuerwehr die der Polizei nicht, und unzuverlässiger Mobilfunk ließ private Tankwagen ohne Koordination."
+  other: "Das Funksystem der Sicherheitsbehörden des Countys scheint durchgehend funktioniert zu haben, doch die Polizei konnte die Kanäle der Feuerwehr nicht hören und die Feuerwehr nicht die der Polizei, und wegen des unzuverlässigen Mobilfunks blieben private Wassertankwagen unkoordiniert."
 inc3_src:
   other: "FSRI-Bericht für den Generalstaatsanwalt von Hawaii"
 inc4_h:
@@ -387,9 +387,9 @@ shot_next:
 fab_bus:
   other: "Regeln, Transformationsketten, Failover-Reihenfolge, Kosten"
 fab_cap:
-  other: "Träger oben, Integrationen unten, ein Router dazwischen: Eine Regel kann von jedem Adapter zu jedem anderen routen. Gestrichelt heißt: noch kein Code in der Bridge; das Etikett sagt, wo die Hardware steht."
+  other: "Übertragungswege oben, Integrationen unten, ein Router dazwischen: Eine Regel kann von jedem Adapter zu jedem anderen routen. Gestrichelt heißt: noch kein Code in der Bridge; die Beschriftung zeigt, wo die Hardware steht."
 host_lead:
-  other: "Die Leitstelle für jedes Kit, jedes Telefon und jeden Taschen-Node, den Sie betreiben: eine Karte, jede Nachricht, die Routen zwischen Netzen und wer angerufen wird, wenn jemand SOS drückt. Die Kits brauchen ihn nie, um eine Nachricht weiterzugeben. Der Code ist in beiden Fällen derselbe; es ändert sich nur, wer ihn betreibt und wie viele Geräte Sie registrieren können."
+  other: "Die Zentrale für jedes Kit, jedes Smartphone und jeden Knoten im Taschenformat, den Sie betreiben: eine Karte, jede Nachricht, die Routen zwischen Netzen und wer angerufen wird, wenn jemand SOS drückt. Die Kits brauchen den Hub nie, um eine Nachricht weiterzugeben. Der Code ist in beiden Fällen derselbe; es ändert sich nur, wer ihn betreibt und wie viele Geräte Sie registrieren können."
 host_k_devices:
   other: "Geräte und Bridges"
 host_k_account:
@@ -405,19 +405,19 @@ host_th_plan:
 
 # Hub screens and the Android Home screen (MESHSAT-1251)
 and_cap:
-  other: "Startseite auf einem Pixel 9a: jeder Ausweg, und drei Nachrichten, die auf einen Satelliten warten"
+  other: "Startbildschirm auf einem Pixel 9a: jeder Ausweg und drei Nachrichten, die auf einen Satelliten warten"
 host_k_ops:
   other: "Backups, Updates, Sicherheit"
 host_v_ops:
   other: "Ihre Aufgabe"
 hub_shot1:
-  other: "Übersicht: die Wege, die jedes Kit gerade nutzen kann, der Verkehr des letzten Tages und alles, was Sie braucht (hier nichts)"
+  other: "Übersicht: die Wege, die jedes Kit gerade nutzen kann, der Verkehr des letzten Tages und alles, was Ihre Aufmerksamkeit braucht (hier nichts)"
 hub_shot2:
-  other: "Nachrichten über jeden Träger: Satellitenverkehr von Kit zu Kit bleibt Ende-zu-Ende verschlüsselt, und eine Antwort geht aus dem Feld daneben hinaus"
+  other: "Nachrichten über jeden Übertragungsweg: Satellitenverkehr von Kit zu Kit bleibt Ende-zu-Ende verschlüsselt, und geantwortet wird direkt im Bereich daneben"
 hub_shot3:
   other: "Routing in klaren Worten: Eine Satellitennachricht geht weiter an ein anderes Kit, an APRS, MQTT und TAK, an Webhooks und an Benachrichtigungen"
 hub_shots_note:
-  other: "Dieselben Bildschirme auf Ihrem Server oder auf unserem. Aufgenommen auf hub.meshsat.net am 21. September 2026, Telefonnummern, IMEIs und Hostnamen der Kits unkenntlich gemacht."
+  other: "Dieselben Bildschirme auf Ihrem Server oder auf unserem. Aufgenommen am 21. September 2026 auf hub.meshsat.net; Telefonnummern, IMEIs und Hostnamen der Kits sind unkenntlich gemacht."
 
 copy:
   other: "Kopieren"
@@ -438,13 +438,13 @@ start_bridge:
   other: "Linux + USB-Funkgerät"
 
 start_android:
-  other: "Telefon + Bluetooth-Funkgerät"
+  other: "Smartphone + Bluetooth-Funkgerät"
 
 start_hub:
   other: "Geräte verwalten"
 
 start_demo:
-  other: "Film über MeshSat ansehen"
+  other: "Film „MeshSat, erklärt“ ansehen"
 
 hw_start:
   other: "Mindestausstattung, Erweiterungen und Bauanleitungen"
@@ -478,7 +478,7 @@ ig_matrix_link:
   other: "Funktionsmatrix ansehen"
 
 ig_scope:
-  other: "Forschung und Entwicklung, keine validierte Gerätespezifikation. Keine MSC-3-Variante wurde jemals bei einem tatsächlichen Nutzer eingesetzt. Kein Notfalldienst und kein Ersatz für 112."
+  other: "Forschung und Entwicklung, keine validierte Gerätespezifikation. Keine MSC-3-Variante wurde jemals bei einem tatsächlichen Nutzer eingesetzt. Kein Notrufdienst und kein Ersatz für 112."
 
 ig_arch_alt:
   other: "Konzeptarchitektur. Die Funkgeräte des Teams sind über ein oder zwei lokale Funkmodule mit MeshSat Bridge auf einem Raspberry Pi Zero 2 W verbunden. Die Bridge routet zwischen den lokalen Funkmodulen und einem RockBLOCK 9704 für Iridium IMT. Satellitennachrichten erreichen das Backend des Integrators. Ein Akku versorgt das Gateway. Alle Wege erfordern eine Validierung."
@@ -493,22 +493,22 @@ ig_concept:
   other: "MSC-3 / KONZEPT"
 
 ig_slot_one:
-  other: "Funksteckplatz 01"
+  other: "Funkmodul-Steckplatz 01"
 
 ig_slot_two:
-  other: "Funksteckplatz 02"
+  other: "Funkmodul-Steckplatz 02"
 
 ig_optional:
   other: "optional"
 
 ig_routing:
-  other: "Routing / Nachrichtenwarteschlange / Zustellprotokoll"
+  other: "Routing / Nachrichtenwarteschlange / Zustellnachweis"
 
 ig_imt:
   other: "Iridium IMT / immer eingebaut"
 
 ig_rugged:
-  other: "Robustes Gehäusekonzept"
+  other: "Konzept für ein robustes Gehäuse"
 
 ig_battery:
   other: "Akku"
@@ -538,7 +538,7 @@ ig_nav_modules:
   other: "Module"
 
 ig_nav_cases:
-  other: "Anwendungen"
+  other: "Anwendungsfälle"
 
 ig_platform_eyebrow:
   other: "01 / GEMEINSAME PLATTFORM"
@@ -574,13 +574,13 @@ ig_local_radios:
   other: "Lokale Funkmodule"
 
 ig_local_value:
-  other: "Ein oder zwei Funkmodulsteckplätze; T, D, L, A, H oder G."
+  other: "Ein oder zwei Funkmodul-Steckplätze; T, D, L, A, H oder G."
 
 ig_local_limit:
   other: "Jede Kombination erfordert Arbeit an mechanischer Integration, Antennenentkopplung und Sendekoordination."
 
 ig_enclosure:
-  other: "Gehäuse / Versorgung"
+  other: "Gehäuse / Stromversorgung"
 
 ig_enclosure_value:
   other: "Robustes Gehäuse im Taschenformat und Akku."
@@ -703,7 +703,7 @@ ig_modules_intro:
   other: "Die folgenden Angaben beschreiben die Komponenten der Hersteller, kein fertiges MSC-3-Gerät. Jeder Kandidat ist mit einer Quelle verlinkt. Veröffentlichte Funkfähigkeiten belegen keine zulässigen Betriebseinstellungen."
 
 ig_art_credit:
-  other: "Illustrationen: eigene neutrale Darstellungen von MeshSat. Vereinfachte Formen, nicht maßstabsgetreu; keine Produktfotos, Leiterplattenlayouts oder Montagezeichnungen. Herstellernamen dienen nur der Identifikation der Komponenten und implizieren weder Partnerschaft noch Unterstützung."
+  other: "Illustrationen: eigene neutrale Darstellungen von MeshSat. Vereinfachte Formen, nicht maßstabsgetreu; keine Produktfotos, Leiterplattenlayouts oder Montagezeichnungen. Herstellernamen dienen nur der Identifikation der Komponenten und implizieren weder Partnerschaft noch Empfehlung."
 
 ig_art_caption:
   other: "Neutrale MeshSat-Illustration"
@@ -715,7 +715,7 @@ ig_specs_caption:
   other: "öffentliche Komponentenspezifikationen"
 
 ig_cases_eyebrow:
-  other: "06 / ANWENDUNGEN ZUR EVALUIERUNG"
+  other: "06 / ANWENDUNGSFÄLLE ZUR EVALUIERUNG"
 
 ig_cases_title:
   other: "Integrationsszenarien"
@@ -724,10 +724,10 @@ ig_cases_intro:
   other: "Dies sind Forschungsszenarien. Es werden weder Kundeneinsätze noch Flottenkompatibilität oder betriebliche Freigaben behauptet."
 
 ig_case_tl_title:
-  other: "TETRA-Teams und freiwillige Mesh-Nutzer"
+  other: "TETRA-Teams und ehrenamtliche Mesh-Nutzer"
 
 ig_case_tl_body:
-  other: "Den Austausch ausgewählter Texte und Positionen zwischen einem professionellen Funkteam und Freiwilligen mit Meshtastic evaluieren, mit Iridium für Meldungen aus der Ferne. Routingregeln steuern, was die Grenze passieren darf."
+  other: "Den Austausch ausgewählter Texte und Positionen zwischen einem professionellen Funkteam und Ehrenamtlichen mit Meshtastic evaluieren, mit Iridium für Meldungen aus der Ferne. Routingregeln steuern, was die Grenze passieren darf."
 
 ig_case_td_title:
   other: "Teams mit verschiedenen Funksystemen"
@@ -760,7 +760,7 @@ ig_radio_key:
   other: "Kennbuchstaben der lokalen Funkmodule"
 
 ig_render_caption:
-  other: "Konzeptdarstellung für Forschung und Entwicklung von MeshSat. Gehäuse, Hardware und HF-Integration sind noch nicht verifiziert."
+  other: "F&E-Konzeptdarstellung von MeshSat. Gehäuse, Hardware und HF-Integration sind noch nicht verifiziert."
 
 ig_render_alt:
   other: "MSC-3T-Gehäusekonzept mit kleiner farbiger E-Paper-Anzeige, kompakter Iridium-Antenne und TETRA-Stabantenne"
@@ -787,7 +787,7 @@ ig_radio_l_modules:
   other: "Funkmodul auf Basis des Semtech SX1262"
 
 ig_radio_l_limit:
-  other: "Regionale Grenzen für Frequenzband, Sendeleistung und Tastgrad gelten. Ein Meshtastic-Host und kompatible Firmware sind erforderlich; der SX1262-Chip allein führt Meshtastic nicht aus."
+  other: "Es gelten regionale Grenzwerte für Frequenzband, Sendeleistung und Tastgrad (Duty Cycle). Ein Meshtastic-Host und kompatible Firmware sind erforderlich; der SX1262-Chip allein führt Meshtastic nicht aus."
 
 ig_radio_a_data:
   other: "Amateurfunktexte, Status und Positionen"
@@ -799,7 +799,7 @@ ig_radio_h_data:
   other: "Ausgewählte Anwendungsnachrichten über eine lokale IP-Verbindung"
 
 ig_radio_h_limit:
-  other: "Regionale Band- und Leistungsgrenzen gelten. Kompatible HaLow-Gegenstellen sind erforderlich. Der Satellitenweg transportiert ausgewählte Nachrichten, keine Breitband-IP-Verbindung. Platinenwahl und Hostintegration werden evaluiert."
+  other: "Es gelten regionale Grenzwerte für Frequenzband und Sendeleistung. Kompatible HaLow-Gegenstellen sind erforderlich. Der Satellitenweg transportiert ausgewählte Nachrichten, keine Breitband-IP-Verbindung. Platinenwahl und Hostintegration werden evaluiert."
 
 ig_radio_g_name:
   other: "2G-Zelle"
@@ -811,10 +811,10 @@ ig_radio_g_modules:
   other: "PlutoSDR mit Osmocom"
 
 ig_radio_g_limit:
-  other: "Standortbezogene Lizenz erforderlich. Jeder Einsatz benötigt eine eigene Funkgenehmigung. SIM-Bereitstellung, Spektrum, Timing, HF-Filterung und Rechenkapazität müssen validiert werden. Dies ist eine lokale Zelle, kein Roaming in öffentlichen Netzen."
+  other: "Standortbezogene Lizenz erforderlich. Jeder Einsatz benötigt eine eigene Frequenzzuteilung. SIM-Bereitstellung, Spektrum, Timing, HF-Filterung und Rechenkapazität müssen validiert werden. Dies ist eine lokale Zelle, kein Roaming in öffentlichen Netzen."
 
 ig_tw1m_note:
-  other: "Abmessungen aus der öffentlichen Broschüre. Positionsverarbeitung und Flotteninteroperabilität erfordern eine Validierung am Prüfstand."
+  other: "Abmessungen aus der öffentlichen Broschüre. Positionsverarbeitung und Flotteninteroperabilität erfordern eine Validierung im Labor."
 
 ig_tw1m_sourceLabel:
   other: "Öffentliches Airbus-Datenblatt, 03/2018 (Kopie von Senop)"
@@ -823,19 +823,19 @@ ig_tw1m_fact_2_1:
   other: "RS-232 oder USB; AT-Befehle"
 
 ig_tw1m_fact_3_1:
-  other: "DMO SDS und Status; GPS"
+  other: "SDS und Status im DMO; GPS"
 
 ig_bdm31_note:
   other: "Das öffentliche Datenblatt nennt nur TMO. Die für das Teamfunkkonzept erforderliche DMO-Unterstützung ist unbestätigt."
 
 ig_bdm31_sourceLabel:
-  other: "Öffentliches PMR-R & D-Datenblatt, V1.1"
+  other: "Öffentliches Datenblatt von PMR-R & D, V1.1"
 
 ig_bdm31_fact_1_1:
-  other: "1.8 W, Klasse 3L"
+  other: "1,8 W, Klasse 3L"
 
 ig_bdm31_fact_2_1:
-  other: "3.7 V; 3.0 A während eines Sendeimpulses"
+  other: "3,7 V; 3,0 A während eines Sendeimpulses"
 
 ig_bdm31_fact_3_1:
   other: "PEI (ETSI EN 300 392-5); seriell / RS-232"
@@ -847,10 +847,10 @@ ig_mt100_sourceLabel:
   other: "Öffentliches Leonardo-Datenblatt, mm08909, 09/2020"
 
 ig_mt100_fact_2_1:
-  other: "7.4 V; bis zu 2 A"
+  other: "7,4 V; bis zu 2 A"
 
 ig_mt100_fact_3_1:
-  other: "3.3 V UART; AT-Befehle; IP über DMR"
+  other: "3,3-V-UART; AT-Befehle; IP über DMR"
 
 ig_dmr818_note:
   other: "Textbefehle sind dokumentiert, ein Positionsbefehl nicht. Die Kompatibilität von Verschlüsselung und Text mit anderen Funkgeräten bleibt unverifiziert."
@@ -871,7 +871,7 @@ ig_sx1262_note:
   other: "Funkmodul, Antenne und Meshtastic-Host werden evaluiert. Die Chipgrenzen stellen keine Erlaubnis dar, mit diesen Einstellungen zu senden."
 
 ig_sx1262_sourceLabel:
-  other: "Öffentliche Semtech SX126x-Produktspezifikationen"
+  other: "Öffentliche Produktspezifikationen von Semtech zum SX126x"
 
 ig_sx1262_fact_0_1:
   other: "150-960 MHz (Chipfähigkeit)"
@@ -886,7 +886,7 @@ ig_picoaprs_note:
   other: "VHF-Modell. Nur Amateurfunk, lizenzierter Funkamateur, keine Verschlüsselung. Der eigene Akku ist vom MSC-3-Akkukonzept getrennt."
 
 ig_picoaprs_sourceLabel:
-  other: "Öffentliches V4-Handbuch des Herstellers, technische Daten, 20/11/2023"
+  other: "Öffentliches V4-Handbuch des Herstellers, technische Daten, 20.11.2023"
 
 ig_picoaprs_fact_0_1:
   other: "Ca. 35 × 67 × 25 mm / 60 g"
@@ -895,13 +895,13 @@ ig_picoaprs_fact_2_1:
   other: "Maximal 1 W"
 
 ig_picoaprs_fact_3_1:
-  other: "AX.25 mit 1.200 Baud; USB KISS TNC"
+  other: "AX.25 mit 1.200 Baud; USB-KISS-TNC"
 
 ig_mm6108_note:
-  other: "Ein Morse Micro-Modul und eine Trägerplatine werden weiterhin evaluiert. Die folgende LILYGO T-HaLow-Platine verwendet TX-AH und ist ein separater Kandidat."
+  other: "Ein Morse-Micro-Modul und eine Trägerplatine werden weiterhin evaluiert. Die weiter unten aufgeführte Platine LILYGO T-HaLow verwendet TX-AH und ist ein eigener Kandidat."
 
 ig_mm6108_sourceLabel:
-  other: "Öffentliche Morse Micro MM6108-Produktübersicht"
+  other: "Öffentliche Produktübersicht zum Morse Micro MM6108"
 
 ig_mm6108_fact_1_1:
   other: "SDIO oder SPI"
@@ -910,7 +910,7 @@ ig_mm6108_fact_2_1:
   other: "Lokaler IP-Zugang für Nachrichtentransport"
 
 ig_thalow_note:
-  other: "Platinenrevision, regionale HF-Variante und Hostschnittstelle müssen bestätigt werden. Dieser Platine wird kein Morse Micro-Chipsatz zugeschrieben."
+  other: "Platinenrevision, regionale HF-Variante und Hostschnittstelle müssen bestätigt werden. Dieser Platine wird kein Chipsatz von Morse Micro zugeschrieben."
 
 ig_thalow_sourceLabel:
   other: "Öffentliche LILYGO-Hardwaredokumentation und Modulspezifikationen"
@@ -934,7 +934,7 @@ ig_pluto_sourceLabel:
   other: "Öffentliche technische Spezifikationen des Analog Devices ADALM-PLUTO"
 
 ig_pluto_fact_0_1:
-  other: "325 MHz bis 3.8 GHz (SDR-Fähigkeit)"
+  other: "325 MHz bis 3,8 GHz (SDR-Fähigkeit)"
 
 ig_pluto_fact_1_1:
   other: "Bis zu 20 MHz (SDR-Fähigkeit)"
@@ -949,7 +949,7 @@ ig_rockblock_note:
   other: "Im MSC-3-Konzept immer eingebaut; die Modulintegration wird evaluiert. Erfordert eine zugelassene Antenne und einen Satellitendienst. Die Nutzlastgrenze ist eine Modemspezifikation, keine validierte MSC-3-Nachrichtengröße."
 
 ig_rockblock_sourceLabel:
-  other: "Öffentliche Ground Control RockBLOCK 9704-Spezifikationen"
+  other: "Öffentliche Spezifikationen des Ground Control RockBLOCK 9704"
 
 ig_rockblock_fact_0_1:
   other: "48 × 52 × 16 mm / weniger als 35 g, ohne Antenne"
@@ -958,7 +958,7 @@ ig_rockblock_fact_2_1:
   other: "Bis zu 100.000 Bytes pro Nachricht"
 
 ig_rockblock_fact_3_1:
-  other: "TTL UART oder USB-C seriell"
+  other: "TTL-UART oder seriell über USB-C"
 
 ig_radio_t_name:
   other: "TETRA"
@@ -997,7 +997,7 @@ ig_tw1m_fact_0_0:
   other: "Abmessungen / Masse"
 
 ig_tw1m_fact_0_1:
-  other: "84 × 67 × 24.7 mm / 66 g"
+  other: "84 × 67 × 24,7 mm / 66 g"
 
 ig_tw1m_fact_1_0:
   other: "Frequenzbänder"
@@ -1042,13 +1042,13 @@ ig_mt100_fact_0_0:
   other: "Abmessungen / Masse"
 
 ig_mt100_fact_0_1:
-  other: "48 × 64 × 10.4 mm / 50 g"
+  other: "48 × 64 × 10,4 mm / 50 g"
 
 ig_mt100_fact_1_0:
   other: "Frequenzbänder / HF-Leistung"
 
 ig_mt100_fact_1_1:
-  other: "136-174 MHz / 4.7 W; 400-470 MHz / 4 W"
+  other: "136-174 MHz / 4,7 W; 400-470 MHz / 4 W"
 
 ig_mt100_fact_2_0:
   other: "Versorgung"
@@ -1072,7 +1072,7 @@ ig_dmr818_fact_2_0:
   other: "Versorgung"
 
 ig_dmr818_fact_2_1:
-  other: "3.3-4.5 V"
+  other: "3,3-4,5 V"
 
 ig_dmr818_fact_3_0:
   other: "Datenschnittstelle"
@@ -1249,7 +1249,7 @@ f_copy_hw:
   other: "die Hardware unter"
 
 cta_note_link:
-  other: "So melden Sie einen"
+  other: "So melden Sie einen Fehler"
 
 f_help:
   other: "Hilfe und Mitarbeit"
@@ -1258,15 +1258,15 @@ f_help:
 nav_setup:
   other: "Aufbau wählen"
 hero_intro:
-  other: "Open-Source-Software leitet Nachrichten zwischen Mesh-Funkgeräten, Satelliten und Mobilfunknetzen weiter. Beginne mit einem Linux-Rechner oder Android-Handy."
+  other: "Open-Source-Software, die Nachrichten zwischen Mesh-Funkgeräten, Satelliten und Mobilfunknetzen weiterleitet. Beginnen Sie mit einem Linux-Rechner oder einem Android-Smartphone."
 message_title:
   other: "Eine Nachricht, vom Funkgerät zum Ziel"
 message_intro:
-  other: "Die Bridge empfängt eine Nachricht, wendet deine Routingregeln an und sendet sie über einen konfigurierten Transport. Jedes Ziel meldet sein eigenes Ergebnis."
+  other: "Die Bridge empfängt eine Nachricht, wendet Ihre Routingregeln an und sendet sie über einen konfigurierten Übertragungsweg. Jedes Ziel meldet sein eigenes Ergebnis."
 trace_example:
-  other: "Beispiel für das Routing: Nachrichtenprotokoll ansehen"
+  other: "Routing-Beispiel zur Veranschaulichung: Nachrichten-Log ansehen"
 transport_details:
-  other: "Alle Transportwege und ihr Teststatus"
+  other: "Alle Übertragungswege und ihr Teststatus"
 cost_details:
   other: "Hardware, Übertragungsgebühren und Projektförderung"
 support_title:
@@ -1276,9 +1276,9 @@ hardware_photo:
 hardware_process:
   other: "So bauen wir"
 msc2_photo:
-  other: "MeshSat Compact v2, der erste Prototyp: Mesh-Funk, Satellitenmodem und Akku in einem handgroßen Gehäuse. Er hat Satellitennachrichten gesendet und empfangen."
+  other: "MeshSat Compact v2, der erste Prototyp: Mesh-Funkmodul, Satellitenmodem und Akku in einem handgroßen Gehäuse. Er hat Satellitennachrichten gesendet und empfangen."
 msc2_launch:
-  other: "MSC-2, das Team-Gateway: zur Liste für den Marktstart"
+  other: "MSC-2, das Team-Gateway: zur Liste für den Marktstart anmelden"
 language_home:
   other: "Startseite"
 
@@ -1304,11 +1304,11 @@ ig_film_ch_system:
 ig_film_ch_hardware:
   other: "Die Hardware: die Feldkits und MSC-2"
 ig_film_ch_system_play:
-  other: "MeshSat, erklärt, ab Das System bei 4:48 abspielen"
+  other: "Film „MeshSat, erklärt“ ab dem Kapitel „Das System“ (4:48) abspielen"
 ig_film_ch_hardware_play:
-  other: "MeshSat, erklärt, ab Die Hardware bei 11:09 abspielen"
+  other: "Film „MeshSat, erklärt“ ab dem Kapitel „Die Hardware“ (11:09) abspielen"
 ig_film_languages:
-  other: "Ton auf Englisch, Niederländisch oder Griechisch, mit Untertiteln in allen drei Sprachen (das Zahnrad, dann Audiospur)."
+  other: "Ton auf Englisch, Niederländisch oder Griechisch, mit Untertiteln in allen drei Sprachen (Zahnradsymbol, dann „Audiotrack“)."
 ig_nav_sensors:
   other: "Sensoren"
 ig_sensors_eyebrow:
@@ -1316,9 +1316,9 @@ ig_sensors_eyebrow:
 ig_sensors_title:
   other: "Ein Sensorwert reist als Nachricht"
 ig_sensors_intro:
-  other: "Kein MSC-3-Konzept hat eigene Sensoren. Für MeshSat ist ein Sensorwert eine Nachricht: Er nimmt dieselben Wege wie Text, Iridium eingeschlossen. Das gibt es heute, und das nicht."
+  other: "Kein MSC-3-Konzept hat eigene Sensoren. Für MeshSat ist ein Sensorwert eine Nachricht: Er nimmt dieselben Wege wie Text, Iridium eingeschlossen. Hier steht, was es heute gibt und was nicht."
 ig_sensors_caption:
-  other: "Sensoren und Position: Stand am 26. Oktober 2026"
+  other: "Sensoren und Position, Stand: 26. Oktober 2026"
 ig_sensor_col_source:
   other: "Quelle"
 ig_sensor_col_status:
@@ -1336,7 +1336,7 @@ ig_sensor_zigbee_open:
 ig_sensor_position:
   other: "Position aus den Funkgeräten des Teams"
 ig_sensor_position_today:
-  other: "Teil der vorgesehenen Nachrichten einer Variante, wo ihr Funkgerät Positionsmeldungen überträgt, wie in der Fähigkeitsmatrix."
+  other: "Teil der vorgesehenen Nachrichten einer Variante, sofern ihr Funkgerät Positionsmeldungen überträgt, wie in der Funktionsmatrix aufgeführt."
 ig_sensor_position_open:
   other: "Muss mit jeder Funkgeräteflotte validiert werden."
 ig_sensor_own:
@@ -1364,3 +1364,11 @@ app_store_badge:
 
 google_play_badge:
   other: "Jetzt bei Google Play"
+
+# A colon after a label: French puts a narrow no-break space before it.
+colon:
+  other: ":"
+
+# A word before the linked "MeshSat" in the footer licence line (Greek needs the article).
+f_copy_pre:
+  other: ""

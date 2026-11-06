@@ -28,7 +28,7 @@
             const title = document.createElement('strong');
             title.append(radio.name + ' ', status());
             const modules = document.createElement('span');
-            modules.textContent = radio.modules + ': ' + copy.evaluation + '.';
+            modules.textContent = radio.modules + copy.colon + ' ' + copy.evaluation + '.';
             const limit = document.createElement('p');
             limit.textContent = radio.limit;
             item.append(title, modules, limit);

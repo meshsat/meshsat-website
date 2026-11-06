@@ -9,7 +9,7 @@ commande d'installation, comparez-la d'abord à la liste ci-dessous.
 
 <div class="table-wrap" tabindex="0" role="region" aria-label="Sources officielles de MeshSat">
 <table class="data-table">
-<thead><tr><th>Quoi</th><th>Emplacement officiel</th></tr></thead>
+<thead><tr><th>Ressource</th><th>Emplacement officiel</th></tr></thead>
 <tbody>
 <tr><td>Site web</td><td><code>meshsat.net</code></td></tr>
 <tr><td>Documentation</td><td><code>docs.meshsat.net</code></td></tr>
@@ -17,7 +17,7 @@ commande d'installation, comparez-la d'abord à la liste ci-dessous.
 <tr><td>Code source</td><td><a href="https://github.com/meshsat/meshsat">github.com/meshsat/meshsat</a></td></tr>
 <tr><td>Tous nos dépôts</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
 <tr><td>Images de conteneur</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
-<tr><td>Application Android</td><td><a href="https://play.google.com/store/apps/details?id=net.meshsat.android">net.meshsat.android</a>: Google Play (sans SMS) ; l’APK complète est disponible sur <a href="https://github.com/meshsat/meshsat-android/releases/latest">GitHub Releases</a>.</td></tr>
+<tr><td>Application Android</td><td><a href="https://play.google.com/store/apps/details?id=net.meshsat.android">net.meshsat.android</a> : Google Play (sans SMS) ; le fichier APK complet est disponible sur <a href="https://github.com/meshsat/meshsat-android/releases/latest">GitHub Releases</a>.</td></tr>
 <tr><td>Application iOS</td><td><a href="https://apps.apple.com/us/app/meshsat/id6815748748">MeshSat pour iPhone sur l’App Store.</a></td></tr>
 <tr><td>Hub</td><td><code>hub.meshsat.net</code>, ouvert, comptes vérifiés avant activation</td></tr>
 <tr><td>Discussion</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a> sur Matrix</td></tr>
@@ -50,19 +50,19 @@ Ce sont les seuls comptes depuis lesquels nous publions.
 
 ## Vérifiez le script d'installation avant de l'exécuter
 
-Notre commande d'installation envoie un script directement dans un shell root :
+Notre commande d'installation envoie un script directement dans un shell root :
 
 <div class="code-block">
 <div class="code-block-header"><span class="code-block-label">Installation rapide</span></div>
 <div class="code-block-body"><pre tabindex="0" role="region" aria-label="Commande d'installation rapide de MeshSat"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre></div>
 </div>
 
-C'est pratique, et cela accorde beaucoup de confiance à une seule URL. Le risque ne vient pas du tube
+C'est pratique, mais c'est aussi accorder beaucoup de confiance à une seule URL. Le risque ne vient pas du tube
 lui-même. Le risque est d'exécuter un script d'installation publié sous notre nom par quelqu'un
 d'autre, depuis un emplacement que nous ne contrôlons pas. Vérifiez donc la source avant de l'exécuter,
 surtout si vous êtes arrivé par un lien plutôt qu'en saisissant vous-même `meshsat.net`.
 
-Téléchargez-le, lisez-le, puis exécutez-le :
+Téléchargez-le, lisez-le, puis exécutez-le :
 
 <div class="code-block">
 <div class="code-block-header"><span class="code-block-label">Télécharger, vérifier, exécuter</span></div>
@@ -72,14 +72,14 @@ less meshsat-install.sh
 sudo bash meshsat-install.sh</code></pre></div>
 </div>
 
-Le script d'installation actuel est en version `1.4.0` et son SHA-256 est :
+Le script d'installation actuel est en version `1.4.0` et son SHA-256 est :
 
 <div class="code-block">
 <div class="code-block-body"><pre tabindex="0" role="region" aria-label="Somme de contrôle SHA-256 du script d'installation"><code>0f7a2d9382cf77cc19dcbc7e6b06cf778ace54c151ab90160f90c174abc90d93  meshsat-install.sh</code></pre></div>
 </div>
 
 Le script est visible par tous dans
-[install/install.sh](https://github.com/meshsat/meshsat-website/blob/main/install/install.sh) : vous
+[install/install.sh](https://github.com/meshsat/meshsat-website/blob/main/install/install.sh) : vous
 pouvez donc lire exactement ce qu'il fait avant de lui faire confiance. Il installe
 `ghcr.io/meshsat/meshsat` avec Docker Compose et démarre le Bridge sur le port 6050.
 
@@ -87,11 +87,11 @@ Si la somme de contrôle ne correspond pas, arrêtez-vous et prévenez-nous. Cel
 nous avons publié un nouveau script sans mettre cette page à jour, ou que le fichier ne vient pas de
 nous.
 
-## Ce qui indique que quelque chose n'est pas de nous
+## Signes que quelque chose ne vient pas de nous
 
 - Une commande d'installation qui pointe ailleurs que vers `get.meshsat.net`.
 - Un dépôt qui ne se trouve pas sous `github.com/meshsat`.
-- Une demande de paiement, d'inscription, ou de désactivation d'une protection pour installer MeshSat.
+- Une demande de paiement, d'inscription, ou de désactivation d'une fonction de sécurité pour installer MeshSat.
 - Un téléchargement qui arrive sous forme de programme compilé ou d'archive au lieu du script ci-dessus.
 
 ## Sites auxquels nous ne sommes pas liés
@@ -107,8 +107,8 @@ nôtre.
 Si vous trouvez une faille dans MeshSat, ou quelque chose publié sous notre nom qui ne vient pas de
 nous, écrivez à [security@meshsat.net](mailto:security@meshsat.net).
 
-Donnez assez de détails pour reproduire le problème. Nous accusons réception, et nous préférons
-entendre parler d'un petit problème plutôt que de rien du tout. Il n'y a pas de programme de primes.
+Merci de fournir assez de détails pour que nous puissions reproduire le problème. Nous accuserons réception, et nous préférons
+entendre parler d'un petit problème plutôt que de rien du tout. Nous n'avons pas de programme de récompense (bug bounty).
 
 Les coordonnées lisibles par machine se trouvent dans
 [/.well-known/security.txt](/.well-known/security.txt), conformément à la RFC 9116.

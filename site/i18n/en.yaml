@@ -117,7 +117,7 @@ lg_soon:
 lg_plan:
   other: "planned, nothing bought"
 tr_note_a:
-  other: "Multi-bearer bonding over a paid satellite link is not validated yet, and the jamming detector has only ever seen ambient noise."
+  other: "The jamming detector has only ever seen ambient noise."
 tr_note_link:
   other: "The repository sets out the full list"
 tr_note_b:
@@ -343,7 +343,7 @@ is_to:
 join1_h:
   other: "Two teams on two meshes, no internet"
 join1_s:
-  other: "Run kit to kit on 12 September 2026 over APRS, then over SMS. See the field-kit film above."
+  other: "Run kit to kit on 12 September 2026 over APRS, then over SMS."
 join2_h:
   other: "A valley with no signal, an office far away"
 join2_s:
@@ -1364,3 +1364,11 @@ app_store_badge:
 
 google_play_badge:
   other: "Get it on Google Play"
+
+# A colon after a label: French puts a narrow no-break space before it.
+colon:
+  other: ":"
+
+# A word before the linked "MeshSat" in the footer licence line (Greek needs the article).
+f_copy_pre:
+  other: ""

@@ -91,7 +91,7 @@ for lang in en nl de fr el; do
     en) notice='Research and development stage concept devices our team is testing.'; evaluation='Under evaluation'; amateur='Amateur radio only.'; encryption='No encryption.'; license='Licensed per site.' ;;
     nl) notice='Conceptapparaten in de onderzoeks- en ontwikkelingsfase die ons team test.'; evaluation='In evaluatie'; amateur='Uitsluitend amateurradio.'; encryption='Geen versleuteling.'; license='Vergunning per locatie.' ;;
     de) notice='Konzeptgeräte in der Forschungs- und Entwicklungsphase, die unser Team testet.'; evaluation='In Evaluierung'; amateur='Nur Amateurfunk.'; encryption='Keine Verschlüsselung.'; license='Standortbezogene Lizenz erforderlich.' ;;
-    fr) notice='Des appareils conceptuels au stade de la recherche et du développement, testés par notre équipe.'; evaluation="En cours d'évaluation"; amateur='Radioamateur uniquement.'; encryption='Aucun chiffrement.'; license='Autorisation propre à chaque site.' ;;
+    fr) notice="Des concepts d'appareils au stade de la recherche et du développement, en cours d'essai par notre équipe."; evaluation="En cours d'évaluation"; amateur='Radioamateur uniquement.'; encryption='Aucun chiffrement.'; license='Autorisation propre à chaque site.' ;;
     el) notice='Πρόκειται για συσκευές σε στάδιο έρευνας και ανάπτυξης'; evaluation='Υπό αξιολόγηση'; amateur='Μόνο για ραδιοερασιτεχνική χρήση.'; encryption='Χωρίς κρυπτογράφηση.'; license='Αδειοδότηση ανά τοποθεσία.' ;;
   esac
   for phrase in "$notice" 'FUTURE PLAN' "$evaluation" "$amateur" "$encryption" "$license"; do

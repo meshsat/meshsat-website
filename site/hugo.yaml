@@ -47,7 +47,7 @@ languages:
     languageName: "Deutsch"
     languageCode: "de-DE"
     weight: 3
-    title: "MeshSat: Menschen verbinden, wenn das Netz ausfällt"
+    title: "MeshSat: Menschen in Verbindung halten, wenn das Netz ausfällt"
   fr:
     languageName: "Français"
     languageCode: "fr-FR"

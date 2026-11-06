@@ -9,14 +9,14 @@ description: "Πού δημοσιεύεται το MeshSat, πώς ελέγχε�
 
 <div class="table-wrap" tabindex="0" role="region" aria-label="Επίσημες πηγές του MeshSat">
 <table class="data-table">
-<thead><tr><th>Τι</th><th>Επίσημη θέση</th></tr></thead>
+<thead><tr><th>Τι</th><th>Επίσημη διεύθυνση</th></tr></thead>
 <tbody>
 <tr><td>Ιστότοπος</td><td><code>meshsat.net</code></td></tr>
 <tr><td>Τεκμηρίωση</td><td><code>docs.meshsat.net</code></td></tr>
 <tr><td>Script εγκατάστασης</td><td><code>get.meshsat.net</code></td></tr>
 <tr><td>Πηγαίος κώδικας</td><td><a href="https://github.com/meshsat/meshsat">github.com/meshsat/meshsat</a></td></tr>
-<tr><td>Όλα τα repositories μας</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
-<tr><td>Container images</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
+<tr><td>Όλα τα αποθετήριά μας</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
+<tr><td>Εικόνες container</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
 <tr><td>Εφαρμογή Android</td><td><a href="https://play.google.com/store/apps/details?id=net.meshsat.android">net.meshsat.android</a>: Google Play (χωρίς SMS)· το πλήρες APK βρίσκεται στις <a href="https://github.com/meshsat/meshsat-android/releases/latest">GitHub Releases</a>.</td></tr>
 <tr><td>Εφαρμογή iOS</td><td><a href="https://apps.apple.com/us/app/meshsat/id6815748748">MeshSat για iPhone στο App Store.</a></td></tr>
 <tr><td>Hub</td><td><code>hub.meshsat.net</code>, ανοιχτό, οι λογαριασμοί ελέγχονται πριν ενεργοποιηθούν</td></tr>
@@ -58,7 +58,7 @@ description: "Πού δημοσιεύεται το MeshSat, πώς ελέγχε�
 </div>
 
 Είναι βολικό, αλλά σημαίνει και μεγάλη εμπιστοσύνη σε ένα μόνο URL. Ο κίνδυνος δεν είναι το ίδιο το
-pipe. Ο κίνδυνος είναι να τρέξετε script που δημοσίευσε κάποιος άλλος με το όνομά μας, από θέση που δεν
+pipe. Ο κίνδυνος είναι να τρέξετε script που δημοσίευσε κάποιος άλλος με το όνομά μας, από διεύθυνση που δεν
 ελέγχουμε. Ελέγξτε λοιπόν την πηγή πριν το τρέξετε, ιδίως αν φτάσατε εδώ από σύνδεσμο και δεν
 πληκτρολογήσατε μόνοι σας το `meshsat.net`.
 
@@ -78,7 +78,7 @@ sudo bash meshsat-install.sh</code></pre></div>
 <div class="code-block-body"><pre tabindex="0" role="region" aria-label="Άθροισμα ελέγχου SHA-256 του script εγκατάστασης"><code>0f7a2d9382cf77cc19dcbc7e6b06cf778ace54c151ab90160f90c174abc90d93  meshsat-install.sh</code></pre></div>
 </div>
 
-Το script είναι ανοιχτό σε όλους, στο
+Το script είναι δημόσια διαθέσιμο στο
 [install/install.sh](https://github.com/meshsat/meshsat-website/blob/main/install/install.sh), ώστε να
 διαβάσετε ακριβώς τι κάνει πριν το εμπιστευτείτε. Εγκαθιστά το `ghcr.io/meshsat/meshsat` με Docker
 Compose και ξεκινά το Bridge στη θύρα 6050.
@@ -89,7 +89,7 @@ script και δεν προλάβαμε να ενημερώσουμε τη σε�
 ## Σημάδια ότι κάτι δεν είναι δικό μας
 
 - Εντολή εγκατάστασης που δείχνει κάπου αλλού και όχι στο `get.meshsat.net`.
-- Repository που δεν βρίσκεται κάτω από το `github.com/meshsat`.
+- Αποθετήριο που δεν βρίσκεται κάτω από το `github.com/meshsat`.
 - Να σας ζητούν πληρωμή, εγγραφή, ή να απενεργοποιήσετε κάποια προστασία για να εγκαταστήσετε το MeshSat.
 - Λήψη που έρχεται ως έτοιμο εκτελέσιμο ή αρχείο συμπίεσης αντί για το παραπάνω script.
 
@@ -106,8 +106,8 @@ script και δεν προλάβαμε να ενημερώσουμε τη σε�
 Αν βρείτε ευπάθεια στο MeshSat, ή κάτι δημοσιευμένο με το όνομά μας που δεν είναι δικό μας, στείλτε
 email στο [security@meshsat.net](mailto:security@meshsat.net).
 
-Γράψτε αρκετά ώστε να μπορούμε να αναπαραγάγουμε το πρόβλημα. Επιβεβαιώνουμε τη λήψη, και προτιμούμε να
-μάθουμε κάτι μικρό παρά να μη μάθουμε τίποτα. Δεν υπάρχει πρόγραμμα αμοιβών.
+Δώστε αρκετές λεπτομέρειες ώστε να μπορούμε να αναπαραγάγουμε το πρόβλημα. Επιβεβαιώνουμε τη λήψη, και προτιμούμε να
+μάθουμε κάτι μικρό παρά να μη μάθουμε τίποτα. Δεν υπάρχει πρόγραμμα επιβράβευσης (bug bounty).
 
-Στοιχεία επικοινωνίας σε αναγνώσιμη από μηχανή μορφή υπάρχουν στο
+Τα στοιχεία επικοινωνίας σε μηχαναγνώσιμη μορφή βρίσκονται στο
 [/.well-known/security.txt](/.well-known/security.txt), σύμφωνα με το RFC 9116.

@@ -56,7 +56,7 @@
                     </a>
                     {{ end }}
                     {{ with .Site.Params.matrix_url }}
-                    <a href="{{ . }}" target="_blank" rel="me noopener" aria-label="{{ i18n "f_social" (dict "Platform" "Matrix") }}" title="{{ i18n "f_social" (dict "Platform" "Matrix") }}: {{ $.Site.Params.matrix_alias }}">
+                    <a href="{{ . }}" target="_blank" rel="me noopener" aria-label="{{ i18n "f_social" (dict "Platform" "Matrix") }}" title="{{ i18n "f_social" (dict "Platform" "Matrix") }}{{ i18n "colon" }} {{ $.Site.Params.matrix_alias }}">
                         {{ partial "icon.html" (dict "name" "matrix" "size" 18) }}
                     </a>
                     {{ end }}
@@ -110,7 +110,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; {{ now.Year }} <a href="https://portfolio.ellizg.com/" target="_blank" rel="noopener">Elli</a> &amp; <a href="https://kyriakos.papadopoulos.tech/" target="_blank" rel="noopener">Kyriakos</a>. <a href="https://github.com/meshsat" target="_blank" rel="noopener">MeshSat</a> {{ i18n "f_copy" }} {{ i18n "f_copy_bridge" }} <a href="{{ .Site.Params.github }}?tab=GPL-3.0-1-ov-file" target="_blank" rel="noopener">GPLv3</a>, {{ i18n "f_copy_hub" }} <a href="{{ .Site.Params.github }}-hub/blob/main/LICENSE" target="_blank" rel="noopener">Apache 2.0</a>, {{ i18n "f_copy_hw" }} <a href="{{ .Site.Params.github }}-fieldkit/blob/main/LICENSE" target="_blank" rel="noopener">CERN-OHL-S</a>.</p>
+            <p>&copy; {{ now.Year }} <a href="https://portfolio.ellizg.com/" target="_blank" rel="noopener">Elli</a> &amp; <a href="https://kyriakos.papadopoulos.tech/" target="_blank" rel="noopener">Kyriakos</a>. {{ with i18n "f_copy_pre" }}{{ . }} {{ end }}<a href="https://github.com/meshsat" target="_blank" rel="noopener">MeshSat</a> {{ i18n "f_copy" }} {{ i18n "f_copy_bridge" }} <a href="{{ .Site.Params.github }}?tab=GPL-3.0-1-ov-file" target="_blank" rel="noopener">GPLv3</a>, {{ i18n "f_copy_hub" }} <a href="{{ .Site.Params.github }}-hub/blob/main/LICENSE" target="_blank" rel="noopener">Apache 2.0</a>, {{ i18n "f_copy_hw" }} <a href="{{ .Site.Params.github }}-fieldkit/blob/main/LICENSE" target="_blank" rel="noopener">CERN-OHL-S</a>.</p>
         </div>
     </div>
 </footer>

@@ -126,7 +126,7 @@
         </tbody>
       </table>
     </div>
-    <p class="ig-note"><strong>CODE</strong>: {{ i18n "lg_code" }}. <strong>FUTURE PLAN</strong>: {{ i18n "ig_sensors_plan" }}. <a href="https://docs.meshsat.net/transports/zigbee.html" target="_blank" rel="noopener">{{ i18n "ig_sensors_link" }}</a></p>
+    <p class="ig-note"><strong>CODE</strong>{{ i18n "colon" }} {{ i18n "lg_code" }}. <strong>FUTURE PLAN</strong>{{ i18n "colon" }} {{ i18n "ig_sensors_plan" }}. <a href="https://docs.meshsat.net/transports/zigbee.html" target="_blank" rel="noopener">{{ i18n "ig_sensors_link" }}</a></p>
   </section>
 
   <section class="ig-section container" id="configurator" aria-labelledby="configurator-title">
@@ -145,7 +145,7 @@
           <p class="ig-eyebrow">{{ i18n "ig_result" }}</p><h3 id="ig-model">MSC-3TL</h3><p><span class="badge badge-token badge-plan">FUTURE PLAN</span></p>
           <div class="ig-route-map" aria-hidden="true"><div id="ig-route-local"><span>TETRA</span><span>LoRa / Meshtastic</span></div><svg viewBox="0 0 48 20" aria-hidden="true"><path d="M4 10h40M10 4l-6 6 6 6m28-12 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><strong>MeshSat<br>Bridge</strong><svg viewBox="0 0 48 20" aria-hidden="true"><path d="M4 10h40M10 4l-6 6 6 6m28-12 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Iridium<br>IMT</span></div>
           <p id="ig-bridges">{{ replace (replace (i18n "ig_bridge_two") "{first}" "TETRA") "{second}" "LoRa / Meshtastic" }}</p>
-          <ul id="ig-radio-limits" class="ig-radio-limits">{{ range $radios }}{{ if in (slice "T" "L") .code }}<li><strong>{{ .name }} <span class="badge badge-token badge-plan">FUTURE PLAN</span></strong><span>{{ .modules }}: {{ i18n "ig_under_evaluation" }}.</span><p>{{ .limit }}</p></li>{{ end }}{{ end }}</ul>
+          <ul id="ig-radio-limits" class="ig-radio-limits">{{ range $radios }}{{ if in (slice "T" "L") .code }}<li><strong>{{ .name }} <span class="badge badge-token badge-plan">FUTURE PLAN</span></strong><span>{{ .modules }}{{ i18n "colon" }} {{ i18n "ig_under_evaluation" }}.</span><p>{{ .limit }}</p></li>{{ end }}{{ end }}</ul>
         </div>
         <p class="ig-note">{{ i18n "ig_iridium_limit" }}</p>
         <a id="ig-contact" class="btn btn-primary" href="mailto:{{ .Site.Params.contact_email }}?subject={{ printf "MSC-3TL %s" (i18n "ig_mail_subject") | urlquery }}" data-contact-email="{{ .Site.Params.contact_email }}">{{ i18n "ig_contact" }}</a>
@@ -184,7 +184,7 @@
 </article>
 {{ partial "shot-dialog.html" (dict "class" "ig-image-dialog") }}
 {{ partial "video-dialog.html" . }}
-<script type="application/json" id="ig-radio-data">{{ dict "radios" $radios "copy" (dict "bridgeTwo" (i18n "ig_bridge_two") "bridgeOne" (i18n "ig_bridge_one") "evaluation" (i18n "ig_under_evaluation") "subject" (i18n "ig_mail_subject") "body" (i18n "ig_mail_body")) | jsonify | safeJS }}</script>
+<script type="application/json" id="ig-radio-data">{{ dict "radios" $radios "copy" (dict "bridgeTwo" (i18n "ig_bridge_two") "bridgeOne" (i18n "ig_bridge_one") "evaluation" (i18n "ig_under_evaluation") "colon" (i18n "colon") "subject" (i18n "ig_mail_subject") "body" (i18n "ig_mail_body")) | jsonify | safeJS }}</script>
 {{ end }}
 
 {{ define "scripts" }}

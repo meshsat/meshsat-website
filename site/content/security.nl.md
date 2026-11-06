@@ -16,7 +16,7 @@ dan eerst met de lijst hieronder.
 <tr><td>Installatiescript</td><td><code>get.meshsat.net</code></td></tr>
 <tr><td>Broncode</td><td><a href="https://github.com/meshsat/meshsat">github.com/meshsat/meshsat</a></td></tr>
 <tr><td>Al onze repositories</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
-<tr><td>Container images</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
+<tr><td>Container-images</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
 <tr><td>Android-app</td><td><a href="https://play.google.com/store/apps/details?id=net.meshsat.android">net.meshsat.android</a>: Google Play (zonder sms); de volledige APK staat op <a href="https://github.com/meshsat/meshsat-android/releases/latest">GitHub Releases</a>.</td></tr>
 <tr><td>iOS-app</td><td><a href="https://apps.apple.com/us/app/meshsat/id6815748748">MeshSat voor iPhone in de App Store.</a></td></tr>
 <tr><td>Hub</td><td><code>hub.meshsat.net</code>, open, accounts worden voor activering beoordeeld</td></tr>
@@ -30,7 +30,7 @@ dan eerst met de lijst hieronder.
 
 ## Onze accounts
 
-Dit zijn de enige accounts waarvandaan wij plaatsen.
+Dit zijn de enige accounts waarop wij berichten plaatsen.
 
 <div class="table-wrap" tabindex="0" role="region" aria-label="Officiële accounts van MeshSat">
 <table class="data-table">
@@ -57,7 +57,7 @@ Ons installatiecommando stuurt een script rechtstreeks naar een root-shell:
 <div class="code-block-body"><pre tabindex="0" role="region" aria-label="Snelle installatie van MeshSat"><code>curl -fsSL https://get.meshsat.net | sudo bash</code></pre></div>
 </div>
 
-Dat is gemakkelijk, en het is ook veel vertrouwen in één URL. Het risico zit niet in de pipe zelf. Het
+Dat is handig, maar u stelt daarmee ook veel vertrouwen in één URL. Het risico zit niet in de pipe zelf. Het
 risico is dat u een installatiescript uitvoert dat iemand anders onder onze naam heeft gepubliceerd,
 vanaf een locatie die wij niet beheren. Controleer dus de bron voordat u het uitvoert, zeker als u via
 een link hier bent gekomen en niet zelf `meshsat.net` hebt ingetypt.
@@ -93,7 +93,7 @@ niet van ons hebt gekregen.
 - Een repository die niet onder `github.com/meshsat` valt.
 - Een verzoek om te betalen, u te registreren of een beveiligingsfunctie uit te schakelen om MeshSat
   te installeren.
-- Een download die binnenkomt als kant-en-klaar programma of archief in plaats van het script hierboven.
+- Een download die binnenkomt als gecompileerd programma of archief in plaats van het script hierboven.
 
 ## Sites waarmee wij geen verband houden
 
