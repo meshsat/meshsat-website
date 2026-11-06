@@ -31,7 +31,7 @@ hero_title_a:
 hero_title_b:
   other: "Toutes les issues."
 hero_sub:
-  other: "Un logiciel open source qui transmet des messages entre radios mesh, liaisons satellite et réseaux mobiles. Sur une passerelle Linux ou un téléphone, il relie des systèmes qui ne peuvent pas communiquer seuls entre eux."
+  other: "Un logiciel libre qui transmet des messages entre radios mesh, liaisons satellite et réseaux mobiles. Sur une passerelle Linux ou un téléphone, il relie des systèmes qui ne peuvent pas communiquer seuls entre eux."
 hero_status:
   other: "Prototypes en cours de développement. Jamais utilisés lors d’une vraie urgence."
 hero_star:
@@ -481,7 +481,7 @@ ig_scope:
   other: "Périmètre de R&D, pas une spécification d'appareil validée. Aucune variante MSC-3 n'a jamais été déployée auprès d'un utilisateur réel. Ce n'est ni un service d'urgence, ni un substitut au 112."
 
 ig_arch_alt:
-  other: "Architecture conceptuelle. Les radios de l'équipe se connectent par un ou deux modules radio locaux à MeshSat Bridge sur un Raspberry Pi Zero 2 W. Le Bridge assure le routage entre les radios locales et un modem RockBLOCK 9704 utilisant Iridium IMT. Les messages satellitaires atteignent le système de l'intégrateur. Une batterie alimente la passerelle. Tous les chemins nécessitent une validation."
+  other: "Architecture conceptuelle. Les radios de l'équipe se connectent par un ou deux modules radio locaux à MeshSat Bridge sur un Raspberry Pi Zero 2 W. Le Bridge assure le routage entre les radios locales et un modem RockBLOCK 9704 utilisant Iridium IMT. Les messages satellite atteignent le système de l'intégrateur. Une batterie alimente la passerelle. Tous les chemins nécessitent une validation."
 
 ig_team:
   other: "Radios de l'équipe"
@@ -514,7 +514,7 @@ ig_battery:
   other: "Batterie"
 
 ig_satellite_link:
-  other: "Liaison satellitaire Iridium"
+  other: "Liaison satellite Iridium"
 
 ig_backend:
   other: "Système de l'intégrateur / Hub auto-hébergé"
@@ -619,7 +619,7 @@ ig_capabilities_eyebrow:
   other: "02 / MATRICE DES CAPACITÉS"
 
 ig_capabilities_title:
-  other: "Interfaces locales, chemin satellitaire commun"
+  other: "Interfaces locales, chemin satellite commun"
 
 ig_capabilities_intro:
   other: "Chemins de messages envisagés pour l'évaluation. Chaque concept à une radio inclut Iridium ; un concept à deux radios relie aussi les radios locales entre elles."
@@ -682,7 +682,7 @@ ig_under_evaluation:
   other: "En cours d'évaluation"
 
 ig_iridium_limit:
-  other: "Iridium : module en cours d'évaluation. Nécessite une antenne agréée, un service satellitaire et une vue suffisamment dégagée du ciel. Les délais de remise et les performances MSC-3 ne sont pas vérifiés."
+  other: "Iridium : module en cours d'évaluation. Nécessite une antenne agréée, un service satellite et une vue suffisamment dégagée du ciel. Les délais de remise et les performances MSC-3 ne sont pas vérifiés."
 
 ig_contact:
   other: "Nous contacter"
@@ -739,7 +739,7 @@ ig_case_dl_title:
   other: "Équipes DMR et capteurs locaux"
 
 ig_case_dl_body:
-  other: "Évaluer les textes DMR et les données de position prises en charge, ainsi que les comptes rendus Meshtastic sur le terrain. Tester les types de messages pouvant être convertis et transmis par le chemin satellitaire commun."
+  other: "Évaluer les textes DMR et les données de position prises en charge, ainsi que les comptes rendus Meshtastic sur le terrain. Tester les types de messages pouvant être convertis et transmis par le chemin satellite commun."
 
 ig_contact_eyebrow:
   other: "ÉCHANGE TECHNIQUE"
@@ -766,7 +766,7 @@ ig_render_alt:
   other: "Concept de boîtier MSC-3T avec petit afficheur à papier électronique couleur, antenne Iridium compacte et antenne fouet TETRA"
 
 ig_exploded_alt:
-  other: "Vue éclatée du concept MSC-3T montrant afficheur, carte de calcul, modem satellitaire, module radio et batterie ; intégration mécanique non vérifiée"
+  other: "Vue éclatée du concept MSC-3T montrant afficheur, carte de calcul, modem satellite, module radio et batterie ; intégration mécanique non vérifiée"
 
 ig_radio_t_data:
   other: "Textes SDS, messages d'état et comptes rendus de position"
@@ -799,7 +799,7 @@ ig_radio_h_data:
   other: "Messages applicatifs sélectionnés sur une liaison IP locale"
 
 ig_radio_h_limit:
-  other: "Les limites régionales de bande et de puissance s'appliquent. Des équipements HaLow compatibles sont requis. Le chemin satellitaire transporte des messages sélectionnés, pas une connexion IP haut débit. Le choix de la carte et l'intégration de l'hôte sont en cours d'évaluation."
+  other: "Les limites régionales de bande et de puissance s'appliquent. Des équipements HaLow compatibles sont requis. Le chemin satellite transporte des messages sélectionnés, pas une connexion IP haut débit. Le choix de la carte et l'intégration de l'hôte sont en cours d'évaluation."
 
 ig_radio_g_name:
   other: "Cellule 2G"
@@ -946,7 +946,7 @@ ig_rockblock_family:
   other: "Iridium / toutes les variantes"
 
 ig_rockblock_note:
-  other: "Toujours intégré au concept MSC-3 ; l'intégration du module est en cours d'évaluation. Nécessite une antenne agréée et un service satellitaire. La limite de charge utile est une spécification du modem, pas une taille de message MSC-3 validée."
+  other: "Toujours intégré au concept MSC-3 ; l'intégration du module est en cours d'évaluation. Nécessite une antenne agréée et un service satellite. La limite de charge utile est une spécification du modem, pas une taille de message MSC-3 validée."
 
 ig_rockblock_sourceLabel:
   other: "Spécifications publiques du Ground Control RockBLOCK 9704"
@@ -1177,7 +1177,7 @@ ig_rockblock_fact_0_0:
   other: "Dimensions / masse, modèle SMA"
 
 ig_rockblock_fact_1_0:
-  other: "Service satellitaire"
+  other: "Service satellite"
 
 ig_rockblock_fact_1_1:
   other: "Iridium Messaging Transport (IMT)"
@@ -1372,3 +1372,19 @@ colon:
 # A word before the linked "MeshSat" in the footer licence line (Greek needs the article).
 f_copy_pre:
   other: ""
+
+# Channel-table name of the TETRA row (data/transports.json "k").
+tr_tetra_dmo:
+  other: "TETRA en mode direct (DMO)"
+
+# Footer link to the field-kit repository.
+f_fieldkit:
+  other: "Kit de terrain MeshSat"
+
+# The SMS bearer in the router diagram.
+rt_sms:
+  other: "SMS"
+
+# The Pi's memory in the hardware table.
+hw_pi_ram:
+  other: "8 Go"

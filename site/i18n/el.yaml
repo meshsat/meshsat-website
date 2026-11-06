@@ -1372,3 +1372,19 @@ colon:
 # A word before the linked "MeshSat" in the footer licence line (Greek needs the article).
 f_copy_pre:
   other: "Το"
+
+# Channel-table name of the TETRA row (data/transports.json "k").
+tr_tetra_dmo:
+  other: "TETRA DMO (απευθείας λειτουργία)"
+
+# Footer link to the field-kit repository.
+f_fieldkit:
+  other: "Κιτ πεδίου MeshSat"
+
+# The SMS bearer in the router diagram.
+rt_sms:
+  other: "SMS"
+
+# The Pi's memory in the hardware table.
+hw_pi_ram:
+  other: "8 GB"

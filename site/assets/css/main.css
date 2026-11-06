@@ -2457,12 +2457,13 @@ main { flex: 1 0 auto; }
     .nav-links { align-items: center; }
 }
 
-/* Greek navigation needs the compact menu at tablet widths to keep the
-   longer labels clear of the logo and language/theme controls. */
+/* Greek and Dutch navigation need the compact menu at tablet widths to keep
+   the longer labels clear of the logo and language/theme controls (Dutch:
+   "Kies je opstelling" wrapped and "Hub" touched the language switch at 1024px). */
 
 @media (min-width: 769px) and (max-width: 1099px) {
-    html[lang="el"] .menu-toggle { display: flex; }
-    html[lang="el"] .nav-links {
+    html[lang="el"] .menu-toggle, html[lang="nl"] .menu-toggle { display: flex; }
+    html[lang="el"] .nav-links, html[lang="nl"] .nav-links {
         display: none;
         position: absolute;
         top: 64px;
@@ -2475,7 +2476,7 @@ main { flex: 1 0 auto; }
         padding: var(--space-lg);
         gap: var(--space-md);
     }
-    html[lang="el"] .nav-links.active { display: flex; }
+    html[lang="el"] .nav-links.active, html[lang="nl"] .nav-links.active { display: flex; }
 }
 
 /* The page you are on, for menu links that are pages rather than anchors. */

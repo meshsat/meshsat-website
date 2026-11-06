@@ -87,7 +87,7 @@
         {{ $bearers := slice
             (dict "id" "mesh_0" "name" "Meshtastic")
             (dict "id" "aprs_0" "name" "APRS")
-            (dict "id" "cellular_0" "name" "SMS")
+            (dict "id" "cellular_0" "name" (i18n "rt_sms"))
             (dict "id" "iridium_0" "name" "Iridium")
             (dict "id" "zigbee_0" "name" "ZigBee")
             (dict "id" "tcp_0" "name" "Reticulum")
@@ -246,7 +246,7 @@
             <table class="data-table">
                 <thead><tr><th>{{ i18n "th_part" }}</th><th>{{ i18n "th_role" }}</th></tr></thead>
                 <tbody>
-                    <tr><td><strong>Raspberry Pi 5</strong> (8 GB)</td><td>{{ i18n "hw1" }}</td></tr>
+                    <tr><td><strong>Raspberry Pi 5</strong> ({{ i18n "hw_pi_ram" }})</td><td>{{ i18n "hw1" }}</td></tr>
                     <tr><td><strong>LILYGO T-Echo</strong> / <strong>Heltec LoRa V4</strong></td><td>{{ i18n "hw2" }}</td></tr>
                     <tr><td><strong>RockBLOCK 9603</strong> {{ i18n "hw_or" }} <strong>9704</strong></td><td>{{ i18n "hw3" }}</td></tr>
                     <tr><td><strong>LILYGO T-Call A7670E</strong></td><td>{{ i18n "hw4" }}</td></tr>

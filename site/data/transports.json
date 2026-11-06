@@ -94,6 +94,7 @@
             },
             {
               "n": "TETRA Direct Mode",
+              "k": "tr_tetra_dmo",
               "s": "tetra",
               "id": "tetra",
               "evidence": "https://docs.meshsat.net/transports/tetra.html",
