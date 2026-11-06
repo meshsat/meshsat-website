@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1098
-  unreleased_since: "2026-11-05"
-  unreleased_anchor: "unreleased-main-last-change-2026-11-05"
+  unreleased_count: 1102
+  unreleased_since: "2026-11-06"
+  unreleased_anchor: "unreleased-main-last-change-2026-11-06"
 ---
 
 Generated from the commit history of
@@ -30,7 +30,7 @@ release and does not establish that every feature has been tested on hardware.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-11-05)
+## Unreleased (main, last change 2026-11-06)
 
 ### Features
 
@@ -491,6 +491,10 @@ release and does not establish that every feature has been tested on hardware.
 
 ### Fixes
 
+- **post**: a post waits for sky until it leaves or the post is closed, and Send again on a failed post really sends it again ([020af5d1](https://github.com/meshsat/meshsat/commit/020af5d14c4e547798ab5dbe2e0c9573875bace9))
+- **post**: the German page is titled Nachrichten am Treffpunkt, and the punctuation a phone keyboard adds by itself goes out plain, so it no longer eats the byte budget ([92dddabc](https://github.com/meshsat/meshsat/commit/92dddabc78d31d7dcbe8d4a58f6636db5fdeecb4))
+- **post**: the German page calls the place a Treffpunkt and the Dutch page calls the person who checks a message a vrijwilliger, as safertogether.eu does ([4e71ede8](https://github.com/meshsat/meshsat/commit/4e71ede88f5942edd8cceb8e6d920007d04f87cb))
+- **post**: the Community Post page reads naturally in German, Dutch and Greek, says it does not call 112, and its Greek limit, link check, warnings and times are right ([daf72222](https://github.com/meshsat/meshsat/commit/daf722223bb712560ac27bfa78a7a685f4d1350b))
 - **aprs**: a callsign, audio card or PTT device with a line break, space or # is refused before it reaches direwolf.conf, and KISS mode applies the same 1-6 character callsign rule as APRS-IS ([0faa9daa](https://github.com/meshsat/meshsat/commit/0faa9daaa262d0dd896cd6b59905949b7d1675d1))
 - **interfaces**: a link bound to a device that is gone follows the one device of its type on the bus, cell\_0 reads available only while the cell gateway runs, and sms\_0 reads as the cellular modem does ([5d45800c](https://github.com/meshsat/meshsat/commit/5d45800caebe3e9ee7b7e2deb3b31735521f8124))
 - **gateway**: the TAK server, KISS and SMPP addresses are joined with net.JoinHostPort, so an IPv6 literal host can be dialled ([06afe614](https://github.com/meshsat/meshsat/commit/06afe614d5aab0842e29da85c99a147283e40622))
