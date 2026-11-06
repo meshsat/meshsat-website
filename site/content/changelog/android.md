@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 151
-  latest_tag: "v2.26.0"
+  tags: 152
+  latest_tag: "v2.26.1"
   latest_tag_date: "2026-11-06"
-  latest_tag_anchor: "v2260-2026-11-06"
+  latest_tag_anchor: "v2261-2026-11-06"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -38,6 +38,12 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 No unreleased changes.
 
+## v2.26.1 (2026-11-06)
+
+### Fixes
+
+- **support**: Send feedback opens the email app straight away instead of the share sheet; with a file type on it the mail intent matched no app through its mailto selector ([aa561e32](https://github.com/meshsat/meshsat-android/commit/aa561e3202d35a5bd8a45ddea2ecd33f485d6bd3))
+
 ## v2.26.0 (2026-11-06)
 
 ### Features
@@ -48,14 +54,14 @@ No unreleased changes.
 
 - **home**: the node's panel switch is its beacon's only, so Home no longer says the satellite is switched off and the app sets up the 9704 whatever the beacon does ([a7071981](https://github.com/meshsat/meshsat-android/commit/a70719817cbec8d3324c57d1cf3ce97594fd30bf))
 
+<details class="changelog-older">
+<summary>Older releases (150)</summary>
+
 ## v2.25.3 (2026-11-03)
 
 ### Features
 
 - **home**: the satellite beacon icon lights red while the beacon is on, as the node's LED does ([e60f0e6a](https://github.com/meshsat/meshsat-android/commit/e60f0e6ac27c8fbae7d9152df3795f2e4cd2b252))
-
-<details class="changelog-older">
-<summary>Older releases (149)</summary>
 
 ## v2.25.2 (2026-11-03)
 
