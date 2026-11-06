@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1097
-  unreleased_since: "2026-10-29"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-29"
+  unreleased_count: 1098
+  unreleased_since: "2026-11-05"
+  unreleased_anchor: "unreleased-main-last-change-2026-11-05"
 ---
 
 Generated from the commit history of
@@ -30,10 +30,11 @@ release and does not establish that every feature has been tested on hardware.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-29)
+## Unreleased (main, last change 2026-11-05)
 
 ### Features
 
+- **post**: the Community Post page speaks German too, chosen from the phone's language like Greek, Dutch and English ([0ad0fd70](https://github.com/meshsat/meshsat/commit/0ad0fd70b33310878598904761a956f1a6796716))
 - **web**: a Warnings page lists the public warnings the kit holds, in force first with their marks, times, source, label, via and bearers, read again on every warning event and once a minute, and a banner on the dashboard and the booth screen carries the headline and the label while one is in force ([8faee40a](https://github.com/meshsat/meshsat/commit/8faee40a35b564dbe6dd36a83e9dc9e04b3ded5a))
 - **warnings**: a relayed public warning also goes to every LXMF peer heard in the last day on a free link, once per digest and peer through the delivery ledger, is one warning event on the Bridge's event stream, and stands at the top of every Community Post page while in force ([62151db0](https://github.com/meshsat/meshsat/commit/62151db0c8c848d84b3c8fbf7e0c2a2ec7736378))
 - **tak**: a dispatcher's chat the Hub could not hand this kit over MQTT comes as one frame, a satellite MT or an SMS from the Hub's number, is delivered as the same GeoChat, and the crew's answer and the kit's word go back as frames on that bearer ([216f2256](https://github.com/meshsat/meshsat/commit/216f225623aa424931d9505f0932c7f478a86d55))
