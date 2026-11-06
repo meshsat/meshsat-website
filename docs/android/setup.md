@@ -157,3 +157,8 @@ the old `com.cubeos.meshsat` app from before 2.9. Uninstall it first.
 
 **The map only shows countries.** Detailed tiles come from the internet. Offline, the map falls
 back to the world overview built into the app, which stops at country level.
+
+**Still stuck?** Setup > Help > Support (since 2.26.0) writes to support@meshsat.net through your
+own email app, and can attach a debug.zip: the app's log, the state of each link, the queue's
+counts, crash reports and the node's log, with phone numbers, email addresses, IMEIs and keys
+blanked out. The app sends nothing itself; you see the mail and the file before they go.
