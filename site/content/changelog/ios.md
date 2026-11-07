@@ -4,13 +4,13 @@ description: "MeshSat iOS changelog: the iPhone gateway app, a port of MeshSat A
 tagline: "iPhone gateway app"
 weight: 4
 changelog:
-  tags: 2
-  latest_tag: "v0.2.0"
-  latest_tag_date: "2026-10-28"
-  latest_tag_anchor: "v020-2026-10-28"
-  unreleased_count: 2
-  unreleased_since: "2026-10-28"
-  unreleased_anchor: "unreleased-main-last-change-2026-10-28"
+  tags: 3
+  latest_tag: "v0.3.0"
+  latest_tag_date: "2026-11-07"
+  latest_tag_anchor: "v030-2026-11-07"
+  unreleased_count: 0
+  unreleased_since: ""
+  unreleased_anchor: "unreleased-main"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -29,12 +29,28 @@ installation path; a commit entry does not establish App Store availability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-10-28)
+## Unreleased (main)
+
+No unreleased changes.
+
+## v0.3.0 (2026-11-07)
 
 ### Features
 
+- **support**: Setup \> Help \> Support sends feedback to the MeshSat Support desk through Mail, with an optional debug.zip of the app's logs, private details blanked ([e73c8a70](https://github.com/meshsat/meshsat-ios/commit/e73c8a70a45324ec5887331616c815f2606f0e4b))
+- **warnings**: a public warning a MeshSat kit relays over the mesh sounds the alarm, fills the screen and stays under Setup \> Safety \> Warnings until its cancel ([f2f43c22](https://github.com/meshsat/meshsat-ios/commit/f2f43c220bba14c65e592b64e76c1fb2274a484b))
+- **kits**: a field kit on the LAN has its own card under Setup with its address and the API token the kit may ask for, kept in the Keychain ([f05a25cc](https://github.com/meshsat/meshsat-ios/commit/f05a25cc928f31710414b8276f9774d576624e11))
+- **node**: the node's satellite beacon shows on Home as an icon left of night mode, red while it is on, and as a row on the Node health card ([3d028bcb](https://github.com/meshsat/meshsat-ios/commit/3d028bcb7751750a7edf7d3bd37bbcf183970be7))
 - **lxmf**: the LXMF message packs and unpacks to the Bridge's and Python's bytes: hash, signature, stamp, the HeMB-NG mid, the audio and image fields, the announce app data and the stamper, proven against vectors the Bridge's Go code and Python LXMF 1.2.1 agreed on ([a006b035](https://github.com/meshsat/meshsat-ios/commit/a006b035806fb2f4c10a06eb6ae5e871e229a90e))
 - **lxmf**: the Reticulum wire LXMF stands on, as Python RNS writes it: msgpack like umsgpack, the identity in Python's key order with its hashes and single-packet token, the header with its context byte, the announce with its 32-byte ratchet, read against the vectors Python RNS wrote for Android ([fc6e4ae3](https://github.com/meshsat/meshsat-ios/commit/fc6e4ae37ecd606138b45cbb44e1378afbc84e01))
+
+### Fixes
+
+- **node**: with the saved node out of reach the node page offers Disconnect, so another node can be scanned for and paired ([469e0823](https://github.com/meshsat/meshsat-ios/commit/469e082317fc144ebe63b0da9b698af339ac686a))
+- **support**: the debug.zip is kept in the app's folder in Files beside the app log, and a developer build no longer reports itself as TestFlight ([8f5b6f58](https://github.com/meshsat/meshsat-ios/commit/8f5b6f582e5ad3e6d7c0b33288ac16de3620411a))
+- **notifications**: the app asks once for notification permission, so the SOS and warning notifications can show, also while the app is open ([2e371c76](https://github.com/meshsat/meshsat-ios/commit/2e371c76f7565851b8ea4054d5bd59bcffd4aa7f))
+- **privacy**: nothing goes online before it is asked for: the map is built when its tab is first opened and orbit data is downloaded once the node's modem was seen ([a73edd81](https://github.com/meshsat/meshsat-ios/commit/a73edd8113828a2b5b39d7ad425d1affad2b472a))
+- **ble**: a node link that takes no Bluetooth operation for a minute is dropped and connected again, as on Android ([296a1cce](https://github.com/meshsat/meshsat-ios/commit/296a1cceadb3160fab03f8c5aa8dc777c81cad31))
 
 ## v0.2.0 (2026-10-28)
 
@@ -80,6 +96,9 @@ installation path; a commit entry does not establish App Store availability.
 - **iridium**: a satellite send that ends uncertain no longer takes back "The Hub has it" from an earlier session's receipt ([c891e136](https://github.com/meshsat/meshsat-ios/commit/c891e13603e9f8eaab630bff716581276acd98d2))
 - **delivery**: a confirmation that lands while a send is out is never undone by the worker, and a confirmed delivery is never sent again ([e6068935](https://github.com/meshsat/meshsat-ios/commit/e606893575b00ff2a3a0a354d7a4fc34bf0851d1))
 - **delivery**: each channel's pending acks time out on its own timeout, a mesh broadcast no longer waits for an ack, a late ack is kept, and the dedup window applies and survives a restart's hash ([6e5f0ef3](https://github.com/meshsat/meshsat-ios/commit/6e5f0ef38a5a374c1e3102f311f5e93d0d7728ab))
+
+<details class="changelog-older">
+<summary>Older releases (1)</summary>
 
 ## v0.1.0 (2026-10-06)
 
@@ -177,4 +196,6 @@ installation path; a commit entry does not establish App Store availability.
 - **ci**: UTF-8 locale for fastlane on the macos runner ([487a2cdd](https://github.com/meshsat/meshsat-ios/commit/487a2cdd4072e1c5f28525eb43c024686106a6ce))
 - **ci**: put Homebrew on the macos runner's path ([48b915cb](https://github.com/meshsat/meshsat-ios/commit/48b915cb8a0e81f451f0d162e53cfd4e9e4890ce))
 - **ci**: lint entrypoint, formatting and the findings of the first pipeline ([ea323d04](https://github.com/meshsat/meshsat-ios/commit/ea323d04ae613e3ca8858e9ea2271fd2c9863c79))
+
+</details>
 <!-- generated:end -->
