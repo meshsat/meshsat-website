@@ -4,10 +4,10 @@ description: "MeshSat iOS changelog: the iPhone gateway app, a port of MeshSat A
 tagline: "iPhone gateway app"
 weight: 4
 changelog:
-  tags: 3
-  latest_tag: "v0.3.0"
+  tags: 4
+  latest_tag: "v0.3.1"
   latest_tag_date: "2026-11-07"
-  latest_tag_anchor: "v030-2026-11-07"
+  latest_tag_anchor: "v031-2026-11-07"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -33,6 +33,12 @@ installation path; a commit entry does not establish App Store availability.
 
 No unreleased changes.
 
+## v0.3.1 (2026-11-07)
+
+### Fixes
+
+- **ui**: night mode turns the whole window red again and is kept across restarts; the colour-effect shader drew every scroll view black, so the filter is now Android's matrix as Core Animation filters on the root ([75823a8d](https://github.com/meshsat/meshsat-ios/commit/75823a8dabe4ff420cec85801e9885463cb15efe))
+
 ## v0.3.0 (2026-11-07)
 
 ### Features
@@ -51,6 +57,9 @@ No unreleased changes.
 - **notifications**: the app asks once for notification permission, so the SOS and warning notifications can show, also while the app is open ([2e371c76](https://github.com/meshsat/meshsat-ios/commit/2e371c76f7565851b8ea4054d5bd59bcffd4aa7f))
 - **privacy**: nothing goes online before it is asked for: the map is built when its tab is first opened and orbit data is downloaded once the node's modem was seen ([a73edd81](https://github.com/meshsat/meshsat-ios/commit/a73edd8113828a2b5b39d7ad425d1affad2b472a))
 - **ble**: a node link that takes no Bluetooth operation for a minute is dropped and connected again, as on Android ([296a1cce](https://github.com/meshsat/meshsat-ios/commit/296a1cceadb3160fab03f8c5aa8dc777c81cad31))
+
+<details class="changelog-older">
+<summary>Older releases (2)</summary>
 
 ## v0.2.0 (2026-10-28)
 
@@ -96,9 +105,6 @@ No unreleased changes.
 - **iridium**: a satellite send that ends uncertain no longer takes back "The Hub has it" from an earlier session's receipt ([c891e136](https://github.com/meshsat/meshsat-ios/commit/c891e13603e9f8eaab630bff716581276acd98d2))
 - **delivery**: a confirmation that lands while a send is out is never undone by the worker, and a confirmed delivery is never sent again ([e6068935](https://github.com/meshsat/meshsat-ios/commit/e606893575b00ff2a3a0a354d7a4fc34bf0851d1))
 - **delivery**: each channel's pending acks time out on its own timeout, a mesh broadcast no longer waits for an ack, a late ack is kept, and the dedup window applies and survives a restart's hash ([6e5f0ef3](https://github.com/meshsat/meshsat-ios/commit/6e5f0ef38a5a374c1e3102f311f5e93d0d7728ab))
-
-<details class="changelog-older">
-<summary>Older releases (1)</summary>
 
 ## v0.1.0 (2026-10-06)
 
