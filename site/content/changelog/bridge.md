@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1102
-  unreleased_since: "2026-11-06"
-  unreleased_anchor: "unreleased-main-last-change-2026-11-06"
+  unreleased_count: 1104
+  unreleased_since: "2026-11-07"
+  unreleased_anchor: "unreleased-main-last-change-2026-11-07"
 ---
 
 Generated from the commit history of
@@ -30,10 +30,12 @@ release and does not establish that every feature has been tested on hardware.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-11-06)
+## Unreleased (main, last change 2026-11-07)
 
 ### Features
 
+- **post**: the Safe and well board is looked up by full name and a line comes off with its code; the delivery ledger drops its texts after the retention ([3d4706c9](https://github.com/meshsat/meshsat/commit/3d4706c99d60812a69a9b65d0bd2d130024a6374))
+- **api**: MESHSAT\_API\_TOKEN\_REQUIRED keeps the API closed until a token is set ([bed3e65e](https://github.com/meshsat/meshsat/commit/bed3e65e64ad1f8d70aecfac9e35b1f9853da288))
 - **post**: the Community Post page speaks German too, chosen from the phone's language like Greek, Dutch and English ([0ad0fd70](https://github.com/meshsat/meshsat/commit/0ad0fd70b33310878598904761a956f1a6796716))
 - **web**: a Warnings page lists the public warnings the kit holds, in force first with their marks, times, source, label, via and bearers, read again on every warning event and once a minute, and a banner on the dashboard and the booth screen carries the headline and the label while one is in force ([8faee40a](https://github.com/meshsat/meshsat/commit/8faee40a35b564dbe6dd36a83e9dc9e04b3ded5a))
 - **warnings**: a relayed public warning also goes to every LXMF peer heard in the last day on a free link, once per digest and peer through the delivery ledger, is one warning event on the Bridge's event stream, and stands at the top of every Community Post page while in force ([62151db0](https://github.com/meshsat/meshsat/commit/62151db0c8c848d84b3c8fbf7e0c2a2ec7736378))
