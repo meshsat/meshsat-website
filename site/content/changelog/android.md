@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 153
-  latest_tag: "v2.26.2"
-  latest_tag_date: "2026-11-06"
-  latest_tag_anchor: "v2262-2026-11-06"
+  tags: 154
+  latest_tag: "v2.26.3"
+  latest_tag_date: "2026-11-07"
+  latest_tag_anchor: "v2263-2026-11-07"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -38,20 +38,26 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 No unreleased changes.
 
+## v2.26.3 (2026-11-07)
+
+### Fixes
+
+- **support**: Send feedback lists the phone's mail apps itself and hands the mail and its debug.zip to the one picked, because Android's chooser offered only one of them ([14cbbbb9](https://github.com/meshsat/meshsat-android/commit/14cbbbb90ca57ead048d40475ba4f4e6b2a495d1))
+
 ## v2.26.2 (2026-11-06)
 
 ### Fixes
 
 - **support**: Send feedback lets the user pick among the phone's mail apps, so a mail app that is not signed in is no longer opened by itself ([be88165a](https://github.com/meshsat/meshsat-android/commit/be88165a3e05a20e7af2bae52bc48dae79134b52))
 
+<details class="changelog-older">
+<summary>Older releases (152)</summary>
+
 ## v2.26.1 (2026-11-06)
 
 ### Fixes
 
 - **support**: Send feedback opens the email app straight away instead of the share sheet; with a file type on it the mail intent matched no app through its mailto selector ([aa561e32](https://github.com/meshsat/meshsat-android/commit/aa561e3202d35a5bd8a45ddea2ecd33f485d6bd3))
-
-<details class="changelog-older">
-<summary>Older releases (151)</summary>
 
 ## v2.26.0 (2026-11-06)
 
