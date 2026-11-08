@@ -4,10 +4,10 @@ description: "MeshSat iOS changelog: the iPhone gateway app, a port of MeshSat A
 tagline: "iPhone gateway app"
 weight: 4
 changelog:
-  tags: 5
-  latest_tag: "v0.4.0"
+  tags: 6
+  latest_tag: "v0.5.0"
   latest_tag_date: "2026-11-08"
-  latest_tag_anchor: "v040-2026-11-08"
+  latest_tag_anchor: "v050-2026-11-08"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -33,6 +33,16 @@ installation path; a commit entry does not establish App Store availability.
 
 No unreleased changes.
 
+## v0.5.0 (2026-11-08)
+
+### Features
+
+- **background**: keep the gateway running in the background, as MeshSat Android does: with the switch on and location allowed Always the phone keeps reporting its position and relaying behind the blue location indicator, and the switch opens iOS Settings when Always is missing ([ce0347d0](https://github.com/meshsat/meshsat-ios/commit/ce0347d098c51f96e1e2e51a1e1b5223539d9253))
+
+### Fixes
+
+- **background**: the app notices going to the background and coming back, so background location and the background windows start; iOS never calls the app delegate's background methods in a SwiftUI app ([59133e57](https://github.com/meshsat/meshsat-ios/commit/59133e57bee1f526374594447cc16621c7830641))
+
 ## v0.4.0 (2026-11-08)
 
 ### Features
@@ -51,14 +61,14 @@ No unreleased changes.
 - **build**: the Bluetooth package names the Reticulum module its RNode link imports, so the app builds for the iPhone ([6d214340](https://github.com/meshsat/meshsat-ios/commit/6d2143405a08de75edffcb986c95b251e94ae508))
 - **app**: the location background mode waits for 0.5.0 and App Review's recording, so the keep-running switch is hidden until a build declares it; the Reticulum proofs move to their own file with the voice note and photo legs ([d56e6d07](https://github.com/meshsat/meshsat-ios/commit/d56e6d0722cf1a3f6cf522b1c99f23278b43505b))
 
+<details class="changelog-older">
+<summary>Older releases (4)</summary>
+
 ## v0.3.1 (2026-11-07)
 
 ### Fixes
 
 - **ui**: night mode turns the whole window red again and is kept across restarts; the colour-effect shader drew every scroll view black, so the filter is now Android's matrix as Core Animation filters on the root ([75823a8d](https://github.com/meshsat/meshsat-ios/commit/75823a8dabe4ff420cec85801e9885463cb15efe))
-
-<details class="changelog-older">
-<summary>Older releases (3)</summary>
 
 ## v0.3.0 (2026-11-07)
 
