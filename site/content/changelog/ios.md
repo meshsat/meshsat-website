@@ -4,7 +4,7 @@ description: "MeshSat iOS changelog: the iPhone gateway app, a port of MeshSat A
 tagline: "iPhone gateway app"
 weight: 4
 changelog:
-  tags: 7
+  tags: 8
   latest_tag: "v0.5.1"
   latest_tag_date: "2026-11-08"
   latest_tag_anchor: "v051-2026-11-08"
@@ -50,7 +50,13 @@ No unreleased changes.
 - **background**: the app notices going to the background and coming back, so background location and the background windows start; iOS never calls the app delegate's background methods in a SwiftUI app ([59133e57](https://github.com/meshsat/meshsat-ios/commit/59133e57bee1f526374594447cc16621c7830641))
 
 <details class="changelog-older">
-<summary>Older releases (5)</summary>
+<summary>Older releases (6)</summary>
+
+## v0.4.1 (2026-11-08)
+
+### Fixes
+
+- **app**: a short press on the voice note microphone no longer keeps recording for 30 seconds ([78e38d07](https://github.com/meshsat/meshsat-ios/commit/78e38d07d7522ba538f0e50a1234d9ce18676f8c))
 
 ## v0.4.0 (2026-11-08)
 
