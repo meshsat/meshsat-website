@@ -4,10 +4,10 @@ description: "MeshSat iOS changelog: the iPhone gateway app, a port of MeshSat A
 tagline: "iPhone gateway app"
 weight: 4
 changelog:
-  tags: 4
-  latest_tag: "v0.3.1"
-  latest_tag_date: "2026-11-07"
-  latest_tag_anchor: "v031-2026-11-07"
+  tags: 5
+  latest_tag: "v0.4.0"
+  latest_tag_date: "2026-11-08"
+  latest_tag_anchor: "v040-2026-11-08"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -33,11 +33,32 @@ installation path; a commit entry does not establish App Store availability.
 
 No unreleased changes.
 
+## v0.4.0 (2026-11-08)
+
+### Features
+
+- **lxmf**: voice notes and photos in a Reticulum chat, recorded, transcribed, shrunk to WebP, sent, kept and played back as on Android, and an RNode over Bluetooth LE as a Reticulum interface with its card in Setup ([1c249bd7](https://github.com/meshsat/meshsat-ios/commit/1c249bd76122a62ecf323341ac1462a8e85c3833))
+- **app**: notifications for incoming messages, Cancel on the SOS notification, a welcome page before the permission questions, the mailbox cost question, every status-strip lane, the TAK position repeat, mqtt\_0 deliveries, the Hub's reboot and a gateway kept running in the background, as on Android ([827ebc5b](https://github.com/meshsat/meshsat-ios/commit/827ebc5b0529acc1820150bfcbc959b2ea9b1789))
+- **lxmf**: the Ogg Opus container of a voice note, the attachment rules, the RNode driver and the AutoInterface's peering, ported from MeshSat Android with its tests ([29e65de7](https://github.com/meshsat/meshsat-ios/commit/29e65de78fe7cf73e02103aabf2b08288f2f8e54))
+- **lxmf**: the Reticulum node and LXMF router bound into the app, as MeshSat Android's: the 9704 as a paid Reticulum link with RNSI framing, a TCP listener for peers on the WiFi, the Reticulum tab and conversation chips, the Reticulum card in Setup and the lxmf\_mids table ([133ed1f7](https://github.com/meshsat/meshsat-ios/commit/133ed1f7f881202c6f842b2346173b092541a2c3))
+- **lxmf**: the LXMF router, the propagation node client and the Reticulum stack over the app's interfaces, as MeshSat Android's lxmf/LxmfRouter.kt and rns/RnsStack.kt; Kotlin's router tests and the seven LXMF interop cases green against Python LXMF 1.2.0 ([be41c6cb](https://github.com/meshsat/meshsat-ios/commit/be41c6cb63614439df52c53fe9e5bd29a7530e85))
+- **rns**: the Reticulum node, links, resources, requests, receipts and IFAC ported from MeshSat Android's rns/ package, a TCP listener on NIO and the Python interop harness; pinned to RNS 1.5.5 by the golden vectors, Kotlin's node tests and six interop cases ([9ec5aaa9](https://github.com/meshsat/meshsat-ios/commit/9ec5aaa91e3b4b542e21c11cd9087485565829ca))
+
+### Fixes
+
+- **lxmf**: playing a voice note to its end no longer closes the app; the player stops on the main queue once the last sample has played, not inside the audio engine's own callback ([5eba36d5](https://github.com/meshsat/meshsat-ios/commit/5eba36d5f23015b865e82fd032f9df2243c541f9))
+- **lxmf**: a voice note or photo that arrives in a Reticulum chat shows at once, because the chat watches the stored attachments instead of reading them once when a message appears ([452f869f](https://github.com/meshsat/meshsat-ios/commit/452f869fe9c771429d47aacd429e931daa8ae28e))
+- **build**: the Bluetooth package names the Reticulum module its RNode link imports, so the app builds for the iPhone ([6d214340](https://github.com/meshsat/meshsat-ios/commit/6d2143405a08de75edffcb986c95b251e94ae508))
+- **app**: the location background mode waits for 0.5.0 and App Review's recording, so the keep-running switch is hidden until a build declares it; the Reticulum proofs move to their own file with the voice note and photo legs ([d56e6d07](https://github.com/meshsat/meshsat-ios/commit/d56e6d0722cf1a3f6cf522b1c99f23278b43505b))
+
 ## v0.3.1 (2026-11-07)
 
 ### Fixes
 
 - **ui**: night mode turns the whole window red again and is kept across restarts; the colour-effect shader drew every scroll view black, so the filter is now Android's matrix as Core Animation filters on the root ([75823a8d](https://github.com/meshsat/meshsat-ios/commit/75823a8dabe4ff420cec85801e9885463cb15efe))
+
+<details class="changelog-older">
+<summary>Older releases (3)</summary>
 
 ## v0.3.0 (2026-11-07)
 
@@ -57,9 +78,6 @@ No unreleased changes.
 - **notifications**: the app asks once for notification permission, so the SOS and warning notifications can show, also while the app is open ([2e371c76](https://github.com/meshsat/meshsat-ios/commit/2e371c76f7565851b8ea4054d5bd59bcffd4aa7f))
 - **privacy**: nothing goes online before it is asked for: the map is built when its tab is first opened and orbit data is downloaded once the node's modem was seen ([a73edd81](https://github.com/meshsat/meshsat-ios/commit/a73edd8113828a2b5b39d7ad425d1affad2b472a))
 - **ble**: a node link that takes no Bluetooth operation for a minute is dropped and connected again, as on Android ([296a1cce](https://github.com/meshsat/meshsat-ios/commit/296a1cceadb3160fab03f8c5aa8dc777c81cad31))
-
-<details class="changelog-older">
-<summary>Older releases (2)</summary>
 
 ## v0.2.0 (2026-10-28)
 
