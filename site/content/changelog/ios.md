@@ -4,10 +4,10 @@ description: "MeshSat iOS changelog: the iPhone gateway app, a port of MeshSat A
 tagline: "iPhone gateway app"
 weight: 4
 changelog:
-  tags: 6
-  latest_tag: "v0.5.0"
+  tags: 7
+  latest_tag: "v0.5.1"
   latest_tag_date: "2026-11-08"
-  latest_tag_anchor: "v050-2026-11-08"
+  latest_tag_anchor: "v051-2026-11-08"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -33,6 +33,12 @@ installation path; a commit entry does not establish App Store availability.
 
 No unreleased changes.
 
+## v0.5.1 (2026-11-08)
+
+### Fixes
+
+- **app**: a short press on the voice note microphone no longer keeps recording for 30 seconds ([c8c13e95](https://github.com/meshsat/meshsat-ios/commit/c8c13e9574671c383d86b633757e4e85a918f16a))
+
 ## v0.5.0 (2026-11-08)
 
 ### Features
@@ -42,6 +48,9 @@ No unreleased changes.
 ### Fixes
 
 - **background**: the app notices going to the background and coming back, so background location and the background windows start; iOS never calls the app delegate's background methods in a SwiftUI app ([59133e57](https://github.com/meshsat/meshsat-ios/commit/59133e57bee1f526374594447cc16621c7830641))
+
+<details class="changelog-older">
+<summary>Older releases (5)</summary>
 
 ## v0.4.0 (2026-11-08)
 
@@ -60,9 +69,6 @@ No unreleased changes.
 - **lxmf**: a voice note or photo that arrives in a Reticulum chat shows at once, because the chat watches the stored attachments instead of reading them once when a message appears ([452f869f](https://github.com/meshsat/meshsat-ios/commit/452f869fe9c771429d47aacd429e931daa8ae28e))
 - **build**: the Bluetooth package names the Reticulum module its RNode link imports, so the app builds for the iPhone ([6d214340](https://github.com/meshsat/meshsat-ios/commit/6d2143405a08de75edffcb986c95b251e94ae508))
 - **app**: the location background mode waits for 0.5.0 and App Review's recording, so the keep-running switch is hidden until a build declares it; the Reticulum proofs move to their own file with the voice note and photo legs ([d56e6d07](https://github.com/meshsat/meshsat-ios/commit/d56e6d0722cf1a3f6cf522b1c99f23278b43505b))
-
-<details class="changelog-older">
-<summary>Older releases (4)</summary>
 
 ## v0.3.1 (2026-11-07)
 
