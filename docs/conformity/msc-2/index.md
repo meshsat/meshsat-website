@@ -31,7 +31,8 @@ The leaflet in the box. Read it before first use and keep it with the unit.
 
 | Edition | Language | Document | SHA-256 |
 |---|---|---|---|
-| 2026-10 | English | [MeshSat-Compact-v2-MSC-2_Instructions-and-Safety_EN.pdf](/conformity/msc-2/MeshSat-Compact-v2-MSC-2_Instructions-and-Safety_EN.pdf) (the same file as published on 10 October under [its first name](/conformity/msc-2/MeshSat-Compact-v2-MSC-2_Instructions-and-Safety_EN_2026-10.pdf)) | `d32c2315ebf58ebb24ec2d3bec82c9a19db1a797523095797e2a3c31853f0362` |
+| 2026-11 | English | [MeshSat-Compact-v2-MSC-2_Instructions-and-Safety_EN.pdf](/conformity/msc-2/MeshSat-Compact-v2-MSC-2_Instructions-and-Safety_EN.pdf) (the same file as [MeshSat-Compact-v2-MSC-2_Instructions-and-Safety_EN_2026-11.pdf](/conformity/msc-2/MeshSat-Compact-v2-MSC-2_Instructions-and-Safety_EN_2026-11.pdf)) | `ce3b4c3fb57ccb0ef4d5dbf3ea3fda54b1b003a3150a5746c7b3ac9b12d73046` |
+| 2026-10 | English | [MeshSat-Compact-v2-MSC-2_Instructions-and-Safety_EN_2026-10.pdf](/conformity/msc-2/MeshSat-Compact-v2-MSC-2_Instructions-and-Safety_EN_2026-10.pdf) | `d32c2315ebf58ebb24ec2d3bec82c9a19db1a797523095797e2a3c31853f0362` |
 
 A new edition of either document is added as a new row; the plain file name serves the current edition and the earlier one stays available under a name that carries its edition.
 
