@@ -1,9 +1,9 @@
 ---
 title: "Invest in keeping people connected"
 layout: "investors"
-description: "MeshSat is seeking €300.000 in early-stage investment to grow a civilian communications business built around a working open-source platform."
+description: "MeshSat is seeking €300,000 in early-stage investment to grow a civilian communications business built around a working open-source platform."
 heading_lead: "Invest in"
-lead: "MeshSat is seeking €300.000 in early-stage investment to grow a civilian communications business built around a working open-source platform."
+lead: "MeshSat is seeking €300,000 in early-stage investment to grow a civilian communications business built around a working open-source platform."
 intro:
   - "When internet and mobile networks fail, or never reached a place to begin with, people may still have local radio, mesh networks, satellite connections or other ways to communicate. MeshSat connects supported systems so messages can move between them."
   - "We’re looking for an angel investor who shares our mission and wants to help turn this technology into a sustainable business."
@@ -200,7 +200,7 @@ Our mission includes humanitarian relief, civilian search and rescue, disaster r
 <div class="build-section-heading"><h2 id="invest-investment-title">What the investment will make possible</h2></div>
 <div class="build-detail">
 
-We are seeking **€300.000 in early-stage investment** to let the three founders work full-time on MeshSat and build the business around the platform.
+We are seeking **€300,000 in early-stage investment** to let the three founders work full-time on MeshSat and build the business around the platform.
 
 The funding is intended to support:
 

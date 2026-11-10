@@ -7,7 +7,7 @@ description: "What MeshSat is for, and the line it will not cross: no work with 
 
 Issued by Elli.Z.G., trading as MeshSat, a sole proprietorship under Dutch law, Leiden, the Netherlands, Chamber of Commerce 99812584. It binds Elli.Z.G. and any successor, including any company later formed to carry on MeshSat.
 
-Signed as a public commitment by Kyriakos Papadopoulos, founder and lead engineer; Elli Zafeiridou Georgiadou, co-founder and project manager; and George Zafeiridis, public relations and communications specialist.
+Signed as a public commitment by Kyriakos Papadopoulos, founder and lead engineer; Elli Zafeiridou Georgiadou, co-founder and project manager; and George Zafeiridis, public relations and communications.
 
 ## Why we wrote this
 

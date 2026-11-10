@@ -9,7 +9,7 @@ description: "Waarvoor MeshSat bedoeld is, en de grens die het niet overschrijdt
 
 Uitgegeven door Elli.Z.G., handelend onder de naam MeshSat, een eenmanszaak naar Nederlands recht, Leiden, Nederland, KvK-nummer 99812584. Het bindt Elli.Z.G. en iedere rechtsopvolger, waaronder iedere onderneming die later wordt opgericht om MeshSat voort te zetten.
 
-Als publieke toezegging ondertekend door Kyriakos Papadopoulos, oprichter en lead engineer; Elli Zafeiridou Georgiadou, medeoprichter en projectmanager; en George Zafeiridis, specialist public relations en communicatie.
+Als publieke toezegging ondertekend door Kyriakos Papadopoulos, oprichter en lead engineer; Elli Zafeiridou Georgiadou, medeoprichter en projectmanager; en George Zafeiridis, public relations en communicatie.
 
 ## Waarom we dit hebben geschreven
 

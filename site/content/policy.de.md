@@ -9,7 +9,7 @@ description: "Wofür MeshSat da ist und welche Grenze es nicht überschreitet: k
 
 Herausgegeben von Elli.Z.G., einem Einzelunternehmen nach niederländischem Recht mit Sitz in Leiden (Niederlande), das unter dem Namen MeshSat auftritt, eingetragen bei der niederländischen Handelskammer (KvK) unter der Nummer 99812584. Diese Richtlinie bindet Elli.Z.G. und jeden Rechtsnachfolger, einschließlich jedes Unternehmens, das später gegründet wird, um MeshSat fortzuführen.
 
-Als öffentliche Verpflichtung unterzeichnet von Kyriakos Papadopoulos, Gründer und leitender Ingenieur; Elli Zafeiridou Georgiadou, Mitgründerin und Projektmanagerin; und George Zafeiridis, Spezialist für Öffentlichkeitsarbeit und Kommunikation.
+Als öffentliche Verpflichtung unterzeichnet von Kyriakos Papadopoulos, Gründer und leitender Ingenieur; Elli Zafeiridou Georgiadou, Mitgründerin und Projektmanagerin; und George Zafeiridis, zuständig für Öffentlichkeitsarbeit und Kommunikation.
 
 ## Warum wir dies geschrieben haben
 

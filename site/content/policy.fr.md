@@ -9,7 +9,7 @@ description: "Ce à quoi sert MeshSat, et la ligne qu’il ne franchira pas : 
 
 Émise par Elli.Z.G., exerçant sous le nom commercial MeshSat, entreprise individuelle de droit néerlandais, Leyde, Pays-Bas, Chambre de commerce néerlandaise (KvK) 99812584. Elle engage Elli.Z.G. et tout successeur, y compris toute société constituée ultérieurement pour poursuivre MeshSat.
 
-Signée à titre d’engagement public par Kyriakos Papadopoulos, fondateur et ingénieur principal ; Elli Zafeiridou Georgiadou, cofondatrice et cheffe de projet ; et George Zafeiridis, spécialiste des relations publiques et de la communication.
+Signée à titre d’engagement public par Kyriakos Papadopoulos, fondateur et ingénieur principal ; Elli Zafeiridou Georgiadou, cofondatrice et cheffe de projet ; et George Zafeiridis, chargé des relations publiques et de la communication.
 
 ## Pourquoi nous l’avons écrite
 
