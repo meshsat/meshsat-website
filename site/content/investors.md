@@ -178,7 +178,7 @@ Our mission includes humanitarian relief, civilian search and rescue, disaster r
 <div>
 <h3>Elli Zafeiridou Georgiadou</h3>
 <p class="invest-role">Co-founder and project manager</p>
-<p>Elli has more than ten years of coordinating events and programmes. She spent six years (2018 to 2024) on Erasmus+ and European Solidarity Corps work: logistics, partners in 18 countries, budgets and EU reporting. She grew from volunteer to board member of a non-profit arts hub in Thessaloniki. She holds MeshSat’s SIDN fonds grant and runs Elli.Z.G., the business MeshSat trades through. Greek, English, learning Dutch.</p>
+<p>Elli has more than ten years of coordinating events and programmes. She spent six years (2018 to 2024) on Erasmus+ and European Solidarity Corps work: logistics, partners in 18 countries, budgets and EU reporting. She grew from volunteer to board member of a non-profit arts hub in Thessaloniki. She holds MeshSat’s SIDN fonds grant and runs Elli.Z.G., the business MeshSat trades through.</p>
 <p class="invest-links"><a href="https://portfolio.ellizg.com/">Portfolio</a>, <a href="https://www.linkedin.com/in/ellizafeiridougeorgiadou">LinkedIn</a></p>
 </div>
 </div>
@@ -187,7 +187,7 @@ Our mission includes humanitarian relief, civilian search and rescue, disaster r
 <div>
 <h3>George Zafeiridis</h3>
 <p class="invest-role">Public relations and communications</p>
-<p>George founded the digital marketing department at DiRent A Car, where paid campaigns lifted sales by roughly 20%, and coordinated campaigns at EDA Attikis, the Athens natural-gas distributor. At Fix In Art he set up the PR and communications department and managed a team of eleven. He holds a Global MBA from the University of Derby. He leads MeshSat’s PR and communications and also sells. Greek, English, elementary French.</p>
+<p>George founded the digital marketing department at DiRent A Car, where paid campaigns lifted sales by roughly 20%, and coordinated campaigns at EDA Attikis, the Athens natural-gas distributor. At Fix In Art he set up the PR and communications department and managed a team of eleven. He holds a Global MBA from the University of Derby. He leads MeshSat’s PR and communications and also sells.</p>
 <p class="invest-links"><a href="https://george.zafeiridis.com/news/">Website</a>, <a href="https://www.linkedin.com/in/zafeiridis-george/">LinkedIn</a></p>
 </div>
 </div>
