@@ -93,9 +93,10 @@
 .invest-page .build-detail > .build-prototype { margin-bottom: var(--space-lg); }
 .invest-mission p + p { margin-top: var(--space-md); }
 .invest-team { display: grid; gap: var(--space-xl); }
-.invest-person { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: var(--space-lg); align-items: start; }
+.invest-person { display: grid; grid-template-columns: 16rem minmax(0, 1fr); gap: var(--space-lg); align-items: start; }
 .invest-portrait { display: block; width: 100%; height: auto; border-radius: var(--radius-md); }
 .invest-person h3 { margin: 0; }
+.invest-links { margin-top: var(--space-sm); font-size: 0.875rem; }
 .invest-role { margin-block: var(--space-xs) var(--space-sm); font-family: var(--font-mono); font-size: 0.875rem; color: var(--color-text-muted); }
 .invest-film { margin: 0; }
 .invest-film-note { margin-top: var(--space-sm); font-size: 0.875rem; color: var(--color-text-muted); }
@@ -123,7 +124,7 @@
 /* Portraits sit beside the name and bio; on a phone they go above it. */
 @media (max-width: 520px) {
     .invest-person { grid-template-columns: minmax(0, 1fr); gap: var(--space-md); }
-    .invest-portrait { max-width: 12rem; }
+    .invest-portrait { max-width: 18rem; }
 }
 @media (prefers-reduced-motion: reduce) {
     .invest-link svg { transition: none; transform: none; }

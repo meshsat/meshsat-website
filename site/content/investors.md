@@ -165,27 +165,30 @@ Our mission includes humanitarian relief, civilian search and rescue, disaster r
 
 <div class="invest-team">
 <div class="invest-person">
-<img class="invest-portrait" src="/images/investors/team-kyriakos-20261110.webp" srcset="/images/investors/team-kyriakos-20261110-640.webp 640w, /images/investors/team-kyriakos-20261110.webp 1122w" sizes="(max-width: 520px) 12rem, 10rem" width="1122" height="1402" alt="Portrait of Kyriakos Papadopoulos" loading="lazy" decoding="async">
+<img class="invest-portrait" src="/images/investors/team-kyriakos-20261110.webp" srcset="/images/investors/team-kyriakos-20261110-640.webp 640w, /images/investors/team-kyriakos-20261110.webp 1122w" sizes="(max-width: 520px) 18rem, 16rem" width="1122" height="1402" alt="Portrait of Kyriakos Papadopoulos" loading="lazy" decoding="async">
 <div>
 <h3>Kyriakos Papadopoulos</h3>
 <p class="invest-role">Founder and lead engineer</p>
-<p>Kyriakos leads MeshSat’s architecture, software and engineering. His background is in networks, systems and security, including work for Adyen, Médecins Sans Frontières, SWIFT and ESA/ESTEC.</p>
+<p>Kyriakos is an infrastructure engineer in networks, systems and security. He has worked in network and systems roles at Adyen, Médecins Sans Frontières, SWIFT and ESA/ESTEC, including humanitarian infrastructure, and runs his own anycast network across five countries. He leads MeshSat’s engineering.</p>
+<p class="invest-links"><a href="https://kyriakos.papadopoulos.tech/">Website</a>, <a href="https://linkedin.com/in/kyriakospapadopoulos">LinkedIn</a></p>
 </div>
 </div>
 <div class="invest-person">
-<img class="invest-portrait" src="/images/investors/team-elli-20261110.webp" srcset="/images/investors/team-elli-20261110-640.webp 640w, /images/investors/team-elli-20261110.webp 1122w" sizes="(max-width: 520px) 12rem, 10rem" width="1122" height="1402" alt="Portrait of Elli Zafeiridou Georgiadou" loading="lazy" decoding="async">
+<img class="invest-portrait" src="/images/investors/team-elli-20261110.webp" srcset="/images/investors/team-elli-20261110-640.webp 640w, /images/investors/team-elli-20261110.webp 1122w" sizes="(max-width: 520px) 18rem, 16rem" width="1122" height="1402" alt="Portrait of Elli Zafeiridou Georgiadou" loading="lazy" decoding="async">
 <div>
 <h3>Elli Zafeiridou Georgiadou</h3>
 <p class="invest-role">Co-founder and project manager</p>
-<p>Elli leads project coordination and contributes to sales, finance, operations, assembly and quality assurance. She runs Elli.Z.G., the business through which MeshSat currently operates.</p>
+<p>Elli has more than ten years of coordinating events and programmes. She spent six years (2018 to 2024) on Erasmus+ and European Solidarity Corps work: logistics, partners in 18 countries, budgets and EU reporting. She grew from volunteer to board member of a non-profit arts hub in Thessaloniki. She holds MeshSat’s SIDN fonds grant and runs Elli.Z.G., the business MeshSat trades through. Greek, English, learning Dutch.</p>
+<p class="invest-links"><a href="https://portfolio.ellizg.com/">Portfolio</a>, <a href="https://www.linkedin.com/in/ellizafeiridougeorgiadou">LinkedIn</a></p>
 </div>
 </div>
 <div class="invest-person">
-<img class="invest-portrait" src="/images/investors/team-george-20261110.webp" srcset="/images/investors/team-george-20261110-640.webp 640w, /images/investors/team-george-20261110.webp 1122w" sizes="(max-width: 520px) 12rem, 10rem" width="1122" height="1402" alt="Portrait of George Zafeiridis" loading="lazy" decoding="async">
+<img class="invest-portrait" src="/images/investors/team-george-20261110.webp" srcset="/images/investors/team-george-20261110-640.webp 640w, /images/investors/team-george-20261110.webp 1122w" sizes="(max-width: 520px) 18rem, 16rem" width="1122" height="1402" alt="Portrait of George Zafeiridis" loading="lazy" decoding="async">
 <div>
 <h3>George Zafeiridis</h3>
 <p class="invest-role">Sales, PR and communications</p>
-<p>George contributes to sales and leads MeshSat’s communications, marketing and public relations.</p>
+<p>George founded the digital marketing department at DiRent A Car, where paid campaigns lifted sales by roughly 20%, and coordinated campaigns at EDA Attikis, the Athens natural-gas distributor. At Fix In Art he set up the PR and communications department and managed a team of eleven. He holds a Global MBA from the University of Derby. He leads MeshSat’s PR and communications and also sells. Greek, English, elementary French.</p>
+<p class="invest-links"><a href="https://george.zafeiridis.com/news/">Website</a>, <a href="https://www.linkedin.com/in/zafeiridis-george/">LinkedIn</a></p>
 </div>
 </div>
 </div>
