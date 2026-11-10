@@ -179,7 +179,7 @@ Our mission includes humanitarian relief, civilian search and rescue, disaster r
 <h3>Elli Zafeiridou Georgiadou</h3>
 <p class="invest-role">Co-founder and project manager</p>
 <p>Elli has more than ten years of coordinating events and programmes. She spent six years (2018 to 2024) on Erasmus+ and European Solidarity Corps work: logistics, partners in 18 countries, budgets and EU reporting. She grew from volunteer to board member of a non-profit arts hub in Thessaloniki. She holds MeshSat’s SIDN fonds grant and runs Elli.Z.G., the business MeshSat trades through.</p>
-<p class="invest-links"><a href="https://portfolio.ellizg.com/">Portfolio</a>, <a href="https://www.linkedin.com/in/ellizafeiridougeorgiadou">LinkedIn</a></p>
+<p class="invest-links"><a href="https://portfolio.ellizg.com/">Website</a>, <a href="https://www.linkedin.com/in/ellizafeiridougeorgiadou">LinkedIn</a></p>
 </div>
 </div>
 <div class="invest-person">
