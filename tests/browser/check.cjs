@@ -91,7 +91,7 @@ async function check(name, fn) {
   const page=await ctx.newPage();
   for(const width of [320,390,768,1440]) {
    await page.setViewportSize({width,height:844});
-   for(const route of ['', 'integrators/']) await check(`${lang||'en/'}${route||'home'} ${theme} ${width}`,async()=>{
+   for(const route of ['', 'integrators/', ...(lang ? ['investors/'] : [])]) await check(`${lang||'en/'}${route||'home'} ${theme} ${width}`,async()=>{
     await page.goto(`https://meshsat.net/${lang}${route}`);
     await audit(page,`${lang}${route}-${theme}-${width}`,width===390 || width===1440);
     if(!lang && [390,1440].includes(width)) await capture(page,`${route?'integrators':'home'}-${theme}-${width}.png`);

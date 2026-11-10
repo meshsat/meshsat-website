@@ -139,6 +139,35 @@ else
   { grep -ohE '<img [^>]*>' "$PUB"/*.html "$PUB"/*/*.html "$PUB"/*/*/*.html 2>/dev/null || true; } | grep -vE ' alt(=|>| )' | head -3 | sed 's/^/         /'
 fi
 
+echo "=== 9. /investors/ in five languages (MESHSAT-1872) ==="
+# The angel-round page is translated (owner, 10 Nov 2026). Each language must keep the
+# amount in its own format, the maturity, pre-revenue and no-guarantee lines at full
+# strength, its own policy link and the alternates for all five plus x-default.
+for lang in en nl de fr el; do
+  prefix="$lang/"; [ "$lang" = en ] && prefix=""
+  INV="$PUB/${prefix}investors/index.html"
+  if [ ! -f "$INV" ]; then fail "${prefix}investors/index.html missing"; continue; fi
+  case "$lang" in
+    en) amount='€300,000'; maturity='has not yet been used in a real emergency'; revenue='MeshSat is currently pre-revenue'; guarantee='neither is guaranteed' ;;
+    nl) amount='€ 300.000'; maturity='nog niet in een echte noodsituatie gebruikt'; revenue='MeshSat heeft nog geen omzet'; guarantee='geen van beide routes is gegarandeerd' ;;
+    de) amount='300.000 €'; maturity='bisher in keinem echten Notfall eingesetzt'; revenue='MeshSat erzielt derzeit noch keinen Umsatz'; guarantee='keiner der beiden Wege ist garantiert' ;;
+    fr) amount='300 000 €'; maturity='n’a pas encore servi lors d’une véritable urgence'; revenue='MeshSat ne génère pas encore de chiffre d’affaires'; guarantee='aucune de ces deux options n’est garantie' ;;
+    el) amount='300.000 €'; maturity='δεν έχει χρησιμοποιηθεί ακόμη σε πραγματική κατάσταση έκτακτης ανάγκης'; revenue='Το MeshSat δεν έχει ακόμη έσοδα'; guarantee='καμία από τις δύο επιλογές δεν είναι εγγυημένη' ;;
+  esac
+  for phrase in "$amount" "$maturity" "$revenue" "$guarantee"; do
+    if ! grep -Fq "$phrase" "$INV"; then fail "$lang investors: missing $phrase"; fi
+  done
+  if ! grep -Eq "class=[\"]?invest-link[\"]? href=[\"]?/${prefix}policy/" "$INV"; then fail "$lang investors: policy link is not /${prefix}policy/"; fi
+  for alternate in en nl de fr el x-default; do
+    alt_prefix="$alternate/"
+    case "$alternate" in en|x-default) alt_prefix="" ;; esac
+    if ! grep -Eq "<link[^>]+hreflang=[\"]?$alternate[\"]? href=[\"]?https://meshsat.net/${alt_prefix}investors/" "$INV"; then
+      fail "$lang investors: missing $alternate alternate"
+    fi
+  done
+  pass "$lang investors: amount, maturity, revenue, guarantee, policy link and alternates"
+done
+
 echo
 if [ "$FAIL" -eq 0 ]; then echo "verify-site: PASSED"; else echo "verify-site: FAILED"; fi
 exit $FAIL
