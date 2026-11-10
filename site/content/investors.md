@@ -186,7 +186,7 @@ Our mission includes humanitarian relief, civilian search and rescue, disaster r
 <img class="invest-portrait" src="/images/investors/team-george-20261110.webp" srcset="/images/investors/team-george-20261110-640.webp 640w, /images/investors/team-george-20261110.webp 1122w" sizes="(max-width: 520px) 18rem, 16rem" width="1122" height="1402" alt="Portrait of George Zafeiridis" loading="lazy" decoding="async">
 <div>
 <h3>George Zafeiridis</h3>
-<p class="invest-role">Sales, PR and communications</p>
+<p class="invest-role">Public relations and communications</p>
 <p>George founded the digital marketing department at DiRent A Car, where paid campaigns lifted sales by roughly 20%, and coordinated campaigns at EDA Attikis, the Athens natural-gas distributor. At Fix In Art he set up the PR and communications department and managed a team of eleven. He holds a Global MBA from the University of Derby. He leads MeshSat’s PR and communications and also sells. Greek, English, elementary French.</p>
 <p class="invest-links"><a href="https://george.zafeiridis.com/news/">Website</a>, <a href="https://www.linkedin.com/in/zafeiridis-george/">LinkedIn</a></p>
 </div>
