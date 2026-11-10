@@ -14,6 +14,8 @@ closing:
   - "If you invest in early-stage technology and share our vision for civilian communications, we’d like to hear from you."
   - "We can share the business plan and financial model and talk through the technology, commercial strategy and investment proposal."
 closing_cta: "Email Kyriakos about investing"
+closing_email_lead: "or write to"
+closing_email: "kyriakos@meshsat.net"
 social_image: /images/investors/investors-social-20261110-portraits.jpg
 social_image_width: 1200
 social_image_height: 675
@@ -56,11 +58,11 @@ MeshSat is at an early commercial stage, with working software, prototype hardwa
 - **Two V1 field-kit prototypes:** modular Raspberry Pi-based kits that connect selected radios, mesh and satellite equipment.
 - **MSC-2:** a portable node designed to give a team access to mesh and satellite messaging.
 - **MeshSat Hub:** a live service for managing devices and messages, also available for self-hosting.
-- **Apps:** MeshSat Android and iOS apps are available through their respective app stores.
+- **Apps:** MeshSat [Android](https://play.google.com/store/apps/details?id=net.meshsat.android) and [iOS](https://apps.apple.com/us/app/meshsat/id6815748748) apps are available through their respective app stores.
 
 <div class="invest-photos">
 
-{{< build-photo file="two-kits-in-build-20261021.webp" width="1400" height="788" alt="Two Raspberry Pi field kits half assembled side by side on a desk, radios and cables around them." caption="Both field kits half built, spring 2026." >}}
+{{< build-photo dir="/images/investors/" file="two-kits-ttc26-20261110.webp" width="1400" height="788" alt="The two MeshSat field kits open side by side, each with a printed card explaining how to try it, two handhelds and a receipt printer in front." caption="Both field kits at The Things Conference in Amsterdam, September 2026." >}}
 
 {{< build-photo dir="/images/" file="msc2-prototype-front-20261024.webp" width="1400" height="788" alt="MeshSat Compact v2, the first prototype: mesh radio, satellite modem and battery in one hand-sized case. It has sent and received satellite messages." caption="MeshSat Compact v2, the first prototype: mesh radio, satellite modem and battery in one hand-sized case." >}}
 
@@ -68,10 +70,29 @@ MeshSat is at an early commercial stage, with working software, prototype hardwa
 
 We have demonstrated messages travelling over real satellite connections, including outdoor tests: a handheld message that reached a satellite and received a reply, and a phone-to-satellite round trip through the MSC-2.
 
+The tests are recorded in the [MSC-2 test record](https://shop.meshsat.net/evidence/) and on [docs.meshsat.net](https://docs.meshsat.net/node/).
+
 MeshSat has also received support from [SIDN fonds](https://www.sidnfonds.nl/projecten/meshsat-keeping-people-connected-when-the-network-is-not) for work on practical emergency communications.
 
 The hardware remains at prototype stage and has not yet been used in a real emergency.
 
+</div>
+</section>
+
+<section class="build-section container" id="film" aria-labelledby="invest-film-title">
+<div class="build-section-heading"><h2 id="invest-film-title">From the idea to today</h2></div>
+<div class="build-detail">
+<figure class="video-frame invest-film">
+<div class="video-head"><span>MeshSat-from-the-idea-to-today.mp4</span><span>4:51</span></div>
+<div class="video-media">
+<button type="button" class="video-play" data-umami-event="video-play" data-umami-event-film="3Ds8o8k3Bk4" data-umami-event-locale="en" data-embed="https://www.youtube-nocookie.com/embed/3Ds8o8k3Bk4?autoplay=1&amp;rel=0" data-name="MeshSat-from-the-idea-to-today.mp4" data-time="4:51" aria-label="Play the film: MeshSat, from the idea to today">
+<img src="/images/video-poster-history-2026-11.webp" srcset="/images/video-poster-history-2026-11-640.webp 640w, /images/video-poster-history-2026-11.webp 1280w" sizes="(min-width: 1000px) 55vw, 92vw" alt="" width="1280" height="720" loading="lazy" decoding="async">
+<span class="video-play-glyph" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+</button>
+</div>
+<figcaption class="video-foot"><a href="https://www.youtube.com/watch?v=3Ds8o8k3Bk4" target="_blank" rel="noopener">Watch on YouTube</a></figcaption>
+</figure>
+<p class="invest-film-note">Nothing loads from YouTube until you press play.</p>
 </div>
 </section>
 
@@ -90,6 +111,15 @@ MeshSat is designed for civilian organisations that need communications across d
 - Remote communities and outdoor teams.
 
 A portable node, a field kit and a multi-site installation solve different problems. We intend to configure and price each deployment around the customer’s needs.
+
+</div>
+</section>
+
+<section class="build-section container" id="how-we-reach-customers" aria-labelledby="invest-reach-title">
+<div class="build-section-heading"><h2 id="invest-reach-title">How we reach customers</h2></div>
+<div class="build-detail">
+
+We are approaching civilian communications integrators and the organisations responsible for emergency preparedness: municipalities, safety regions, NGOs and emergency services. [SAFER/TOGETHER](https://safertogether.eu/) is our campaign for emergency support points, where MeshSat can help people exchange messages when ordinary networks are unavailable.
 
 </div>
 </section>

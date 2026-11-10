@@ -97,6 +97,10 @@
 .invest-portrait { display: block; width: 100%; height: auto; border-radius: var(--radius-md); }
 .invest-person h3 { margin: 0; }
 .invest-role { margin-block: var(--space-xs) var(--space-sm); font-family: var(--font-mono); font-size: 0.875rem; color: var(--color-text-muted); }
+.invest-film { margin: 0; }
+.invest-film-note { margin-top: var(--space-sm); font-size: 0.875rem; color: var(--color-text-muted); }
+.invest-cta { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+.invest-email { margin: 0; font-size: 0.875rem; color: var(--color-text-muted); }
 .invest-contact .container { align-items: center; }
 .invest-contact h2 { margin-bottom: var(--space-sm); }
 .invest-contact p + p { margin-top: var(--space-sm); }

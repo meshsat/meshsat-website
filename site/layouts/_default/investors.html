@@ -23,9 +23,14 @@
         {{ range .Params.closing }}<p>{{ . }}</p>
         {{ end }}
       </div>
-      <a class="btn btn-primary" href="{{ .Params.contact_href }}" data-umami-event="investor-contact-click" data-umami-event-placement="closing">{{ .Params.closing_cta }}</a>
+      <div class="invest-cta">
+        <a class="btn btn-primary" href="{{ .Params.contact_href }}" data-umami-event="investor-contact-click" data-umami-event-placement="closing">{{ .Params.closing_cta }}</a>
+        <p class="invest-email">{{ .Params.closing_email_lead }} <a href="{{ .Params.contact_href }}" data-umami-event="investor-contact-click" data-umami-event-placement="closing-email">{{ .Params.closing_email }}</a></p>
+      </div>
     </div>
   </section>
 </article>
 {{ partial "shot-dialog.html" (dict "class" "ig-image-dialog") }}
+{{/* The history film's facade (content/investors.md, #film) opens this dialog through playVideo() in main.js. */}}
+{{ partial "video-dialog.html" . }}
 {{ end }}
