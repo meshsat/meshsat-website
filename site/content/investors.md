@@ -14,11 +14,11 @@ closing:
   - "If you invest in early-stage technology and share our vision for civilian communications, we’d like to hear from you."
   - "We can share the business plan and financial model and talk through the technology, commercial strategy and investment proposal."
 closing_cta: "Email Kyriakos about investing"
-social_image: /images/investors/investors-social-20261110.jpg
+social_image: /images/investors/investors-social-20261110-portraits.jpg
 social_image_width: 1200
 social_image_height: 675
 social_image_type: image/jpeg
-social_image_alt: "Portraits of Elli, George and Kyriakos above the two open MeshSat field kits."
+social_image_alt: "Black-and-white portraits of Kyriakos, Elli and George."
 ---
 
 <section class="build-section container" id="the-problem" aria-labelledby="invest-problem-title">
@@ -133,23 +133,30 @@ Our mission includes humanitarian relief, civilian search and rescue, disaster r
 <div class="build-section-heading"><h2 id="invest-team-title">The team</h2></div>
 <div class="build-detail">
 
-{{< build-photo file="team-ttc26-20261021.webp" width="1400" height="1052" alt="Portraits of Elli, George and Kyriakos above the two open field kits on a conference table." caption="Elli, George and Kyriakos, and the two kits at The Things Conference in Amsterdam, September 2026." >}}
-
 <div class="invest-team">
 <div class="invest-person">
+<img class="invest-portrait" src="/images/investors/team-kyriakos-20261110.webp" srcset="/images/investors/team-kyriakos-20261110-640.webp 640w, /images/investors/team-kyriakos-20261110.webp 1122w" sizes="(max-width: 520px) 12rem, 10rem" width="1122" height="1402" alt="Portrait of Kyriakos Papadopoulos" loading="lazy" decoding="async">
+<div>
 <h3>Kyriakos Papadopoulos</h3>
 <p class="invest-role">Founder and lead engineer</p>
 <p>Kyriakos leads MeshSat’s architecture, software and engineering. His background is in networks, systems and security, including work for Adyen, Médecins Sans Frontières, SWIFT and ESA/ESTEC.</p>
 </div>
+</div>
 <div class="invest-person">
+<img class="invest-portrait" src="/images/investors/team-elli-20261110.webp" srcset="/images/investors/team-elli-20261110-640.webp 640w, /images/investors/team-elli-20261110.webp 1122w" sizes="(max-width: 520px) 12rem, 10rem" width="1122" height="1402" alt="Portrait of Elli Zafeiridou Georgiadou" loading="lazy" decoding="async">
+<div>
 <h3>Elli Zafeiridou Georgiadou</h3>
 <p class="invest-role">Co-founder and project manager</p>
 <p>Elli leads project coordination and contributes to sales, finance, operations, assembly and quality assurance. She runs Elli.Z.G., the business through which MeshSat currently operates.</p>
 </div>
+</div>
 <div class="invest-person">
+<img class="invest-portrait" src="/images/investors/team-george-20261110.webp" srcset="/images/investors/team-george-20261110-640.webp 640w, /images/investors/team-george-20261110.webp 1122w" sizes="(max-width: 520px) 12rem, 10rem" width="1122" height="1402" alt="Portrait of George Zafeiridis" loading="lazy" decoding="async">
+<div>
 <h3>George Zafeiridis</h3>
 <p class="invest-role">Sales, PR and communications</p>
 <p>George contributes to sales and leads MeshSat’s communications, marketing and public relations.</p>
+</div>
 </div>
 </div>
 
