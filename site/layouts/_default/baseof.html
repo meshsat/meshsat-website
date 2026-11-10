@@ -95,8 +95,9 @@
          leaves returning browsers on stale CSS against new HTML. -->
     {{ $styles := slice (resources.Get "css/main.css") (resources.Get "css/review.css") }}
     {{ if .IsHome }}{{ $styles = $styles | append (resources.Get "css/home.css") (resources.Get "css/home-review.css") }}{{ end }}
-    {{ if eq .Layout "how-we-build" }}{{ $styles = $styles | append (resources.Get "css/build.css") }}{{ end }}
-    {{ $bundle := cond .IsHome "home" (cond (eq .Layout "how-we-build") "build" "shared") }}
+    {{ $buildPage := in (slice "how-we-build" "investors") .Layout }}
+    {{ if $buildPage }}{{ $styles = $styles | append (resources.Get "css/build.css") }}{{ end }}
+    {{ $bundle := cond .IsHome "home" (cond $buildPage "build" "shared") }}
     {{ $css := $styles | resources.Concat (printf "css/%s-bundle.css" $bundle) | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 

@@ -12,6 +12,8 @@ nav_changelog:
   other: "Nouveautés"
 nav_how_we_build:
   other: "Comment nous travaillons"
+nav_investors:
+  other: "Investisseurs"
 nav_docs:
   other: "Docs"
 nav_hub:

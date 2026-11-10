@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{/* /investors/ (MESHSAT-1872): the How-we-build system (build.css), the copy in
+     content/investors.md. Hero and closing copy live in the front matter so this
+     file holds no sentence of its own. */}}
+{{ $rest := strings.TrimPrefix (printf "%s " .Params.heading_lead) .Title }}
+<article class="build-page invest-page" data-release="investors-v1" data-shots>
+  <section class="build-hero" aria-labelledby="invest-title">
+    <div class="container build-intro invest-intro">
+      <h1 id="invest-title"><span>{{ .Params.heading_lead }}</span> {{ $rest }}</h1>
+      <div>
+        <p class="build-lead"><strong>{{ .Params.lead }}</strong></p>
+        {{ range .Params.intro }}<p>{{ . }}</p>
+        {{ end }}
+        <p class="invest-actions"><a class="btn btn-primary" href="{{ .Params.contact_href }}" data-umami-event="investor-contact-click" data-umami-event-placement="hero">{{ .Params.hero_cta }}</a></p>
+      </div>
+    </div>
+  </section>
+  {{ .Content }}
+  <section class="build-contact invest-contact" aria-labelledby="invest-contact-title">
+    <div class="container">
+      <div>
+        <h2 id="invest-contact-title">{{ .Params.closing_title }}</h2>
+        {{ range .Params.closing }}<p>{{ . }}</p>
+        {{ end }}
+      </div>
+      <a class="btn btn-primary" href="{{ .Params.contact_href }}" data-umami-event="investor-contact-click" data-umami-event-placement="closing">{{ .Params.closing_cta }}</a>
+    </div>
+  </section>
+</article>
+{{ partial "shot-dialog.html" (dict "class" "ig-image-dialog") }}
+{{ end }}

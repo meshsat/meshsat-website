@@ -76,3 +76,44 @@
     .build-photo-open img, .build-jump svg { transition: none; transform: none; }
 }
 
+
+/* Investors (MESHSAT-1872): the How-we-build system, plus the two mail buttons,
+   the arrow links, the mission rule and the team entries. Tokens only; the ink on
+   .btn-primary comes from the shared rule at the end of main.css. */
+.invest-intro { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; }
+.invest-intro h1 { font-size: clamp(2.25rem, 3.9vw, 3.75rem); }
+.invest-page a.btn, .invest-page a.btn:hover { text-decoration: none; }
+.invest-intro p + p { margin-top: var(--space-md); }
+.invest-actions { margin-top: var(--space-lg); }
+.invest-link { display: inline-flex; gap: var(--space-sm); align-items: center; padding-block: var(--space-sm); }
+.invest-link svg { flex: none; transition: transform 180ms ease; }
+.invest-link:hover svg { transform: translateX(3px); }
+.invest-page .build-detail > .build-photo { margin-bottom: var(--space-lg); }
+.invest-photos { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); margin-bottom: var(--space-lg); }
+.invest-page .build-detail > .build-prototype { margin-bottom: var(--space-lg); }
+.invest-mission p + p { margin-top: var(--space-md); }
+.invest-team { display: grid; gap: var(--space-xl); }
+.invest-person h3 { margin: 0; }
+.invest-role { margin-block: var(--space-xs) var(--space-sm); font-family: var(--font-mono); font-size: 0.875rem; color: var(--color-text-muted); }
+.invest-contact .container { align-items: center; }
+.invest-contact h2 { margin-bottom: var(--space-sm); }
+.invest-contact p + p { margin-top: var(--space-sm); }
+@media (min-width: 1000px) {
+    .invest-photos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+/* Below 1000px the investors headings are too long for the one-third column:
+   sections and hero stack, as How we build does under 700px. */
+@media (max-width: 999px) {
+    .invest-intro { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+    .invest-page .build-section { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
+    .invest-page .build-section-heading { position: static; }
+    .invest-page .build-section-heading h2 { max-width: 22ch; }
+    .invest-intro h1 { font-size: clamp(2.25rem, 7vw, 3.75rem); }
+}
+@media (max-width: 700px) {
+    .invest-intro h1 { font-size: clamp(2.25rem, 12vw, 3.5rem); }
+    .invest-contact .container { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .invest-link svg { transition: none; transform: none; }
+}
