@@ -8,6 +8,8 @@ Bridge runs the gateway and its dashboard on your Linux computer. It works witho
 account. A kit is a Bridge installed in a case with its radios. For phone apps or fleet
 management, [choose your setup](/start). For the concepts, read the [introduction](/guide/).
 
+**Try it first:** the [public demo](https://bridge.meshsat.net/?shell=engineer) shows the Bridge's dashboard with made-up data. It has no radios and sends nothing.
+
 ## Prepare the hardware
 
 Use a 64-bit ARM64 or x86_64 Linux host with a reliable power supply, free disk space and a

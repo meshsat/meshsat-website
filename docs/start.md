@@ -12,6 +12,7 @@ in an emergency. Each product page separates tested capabilities from unfinished
 
 | I want to… | Start here | What I need |
 |---|---|---|
+| See the Bridge's dashboard before installing anything | [Public demo](https://bridge.meshsat.net/?shell=engineer) | A browser; the data is made up and nothing is sent |
 | Send my first mesh message from a Linux machine | [Bridge quick start](/guide/quick-start) | ARM64 or x86_64 Linux, Docker, a USB Meshtastic radio and a second radio to check reception |
 | Use an Android phone as the gateway | [Android setup](/android/setup) | Android 8+, a Bluetooth Meshtastic radio for mesh; a MeshSat node for satellite |
 | Use an iPhone | [Install MeshSat iOS](/ios/#install) | iOS 17+ and a compatible node; available on the App Store |
