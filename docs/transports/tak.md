@@ -37,8 +37,9 @@ what arrives to whatever is on its local mesh.
 
 Positions flow **out** to TAK from every kit, phone and device that reports to the Hub.
 
-Since October 2026 the Hub also reads your TAK server. The people connected to it appear on the
-map in MeshSat Android (2.19.6 and later), and with **Enable TAK** on the app sends its own
+Since October 2026 the Hub also reads your TAK server. The people connected to it (to a TAK
+server you run: TAK apps no longer connect to the Hub's hosted servers) appear on the map in
+MeshSat Android (2.19.6 and later), and with **Enable TAK** on the app sends its own
 position, an SOS, a missed check-in and its chat to TAK through the Hub. The app needs no TAK
 server address: the Hub is the one thing that talks to the server.
 

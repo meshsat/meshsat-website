@@ -8,8 +8,9 @@ Your positions on ATAK, iTAK and WinTAK, and your TAK team on the map in MeshSat
 two ways to get there: let the Hub run a TAK server for you, or point it at one you already run.
 
 ::: warning New
-Hosted TAK landed in September 2026. It is tested against OpenTAKServer, including the parts that
-keep one customer's server away from another's, but it has little field exposure yet. If you are
+Hosted TAK landed in September 2026, and since November 2026 only the Hub connects to it. It is
+tested against OpenTAKServer, including the parts that keep one customer's server away from
+another's, but it has little field exposure yet. If you are
 depending on it for something that matters, tell us: we would rather hear about it early.
 :::
 
@@ -29,8 +30,8 @@ one connection they already have, to the Hub, and need no TAK server address of 
 
 **Back from TAK**
 
-- The Hub reads your TAK server as well. The people connected to it appear on the map in MeshSat
-  Android (2.19.6 and later).
+- The Hub reads your TAK server as well. What it sends, such as the people connected to a TAK
+  server you run, appears on the map in MeshSat Android (2.19.6 and later).
 
 **What the Hub does not pass on**
 
@@ -46,56 +47,26 @@ positions reach TAK as markers, as above.
 ## A TAK server of your own
 
 **TAK** under Delivery in the menu. Turn it on and the Hub creates an OpenTAKServer that belongs to you
-alone: its own server, its own database, its own certificate authority. Nobody else's team appears
-on your map and yours appears on nobody else's.
+alone: its own server, its own database, its own certificate authority. Nobody else's kits appear
+on it and yours appear on nobody else's.
 
-It is part of every plan, including free. What the plan limits is how many people you can put on
-it:
+It is part of every plan, including free. The first time you enable it the server takes a minute
+or so to come up. After that it stays.
 
-| Plan | TAK accounts |
-| --- | --- |
-| Free | 4 |
-| Crew | 12 |
-| Fleet | 40 |
-| Custom | 100 |
+Your kits and the MeshSat apps reach it through the Hub, over the connection they already have:
+the Hub passes on what they send and brings back what the server sends, as described
+[above](#what-goes-to-tak-and-what-comes-back).
 
-The first time you enable it the server takes a minute or so to come up. After that it stays.
+### TAK apps do not connect to it
 
-![TAK: the account's own TAK server, ready on port 8089 with one person enrolled, a form to add a person, and Enrol, QR and QR iTAK actions](/images/hub/tak-2026-09-21.webp)
+Until 11 November 2026 you could add people on this page and enrol ATAK, WinTAK or iTAK on their
+phones, which then connected to `hub.meshsat.net` on port 8089. That port is closed, and the Hub no
+longer creates TAK accounts or enrolment packages: every MeshSat client talks only to the Hub, and
+only the Hub talks to a TAK server. A phone enrolled before then cannot connect any more.
 
-### Adding a person
-
-Give them a username. **It may only contain lowercase letters and digits** (no hyphens, no dots,
-no `@`), because the TAK server refuses anything else, so an email address or a hyphenated callsign
-will not do. The field shows you what the account will actually be called as you type, rather than
-letting you find out after the fact.
-
-A callsign is optional and is what their team sees on the map.
-
-### Getting it onto a phone
-
-Press enrol. You get a link and a QR code, and two things about them matter:
-
-- **They are shown once.** Close the dialog and the link is gone; mint a new one if you need to.
-- **They work once, for fifteen minutes.** Long enough to walk over to somebody's phone, short
-  enough that a link left in a chat window is useless by the time anyone finds it.
-
-Opening the link on the phone downloads a data package: the connection details, the trust anchors
-and the phone's own certificate. Import it the way you would any data package. The phone then
-connects to `hub.meshsat.net` on port **8089**, the standard TAK streaming port.
-
-**ATAK and WinTAK take the package as it comes. iTAK needs a different one**, because iTAK reads a
-flat archive with no manifest: add `?client=itak` to the end of the enrolment link before opening
-it on an iPhone or iPad. Importing the ATAK package into iTAK will not work.
-
-If the download fails part way, mint a new enrolment. The link is spent the moment it is used,
-deliberately, so that a half-delivered package cannot be fetched twice. So there is nothing to
-retry and nothing is lost by starting again.
-
-The certificate in that package is the phone's identity. Its private key is generated for that one
-enrolment and the Hub does not keep a copy once the phone has collected it, so a lost phone is dealt
-with by deleting the account here rather than by changing a password. Deleting it refuses that
-certificate on the next connection.
+To keep using a TAK app, run a TAK server of your own and add it as described
+[below](#or-bring-your-own-tak-server). Your TAK apps connect to your server, and the Hub forwards
+your kits and apps to it the same way.
 
 ### What it does not do yet
 
@@ -112,8 +83,8 @@ Said plainly so you do not plan around it:
 
 If you already run TAK, you do not have to adopt ours. Add a **TAK** provider account under
 [Provider accounts](/hub/provider-accounts) with your server's address and port, and the
-certificate and key the Hub should present to it. The Hub connects out to you; it needs no server
-of its own and no enrolment, and your phones keep connecting where they already do.
+certificate and key the Hub should present to it. The Hub connects out to you; it needs no hosted
+server, and your TAK apps keep connecting to your server where they already do.
 
 Your server decides whether to trust the Hub, which means the Hub's certificate has to be signed
 by something your server accepts. If it refuses, the Hub now tells you so in its logs rather than

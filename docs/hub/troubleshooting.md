@@ -74,10 +74,11 @@ If you are already in, **Settings** has your own links for changing your passwor
 two-factor authentication. Use those rather than the identity provider's own settings page, which
 is not available to customer accounts.
 
-## A phone will not connect to TAK
+## A TAK app will not connect
 
-See [TAK](/hub/tak). The usual causes are an enrolment link that has expired (they last fifteen
-minutes and work once) or a username the TAK server will not accept.
+TAK apps (ATAK, iTAK, WinTAK) no longer connect to the Hub: port 8089 closed on 11 November 2026,
+and a phone enrolled before then cannot connect any more. Connect the app to a TAK server of your
+own and add that server to the Hub. See [TAK](/hub/tak).
 
 ## Running your own Hub
 
