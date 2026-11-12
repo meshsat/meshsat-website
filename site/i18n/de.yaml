@@ -248,6 +248,10 @@ cta_docs:
   other: "Dokumentation"
 cta_matrix:
   other: "Auf Matrix fragen"
+cta_demo_link:
+  other: "Demo-Dashboard öffnen"
+cta_demo_note:
+  other: "Auf bridge.meshsat.net läuft die Web-App der Bridge selbst, mit erfundenen Daten. Keine Funkgeräte, nichts wird gesendet."
 cta_note:
   other: "Fehlerberichte zu Hardware, die wir nicht ausprobiert haben, sind das Nützlichste, was Sie uns schicken können. Die Liste unterstützter Geräte ist kurz, weil dort nur steht, was wir selbst in Betrieb hatten."
 f_builtwith:

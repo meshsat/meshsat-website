@@ -340,6 +340,10 @@
                     </details>
                 </div>
                 <div class="artifact-foot term-foot">
+                    {{/* The public demo (SIDN budget line 3, MESHSAT-1845): the same
+                         dashboard the log above ends on, with made-up data, before
+                         anyone installs anything. Documentation stays the primary. */}}
+                    <p class="term-demo"><a href="https://bridge.meshsat.net/?shell=engineer" target="_blank" rel="noopener" data-umami-event="demo-click" data-umami-event-locale="{{ .Site.Language.Lang }}">{{ i18n "cta_demo_link" }}</a> <span>{{ i18n "cta_demo_note" }}</span></p>
                     <div class="hero-actions">
                         <a href="{{ .Site.Params.docs_url }}" class="btn btn-primary" target="_blank" rel="noopener">{{ i18n "cta_docs" }}</a>
                         <a href="{{ .Site.Params.github }}" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "cta_source" }}</a>

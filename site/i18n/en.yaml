@@ -248,6 +248,10 @@ cta_docs:
   other: "Documentation"
 cta_matrix:
   other: "Ask on Matrix"
+cta_demo_link:
+  other: "Open the demo dashboard"
+cta_demo_note:
+  other: "bridge.meshsat.net runs the Bridge's own web app with made-up data. No radios, nothing is sent."
 cta_note:
   other: "Bug reports from people running hardware we have not tried are the most useful thing you can send. The supported-device list is short because it only names what we have physically run."
 f_builtwith:

@@ -105,3 +105,12 @@
 .store-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; padding-block: 12px; }
 a.store-badge { display: inline-flex; flex: 0 0 auto; width: auto; padding: 0; border: 0; background: transparent; box-shadow: none; text-decoration: none; line-height: 0; }
 a.store-badge img { display: block; width: auto; height: 48px; max-width: none; border: 0; }
+
+/* The public demo in the installer card (MESHSAT-1845): the dashboard the log
+   ends on, one click away. A line of the terminal's own voice, not a fourth
+   button: the link carries the primary colour and a rule ties it to the log. */
+.term-demo { margin: 0 0 .35rem; padding-left: .85rem; border-left: 3px solid var(--color-primary); line-height: 1.55; }
+.term-demo a { font-weight: 700; color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.term-demo a:hover { color: var(--color-primary-hover); }
+.term-demo span { display: block; font-size: .875rem; color: var(--color-text-muted); }
+@media (forced-colors: active) { .term-demo { border-left-color: CanvasText; } }

@@ -248,6 +248,10 @@ cta_docs:
   other: "Documentation"
 cta_matrix:
   other: "Demander sur Matrix"
+cta_demo_link:
+  other: "Ouvrir le tableau de bord de démonstration"
+cta_demo_note:
+  other: "Sur bridge.meshsat.net, c'est la véritable application web du Bridge qui tourne, avec des données fictives. Aucune radio, rien n'est envoyé."
 cta_note:
   other: "Ce que vous pouvez nous envoyer de plus utile, ce sont des rapports de bogue sur du matériel que nous n'avons pas essayé. La liste du matériel pris en charge est courte parce qu'elle ne cite que ce que nous avons réellement fait fonctionner."
 f_builtwith:

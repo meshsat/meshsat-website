@@ -248,6 +248,10 @@ cta_docs:
   other: "Documentatie"
 cta_matrix:
   other: "Vraag het op Matrix"
+cta_demo_link:
+  other: "Open het demodashboard"
+cta_demo_note:
+  other: "Op bridge.meshsat.net draait de webapp van de Bridge zelf, met verzonnen gegevens. Geen radio's, er wordt niets verstuurd."
 cta_note:
   other: "Bugmeldingen van mensen met hardware die wij niet hebben uitgeprobeerd, zijn het nuttigste wat je kunt sturen. De lijst met ondersteunde apparaten is kort, omdat er alleen apparaten op staan waarop we het zelf echt hebben gedraaid."
 f_builtwith:
