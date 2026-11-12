@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 152
-  unreleased_since: "2026-11-08"
-  unreleased_anchor: "unreleased-main-last-change-2026-11-08"
+  unreleased_count: 153
+  unreleased_since: "2026-11-11"
+  unreleased_anchor: "unreleased-main-last-change-2026-11-11"
 ---
 
 Generated from the commit history of
@@ -31,7 +31,7 @@ not a claim of emergency reliability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-11-08)
+## Unreleased (main, last change 2026-11-11)
 
 ### Features
 
@@ -101,6 +101,7 @@ not a claim of emergency reliability.
 
 ### Fixes
 
+- **edge**: close the public TAK port 8089 on the three VPS ([8592325b](https://github.com/meshsat/meshsat-hub/commit/8592325bcd17136bf714e8d5c87fd3f2383e7675))
 - **rns**: a link is fully set up before it can receive, and a known destination is read as a snapshot ([277e2e36](https://github.com/meshsat/meshsat-hub/commit/277e2e36fe7f5fcf4e9e495035197344fdb44a70))
 - **deps**: golang.org/x/net 0.62.0 for CVE-2026-78661 ([58575a5d](https://github.com/meshsat/meshsat-hub/commit/58575a5d4f73aa561d1b2121936e8250154028e9))
 - **tenancy**: a message is filed only under the tenant that owns its device, and an inbound SMS only under the tenant whose webhook it arrived at ([4fcaf8f8](https://github.com/meshsat/meshsat-hub/commit/4fcaf8f85201058715ace76889cc1ee843b8f1c3))
