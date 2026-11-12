@@ -57,6 +57,8 @@ Your kits and the MeshSat apps reach it through the Hub, over the connection the
 the Hub passes on what they send and brings back what the server sends, as described
 [above](#what-goes-to-tak-and-what-comes-back).
 
+![TAK: the account's own TAK server, Ready, and how kits and the MeshSat apps reach it through the Hub](/images/hub/tak-2026-11-12.webp)
+
 ### TAK apps do not connect to it
 
 Until 11 November 2026 you could add people on this page and enrol ATAK, WinTAK or iTAK on their
