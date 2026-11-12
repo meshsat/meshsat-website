@@ -103,7 +103,7 @@ async function check(name, fn) {
   const ctx=await context({viewport:{width,height:844}});
   await ctx.addInitScript(theme=>{localStorage.setItem('meshsat-theme',theme);localStorage.setItem('vitepress-theme-appearance',theme);},theme);
   const page=await ctx.newPage();
-  for(const route of ['https://meshsat.net/install/','https://meshsat.net/security/','https://meshsat.net/privacy/','https://meshsat.net/how-we-build/','https://meshsat.net/investors/','https://meshsat.net/changelog/','https://docs.meshsat.net/','https://docs.meshsat.net/start.html','https://docs.meshsat.net/guide/quick-start.html','https://docs.meshsat.net/transports/iridium-imt.html']) await check(`${route} ${theme} ${width}`,async()=>{
+  for(const route of ['https://meshsat.net/install/','https://meshsat.net/security/','https://meshsat.net/privacy/','https://meshsat.net/how-we-build/','https://meshsat.net/investors/','https://meshsat.net/changelog/','https://docs.meshsat.net/','https://docs.meshsat.net/start.html','https://docs.meshsat.net/reference/accessibility.html','https://docs.meshsat.net/guide/quick-start.html','https://docs.meshsat.net/transports/iridium-imt.html']) await check(`${route} ${theme} ${width}`,async()=>{
     await page.goto(route);await audit(page,`${route}-${theme}-${width}`);
     if(route.includes('how-we-build')) await capture(page,`build-${theme}-${width}.png`);
     if(route.includes('investors')) await capture(page,`investors-${theme}-${width}.png`);
