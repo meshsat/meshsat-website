@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1104
-  unreleased_since: "2026-11-07"
-  unreleased_anchor: "unreleased-main-last-change-2026-11-07"
+  unreleased_count: 1121
+  unreleased_since: "2026-11-13"
+  unreleased_anchor: "unreleased-main-last-change-2026-11-13"
 ---
 
 Generated from the commit history of
@@ -30,10 +30,15 @@ release and does not establish that every feature has been tested on hardware.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-11-07)
+## Unreleased (main, last change 2026-11-13)
 
 ### Features
 
+- **scripts**: read both kits' device rows into one record per wedge, with the rules tested on the kits' own wording ([5d447d6c](https://github.com/meshsat/meshsat/commit/5d447d6c0e4e7126e5cc94df746d922d4f3ea8ea))
+- **web**: the Devices tab logs a fix done by hand, whether the case was opened, and a device taken out of the kit ([1b4ab16c](https://github.com/meshsat/meshsat/commit/1b4ab16c8009a1540316f479c71fd6b7bf44aa56))
+- **health**: the device log records a device that came back by hand, a device taken out of the kit, a fix done by hand, the radio's own resets and the kit's powered hours, and the audit check catches a deleted row ([d01d0ee8](https://github.com/meshsat/meshsat/commit/d01d0ee86d2b21ddd5f42ec6e3935e1e3920a06e))
+- **demo**: a demo build of the Bridge's web app over made-up data that always reads as now, with the Community Post's own pages in demo mode and nothing sent ([f5c70652](https://github.com/meshsat/meshsat/commit/f5c706525ef76c8178832322288c54cd1bbb2cc2))
+- **post**: the Community Post has a demo mode that says on every page that nothing is sent and deletes everything after an hour, and a ceiling for the whole post ([b3fcab9a](https://github.com/meshsat/meshsat/commit/b3fcab9ae84a566fcfd11bb3dcfc0f3207f1851f))
 - **post**: the Safe and well board is looked up by full name and a line comes off with its code; the delivery ledger drops its texts after the retention ([3d4706c9](https://github.com/meshsat/meshsat/commit/3d4706c99d60812a69a9b65d0bd2d130024a6374))
 - **api**: MESHSAT\_API\_TOKEN\_REQUIRED keeps the API closed until a token is set ([bed3e65e](https://github.com/meshsat/meshsat/commit/bed3e65e64ad1f8d70aecfac9e35b1f9853da288))
 - **post**: the Community Post page speaks German too, chosen from the phone's language like Greek, Dutch and English ([0ad0fd70](https://github.com/meshsat/meshsat/commit/0ad0fd70b33310878598904761a956f1a6796716))
@@ -493,6 +498,18 @@ release and does not establish that every feature has been tested on hardware.
 
 ### Fixes
 
+- **health**: a silent APRS radio that is switched on again is logged, and a recovery after a step that reported an error names the step ([c439805b](https://github.com/meshsat/meshsat/commit/c439805bae38f505550d5d5be20001077a542a84))
+- **post**: nobody can walk the pickup codes or the safe-and-well names, and the demo's volunteer screen shows no letter of a code ([e2c48b57](https://github.com/meshsat/meshsat/commit/e2c48b57e0a540f75ca06bcc06f6c8fe308b9e29))
+- **demo**: the demo's map opens on the OpenStreetMap layer, its kit shows a charged battery, and times written as floats move to now too ([ce768be0](https://github.com/meshsat/meshsat/commit/ce768be02b89cd8a4439afc07a14bb2c32396bb0))
+- **post**: the demo notice, about text and automatic reply read naturally in German, Dutch and Greek, and a board line stays for one hour ([50bcd2b5](https://github.com/meshsat/meshsat/commit/50bcd2b5d9f323bebe8a6e2299684165c8a535e6))
+- **web**: an SMS conversation, raw SBD data, the heard-stations list, the activity log and the exported config can be scrolled from the keyboard ([9ccd7230](https://github.com/meshsat/meshsat/commit/9ccd7230cd00d1f409baf08fd6ed0ab23269a398))
+- **web**: satellite pass labels on the dashboard chart are solid, the contact list scrolls from the keyboard, and Deliveries and Reply also show on keyboard focus ([f9361d60](https://github.com/meshsat/meshsat/commit/f9361d6082ba9b91d049ad254b6f228262b6d267))
+- **web**: faded accent text on the dark surfaces is opaque enough for 4.5:1 everywhere in the app, not only on the screens checked so far ([152f1473](https://github.com/meshsat/meshsat/commit/152f147306088ef4a77afeddf87445b91a3d45fb))
+- **web**: chart axis labels, the SOS gauge, the WiFi mode buttons and the mailbox counts meet 4.5:1 contrast too ([3101af3c](https://github.com/meshsat/meshsat/commit/3101af3cb44d894c9d8bf3ba1885fd9498b8548b))
+- **web**: the forms and dialogs behind buttons are labelled too (OOB peer addresses, SIM ICCID, SMS reply, mesh compose) and their raw-data panes can be scrolled from the keyboard ([09005535](https://github.com/meshsat/meshsat/commit/090055358d30d9a370f2ba33394c535bc7f2421c))
+- **web**: secondary text, faded accents, buttons and map popups meet 4.5:1 contrast, so Dashboard, Messages, Inbox, Compose, Map and Settings pass WCAG 2.1 AA with no axe finding ([db28bfa9](https://github.com/meshsat/meshsat/commit/db28bfa9b07f364bd4b7bdce0e4566eea5475b8d))
+- **web**: every form control on Dashboard, Messages, Inbox, Compose, Map and Settings has a programmatic label, and the header indicators, map markers and close buttons are named ([007f46ae](https://github.com/meshsat/meshsat/commit/007f46aebec55815b1ac8a02b0c134dcc53e99a3))
+- **web**: Settings and the TAK view ask the Bridge at /api instead of /api/api, so the spectrum block, the signing key and TAK enrolment load and TAK chat and nine-line send ([9622e30f](https://github.com/meshsat/meshsat/commit/9622e30fb22073b1f876c23424d14c95d3c8b8ad))
 - **post**: a post waits for sky until it leaves or the post is closed, and Send again on a failed post really sends it again ([020af5d1](https://github.com/meshsat/meshsat/commit/020af5d14c4e547798ab5dbe2e0c9573875bace9))
 - **post**: the German page is titled Nachrichten am Treffpunkt, and the punctuation a phone keyboard adds by itself goes out plain, so it no longer eats the byte budget ([92dddabc](https://github.com/meshsat/meshsat/commit/92dddabc78d31d7dcbe8d4a58f6636db5fdeecb4))
 - **post**: the German page calls the place a Treffpunkt and the Dutch page calls the person who checks a message a vrijwilliger, as safertogether.eu does ([4e71ede8](https://github.com/meshsat/meshsat/commit/4e71ede88f5942edd8cceb8e6d920007d04f87cb))

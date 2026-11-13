@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v0.5.1"
   latest_tag_date: "2026-11-08"
   latest_tag_anchor: "v051-2026-11-08"
-  unreleased_count: 0
-  unreleased_since: ""
-  unreleased_anchor: "unreleased-main"
+  unreleased_count: 1
+  unreleased_since: "2026-11-12"
+  unreleased_anchor: "unreleased-main-last-change-2026-11-12"
 ---
 
 Every tagged release of the iPhone app, generated from the commit history of
@@ -29,9 +29,11 @@ installation path; a commit entry does not establish App Store availability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main)
+## Unreleased (main, last change 2026-11-12)
 
-No unreleased changes.
+### Fixes
+
+- **app**: Setup's satellite row says the node's 9704 does not answer instead of No modem on this radio between the 9704's init attempts; the README records the Hub's restart, TAK through the Hub, a relayed warning and the welcome page as verified on the iPhone ([810969e4](https://github.com/meshsat/meshsat-ios/commit/810969e4fb3750be318e587d1d3fb984a3ef73c6))
 
 ## v0.5.1 (2026-11-08)
 

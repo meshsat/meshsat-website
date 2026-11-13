@@ -8,9 +8,9 @@ changelog:
   latest_tag: "v1.7.0"
   latest_tag_date: "2026-09-20"
   latest_tag_anchor: "v170-2026-09-20"
-  unreleased_count: 153
-  unreleased_since: "2026-11-11"
-  unreleased_anchor: "unreleased-main-last-change-2026-11-11"
+  unreleased_count: 154
+  unreleased_since: "2026-11-12"
+  unreleased_anchor: "unreleased-main-last-change-2026-11-12"
 ---
 
 Generated from the commit history of
@@ -31,10 +31,11 @@ not a claim of emergency reliability.
 {{< /release-summary >}}
 
 <!-- generated:begin -->
-## Unreleased (main, last change 2026-11-11)
+## Unreleased (main, last change 2026-11-12)
 
 ### Features
 
+- **tak**: hosted TAK runs without the public front; phone enrolment and TAK accounts are retired ([b0f28d0a](https://github.com/meshsat/meshsat-hub/commit/b0f28d0aa97b86993e39441ee6376d38f279f125))
 - **enrollment**: sign-up asks the applicant to confirm they do not represent an organisation that develops, produces, integrates or operates weapon systems, under the MeshSat Mission and Use Policy ([de9149a5](https://github.com/meshsat/meshsat-hub/commit/de9149a50258938fe9fb703092f1703b879ac94f))
 - **sms**: alert texts to Dutch numbers show the sender name MeshSat, while everything a kit or a person answers stays on the number ([2e142717](https://github.com/meshsat/meshsat-hub/commit/2e142717f11499ba9ad1d46e43a66513f9dc8fb3))
 - **warnings**: the console and the satellite option say what a warning costs on a kit's satellite leg, 5 SBD credits or 230 bytes of IMT airtime ([8d569677](https://github.com/meshsat/meshsat-hub/commit/8d569677f205e426ad8800e9f846984974fd2c0d))
