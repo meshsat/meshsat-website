@@ -8,7 +8,7 @@ changelog:
   latest_tag: "v0.1.0"
   latest_tag_date: "2026-03-04"
   latest_tag_anchor: "v010-2026-03-04"
-  unreleased_count: 1121
+  unreleased_count: 1131
   unreleased_since: "2026-11-13"
   unreleased_anchor: "unreleased-main-last-change-2026-11-13"
 ---
@@ -34,6 +34,11 @@ release and does not establish that every feature has been tested on hardware.
 
 ### Features
 
+- **aprs**: the beacon has its own copy count, so a kit can beacon once every 3 minutes while its messages keep their second copy ([6aa56435](https://github.com/meshsat/meshsat/commit/6aa56435575db79007deaf7e379ca49835039daa))
+- **aprs**: a PicoAPRS that has stopped talking is reset over its USB control lines by the receive watchdog, on request through the API and by RESET aprs 2, so a stuck radio comes back with the case closed ([4c98e447](https://github.com/meshsat/meshsat/commit/4c98e44756fc5c61b0a99a9a3b5e55999d9e2185))
+- **privacy**: every table classified, personal data cleared on time by one retention worker, and the audit trail keeps its hash chain while its personal fields are kept out of new rows and redacted from old ones after a signed checkpoint ([009fa1e8](https://github.com/meshsat/meshsat/commit/009fa1e8428581861c694325393a8488439c6188))
+- **ci**: secret and dependency scanning on every pipeline, and the Bridge builds on Go 1.26 with x/net, x/crypto, grpc and klauspost/compress updated, so no vulnerability the code reaches remains ([b4ad2ba6](https://github.com/meshsat/meshsat/commit/b4ad2ba6813de547b90cf44dc28a506db34475cc))
+- **sos**: four tests prove the safety chain, and the dead man's switch SOS carries its last known position when the Bridge has no GPS fix ([e16d69ce](https://github.com/meshsat/meshsat/commit/e16d69ce69c3832b921531d945869f19e82cd6e6))
 - **scripts**: read both kits' device rows into one record per wedge, with the rules tested on the kits' own wording ([5d447d6c](https://github.com/meshsat/meshsat/commit/5d447d6c0e4e7126e5cc94df746d922d4f3ea8ea))
 - **web**: the Devices tab logs a fix done by hand, whether the case was opened, and a device taken out of the kit ([1b4ab16c](https://github.com/meshsat/meshsat/commit/1b4ab16c8009a1540316f479c71fd6b7bf44aa56))
 - **health**: the device log records a device that came back by hand, a device taken out of the kit, a fix done by hand, the radio's own resets and the kit's powered hours, and the audit check catches a deleted row ([d01d0ee8](https://github.com/meshsat/meshsat/commit/d01d0ee86d2b21ddd5f42ec6e3935e1e3920a06e))
@@ -498,6 +503,11 @@ release and does not establish that every feature has been tested on hardware.
 
 ### Fixes
 
+- **aprs**: a TNC reset waits 15 s for the radio to boot before it reports done, so the reply to RESET aprs 2 goes out on a radio that can send it ([d50914c4](https://github.com/meshsat/meshsat/commit/d50914c427ac4fe6ba243f57b26bb6dce4761029))
+- **devices**: a device marked as taken out of the kit reports the state removed, not paused, so an acceptance check reads what the kit says ([d8198b31](https://github.com/meshsat/meshsat/commit/d8198b31e8261a2cc90141ec63d90b2b0992d87f))
+- **device-log**: a PicoAPRS silence whose end the kit did not log is no longer counted as a PTT press with the case opened; the PTT button was pressed 2 or 3 times, and the 13 November export says so at the top ([b154f4bf](https://github.com/meshsat/meshsat/commit/b154f4bf96ba09bc70a9742c554153b8d462f398))
+- **deps**: x/net 0.62.0 and grpc 1.83.2, so the kit image scan finds no known vulnerability in the Bridge binary's modules ([6440bf09](https://github.com/meshsat/meshsat/commit/6440bf099b381bbf53fc3fbd56984aa4a039120e))
+- **scripts**: the device log keeps a wedge open across a fresh restart, lets a removal close it first, matches answers to the right wedge and applies standing rules ([2a013baf](https://github.com/meshsat/meshsat/commit/2a013baf9ae134e57aa389d09a28a1011c14efa2))
 - **health**: a silent APRS radio that is switched on again is logged, and a recovery after a step that reported an error names the step ([c439805b](https://github.com/meshsat/meshsat/commit/c439805bae38f505550d5d5be20001077a542a84))
 - **post**: nobody can walk the pickup codes or the safe-and-well names, and the demo's volunteer screen shows no letter of a code ([e2c48b57](https://github.com/meshsat/meshsat/commit/e2c48b57e0a540f75ca06bcc06f6c8fe308b9e29))
 - **demo**: the demo's map opens on the OpenStreetMap layer, its kit shows a charged battery, and times written as floats move to now too ([ce768be0](https://github.com/meshsat/meshsat/commit/ce768be02b89cd8a4439afc07a14bb2c32396bb0))
