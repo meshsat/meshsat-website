@@ -498,7 +498,7 @@
     </div>
 </section>
 
-<section class="campaign-close" aria-labelledby="campaign-close-title">
+<section class="campaign-close">
     <div class="container campaign-close-inner">
         <div><p class="campaign-status">{{ i18n (printf "campaign_%s_status" $campaignState) }}</p><h2 id="campaign-close-title">MeshSat Compact v2</h2><p>{{ i18n "campaign_promise" }}</p></div>
         {{ partial "campaign-action.html" (dict "ctx" . "from" "closing") }}
