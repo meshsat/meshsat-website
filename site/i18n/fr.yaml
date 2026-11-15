@@ -34,8 +34,6 @@ hero_title_b:
   other: "Toutes les issues."
 hero_sub:
   other: "Un logiciel libre qui transmet des messages entre radios mesh, liaisons satellite et réseaux mobiles. Sur une passerelle Linux ou un téléphone, il relie des systèmes qui ne peuvent pas communiquer seuls entre eux."
-hero_status:
-  other: "Prototypes en cours de développement. Jamais utilisés lors d’une vraie urgence."
 hero_star:
   other: "Ajouter une étoile sur GitHub"
 hero_visitors:
@@ -1394,3 +1392,35 @@ rt_sms:
 # The Pi's memory in the hardware table.
 hw_pi_ram:
   other: "8 Go"
+
+# Compact v2 campaign
+nav_kickstarter:
+  other: "Kickstarter"
+nav_shop:
+  other: "Boutique"
+campaign_prelaunch_status:
+  other: "Bientôt sur Kickstarter"
+campaign_live_status:
+  other: "Maintenant sur Kickstarter"
+campaign_promise:
+  other: "Une liaison satellite. Pour toute l’équipe."
+campaign_intro:
+  other: "Gardez les radios Meshtastic de votre équipe. Ajoutez une connexion satellite Iridium partagée."
+campaign_prelaunch_cta:
+  other: "Suivre le lancement sur Kickstarter"
+campaign_live_cta:
+  other: "Nous soutenir sur Kickstarter"
+campaign_explore:
+  other: "Découvrir Compact v2"
+campaign_prelaunch_hint:
+  other: "Sur Kickstarter, choisissez « Notify me on launch ». Aucun paiement aujourd’hui."
+campaign_live_hint:
+  other: "Découvrez la campagne et choisissez votre récompense sur Kickstarter."
+campaign_photo_alt:
+  other: "Le véritable prototype Compact v2, avec son boîtier orange, son écran et ses deux antennes."
+campaign_photo_caption:
+  other: "Le véritable prototype. Fabriqué à Leyde."
+campaign_software:
+  other: "Commencez par le logiciel"
+campaign_software_intro:
+  other: "Open source. Votre matériel. Votre configuration."

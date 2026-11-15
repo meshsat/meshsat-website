@@ -1,32 +1,35 @@
 {{ define "main" }}
 
-{{/* 1. HERO — the thesis is the trace, not the slogan. */}}
-<section class="hero" data-release="review-20261021">
-    <div class="hero-slideshow" aria-hidden="true">
-        <div class="hero-slide active" style="background-image: url('/images/hero/field-comms.webp'); background-position: center 85%"></div>
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-        <p class="hero-label">{{ i18n "hero_eyebrow" }}</p>
-        {{- /* A second line of three words or fewer cannot split without leaving one word alone, so it is
-     sized to fit its column instead (MESHSAT-1596): the CSS reads the longest line's length. */}}
-        {{- $hta := i18n "hero_title_a" }}{{ $htb := i18n "hero_title_b" }}
-        <h1 class="hero-title"{{ if le (len (split $htb " ")) 3 }} style="--hl-chars: {{ math.Max (strings.RuneCount $hta) (strings.RuneCount $htb) }}"{{ end }}><span class="hero-title-fit">{{ $hta }}<br><span class="highlight">{{ $htb }}</span></span></h1>
-        <p class="hero-subtitle">{{ i18n "hero_intro" }}</p>
-
-        <p class="hero-status"><span class="dot"></span> {{ i18n "hero_status" }}</p>
-
-        <div class="hero-install">
-            <nav id="setup" class="hero-paths" aria-label="{{ i18n "start_label" }}">
-                <a href="{{ .Site.Params.docs_url }}/guide/quick-start.html"><strong>Bridge</strong><span>{{ i18n "start_bridge" }}</span></a>
-                <a href="{{ .Site.Params.docs_url }}/android/setup.html"><strong>Android</strong><span>{{ i18n "start_android" }}</span></a>
-                <a href="#hub"><strong>Hub</strong><span>{{ i18n "start_hub" }}</span></a>
-            </nav>
-            <a class="hero-demo" href="#video">{{ i18n "start_demo" }} <span aria-hidden="true">↓</span></a>
-
+{{/* One manually controlled campaign state, shared by the hero and closing CTA. */}}
+{{ $campaignState := .Site.Params.campaign_state }}
+{{ if not (in (slice "prelaunch" "live") $campaignState) }}{{ errorf "campaign_state must be prelaunch or live" }}{{ end }}
+<section class="campaign-hero" aria-labelledby="campaign-title" data-release="compact-v2-campaign-20261115" data-campaign-state="{{ $campaignState }}">
+    <div class="campaign-copy">
+        <p class="campaign-status">{{ i18n (printf "campaign_%s_status" $campaignState) }}</p>
+        <h1 id="campaign-title">MeshSat <span>Compact v2</span></h1>
+        <p class="campaign-promise">{{ i18n "campaign_promise" }}</p>
+        <p class="campaign-intro">{{ i18n "campaign_intro" }}</p>
+        <div class="campaign-actions">
+            {{ partial "campaign-action.html" (dict "ctx" . "from" "hero") }}
+            <a class="campaign-shop" href="{{ .Site.Params.shop_url }}" data-umami-event="shop-click" data-umami-event-from="hero" data-umami-event-locale="{{ .Site.Language.Lang }}">{{ i18n "campaign_explore" }} {{ partial "campaign-arrow.html" }}</a>
         </div>
+        <p class="campaign-hint">{{ i18n (printf "campaign_%s_hint" $campaignState) }}</p>
+    </div>
+    <figure class="campaign-photo">
+        <img src="/images/msc2-prototype-front-20261024-960.webp" srcset="/images/msc2-prototype-front-20261024-640.webp 640w, /images/msc2-prototype-front-20261024-960.webp 960w, /images/msc2-prototype-front-20261024.webp 1400w" sizes="(min-width: 1000px) 52vw, 100vw" width="1400" height="788" alt="{{ i18n "campaign_photo_alt" }}" fetchpriority="high" decoding="async">
+        <figcaption><span>MSC-2 / 0001</span><span>{{ i18n "campaign_photo_caption" }}</span></figcaption>
+    </figure>
+</section>
 
-
+<section class="setup-section" id="setup" aria-labelledby="setup-title">
+    <div class="container setup-inner">
+        <div class="setup-intro"><h2 id="setup-title">{{ i18n "campaign_software" }}</h2><p>{{ i18n "campaign_software_intro" }}</p></div>
+        <nav class="setup-paths" aria-label="{{ i18n "start_label" }}">
+            <a href="{{ .Site.Params.docs_url }}/guide/quick-start.html"><strong>Bridge</strong><span>{{ i18n "start_bridge" }}</span></a>
+            <a href="{{ .Site.Params.docs_url }}/android/setup.html"><strong>Android</strong><span>{{ i18n "start_android" }}</span></a>
+            <a href="#hub"><strong>Hub</strong><span>{{ i18n "start_hub" }}</span></a>
+        </nav>
+        <a class="setup-demo" href="#video">{{ i18n "start_demo" }} <span aria-hidden="true">↓</span></a>
     </div>
 </section>
 
@@ -239,7 +242,7 @@
         </div>
         <div class="hardware-parts">
         <p class="hardware-start"><a href="{{ .Site.Params.docs_url }}/guide/hardware.html">{{ i18n "hw_start" }} <span aria-hidden="true">→</span></a></p>
-        <p class="hardware-start"><a href="https://shop.meshsat.net/" data-umami-event="shop-click" data-umami-event-locale="{{ .Site.Language.Lang }}" data-umami-event-from="hardware">{{ i18n "msc2_launch" }}</a></p>
+        <p class="hardware-start"><a href="{{ .Site.Params.shop_url }}" data-umami-event="shop-click" data-umami-event-locale="{{ .Site.Language.Lang }}" data-umami-event-from="hardware">{{ i18n "msc2_launch" }}</a></p>
         <p class="hardware-start"><a href="{{ "/integrators/" | relLangURL }}">{{ i18n "msc3_integrators" }}</a> <span class="badge badge-token badge-plan">FUTURE PLAN</span></p>
 
         <div class="table-wrap" tabindex="0" role="region" aria-label="{{ i18n "table_hardware_label" }}">
@@ -492,6 +495,13 @@
 
         </details>
         <p class="funding-note">{{ i18n "funding_a" }} <a href="{{ .Site.Params.sidn_url }}" target="_blank" rel="noopener">SIDN fonds</a>{{ i18n "funding_b" }}</p>
+    </div>
+</section>
+
+<section class="campaign-close" aria-labelledby="campaign-close-title">
+    <div class="container campaign-close-inner">
+        <div><p class="campaign-status">{{ i18n (printf "campaign_%s_status" $campaignState) }}</p><h2 id="campaign-close-title">MeshSat Compact v2</h2><p>{{ i18n "campaign_promise" }}</p></div>
+        {{ partial "campaign-action.html" (dict "ctx" . "from" "closing") }}
     </div>
 </section>
 

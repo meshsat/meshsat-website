@@ -34,8 +34,6 @@ hero_title_b:
   other: "Elke weg naar buiten."
 hero_sub:
   other: "Opensourcesoftware die berichten tussen meshradio's, satellietverbindingen en mobiele netwerken doorgeeft. Draai het op een Linux-gateway of telefoon en verbind systemen die elkaar zelf niet kunnen bereiken."
-hero_status:
-  other: "Prototypes in ontwikkeling. Nooit gebruikt bij een echt noodgeval."
 hero_star:
   other: "Geef een ster op GitHub"
 hero_visitors:
@@ -1394,3 +1392,35 @@ rt_sms:
 # The Pi's memory in the hardware table.
 hw_pi_ram:
   other: "8 GB"
+
+# Compact v2 campaign
+nav_kickstarter:
+  other: "Kickstarter"
+nav_shop:
+  other: "Shop"
+campaign_prelaunch_status:
+  other: "Binnenkort op Kickstarter"
+campaign_live_status:
+  other: "Nu op Kickstarter"
+campaign_promise:
+  other: "Eén satellietverbinding. Voor het hele team."
+campaign_intro:
+  other: "Behoud de Meshtastic-radio’s van je team. Voeg één gedeelde Iridium-satellietverbinding toe."
+campaign_prelaunch_cta:
+  other: "Volg de start op Kickstarter"
+campaign_live_cta:
+  other: "Steun ons op Kickstarter"
+campaign_explore:
+  other: "Ontdek Compact v2"
+campaign_prelaunch_hint:
+  other: "Kies op Kickstarter “Notify me on launch”. Je betaalt vandaag niets."
+campaign_live_hint:
+  other: "Bekijk de campagne en kies je beloning op Kickstarter."
+campaign_photo_alt:
+  other: "Het echte Compact v2-prototype met oranje behuizing, scherm en twee antennes."
+campaign_photo_caption:
+  other: "Het echte prototype. Gebouwd in Leiden."
+campaign_software:
+  other: "Begin met de software"
+campaign_software_intro:
+  other: "Open source. Jouw hardware. Jouw opstelling."

@@ -17,3 +17,18 @@ html:not(.has-js) .menu-toggle, html:not(.has-js) .theme-toggle { display: none;
 }
 /* Keep pointer travel between the trigger and its offset menu inside the disclosure. */
 .lang-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -8px; height: 8px; }
+
+/* Make room for the shop and the campaign without squeezing translated labels. */
+.nav-links { gap: 1rem; }
+.nav-links a { display: inline-flex; align-items: center; min-height: 44px; white-space: nowrap; }
+@media (max-width: 1199px) {
+    html .menu-toggle { display: flex; }
+    html .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: .25rem; padding: 1rem 1.5rem; background: var(--color-bg); border-bottom: 1px solid var(--color-border); max-height: calc(100svh - 64px); overflow-y: auto; }
+    html .nav-links.active { display: flex; }
+    .nav-links a { width: 100%; }
+    html:not(.has-js) .menu-toggle { display: none; }
+    html:not(.has-js) .site-header { position: relative; }
+    html:not(.has-js) .site-header nav { flex-wrap: wrap; height: auto; min-height: 64px; }
+    html:not(.has-js) .nav-links { position: static; display: flex; flex-direction: row; flex-wrap: wrap; order: 3; width: 100%; max-height: none; padding: .5rem 0; gap: .25rem 1rem; background: none; border: 0; overflow: visible; }
+    html:not(.has-js) .nav-links .nav-hub-btn { padding-inline: 1rem; }
+}

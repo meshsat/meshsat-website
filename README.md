@@ -9,3 +9,11 @@ MeshSat does not work with any organisation that develops, produces, integrates 
 ## Licence
 
 GNU General Public License v3.0, see [LICENSE](LICENSE).
+
+## Compact v2 campaign
+
+The homepage campaign, navigation and footer use `shop_url`, `kickstarter_url` and
+`campaign_state` in `site/hugo.yaml`. Keep the state at `prelaunch` until the campaign
+opens, then change it to `live` and deploy normally. Both states have copy in all five
+language catalogues. There is no date-based switch. Campaign and shop clicks use the
+existing Umami events with placement (`from`) and `locale` properties.

@@ -34,8 +34,6 @@ hero_title_b:
   other: "Every way out."
 hero_sub:
   other: "Open source software that carries messages between mesh radios, satellite links and mobile networks. Run it on a Linux gateway or a phone, and connect systems that cannot reach each other on their own."
-hero_status:
-  other: "Prototypes under development. Never used in a real emergency."
 hero_star:
   other: "Star on GitHub"
 hero_visitors:
@@ -1394,3 +1392,35 @@ rt_sms:
 # The Pi's memory in the hardware table.
 hw_pi_ram:
   other: "8 GB"
+
+# Compact v2 campaign
+nav_kickstarter:
+  other: "Kickstarter"
+nav_shop:
+  other: "Shop"
+campaign_prelaunch_status:
+  other: "Coming soon to Kickstarter"
+campaign_live_status:
+  other: "Now on Kickstarter"
+campaign_promise:
+  other: "One satellite link. For the whole team."
+campaign_intro:
+  other: "Keep your team’s Meshtastic radios. Add one shared Iridium satellite connection."
+campaign_prelaunch_cta:
+  other: "Notify me on Kickstarter"
+campaign_live_cta:
+  other: "Back us on Kickstarter"
+campaign_explore:
+  other: "Explore Compact v2"
+campaign_prelaunch_hint:
+  other: "On Kickstarter, choose “Notify me on launch”. No payment today."
+campaign_live_hint:
+  other: "Explore the campaign and choose your reward on Kickstarter."
+campaign_photo_alt:
+  other: "The real Compact v2 prototype, with its orange enclosure, display and two antennas."
+campaign_photo_caption:
+  other: "The real prototype. Built in Leiden."
+campaign_software:
+  other: "Start with the software"
+campaign_software_intro:
+  other: "Open source. Your hardware. Your setup."

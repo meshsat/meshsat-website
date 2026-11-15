@@ -1,7 +1,5 @@
 <footer class="site-footer">
-    <!-- Colophon: BUILT WITH left, SUPPORTED BY right. One strip, the binary's
-         own voice: its dependency list and its credits. The pre-release line
-         lived here until 7 Sep 2026; the hero pill carries that framing. -->
+    <!-- Dependencies and project supporters. -->
     {{ if not .Params.integrators }}
     <div class="colophon">
         <div class="container colophon-inner">
@@ -78,9 +76,8 @@
                     <li><a href="{{ .Site.Params.github }}-linux" target="_blank" rel="noopener">MeshSat Linux</a></li>
                     <li><a href="{{ .Site.Params.github }}-esp32" target="_blank" rel="noopener">MeshSat Node</a></li>
                     <li><a href="{{ .Site.Params.github }}-fieldkit" target="_blank" rel="noopener">{{ i18n "f_fieldkit" }}</a></li>
-                    {{/* The one link from meshsat.net to the shop (MESHSAT-1517, 10 Oct 2026): the home
-                         page keeps its no-prices rule; the product and its prices live on shop.meshsat.net. */}}
-                    <li><a href="https://shop.meshsat.net/" data-umami-event="shop-click" data-umami-event-locale="{{ .Site.Language.Lang }}">MeshSat Compact v2</a></li>
+                    <li><a href="{{ .Site.Params.shop_url }}" data-umami-event="shop-click" data-umami-event-from="footer" data-umami-event-locale="{{ .Site.Language.Lang }}">{{ i18n "nav_shop" }} · Compact v2</a></li>
+                    <li><a href="{{ .Site.Params.kickstarter_url }}" data-umami-event="kickstarter-click" data-umami-event-from="footer" data-umami-event-locale="{{ .Site.Language.Lang }}">Kickstarter</a></li>
                     <li><a href="{{ "/integrators/" | relLangURL }}"{{ if .Params.integrators }} aria-current="page"{{ end }}>{{ i18n "msc3_integrators" }}</a></li>
                 </ul>
             </div>

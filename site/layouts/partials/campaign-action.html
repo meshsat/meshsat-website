@@ -1,0 +1,1 @@
+<a class="btn btn-primary campaign-button" href="{{ .ctx.Site.Params.kickstarter_url }}" data-umami-event="kickstarter-click" data-umami-event-from="{{ .from }}" data-umami-event-locale="{{ .ctx.Site.Language.Lang }}">{{ i18n (printf "campaign_%s_cta" .ctx.Site.Params.campaign_state) }} {{ partial "campaign-arrow.html" }}</a>

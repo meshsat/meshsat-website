@@ -79,10 +79,6 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- Preload first hero image -->
-    {{ if .IsHome }}
-    <link rel="preload" href="/images/hero/field-comms.webp" as="image" fetchpriority="high">
-    {{ end }}
 
     <!-- Fonts: self-hosted IBM Plex (MESHSAT-950). @font-face lives in main.css;
          /fonts/ is served with CORS for auth.meshsat.net (the authentik brand CSS

@@ -61,7 +61,7 @@ async function audit(page, name, runAxe=true) {
   const data = await page.evaluate(() => ({
     width:innerWidth,
     scrollWidth:document.documentElement.scrollWidth,
-    cta:document.querySelector('.hero-paths a')?.getBoundingClientRect().toJSON(),
+    cta:document.querySelector('.campaign-hero .campaign-button')?.getBoundingClientRect().toJSON(),
     h1:document.querySelectorAll('h1').length,
     broken:[...document.images].filter(i=>i.getAttribute("src") && i.complete && !i.naturalWidth).map(i=>i.src),
     cssBytes:performance.getEntriesByType('resource').filter(r=>r.name.includes('.css')).reduce((n,r)=>n+r.decodedBodySize,0),
@@ -70,7 +70,18 @@ async function audit(page, name, runAxe=true) {
   assert(data.scrollWidth <= data.width+1, `${name}: horizontal overflow ${data.scrollWidth}`);
   assert.equal(data.h1,1,`${name}: one h1`);
   assert.deepEqual(data.broken,[],`${name}: broken images`);
-  if (data.cta && data.width===390) assert(data.cta.bottom < 844,`${name}: setup below fold (${data.cta.bottom})`);
+  if (data.cta) {
+    assert(data.cta.bottom < 844,`${name}: campaign action below fold (${data.cta.bottom})`);
+    assert(await page.locator('.campaign-hero .campaign-button').getAttribute('data-umami-event-locale') === await page.locator('html').getAttribute('lang'));
+    assert.equal(await page.locator('.hero-status').count(),0);
+    assert.equal(await page.locator('.campaign-hero').getAttribute('data-campaign-state'),process.env.CAMPAIGN_STATE || 'prelaunch');
+    assert(await page.locator('.campaign-status').first().textContent());
+    const overlap=await page.locator('.site-header').evaluate(header=>{
+      const boxes=[...header.querySelectorAll('.logo, .nav-links, .nav-actions')].filter(e=>e.getBoundingClientRect().height && getComputedStyle(e).position!=='absolute').map(e=>e.getBoundingClientRect());
+      return boxes.some((a,i)=>boxes.slice(i+1).some(b=>a.left<b.right && b.left<a.right && a.top<b.bottom && b.top<a.bottom));
+    });
+    assert.equal(overlap,false,`${name}: overlapping header controls`);
+  }
   if (runAxe) {
     await page.addScriptTag({url:new URL('/__axe.js',page.url()).href});
     const violations = await page.evaluate(async () => (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa','best-practice']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})));
@@ -116,7 +127,20 @@ async function check(name, fn) {
   page.on('request',r=>{if(r.url().includes('youtube'))youtube.push(r.url());});
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto('https://meshsat.net/');await settle(page);
-  assert.equal(await page.locator('.hero-slide').count(),1);
+  assert.equal(await page.locator('.campaign-photo img').count(),1);
+  assert.equal(await page.locator('.hero-status').count(),0);
+  assert.equal(await page.locator('.campaign-hero').getAttribute('data-campaign-state'),process.env.CAMPAIGN_STATE || 'prelaunch');
+  const campaignURL='https://www.kickstarter.com/projects/meshsat/meshsat-compact-v2-one-satellite-link-for-the-whole-team';
+  for (const placement of ['header','hero','closing','footer']) {
+    const link=page.locator(`[data-umami-event="kickstarter-click"][data-umami-event-from="${placement}"]`);
+    assert.equal(await link.getAttribute('href'),campaignURL);
+    assert.equal(await link.getAttribute('data-umami-event-locale'),'en');
+  }
+  assert.equal(await page.locator('.campaign-shop').getAttribute('href'),'https://shop.meshsat.net/');
+  assert.equal(await page.locator('.campaign-hero .campaign-button').textContent().then(s=>s.trim()),process.env.CAMPAIGN_STATE==='live'?'Back us on Kickstarter':'Notify me on Kickstarter');
+  assert.equal(await page.locator('.campaign-status').first().textContent(),process.env.CAMPAIGN_STATE==='live'?'Now on Kickstarter':'Coming soon to Kickstarter');
+  assert.equal(await page.locator('.nav-links a[href="/changelog/"]').count(),0);
+  assert.equal(await page.locator('.footer-col a[href="/changelog/"]').count(),1);
   const theme=await page.locator('html').getAttribute('data-theme');await page.locator('.theme-toggle').click();assert.notEqual(await page.locator('html').getAttribute('data-theme'),theme);await page.locator('.theme-toggle').click();
   const lang=page.locator('.lang-btn');
   await lang.hover(); assert.equal(await lang.getAttribute('aria-expanded'),'true');
@@ -157,13 +181,17 @@ async function check(name, fn) {
  await check('no JavaScript mobile navigation',async()=>{
   const ctx=await context({javaScriptEnabled:false});const page=await ctx.newPage();await page.goto('https://meshsat.net/');
   assert(await page.locator('.nav-links a').first().isVisible());assert.equal(await page.locator('.menu-toggle').isVisible(),false);
+  assert(await page.locator('.campaign-hero .campaign-button').isVisible());
+  assert(await page.locator('.nav-links a[data-umami-event="kickstarter-click"]').isVisible());
   await page.locator('.lang-btn').focus();assert(await page.locator('.lang-menu').isVisible());
   await ctx.close();
  });
  await check('forced colors and reduced motion',async()=>{
   const ctx=await context({forcedColors:'active',reducedMotion:'reduce'});const page=await ctx.newPage();await page.goto('https://meshsat.net/');
   await audit(page,'forced-colors',false);
-  assert.equal(await page.locator('.hero-slide').evaluate(e=>getComputedStyle(e).transitionDuration),'0s');
+  assert.equal(await page.locator('.campaign-photo').evaluate(e=>getComputedStyle(e).animationName),'none');
+  assert.equal(await page.locator('.campaign-copy h1').evaluate(e=>getComputedStyle(e).animationName),'none');
+  assert(await page.locator('.campaign-hero .campaign-button').isVisible());
   await ctx.close();
  });
  await browser.close();

@@ -34,8 +34,6 @@ hero_title_b:
   other: "Jeder Ausweg."
 hero_sub:
   other: "Open-Source-Software, die Nachrichten zwischen Mesh-Funkgeräten, Satellitenverbindungen und Mobilfunknetzen überträgt. Sie läuft auf einem Linux-Gateway oder Telefon und verbindet Systeme, die einander allein nicht erreichen."
-hero_status:
-  other: "Prototypen in Entwicklung. Nie in einem echten Notfall verwendet."
 hero_star:
   other: "Auf GitHub einen Stern geben"
 hero_visitors:
@@ -1394,3 +1392,35 @@ rt_sms:
 # The Pi's memory in the hardware table.
 hw_pi_ram:
   other: "8 GB"
+
+# Compact v2 campaign
+nav_kickstarter:
+  other: "Kickstarter"
+nav_shop:
+  other: "Shop"
+campaign_prelaunch_status:
+  other: "Bald auf Kickstarter"
+campaign_live_status:
+  other: "Jetzt auf Kickstarter"
+campaign_promise:
+  other: "Eine Satellitenverbindung. Für das ganze Team."
+campaign_intro:
+  other: "Behaltet die Meshtastic-Funkgeräte eures Teams. Ergänzt eine gemeinsame Iridium-Satellitenverbindung."
+campaign_prelaunch_cta:
+  other: "Start auf Kickstarter vormerken"
+campaign_live_cta:
+  other: "Auf Kickstarter unterstützen"
+campaign_explore:
+  other: "Compact v2 entdecken"
+campaign_prelaunch_hint:
+  other: "Auf Kickstarter „Notify me on launch“ wählen. Heute ist keine Zahlung nötig."
+campaign_live_hint:
+  other: "Entdeckt die Kampagne und wählt eure Belohnung auf Kickstarter."
+campaign_photo_alt:
+  other: "Der echte Compact v2-Prototyp mit orangefarbenem Gehäuse, Display und zwei Antennen."
+campaign_photo_caption:
+  other: "Der echte Prototyp. Gebaut in Leiden."
+campaign_software:
+  other: "Mit der Software starten"
+campaign_software_intro:
+  other: "Open Source. Eure Hardware. Euer Aufbau."

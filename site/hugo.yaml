@@ -4,6 +4,10 @@ params:
   description: "Open source gateway bridging Meshtastic LoRa, Iridium satellite, cellular SMS, APRS and TAK over a Reticulum routing layer. Runs on a Raspberry Pi."
   author: "MeshSat"
   contact_email: "hello@meshsat.net"
+  shop_url: "https://shop.meshsat.net/"
+  kickstarter_url: "https://www.kickstarter.com/projects/meshsat/meshsat-compact-v2-one-satellite-link-for-the-whole-team"
+  # Change to live only when the campaign opens; never infer a date.
+  campaign_state: "prelaunch"
   github: "https://github.com/meshsat/meshsat"
   donate_url: "https://hub.meshsat.net/donate"
   x_url: "https://x.com/meshsat"
@@ -67,22 +71,23 @@ menu:
     - identifier: setup
       url: "/#setup"
       weight: -1
-      params:
-        highlight: true
     - identifier: hardware
       url: "/#hardware"
       weight: 3
     - identifier: security
       pageRef: "/security"
       weight: 5
-    - identifier: changelog
-      url: "/changelog/"
-      weight: 6
     - identifier: docs
       url: "https://docs.meshsat.net"
       weight: 7
       params:
         external: true
+    - identifier: shop
+      weight: 9
+    - identifier: kickstarter
+      weight: 10
+      params:
+        highlight: true
     - identifier: hub
       url: "/#hub"
       weight: 8
