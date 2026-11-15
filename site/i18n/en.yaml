@@ -1404,10 +1404,8 @@ campaign_live_status:
   other: "Now on Kickstarter"
 campaign_promise:
   other: "One satellite link. For the whole team."
-campaign_intro:
-  other: "Keep your team’s Meshtastic radios. Add one shared Iridium satellite connection."
 campaign_prelaunch_cta:
-  other: "Notify me on Kickstarter"
+  other: "Follow on Kickstarter"
 campaign_live_cta:
   other: "Back us on Kickstarter"
 campaign_explore:
@@ -1416,11 +1414,7 @@ campaign_prelaunch_hint:
   other: "On Kickstarter, choose “Notify me on launch”. No payment today."
 campaign_live_hint:
   other: "Explore the campaign and choose your reward on Kickstarter."
-campaign_photo_alt:
-  other: "The real Compact v2 prototype, with its orange enclosure, display and two antennas."
-campaign_photo_caption:
-  other: "The real prototype. Built in Leiden."
-campaign_software:
-  other: "Start with the software"
-campaign_software_intro:
-  other: "Open source. Your hardware. Your setup."
+campaign_prelaunch_prefix:
+  other: "Follow on"
+campaign_live_prefix:
+  other: "Back us on"

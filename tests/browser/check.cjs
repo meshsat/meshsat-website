@@ -61,7 +61,7 @@ async function audit(page, name, runAxe=true) {
   const data = await page.evaluate(() => ({
     width:innerWidth,
     scrollWidth:document.documentElement.scrollWidth,
-    cta:document.querySelector('.campaign-hero .campaign-button')?.getBoundingClientRect().toJSON(),
+    cta:document.querySelector('.project-paths a:last-child')?.getBoundingClientRect().toJSON(),
     h1:document.querySelectorAll('h1').length,
     broken:[...document.images].filter(i=>i.getAttribute("src") && i.complete && !i.naturalWidth).map(i=>i.src),
     cssBytes:performance.getEntriesByType('resource').filter(r=>r.name.includes('.css')).reduce((n,r)=>n+r.decodedBodySize,0),
@@ -71,10 +71,10 @@ async function audit(page, name, runAxe=true) {
   assert.equal(data.h1,1,`${name}: one h1`);
   assert.deepEqual(data.broken,[],`${name}: broken images`);
   if (data.cta) {
-    assert(data.cta.bottom < 844,`${name}: campaign action below fold (${data.cta.bottom})`);
-    assert(await page.locator('.campaign-hero .campaign-button').getAttribute('data-umami-event-locale') === await page.locator('html').getAttribute('lang'));
+    assert(data.cta.bottom < 844,`${name}: project setup below fold (${data.cta.bottom})`);
+    assert(await page.locator('.campaign-banner .campaign-button').getAttribute('data-umami-event-locale') === await page.locator('html').getAttribute('lang'));
     assert.equal(await page.locator('.hero-status').count(),0);
-    assert.equal(await page.locator('.campaign-hero').getAttribute('data-campaign-state'),process.env.CAMPAIGN_STATE || 'prelaunch');
+    assert.equal(await page.locator('.campaign-banner').getAttribute('data-campaign-state'),process.env.CAMPAIGN_STATE || 'prelaunch');
     assert(await page.locator('.campaign-status').first().textContent());
     const overlap=await page.locator('.site-header').evaluate(header=>{
       const boxes=[...header.querySelectorAll('.logo, .nav-links, .nav-actions')].filter(e=>e.getBoundingClientRect().height && getComputedStyle(e).position!=='absolute').map(e=>e.getBoundingClientRect());
@@ -127,17 +127,27 @@ async function check(name, fn) {
   page.on('request',r=>{if(r.url().includes('youtube'))youtube.push(r.url());});
   page.on('pageerror',e=>errors.push(e.message));
   await page.goto('https://meshsat.net/');await settle(page);
-  assert.equal(await page.locator('.campaign-photo img').count(),1);
+  assert.equal(await page.locator('.project-hero-image').count(),1);
+  assert.equal(await page.locator('.project-paths a').count(),3);
+  assert.deepEqual(await page.locator('.project-paths strong').allTextContents().then(v=>v.map(s=>s.trim())),['Bridge','Android','Hub']);
+  for (const button of await page.locator('.project-paths a').all()) {
+    assert(await button.isVisible());
+    const b=await button.boundingBox();assert(b.height>=44 && b.width>=200);
+    assert.equal(await button.evaluate(e=>getComputedStyle(e).borderStyle),'solid');
+  }
+  assert.equal(await page.locator('h1').textContent().then(t=>t.includes('Compact')),false);
+  assert.equal(await page.locator('.campaign-banner .campaign-button').evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(0, 107, 65)');
+  assert.equal(await page.locator('.campaign-banner .campaign-wordmark').getAttribute('alt'),'Kickstarter');
   assert.equal(await page.locator('.hero-status').count(),0);
-  assert.equal(await page.locator('.campaign-hero').getAttribute('data-campaign-state'),process.env.CAMPAIGN_STATE || 'prelaunch');
+  assert.equal(await page.locator('.campaign-banner').getAttribute('data-campaign-state'),process.env.CAMPAIGN_STATE || 'prelaunch');
   const campaignURL='https://www.kickstarter.com/projects/meshsat/meshsat-compact-v2-one-satellite-link-for-the-whole-team';
-  for (const placement of ['header','hero','closing','footer']) {
+  for (const placement of ['header','banner','closing','footer']) {
     const link=page.locator(`[data-umami-event="kickstarter-click"][data-umami-event-from="${placement}"]`);
     assert.equal(await link.getAttribute('href'),campaignURL);
     assert.equal(await link.getAttribute('data-umami-event-locale'),'en');
   }
   assert.equal(await page.locator('.campaign-shop').getAttribute('href'),'https://shop.meshsat.net/');
-  assert.equal(await page.locator('.campaign-hero .campaign-button').textContent().then(s=>s.trim()),process.env.CAMPAIGN_STATE==='live'?'Back us on Kickstarter':'Notify me on Kickstarter');
+  assert.equal(await page.locator('.campaign-banner .campaign-button').getAttribute('aria-label'),process.env.CAMPAIGN_STATE==='live'?'Back us on Kickstarter':'Follow on Kickstarter');
   assert.equal(await page.locator('.campaign-status').first().textContent(),process.env.CAMPAIGN_STATE==='live'?'Now on Kickstarter':'Coming soon to Kickstarter');
   assert.equal(await page.locator('.nav-links a[href="/changelog/"]').count(),0);
   assert.equal(await page.locator('.footer-col a[href="/changelog/"]').count(),1);
@@ -181,7 +191,7 @@ async function check(name, fn) {
  await check('no JavaScript mobile navigation',async()=>{
   const ctx=await context({javaScriptEnabled:false});const page=await ctx.newPage();await page.goto('https://meshsat.net/');
   assert(await page.locator('.nav-links a').first().isVisible());assert.equal(await page.locator('.menu-toggle').isVisible(),false);
-  assert(await page.locator('.campaign-hero .campaign-button').isVisible());
+  assert(await page.locator('.campaign-banner .campaign-button').isVisible());
   assert(await page.locator('.nav-links a[data-umami-event="kickstarter-click"]').isVisible());
   await page.locator('.lang-btn').focus();assert(await page.locator('.lang-menu').isVisible());
   await ctx.close();
@@ -189,9 +199,9 @@ async function check(name, fn) {
  await check('forced colors and reduced motion',async()=>{
   const ctx=await context({forcedColors:'active',reducedMotion:'reduce'});const page=await ctx.newPage();await page.goto('https://meshsat.net/');
   await audit(page,'forced-colors',false);
-  assert.equal(await page.locator('.campaign-photo').evaluate(e=>getComputedStyle(e).animationName),'none');
-  assert.equal(await page.locator('.campaign-copy h1').evaluate(e=>getComputedStyle(e).animationName),'none');
-  assert(await page.locator('.campaign-hero .campaign-button').isVisible());
+  assert.equal(await page.locator('.project-paths').evaluate(e=>getComputedStyle(e).animationName),'none');
+  assert.equal(await page.locator('.project-hero h1').evaluate(e=>getComputedStyle(e).animationName),'none');
+  assert(await page.locator('.campaign-banner .campaign-button').isVisible());
   await ctx.close();
  });
  await browser.close();

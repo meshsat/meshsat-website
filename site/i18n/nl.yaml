@@ -1404,10 +1404,8 @@ campaign_live_status:
   other: "Nu op Kickstarter"
 campaign_promise:
   other: "Eén satellietverbinding. Voor het hele team."
-campaign_intro:
-  other: "Behoud de Meshtastic-radio’s van je team. Voeg één gedeelde Iridium-satellietverbinding toe."
 campaign_prelaunch_cta:
-  other: "Volg de start op Kickstarter"
+  other: "Volg op Kickstarter"
 campaign_live_cta:
   other: "Steun ons op Kickstarter"
 campaign_explore:
@@ -1416,11 +1414,7 @@ campaign_prelaunch_hint:
   other: "Kies op Kickstarter “Notify me on launch”. Je betaalt vandaag niets."
 campaign_live_hint:
   other: "Bekijk de campagne en kies je beloning op Kickstarter."
-campaign_photo_alt:
-  other: "Het echte Compact v2-prototype met oranje behuizing, scherm en twee antennes."
-campaign_photo_caption:
-  other: "Het echte prototype. Gebouwd in Leiden."
-campaign_software:
-  other: "Begin met de software"
-campaign_software_intro:
-  other: "Open source. Jouw hardware. Jouw opstelling."
+campaign_prelaunch_prefix:
+  other: "Volg op"
+campaign_live_prefix:
+  other: "Steun ons op"

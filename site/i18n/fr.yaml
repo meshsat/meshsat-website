@@ -1404,23 +1404,17 @@ campaign_live_status:
   other: "Maintenant sur Kickstarter"
 campaign_promise:
   other: "Une liaison satellite. Pour toute l’équipe."
-campaign_intro:
-  other: "Gardez les radios Meshtastic de votre équipe. Ajoutez une connexion satellite Iridium partagée."
 campaign_prelaunch_cta:
-  other: "Suivre le lancement sur Kickstarter"
+  other: "Suivre sur Kickstarter"
 campaign_live_cta:
-  other: "Nous soutenir sur Kickstarter"
+  other: "Soutenir sur Kickstarter"
 campaign_explore:
   other: "Découvrir Compact v2"
 campaign_prelaunch_hint:
   other: "Sur Kickstarter, choisissez « Notify me on launch ». Aucun paiement aujourd’hui."
 campaign_live_hint:
   other: "Découvrez la campagne et choisissez votre récompense sur Kickstarter."
-campaign_photo_alt:
-  other: "Le véritable prototype Compact v2, avec son boîtier orange, son écran et ses deux antennes."
-campaign_photo_caption:
-  other: "Le véritable prototype. Fabriqué à Leyde."
-campaign_software:
-  other: "Commencez par le logiciel"
-campaign_software_intro:
-  other: "Open source. Votre matériel. Votre configuration."
+campaign_prelaunch_prefix:
+  other: "Suivre sur"
+campaign_live_prefix:
+  other: "Soutenir sur"

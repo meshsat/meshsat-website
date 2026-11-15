@@ -1,35 +1,36 @@
 {{ define "main" }}
 
-{{/* One manually controlled campaign state, shared by the hero and closing CTA. */}}
+{{/* Project first: the three setup paths stay in the hero. The launch has its own banner. */}}
 {{ $campaignState := .Site.Params.campaign_state }}
 {{ if not (in (slice "prelaunch" "live") $campaignState) }}{{ errorf "campaign_state must be prelaunch or live" }}{{ end }}
-<section class="campaign-hero" aria-labelledby="campaign-title" data-release="compact-v2-campaign-20261115" data-campaign-state="{{ $campaignState }}">
-    <div class="campaign-copy">
-        <p class="campaign-status">{{ i18n (printf "campaign_%s_status" $campaignState) }}</p>
-        <h1 id="campaign-title">MeshSat <span>Compact v2</span></h1>
-        <p class="campaign-promise">{{ i18n "campaign_promise" }}</p>
-        <p class="campaign-intro">{{ i18n "campaign_intro" }}</p>
-        <div class="campaign-actions">
-            {{ partial "campaign-action.html" (dict "ctx" . "from" "hero") }}
-            <a class="campaign-shop" href="{{ .Site.Params.shop_url }}" data-umami-event="shop-click" data-umami-event-from="hero" data-umami-event-locale="{{ .Site.Language.Lang }}">{{ i18n "campaign_explore" }} {{ partial "campaign-arrow.html" }}</a>
-        </div>
-        <p class="campaign-hint">{{ i18n (printf "campaign_%s_hint" $campaignState) }}</p>
+<section class="project-hero" aria-labelledby="project-title" data-release="project-launch-banner-20261115">
+    <img class="project-hero-image" src="/images/hero/field-comms.webp" width="1000" height="667" alt="" aria-hidden="true" fetchpriority="high">
+    <div class="project-hero-shade" aria-hidden="true"></div>
+    <div class="container project-hero-inner">
+        <p class="project-eyebrow">{{ i18n "hero_eyebrow" }}</p>
+        <h1 id="project-title">{{ i18n "hero_title_a" }}<br><span>{{ i18n "hero_title_b" }}</span></h1>
+        <p class="project-intro">{{ i18n "hero_intro" }}</p>
+        <nav id="setup" class="hero-paths project-paths" aria-label="{{ i18n "start_label" }}">
+            <a href="{{ .Site.Params.docs_url }}/guide/quick-start.html"><strong>Bridge {{ partial "campaign-arrow.html" }}</strong><span>{{ i18n "start_bridge" }}</span></a>
+            <a href="{{ .Site.Params.docs_url }}/android/setup.html"><strong>Android {{ partial "campaign-arrow.html" }}</strong><span>{{ i18n "start_android" }}</span></a>
+            <a href="#hub"><strong>Hub {{ partial "campaign-arrow.html" }}</strong><span>{{ i18n "start_hub" }}</span></a>
+        </nav>
+        <a class="project-demo" href="#video">{{ i18n "start_demo" }} <span aria-hidden="true">↓</span></a>
     </div>
-    <figure class="campaign-photo">
-        <img src="/images/msc2-prototype-front-20261024-960.webp" srcset="/images/msc2-prototype-front-20261024-640.webp 640w, /images/msc2-prototype-front-20261024-960.webp 960w, /images/msc2-prototype-front-20261024.webp 1400w" sizes="(min-width: 1000px) 52vw, 100vw" width="1400" height="788" alt="{{ i18n "campaign_photo_alt" }}" fetchpriority="high" decoding="async">
-        <figcaption><span>MSC-2 / 0001</span><span>{{ i18n "campaign_photo_caption" }}</span></figcaption>
-    </figure>
 </section>
 
-<section class="setup-section" id="setup" aria-labelledby="setup-title">
-    <div class="container setup-inner">
-        <div class="setup-intro"><h2 id="setup-title">{{ i18n "campaign_software" }}</h2><p>{{ i18n "campaign_software_intro" }}</p></div>
-        <nav class="setup-paths" aria-label="{{ i18n "start_label" }}">
-            <a href="{{ .Site.Params.docs_url }}/guide/quick-start.html"><strong>Bridge</strong><span>{{ i18n "start_bridge" }}</span></a>
-            <a href="{{ .Site.Params.docs_url }}/android/setup.html"><strong>Android</strong><span>{{ i18n "start_android" }}</span></a>
-            <a href="#hub"><strong>Hub</strong><span>{{ i18n "start_hub" }}</span></a>
-        </nav>
-        <a class="setup-demo" href="#video">{{ i18n "start_demo" }} <span aria-hidden="true">↓</span></a>
+<section class="campaign-banner" aria-labelledby="campaign-title" data-campaign-state="{{ $campaignState }}">
+    <div class="container campaign-banner-inner">
+        <div class="campaign-banner-copy">
+            <p class="campaign-status">{{ i18n (printf "campaign_%s_status" $campaignState) }}</p>
+            <h2 id="campaign-title">MeshSat Compact v2</h2>
+            <p class="campaign-promise">{{ i18n "campaign_promise" }}</p>
+        </div>
+        <div class="campaign-banner-actions">
+            {{ partial "campaign-action.html" (dict "ctx" . "from" "banner") }}
+            <a class="campaign-shop" href="{{ .Site.Params.shop_url }}" data-umami-event="shop-click" data-umami-event-from="banner" data-umami-event-locale="{{ .Site.Language.Lang }}">{{ i18n "campaign_explore" }} {{ partial "campaign-arrow.html" }}</a>
+            <p class="campaign-hint">{{ i18n (printf "campaign_%s_hint" $campaignState) }}</p>
+        </div>
     </div>
 </section>
 

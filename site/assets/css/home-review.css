@@ -115,88 +115,71 @@ a.store-badge img { display: block; width: auto; height: 48px; max-width: none; 
 .term-demo span { display: block; font-size: .875rem; color: var(--color-text-muted); }
 @media (forced-colors: active) { .term-demo { border-left-color: CanvasText; } }
 
-/* Compact v2: the device and the launch, in one edge-to-edge composition. */
-.campaign-hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-    align-items: center;
-    gap: clamp(2rem, 4vw, 4rem);
-    padding: 3.5rem 0 2.5rem max(1.5rem, calc((100% - 1152px) / 2));
-    overflow: clip;
-    border-bottom: 1px solid var(--color-border);
-}
-.campaign-copy { min-width: 0; max-width: 36rem; }
-.campaign-status {
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    margin-bottom: 1.25rem;
-    font-size: .875rem;
-    font-weight: 600;
-    color: var(--color-primary);
-}
-.campaign-status::before { content: ""; width: 1.5rem; height: 2px; background: currentColor; flex-shrink: 0; }
-.campaign-copy h1 { font-family: var(--font-display); font-size: clamp(2.6rem, 4.8vw, 4.5rem); line-height: 1.08; letter-spacing: -.055em; margin: 0 0 1.5rem; font-weight: 600; }
-.campaign-copy h1 span { display: block; color: var(--color-primary); }
-.campaign-promise { max-width: 26ch; font-size: clamp(1.25rem, 2vw, 1.75rem); line-height: 1.3; font-weight: 500; text-wrap: balance; margin-bottom: 1rem; }
-.campaign-intro { max-width: 42ch; font-size: 1rem; line-height: 1.65; color: var(--color-text-muted); }
-.campaign-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; margin-top: 1.5rem; }
-.campaign-button { display: inline-flex; justify-content: space-between; gap: 1.25rem; min-height: 48px; max-width: 100%; padding: .85rem 1.1rem; font-size: .9375rem; line-height: 1.4; text-align: left; }
-.campaign-button, .campaign-button:hover { box-shadow: none; }
+/* MeshSat remains the project homepage. Launch information has a separate band. */
+.project-hero { position: relative; isolation: isolate; overflow: clip; border-bottom: 1px solid var(--color-border); }
+.project-hero-image { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 70%; }
+.project-hero-shade { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(20,18,15,.97) 0%, rgba(20,18,15,.92) 40%, rgba(20,18,15,.38) 80%, rgba(20,18,15,.22)); }
+[data-theme="light"] .project-hero-shade { background: linear-gradient(90deg, rgba(247,245,242,.98) 0%, rgba(247,245,242,.94) 40%, rgba(247,245,242,.48) 80%, rgba(247,245,242,.25)); }
+.project-hero-inner { padding-block: 2.75rem 2rem; }
+.project-eyebrow { max-width: 46rem; margin-bottom: 1.25rem; color: var(--color-text-muted); font-size: .9375rem; line-height: 1.6; }
+.project-hero h1 { max-width: 50rem; font-family: var(--font-display); font-size: clamp(2.4rem,4.5vw,4rem); line-height: 1.12; letter-spacing: -.05em; font-weight: 600; margin: 0 0 1.25rem; text-wrap: balance; }
+.project-hero h1 span { color: var(--color-primary); }
+.project-intro { max-width: 42rem; font-size: 1.0625rem; line-height: 1.65; color: var(--color-text); margin-bottom: 1.75rem; }
+.project-paths { max-width: 44rem; gap: .75rem; scroll-margin-top: 90px; }
+.project-paths a { min-height: 86px; padding: 1rem; border: 1px solid var(--color-border-light); border-radius: 4px; background: var(--color-bg-secondary); text-align: left; box-shadow: none; justify-content: center; gap: .4rem; }
+.project-paths strong { display: flex; align-items: center; justify-content: space-between; gap: .5rem; width: 100%; font-size: 1.125rem; line-height: 1.2; font-weight: 600; }
+.project-paths span { font-size: .875rem; line-height: 1.4; }
+.project-paths a:first-child { background: var(--color-primary); border-color: var(--color-primary); }
+.project-paths a:first-child :is(strong,span) { color: var(--color-bg); }
+[data-theme="light"] .project-paths a:first-child :is(strong,span) { color: #fff; }
+.project-paths a:hover { border-color: var(--color-primary); }
+.project-demo { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; margin-top: .75rem; font-size: .875rem; text-decoration: underline; text-underline-offset: .25em; }
+.campaign-banner { background: var(--color-bg-secondary); border-bottom: 1px solid var(--color-border); }
+.campaign-banner-inner { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 2rem 4rem; align-items: center; padding-block: 1.75rem; }
+.campaign-status { margin-bottom: .5rem; color: var(--color-text-muted); font-size: .875rem; font-weight: 500; }
+.campaign-banner h2 { margin-bottom: .5rem; font-family: var(--font-sans); font-size: clamp(1.5rem,2.2vw,2rem); font-weight: 600; letter-spacing: -.025em; line-height: 1.15; }
+.campaign-promise { font-size: 1rem; line-height: 1.5; color: var(--color-text-muted); }
+.campaign-banner-actions { display: grid; grid-template-columns: auto; justify-items: start; }
 .campaign-shop { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; font-size: .9375rem; font-weight: 500; color: var(--color-text); text-decoration: underline; text-underline-offset: .25em; }
-.campaign-arrow { flex: 0 0 auto; }
-.campaign-hint { max-width: 45ch; color: var(--color-text-muted); font-size: .8125rem; line-height: 1.5; margin-top: .75rem; }
-.campaign-photo { min-width: 0; }
-.campaign-photo img { display: block; width: 100%; height: auto; }
-.campaign-photo figcaption { display: flex; justify-content: space-between; gap: .5rem 1rem; padding: 1rem 1.5rem 0 0; font-size: .75rem; color: var(--color-text-muted); }
-.campaign-photo figcaption span:first-child { font-family: var(--font-mono); white-space: nowrap; }
-.setup-section { padding-block: 1.75rem; background: var(--color-bg-secondary); border-bottom: 1px solid var(--color-border); scroll-margin-top: 80px; }
-.setup-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: .75rem 2rem; align-items: start; }
-.setup-intro h2 { font-family: var(--font-sans); font-size: 1.125rem; font-weight: 600; margin-bottom: .35rem; }
-.setup-intro p { color: var(--color-text-muted); font-size: .875rem; }
-.setup-paths { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.25rem; }
-.setup-paths a { display: flex; flex-direction: column; min-height: 44px; gap: .25rem; color: var(--color-text); text-decoration: none; }
-.setup-paths strong { font-weight: 600; text-decoration: underline; text-underline-offset: .25em; }
-.setup-paths span { font-size: .8125rem; color: var(--color-text-muted); }
-.setup-paths a:hover strong { color: var(--color-primary); }
-.setup-demo { grid-column: 1 / -1; justify-self: start; display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; font-size: .875rem; text-decoration: underline; text-underline-offset: .25em; }
-.campaign-close { padding-block: 3rem; border-block: 1px solid var(--color-border-light); background: var(--color-bg-secondary); }
+.campaign-hint { max-width: 48ch; color: var(--color-text-muted); font-size: .8125rem; line-height: 1.5; }
+.campaign-close { padding-block: 2.5rem; border-block: 1px solid var(--color-border); background: var(--color-bg-secondary); }
 .campaign-close-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-.campaign-close .campaign-status { margin-bottom: .75rem; }
-.campaign-close h2 { font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -.035em; margin-bottom: .5rem; }
+.campaign-close h2 { font-family: var(--font-sans); font-size: clamp(1.4rem,3vw,2rem); letter-spacing: -.025em; margin-bottom: .5rem; }
 .campaign-close p:last-child { color: var(--color-text-muted); }
 .campaign-close .campaign-button { flex-shrink: 0; }
 @media (max-width: 999px) {
-    .campaign-hero { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding: 2rem 0 1.5rem; }
-    .campaign-copy { padding-inline: 1.5rem; max-width: 40rem; }
-    .campaign-copy h1 { font-size: clamp(2.5rem, 7vw, 4rem); }
-    .campaign-status { margin-bottom: 1rem; }
-    .campaign-photo figcaption { padding-inline: 1.5rem; }
-    .campaign-photo img { max-height: 440px; object-fit: cover; }
-    .setup-inner { grid-template-columns: minmax(0,1fr); }
-    .setup-paths { margin-top: .5rem; }
+    .project-hero-image { object-position: 62% center; }
+    .project-hero-shade { background: rgba(20,18,15,.86); }
+    [data-theme="light"] .project-hero-shade { background: rgba(247,245,242,.91); }
+    .project-hero-inner { padding-block: 2rem 1.5rem; }
+    .project-hero h1 { font-size: clamp(2rem,5.4vw,3.5rem); }
+    .campaign-banner-inner { gap: 1.5rem; }
     .campaign-close-inner { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
 }
-@media (max-width: 480px) {
-    .campaign-copy h1 { margin-bottom: 1.1rem; }
-    .campaign-intro { font-size: .9375rem; line-height: 1.55; }
-    .campaign-actions { margin-top: 1.25rem; gap: .25rem; flex-direction: column; align-items: stretch; }
+@media (max-width: 699px) {
+    .project-eyebrow { font-size: .875rem; margin-bottom: 1rem; }
+    .project-intro { font-size: 1rem; line-height: 1.55; margin-bottom: 1.25rem; }
+    .project-hero .project-paths { grid-template-columns: minmax(0,1fr); gap: .5rem; }
+    .project-hero .project-paths a { display: grid; grid-template-columns: 6.5rem minmax(0,1fr); align-items: center; gap: 1rem; min-height: 58px; padding: .75rem 1rem; }
+    .project-paths strong { font-size: 1rem; }
+    .project-paths span { font-size: .8125rem; }
+    .campaign-banner-inner { grid-template-columns: minmax(0,1fr); gap: 1.25rem; padding-block: 1.5rem; }
+    .campaign-banner-actions { justify-items: stretch; }
     .campaign-shop { justify-content: space-between; }
-    .campaign-photo figcaption { flex-wrap: wrap; font-size: .75rem; }
-    .campaign-hint { font-size: .8125rem; }
-    .setup-paths { gap: 1rem; }
 }
 @media (prefers-reduced-motion: no-preference) {
-    .campaign-copy > * { animation: campaign-enter .55s both; }
-    .campaign-copy h1 { animation-delay: .05s; }
-    .campaign-promise, .campaign-intro { animation-delay: .1s; }
-    .campaign-actions, .campaign-hint { animation-delay: .15s; }
-    .campaign-photo { animation: campaign-enter .7s .1s both; }
-    .campaign-arrow { transition: transform .18s ease; }
-    a:hover > .campaign-arrow, a:focus-visible > .campaign-arrow { transform: translateX(3px); }
-    @keyframes campaign-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    .project-eyebrow, .project-hero h1, .project-intro, .project-paths, .project-demo { animation: project-enter .5s both; }
+    .project-hero h1 { animation-delay: .05s; }
+    .project-intro { animation-delay: .1s; }
+    .project-paths, .project-demo { animation-delay: .15s; }
+    .project-paths a { transition: border-color .18s, transform .18s; }
+    .project-paths a:hover { transform: translateY(-2px); }
+    .project-paths .campaign-arrow, .campaign-shop .campaign-arrow { transition: transform .18s; }
+    .project-paths a:hover .campaign-arrow, .campaign-shop:hover .campaign-arrow { transform: translateX(3px); }
+    @keyframes project-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 }
 @media (forced-colors: active) {
-    .campaign-status { color: CanvasText; }
-    .campaign-button { border: 1px solid ButtonText; }
+    .project-hero-image, .project-hero-shade { display: none; }
+    .project-paths a, .project-paths a:first-child { background: Canvas; border-color: ButtonText; }
+    .project-hero .project-paths a :is(strong,span) { color: LinkText; }
 }

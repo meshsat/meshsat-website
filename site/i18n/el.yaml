@@ -1404,10 +1404,8 @@ campaign_live_status:
   other: "Τώρα στο Kickstarter"
 campaign_promise:
   other: "Μία δορυφορική σύνδεση. Για όλη την ομάδα."
-campaign_intro:
-  other: "Κρατήστε τους ασυρμάτους Meshtastic της ομάδας σας. Προσθέστε μία κοινή δορυφορική σύνδεση Iridium."
 campaign_prelaunch_cta:
-  other: "Ειδοποίηση μέσω Kickstarter"
+  other: "Ακολουθήστε στο Kickstarter"
 campaign_live_cta:
   other: "Στηρίξτε μας στο Kickstarter"
 campaign_explore:
@@ -1416,11 +1414,7 @@ campaign_prelaunch_hint:
   other: "Στο Kickstarter, επιλέξτε «Notify me on launch». Χωρίς πληρωμή σήμερα."
 campaign_live_hint:
   other: "Δείτε την καμπάνια και επιλέξτε την ανταμοιβή σας στο Kickstarter."
-campaign_photo_alt:
-  other: "Το πραγματικό πρωτότυπο Compact v2 με πορτοκαλί περίβλημα, οθόνη και δύο κεραίες."
-campaign_photo_caption:
-  other: "Το πραγματικό πρωτότυπο. Κατασκευασμένο στο Leiden."
-campaign_software:
-  other: "Ξεκινήστε με το λογισμικό"
-campaign_software_intro:
-  other: "Ανοιχτός κώδικας. Ο δικός σας εξοπλισμός. Η δική σας εγκατάσταση."
+campaign_prelaunch_prefix:
+  other: "Ακολουθήστε στο"
+campaign_live_prefix:
+  other: "Στηρίξτε μας στο"
