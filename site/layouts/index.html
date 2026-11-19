@@ -3,9 +3,12 @@
 {{/* Project first: the three setup paths stay in the hero. The launch has its own banner. */}}
 {{ $campaignState := .Site.Params.campaign_state }}
 {{ if not (in (slice "prelaunch" "live") $campaignState) }}{{ errorf "campaign_state must be prelaunch or live" }}{{ end }}
-<section class="project-hero" aria-labelledby="project-title" data-release="project-launch-banner-20261115">
-    <img class="project-hero-image" src="/images/hero/field-comms.webp" width="1000" height="667" alt="" aria-hidden="true" fetchpriority="high">
-    <div class="project-hero-shade" aria-hidden="true"></div>
+{{/* One photo behind the hero and the launch band (MESHSAT-1907): the band is a
+     translucent layer over the photo's lower part, not a strip of its own. */}}
+<div class="project-stage" data-release="project-glass-banner-20261119">
+<img class="project-hero-image" src="/images/hero/field-comms.webp" width="1000" height="667" alt="" aria-hidden="true" fetchpriority="high">
+<div class="project-hero-shade" aria-hidden="true"></div>
+<section class="project-hero" aria-labelledby="project-title">
     <div class="container project-hero-inner">
         <p class="project-eyebrow">{{ i18n "hero_eyebrow" }}</p>
         <h1 id="project-title">{{ i18n "hero_title_a" }}<br><span>{{ i18n "hero_title_b" }}</span></h1>
@@ -33,6 +36,7 @@
         </div>
     </div>
 </section>
+</div>
 
 {{/* 6. FILMS (MESHSAT-1096). Two recordings side by side in the bench's
      head-bar chrome. Each poster is a click-to-play facade: nothing loads from

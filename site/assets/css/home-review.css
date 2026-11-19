@@ -115,10 +115,14 @@ a.store-badge img { display: block; width: auto; height: 48px; max-width: none; 
 .term-demo span { display: block; font-size: .875rem; color: var(--color-text-muted); }
 @media (forced-colors: active) { .term-demo { border-left-color: CanvasText; } }
 
-/* MeshSat remains the project homepage. Launch information has a separate band. */
-.project-hero { position: relative; isolation: isolate; overflow: clip; border-bottom: 1px solid var(--color-border); }
-.project-hero-image { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 70%; }
-.project-hero-shade { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(20,18,15,.97) 0%, rgba(20,18,15,.92) 40%, rgba(20,18,15,.38) 80%, rgba(20,18,15,.22)); }
+/* MeshSat remains the project homepage. Launch information has a separate band.
+   One photo runs behind both (MESHSAT-1907): .project-stage holds the image and
+   the shade, and the launch band is a tinted layer over the photo's lower part.
+   The image is bottom-aligned, so the hero keeps nearly the crop it had and the
+   band shows how the photo goes on. */
+.project-stage { position: relative; isolation: isolate; overflow: clip; }
+.project-hero-image { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
+.project-hero-shade { position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(20,18,15,.45), rgba(20,18,15,0) 140px), linear-gradient(90deg, rgba(20,18,15,.97) 0%, rgba(20,18,15,.92) 40%, rgba(20,18,15,.38) 80%, rgba(20,18,15,.22)); }
 [data-theme="light"] .project-hero-shade { background: linear-gradient(90deg, rgba(247,245,242,.98) 0%, rgba(247,245,242,.94) 40%, rgba(247,245,242,.48) 80%, rgba(247,245,242,.25)); }
 .project-hero-inner { padding-block: 2.75rem 2rem; }
 .project-eyebrow { max-width: 46rem; margin-bottom: 1.25rem; color: var(--color-text-muted); font-size: .9375rem; line-height: 1.6; }
@@ -133,8 +137,30 @@ a.store-badge img { display: block; width: auto; height: 48px; max-width: none; 
 .project-paths a:first-child :is(strong,span) { color: var(--color-bg); }
 [data-theme="light"] .project-paths a:first-child :is(strong,span) { color: #fff; }
 .project-paths a:hover { border-color: var(--color-primary); }
-.project-demo { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; margin-top: .75rem; font-size: .875rem; text-decoration: underline; text-underline-offset: .25em; }
-.campaign-banner { background: var(--color-bg-secondary); border-bottom: 1px solid var(--color-border); }
+.project-demo { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; margin-top: .75rem; font-size: .875rem; color: var(--color-primary-hover); text-decoration: underline; text-underline-offset: .25em; }
+.project-demo:hover { color: var(--color-text); }
+/* The launch band is a tinted layer over the photo (MESHSAT-1907). The tints are
+   measured, not guessed: every text in the band holds WCAG AA on the pixels
+   behind it at 1920 to 360 px, both themes. From 1000px the shade fades out to
+   the right, so the band adds a heavier tint and a light blur; below that the
+   shade is flat and strong already, so the band adds little and no blur, and the
+   case and laptop show through. A wide browser without backdrop-filter gets a
+   nearly solid band. */
+.campaign-banner { background: rgba(26,23,20,.88); border-top: 1px solid rgba(242,237,230,.14); border-bottom: 1px solid var(--color-border); }
+[data-theme="light"] .campaign-banner { background: rgba(255,255,255,.9); border-top-color: rgba(26,23,20,.1); }
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    @media (min-width: 1000px) {
+        .campaign-banner { background: rgba(26,23,20,.72); -webkit-backdrop-filter: blur(8px) saturate(1.1); backdrop-filter: blur(8px) saturate(1.1); }
+        [data-theme="light"] .campaign-banner { background: rgba(255,255,255,.58); }
+    }
+}
+@media (max-width: 999px) {
+    .campaign-banner { background: rgba(26,23,20,.2); }
+    [data-theme="light"] .campaign-banner { background: rgba(255,255,255,.25); }
+}
+@media (prefers-reduced-transparency: reduce) {
+    .campaign-banner, [data-theme="light"] .campaign-banner { background: var(--color-bg-secondary); -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
 .campaign-banner-inner { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 2rem 4rem; align-items: center; padding-block: 1.75rem; }
 .campaign-status { margin-bottom: .5rem; color: var(--color-text-muted); font-size: .875rem; font-weight: 500; }
 .campaign-banner h2 { margin-bottom: .5rem; font-family: var(--font-sans); font-size: clamp(1.5rem,2.2vw,2rem); font-weight: 600; letter-spacing: -.025em; line-height: 1.15; }
@@ -180,6 +206,7 @@ a.store-badge img { display: block; width: auto; height: 48px; max-width: none; 
 }
 @media (forced-colors: active) {
     .project-hero-image, .project-hero-shade { display: none; }
+    .campaign-banner, [data-theme="light"] .campaign-banner { background: Canvas; -webkit-backdrop-filter: none; backdrop-filter: none; border-color: CanvasText; }
     .project-paths a, .project-paths a:first-child { background: Canvas; border-color: ButtonText; }
     .project-hero .project-paths a :is(strong,span) { color: LinkText; }
 }
