@@ -4,10 +4,10 @@ description: "MeshSat Android changelog: mobile gateway app releases."
 tagline: "Mobile gateway app"
 weight: 3
 changelog:
-  tags: 155
-  latest_tag: "v2.26.4"
-  latest_tag_date: "2026-11-07"
-  latest_tag_anchor: "v2264-2026-11-07"
+  tags: 156
+  latest_tag: "v2.27.0"
+  latest_tag_date: "2026-11-19"
+  latest_tag_anchor: "v2270-2026-11-19"
   unreleased_count: 0
   unreleased_since: ""
   unreleased_anchor: "unreleased-main"
@@ -38,20 +38,26 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 
 No unreleased changes.
 
+## v2.27.0 (2026-11-19)
+
+### Features
+
+- **play**: the Google Play edition asks Play for an age signal where a law makes sharing mandatory, as California and Brazil do from January 2027; no prompt elsewhere, the answer is not kept ([ae216b39](https://github.com/meshsat/meshsat-android/commit/ae216b39363f48ca8095f328ca49af499de5ba69))
+
 ## v2.26.4 (2026-11-07)
 
 ### Fixes
 
 - **ble**: the node link comes back when Android's Bluetooth restarts under the app, as after a switch of the phone's user; a link that takes no operation for a minute is dropped and connected again ([f7f99862](https://github.com/meshsat/meshsat-android/commit/f7f99862945e1e8e9863a12a9ef4a93a947685cc))
 
+<details class="changelog-older">
+<summary>Older releases (154)</summary>
+
 ## v2.26.3 (2026-11-07)
 
 ### Fixes
 
 - **support**: Send feedback lists the phone's mail apps itself and hands the mail and its debug.zip to the one picked, because Android's chooser offered only one of them ([14cbbbb9](https://github.com/meshsat/meshsat-android/commit/14cbbbb90ca57ead048d40475ba4f4e6b2a495d1))
-
-<details class="changelog-older">
-<summary>Older releases (153)</summary>
 
 ## v2.26.2 (2026-11-06)
 
