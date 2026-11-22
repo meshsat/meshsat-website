@@ -17,7 +17,7 @@ description: "Πού δημοσιεύεται το MeshSat, πώς ελέγχε�
 <tr><td>Πηγαίος κώδικας</td><td><a href="https://github.com/meshsat/meshsat">github.com/meshsat/meshsat</a></td></tr>
 <tr><td>Όλα τα αποθετήριά μας</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
 <tr><td>Εικόνες container</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
-<tr><td>Εφαρμογή Android</td><td><a href="https://play.google.com/store/apps/details?id=net.meshsat.android">net.meshsat.android</a>: Google Play (χωρίς SMS)· το πλήρες APK βρίσκεται στις <a href="https://github.com/meshsat/meshsat-android/releases/latest">GitHub Releases</a>.</td></tr>
+<tr><td>Εφαρμογή Android</td><td><code>net.meshsat.android</code>: η πλήρης εφαρμογή στο <a href="https://f-droid.org/packages/net.meshsat.android/">F-Droid</a> και στις <a href="https://github.com/meshsat/meshsat-android/releases/latest">GitHub Releases</a>, και στα δύο με την ίδια υπογραφή· το <a href="https://play.google.com/store/apps/details?id=net.meshsat.android">Google Play</a> έχει την έκδοση χωρίς SMS.</td></tr>
 <tr><td>Εφαρμογή iOS</td><td><a href="https://apps.apple.com/us/app/meshsat/id6815748748">MeshSat για iPhone στο App Store.</a></td></tr>
 <tr><td>Hub</td><td><code>hub.meshsat.net</code>, ανοιχτό, οι λογαριασμοί ελέγχονται πριν ενεργοποιηθούν</td></tr>
 <tr><td>Συνομιλία</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a> στο Matrix</td></tr>

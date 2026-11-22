@@ -7,7 +7,18 @@
 {{- $ext := "svg" -}}
 {{- $width := 120 -}}
 {{- $height := 40 -}}
-{{- if eq $store "google-play" -}}
+{{- $stamp := "20261028" -}}
+{{- if eq $store "f-droid" -}}
+  {{- /* F-Droid's official badge (CC BY-SA 3.0, f-droid.org/badge), only its
+       transparent margin trimmed so it stands 48px high like the others. */ -}}
+  {{- $url = $ctx.Site.Params.fdroid_url -}}
+  {{- $alt = i18n "fdroid_badge" -}}
+  {{- $event = "fdroid-click" -}}
+  {{- $ext = "png" -}}
+  {{- $width = 564 -}}
+  {{- $height = 168 -}}
+  {{- $stamp = "20261122" -}}
+{{- else if eq $store "google-play" -}}
   {{- $url = $ctx.Site.Params.play_url -}}
   {{- $alt = i18n "google_play_badge" -}}
   {{- $event = "play-click" -}}
@@ -18,5 +29,5 @@
   {{- $width = 127 -}}
 {{- end -}}
 {{- with $url -}}
-<a class="store-badge" href="{{ . }}" target="_blank" rel="noopener" data-umami-event="{{ $event }}" data-umami-event-locale="{{ $lang }}"><img src="/images/stores/{{ $store }}-{{ $lang }}-20261028.{{ $ext }}" alt="{{ $alt }}" width="{{ $width }}" height="{{ $height }}" loading="lazy" decoding="async"></a>
+<a class="store-badge" href="{{ . }}" target="_blank" rel="noopener" data-umami-event="{{ $event }}" data-umami-event-locale="{{ $lang }}"><img src="/images/stores/{{ $store }}-{{ $lang }}-{{ $stamp }}.{{ $ext }}" alt="{{ $alt }}" width="{{ $width }}" height="{{ $height }}" loading="lazy" decoding="async"></a>
 {{- end -}}

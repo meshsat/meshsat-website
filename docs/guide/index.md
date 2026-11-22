@@ -38,7 +38,7 @@ The phone as the gateway. Paired with a [MeshSat node](/node/), one Android phon
 
 - Meshtastic over Bluetooth LE, through the node or any Meshtastic radio
 - Iridium SBD through the node's RockBLOCK 9603, with a queue that waits for the next pass
-- SMS through the phone's own SIM in the full APK edition; no SMS in the Google Play edition
+- SMS through the phone's own SIM in the full edition (F-Droid or the APK); no SMS in the Google Play edition
 - Joins the Hub's fleet like a field kit, set up by QR code
 
 ### iOS, Linux and hardware

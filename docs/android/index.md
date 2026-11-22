@@ -6,7 +6,7 @@ description: "MeshSat Android turns an ordinary Android phone into a MeshSat gat
 
 MeshSat Android turns an ordinary Android phone into a MeshSat gateway. Paired with a
 [MeshSat node](/node/), a pocket-sized box with a Meshtastic LoRa radio and a RockBLOCK 9603
-Iridium modem, one phone sends and receives over the mesh and by satellite. The full APK edition also sends and receives SMS;
+Iridium modem, one phone sends and receives over the mesh and by satellite. The full edition, from F-Droid or the APK, also sends and receives SMS;
 the Google Play edition has no SMS. It reports to
 the [MeshSat Hub](/hub/) whenever there is any link to it, and it keeps working when the mobile
 network and the internet are gone.
@@ -29,8 +29,8 @@ The phone does the thinking and the node does the radio. The app reaches both of
 radios over one Bluetooth connection, so there is no special phone to buy and nothing to wire.
 
 **Source:** [meshsat/meshsat-android](https://github.com/meshsat/meshsat-android), GPLv3.
-**Download:** the signed APK from the [latest release](https://github.com/meshsat/meshsat-android/releases/latest)
-is the full app. The edition [on Google Play](https://play.google.com/store/apps/details?id=net.meshsat.android)
+**Download:** the full app is [on F-Droid](https://f-droid.org/packages/net.meshsat.android/) and, as a signed
+APK, in the [latest release](https://github.com/meshsat/meshsat-android/releases/latest). The edition [on Google Play](https://play.google.com/store/apps/details?id=net.meshsat.android)
 is the same app without SMS; [Set up](/android/setup#install) says how the two differ.
 
 ## Start here

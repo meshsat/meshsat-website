@@ -39,7 +39,7 @@ Bluetooth radio. Confirm a message arrives on a second radio before adding anoth
 
 Satellite adds a modem, suitable power and an antenna with a view of the sky, plus your own
 provider subscription and message credits. SMS needs a SIM and a supported cellular path.
-The Android Google Play edition has no SMS; the GitHub APK is the full edition.
+The Android Google Play edition has no SMS; the full edition comes from F-Droid or the GitHub APK.
 
 The Hub is optional for local routing. It adds shared management, message history and routing
 between your devices; it does not supply satellite airtime or replace the radios.

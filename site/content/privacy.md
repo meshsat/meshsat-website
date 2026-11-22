@@ -3,7 +3,7 @@ title: "Privacy Policy"
 description: "What MeshSat collects, why, who else sees it, and how to get it back or delete it."
 ---
 
-**Last updated: 26 October 2026**
+**Last updated: 22 November 2026**
 
 Four products, two very different answers. The Bridge and phone apps run on your hardware; the services they contact depend on your configuration. The Hub is a service we operate, so this policy is mostly about the Hub.
 
@@ -27,7 +27,7 @@ YouTube's [Terms of Service](https://www.youtube.com/t/terms) apply to anything 
 
 They run on your own hardware. There is no account, no analytics, no advertising and no crash reporting to us: data reaches MeshSat services when you connect the Bridge or an app to our Hub. Maps, orbit data and configured carriers make the other network requests described below.
 
-The Android app comes in two editions. The full app, from GitHub (and from F-Droid once it lists it), can send and receive SMS through your SIM. The Google Play edition has no SMS access at all. Apart from that, the two handle your data identically. On iPhone, the app hands a text to Apple's Messages app for you to send, and never reads your texts.
+The Android app comes in two editions. The full app, from GitHub or F-Droid, can send and receive SMS through your SIM. The Google Play edition has no SMS access at all. Apart from that, the two handle your data identically. On iPhone, the app hands a text to Apple's Messages app for you to send, and never reads your texts.
 
 **What the apps use on the phone, and why.** Bluetooth, to talk to your MeshSat node or Meshtastic radio. Location, because Android needs it to scan for Bluetooth devices, the map shows where you are, and, if you choose, your position goes out over the mesh, by satellite or to a Hub. SMS, on the full Android edition only, to send and receive through your SIM. Notifications, to show that the gateway is running and what has arrived. The Android app keeps a small log of crashes and health readings on the phone for your own troubleshooting; it never leaves the phone and can be switched off in Settings.
 
@@ -38,7 +38,7 @@ The Android app comes in two editions. The full app, from GitHub (and from F-Dro
 - **Your messages and positions** go to the carriers you configure: the Iridium network through your own RockBLOCK modem and Rock7 or Ground Control account, your mobile operator for SMS, APRS-IS if you connect to it. These are your accounts and their terms apply.
 - **A Hub**, if you connect one. Positions, telemetry and messages then go to that Hub. If it is ours, the rest of this policy applies. If you self-host, everything below describes data that stays on your own infrastructure, and we are not involved in it at all.
 
-Installing from Google Play or the App Store tells Google or Apple that you did, under their own policies; we see only the totals. Downloading from GitHub sends a request to GitHub, including the network information needed to deliver the file.
+Installing from Google Play or the App Store tells Google or Apple that you did, under their own policies; we see only the totals. Downloading from GitHub sends a request to GitHub, including the network information needed to deliver the file. Installing from F-Droid fetches the app from F-Droid's servers or their mirrors, under F-Droid's own policy.
 
 ## MeshSat Hub: what we hold
 

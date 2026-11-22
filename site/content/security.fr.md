@@ -17,7 +17,7 @@ commande d'installation, comparez-la d'abord à la liste ci-dessous.
 <tr><td>Code source</td><td><a href="https://github.com/meshsat/meshsat">github.com/meshsat/meshsat</a></td></tr>
 <tr><td>Tous nos dépôts</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
 <tr><td>Images de conteneur</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
-<tr><td>Application Android</td><td><a href="https://play.google.com/store/apps/details?id=net.meshsat.android">net.meshsat.android</a> : Google Play (sans SMS) ; le fichier APK complet est disponible sur <a href="https://github.com/meshsat/meshsat-android/releases/latest">GitHub Releases</a>.</td></tr>
+<tr><td>Application Android</td><td><code>net.meshsat.android</code> : l'application complète sur <a href="https://f-droid.org/packages/net.meshsat.android/">F-Droid</a> et <a href="https://github.com/meshsat/meshsat-android/releases/latest">GitHub Releases</a>, avec la même signature ; <a href="https://play.google.com/store/apps/details?id=net.meshsat.android">Google Play</a> propose la version sans SMS.</td></tr>
 <tr><td>Application iOS</td><td><a href="https://apps.apple.com/us/app/meshsat/id6815748748">MeshSat pour iPhone sur l’App Store.</a></td></tr>
 <tr><td>Hub</td><td><code>hub.meshsat.net</code>, ouvert, comptes vérifiés avant activation</td></tr>
 <tr><td>Discussion</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a> sur Matrix</td></tr>

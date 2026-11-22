@@ -23,8 +23,12 @@ params:
   # before it activates, which the Hub card says out loud (MESHSAT-995).
   signup_url: "https://auth.meshsat.net/if/flow/meshsat-enrollment/"
   docs_url: "https://docs.meshsat.net"
+  # The F-Droid listing of MeshSat Android: the full app, SMS included, built
+  # from source and shipped with our own signature (MESHSAT-1899). An empty
+  # value removes the badge.
+  fdroid_url: "https://f-droid.org/packages/net.meshsat.android/"
   # The Google Play listing of MeshSat Android: the edition without SMS
-  # (MESHSAT-1340). The full app stays the APK on GitHub releases.
+  # (MESHSAT-1340). The full app is the APK on GitHub releases and F-Droid.
   play_url: "https://play.google.com/store/apps/details?id=net.meshsat.android"
   app_store_url: "https://apps.apple.com/us/app/meshsat/id6815748748"
   install_url: "https://get.meshsat.net"

@@ -24,7 +24,7 @@ features:
     details: The control room for every kit, phone and node you run. Live map, every message, routing and SOS escalation. Run it on your own server, or try it on ours at hub.meshsat.net.
     link: /hub/
   - title: Android
-    details: An ordinary Android phone as the gateway. Paired with a MeshSat node it reaches the mesh and an Iridium modem over one Bluetooth connection, and the full APK edition adds SMS from its own SIM. Google Play carries the edition without SMS.
+    details: An ordinary Android phone as the gateway. Paired with a MeshSat node it reaches the mesh and an Iridium modem over one Bluetooth connection, and the full edition, on F-Droid or as an APK, adds SMS from its own SIM. Google Play carries the edition without SMS.
     link: /android/
   - title: iOS
     details: An iPhone gateway, tested with a MeshSat node for mesh and satellite. Available on the App Store for iOS 17 or later. Text messages use the Messages composer.

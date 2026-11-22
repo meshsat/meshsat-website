@@ -301,7 +301,7 @@ term_log_label:
 and_apk:
   other: "Λήψη APK"
 and_play_note:
-  other: "Στο Google Play η εφαρμογή διατίθεται χωρίς SMS, επειδή η πολιτική της Google δεν το επιτρέπει εκεί. Το APK είναι η πλήρης εφαρμογή. Η μία δεν μπορεί να ενημερώσει την άλλη."
+  other: "Το F-Droid και το APK είναι η ίδια πλήρης εφαρμογή, οπότε η μία εγκατάσταση μπορεί να ενημερώσει την άλλη. Στο Google Play η εφαρμογή διατίθεται χωρίς SMS, επειδή η πολιτική της Google δεν το επιτρέπει εκεί, και αυτή η έκδοση δεν ενημερώνει ούτε ενημερώνεται από τις άλλες δύο."
 films_title:
   other: "Δείτε το σε λειτουργία"
 films_sub:
@@ -1368,6 +1368,9 @@ app_store_badge:
 
 google_play_badge:
   other: "Αποκτήστε το στο Google Play"
+
+fdroid_badge:
+  other: "Αποκτήστε το στο F-Droid"
 
 # A colon after a label: French puts a narrow no-break space before it.
 colon:

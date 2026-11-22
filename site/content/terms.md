@@ -3,7 +3,7 @@ title: "Terms of Service"
 description: "Terms for the MeshSat apps, MeshSat Bridge and the hosted MeshSat Hub."
 ---
 
-**Last updated: 4 November 2026**
+**Last updated: 22 November 2026**
 
 These terms cover two different things: software you run yourself, meaning MeshSat Bridge and the MeshSat apps, and a service we run for you, MeshSat Hub.
 
@@ -25,7 +25,7 @@ Our [Mission and Use Policy](/policy/) governs whom we work with. It does not re
 
 This section applies to each MeshSat app, wherever you got it:
 
-- **MeshSat Android** (`net.meshsat.android`). The full app, which can send and receive SMS through your SIM, comes from our [GitHub releases](https://github.com/meshsat/meshsat-android/releases), and from F-Droid once F-Droid lists it. The edition on [Google Play](https://play.google.com/store/apps/details?id=net.meshsat.android) is the same app without SMS.
+- **MeshSat Android** (`net.meshsat.android`). The full app, which can send and receive SMS through your SIM, comes from our [GitHub releases](https://github.com/meshsat/meshsat-android/releases) and from [F-Droid](https://f-droid.org/packages/net.meshsat.android/), which builds it from our source and ships it with our own signature. The edition on [Google Play](https://play.google.com/store/apps/details?id=net.meshsat.android) is the same app without SMS.
 - **MeshSat iOS**, on the [App Store](https://apps.apple.com/app/meshsat/id6815748748), with unsigned builds in our [GitHub releases](https://github.com/meshsat/meshsat-ios/releases).
 - **MeshSat for Linux**, a package for Linux phones from our [GitHub releases](https://github.com/meshsat/meshsat-linux/releases). It installs MeshSat Bridge alongside the app, so the section above applies to that part as well.
 
@@ -136,7 +136,7 @@ Dutch law applies. Disputes go to the courts of the Netherlands. If you are a co
 
 ## Trademarks
 
-Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc. Android, Google Play and the Google Play logo are trademarks of Google LLC. Linux is the registered trademark of Linus Torvalds in the U.S. and other countries.
+Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc. Android, Google Play and the Google Play logo are trademarks of Google LLC. Linux is the registered trademark of Linus Torvalds in the U.S. and other countries. The "Get it on F-Droid" badge is F-Droid's artwork, trimmed of its transparent margin and used under the [Creative Commons Attribution-ShareAlike 3.0](https://creativecommons.org/licenses/by-sa/3.0/) licence.
 
 ## Contact
 

@@ -301,7 +301,7 @@ term_log_label:
 and_apk:
   other: "Télécharger l'APK"
 and_play_note:
-  other: "Sur Google Play, l'application est proposée sans les SMS, car le règlement de Google ne les y autorise pas. L'APK est l'application complète. Les deux versions ne peuvent pas se mettre à jour l'une l'autre."
+  other: "F-Droid et l'APK fournissent la même application complète, si bien que l'une peut mettre à jour l'autre. Sur Google Play, l'application est proposée sans les SMS, car le règlement de Google ne les y autorise pas, et cette version ne peut ni mettre à jour les deux autres, ni être mise à jour par elles."
 films_title:
   other: "MeshSat en action"
 films_sub:
@@ -1368,6 +1368,9 @@ app_store_badge:
 
 google_play_badge:
   other: "Disponible sur Google Play"
+
+fdroid_badge:
+  other: "Disponible sur F-Droid"
 
 # A colon after a label: French puts a narrow no-break space before it.
 colon:

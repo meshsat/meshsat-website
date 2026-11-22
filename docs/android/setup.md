@@ -17,16 +17,24 @@ Setup: node, satellite, Hub and SMS, each with where it stands.
 
 ## Install
 
-The app comes in two editions. The **full app**, SMS included, is the APK from the GitHub
-releases; F-Droid will carry the same edition once it lists the app. The **Google Play edition**
+The app comes in two editions. The **full app**, SMS included, is
+[on F-Droid](https://f-droid.org/packages/net.meshsat.android/) and in the GitHub releases. The **Google Play edition**
 is the same app without SMS, because Google Play does not allow SMS in an app that is not the
 phone's SMS app. It is
 [on Google Play](https://play.google.com/store/apps/details?id=net.meshsat.android) and nowhere
 else, and it can be a version behind the GitHub releases.
 
 Both are `net.meshsat.android`, but Play signs its edition with its own key, so a Play install
-and a GitHub install cannot update each other. To switch, uninstall one, install the other, and
-provision it with the Hub again.
+and a GitHub or F-Droid install cannot update each other. To switch, uninstall one, install the
+other, and provision it with the Hub again.
+
+**From F-Droid:** search for MeshSat in the F-Droid app, or open the
+[listing](https://f-droid.org/packages/net.meshsat.android/), tap **Install**, and go on at step 4. F-Droid builds the
+app from our source, checks that its build matches ours byte for byte, and ships it with our own
+signature, so the F-Droid and GitHub APKs are the same files and update each other. F-Droid picks
+up a new release by itself, some days after it appears on GitHub. The listing marks the app
+"Tethered network" because the online map takes its tiles from OpenStreetMap's server; an
+imported map file and the built-in world map work without it.
 
 **From Google Play:** open the
 [listing](https://play.google.com/store/apps/details?id=net.meshsat.android), tap **Install**,
@@ -55,8 +63,8 @@ You need Android 8.0 or later.
 Releases are built and signed in CI. Before you install an APK you can check it with
 `apksigner verify --print-certs meshsat-android-<version>-release.apk`. Every release since
 2.8.0 shows the certificate SHA-256 digest
-`8ca78b6c33bd9796bb05f40fec2a0ab801e0297e7565960d42f5e6af821c9f66`. The Google Play edition is
-signed by Play with a different key.
+`8ca78b6c33bd9796bb05f40fec2a0ab801e0297e7565960d42f5e6af821c9f66`. F-Droid's APKs carry the same
+signature. The Google Play edition is signed by Play with a different key.
 :::
 
 **Coming from 2.8 or older?** Since 2.9.0 the app is `net.meshsat.android` (it was

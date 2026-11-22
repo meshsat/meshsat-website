@@ -213,3 +213,11 @@ a.store-badge img { display: block; width: auto; height: 48px; max-width: none; 
     .project-paths a, .project-paths a:first-child { background: Canvas; border-color: ButtonText; }
     .project-hero .project-paths a :is(strong,span) { color: LinkText; }
 }
+
+/* MESHSAT-1899: the Android card carries F-Droid and Google Play side by side.
+   At 48px the pair (161 + 162 px) wraps inside the phone card's 292px; at 40px
+   with a 16px gap it stays one row, so the card does not grow on phones. */
+@media (max-width: 480px) {
+    .term-foot .store-badges { gap: 16px; }
+    .term-foot a.store-badge img { height: 40px; }
+}

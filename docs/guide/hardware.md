@@ -27,7 +27,7 @@ on the test radios. See [radios and range](/guide/radios-and-range) for the limi
 | Satellite from a Bridge | RockBLOCK 9603N or 9704, suitable power, antenna and serial connection | Your provider's line rental and message credits; view of the sky |
 | Satellite from a phone | [MeshSat node](/node/) with a RockBLOCK 9603 | Your provider account; check each app's tested hardware |
 | SMS from a Bridge | Supported cellular modem and SIM | Your mobile service; configure the modem and route |
-| SMS from Android | Phone's SIM and the full APK edition | Google Play edition has no SMS |
+| SMS from Android | Phone's SIM and the full edition (F-Droid or APK) | Google Play edition has no SMS |
 | APRS | Supported KISS TNC or the documented radio/audio setup | See [APRS](/transports/aprs) for setup and operating requirements |
 | ZigBee sensors | CC2652P coordinator and compatible sensors | Pairing and the [ZigBee setup](/transports/zigbee) |
 | Fleet management | Hosted or self-hosted [Hub](/hub/) | Provision each device; bring your own airtime accounts |

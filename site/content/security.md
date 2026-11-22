@@ -17,7 +17,7 @@ below first.
 <tr><td>Source code</td><td><a href="https://github.com/meshsat/meshsat">github.com/meshsat/meshsat</a></td></tr>
 <tr><td>All our repositories</td><td><a href="https://github.com/meshsat">github.com/meshsat</a></td></tr>
 <tr><td>Container images</td><td><code>ghcr.io/meshsat/meshsat</code></td></tr>
-<tr><td>Android app</td><td><a href="https://play.google.com/store/apps/details?id=net.meshsat.android">net.meshsat.android</a>: Google Play (without SMS); the full APK is on <a href="https://github.com/meshsat/meshsat-android/releases/latest">GitHub Releases</a>.</td></tr>
+<tr><td>Android app</td><td><code>net.meshsat.android</code>: the full app on <a href="https://f-droid.org/packages/net.meshsat.android/">F-Droid</a> and <a href="https://github.com/meshsat/meshsat-android/releases/latest">GitHub Releases</a>, both with the same signature; <a href="https://play.google.com/store/apps/details?id=net.meshsat.android">Google Play</a> carries the edition without SMS.</td></tr>
 <tr><td>iOS app</td><td><a href="https://apps.apple.com/us/app/meshsat/id6815748748">MeshSat for iPhone on the App Store.</a></td></tr>
 <tr><td>Hub</td><td><code>hub.meshsat.net</code>, open, accounts reviewed before activation</td></tr>
 <tr><td>Chat</td><td><a href="https://matrix.to/#/%23meshsat%3Amatrix.nuclearlighters.net">#meshsat:matrix.nuclearlighters.net</a> on Matrix</td></tr>

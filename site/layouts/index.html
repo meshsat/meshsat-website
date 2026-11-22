@@ -375,12 +375,12 @@
                     </figure>
                 </div>
                 <div class="artifact-foot term-foot">
-                    <div class="store-badges">{{ partial "store-badge.html" (dict "ctx" . "store" "google-play") }}</div>
+                    <div class="store-badges">{{ partial "store-badge.html" (dict "ctx" . "store" "f-droid") }}{{ partial "store-badge.html" (dict "ctx" . "store" "google-play") }}</div>
                     <div class="hero-actions">
                         <a href="{{ .Site.Params.github }}-android/releases/latest" class="btn btn-outline" target="_blank" rel="noopener" data-umami-event="apk-download" data-umami-event-locale="{{ .Site.Language.Lang }}">{{ i18n "and_apk" }}</a>
                         <a href="{{ .Site.Params.github }}-android" class="btn btn-outline" target="_blank" rel="noopener">{{ i18n "and_cta" }}</a>
                     </div>
-                    {{ if .Site.Params.play_url }}<p class="term-note">{{ i18n "and_play_note" }}</p>{{ end }}
+                    {{ if or .Site.Params.fdroid_url .Site.Params.play_url }}<p class="term-note">{{ i18n "and_play_note" }}</p>{{ end }}
                 </div>
             </div>
         </div>
