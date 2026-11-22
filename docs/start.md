@@ -7,6 +7,9 @@ description: "MeshSat carries messages between mesh radios, satellite links, mob
 MeshSat carries messages between mesh radios, satellite links, mobile networks and other
 systems. Start with the hardware you have and the job you want it to do.
 
+MeshSat is free and open-source software: the Bridge, the apps and the node firmware are
+released under the GNU GPLv3, the Hub under the Apache License 2.0.
+
 All MeshSat products are prototypes. A bench result describes that test, not proven reliability
 in an emergency. Each product page separates tested capabilities from unfinished work.
 
