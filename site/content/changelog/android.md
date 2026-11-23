@@ -36,7 +36,7 @@ the Google Play app has no SMS access; the GitHub APK is the full edition.
 <!-- generated:begin -->
 ## Unreleased (main)
 
-No unreleased changes.
+No user-facing changes (1 commits of other types).
 
 ## v2.27.0 (2026-11-19)
 
